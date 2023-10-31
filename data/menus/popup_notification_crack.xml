@@ -114,7 +114,7 @@
 				component("font"):Set(game.getTextFont())
 				component("size"):SetFloat(0.39*game.hudScale())
 				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
-				component("text"):SetString("This is a cracked version of My Singing Monsters, you will not have any progress done in the steam version or mobile versions of the game.                                            -                                              Cracked By Iestyn129 (MSM-Hacks Owner)")
+				component("text"):SetString("This is a steamless version of My Singing Monsters, you will not have any progress done in the steam version or mobile versions of the game.                                            -                                              By Iestyn129")
 				component("layer"):SetString("FrontPopUps")
 				component("autoScale"):SetInt(1)
 			</event>
