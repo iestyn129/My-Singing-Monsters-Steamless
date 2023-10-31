@@ -6,7 +6,7 @@ The steam version of My Singing Monsters... without steam! This of course means 
 
 ## Why?
 
-Well with no need for Steam, you can play on a school computer, even if you've been banned on Steam, and even share an account with friends! (This is against My Singing Monsters ToS however)
+Well with no need for Steam you can play on a school computer or even share an account with friends! (This is against My Singing Monsters ToS however)
 
 ## Install
 
