@@ -1,0 +1,66 @@
+<template name="template_tribe_invite_indicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_exclaim")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.6*game.hudScale())
+			component("layer"):SetString("ContextBar")
+			
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("vFlip"):SetInt(1)
+			else
+				component("hFlip"):SetInt(1)
+			end
+			
+			component("xOffset"):SetInt(22*game.hudScale())
+			component("yOffset"):SetInt(3*game.hudScale())
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="onInit" params="element">
+		element("transitionTime"):SetFloat(1.0)
+		element("transitionState"):SetInt(1)
+		
+		element:DoStoredScript("show")
+	</event>
+	
+	<event name="show" params="element">
+		if(game.newTribalInviteNotice()) then
+			element["Sprite"]("visible"):SetInt(1)
+			element("transitionState"):SetInt(1)
+		else
+			element["Sprite"]("visible"):SetInt(0)
+			element("transitionState"):SetInt(0)
+		end
+	</event>
+	
+	<event name="hide" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		local transitionState = element("transitionState"):GetInt()
+		
+		if(transitionState ~= 0 and dt &lt;= 0.5) then
+			local transitionTime = element("transitionTime"):GetFloat()
+			
+			element["Sprite"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+			
+			if( transitionTime &lt;= 1.0 ) then
+				element("transitionState"):SetInt(1)
+			elseif(transitionTime &gt;= 1.25) then
+				element("transitionState"):SetInt(2)
+			end	
+
+			if(transitionState == 1) then
+				element("transitionTime"):SetFloat(transitionTime + dt)
+			else
+				element("transitionTime"):SetFloat(transitionTime - dt)
+			end
+		end
+	</event>
+	
+</template>

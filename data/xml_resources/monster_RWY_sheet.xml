@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e78fa1e4faed30dac95cc86cc913c167:5e640484de148c19dd06cc4148137e1e:31759a8af99fb9ad317f9192e6fbe4a6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_RWY_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="RWY_body" x="681" y="787" w="199" h="151" pX="0.5" pY="0.5" oX="14" oY="8" oW="180" oH="216" r="y"/>
+    <sprite n="RWY_eye_glow" x="212" y="858" w="129" h="127" pX="0.5" pY="0.5"/>
+    <sprite n="RWY_eyelid_01" x="408" y="1609" w="81" h="76" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88" r="y"/>
+    <sprite n="RWY_eyelid_02" x="891" y="2" w="77" h="81" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88"/>
+    <sprite n="RWY_eyelid_03" x="816" y="1838" w="81" h="77" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88" r="y"/>
+    <sprite n="RWY_eyelid_04" x="899" y="1838" w="77" h="81" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88"/>
+    <sprite n="RWY_eyelid_05" x="808" y="1917" w="81" h="77" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88" r="y"/>
+    <sprite n="RWY_eyelid_06" x="891" y="1921" w="81" h="77" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="88" r="y"/>
+    <sprite n="RWY_hair_A_01" x="100" y="333" w="94" h="303" pX="0.5" pY="0.5" oX="81" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_02" x="196" y="284" w="100" h="289" pX="0.5" pY="0.5" oX="75" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_03" x="343" y="925" w="142" h="233" pX="0.5" pY="0.5" oX="33" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_04" x="182" y="1764" w="156" h="166" pX="0.5" pY="0.5" oX="19" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_05" x="688" y="1590" w="167" h="158" pX="0.5" pY="0.5" oX="8" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_06" x="857" y="1589" w="161" h="163" pX="0.5" pY="0.5" oX="13" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_07" x="882" y="771" w="134" h="215" pX="0.5" pY="0.5" oX="41" oY="4" oW="180" oH="316"/>
+    <sprite n="RWY_hair_A_08" x="2" y="1948" w="283" h="98" pX="0.5" pY="0.5" oX="77" oY="4" oW="180" oH="316" r="y"/>
+    <sprite n="RWY_hair_B_01" x="2" y="333" w="96" h="334" pX="0.5" pY="0.5" oX="85" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_02" x="2" y="2" w="110" h="329" pX="0.5" pY="0.5" oX="71" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_03" x="452" y="276" w="135" h="271" pX="0.5" pY="0.5" oX="46" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_04" x="672" y="549" w="164" h="236" pX="0.5" pY="0.5" oX="17" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_05" x="840" y="316" w="168" h="231" pX="0.5" pY="0.5" oX="13" oY="6" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_06" x="634" y="940" w="161" h="207" pX="0.5" pY="0.5" oX="20" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_07" x="298" y="276" w="152" h="256" pX="0.5" pY="0.5" oX="29" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_B_08" x="2" y="669" w="96" h="318" pX="0.5" pY="0.5" oX="85" oY="7" oW="188" oH="348"/>
+    <sprite n="RWY_hair_C_01" x="2" y="989" w="73" h="337" pX="0.5" pY="0.5" oX="84" oY="6" oW="164" oH="348"/>
+    <sprite n="RWY_hair_C_02" x="559" y="2" w="330" h="81" pX="0.5" pY="0.5" oX="76" oY="6" oW="164" oH="348" r="y"/>
+    <sprite n="RWY_hair_C_03" x="266" y="139" w="283" h="135" pX="0.5" pY="0.5" oX="21" oY="6" oW="164" oH="348" r="y"/>
+    <sprite n="RWY_hair_C_04" x="589" y="267" w="140" h="268" pX="0.5" pY="0.5" oX="16" oY="5" oW="164" oH="348"/>
+    <sprite n="RWY_hair_C_05" x="402" y="549" w="145" h="261" pX="0.5" pY="0.5" oX="11" oY="5" oW="164" oH="348"/>
+    <sprite n="RWY_hair_C_06" x="114" y="2" w="150" h="280" pX="0.5" pY="0.5" oX="6" oY="5" oW="164" oH="348"/>
+    <sprite n="RWY_hair_C_07" x="266" y="2" w="291" h="135" pX="0.5" pY="0.5" oX="20" oY="5" oW="164" oH="348" r="y"/>
+    <sprite n="RWY_hair_C_08" x="77" y="989" w="84" h="310" pX="0.5" pY="0.5" oX="73" oY="6" oW="164" oH="348"/>
+    <sprite n="RWY_hair_D_01" x="559" y="85" w="322" h="58" pX="0.5" pY="0.5" oX="6" oY="203" oW="180" oH="532" r="y"/>
+    <sprite n="RWY_hair_D_02" x="99" y="1301" w="73" h="310" pX="0.5" pY="0.5" oX="16" oY="203" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_03" x="182" y="1513" w="133" h="249" pX="0.5" pY="0.5" oX="24" oY="201" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_04" x="495" y="1592" w="191" h="136" pX="0.5" pY="0.5" oX="37" oY="77" oW="180" oH="532" r="y"/>
+    <sprite n="RWY_hair_D_05" x="787" y="1484" w="181" h="103" pX="0.5" pY="0.5" oX="38" oY="36" oW="180" oH="532" r="y"/>
+    <sprite n="RWY_hair_D_06" x="797" y="1134" w="210" h="99" pX="0.5" pY="0.5" oX="25" oY="5" oW="180" oH="532" r="y"/>
+    <sprite n="RWY_hair_D_07" x="495" y="1386" w="102" h="204" pX="0.5" pY="0.5" oX="16" oY="9" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_08" x="317" y="1468" w="89" h="217" pX="0.5" pY="0.5" oX="28" oY="12" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_09" x="408" y="1398" w="85" h="209" pX="0.5" pY="0.5" oX="30" oY="203" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_10" x="212" y="575" w="83" h="281" pX="0.5" pY="0.5" oX="8" oY="203" oW="180" oH="532"/>
+    <sprite n="RWY_hair_D_11" x="107" y="1613" w="73" h="308" pX="0.5" pY="0.5" oX="7" oY="203" oW="180" oH="532"/>
+    <sprite n="RWY_hair_E_01" x="280" y="988" w="61" h="239" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_02" x="295" y="1229" w="68" h="237" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_03" x="687" y="1149" w="103" h="226" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_04" x="340" y="1687" w="152" h="177" pX="0.5" pY="0.5" oX="10" oY="135" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_05" x="494" y="1847" w="146" h="124" pX="0.5" pY="0.5" oX="10" oY="82" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_06" x="494" y="1730" w="167" h="115" pX="0.5" pY="0.5" oX="9" oY="13" oW="173" oH="409" r="y"/>
+    <sprite n="RWY_hair_E_07" x="287" y="1932" w="174" h="114" pX="0.5" pY="0.5" oX="9" oY="6" oW="173" oH="409" r="y"/>
+    <sprite n="RWY_hair_E_08" x="792" y="1376" w="188" h="106" pX="0.5" pY="0.5" oX="10" oY="13" oW="173" oH="409" r="y"/>
+    <sprite n="RWY_hair_E_09" x="663" y="1750" w="151" h="92" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409" r="y"/>
+    <sprite n="RWY_hair_E_10" x="599" y="1390" w="84" h="200" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409"/>
+    <sprite n="RWY_hair_E_11" x="626" y="1154" w="59" h="234" pX="0.5" pY="0.5" oX="9" oY="160" oW="173" oH="409"/>
+    <sprite n="RWY_hair_F_01" x="2" y="1328" w="95" h="313" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321"/>
+    <sprite n="RWY_hair_F_02" x="2" y="1643" w="103" h="303" pX="0.5" pY="0.5" oX="5" oY="3" oW="156" oH="321"/>
+    <sprite n="RWY_hair_F_03" x="549" y="549" w="121" h="261" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321"/>
+    <sprite n="RWY_hair_F_04" x="495" y="1154" w="129" h="230" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321"/>
+    <sprite n="RWY_hair_F_05" x="487" y="925" w="145" h="227" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321"/>
+    <sprite n="RWY_hair_F_06" x="792" y="1235" w="204" h="139" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321" r="y"/>
+    <sprite n="RWY_hair_F_07" x="797" y="988" w="208" h="144" pX="0.5" pY="0.5" oX="6" oY="4" oW="156" oH="321" r="y"/>
+    <sprite n="RWY_hair_F_08" x="731" y="267" w="107" h="280" pX="0.5" pY="0.5" oX="5" oY="4" oW="156" oH="321"/>
+    <sprite n="RWY_hair_G_01" x="100" y="638" w="110" h="293" pX="0.5" pY="0.5" oX="3" oY="4" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_02" x="297" y="575" w="103" h="280" pX="0.5" pY="0.5" oX="3" oY="4" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_03" x="163" y="988" w="115" h="267" pX="0.5" pY="0.5" oX="3" oY="4" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_04" x="174" y="1257" w="119" h="254" pX="0.5" pY="0.5" oX="3" oY="3" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_05" x="551" y="145" w="286" h="120" pX="0.5" pY="0.5" oX="3" oY="3" oW="145" oH="305" r="y"/>
+    <sprite n="RWY_hair_G_06" x="365" y="1160" w="128" h="236" pX="0.5" pY="0.5" oX="3" oY="3" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_07" x="883" y="85" w="139" h="229" pX="0.5" pY="0.5" oX="3" oY="3" oW="145" oH="305"/>
+    <sprite n="RWY_hair_G_08" x="402" y="812" w="277" h="111" pX="0.5" pY="0.5" oX="3" oY="4" oW="145" oH="305" r="y"/>
+    <sprite n="RWY_hair_H_01" x="317" y="1687" w="21" h="49" pX="0.5" pY="0.5" oX="6" oY="4" oW="60" oH="28" r="y"/>
+    <sprite n="RWY_head" x="838" y="549" w="161" h="220" pX="0.5" pY="0.5" oX="9" oY="10" oW="180" oH="240"/>
+    <sprite n="RWY_mouth_01" x="642" y="1847" w="61" h="105" pX="0.5" pY="0.5" oX="17" oY="15" oW="136" oH="88" r="y"/>
+    <sprite n="RWY_mouth_02" x="705" y="1918" w="101" h="66" pX="0.5" pY="0.5" oX="18" oY="10" oW="136" oH="88"/>
+    <sprite n="RWY_mouth_03" x="705" y="1844" w="97" h="72" pX="0.5" pY="0.5" oX="21" oY="6" oW="136" oH="88"/>
+    <sprite n="RWY_mouth_04" x="340" y="1866" w="124" h="56" pX="0.5" pY="0.5" oX="6" oY="21" oW="136" oH="88"/>
+    <sprite n="RWY_mouth_05" x="463" y="1973" w="113" h="58" pX="0.5" pY="0.5" oX="12" oY="18" oW="136" oH="88"/>
+    <sprite n="RWY_neck" x="816" y="1754" w="153" h="82" pX="0.5" pY="0.5" oX="5" oY="3" oW="92" oH="160" r="y"/>
+    <sprite n="RWY_pupil" x="839" y="145" w="22" h="38" pX="0.5" pY="0.5" oX="9" oY="1" oW="40" oH="40"/>
+    <sprite n="RWY_shadow" x="685" y="1390" w="100" h="198" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RWY_toeA_01" x="114" y="284" w="59" h="45" pX="0.5" pY="0.5" oX="2" oY="3" oW="64" oH="52"/>
+    <sprite n="RWY_toeA_02" x="100" y="933" w="60" h="54" pX="0.5" pY="0.5" oX="2" oY="5" oW="64" oH="64"/>
+    <sprite n="RWY_toeB_01" x="578" y="1973" w="61" h="55" pX="0.5" pY="0.5" oX="3" oY="4" oW="68" oH="64"/>
+    <sprite n="RWY_toeB_02" x="343" y="857" w="49" h="64" pX="0.5" pY="0.5" oX="2" oY="3" oW="68" oH="56" r="y"/>
+    <sprite n="RWY_toeC_01" x="642" y="1954" w="56" h="49" pX="0.5" pY="0.5" oX="3" oY="2" oW="56" oH="60" r="y"/>
+    <sprite n="RWY_toeC_02" x="700" y="1986" w="55" h="54" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60" r="y"/>
+    <sprite n="RWY_toeD_01" x="970" y="2" w="52" h="64" pX="0.5" pY="0.5" oX="4" oY="0" oW="72" oH="52" r="y"/>
+    <sprite n="RWY_toeD_02" x="971" y="1754" w="48" h="63" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="52" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e316844882c6f18ac4463015ec1b4712:d6747f89a74cddc8280b10ba1a3f53f1:b17e688510fce07e4f760a3ba53ab2ce$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/island21_specific_deco.png" width="512" height="1024" hires="true">
+    <sprite n="decoration_ground_W21_01" x="4" y="4" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_02" x="208" y="4" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_03" x="4" y="108" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_04" x="208" y="108" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_05" x="4" y="212" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_06" x="208" y="212" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_07" x="4" y="316" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_08" x="208" y="316" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_09" x="4" y="420" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_10" x="108" y="628" w="200" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W21_11" x="208" y="420" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_12" x="4" y="524" w="100" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_ground_W21_13" x="4" y="728" w="100" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_ground_W21_14" x="108" y="524" w="200" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="decoration_ground_W21_15" x="312" y="524" w="100" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_ground_W21_16" x="412" y="4" w="69" h="125" pX="0.5" pY="0.5" oX="75" oY="31" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W21_17" x="412" y="133" w="65" h="124" pX="0.5" pY="0.5" oX="1" oY="0" oW="200" oH="100" r="y"/>
+</TextureAtlas>

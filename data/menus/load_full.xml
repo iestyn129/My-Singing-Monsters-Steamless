@@ -1,0 +1,51 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="TopElement">
+		<hudScale scale="game.menuScaleX()" />
+		<size dependentOnElement=""/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+		</touchComponent>		
+		<element name="LoaderElement">
+			<size dependentOnElement="LoaderBG"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+			<spriteComponent name="Loader" >
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />
+				<event name="onInit" params="component, element" >
+					component("spriteName"):SetString("gfx/menu/loading_bar_full")
+					component("layer"):SetString("MidPopUps")
+					component:setScale(Vector2(lua_sys.screenHeight() / 768, lua_sys.screenHeight() / 768))
+					game.showLoadingStatus()
+					game.setScratchDismissed(true)
+				</event>
+			</spriteComponent>
+		</element>
+		<event name="updateLoader" params="element, completion, state">
+			local loader = element:GetElement("LoaderElement"):GetComponent("Loader")
+			local height = loader("height"):GetInt() 
+
+			local bottom = 268
+			local top = 600
+			local maskH = 0
+
+			if(state == 0) then
+				maskH = 0
+			elseif(state == 1) then
+				maskH = math.floor((top-bottom) * (completion * 0.25))
+			elseif(state == 2) then
+				maskH = math.floor((top-bottom) * (0.25 + (completion * 0.75)))
+			elseif(state == 3) then
+				maskH = top - bottom
+			end
+
+			loader("maskY"):SetFloat(height - bottom - maskH)
+			loader("maskH"):SetFloat(bottom + maskH)
+			loader("yOffset"):SetInt(height - bottom - maskH)
+		</event>
+	</element>
+	
+</menu>

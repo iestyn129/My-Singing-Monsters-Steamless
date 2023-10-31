@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1df3686ee4572aebdaa0e23d1314151d:ffe84a96c3c00276cb80f79aaf54bdf8:8250b2decf102c46535e714da35f9018$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_P02_costume_01_sheet.png" width="128" height="256">
+	<!-- original anchor = (74, 56) -> new anchor (20, 30) diff = (54, 26)-->
+	<!-- add it to texturepacker output offsets (2, 2) -> (56, 28)-->
+    <sprite n="P02_glasses.png" x="2" y="228" w="55" h="26" pX="0.5" pY="0.5" oX="56" oY="28" oW="60" oH="30"/>
+    <sprite n="P02_head.png" x="2" y="2" w="72" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="P02_left_lowerarm.png" x="76" y="2" w="32" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="P02_left_upperarm.png" x="59" y="228" w="48" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="P02_left_upperarm_tassles.png" x="82" y="152" w="24" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="48"/>
+    <sprite n="P02_moustache_left.png" x="108" y="152" w="18" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="18" r="y"/>
+    <sprite n="P02_moustache_right.png" x="82" y="201" w="39" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="20"/>
+    <sprite n="P02_right_lowerarm.png" x="76" y="64" w="34" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="P02_right_upperarm.png" x="76" y="122" w="46" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="P02_upperbody.png" x="2" y="152" w="78" h="74" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a4d4ae93c2eb2d9f4cda2ddaafcefe6c:dd15840939f2e68324e6a682e04a6258:258ace1eb0e48b7ac55f4fd2bfbda9c5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_JL_sheet.png" width="512" height="512" hires="true">
+    <sprite n="JL_bell" x="112" y="309" w="31" h="28" pX="0.5" pY="0.5" oX="0" oY="1" oW="28" oH="32" r="y"/>
+    <sprite n="JL_bell_RARE" x="295" y="480" w="31" h="28" pX="0.5" pY="0.5" oX="0" oY="1" oW="28" oH="32" r="y"/>
+    <sprite n="JL_body" x="222" y="164" w="144" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="JL_crystal_RARE" x="112" y="339" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="JL_eyelid_01" x="158" y="220" w="62" h="27" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="32"/>
+    <sprite n="JL_eyelid_02" x="158" y="249" w="62" h="27" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="32"/>
+    <sprite n="JL_eyelid_03" x="158" y="278" w="62" h="27" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="32"/>
+    <sprite n="JL_feathers" x="222" y="2" w="192" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="JL_hand_01" x="158" y="307" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64" r="y"/>
+    <sprite n="JL_hand_02" x="158" y="162" w="62" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64" r="y"/>
+    <sprite n="JL_hand_03" x="55" y="375" w="52" h="63" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64"/>
+    <sprite n="JL_headdress" x="2" y="2" w="218" h="158" pX="0.5" pY="0.5" oX="1" oY="0" oW="220" oH="160"/>
+    <sprite n="JL_left_foot" x="295" y="411" w="66" h="67" pX="0.5" pY="0.5" oX="1" oY="2" oW="68" oH="72"/>
+    <sprite n="JL_left_lowerleg" x="109" y="435" w="118" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="132" r="y"/>
+    <sprite n="JL_lowerarm" x="2" y="309" w="108" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="64"/>
+    <sprite n="JL_mask" x="416" y="2" w="94" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="152"/>
+    <sprite n="JL_mask_RARE" x="2" y="162" w="154" h="145" pX="0.5" pY="0.5" oX="1" oY="0" oW="146" oH="180" r="y"/>
+    <sprite n="JL_pupil" x="498" y="220" w="11" h="11" pX="0.5" pY="0.5" oX="3" oY="3" oW="16" oH="16"/>
+    <sprite n="JL_pupil_RARE" x="498" y="233" w="11" h="11" pX="0.5" pY="0.5" oX="3" oY="3" oW="16" oH="16"/>
+    <sprite n="JL_right_foot" x="229" y="411" w="64" h="76" pX="0.5" pY="0.5" oX="0" oY="2" oW="76" oH="68" r="y"/>
+    <sprite n="JL_right_lowerleg" x="112" y="365" w="107" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="124" r="y"/>
+    <sprite n="JL_shadow" x="2" y="375" w="51" h="125" pX="0.5" pY="0.5" oX="1" oY="1" oW="128" oH="52" r="y"/>
+    <sprite n="JL_shaker_handle" x="55" y="440" w="30" h="63" pX="0.5" pY="0.5" oX="22" oY="117" oW="72" oH="180"/>
+    <sprite n="JL_shaker_head" x="368" y="273" w="126" h="71" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="180" r="y"/>
+    <sprite n="JL_shaker_head_RARE" x="222" y="302" w="126" h="71" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="180" r="y"/>
+    <sprite n="JL_sparkle" x="87" y="440" w="20" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="24" oH="24"/>
+    <sprite n="JL_sparkle_RARE" x="87" y="464" w="20" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="24" oH="24"/>
+    <sprite n="JL_upperarm" x="416" y="220" w="80" h="45" pX="0.5" pY="0.5" oX="2" oY="0" oW="84" oH="48"/>
+    <sprite n="JL_upperleg" x="368" y="164" w="46" h="107" pX="0.5" pY="0.5" oX="1" oY="2" oW="48" oH="112"/>
+    <sprite n="RARE_JL_eyelid_01" x="328" y="480" w="25" h="26" pX="0.5" pY="0.5" oX="5" oY="2" oW="32" oH="32"/>
+    <sprite n="RARE_JL_eyelid_02" x="355" y="480" w="25" h="26" pX="0.5" pY="0.5" oX="5" oY="2" oW="32" oH="32"/>
+    <sprite n="RARE_JL_eyelid_03" x="299" y="375" w="25" h="26" pX="0.5" pY="0.5" oX="5" oY="2" oW="32" oH="32"/>
+    <sprite n="tendril01" x="416" y="194" w="83" h="24" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="84" r="y"/>
+    <sprite n="tendril02" x="416" y="156" w="90" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tendril03" x="221" y="375" w="76" h="34" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

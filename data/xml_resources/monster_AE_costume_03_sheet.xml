@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:98145bab779aaa43bcc0e9f3935cf921:e5870e287add03b226ecfb57ee3e37a6:0851b9390f484215e8d660074d79d5d5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AE_costume_03_sheet.png" width="128" height="256" hires="true">
+    <sprite n="AE_flowerlei_layer1.png" x="2" y="2" w="122" h="108" pX="0.5" pY="0.5" oX="0" oY="2" oW="122" oH="110"/>
+    <sprite n="AE_flowerlei_layer2.png" x="2" y="112" w="121" h="102" pX="0.5" pY="0.5" oX="0" oY="8" oW="122" oH="110"/>
+</TextureAtlas>

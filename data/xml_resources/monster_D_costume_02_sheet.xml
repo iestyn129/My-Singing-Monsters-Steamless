@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:45c17eba4dc75c4602c459fdc5e1f841:de6930509af349c1761c540dd9154116:e4b81502f2a9aa2e18cee3ff3cdf399d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<!-- original anchor = (53, 80) -> new anchor (68, 121) diff = (-15, -41)-->
+<!-- add double it to texturepacker output offsets (13, 4) -> (-17, -78), because hires-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_D_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="D_pirate_hat.png" x="2" y="2" w="173" h="272" pX="0.5" pY="0.5" oX="-17" oY="-78" oW="300" oH="200" r="y"/>
+</TextureAtlas>

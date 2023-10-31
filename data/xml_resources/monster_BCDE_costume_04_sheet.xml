@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:737ec5516c2c89a834494338ea092551:0a98635354a17dd99d9ac94eb44a22d4:e7ac8c943205bff63b1cd63a06f050d3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCDE_costume_04_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BCDE_body.png" x="0" y="272" w="296" h="280" r="y"/>
+    <sprite n="BCDE_head.png" x="0" y="0" w="394" h="272"/>
+    <sprite n="BCDE_left_foot.png" x="296" y="272" w="88" h="133" r="y"/>
+    <sprite n="BCDE_left_leg.png" x="394" y="0" w="116" h="120"/>
+    <sprite n="BCDE_left_upper_arm.png" x="394" y="244" w="102" h="142"/>
+    <sprite n="BCDE_right_foot.png" x="394" y="120" w="107" h="124" r="y"/>
+    <sprite n="BCDE_right_leg.png" x="384" y="386" w="128" h="156"/>
+    <sprite n="BCDE_right_upper_arm.png" x="296" y="542" w="184" h="152" r="y"/>
+</TextureAtlas>

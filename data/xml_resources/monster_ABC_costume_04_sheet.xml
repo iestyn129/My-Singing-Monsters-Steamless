@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:166170994042bbc50bd5da9962aab2b1:645c900c65610398e6d8205bb65dcd12:f187796e1ff5f27c0dcb29a264d79137$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABC_costume_04_sheet.png" width="256" height="512" hires="true">
+    <sprite n="ABC_costume_04_antenna_01.png" x="208" y="2" w="42" h="57" pX="0.5" pY="0.5" oX="1" oY="14" oW="60" oH="60" r="y"/>
+    <sprite n="ABC_costume_04_antenna_02.png" x="208" y="122" w="34" h="57" pX="0.5" pY="0.5" oX="1" oY="23" oW="60" oH="60" r="y"/>
+    <sprite n="ABC_costume_04_antenna_03.png" x="190" y="235" w="55" h="30" pX="0.5" pY="0.5" oX="3" oY="30" oW="60" oH="60"/>
+    <sprite n="ABC_costume_04_antenna_04.png" x="208" y="61" w="40" h="59" pX="0.5" pY="0.5" oX="1" oY="17" oW="60" oH="60" r="y"/>
+    <sprite n="ABC_costume_04_antenna_05.png" x="192" y="181" w="57" h="52" pX="0.5" pY="0.5" oX="0" oY="5" oW="60" oH="60"/>
+    <sprite n="ABC_costume_04_antenna_06.png" x="133" y="168" w="57" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="ABC_costume_04_head.png" x="2" y="168" w="129" h="124" pX="0.5" pY="0.5" oX="0" oY="0" oW="130" oH="124"/>
+    <sprite n="ABC_costume_04_tail.png" x="133" y="224" w="55" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_costume_04_torso.png" x="2" y="2" w="204" h="164" pX="0.5" pY="0.5"/>
+</TextureAtlas>

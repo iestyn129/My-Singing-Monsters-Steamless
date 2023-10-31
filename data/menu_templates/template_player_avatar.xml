@@ -1,0 +1,82 @@
+<template name="template_player_avatar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$Scale" equals="0.5*game.menuScaleX()" />
+	<defaultTemplateVar name="$Layer" equals="HUD" />
+	<defaultTemplateVar name="$Flip" equals="0" />
+
+	<!-- <size dependentOnElement="element:name()" dependentOnComponent="Sprite"/> -->
+
+	<size w="50*game.menuScaleX()" h="50*game.menuScaleX()"/>
+	
+	<spriteComponent name="Sprite">
+		
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("size"):SetFloat($Scale)
+					
+					local flip = $Flip
+					if element:HasVar("flip") then
+						flip = element("flip"):GetInt()
+					end
+					
+					component("hFlip"):SetInt(flip)
+					
+					local layer = "$Layer"
+					if element:HasVar("layer") then
+						layer = element("layer"):GetString()
+					end
+					
+					component("layer"):SetString(layer)
+			]]>
+		</event>
+		
+	</spriteComponent>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element:DoStoredScript("Refresh")
+		]]>
+	</event>
+	
+	<event name="Refresh" params="element">
+		<![CDATA[
+				if not element:HasVar("Type") or not element:HasVar("Info") then
+					element["Sprite"]("spriteName"):SetString("gfx/menu/friend_default_pic01")
+					return
+				end
+				
+				local type = element("Type"):GetInt()
+				local info = element("Info"):GetString()
+					
+				if type == 0 then
+					
+					local monsterId = info ~= "" and tonumber(info) or 0
+					
+					if monsterId > 0 then
+						local MonsterPortraits = include("MonsterPortraits")
+						local monsterImage = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+						element["Sprite"]("spriteName"):SetString(monsterImage)
+					else
+						element["Sprite"]("spriteName"):SetString("gfx/menu/friend_default_pic01")
+					end
+				else
+					element["Sprite"]("spriteName"):SetString("gfx/menu/friend_default_pic01")
+				end
+				
+				-- BUG: this doesn't get automatically reapplied when setting the image for some reason...
+				-- so do it again
+				local flip = $Flip
+				if element:HasVar("flip") then
+					flip = element("flip"):GetInt()
+				end
+					
+				element["Sprite"]("hFlip"):SetInt(flip)
+				
+			]]>
+	</event>
+	
+	
+</template>

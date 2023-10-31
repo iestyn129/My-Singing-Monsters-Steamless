@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:da9c33b4ac83a1ed28a4dd9bbb20df41:a7a08c991327f05001989ecff4f671db:bec18b932c65fc6950f17c31b23f3838$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_metal_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="birdbath01" x="251" y="571" w="199" h="343" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="344"/>
+    <sprite n="metalstuff01" x="2" y="2" w="500" h="567" pX="0.5" pY="0.5" oX="1" oY="0" oW="570" oH="500" r="y"/>
+    <sprite n="metalstuff06" x="2" y="571" w="247" h="350" pX="0.5" pY="0.5" oX="0" oY="1" oW="350" oH="250" r="y"/>
+</TextureAtlas>

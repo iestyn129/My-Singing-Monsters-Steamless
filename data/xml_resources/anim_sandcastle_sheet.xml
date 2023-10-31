@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c3f57a7b8e81e06f74033f9a26bbebef:73d7e9480f1578d9352127971faf1df1:f8d54ddfb58796a282e2023bed176b4f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_sandcastle_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ball" x="2" y="736" w="188" h="190" pX="0.5" pY="0.5"/>
+    <sprite n="castle" x="2" y="2" w="486" h="460" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="glow" x="192" y="736" w="140" h="140" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="146"/>
+    <sprite n="plant" x="2" y="464" w="434" h="270" pX="0.5" pY="0.5" oX="0" oY="6" oW="270" oH="440" r="y"/>
+</TextureAtlas>

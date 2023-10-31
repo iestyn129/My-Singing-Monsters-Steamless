@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<template name="template_battle_versus_infopane" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()"/>
+
+	<element name="BG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="80*game.menuScaleX()" yOffset="8*game.menuScaleY()" priorityOffset="11" />
+		<ninesliceComponent name="Sprite">
+			<size w="290*game.menuScaleX()" h="160*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(50.0)
+					component("bottomHeight"):SetFloat(50.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+					component("alpha"):SetFloat(0.0)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<template type="template_battle_menu_tab" name="TeamTab">
+		<position relativeTo="BG" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("tabId"):SetInt(0)
+				element("labelText"):SetString("")
+				element("tabWidth"):SetFloat(240*game.menuScaleX())
+			]]>
+		</event>
+
+		<element name="TeamInfo">
+			<size w="40*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-60*game.menuScaleX()" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+			<textComponent name="Label">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+							component("multiline"):SetInt(0)
+							component("autoScale"):SetInt(1)
+							component("autoScaleFactor"):SetFloat(0.01)
+							component("font"):Set(game.getTextFont())
+							component("size"):SetFloat(0.25*game.menuScaleX())
+							component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+							component("text"):SetString("BATTLE_VERSUS_TEAM")
+							component("layer"):SetString("MidPopUps")
+						]]>
+				</event>
+			</textComponent>
+
+			<textComponent name="Required">
+				<size w="80*game.menuScaleX()" h="10*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="4*game.menuScaleX()" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.2*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString("MidPopUps")
+				]]>
+				</event>
+			</textComponent>
+
+		</element>
+
+		<element name="Beds">
+			
+			<size w="120*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="40*game.menuScaleX()" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+			
+			<textComponent name="Label">
+				<size w="40*game.menuScaleX()" h="30*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("text"):SetString("BATTLE_VERSUS_BEDS")
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+
+			<textComponent name="Current">
+				<size w="40*game.menuScaleX()" h="30*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						--component("autoScale"):SetInt(1)
+						--component("autoScaleFactor"):SetFloat(0.01)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+
+			<textComponent name="Max">
+				<size w="40*game.menuScaleX()" h="30*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						--component("autoScale"):SetInt(1)
+						--component("autoScaleFactor"):SetFloat(0.01)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+
+			<event name="onPostInit" params="element">
+				<![CDATA[
+					element:DoStoredScript("center")
+				]]>
+			</event>
+
+			<event name="center" params="element">
+				<![CDATA[
+					local MenuHelpers = include("MenuHelpers")
+					MenuHelpers.CenterHorizontally({
+						element:GetComponent("Label"),
+						MenuHelpers.CreateSpacer(4*game.menuScaleX(), 0),
+						element:GetComponent("Current"),
+						element:GetComponent("Max")
+					})
+				]]>
+			</event>
+
+		</element>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				local campaignId = game.getBattleVersusCampaignId()
+				local campaignData = game.getBattleCampaignData(campaignId)
+				local currentTier =  game.getBattleVersusPlayerData(campaignId):tier()
+				if(currentTier < 0) then
+					currentTier = 0
+				end
+				local tierData = campaignData.tiers[currentTier]
+				local maxTeamSize = tierData.maxTeamSize
+
+				local selectTeam = element:root():GetElement("TeamView")
+
+				if not selectTeam then
+					print("Couldn't find TeamView!")
+					return
+				end
+
+				local currentBeds = 0
+				for i=0, maxTeamSize-1 do
+					local uniqueMonsterId = selectTeam["entry"..i]("UniqueMonsterId"):GetInt()
+					if uniqueMonsterId > 0 then
+						local monsterTypeId = game.monsterTypeId(uniqueMonsterId)
+						currentBeds  = currentBeds + game.monsterTypeBeds(monsterTypeId)
+					end
+				end
+
+				local bedsElement = element:GetElement("Beds")
+
+				bedsElement["Current"]("text"):SetString(currentBeds)
+				bedsElement["Max"]("text"):SetString("/"..tierData.maxBeds)
+
+				if currentBeds > tierData.maxBeds then
+					bedsElement["Current"]:setColor(1.0, 0, 0)
+				else
+					bedsElement["Current"]:setColor(1.0, 1.0, 1.0)
+				end
+
+				bedsElement:DoStoredScript("center")
+
+			]]>
+		</event>
+
+		<event name="update" params="element">
+			<![CDATA[
+				update(element)
+				local alpha = element("alpha"):GetFloat()
+
+				element["TeamInfo"]["Label"]("alpha"):SetFloat(alpha)
+				element["TeamInfo"]["Required"]("alpha"):SetFloat(alpha)
+
+				element["Beds"]["Label"]("alpha"):SetFloat(alpha)
+				element["Beds"]["Current"]("alpha"):SetFloat(alpha)
+				element["Beds"]["Max"]("alpha"):SetFloat(alpha)
+			]]>
+		</event>
+
+	</template>
+
+	<!-- player team select view-->
+	<element name="TeamView">
+		<size w="290*game.menuScaleX()" h="130*game.menuScaleY()" />
+		<position relativeTo="BG" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewOnInit(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+					include("BattleVersusInfoPaneUI").TeamViewOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="repopulate" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewRepopulate(element)
+			]]>
+		</event>
+
+		<event name="populate" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewPopulate(element)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewShow(element)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewHide(element)
+			]]>
+		</event>
+
+		<event name="onEntrySelected" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").TeamViewOnEntrySelected(element)
+			]]>
+		</event>
+
+	</element>
+
+	<!-- Start Button-->
+	<template type="template_spritesheetbutton" name="StartBattleButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.45*game.menuScaleX()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$lockEnabled" equals="'1'" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="10" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					include("BattleVersusInfoPaneUI").StartButtonOnTouchUp(component, element)
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					onTouchRelease(component, element)
+					if element("canStart"):GetInt() == 0 then
+						element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+					end
+				]]>
+			</event>
+		</touchComponent>
+
+		<textComponent name="Label">
+			<size w="90*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("alpha"):SetFloat(0.0)
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("FIND_A_MATCH")
+					component("layer"):SetString("MidPopUps")
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").StartButtonOnPostInit(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				onTick(element, dt)
+				include("BattleVersusInfoPaneUI").StartButtonOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="enable" params="element">
+			<![CDATA[
+				enable(element)
+				include("BattleVersusInfoPaneUI").StartButtonEnable(element)
+			]]>
+		</event>
+
+		<event name="disable" params="element">
+			<![CDATA[
+				disable(element)
+				include("BattleVersusInfoPaneUI").StartButtonDisable(element)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").StartButtonShow(element)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").StartButtonHide(element)
+			]]>
+		</event>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				include("BattleVersusInfoPaneUI").StartButtonRefresh(element)
+			]]>
+		</event>
+
+	</template>
+
+	<!-- events -->
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").onInit(element)
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").onPostInit(element)
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").onTick(element, dt)
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").show(element)
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").hide(element)
+		]]>
+	</event>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+			include("BattleVersusInfoPaneUI").refresh(element)
+		]]>
+	</event>
+
+	<!-- Select Monsters Popup -->
+	<template type="template_battle_campaign_monster_select" name="SelectMonstersPopup">
+		<templateVar name="$isPVP" equals="true"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="8" />
+	</template>
+
+	<!-- Progress Information -->
+	<template type="template_battle_progress" name="ProgressInfo">
+		<templateVar name="$PopulateScript" equals="BattleVersusProgressUI"/>
+		<position relativeTo="BG" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+
+		<event name="OnProgressPanelShow" params="element">
+			<![CDATA[
+				local infoPaneElement = element:parent()
+				local versusPopup = infoPaneElement:parent()
+			
+				if versusPopup("showingSeasonInfo"):GetInt() == 1 then
+					versusPopup:GetElement("SeasonCard"):DoStoredScript("hide")
+				end
+				
+				if versusPopup("showingChampionInfo"):GetInt() == 1 then
+					versusPopup:GetElement("ChampionCard"):DoStoredScript("hide")
+				end
+			]]>
+		</event>
+
+		<event name="OnProgressPanelHide" params="element">
+			<![CDATA[
+				local infoPaneElement = element:parent()
+				local versusPopup = infoPaneElement:parent()
+			
+				if versusPopup("showingSeasonInfo"):GetInt() == 1 then
+					versusPopup:GetElement("SeasonCard"):DoStoredScript("show")
+				end
+				
+				if versusPopup("showingChampionInfo"):GetInt() == 1 then
+					versusPopup:GetElement("ChampionCard"):DoStoredScript("show")
+				end
+			]]>
+		</event>
+
+	</template>
+
+</template>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a016fa21c283d235269731d5ea140aa1:bda30d1643133991a243a4f05f3b6706:630f542a485d484bba5e921671aac531$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<!-- original anchor = (27.375, 6.2) -> new anchor (27, 14) diff = (0.375, -7.8)-->
+<!-- add double it to texturepacker output offsets (2, 8) -> (2.75, -7.6), because hires-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_BE_costume_02_sheet.png" width="64" height="128" hires="true">
+    <sprite n="BE_leaf_maple.png" x="2" y="2" w="53" h="65" pX="0.5" pY="0.5" oX="2.75" oY="-7.6" oW="70" oH="70" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="8" />		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="MonsterBg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10" priorityOffset="5" />
+		<event name="onInit" params="element">
+			element("clipY"):SetInt((element:absY() + element:parent():GetElement("TitleFrame"):absH()))
+			element("clipH"):SetInt((element:absH()-60))
+		</event>
+		<ninesliceComponent name="Sprite">
+			<size w="235*game.menuScaleX()" h="225*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+				game.setClipping("Clipping", 0, element("clipY"):GetInt()*lua_sys.deviceScaleY(), 
+					lua_sys.screenWidth()*lua_sys.deviceScaleX(), element("clipH"):GetInt()*lua_sys.deviceScaleY())
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MonsterBg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="235*game.menuScaleX()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size h="35" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component:setColor(0.43, 0.98, 0.02)
+				component("text"):SetString("CHOOSE_MONSTER")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="NoMonstersText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="200*game.menuScaleX()" h="200*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CHANGE_NO_MONSTERS_TEXT")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterList">
+		<size w="235*game.menuScaleX()" h="(215*game.menuScaleY())-50" />
+		<position relativeTo="MonsterBg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component:GetVar("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+				
+				local numChoices = element("NumChoices"):GetInt()
+				
+				if(numChoices > 0) then
+					local totalHeight = numChoices * (element:parent():GetElement("monsterEntry0"):absH() + 14)
+	
+					if(totalHeight &gt; element:absH()) then
+						component:setScrollSize(totalHeight - element:absH())
+					else
+						component:setScrollSize(0)
+					end
+				end
+			</event>
+			<event name="onTick" params="component, element, dt">
+				local first = element:parent():GetElement("monsterEntry0")
+				if(first) then
+					local offset = component:scrollOffset()
+					if(first:getOrientationPosition().y ~= offset) then
+						first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), offset))
+					end
+				end
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="MonsterBg" dependentOnComponent="Sprite" />					
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>					
+		</touchComponent>
+		<event name="onInit" params="element">	
+			local monsterIds = game.composerHidingVector(true)
+			local numMonsters = monsterIds:size()-1
+			local previous = nil
+			
+			for i=0,numMonsters do
+				local choiceEntry = menu:addTemplateElement("template_composerchoice", "monsterEntry"..i, element)
+				
+				choiceEntry("MonsterID"):SetInt(monsterIds[i])
+				
+				if(previous == nil) then
+					choiceEntry:setParent(element)
+					choiceEntry:setOrientation(lua_sys.MenuOrientation(16,0,-2, lua_sys.HCENTER, lua_sys.TOP))
+					choiceEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+				else
+					choiceEntry:setParent(previous)
+					choiceEntry:setOrientation(lua_sys.MenuOrientation(0,14,0, lua_sys.HCENTER, lua_sys.TOP))
+					choiceEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+				end
+				
+				previous = choiceEntry
+				
+				choiceEntry:init()
+				choiceEntry:setPositionBroadcast(true)
+			end
+			
+			element("NumChoices"):SetInt(numMonsters + 1)
+			
+			if(numMonsters + 1 ~= 0) then
+				element:parent()["NoMonstersText"]["Text"]("visible"):SetInt(0)
+			end
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="ExitButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="MonsterBg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="10" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.composerChangeMonster(-1)
+				element:parent():root():popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+</menu>

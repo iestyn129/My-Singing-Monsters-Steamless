@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:88ef88d49b00f5c2a10dd7a0685a4872:91e1341aa7969016adfc573ef77e3b79:57d93d7a1c3bdde6fee4da6f8cfeaa08$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island15_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="BackRim" x="1569" y="548" w="408" h="667" pX="0.5" pY="0.5" oX="1" oY="1" oW="409" oH="668"/>
+    <sprite n="BrainBig" x="2" y="1417" w="362" h="611" pX="0.5" pY="0.5" oX="2" oY="4" oW="615" oH="366" r="y"/>
+    <sprite n="BrainMedium" x="1569" y="278" w="452" h="268" pX="0.5" pY="0.5"/>
+    <sprite n="BrainSmall" x="923" y="1880" w="228" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="claw1" x="1303" y="603" w="252" h="370" pX="0.5" pY="0.5"/>
+    <sprite n="claw2" x="1280" y="278" w="286" h="323" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="claw3" x="984" y="613" w="271" h="344" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ClawBack" x="923" y="1417" w="378" h="461" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="MouthTentacle01" x="984" y="2" w="294" h="401" pX="0.5" pY="0.5"/>
+    <sprite n="MouthTentacle02" x="1153" y="1880" w="414" h="133" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="1640" y="1217" w="363" h="356" pX="0.5" pY="0.5" oX="0" oY="7" oW="356" oH="376" r="y"/>
+    <sprite n="SideEyeMandableClosed" x="2" y="2" w="980" h="1413" pX="0.5" pY="0.5"/>
+    <sprite n="Tentacle01" x="984" y="405" w="283" h="206" pX="0.5" pY="0.5"/>
+    <sprite n="Tentacle02" x="1303" y="1217" w="335" h="632" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Tentacle03" x="984" y="975" w="370" h="233" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Tentacle04" x="603" y="1417" w="318" h="504" pX="0.5" pY="0.5"/>
+    <sprite n="Tentacle05" x="603" y="1923" w="198" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="199" r="y"/>
+    <sprite n="Tentacle06" x="366" y="1417" w="235" h="527" pX="0.5" pY="0.5"/>
+    <sprite n="Tentacle07" x="1303" y="2" w="721" h="274" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

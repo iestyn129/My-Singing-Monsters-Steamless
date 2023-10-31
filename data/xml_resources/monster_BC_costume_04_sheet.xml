@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:18e60bc4b4e3da0d9c2a0cf1a5b0f37a:c45f6c66f788960f7f14c486573c245a:71e91a85f6a919027815d4cc7e208d1c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BC_costume_04_sheet.png" width="128" height="256" hires="true">
+	<!-- original anchor = (30, 26) -> new anchor (40, 44) diff = (-10, -18)-->
+	<!-- add double it to texturepacker output offsets (3, 1) -> (-17, -35), cause hires-->
+    <sprite n="BC_thumpie_hat.png" x="2" y="2" w="82" h="125" oX="-17" oY="-35" oW="132" oH="88" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:88675ceee9913b4a7c310b91fd551d1b:c147ef1e2340fc5556fc6be1bb2465c7:517b6962abfcb3e9b8ab2f978c484851$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_S03_costume_01_sheet.png" width="256" height="512" hires="true">
+
+    <!-- original anchor = (30, 9) -> new anchor (29, 18) diff = (1, -9)-->
+	<!-- add double it to texturepacker output offsets (2, 2) -> (4, -16), because hires-->
+    <sprite n="S03_arm_pauldron.png" x="196" y="65" w="55" h="45" pX="0.5" pY="0.5" oX="4" oY="-16" oW="50" oH="60" r="y"/>
+
+    <!-- original anchor = (6, 5) -> new anchor (43, 0) diff = (-37, 5)-->
+	<!-- add double it to texturepacker output offsets (3, 4) -> (-71, 14), because hires-->
+    <sprite n="S03_arrow.png" x="2" y="65" w="192" h="33" pX="0.5" pY="0.5" oX="-71" oY="14" oW="200" oH="40"/>
+
+    <sprite n="S03_body.png" x="2" y="249" w="176" h="136" pX="0.5" pY="0.5" oX="0" oY="2" oW="176" oH="140"/>
+
+    <!-- original anchor = (6, 5) -> new anchor (57, 19) diff = (-51, -14)-->
+	<!-- add double it to texturepacker output offsets (9, 12) -> (-93, -16), because hires-->
+    <sprite n="S03_bow.png" x="2" y="2" w="232" h="61" pX="0.5" pY="0.5" oX="-93" oY="-16" oW="250" oH="80"/>
+
+    <!-- original anchor = (17, 45) -> new anchor (33, 69) diff = (-16, -24)-->
+	<!-- add double it to texturepacker output offsets (6, 1) -> (-26, -47), because hires-->
+    <sprite n="S03_left_head.png" x="90" y="387" w="153" h="96" pX="0.5" pY="0.5" oX="-26" oY="-47" oW="120" oH="160" r="y"/>
+
+    <sprite n="S03_leg.png" x="184" y="112" w="54" h="91" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="96"/>
+
+    <!-- original anchor = (44, 50) -> new anchor (70, 80) diff = (-26, -30)-->
+	<!-- add double it to texturepacker output offsets (7, 0) -> (-45, -60), because hires-->
+    <sprite n="S03_quiver.png" x="2" y="387" w="86" h="100" pX="0.5" pY="0.5" oX="-45" oY="-60" oW="100" oH="100"/>
+
+    <!-- original anchor = (17, 54) -> new anchor (41, 76) diff = (-24, -22)-->
+	<!-- add double it to texturepacker output offsets (0, 21) -> (-48, -23), because hires-->
+    <sprite n="S03_right_head.png" x="2" y="100" w="180" h="147" pX="0.5" pY="0.5" oX="-48" oY="-23" oW="180" oH="180"/>
+</TextureAtlas>

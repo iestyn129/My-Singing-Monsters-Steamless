@@ -1,0 +1,293 @@
+<template name="template_underlinginventoryentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<!-- used in underling_inventory.xml (via breeding menu) and underling box_inventory.xml (via inventory menu) 
+	shows eggs -->
+	
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<event name="onInit" params="element">
+		element:populateNumGenes()
+	</event>
+
+	<event name="onPostInit" params="element">
+		if(game.inAdminViewMode()) then
+			element["upArrow"]["Sprite"]("visible"):SetInt(1)
+			element["downArrow"]["Sprite"]("visible"):SetInt(1)
+		else
+			element["upArrow"]["Sprite"]("visible"):SetInt(0)
+			element["downArrow"]["Sprite"]("visible"):SetInt(0)
+		end
+	</event>
+	<event name="select" params="element">
+		element["CharacterImage"]["Sprite"]:setColor(0.25, 0.25, 0.25)
+		element["MonsterName"]["Text"]:setColor(0.25, 0.25, 0.25)
+		
+		local numGenes = element.flexEggDef:exactNumGenes()
+
+		for i=0, numGenes-1 do
+		
+			local geneEntry = element:GetElement("geneEntry"..i)
+			if(geneEntry ~= nil) then
+				geneEntry["Sprite"]:setColor(0.25, 0.25, 0.25)
+			end
+		end
+		
+		--green to show it's done:
+		element["RequiredNum"]["Text"]:setColor(0.0, 1.0, 0.0)
+		element["DividerBecauseIDontCare"]["Text"]:setColor(0.0, 1.0, 0.0)
+		element["PossessedNum"]["Text"]:setColor(0.0, 1.0, 0.0)
+	</event>
+	
+	<event name="deselect" params="element">
+		element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		--red to show they need something:
+		element["PossessedNum"]["Text"]:setColor(1.0, 0.0, 0.0)
+	</event>
+
+	<event name="populateNumGenes" params="element">
+		<![CDATA[
+		local numGenes = element.flexEggDef:exactNumGenes()
+
+		local previous = nil
+		local prefix = "flex_egg_icon_"
+		
+		local firstGeneOffset = 0
+		local geneWidth = 0
+		
+		if(numGenes > 0) then
+			--no room for both monster name and gene pictures:
+			element:E("MonsterName"):C("Text"):V("visible"):SetInt(0)
+		end
+		
+		for i=0, numGenes-1 do
+			
+			local geneEntry = menu:addTemplateElement("template_gene", "geneEntry"..i, element)
+
+			local containsGene = element.flexEggDef:gene(i)
+			local sprite = prefix
+			if(containsGene ~= '\0') then
+				sprite = sprite..string.lower(containsGene)
+			end
+
+			geneEntry("SpriteName"):SetString(sprite)
+			geneEntry("SheetName"):SetString("xml_resources/flex_egg_icon_sheet.xml")
+			geneEntry("Size"):SetFloat(0.5*game.hudScale())
+			geneEntry("Layer"):SetString("Clipping")
+
+			geneEntry:setParent(element)
+
+			if(previous == nil) then
+				geneEntry:relativeTo(element:E("CharacterImage"))
+				geneEntry:setOrientation(lua_sys.MenuOrientation(0, 0, -2, lua_sys.HCENTER, lua_sys.VCENTER))
+				geneEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+			else
+				geneEntry:relativeTo(previous)
+				geneEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.VCENTER))
+				geneEntry:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.VCENTER)
+			end
+			
+			previous = geneEntry
+
+			geneEntry:setPositionBroadcast(false)
+			geneEntry:init()
+			
+			if(geneWidth == 0) then
+				geneWidth = geneEntry:C("Sprite"):absW()
+			end
+			
+			if(i == 0) then
+				geneEntry:V("xOffset"):SetFloat(-geneWidth/2 * (numGenes-1))
+			end
+
+			i=i+1
+		end
+		]]>
+	</event>
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				local sporeGfx = element:parent().flexEggDef:eggSprite()
+				if(sporeGfx == "") then
+					sporeGfx = "spore_F"
+				end
+				component("spriteName"):SetString(sporeGfx)
+				component("sheetName"):SetString("xml_resources/"..sporeGfx..".xml")
+				component("size"):SetFloat(0.75*game.hudScale())
+				component("visible"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Spacer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="CharacterImage" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("flex_egg_icon_")
+				component("sheetName"):SetString("xml_resources/flex_egg_icon_sheet.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="MonsterName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="CharacterImage" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="1265*lua_sys.screenWidth() / 480.0"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(element:parent().flexEggDef:strTitle())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="DividerBecauseIDontCare">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="Spacer" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*20*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("/")
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="PossessedNum">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="DividerBecauseIDontCare" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(""..element:parent()("possessed"):GetInt())
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="RequiredNum">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="DividerBecauseIDontCare" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(""..element:parent()("required"):GetInt())
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element("actualWidth"):GetInt(), element("actualHeight"):GetInt()));
+		</event>
+		<event name="onTouchUp" params="component, element, x, y">
+			<![CDATA[
+			
+				if(component("dragging"):GetInt() < 2) then
+				
+					if(game.inAdminViewMode()) then
+					
+						local upPosX = element:GetElement("upArrow"):absX();
+						local upPosY = element:GetElement("upArrow"):absY();
+						
+						local downPosX = element:GetElement("downArrow"):absX();
+						local downPosY = element:GetElement("downArrow"):absY();
+						
+						if(upPosX < x and x < ( upPosX + element:GetElement("upArrow"):absW() ) and
+							upPosY < y and y < ( upPosY + element:GetElement("upArrow"):absH() )) then
+							
+							game.adminBoxMonsterToggleOn(element.flexEggDef)
+							
+						elseif(downPosX < x and x < (downPosX + element:GetElement("downArrow"):absW() ) and 
+							downPosY < y and y < (downPosY + element:GetElement("downArrow"):absH())) then
+							
+							game.adminBoxMonsterToggleOff(element.flexEggDef)
+						end
+					end
+				end
+				
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+	</touchComponent>
+	
+	<element name="upArrow" params="element">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.65 * game.menuScaleX())
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+		
+	</element>
+	<element name="downArrow" params="element">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.65 * game.menuScaleX())
+				component("hFlip"):SetInt(1)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+		
+	</element>
+	
+</template>

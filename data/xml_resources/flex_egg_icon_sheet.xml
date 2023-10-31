@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:34d4ca6360e41c12899a4fa0c9bde673:b3cd83c72bbf35ef65e0ea32331685b9:6c457262ed4f860d754f9aca132a15c8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/flex_egg_icon_sheet.png" width="256" height="256">
+    <sprite n="flex_egg_icon_" x="2" y="40" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_a" x="2" y="77" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_b" x="2" y="114" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_c" x="2" y="151" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_d" x="2" y="188" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_e" x="38" y="40" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_n" x="40" y="2" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_r" x="38" y="77" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_v" x="38" y="114" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="flex_egg_icon_w" x="2" y="2" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="flex_egg_icon_y" x="38" y="151" w="34" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+</TextureAtlas>

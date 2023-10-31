@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c545f4a9102c702d46025f83751fa6b0:375cd5fa6f44e1add4114788babac9f9:064b0e831e283879a36e856cd01fd4c3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AE_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AE_beak_01" x="2" y="338" w="107" h="121" pX="0.5" pY="0.5" oX="9" oY="3" oW="130" oH="110" r="y"/>
+    <sprite n="AE_beak_02" x="201" y="130" w="122" h="107" pX="0.5" pY="0.5" oX="8" oY="3" oW="130" oH="110"/>
+    <sprite n="AE_beak_03" x="2" y="232" w="122" h="104" pX="0.5" pY="0.5" oX="8" oY="3" oW="130" oH="110"/>
+    <sprite n="AE_beak_04" x="2" y="129" w="123" h="101" pX="0.5" pY="0.5" oX="7" oY="4" oW="130" oH="110"/>
+    <sprite n="AE_beak_05" x="365" y="68" w="124" h="99" pX="0.5" pY="0.5" oX="6" oY="3" oW="130" oH="110"/>
+    <sprite n="AE_beak_06" x="111" y="338" w="107" h="121" pX="0.5" pY="0.5" oX="9" oY="3" oW="130" oH="110" r="y"/>
+    <sprite n="AE_body_RARE" x="205" y="2" w="158" h="126" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_eyelid_01_EPIC" x="220" y="449" w="53" h="61" pX="0.5" pY="0.5" oX="0" oY="1" oW="62" oH="54" r="y"/>
+    <sprite n="AE_eyelid_02_EPIC" x="275" y="449" w="53" h="61" pX="0.5" pY="0.5" oX="0" oY="1" oW="62" oH="54" r="y"/>
+    <sprite n="AE_eyelid_03_EPIC" x="286" y="321" w="53" h="61" pX="0.5" pY="0.5" oX="0" oY="1" oW="62" oH="54" r="y"/>
+    <sprite n="AE_eyelid_04_EPIC" x="286" y="384" w="53" h="61" pX="0.5" pY="0.5" oX="0" oY="1" oW="62" oH="54" r="y"/>
+    <sprite n="AE_head_EPIC" x="2" y="2" w="201" h="125" pX="0.5" pY="0.5" oX="1" oY="3" oW="204" oH="130"/>
+    <sprite n="AE_left_foot_RARE" x="195" y="239" w="55" h="86" pX="0.5" pY="0.5" oX="10" oY="0" oW="96" oH="60" r="y"/>
+    <sprite n="AE_left_leg" x="126" y="285" w="54" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_lowerarm_RARE" x="220" y="327" w="64" h="120" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="140"/>
+    <sprite n="AE_left_upperarm" x="127" y="129" w="72" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_pupil_EPIC" x="491" y="68" w="13" h="20" pX="0.5" pY="0.5" oX="4" oY="0" oW="20" oH="20"/>
+    <sprite n="AE_right_foot_RARE" x="252" y="239" w="57" h="80" pX="0.5" pY="0.5" oX="3" oY="0" oW="60" oH="80"/>
+    <sprite n="AE_right_leg" x="330" y="447" w="54" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_lowerarm_RARE" x="365" y="2" w="140" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_upperarm" x="127" y="193" w="66" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="AE_shadow" x="2" y="461" w="80" h="40" pX="0.5" pY="0.5"/>
+</TextureAtlas>

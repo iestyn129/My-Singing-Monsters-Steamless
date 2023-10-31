@@ -1,0 +1,423 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$priority" equals="6" />
+		<templateVar name="$touchPriority" equals="-2" />
+		<templateVar name="$transitionDuration" equals="0.01" />
+	</template>
+
+	<spriteComponent name="flash">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(1.0, 1.0, 1.0)
+					component("layer"):SetString("FrontPopUps")
+					component("alpha"):SetFloat(0)
+					component("visible"):SetInt(0)
+				]]>
+		</event>
+	</spriteComponent>
+
+	<template type="template_panel_decorated" name="MainPanel">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$endY" equals="-30*game.hudScale()" />
+		<templateVar name="$transitionDuration" equals="0.01" />
+		<!-- This should match popup_hatch_monster's dimensions -->
+		<size w="340*game.hudScale()" h="230*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.hudScale()" yOffset="screenHeight() * 2.0" priorityOffset="4" />
+	</template>
+
+	<element name="PreNotification">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="MainPanel" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="22*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(game.getLocalizedText("HATCH_FANFARE_TAP_EGG"))
+					component:setColor(0.45, 0.95, 0.1)
+					component("size"):SetFloat(0.4*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+					component:calculatePosition()
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="PostNotificationMonsterName">
+		<size w="200*game.menuScaleX()" h="48*game.menuScaleX()"/>
+		<position relativeTo="MainPanel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-80*game.menuScaleX()" yOffset="10*game.menuScaleX()" priorityOffset="-1" />
+
+		<textComponent name="Text">
+			<size w="200*game.menuScaleX()" h="48*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("autoScale"):SetInt(1)
+					component("multiline"):SetInt(0)
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.6*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="PostNotificationTop">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PostNotificationMonsterName" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="16*game.menuScaleX()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("HATCH_FANFARE_RESULTS_HEADER")
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>		
+	</element>
+
+	<element name="PostNotificationClass">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PostNotificationMonsterName" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="16*game.menuScaleX()" priorityOffset="0" />
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("autoScale"):SetInt(1)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("HATCH_FANFARE_CLASS")
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="PostNotificationElements">
+		<size w="120*game.menuScaleX()" h="32*game.menuScaleX()"/>
+		<position relativeTo="PostNotificationClass" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="8*game.menuScaleX()" priorityOffset="0" />
+
+		<textComponent name="Text">
+			<size w="72*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("autoScale"):SetInt(1)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("text"):SetString("HATCH_FANFARE_ELEMENTS")
+					component("size"):SetFloat(0.25*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+		
+		<template type="template_genes" name="Genes">
+			<templateVar name="$Layer" equals="FrontPopUps" />
+			<templateVar name="$Size" equals="0.4*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="element">
+			</event>
+		</template>
+
+		<event name="setVisible" params="element">
+			<![CDATA[
+				element["Text"]("visible"):SetInt(1)
+				element["Genes"]:DoStoredScript("show")
+			]]>
+		</event>
+
+		<event name="setInvisible" params="element">
+			<![CDATA[
+				element["Text"]("visible"):SetInt(0)
+				element["Genes"]:DoStoredScript("hide")
+			]]>
+		</event>
+
+		<event name="updateAlpha" params="element">
+			<![CDATA[
+				local alpha = element("alpha"):GetFloat()
+				element["Text"]("alpha"):SetFloat(alpha)
+				element["Genes"]("alpha"):SetFloat(alpha)
+				element["Genes"]:DoStoredScript("update")
+			]]>
+		</event>
+		
+	</element>
+
+	<element name="EggImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MainPanel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="16*game.hudScale()" priorityOffset="0" />
+
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/egg_crack.bin")
+					component("animation"):SetString("idle")
+					component("visible"):SetInt(1)
+					component:setScale(Vector2(game.hudScale(), game.hudScale()))
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</aeComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+
+		<aeComponent name="TapParticles">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0*game.hudScale()" yOffset="0*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/egg_crack.bin")
+					component("animation"):SetString("tap effcts")
+					component:setScale(Vector2(1.0*game.hudScale(), 1.0*game.hudScale()))
+					component("visible"):SetInt(1)
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</aeComponent>
+
+		<spriteComponent name="Glow">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("gfx/particles/egg_dot")
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="Arrow">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MainPanel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="64*game.hudScale()" priorityOffset="1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="-16*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/tutorial_arrow01.bin")
+					component("animation"):SetString("tutorial_arrow01")
+					component:setScale(Vector2(0.75*game.hudScale(), 0.75*game.hudScale()))
+					component("visible"):SetInt(1)
+					component("vFlip"):SetInt(1)
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<element name="NewLabel">
+		<size w="52*game.hudScale()" h="52*game.hudScale()" />
+		<position relativeTo="PostNotificationTop" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0*game.hudScale()" yOffset="16*game.hudScale()" priorityOffset="0" />
+	
+		<ninesliceComponent name="Sprite">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(49.0)
+					component("bottomHeight"):SetFloat(49.0)
+					component("leftWidth"):SetFloat(49.0)
+					component("rightWidth"):SetFloat(49.0)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+		
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5" yOffset="5" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.3*game.hudScale())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component:setColor(0.31, 0.94, 0.26)
+						component("rotation"):SetFloat(-0.25)
+						component("layer"):SetString("FrontPopUps")
+						component("text"):SetString("NEW")
+				]]>
+			</event>
+		</textComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+		</touchComponent>
+		
+	</element>
+
+	<element name="BorderTop">
+		<size w="screenWidth()" h="128*game.hudScale()"/>
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-128*game.hudScale()" priorityOffset="4" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(0.0, 0.0, 0.0)
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="BorderBottom">
+		<size w="screenWidth()" h="128*game.hudScale()"/>
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="128*game.hudScale()" priorityOffset="4" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(0.0, 0.0, 0.0)
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="BGGradient">
+		<size w="screenWidth()" h="screenHeight()"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="6" />
+		<spriteComponent name="Sprite"/>
+	</element>
+
+	<element name="BGPattern">
+		<size w="screenWidth()" h="screenHeight()"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<spriteComponent name="Sprite"/>
+	</element>
+	
+	<element name="MonsterAnim">
+		<size w ="300*game.menuScaleX()" h="300*game.menuScaleX()"/>
+		<!--<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />-->
+		<position relativeTo="MainPanel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="32* game.hudScale()" priorityOffset="0" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/monster_b.bin")
+					component("animation"):SetString( "Store" )
+					component:setScale(Vector2(1.0*game.menuScaleX(), 1.0*game.menuScaleX()))
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</aeComponent>
+		<particleComponent name="Particles">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+						component("layer"):SetString("FrontPopUps")
+						component("psi"):SetString("particles/particle_growing_stars.psi")
+						component("image"):SetString("gfx/particles/particle_star")
+						component:setScale(Vector2(game.menuScaleX(), game.menuScaleX()))
+						component("prewarm"):SetFloat(5.0)
+					]]>
+			</event>
+		</particleComponent>
+		<!--
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		</touchComponent>
+		-->
+	</element>
+
+	<element name="ContinueLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-64*game.hudScale()" priorityOffset="3" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("FrontPopUps")
+					component("text"):SetString("TAP_TO_CONTINUE")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="SkipButton">
+		<templateVar name="$upSpriteName" equals="button_continue_green" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.3*game.hudScale()" />
+		<templateVar name="$text" equals="SKIP" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="8*game.hudScale()" yOffset="8*game.hudScale()" priorityOffset="3" />
+		<touchComponent name="Touch"/>
+	</template>
+
+	<script src="scripts/MonsterHatchFanfare.lua" />
+	
+</menu>

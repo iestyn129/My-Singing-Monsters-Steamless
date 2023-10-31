@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_admin_panel" name="AdminPanel">
+		<position relativeTo="element:root():GetElement(&quot;GoalsButton&quot;)" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="32" priorityOffset="0" />
+	</template>
+	
+</menu>

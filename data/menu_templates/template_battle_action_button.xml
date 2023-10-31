@@ -1,0 +1,277 @@
+<template name="template_battle_action_button" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="130*game.battleScale()" h="26*game.battleScale()" />
+
+	<spriteSheetComponent name="BG">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="10" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_battle_attack")
+				component("sheetName"):SetString("xml_resources/element_buttons.xml")
+				component("size"):SetFloat(0.4*game.battleScale())
+				component("layer"):SetString("HUD")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="BG"/>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[				
+				local buttonId = element("buttonId"):GetInt()
+				game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Attack, buttonId))
+				element["BG"]:setColor(1.0, 1.0, 1.0)
+				--element["Button"]["Touch"]:DoStoredScript("onTouchUp")
+				include("Button").onRelease(element)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element">
+			<![CDATA[
+				element["BG"]:setColor(0.5, 0.5, 0.5)
+				--element["Button"]["Touch"]:DoStoredScript("onTouchDown")
+				include("Button").onPress(element)
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				element["BG"]:setColor(1.0, 1.0, 1.0)
+				--element["Button"]["Touch"]:DoStoredScript("onTouchRelease")
+				include("Button").onRelease(element)
+			]]>
+		</event>
+	</touchComponent>
+
+	<spriteSheetComponent name="Icon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="16*game.battleScale()" yOffset="2*game.battleScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("monster_portrait_random02")
+				component("sheetName"):SetString("xml_resources/element_buttons.xml")
+				
+				local buttonScale = 0.4*game.battleScale()
+				
+				component("size"):SetFloat(buttonScale)
+				component("layer"):SetString("HUD")
+				
+				include("Button").onInit(element, {componentName="Icon", buttonScale=buttonScale})
+			]]>
+		</event>
+
+		<event name="onTick" params="component, element, dt">
+			<![CDATA[
+				include("Button").onTick(element, dt)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="ActionName">
+		<size w="92*game.battleScale()" h="24*game.battleScale()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="36*game.battleScale()" yOffset="9*game.battleScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("size"):SetFloat(0.25*game.battleScale())
+				component("layer"):SetString("HUD")
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="ActionTypeName">
+		<size w="60*game.battleScale()" h="12*game.battleScale()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="38*game.battleScale()" yOffset="16*game.battleScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("size"):SetFloat(0.16*game.battleScale())
+				component("layer"):SetString("HUD")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
+		</event>
+	</textComponent>
+
+	<spriteSheetComponent name="LockedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="16*game.battleScale()" yOffset="2*game.battleScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("monster_portrait_locked")
+				component("sheetName"):SetString("xml_resources/element_buttons.xml")
+				component("size"):SetFloat(0.4*game.battleScale())
+				component("layer"):SetString("HUD")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="LockedText">
+		<size w="92*game.battleScale()" h="32*game.battleScale()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="36*game.battleScale()" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+						component("multiline"):SetInt(0)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("text"):SetString("LOCKED")
+						component("size"):SetFloat(0.3*game.battleScale())
+						component("layer"):SetString("HUD")
+						component:setColor(0.5, 0.5, 0.5)
+					]]>
+		</event>
+	</textComponent>
+
+	<spriteSheetComponent name="ElementalStrength">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0*game.battleScale()" yOffset="-4*game.battleScale()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("battle_arow_up")
+				component("sheetName"):SetString("xml_resources/element_buttons.xml")
+				component("size"):SetFloat(0.2*game.battleScale())
+				component("layer"):SetString("HUD")
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("buttonId"):SetInt(-1)
+			element("locked"):SetInt(0)
+			element("elementalResistance"):SetFloat(0)
+		]]>
+	</event>
+	
+	<event name="setVisible" params="element">
+		<![CDATA[
+			--element["Button"]:DoStoredScript("setVisible")
+			local locked = element("locked"):GetInt() == 1
+			if locked then
+				element["Icon"]("visible"):SetInt(0)
+				element["ActionName"]("visible"):SetInt(0)
+				element["ActionTypeName"]("visible"):SetInt(0)
+				element["LockedIcon"]("visible"):SetInt(1)
+				element["LockedText"]("visible"):SetInt(1)
+				element["LockedText"]("autoScale"):SetInt(1)
+				element["ElementalStrength"]("visible"):SetInt(0)
+				element["BG"]("visible"):SetInt(1)
+			else
+				element["Icon"]("visible"):SetInt(1)
+				element["Touch"]("enabled"):SetInt(1)
+				element["ActionName"]("visible"):SetInt(1)
+				element["ActionTypeName"]("visible"):SetInt(1)
+				element["LockedIcon"]("visible"):SetInt(0)
+				element["LockedText"]("visible"):SetInt(0)
+				if element("elementalResistance"):GetFloat() ~= 0 then
+					element["ElementalStrength"]("visible"):SetInt(1)
+				else
+					element["ElementalStrength"]("visible"):SetInt(0)
+				end
+				element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			--element["Button"]:DoStoredScript("setInvisible")
+			element["Touch"]("enabled"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["ActionName"]("visible"):SetInt(0)
+			element["ActionTypeName"]("visible"):SetInt(0)
+			element["LockedIcon"]("visible"):SetInt(0)
+			element["LockedText"]("visible"):SetInt(0)
+			element["ElementalStrength"]("visible"):SetInt(0)
+			element["BG"]("visible"):SetInt(0)
+		]]>
+	</event>
+	
+	<event name="setEnabled" params="element">
+		<![CDATA[
+			element["Icon"]:setColor(1.0, 1.0, 1.0)
+			element["ActionName"]:setColor(1.0, 1.0, 1.0)
+			element["ActionTypeName"]:setColor(1.0, 1.0, 1.0)
+			element["ElementalStrength"]:setColor(1.0, 1.0, 1.0)
+			element["BG"]:setColor(1.0, 1.0, 1.0)
+			
+			element:DoStoredScript("setVisible")
+		]]>
+	</event>
+	
+	<event name="setDisabled" params="element">
+		<![CDATA[
+			--element["Button"]:DoStoredScript("disable")
+			element["Touch"]("enabled"):SetInt(0)
+			element["Icon"]:setColor(0.5, 0.5, 0.5)
+			element["ActionName"]:setColor(0.5, 0.5, 0.5)
+			element["ActionTypeName"]:setColor(0.5, 0.5, 0.5)
+			element["ElementalStrength"]:setColor(0.5, 0.5, 0.5)
+			element["BG"]:setColor(0.5, 0.5, 0.5)
+		]]>
+	</event>
+
+	<event name="setLocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(1)
+			--element["Button"]:DoStoredScript("disable")
+			element["Touch"]("enabled"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["ActionName"]("visible"):SetInt(0)
+			element["ActionTypeName"]("visible"):SetInt(0)
+			element["LockedIcon"]("visible"):SetInt(1)
+			element["LockedText"]("visible"):SetInt(1)
+			element["ElementalStrength"]("visible"):SetInt(0)
+			element["BG"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="setUnlocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(0)
+			--element["Button"]:DoStoredScript("enable")
+			element["Touch"]("enabled"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["ActionName"]("visible"):SetInt(1)
+			element["ActionTypeName"]("visible"):SetInt(1)
+			element["LockedIcon"]("visible"):SetInt(0)
+			element["LockedText"]("visible"):SetInt(0)
+			if element("elementalResistance"):GetFloat() ~= 0 then
+				element["ElementalStrength"]("visible"):SetInt(1)
+			else
+				element["ElementalStrength"]("visible"):SetInt(0)
+			end
+			element["BG"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="updateElementalResistance" params="element">
+		<![CDATA[
+			local locked = element("locked"):GetInt() == 1
+			local elementalResistance = element("elementalResistance"):GetFloat()
+			
+			if not locked and elementalResistance > 0 then
+				-- weak
+				element["ElementalStrength"]("spriteName"):SetString("battle_arow_down")
+				element["ElementalStrength"]("visible"):SetInt(1)
+				
+			elseif not locked and elementalResistance < 0 then
+				--strong
+				element["ElementalStrength"]("spriteName"):SetString("battle_arow_up")
+				element["ElementalStrength"]("visible"):SetInt(1)
+			else --normal
+				element["ElementalStrength"]("visible"):SetInt(0)
+			end
+		]]>
+	</event>
+	
+</template>

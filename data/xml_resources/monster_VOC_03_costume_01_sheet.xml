@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:95a7f29f7498f8afaebe60ab6858cb8b:2956c891e7e2583d967d4b8a9e9777b2:1780bf36cc5f000f7b83d51246d4bc70$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_03_costume_01_sheet.png" width="512" height="512" hires="true">
+	<!-- original anchor = (35, 119) -> new anchor (35, 129) diff = (0, -10)-->
+	<!-- add double it to texturepacker output offsets (0, 6) -> (0, -14)-->
+    <sprite n="VOC_03_costume_01_head.png" x="2" y="2" w="206" h="294" pX="0.5" pY="0.5" oX="0" oY="-14" oW="206" oH="300"/>
+    <sprite n="VOC_03_costume_01_lower_body.png" x="290" y="74" w="144" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_costume_01_lowerarm_left_01.png" x="290" y="296" w="127" h="138" pX="0.5" pY="0.5" oX="0" oY="0" oW="146" oH="127" r="y"/>
+    <sprite n="VOC_03_costume_01_lowerarm_right_01.png" x="167" y="298" w="121" h="164" pX="0.5" pY="0.5" oX="2" oY="0" oW="166" oH="122" r="y"/>
+    <sprite n="VOC_03_costume_01_lowerleg_left.png" x="266" y="196" w="56" h="93" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_costume_01_lowerleg_right.png" x="210" y="196" w="54" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_costume_01_midleg_left.png" x="324" y="196" w="90" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="VOC_03_costume_01_midleg_right.png" x="416" y="244" w="89" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="VOC_03_costume_01_upper_body.png" x="2" y="298" w="163" h="180" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="VOC_03_costume_01_upperarm_left.png" x="210" y="2" w="70" h="137" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="VOC_03_costume_01_upperarm_right.png" x="290" y="2" w="152" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_costume_01_upperleg_left.png" x="444" y="2" w="63" h="119" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_costume_01_upperleg_right.png" x="436" y="123" w="63" h="119" pX="0.5" pY="0.5" oX="0" oY="5" oW="63" oH="124"/>
+	<!-- original anchor = (35, 119) -> new anchor (21, 49) diff = (14, 70)-->
+	<!-- add double it to texturepacker output offsets (16, 9) -> (40, 149)-->
+    <sprite n="VOC_03_costume_01_visor.png" x="167" y="464" w="82" h="33" pX="0.5" pY="0.5" oX="40" oY="149" oW="110" oH="50"/>
+</TextureAtlas>

@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="20" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("MidPopUps")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				game.setClipping("Clipping", 0, 0, lua_sys.screenWidth()*lua_sys.deviceScaleX(), lua_sys.screenHeight()*lua_sys.deviceScaleY())
+			</event>
+		</spriteComponent>
+		<touchComponent name="TouchCatcher">
+			<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+			<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="20" />
+		</touchComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="250*game.hudScale()" h="30*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="TitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="215*game.hudScale()" h="30*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.529, 0.463, 0.784)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("BOOK_O_MONSTERS_TITLE"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="IslandName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="60*game.menuScaleX()" priorityOffset="11" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText(game.islandName(game.getBookOfMonstersIslandType())))
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="CommonLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="RareLabel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				
+				if(game.getBookOfMonstersIslandType() ~= game.IslandTypes_CELESTIAL_ISLAND_ID) then
+					component("text"):SetString("COMMONS_LABEL")
+				else
+					component("text"):SetString("YOUTH_LABEL")
+				end
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	<element name="CommonCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CommonLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*50*game.menuScaleX()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0")
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					local includeSeasonals = game.getBookOfMonstersIslandType() == game.IslandTypes_SEASONAL_ISLAND_ID
+					local curr = game.numUniqueCommonsCollectedOnBookOfMonstersIsland(includeSeasonals)
+					local total = game.getAllUniqueCommonsForIslandType(game.getBookOfMonstersIslandType(),includeSeasonals)
+					component("text"):SetString(curr.."/"..total)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="RareLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="EpicLabel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				
+				if(game.getBookOfMonstersIslandType() ~= game.IslandTypes_CELESTIAL_ISLAND_ID) then
+					component("text"):SetString("RARES_LABEL")
+					component:setColor(0.529, 0.890, 0.757)
+				else
+					component("text"):SetString("ADULT_LABEL")
+				end
+				
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	<element name="RareCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="RareLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0")
+				
+				if(game.getBookOfMonstersIslandType() ~= game.IslandTypes_CELESTIAL_ISLAND_ID) then
+					component:setColor(0.529, 0.890, 0.757)
+				end
+				
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					local includeSeasonals = game.getBookOfMonstersIslandType() == game.IslandTypes_SEASONAL_ISLAND_ID
+					local curr = game.numUniqueRaresCollectedOnBookOfMonstersIsland(includeSeasonals)
+					local total = game.getAllUniqueRaresForIslandType(game.getBookOfMonstersIslandType(), includeSeasonals)
+					component("text"):SetString(curr.."/"..total)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="EpicLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="IslandName" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				
+				if(game.getBookOfMonstersIslandType() ~= game.IslandTypes_CELESTIAL_ISLAND_ID) then
+					component("text"):SetString("EPICS_LABEL")
+					component:setColor(0.984, 0.780, 0.373)
+				else
+					component("text"):SetString("ELDER_LABEL")
+				end
+				
+				component("layer"):SetString("ContextBar")
+				
+				if game.showSeasonalCount() == false then
+					element:setPositionBroadcast(true)
+					element:setOrientation(lua_sys.MenuOrientation(30*game.menuScaleX(), 10*game.menuScaleX(), 0, lua_sys.HCENTER, lua_sys.TOP))
+				end
+			</event>
+		</textComponent>
+	</element>
+	<element name="EpicCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="EpicLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0")
+				
+				if(game.getBookOfMonstersIslandType() ~= game.IslandTypes_CELESTIAL_ISLAND_ID) then
+					component:setColor(0.984, 0.780, 0.373)
+				end
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					local includeSeasonals = game.getBookOfMonstersIslandType() == game.IslandTypes_SEASONAL_ISLAND_ID
+					local curr = game.numUniqueEpicsCollectedOnBookOfMonstersIsland(includeSeasonals)
+					local total = game.getAllUniqueEpicsForIslandType(game.getBookOfMonstersIslandType(),includeSeasonals)
+					component("text"):SetString(curr.."/"..total)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="SeasonalLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="EpicLabel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("SEASONALS_LABEL")
+				component:setColor(0.859, 0.529, 0.490)
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					if game.showSeasonalCount() == false then
+						component("visible"):SetInt(0)
+					end
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	<element name="SeasonalCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SeasonalLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*50*game.menuScaleX()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0")
+				component:setColor(0.859, 0.529, 0.490)
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					if game.showSeasonalCount() == false then
+						component("visible"):SetInt(0)
+					else
+						local curr = game.numUniqueSeasonalsCollectedOnBookOfMonstersIsland()
+						local total = game.getAllUniqueSeasonalsForIslandType(game.getBookOfMonstersIslandType())
+						component("text"):SetString(curr.."/"..total)
+					end
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="CostumeLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SeasonalLabel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("COSTUMES_TITLE")
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				if game.showSeasonalCount() == false then 
+					element:relativeTo(element:parent():GetElement("EpicLabel"))
+				end	
+			</event>
+		</textComponent>
+	</element>
+	<element name="CostumeCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CostumeLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*50*game.menuScaleX()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.20*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0")
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					local curr = game.numUniqueCostumesCollectedOnBookOfMonstersIsland()
+					local total = game.getAllUniqueCostumesForIslandType(game.getBookOfMonstersIslandType(), false)
+					component("text"):SetString(curr.."/"..total)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterList">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		<multiSwipeComponent name="Swiper">
+			<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</multiSwipeComponent>
+		<zoomComponent name="Zoomer">
+			<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</zoomComponent>
+		<touchComponent name="Touch">
+			<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+			<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="18" />
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+				component("dragging"):SetFloat(0)
+				component("touchStartX"):SetInt(0)
+				component("touchStartY"):SetInt(0)
+			</event>
+			<event name="onTouchDrag" params="component, element, x, y">
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(x - component("touchStartX"):GetInt()))
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStartY"):GetInt()))
+				component("touchStartX"):SetInt(x)
+				component("touchStartY"):SetInt(y)
+			</event>
+			<event name="onTouchDown" params="component, element, x, y">
+				component("touchStartX"):SetInt(x)
+				component("touchStartY"):SetInt(y)
+			</event>
+			<event name="onTouchUp" params="component, element, x, y">
+				<![CDATA[
+					if(component("dragging"):GetFloat() < 10) then
+						game.bookPick(x, y)
+					end
+					component("dragging"):SetInt(0)
+					component("touchStartX"):SetInt(0)
+					component("touchStartY"):SetInt(0)
+				]]>
+			</event>
+		</touchComponent>	
+	</element>
+	
+	<element name="SelectedMonsterView">
+		<event name="onInit" params="element">
+			element("selectedMonst"):SetInt(-1)
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="15" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="IslandSelectButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="15" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.pushPopUp("monster_book_island_select")
+				element:parent()["MonsterList"]["Swiper"]("enabled"):SetInt(0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_map")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("STORE_ISLANDS")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<spriteComponent name="flash">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(1.0, 1.0, 1.0)
+					component("layer"):SetString("FrontPopUps")
+					component("alpha"):SetFloat(0)
+					component("visible"):SetInt(0)
+				]]>
+		</event>
+	</spriteComponent>
+
+	<script src="scripts/BookOfMonsters.lua"/>
+
+</menu>

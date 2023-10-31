@@ -1,0 +1,15 @@
+<template name="template_instancesprite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$hFlip" equals="0" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("SpriteName"):GetString())
+			component("size"):SetFloat(element("Size"):GetFloat())
+			component("layer"):SetString(element("Layer"):GetString())
+		</event>
+	</spriteComponent>
+	
+</template>

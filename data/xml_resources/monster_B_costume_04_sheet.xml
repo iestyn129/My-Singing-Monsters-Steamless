@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:77873f615d27382d6a003364e560daa0:21b0d3bf0100f0f0ba375016255b92fd:0471d5f61fdc125c00821181cb581e8f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_B_costume_04_sheet.png" width="256" height="256" hires="true">
+	
+	<sprite n="B_costume_04_heart_01.png" x="2" y="193" w="75" h="60" pX="0.5" pY="0.5" oX="15" oY="12" oW="105" oH="84"/>
+	<sprite n="B_costume_04_heart_02.png" x="79" y="193" w="75" h="60" pX="0.5" pY="0.5" oX="15" oY="12" oW="105" oH="84"/>
+	<sprite n="B_costume_04_heart_03.png" x="156" y="193" w="75" h="60" pX="0.5" pY="0.5" oX="15" oY="12" oW="105" oH="84"/>
+
+	<!-- original anchor = (28, 50) -> new anchor (42, 50) diff = (-14, 0)-->
+	<sprite n="B_costume_04_mug.png" x="2" y="2" w="140" h="114" pX="0.5" pY="0.5" oX="-28" oY="0"/>
+
+	<!-- original anchor = (23, 10) -> new anchor (23, 10) diff = (0, 0)-->
+	<sprite n="B_costume_04_mug_bg.png" x="2" y="118" w="93" h="40" pX="0.5" pY="0.5" oX="0" oY="0"/>
+
+	<!-- original anchor = (20, 20) -> new anchor (38, 48) diff = (-18, -28)-->
+	<sprite n="B_costume_04_unicorn_big.png" x="144" y="79" w="94" h="112" pX="0.5" pY="0.5" oX="-36" oY="-56"/>
+
+	<!-- original anchor = (20, 20) -> new anchor (36, 48) diff = (-16, -28)-->
+	<sprite n="B_costume_04_unicorn_small.png" x="144" y="79" w="94" h="112" pX="0.5" pY="0.5" oX="-36" oY="-56"/>
+
+</TextureAtlas>

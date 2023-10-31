@@ -1,0 +1,29 @@
+<template name="template_calendar_alert" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="ContextBar"/>
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("goal_exclaim")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.6*game.hudScale())
+				component("layer"):SetString("$layer")
+
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+
+				component("xOffset"):SetInt(-22*game.hudScale())
+				component("yOffset"):SetInt(3*game.hudScale())
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<script src="scripts/DailyCumulativeLogin/DCLAlert.lua"/>
+
+</template>

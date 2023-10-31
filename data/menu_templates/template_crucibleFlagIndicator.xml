@@ -1,0 +1,28 @@
+<template name="template_crucibleFlagIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$size" equals="0.45*game.hudScale()" />
+	<defaultTemplateVar name="$ind" equals="0" />
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	<event name="initTemplateVar" params="element">
+		element("flagInd"):SetInt($ind)
+	</event>
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString(game.flagGeneIcon($ind))
+				component("sheetName"):SetString("xml_resources/flags01.xml")
+				component("size"):SetFloat($size)
+				component("layer"):SetString("$layer")
+				
+				component:DoStoredScript("checkActive")
+			]]>
+		</event>
+	</spriteSheetComponent>
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+	</touchComponent>
+	
+	<script src="scripts/CrucibleFlagInd.lua"/>
+</template>

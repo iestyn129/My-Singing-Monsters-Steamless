@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6b23dc97071439384761a4728c038d6f:59451f7b886c1d81bd4adaeb1b6cc7c5:5217f472c5a0f430d87bb5cf646c764c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABCE_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ABCE_head_a_BANDS.png" x="2" y="369" w="118" h="125" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="126"/>
+    <sprite n="ABCE_head_b_BANDS.png" x="2" y="2" w="151" h="182" pX="0.5" pY="0.5" oX="1" oY="1" oW="154" oH="184"/>
+    <sprite n="ABCE_head_c_BANDS.png" x="155" y="2" w="154" h="158" pX="0.5" pY="0.5" oX="1" oY="1" oW="156" oH="160"/>
+    <sprite n="ABCE_head_d_BANDS.png" x="311" y="2" w="113" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="114" r="y"/>
+    <sprite n="ABCE_head_e_BANDS.png" x="2" y="186" w="157" h="181" pX="0.5" pY="0.5" oX="0" oY="0" oW="158" oH="182"/>
+    <sprite n="ABCE_head_f_BANDS.png" x="122" y="369" w="156" h="123" pX="0.5" pY="0.5" oX="1" oY="3" oW="126" oH="160" r="y"/>
+    <sprite n="ABCE_left_lowerarm_BANDS.png" x="426" y="2" w="80" h="113" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="114"/>
+    <sprite n="ABCE_right_lowerarm_BANDS.png" x="311" y="96" w="102" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="74" oH="104" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c01409e54097efbc5bd0ce4fcebdaeb4:371f2e5211e877f3fa28f64bec5429f5:99d899a86eeca388295ad3fa655058fd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_M_sheet.png" width="512" height="512" hires="true">
+    <sprite n="M_back_eye" x="277" y="259" w="42" h="46" pX="0.5" pY="0.5" oX="1" oY="0" oW="44" oH="48"/>
+    <sprite n="M_body_behind" x="102" y="206" w="123" h="112" pX="0.5" pY="0.5" oX="0" oY="1" oW="112" oH="124" r="y"/>
+    <sprite n="M_body_front" x="260" y="88" w="168" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="M_eye_01" x="227" y="206" w="20" h="19" pX="0.5" pY="0.5" oX="4" oY="2" oW="28" oH="24"/>
+    <sprite n="M_eye_02" x="430" y="88" w="7" h="22" pX="0.5" pY="0.5" oX="3" oY="9" oW="28" oH="24" r="y"/>
+    <sprite n="M_eye_03" x="439" y="88" w="5" h="24" pX="0.5" pY="0.5" oX="2" oY="10" oW="28" oH="24" r="y"/>
+    <sprite n="M_head" x="125" y="320" w="89" h="100" pX="0.5" pY="0.5" oX="0" oY="1" oW="100" oH="92" r="y"/>
+    <sprite n="M_head_RARE" x="216" y="320" w="118" h="95" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="96"/>
+    <sprite n="M_left_foot" x="2" y="429" w="98" h="72" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="72"/>
+    <sprite n="M_left_hand" x="208" y="422" w="50" h="82" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="84"/>
+    <sprite n="M_left_lowerleg" x="2" y="259" w="83" h="168" pX="0.5" pY="0.5" oX="0" oY="0" oW="84" oH="168"/>
+    <sprite n="M_lowerarm" x="450" y="68" w="56" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="M_mouth_01" x="450" y="50" w="59" h="16" pX="0.5" pY="0.5" oX="2" oY="3" oW="64" oH="24"/>
+    <sprite n="M_mouth_02" x="450" y="28" w="59" h="20" pX="0.5" pY="0.5" oX="2" oY="2" oW="64" oH="24"/>
+    <sprite n="M_mouth_03" x="450" y="2" w="59" h="24" pX="0.5" pY="0.5" oX="2" oY="0" oW="64" oH="24"/>
+    <sprite n="M_right_foot" x="430" y="174" w="80" h="83" pX="0.5" pY="0.5" oX="0" oY="0" oW="84" oH="80" r="y"/>
+    <sprite n="M_right_hand" x="2" y="206" w="85" h="50" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="88" r="y"/>
+    <sprite n="M_right_lowerleg" x="260" y="2" w="188" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="M_shadow" x="102" y="429" w="104" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="M_snout_RARE" x="227" y="259" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="48" r="y"/>
+    <sprite n="M_stinger" x="249" y="210" w="117" h="46" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="48"/>
+    <sprite n="M_upperarm" x="87" y="320" w="36" h="107" pX="0.5" pY="0.5" oX="0" oY="2" oW="36" oH="112"/>
+    <sprite n="M_upperleg" x="321" y="259" w="118" h="32" pX="0.5" pY="0.5" oX="2" oY="0" oW="36" oH="120" r="y"/>
+    <sprite n="M_wing" x="2" y="2" w="256" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="M_wing_RARE" x="2" y="104" w="252" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="256" oH="100"/>
+</TextureAtlas>

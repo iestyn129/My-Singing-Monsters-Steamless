@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fe2ffb7e724263327cc896a4bce7b615:0fb9c8b825c3635eb2548a0aea3a49d7:518583967631db10333957379f320c12$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/composer_buttons01.png" width="512" height="256">
+    <sprite n="button_advanced_off" x="281" y="176" w="75" h="75" pX="0.5" pY="0.5" oX="27" oY="23" oW="130" oH="130"/>
+    <sprite n="button_advanced_on" x="358" y="176" w="75" h="75" pX="0.5" pY="0.5" oX="27" oY="23" oW="130" oH="130"/>
+    <sprite n="button_clear" x="2" y="2" w="104" h="106" pX="0.5" pY="0.5" oX="12" oY="8" oW="130" oH="130"/>
+    <sprite n="button_copy" x="398" y="81" w="100" h="78" pX="0.5" pY="0.5" oX="28" oY="12" oW="130" oH="130" r="y"/>
+    <sprite n="button_cut" x="398" y="2" w="103" h="77" pX="0.5" pY="0.5" oX="17" oY="24" oW="130" oH="130"/>
+    <sprite n="button_next_ALT" x="281" y="95" w="78" h="79" pX="0.5" pY="0.5" oX="25" oY="25" oW="130" oH="130"/>
+    <sprite n="button_paste" x="108" y="101" w="90" h="81" pX="0.5" pY="0.5" oX="26" oY="17" oW="130" oH="130" r="y"/>
+    <sprite n="button_save" x="108" y="2" w="98" h="97" pX="0.5" pY="0.5" oX="18" oY="13" oW="130" oH="130"/>
+    <sprite n="button_show_hide" x="2" y="110" w="99" h="106" pX="0.5" pY="0.5" oX="12" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_step_ALT" x="200" y="101" w="79" h="80" pX="0.5" pY="0.5" oX="27" oY="26" oW="130" oH="130" r="y"/>
+    <sprite n="button_template_load" x="208" y="2" w="93" h="91" pX="0.5" pY="0.5" oX="16" oY="16" oW="130" oH="130"/>
+    <sprite n="button_template_save" x="303" y="2" w="93" h="91" pX="0.5" pY="0.5" oX="19" oY="16" oW="130" oH="130"/>
+</TextureAtlas>

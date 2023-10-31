@@ -1,0 +1,150 @@
+<template name="template_screen_resolution_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$Layer" equals="FrontPopUps" />
+	<size dependentOnElement="element:name()" dependentOnComponent="BG" />
+	
+	<spriteSheetComponent name="BG">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("selectable_bar_grey")
+			component("sheetName"):SetString("xml_resources/breeding01.xml")
+			component("size"):SetFloat(0.65*game.hudScale())
+			component("layer"):SetString("$Layer")
+			component("visible"):SetInt(1)
+		</event>
+	</spriteSheetComponent>
+	
+	<textComponent name="Text">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component:GetVar("font"):Set(game.getTextFont())
+			component:GetVar("layer"):SetString("$Layer")
+			component:GetVar("size"):SetFloat(0.25*game.menuScaleX())
+			component("multiline"):SetInt(0)
+		</event>		
+	</textComponent>
+	
+	<spriteSheetComponent name="Selected">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="10*game.menuScaleX()" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("$Layer")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()"/>
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			
+			<![CDATA[
+				if(element("touchDisabled"):GetInt() == 0) then
+					if(component("dragging"):GetInt() < 10) then
+						local target = element:root():GetElement(element("List"):GetString())					
+						target("NewSelectedEntry"):SetString(element:name())
+						target:DoStoredScript("selectNewEntry")
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+				end
+			]]>
+		</event>
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component:setSize(Vector2(element:GetComponent("Text"):absW()*1.25, element:GetComponent("Text"):absH() * 1.5))
+				component("yOffset"):SetInt(element:GetComponent("Text"):absH()*(-0.25))
+			]]>
+		</event>
+	</touchComponent>
+	
+	<event name="onInit" params="element">
+		
+		<![CDATA[
+			element("touchDisabled"):SetInt(0)
+
+			element("clipX"):SetFloat(0)
+			element("clipY"):SetFloat(0)
+			element("clipW"):SetFloat(lua_sys.screenWidth())
+			element("clipH"):SetFloat(lua_sys.screenHeight())
+		]]>
+	</event>
+	
+	<event name="onPostInit" params="element">
+	</event>
+	
+	<event name="Select" params ="element">
+		<![CDATA[
+			element["Selected"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="Unselect" params ="element">
+		<![CDATA[
+			element["Selected"]("visible"):SetInt(0)
+		]]>
+	</event>
+	
+	<event name="Disable" params ="element">
+		<![CDATA[
+			element["BG"]:setColor(0.5, 0.5, 0.5)
+			element["Text"]:setColor(0.5, 0.5, 0.5)
+			--element["Touch"]("enabled"):SetInt(0)
+		]]>
+	</event>
+	
+	<event name="updateClipping" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+			MenuHelpers.SetClipFrom(element:GetComponent("Touch"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Text"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Selected"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("BG"), element)
+		]]>
+	</event>
+	
+	<event name="updateAlpha" params="element">
+		<![CDATA[
+		  local alpha = element("alpha"):GetFloat()
+		  element:GetComponent("Text")("alpha"):SetFloat(alpha)      
+		  element:GetComponent("Selected")("alpha"):SetFloat(alpha)      
+		  element:GetComponent("BG")("alpha"):SetFloat(alpha)      
+		  element["Touch"]("enabled"):SetInt(alpha > 0.1 and 1 or 0)
+		]]>
+	</event>
+  
+	<event name="hide" params="element">
+		<![CDATA[
+		  element:GetComponent("Text")("visible"):SetInt(0)
+		  element:GetComponent("Selected")("visible"):SetInt(0)
+		  element:GetComponent("BG")("visible"):SetInt(0)
+		  element["Touch"]("enabled"):SetInt(0)
+		]]>
+	 </event>
+</template>

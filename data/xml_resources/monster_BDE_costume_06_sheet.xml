@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1e1d3bf60774f263e981d146b2a14d93:be155b23766b9590c4a822b371b9914d:96a8cf460369b150f95621d071bb75db$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_costume_06_sheet.png" width="709" height="210" hires="true">
+    <sprite n="BDE_c6_body.png" x="1" y="1" w="296" h="193" pX="0.5" pY="0.5" oX="0" oY="-23" oW="194" oH="296" r="y"/>
+    <sprite n="BDE_c6_cello_bow.png" x="299" y="181" w="221" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="222" oH="28"/>
+    <sprite n="BDE_c6_left_upper_arm.png" x="565" y="147" w="84" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_c6_tiki.png" x="299" y="1" w="264" h="178" pX="0.5" pY="0.5" oX="33" oY="20" oW="200" oH="280" r="y"/>
+    <sprite n="BDE_c6_tiki_back.png" x="565" y="1" w="143" h="144" pX="0.5" pY="0.5" oX="50" oY="89" oW="144" oH="144"/>
+</TextureAtlas>

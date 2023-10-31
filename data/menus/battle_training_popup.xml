@@ -1,0 +1,704 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<event name="queuePop" params="element">
+		<![CDATA[
+			element:root():popPopUp()
+		]]>
+	</event>
+
+	<element name="Fade">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+
+	<element name="portrait">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<!-- monster -->
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("market_frame")
+					component("sheetName"):SetString("xml_resources/store_elements.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<element name="Animation">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<aeComponent name="Anim">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("animationName"):SetString("xml_bin/"..game.objectAnim())
+
+					component("animation"):SetString(game.objectStoreAnim())
+					component:setScale(Vector2(0.75*game.menuScaleX(), 0.75*game.menuScaleX()))
+					element:setOrientationPosition(Vector2(0, 20*game.hudScale()))
+
+					local selectedMonsterId = game.selectedMonsterId()
+					if(selectedMonsterId ~= 0) then
+						local equippedCostume = game.getEquippedCostumeForMonster(selectedMonsterId)
+						game.applyCostumeToAnimComponent(component, equippedCostume)
+
+						component("visible"):SetInt(1)
+						component("layer"):SetString("MidPopUps")
+					end
+				]]>
+				</event>
+			</aeComponent>
+		</element>
+
+		<element name="Upgrade">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="0" />
+			<textComponent name="TextA">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+						local uniqueMonsterId = game.selectedMonsterId();
+						if(uniqueMonsterId ~= 0) then
+							local text = game.getLocalizedText("BATTLE_TRAINING_LEVEL")
+							text = text:gsub("%${LEVEL}", game.monsterLevel(uniqueMonsterId))
+
+							component("text"):SetString(text)
+							component("size"):SetFloat(0.25*game.menuScaleX())
+							component("layer"):SetString("MidPopUps")
+						end
+				]]>
+				</event>
+			</textComponent>
+
+			<spriteComponent name="Arrow">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("spriteName"):SetString("gfx/menu/button_small_play")
+					component("size"):SetFloat(0.4 * game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteComponent>
+
+			<textComponent name="TextB">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				local uniqueMonsterId = game.selectedMonsterId();
+				if(uniqueMonsterId ~= 0) then
+					local text = game.getLocalizedText("BATTLE_TRAINING_LEVEL")
+					text = text:gsub("%${LEVEL}", game.monsterLevel(uniqueMonsterId) + 1)
+
+					component("text"):SetString(text)
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				end
+				]]>
+				</event>
+			</textComponent>
+
+			<event name="onPostInit" params="element">
+				<![CDATA[
+					include("MenuHelpers").CenterHorizontally({
+						element:GetComponent("TextA"),
+						element:GetComponent("Arrow"),
+						element:GetComponent("TextB"),
+					})
+				]]>
+			</event>
+		</element>
+
+	</element>
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="74*game.menuScaleX()" yOffset="0" priorityOffset="6" />
+		<ninesliceComponent name="Sprite">
+			<size w="274*game.menuScaleX()" h="220*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(50.0)
+					component("bottomHeight"):SetFloat(50.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5)
+					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<element name="TitleFrame">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-1" />
+			<ninesliceComponent name="Sprite">
+				<size w="250*game.menuScaleX()" h="50*game.hudScale()" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("topHeight"):SetFloat(44.0)
+					component("bottomHeight"):SetFloat(44.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5)
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</ninesliceComponent>
+
+			<textComponent name="Text">
+				<size w="216*game.menuScaleX()" h="32*game.hudScale()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component:setColor(0.26, 0.95, 0.26)
+					component("text"):SetString("BATTLE_TRAINING_HEADER")
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+				</event>
+			</textComponent>
+		</element>
+	</element>
+
+	<element name="DESCRIPTION">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="25*game.menuScaleY()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="280*game.menuScaleX()"  h="16*game.menuScaleY()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(1)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				local uniqueMonsterId = game.selectedMonsterId();
+				if(uniqueMonsterId ~= 0) then
+					local text = game.getLocalizedText("BATTLE_TRAINING_CONFIRMATION")
+
+					text = text:gsub("%${NAME}", game.getMonsterName(uniqueMonsterId))
+
+					component("text"):SetString(text)
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				end
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="POWER_INCREASE">
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="70*game.menuScaleY()" priorityOffset="0" />
+
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("power_icon")
+					component("sheetName"):SetString("xml_resources/collect_stickers.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="TextA">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+						component("text"):SetString("100")
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<spriteComponent name="Arrow">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("gfx/menu/button_small_play")
+					component("size"):SetFloat(0.4 * game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+					]]>
+			</event>
+		</spriteComponent>
+
+		<textComponent name="TextB">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				component("text"):SetString("120")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+
+				local uniqueMonsterId = game.selectedMonsterId()
+				if(uniqueMonsterId ~= 0) then
+					local currentMonsterLevel = game.monsterLevel(uniqueMonsterId)
+
+					element["TextA"]("text"):SetString(game.getBattleMonsterPowerForLevel(uniqueMonsterId, currentMonsterLevel))
+					element["TextB"]("text"):SetString(game.getBattleMonsterPowerForLevel(uniqueMonsterId, currentMonsterLevel+1))
+
+					local helpers = include("MenuHelpers")
+					helpers.CenterHorizontally({
+						element:GetComponent("Icon"),
+						helpers.CreateSpacer(4*game.menuScaleX(), 0),
+						element:GetComponent("TextA"),
+						element:GetComponent("Arrow"),
+						element:GetComponent("TextB"),
+					})
+				end
+			]]>
+		</event>
+	</element>
+
+	<element name="STAMINA_INCREASE">
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="100*game.menuScaleY()" priorityOffset="0" />
+
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("stamina_icon")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="TextA">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+						component("text"):SetString("100")
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<spriteComponent name="Arrow">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("gfx/menu/button_small_play")
+					component("size"):SetFloat(0.4 * game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+					]]>
+			</event>
+		</spriteComponent>
+
+		<textComponent name="TextB">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				component("text"):SetString("120")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+
+				local uniqueMonsterId = game.selectedMonsterId()
+				if(uniqueMonsterId ~= 0) then
+					local currentMonsterLevel = game.monsterLevel(uniqueMonsterId)
+
+					element["TextA"]("text"):SetString(game.getBattleMonsterStaminaForLevel(uniqueMonsterId, currentMonsterLevel))
+					element["TextB"]("text"):SetString(game.getBattleMonsterStaminaForLevel(uniqueMonsterId, currentMonsterLevel+1))
+
+					local helpers = include("MenuHelpers")
+					helpers.CenterHorizontally({
+						element:GetComponent("Icon"),
+						helpers.CreateSpacer(4*game.menuScaleX(), 0),
+						element:GetComponent("TextA"),
+						element:GetComponent("Arrow"),
+						element:GetComponent("TextB"),
+					})
+				end
+			]]>
+		</event>
+	</element>
+
+	<element name="ABILITY_UNLOCK">
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="130*game.menuScaleY()" priorityOffset="0" />
+
+		<spriteSheetComponent name="AbilityIcon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					--component("spriteName"):SetString("gene_cold")
+					--component("sheetName"):SetString("xml_resources/hud02.xml")
+					component("size"):SetFloat(0.3 * game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="AbilityNameLabel">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						--component("text"):SetString("FREEZY CHILL")
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local unlockedAction = false
+				local uniqueMonsterId = game.selectedMonsterId();
+				if(uniqueMonsterId ~= 0) then
+					local nextLevel = game.monsterLevel(uniqueMonsterId)+1
+					local actions = game.getBattleMonsterActions(uniqueMonsterId)
+					for i=0,actions:size()-1 do
+						if actions[i]:unlockLevel(i) == nextLevel then
+							unlockedAction = true
+							element["AbilityIcon"]("sheetName"):SetString(actions[i]:getIconSpriteSheet())
+							element["AbilityIcon"]("spriteName"):SetString(actions[i]:getIconSprite())
+							element["AbilityNameLabel"]("text"):SetString(actions[i].name)
+							break
+						end
+					end
+
+					if unlockedAction then
+						local helpers = include("MenuHelpers")
+						helpers.CenterHorizontally({
+							element:GetComponent("AbilityIcon"),
+							helpers.CreateSpacer(4*game.menuScaleX(), 0),
+							element:GetComponent("AbilityNameLabel")
+							})
+					else
+						element:GetComponent("AbilityIcon")("visible"):SetInt(0)
+						element:GetComponent("AbilityNameLabel")("visible"):SetInt(0)
+					end
+				end
+				]]>
+		</event>
+
+	</element>
+
+	<element name="TRAINING_TIME">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="152*game.menuScaleY()" priorityOffset="0" />
+
+		<element name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<size w="170*game.menuScaleX()" h="32*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("size"):SetFloat(0.3*game.menuScaleX())
+						component("text"):SetString("BATTLE_TRAINING_CONFIRMATION2")
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+		<textComponent name="TimeLabel">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				--component("text"):SetString("00:00:00")
+				component:setColor(0.26, 0.95, 0.26)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local uniqueMonsterId = game.selectedMonsterId()
+				if(uniqueMonsterId ~= 0) then
+					element["TimeLabel"]("text"):SetString(game.timeToString(game.getTrainingTime(uniqueMonsterId)))
+
+					local helpers = include("MenuHelpers")
+					helpers.CenterHorizontally({
+						element:GetElement("Label"),
+						helpers.CreateSpacer(4*game.menuScaleX(), 0),
+						element:GetComponent("TimeLabel")
+						})
+				end
+			]]>
+		</event>
+
+	</element>
+
+	<element name="TRAINING_COST">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="172*game.menuScaleY()" priorityOffset="0" />
+		<element name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<size w="170*game.menuScaleX()" h="32*game.menuScaleX()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("size"):SetFloat(0.3*game.menuScaleX())
+						component("text"):SetString("BATTLE_TRAINING_CONFIRMATION3")
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+		<spriteSheetComponent name="CurrencyIcon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="CostLabel">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
+					--component("text"):SetString("250,000")
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+
+				local uniqueMonsterId = game.selectedMonsterId();
+				if(uniqueMonsterId ~= 0) then
+					element["CostLabel"]("text"):SetString(game.commaizeNumber(game.getTrainingCost(uniqueMonsterId)))
+
+					local helpers = include("MenuHelpers")
+					helpers.CenterHorizontally({
+						element:GetElement("Label"),
+						helpers.CreateSpacer(4*game.menuScaleX(), 0),
+						element:GetComponent("CurrencyIcon"),
+						element:GetComponent("CostLabel")
+						})
+				end
+				]]>
+		</event>
+
+	</element>
+
+	<template type="template_spritesheetbutton" name="ConfirmButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="64" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.25)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent():DoStoredScript("start_training")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="CancelButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-64" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.25)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent():DoStoredScript("cancel")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+
+	<event name="start_training" params="element">
+		<![CDATA[
+			--send monster to training
+			local uniqueMonsterId = game.selectedMonsterId();
+			if(uniqueMonsterId ~= 0) then
+				if game.startTrainingMonster(uniqueMonsterId) then
+					manager:setReserveState("BATTLE_MONSTER_TRAINING")
+					game.closeContextPopup()
+				end
+			end
+			]]>
+	</event>
+
+	<event name="cancel" params="element">
+		<![CDATA[
+			game.closeContextPopup()
+		]]>
+	</event>
+
+
+</menu>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e088ac40c6fa891e297296622d62053a:17bbb91b20587e4a29fda9739fbb19f1:e20f1c4728b10e31e6c7a49d3138fdd6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABD_costume_05_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABD_base" x="2" y="416" w="362" h="184" pX="0.5" pY="0.5"/>
+    <sprite n="ABD_body" x="2" y="2" w="423" h="412" pX="0.5" pY="0.5" oX="0" oY="0" oW="412" oH="424" r="y"/>
+	<sprite n="ABD_cheeks" />
+    <sprite n="ABD_leaf" x="427" y="104" w="80" h="86" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="ABD_leaf_RARE" />
+    <sprite n="ABD_left_arm" x="204" y="662" w="92" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="ABD_left_eyeback" x="298" y="717" w="60" h="48" pX="0.5" pY="0.5"/>
+	<sprite n="ABD_left_eyeback_RARE" />
+    <sprite n="ABD_left_eyelid_1" x="427" y="490" w="74" h="45" pX="0.5" pY="0.5" oX="0" oY="11" oW="74" oH="56"/>
+    <sprite n="ABD_left_eyelid_2" x="426" y="597" w="72" h="54" pX="0.5" pY="0.5" oX="2" oY="0" oW="74" oH="56"/>
+    <sprite n="ABD_left_eyelid_3" x="425" y="707" w="68" h="49" pX="0.5" pY="0.5" oX="4" oY="3" oW="74" oH="56"/>
+    <sprite n="ABD_left_eyelid_4" x="298" y="671" w="65" h="44" pX="0.5" pY="0.5" oX="6" oY="6" oW="74" oH="56"/>
+    <sprite n="ABD_left_hand_1" x="365" y="623" w="58" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABD_left_hand_2" x="365" y="715" w="58" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABD_left_hand_3" x="2" y="704" w="90" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="ABD_mouth_1" x="427" y="435" w="75" h="53" pX="0.5" pY="0.5" oX="11" oY="7" oW="88" oH="66"/>
+    <sprite n="ABD_mouth_2" x="308" y="602" w="55" h="67" pX="0.5" pY="0.5" oX="14" oY="6" oW="88" oH="66" r="y"/>
+    <sprite n="ABD_mouth_3" x="426" y="537" w="72" h="58" pX="0.5" pY="0.5" oX="8" oY="4" oW="88" oH="66"/>
+    <sprite n="ABD_mouth_4" x="427" y="311" w="76" h="62" pX="0.5" pY="0.5" oX="3" oY="2" oW="88" oH="66"/>
+    <sprite n="ABD_mouth_5" x="427" y="244" w="78" h="65" pX="0.5" pY="0.5" oX="2" oY="1" oW="88" oH="66"/>
+    <sprite n="ABD_pupil" x="494" y="758" w="16" h="16" pX="0.5" pY="0.5"/>
+	<sprite n="ABD_pupil_RARE" />
+    <sprite n="ABD_right_arm" x="427" y="2" w="80" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="ABD_right_eyeback" x="186" y="754" w="66" h="52" pX="0.5" pY="0.5"/>
+	<sprite n="ABD_right_eyeback_RARE" />
+    <sprite n="ABD_right_eyelid_1" x="427" y="192" w="80" h="50" pX="0.5" pY="0.5" oX="0" oY="12" oW="80" oH="62"/>
+    <sprite n="ABD_right_eyelid_2" x="427" y="375" w="76" h="58" pX="0.5" pY="0.5" oX="3" oY="0" oW="80" oH="62"/>
+    <sprite n="ABD_right_eyelid_3" x="425" y="653" w="72" h="52" pX="0.5" pY="0.5" oX="5" oY="3" oW="80" oH="62"/>
+    <sprite n="ABD_right_eyelid_4" x="425" y="758" w="67" h="48" pX="0.5" pY="0.5" oX="7" oY="5" oW="80" oH="62"/>
+    <sprite n="ABD_right_hand_1" x="366" y="519" w="58" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="102" oH="60" r="y"/>
+    <sprite n="ABD_right_hand_2" x="204" y="602" w="102" h="58" pX="0.5" pY="0.5" oX="0" oY="1" oW="102" oH="60"/>
+    <sprite n="ABD_right_hand_3" x="366" y="416" w="59" h="101" pX="0.5" pY="0.5" oX="0" oY="1" oW="102" oH="60" r="y"/>
+    <sprite n="ABD_shadow" x="2" y="602" w="200" h="100" pX="0.5" pY="0.5"/>
+	<sprite n="ABD_spots_bottom_RARE" />
+	<sprite n="ABD_spots_left_RARE" />
+	<sprite n="ABD_spots_right_RARE" />
+    <sprite n="ABD_vine1" x="94" y="704" w="90" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABD_vine2" x="254" y="754" w="34" h="58" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

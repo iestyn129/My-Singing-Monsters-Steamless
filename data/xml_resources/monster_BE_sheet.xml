@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7aa7528a2e2a9a331ae98f5afa72e644:5a0b410a0b2021f2129b383fef7d0bf7:333d149f2ab2f76ead174a9315b32a3f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BE_sheet.png" width="256" height="512" hires="true">
+    <sprite n="BE_body" x="141" y="1" w="109" h="140" pX="0.5" pY="0.5" oX="1" oY="0" oW="112" oH="140"/>
+    <sprite n="BE_body_RARE" x="1" y="1" w="140" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BE_bow_right_RARE" x="85" y="431" w="34" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BE_bow_top_RARE" x="108" y="164" w="27" h="50" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="30" r="y"/>
+    <sprite n="BE_branch" x="211" y="190" w="36" h="55" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="40" r="y"/>
+    <sprite n="BE_branch_long" x="211" y="141" w="43" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="BE_branch_long_nodot" x="211" y="159" w="43" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="BE_branch_short" x="189" y="243" w="22" h="27" pX="0.5" pY="0.5"/>
+    <sprite n="BE_eyeballs" x="1" y="179" w="63" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="60"/>
+    <sprite n="BE_eyelids_almost_shut" x="64" y="214" w="63" h="51" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_closing" x="1" y="237" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_open" x="127" y="243" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_shut" x="63" y="265" w="62" h="51" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_foot01" x="141" y="141" w="70" h="51" pX="0.5" pY="0.5" oX="8" oY="4" oW="80" oH="56"/>
+    <sprite n="BE_foot01_RARE" x="135" y="192" w="70" h="51" pX="0.5" pY="0.5" oX="8" oY="4" oW="80" oH="56"/>
+    <sprite n="BE_leaf" x="121" y="411" w="58" h="35" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="40"/>
+    <sprite n="BE_leg_bending" x="1" y="289" w="62" h="21" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="64" r="y"/>
+    <sprite n="BE_leg_bent" x="1" y="439" w="26" h="60" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="64"/>
+    <sprite n="BE_leg_lower" x="211" y="177" w="38" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BE_leg_straight" x="1" y="310" w="61" h="14" pX="0.5" pY="0.5" oX="3" oY="0" oW="32" oH="64" r="y"/>
+    <sprite n="BE_leg_upper" x="64" y="179" w="13" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="BE_leg_upper_nodot" x="77" y="179" w="13" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="BE_mouth_closing" x="27" y="439" w="58" h="59" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="BE_mouth_closing_RARE" x="182" y="386" w="59" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_eee" x="189" y="270" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_eee_RARE" x="125" y="295" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_mmm" x="185" y="329" w="60" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_mmm_RARE" x="122" y="354" w="60" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_ooo" x="133" y="446" w="46" h="49" pX="0.5" pY="0.5" oX="5" oY="7" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_ooo_RARE" x="179" y="444" w="46" h="49" pX="0.5" pY="0.5" oX="5" oY="7" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_open" x="62" y="316" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_open_RARE" x="1" y="324" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_shut" x="61" y="375" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_shut_RARE" x="1" y="383" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_pupil_RARE" x="90" y="179" w="17" h="17" pX="0.5" pY="0.5"/>
+    <sprite n="BE_pupils" x="108" y="113" w="33" h="51" pX="0.5" pY="0.5" oX="2" oY="1" oW="56" oH="36" r="y"/>
+    <sprite n="BE_shadow" x="1" y="113" w="107" h="66" pX="0.5" pY="0.5" oX="8" oY="2" oW="124" oH="68"/>
+    <sprite n="BE_stick" x="85" y="457" w="24" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="BE_stick_nodot" x="109" y="457" w="24" h="54" pX="0.5" pY="0.5"/>
+</TextureAtlas>

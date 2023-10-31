@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:35d2b129bcd7e363aa1a61a0b66c1364:79d1074aaed267d2f6c092eccf7c5051:c06e9fe1e65ca7493b5f9a1f8909bd4c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CNY_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="Arm_02_B" x="169" y="496" w="90" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Arm_02_B_RARE" x="169" y="534" w="90" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Arm_02_F" x="730" y="300" w="139" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Arm_02_F_RARE" x="730" y="336" w="139" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Arm_B" x="729" y="372" w="132" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="Arm_B_RARE" x="729" y="407" w="132" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="Arm_F" x="331" y="215" w="145" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Arm_F_RARE" x="478" y="215" w="145" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Body" x="344" y="2" w="191" h="171" pX="0.5" pY="0.5"/>
+    <sprite n="Body_RARE" x="537" y="2" w="191" h="171" pX="0.5" pY="0.5"/>
+    <sprite n="Crystal_01_Gold" x="449" y="326" w="107" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="107" oH="93"/>
+    <sprite n="Crystal_01_Purple" x="261" y="499" w="68" h="46" pX="0.5" pY="0.5" oX="14" oY="26" oW="107" oH="93"/>
+    <sprite n="Crystal_01_Purple_RARE" x="558" y="326" w="65" h="40" pX="0.5" pY="0.5" oX="17" oY="26" oW="107" oH="93"/>
+    <sprite n="Crystal_02_Gold" x="331" y="362" w="107" h="83" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_02_Purple" x="290" y="383" w="39" h="59" pX="0.5" pY="0.5" oX="21" oY="27" oW="83" oH="107"/>
+    <sprite n="Crystal_02_Purple_RARE" x="863" y="392" w="38" h="53" pX="0.5" pY="0.5" oX="23" oY="27" oW="83" oH="107"/>
+    <sprite n="Crystal_03_Gold" x="922" y="92" w="98" h="73" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_03_Purple" x="757" y="555" w="49" h="31" pX="0.5" pY="0.5" oX="21" oY="24" oW="73" oH="98" r="y"/>
+    <sprite n="Crystal_03_Purple_RARE" x="700" y="505" w="26" h="48" pX="0.5" pY="0.5" oX="21" oY="25" oW="73" oH="98"/>
+    <sprite n="Crystal_04_Gold" x="2" y="459" w="93" h="83" pX="0.5" pY="0.5" oX="0" oY="2" oW="93" oH="85"/>
+    <sprite n="Crystal_04_Purple" x="871" y="348" w="29" h="42" pX="0.5" pY="0.5" oX="24" oY="30" oW="93" oH="85" r="y"/>
+    <sprite n="Crystal_04_Purple_RARE" x="845" y="598" w="42" h="25" pX="0.5" pY="0.5" oX="25" oY="30" oW="93" oH="85"/>
+    <sprite n="Crystal_05_Gold" x="97" y="485" w="70" h="92" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="71" r="y"/>
+    <sprite n="Crystal_05_Purple" x="700" y="456" w="27" h="47" pX="0.5" pY="0.5" oX="15" oY="23" oW="92" oH="71" r="y"/>
+    <sprite n="Crystal_05_Purple_RARE" x="493" y="591" w="25" h="48" pX="0.5" pY="0.5" oX="14" oY="25" oW="92" oH="71" r="y"/>
+    <sprite n="Crystal_06_Gold" x="172" y="390" w="102" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="Crystal_06_Purple" x="121" y="326" w="51" h="21" pX="0.5" pY="0.5" oX="27" oY="22" oW="102" oH="68"/>
+    <sprite n="Crystal_06_Purple_RARE" x="525" y="524" w="19" h="45" pX="0.5" pY="0.5" oX="34" oY="24" oW="102" oH="68" r="y"/>
+    <sprite n="Crystal_07_Gold" x="922" y="167" w="97" h="79" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="79"/>
+    <sprite n="Crystal_07_Purple" x="871" y="300" w="30" h="46" pX="0.5" pY="0.5" oX="24" oY="24" oW="100" oH="79" r="y"/>
+    <sprite n="Crystal_07_Purple_RARE" x="807" y="623" w="25" h="42" pX="0.5" pY="0.5" oX="29" oY="30" oW="100" oH="79" r="y"/>
+    <sprite n="Crystal_08_Gold" x="421" y="566" w="70" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_08_Purple" x="757" y="588" w="48" h="44" pX="0.5" pY="0.5" oX="11" oY="22" oW="61" oH="70" r="y"/>
+    <sprite n="Crystal_08_Purple_RARE" x="699" y="555" w="56" h="39" pX="0.5" pY="0.5" oX="10" oY="14" oW="61" oH="70" r="y"/>
+    <sprite n="Crystal_09_Gold" x="440" y="420" w="104" h="102" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_09_Purple" x="624" y="395" w="74" h="63" pX="0.5" pY="0.5" oX="18" oY="23" oW="102" oH="104" r="y"/>
+    <sprite n="Crystal_09_Purple_RARE" x="620" y="537" w="77" h="63" pX="0.5" pY="0.5" oX="17" oY="22" oW="102" oH="104" r="y"/>
+    <sprite n="Crystal_10_Gold" x="331" y="525" w="88" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_10_Purple" x="276" y="444" w="53" h="53" pX="0.5" pY="0.5" oX="5" oY="25" oW="84" oH="88"/>
+    <sprite n="Crystal_10_Purple_RARE" x="846" y="544" w="52" h="52" pX="0.5" pY="0.5" oX="5" oY="25" oW="84" oH="88"/>
+    <sprite n="Crystal_11_Gold" x="545" y="590" w="64" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Crystal_11_Purple" x="524" y="571" w="19" h="26" pX="0.5" pY="0.5" oX="19" oY="19" oW="61" oH="64"/>
+    <sprite n="Crystal_11_Purple_RARE" x="493" y="566" w="29" h="23" pX="0.5" pY="0.5" oX="18" oY="17" oW="61" oH="64" r="y"/>
+    <sprite n="EarBack" x="344" y="175" w="176" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EarBack_RARE" x="522" y="175" w="176" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EarFront" x="730" y="260" w="171" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EarFront_RARE" x="2" y="178" w="171" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Eyeballs" x="922" y="2" w="100" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="Eyeballs_RARE" x="922" y="47" w="100" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="Eyelids_01" x="922" y="248" w="95" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Eyelids_02" x="861" y="447" w="40" h="95" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Eyelids_03" x="700" y="175" w="28" h="95" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40" r="y"/>
+    <sprite n="Eyelids_04" x="306" y="286" w="23" h="95" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40" r="y"/>
+    <sprite n="Eyelids_05" x="1019" y="248" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40"/>
+    <sprite n="Face" x="903" y="290" w="117" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="Face_RARE" x="903" y="414" w="117" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="Finger_B" x="172" y="460" w="101" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Finger_B_RARE" x="331" y="447" w="101" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Finger_F" x="172" y="354" w="116" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Finger_F_RARE" x="331" y="326" w="116" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Foot_B" x="261" y="547" w="68" h="23" pX="0.5" pY="0.5"/>
+    <sprite n="Foot_B_RARE" x="700" y="369" w="27" h="85" pX="0.5" pY="0.5" oX="5" oY="0" oW="90" oH="30" r="y"/>
+    <sprite n="Foot_F" x="558" y="368" w="64" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="Foot_F_RARE" x="546" y="509" w="72" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="80"/>
+    <sprite n="Hair_01" x="175" y="178" w="154" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_01_B" x="331" y="257" w="137" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_01_B_RARE" x="470" y="257" w="137" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_01_RARE" x="2" y="218" w="154" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_02" x="729" y="442" w="130" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_02_RARE" x="174" y="286" w="130" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Hair_03" x="121" y="349" w="49" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="Hair_03_RARE" x="121" y="417" w="49" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="Hair_04" x="158" y="238" w="14" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="Hair_04_RARE" x="609" y="257" w="14" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="Mouth" x="2" y="544" w="91" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="Neck_01" x="903" y="538" w="117" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="Neck_01_RARE" x="2" y="326" w="117" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="Neck_02" x="730" y="2" w="190" h="127" pX="0.5" pY="0.5"/>
+    <sprite n="Neck_02_RARE" x="730" y="131" w="190" h="127" pX="0.5" pY="0.5"/>
+    <sprite n="Nose" x="546" y="432" w="75" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="Nose_glow" x="623" y="460" w="75" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="pupil_01" x="99" y="434" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="pupil_01_RARE" x="99" y="456" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="pupil_02" x="903" y="260" w="15" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="pupil_02_RARE" x="158" y="218" w="15" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_Eyelids_01" x="331" y="483" w="95" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_Eyelids_02" x="428" y="524" w="95" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_Eyelids_03" x="700" y="272" w="28" h="95" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40" r="y"/>
+    <sprite n="RARE_Eyelids_04" x="2" y="434" w="95" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40"/>
+    <sprite n="RARE_Eyelids_05" x="1019" y="248" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="40"/>
+    <sprite n="shadow" x="2" y="2" w="340" h="174" pX="0.5" pY="0.5" oX="0" oY="3" oW="340" oH="180"/>
+    <sprite n="Shoulder_B" x="808" y="555" w="36" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Shoulder_B_RARE" x="807" y="589" w="36" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Shoulder_F" x="728" y="510" w="57" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="Shoulder_F_RARE" x="787" y="510" w="57" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="Spots" x="625" y="215" w="73" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="Spots_02" x="625" y="305" w="73" h="88" pX="0.5" pY="0.5"/>
+</TextureAtlas>

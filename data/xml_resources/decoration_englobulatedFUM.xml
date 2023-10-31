@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:58b8305491a14346bab4a90f8aef9294:13536e71ded89700127a2a4fdf75c204:4db9f2c820c09ddf2218716d98afcf26$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/deco_englobulatedFUM.png" width="1024" height="2048" hires="true">
+    <sprite n="Bubble" x="967" y="687" w="54" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="Liquid0" x="3" y="1149" w="510" h="510" pX="0.5" pY="0.5"/>
+    <sprite n="Overlay" x="3" y="3" w="668" h="508" pX="0.5" pY="0.5"/>
+    <sprite n="Under" x="3" y="515" w="630" h="630" pX="0.5" pY="0.5" oX="0" oY="0" oW="630" oH="680"/>
+    <sprite n="arm_left_lower" x="805" y="522" w="122" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="arm_left_upper" x="834" y="452" w="130" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="arm_right_lower" x="675" y="390" w="155" h="73" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="arm_right_upper" x="675" y="304" w="156" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="body" x="675" y="167" w="192" h="133" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_1" x="637" y="716" w="58" h="56" pX="0.5" pY="0.5" oX="9" oY="14" oW="72" oH="78"/>
+    <sprite n="eye_2" x="967" y="626" w="54" h="57" pX="0.5" pY="0.5" oX="10" oY="15" oW="72" oH="78" r="y"/>
+    <sprite n="eye_3" x="703" y="701" w="58" h="57" pX="0.5" pY="0.5" oX="11" oY="13" oW="72" oH="78"/>
+    <sprite n="eye_4" x="769" y="658" w="58" h="58" pX="0.5" pY="0.5" oX="10" oY="12" oW="72" oH="78"/>
+    <sprite n="eye_5" x="903" y="626" w="60" h="59" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="78" r="y"/>
+    <sprite n="eye_6" x="637" y="557" w="64" h="59" pX="0.5" pY="0.5" oX="8" oY="9" oW="72" oH="78" r="y"/>
+    <sprite n="eye_7" x="931" y="562" w="69" h="60" pX="0.5" pY="0.5" oX="5" oY="8" oW="72" oH="78" r="y"/>
+    <sprite n="fingers1" x="871" y="167" w="34" h="47" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="47"/>
+    <sprite n="fingers2" x="968" y="452" w="46" h="40" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="47" r="y"/>
+    <sprite n="fingers3" x="835" y="351" w="30" h="41" pX="0.5" pY="0.5" oX="4" oY="0" oW="40" oH="47"/>
+    <sprite n="fingers4" x="835" y="304" w="30" h="43" pX="0.5" pY="0.5" oX="3" oY="2" oW="40" oH="47"/>
+    <sprite n="fingers5" x="871" y="218" w="34" h="41" pX="0.5" pY="0.5" oX="1" oY="4" oW="40" oH="47"/>
+    <sprite n="head" x="675" y="3" w="235" h="160" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leg_left_lower" x="871" y="263" w="143" h="121" pX="0.5" pY="0.5"/>
+    <sprite n="leg_left_upper" x="675" y="467" w="126" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leg_right_lower" x="914" y="87" w="88" h="165" pX="0.5" pY="0.5"/>
+    <sprite n="leg_right_upper" x="869" y="388" w="139" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="screen_0" x="968" y="496" w="44" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="screen_1" x="705" y="557" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_2" x="705" y="605" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_3" x="637" y="620" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_4" x="771" y="610" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_5" x="703" y="653" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_6" x="637" y="668" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_7" x="837" y="610" w="62" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="screen_glow" x="914" y="3" w="101" h="80" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

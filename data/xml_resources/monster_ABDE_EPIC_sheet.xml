@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4b38efcea93cfb8b7565554b8ba985b5:474a56b27fa3759700355fd97a41e426:adb2927b6c85d61bf5ecafc031d76306$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABDE_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABDE_beard_EPIC" x="2" y="338" w="100" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100" r="y"/>
+    <sprite n="ABDE_beatglow_blue" x="485" y="2" w="22" h="43" pX="0.5" pY="0.5" oX="19" oY="9" oW="80" oH="40" r="y"/>
+    <sprite n="ABDE_beatglow_green" x="485" y="92" w="22" h="42" pX="0.5" pY="0.5" oX="19" oY="9" oW="80" oH="40" r="y"/>
+    <sprite n="ABDE_beatglow_red" x="485" y="47" w="22" h="43" pX="0.5" pY="0.5" oX="18" oY="8" oW="80" oH="40" r="y"/>
+    <sprite n="ABDE_beatglow_yellow" x="485" y="136" w="22" h="42" pX="0.5" pY="0.5" oX="19" oY="9" oW="80" oH="40" r="y"/>
+    <sprite n="ABDE_beep_green_EPIC" x="479" y="209" w="20" h="19" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="20"/>
+    <sprite n="ABDE_beep_red_EPIC" x="479" y="230" w="18" h="18" pX="0.5" pY="0.5" oX="1" oY="1" oW="20" oH="20"/>
+    <sprite n="ABDE_body" x="271" y="2" w="212" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDE_controls_EPIC" x="2" y="439" w="99" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="100" r="y"/>
+    <sprite n="ABDE_cube01" x="100" y="655" w="93" h="73" pX="0.5" pY="0.5" oX="4" oY="5" oW="84" oH="104" r="y"/>
+    <sprite n="ABDE_cube02" x="351" y="494" w="94" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="86" oH="104" r="y"/>
+    <sprite n="ABDE_cube03" x="200" y="612" w="93" h="74" pX="0.5" pY="0.5" oX="4" oY="4" oW="86" oH="102" r="y"/>
+    <sprite n="ABDE_cube04" x="247" y="537" w="94" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="78" oH="98" r="y"/>
+    <sprite n="ABDE_cube05" x="438" y="569" w="71" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="92"/>
+    <sprite n="ABDE_cube06" x="2" y="517" w="97" h="79" pX="0.5" pY="0.5" oX="4" oY="5" oW="88" oH="106" r="y"/>
+    <sprite n="ABDE_cube07" x="252" y="456" w="97" h="79" pX="0.5" pY="0.5" oX="5" oY="6" oW="96" oH="110" r="y"/>
+    <sprite n="ABDE_cube08" x="103" y="492" w="98" h="80" pX="0.5" pY="0.5" oX="4" oY="5" oW="94" oH="108" r="y"/>
+    <sprite n="ABDE_cube09" x="101" y="574" w="97" h="79" pX="0.5" pY="0.5" oX="4" oY="3" oW="90" oH="104" r="y"/>
+    <sprite n="ABDE_cube10" x="432" y="314" w="78" h="97" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="100"/>
+    <sprite n="ABDE_cube11" x="2" y="598" w="96" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDE_eyelid_01_EPIC" x="388" y="663" w="80" h="77" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="80" r="y"/>
+    <sprite n="ABDE_eyelid_02_EPIC" x="286" y="730" w="80" h="77" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="80" r="y"/>
+    <sprite n="ABDE_eyelid_03_EPIC" x="185" y="766" w="80" h="77" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="80" r="y"/>
+    <sprite n="ABDE_eyelid_04_EPIC" x="89" y="814" w="80" h="77" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="80" r="y"/>
+    <sprite n="ABDE_eyelid_05_EPIC" x="2" y="848" w="80" h="77" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="80" r="y"/>
+    <sprite n="ABDE_head" x="2" y="180" w="202" h="156" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDE_head_EPIC" x="2" y="2" w="267" h="176" pX="0.5" pY="0.5" oX="0" oY="3" oW="180" oH="270" r="y"/>
+    <sprite n="ABDE_left_hand_1" x="2" y="764" w="85" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="82"/>
+    <sprite n="ABDE_left_hand_2" x="96" y="730" w="87" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="82"/>
+    <sprite n="ABDE_left_hand_3" x="295" y="647" w="91" h="81" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="82"/>
+    <sprite n="ABDE_left_hand_4" x="415" y="413" w="94" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="82"/>
+    <sprite n="ABDE_left_lowerarm" x="254" y="390" w="112" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="ABDE_left_upperarm" x="206" y="408" w="44" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="ABDE_mouth_1_EPIC" x="368" y="390" w="45" h="89" pX="0.5" pY="0.5" oX="1" oY="2" oW="90" oH="48" r="y"/>
+    <sprite n="ABDE_mouth_2_EPIC" x="206" y="316" w="46" h="90" pX="0.5" pY="0.5" oX="0" oY="2" oW="90" oH="48" r="y"/>
+    <sprite n="ABDE_mouth_3_EPIC" x="206" y="180" w="63" h="42" pX="0.5" pY="0.5" oX="15" oY="4" oW="90" oH="48"/>
+    <sprite n="ABDE_pupil_EPIC" x="479" y="180" w="27" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="28"/>
+    <sprite n="ABDE_right_hand_1" x="195" y="688" w="89" h="76" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="76"/>
+    <sprite n="ABDE_right_hand_2" x="343" y="569" w="93" h="76" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="76"/>
+    <sprite n="ABDE_right_hand_3" x="104" y="414" w="99" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="76"/>
+    <sprite n="ABDE_right_hand_4" x="104" y="338" w="100" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="76"/>
+    <sprite n="ABDE_right_lowerarm" x="206" y="224" w="54" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDE_right_upperarm" x="203" y="496" w="42" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="ABDE_shadow" x="262" y="314" w="168" h="74" pX="0.5" pY="0.5" oX="7" oY="0" oW="180" oH="74"/>
+    <sprite n="ABDE_speaker_big" x="2" y="678" w="92" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDE_speaker_left" x="271" y="168" w="206" h="144" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="210" r="y"/>
+</TextureAtlas>

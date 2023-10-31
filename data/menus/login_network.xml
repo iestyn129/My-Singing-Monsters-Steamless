@@ -1,0 +1,85 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="ConnectionStatus">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="ToolTip" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="60*game.menuScaleX()" yOffset="0" priorityOffset="2" />
+		<textComponent name="Text">
+			<size w="180*game.menuScaleX()" h="52" />			
+			<event name="onInit" params="component, element">
+				component("size"):SetFloat(0.5*lua_sys.screenWidth()/960.0)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("visible"):SetInt(0)
+				component("layer"):SetString("MidPopUps")
+				element:SetupGenericListener(game.engineReceiver(), "social::msg::MsgNetworkStatus", "gotMsgNetworkStatus")
+			</event>
+		</textComponent>
+		<event name="gotMsgNetworkStatus" params="element, msg">
+			if (msg.status ~= "") then
+				element["Text"]("visible"):SetInt(1)
+			else
+				element["Text"]("visible"):SetInt(0)
+			end
+			
+			element["Text"]("size"):SetFloat(0.25*game.menuScaleX())
+			element["Text"]("text"):SetString(msg.status)
+			element["Text"]("autoScaleFactor"):SetFloat(0.01)
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</element>
+	
+	<element name="ToolTip">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="-60*game.bgScale()" yOffset="200*game.bgScale()" priorityOffset="15" />
+		<spriteComponent name="Sprite">		
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/title_tipframe")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(game.bgScale())
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="640*game.bgScale()" h="35*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("size"):SetFloat(0.5*game.bgScale())
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getRandomTip())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="CloseButton">
+		<templateVar name="$upSpriteName" equals="'button_bamboo_close'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ToolTip" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-5" yOffset="-5" priorityOffset="2" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.engineReceiver():Send(game.MsgCancelLogin())
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+			</event>
+		</touchComponent>
+	</template>
+
+</menu>

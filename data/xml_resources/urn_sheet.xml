@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:10c73cf9592a28c07e2a3fe8369c74fb:240a51d168c9776e6b74ba871e8fb605:fedab73c008fb2cdd13ee465a238993f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/urn_sheet.png" width="838" height="824" hires="true">
+    <sprite n="urn_base" x="348" y="406" w="295" h="166" pX="0.5" pY="0.5" oX="28" oY="119" oW="228" oH="452" r="y"/>
+    <sprite n="urn_base_S08" x="348" y="4" w="397" h="199" pX="0.5" pY="0.5" oX="17" oY="27" oW="228" oH="452" r="y"/>
+    <sprite n="urn_base_S08_glow" x="4" y="602" w="418" h="216" pX="0.5" pY="0.5" oX="7" oY="17" oW="228" oH="452" r="y"/>
+    <sprite n="urn_cloud" x="426" y="576" w="236" h="244" pX="0.5" pY="0.5"/>
+    <sprite n="urn_dot" x="749" y="4" w="78" h="78" pX="0.5" pY="0.5" oX="13" oY="13" oW="104" oH="104"/>
+    <sprite n="urn_dust" x="746" y="268" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="urn_egg_glow_orange" x="647" y="406" w="168" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="urn_egg_glow_ring" x="666" y="562" w="168" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="urn_egg_glow_white" x="666" y="718" w="111" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="112" oH="100"/>
+    <sprite n="urn_glow_orange" x="4" y="4" w="340" h="594" pX="0.5" pY="0.5" oX="0" oY="3" oW="340" oH="600"/>
+    <sprite n="urn_glow_white" x="348" y="207" w="394" h="195" pX="0.5" pY="0.5" oX="0" oY="3" oW="196" oH="400" r="y"/>
+    <sprite n="urn_sigil_A" x="749" y="132" w="46" h="46" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="52"/>
+    <sprite n="urn_sigil_B" x="749" y="182" w="47" h="38" pX="0.5" pY="0.5" oX="2" oY="6" oW="52" oH="52"/>
+    <sprite n="urn_sigil_C" x="790" y="224" w="39" h="39" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="52"/>
+    <sprite n="urn_sigil_D" x="790" y="267" w="42" h="36" pX="0.5" pY="0.5" oX="8" oY="5" oW="52" oH="52" r="y"/>
+    <sprite n="urn_sigil_E" x="746" y="224" w="40" h="40" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="52"/>
+    <sprite n="urn_sigil_N" x="749" y="86" w="51" h="42" pX="0.5" pY="0.5" oX="5" oY="0" oW="52" oH="52" r="y"/>
+</TextureAtlas>

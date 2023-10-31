@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7bf20979327af5afcd2cb5313b0dc1eb:d0393a03fa839f7cf09ee8bfd749bb9e:6ea38c5f0840fdef69ffada7d125f1c2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_EPIC_costume_01_sheet.png" width="128" height="1024" hires="true">    
+    <sprite n="BDE_cello_bow_EPIC.png" x="78" y="670" w="28" h="221" pX="0.5" pY="0.5" oX="0" oY="0" oW="222" oH="28" r="y"/>
+    <sprite n="BDE_cello_EPIC.png" x="2" y="147" w="100" h="521" pX="0.5" pY="0.5" oX="0" oY="7" oW="100" oH="530"/>
+    <sprite n="BDE_horn1_EPIC.png" x="2" y="670" w="74" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_horn2_EPIC.png" x="2" y="2" w="110" h="143" pX="0.5" pY="0.5" oX="0" oY="2" oW="110" oH="148"/>
+    <sprite n="BDE_horn3_EPIC.png" x="2" y="798" w="50" h="158" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="160"/>
+    <sprite n="BDE_horn4_EPIC.png" x="2" y="746" w="62" h="50" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="64" r="y"/>
+</TextureAtlas>

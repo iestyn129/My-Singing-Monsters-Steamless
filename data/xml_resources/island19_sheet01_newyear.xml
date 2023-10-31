@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:432a172eeed45c1d2579cb0653d26b38:5d51ddb63e318f5a02cf86967af17243:82db4a0dc5f3b41e5001ece2ca0e7ad4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island19_sheet01_newyear.png" width="2048" height="2048" hires="true">
+    <sprite n="big_lantern.png" x="606" y="1237" w="482" h="503" pX="0.5" pY="0.5" oX="19" oY="18" oW="540" oH="540" r="y"/>
+    <sprite n="big_lantern_string.png" x="2" y="683" w="36" h="213" pX="0.5" pY="0.5" oX="95" oY="69" oW="226" oH="352"/>
+    <sprite n="big_lantern_tail.png" x="140" y="2013" w="252" h="32" pX="0.5" pY="0.5" oX="98" oY="78" oW="226" oH="352" r="y"/>
+    <sprite n="big_lantern_tail_bg.png" x="1875" y="494" w="158" h="129" pX="0.5" pY="0.5" oX="29" oY="44" oW="226" oH="352"/>
+    <sprite n="big_lantern_tail_fg.png" x="1875" y="625" w="157" h="183" pX="0.5" pY="0.5" oX="35" oY="28" oW="226" oH="352"/>
+    <sprite n="cloud.png" x="332" y="993" w="202" h="226" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="dragonfly_01.png" x="606" y="600" w="81" h="56" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61"/>
+    <sprite n="dragonfly_02.png" x="536" y="600" w="56" h="81" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61" r="y"/>
+    <sprite n="dragonfly_03.png" x="2" y="600" w="56" h="81" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61" r="y"/>
+    <sprite n="dragonfly_04.png" x="394" y="1985" w="81" h="60" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61"/>
+    <sprite n="dragonfly_05.png" x="673" y="1968" w="81" h="60" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61"/>
+    <sprite n="dragonfly_06.png" x="60" y="600" w="56" h="81" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61" r="y"/>
+    <sprite n="dragonfly_07.png" x="606" y="658" w="81" h="56" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="61"/>
+    <sprite n="dragonfly_08.png" x="410" y="1884" w="56" h="83" pX="0.5" pY="0.5" oX="2" oY="1" oW="88" oH="61" r="y"/>
+    <sprite n="dragonfly_glow.png" x="1930" y="98" w="103" h="123" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="dragonfly_wings_01.png" x="140" y="1884" w="73" h="127" pX="0.5" pY="0.5" oX="1" oY="4" oW="128" oH="77" r="y"/>
+    <sprite n="dragonfly_wings_02.png" x="296" y="1884" w="65" h="118" pX="0.5" pY="0.5" oX="8" oY="9" oW="128" oH="77" r="y"/>
+    <sprite n="hanging_orb_01.png" x="1875" y="326" w="33" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_02.png" x="40" y="683" w="55" h="208" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_03.png" x="59" y="1884" w="44" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_04.png" x="477" y="1968" w="194" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_orb_05.png" x="1875" y="810" w="153" h="55" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_orb_06.png" x="2" y="1884" w="55" h="131" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_07.png" x="363" y="1884" w="45" h="99" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_08.png" x="215" y="1884" w="42" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_09.png" x="468" y="1884" w="247" h="82" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_orb_10.png" x="289" y="993" w="41" h="231" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_11.png" x="1875" y="867" w="151" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_orb_12.png" x="259" y="1884" w="35" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_13.png" x="536" y="683" w="55" h="182" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_orb_14.png" x="105" y="1884" w="33" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_strings_L.png" x="2" y="920" w="285" h="308" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_strings_R.png" x="1875" y="914" w="138" h="321" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lantern_01_bg.png" x="1930" y="223" w="102" h="200" pX="0.5" pY="0.5" oX="11" oY="12" oW="120" oH="220"/>
+    <sprite n="lantern_01_fg.png" x="1930" y="2" w="105" h="94" pX="0.5" pY="0.5" oX="9" oY="21" oW="120" oH="220"/>
+    <sprite n="lantern_02.png" x="1875" y="425" w="163" h="67" pX="0.5" pY="0.5" oX="1" oY="3" oW="70" oH="170" r="y"/>
+    <sprite n="nose.png" x="2" y="1237" w="602" h="645" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="orange_glow.png" x="97" y="683" w="203" h="205" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_fur.png" x="717" y="600" w="484" h="391" pX="0.5" pY="0.5"/>
+    <sprite n="side_horns.png" x="1218" y="326" w="655" h="592" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform.png" x="2" y="2" w="1214" h="596" pX="0.5" pY="0.5"/>
+    <sprite n="tree.png" x="1218" y="2" w="710" h="322" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

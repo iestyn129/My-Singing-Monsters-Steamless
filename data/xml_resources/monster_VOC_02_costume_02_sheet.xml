@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:838f0471a0d92f2f2caf733c0abe03bf:34773b6a8baf4f225cb16ce7cb168bf9:634b3b118b3d3a53d432b1318f200521$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_02_costume_02_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (43, 72) -> new anchor (43, 72) diff = (0, 0)-->
+	<!-- add double it to texturepacker output offsets (1, 62) -> (1, 62), because hires -->
+    <sprite n="VOC_02_costume_02_coat.png" x="2" y="138" w="147" h="107" pX="0.5" pY="0.5" oX="1" oY="62" oW="152" oH="184"/>
+	
+	<!-- original anchor = (36, 101) -> new anchor (35, 106) diff = (1, -5)-->
+	<!-- add double it to texturepacker output offsets (8, 9) -> (10, -1), because hires -->
+    <sprite n="VOC_02_costume_02_earband.png" x="71" y="368" w="129" h="130" pX="0.5" pY="0.5" oX="10" oY="-1" oW="150" oH="150" r="y"/>
+	
+    <sprite n="VOC_02_costume_02_left_foot.png" x="164" y="55" w="77" h="65" pX="0.5" pY="0.5" oX="18" oY="11" oW="108" oH="88"/>
+    <sprite n="VOC_02_costume_02_left_upperarm.png" x="202" y="395" w="48" h="114" pX="0.5" pY="0.5" oX="8" oY="9" oW="132" oH="64" r="y"/>
+    <sprite n="VOC_02_costume_02_lower_body.png" x="2" y="247" w="141" h="119" pX="0.5" pY="0.5" oX="9" oY="8" oW="136" oH="156" r="y"/>
+    <sprite n="VOC_02_costume_02_lowerleg.png" x="151" y="164" w="97" h="41" pX="0.5" pY="0.5" oX="10" oY="9" oW="60" oH="116" r="y"/>
+    <sprite n="VOC_02_costume_02_midleg.png" x="164" y="2" w="85" h="51" pX="0.5" pY="0.5" oX="8" oY="10" oW="68" oH="104" r="y"/>
+    <sprite n="VOC_02_costume_02_right_foot.png" x="151" y="207" w="75" h="70" pX="0.5" pY="0.5" oX="12" oY="10" oW="92" oH="88" r="y"/>
+    
+	<!-- original anchor = (35, 58) -> new anchor (-13, 38) diff = (48, 20)-->
+	<!-- add double it to texturepacker output offsets (11, 3) -> (107, 43), because hires -->
+	<sprite n="VOC_02_costume_02_tail.png" x="164" y="122" w="76" h="40" pX="0.5" pY="0.5" oX="107" oY="43" oW="60" oH="85" r="y"/>
+	
+    <sprite n="VOC_02_costume_02_upper_body.png" x="2" y="2" w="160" h="134" pX="0.5" pY="0.5" oX="9" oY="12" oW="152" oH="184" r="y"/>
+    <sprite n="VOC_02_costume_02_upperarm.png" x="202" y="279" w="49" h="114" pX="0.5" pY="0.5" oX="7" oY="6" oW="132" oH="64" r="y"/>
+    <sprite n="VOC_02_costume_02_upperleg.png" x="2" y="368" w="67" h="140" pX="0.5" pY="0.5" oX="3" oY="9" oW="76" oH="156"/>
+</TextureAtlas>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fa4993bf590e99ad7e4c9b25cc793f01:fb6e200c71cdf01147b5d2cd92713a39:ec8adc0acabe5d0e004012b0cceada91$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GJ_EPIC_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="GJ_body_01" x="303" y="639" w="292" h="143" pX="0.5" pY="0.5" oX="81" oY="16" oW="328" oH="344" r="y"/>
+    <sprite n="GJ_body_02" x="2" y="491" w="299" h="153" pX="0.5" pY="0.5" oX="81" oY="16" oW="328" oH="344" r="y"/>
+    <sprite n="GJ_body_03" x="303" y="491" w="293" h="146" pX="0.5" pY="0.5" oX="100" oY="16" oW="328" oH="344" r="y"/>
+    <sprite n="GJ_eyeball_RARE" x="274" y="783" w="26" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="28" r="y"/>
+    <sprite n="GJ_eyelid_01" x="991" y="454" w="30" h="45" pX="0.5" pY="0.5" oX="1" oY="5" oW="50" oH="40" r="y"/>
+    <sprite n="GJ_eyelid_02" x="991" y="501" w="30" h="45" pX="0.5" pY="0.5" oX="2" oY="5" oW="50" oH="40" r="y"/>
+    <sprite n="GJ_eyelid_03" x="991" y="595" w="30" h="44" pX="0.5" pY="0.5" oX="3" oY="5" oW="50" oH="40" r="y"/>
+    <sprite n="GJ_eyelid_04" x="991" y="548" w="30" h="45" pX="0.5" pY="0.5" oX="1" oY="5" oW="50" oH="40" r="y"/>
+    <sprite n="GJ_hair_A1" x="2" y="646" w="286" h="135" pX="0.5" pY="0.5" oX="8" oY="0" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_A2" x="274" y="933" w="261" h="146" pX="0.5" pY="0.5" oX="8" oY="0" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_A3" x="668" y="1145" w="226" h="157" pX="0.5" pY="0.5" oX="8" oY="0" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_B" x="943" y="790" w="64" h="118" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="120"/>
+    <sprite n="GJ_hair_BACK_01" x="263" y="1081" w="259" h="120" pX="0.5" pY="0.5" oX="1" oY="1" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_BACK_02" x="2" y="1213" w="252" h="117" pX="0.5" pY="0.5" oX="2" oY="1" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_BACK_03" x="668" y="1021" w="238" h="122" pX="0.5" pY="0.5" oX="2" oY="1" oW="170" oH="300" r="y"/>
+    <sprite n="GJ_hair_BACK_04" x="537" y="1006" w="129" h="218" pX="0.5" pY="0.5" oX="2" oY="1" oW="170" oH="300"/>
+    <sprite n="GJ_hair_C" x="908" y="1071" w="106" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="56" oH="112" r="y"/>
+    <sprite n="GJ_hair_C1" x="523" y="1282" w="53" h="156" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_C2" x="953" y="1300" w="55" h="150" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_C3" x="896" y="1300" w="55" h="158" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_C4" x="942" y="910" w="56" h="159" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_G" x="598" y="578" w="75" h="230" pX="0.5" pY="0.5" oX="0" oY="2" oW="84" oH="232"/>
+    <sprite n="GJ_hair_NEW_01" x="953" y="1452" w="53" h="162" pX="0.5" pY="0.5" oX="1" oY="3" oW="56" oH="168"/>
+    <sprite n="GJ_hair_NEW_02" x="578" y="1282" w="53" h="149" pX="0.5" pY="0.5" oX="1" oY="6" oW="56" oH="168"/>
+    <sprite n="GJ_hair_NEW_03" x="523" y="1226" w="139" h="54" pX="0.5" pY="0.5" oX="0" oY="7" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_NEW_04" x="896" y="1244" w="121" h="54" pX="0.5" pY="0.5" oX="0" oY="7" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_head" x="908" y="1127" w="94" h="115" pX="0.5" pY="0.5" oX="1" oY="0" oW="116" oH="96" r="y"/>
+    <sprite n="GJ_legs_NEW_01" x="361" y="2" w="339" h="182" pX="0.5" pY="0.5" oX="17" oY="27" oW="256" oH="400" r="y"/>
+    <sprite n="GJ_legs_NEW_02" x="360" y="335" w="326" h="154" pX="0.5" pY="0.5" oX="45" oY="27" oW="256" oH="400" r="y"/>
+    <sprite n="GJ_legs_NEW_03" x="361" y="186" w="335" h="147" pX="0.5" pY="0.5" oX="49" oY="27" oW="256" oH="400" r="y"/>
+    <sprite n="GJ_legs_NEW_04" x="2" y="168" w="337" h="141" pX="0.5" pY="0.5" oX="52" oY="27" oW="256" oH="400" r="y"/>
+    <sprite n="GJ_mouth_01_RARE" x="341" y="189" w="16" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_mouth_02_RARE" x="336" y="382" w="20" h="90" pX="0.5" pY="0.5" oX="2" oY="3" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_mouth_03_RARE" x="991" y="641" w="28" h="84" pX="0.5" pY="0.5" oX="4" oY="1" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_mouth_04_RARE" x="598" y="536" w="84" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="92" oH="48"/>
+    <sprite n="GJ_mouth_05_RARE" x="943" y="642" w="39" h="53" pX="0.5" pY="0.5" oX="21" oY="0" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_mouth_06_RARE" x="991" y="410" w="31" h="42" pX="0.5" pY="0.5" oX="33" oY="0" oW="92" oH="48"/>
+    <sprite n="GJ_mouth_07_RARE" x="336" y="361" w="22" h="19" pX="0.5" pY="0.5" oX="38" oY="7" oW="92" oH="48"/>
+    <sprite n="GJ_mouth_08_RARE" x="336" y="311" w="22" h="48" pX="0.5" pY="0.5" oX="24" oY="5" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_mouth_09_RARE" x="943" y="697" w="34" h="91" pX="0.5" pY="0.5" oX="1" oY="0" oW="92" oH="48" r="y"/>
+    <sprite n="GJ_neck_RARE" x="598" y="491" w="87" h="43" pX="0.5" pY="0.5" oX="2" oY="0" oW="48" oH="88" r="y"/>
+    <sprite n="GJ_pupil_RARE" x="341" y="168" w="18" h="19" pX="0.5" pY="0.5" oX="1" oY="2" oW="20" oH="20" r="y"/>
+    <sprite n="GJ_shadow" x="571" y="810" w="100" h="194" pX="0.5" pY="0.5" oX="6" oY="3" oW="204" oH="104" r="y"/>
+    <sprite n="WINGS_01" x="2" y="2" w="357" h="164" pX="0.5" pY="0.5" oX="1" oY="22" oW="360" oH="400"/>
+    <sprite n="WINGS_02" x="2" y="311" w="332" h="178" pX="0.5" pY="0.5" oX="1" oY="9" oW="360" oH="400"/>
+    <sprite n="WINGS_03" x="698" y="211" w="304" h="197" pX="0.5" pY="0.5" oX="1" oY="2" oW="360" oH="400"/>
+    <sprite n="WINGS_04" x="702" y="2" w="312" h="207" pX="0.5" pY="0.5" oX="0" oY="39" oW="360" oH="400"/>
+    <sprite n="WINGS_05" x="688" y="410" w="301" h="230" pX="0.5" pY="0.5" oX="0" oY="73" oW="360" oH="400"/>
+    <sprite n="WINGS_06" x="2" y="783" w="270" h="252" pX="0.5" pY="0.5" oX="1" oY="98" oW="360" oH="400"/>
+    <sprite n="WINGS_07" x="675" y="805" w="265" h="214" pX="0.5" pY="0.5" oX="3" oY="109" oW="360" oH="400" r="y"/>
+    <sprite n="WINGS_08" x="675" y="642" w="266" h="161" pX="0.5" pY="0.5" oX="3" oY="120" oW="360" oH="400" r="y"/>
+    <sprite n="WINGS_09" x="302" y="784" w="267" h="147" pX="0.5" pY="0.5" oX="3" oY="120" oW="360" oH="400" r="y"/>
+    <sprite n="WINGS_10" x="2" y="1037" w="259" h="174" pX="0.5" pY="0.5" oX="3" oY="126" oW="360" oH="400" r="y"/>
+    <sprite n="WINGS_11" x="263" y="1203" w="258" h="108" pX="0.5" pY="0.5" oX="4" oY="135" oW="360" oH="400" r="y"/>
+</TextureAtlas>

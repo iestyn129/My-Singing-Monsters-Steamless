@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d9d6374cf5fd2272491171c77b063b44:903bb0e3ef8b74157e28c0bc5505cb61:51b3a8bb079d0013de38aef4ad536228$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island14_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="island14_backplat" x="1180" y="934" w="856" h="833" pX="0.5" pY="0.5" oX="0" oY="0" oW="856" oH="834"/>
+    <sprite n="island14_backplat_shine_01" x="1879" y="1833" w="98" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_02" x="1686" y="1987" w="78" h="43" pX="0.5" pY="0.5" oX="1" oY="0" oW="44" oH="78" r="y"/>
+    <sprite n="island14_backplat_shine_03" x="1374" y="1769" w="30" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_04" x="1524" y="1769" w="60" h="114" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_05" x="1640" y="1987" w="44" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_06" x="1258" y="1917" w="64" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_07" x="1954" y="1925" w="88" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_08" x="1389" y="1915" w="76" h="122" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_09" x="1467" y="1891" w="54" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_10" x="918" y="1949" w="108" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_11" x="1174" y="1769" w="82" h="168" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_12" x="1406" y="1769" w="42" h="132" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_13" x="1324" y="1917" w="34" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="island14_backplat_shine_14" x="1667" y="1769" w="210" h="216" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_backplat_shine_15" x="1450" y="1769" w="72" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_centerplat" x="1174" y="2" w="868" h="930" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_frog_01" x="496" y="1953" w="82" h="92" pX="0.5" pY="0.5" oX="58" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_02" x="580" y="1953" w="82" h="92" pX="0.5" pY="0.5" oX="58" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_03" x="411" y="1953" w="83" h="92" pX="0.5" pY="0.5" oX="57" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_04" x="318" y="1953" w="91" h="92" pX="0.5" pY="0.5" oX="49" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_05" x="222" y="1953" w="94" h="92" pX="0.5" pY="0.5" oX="46" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_06" x="124" y="1953" w="96" h="92" pX="0.5" pY="0.5" oX="44" oY="69" oW="216" oH="184"/>
+    <sprite n="island14_frog_07" x="1523" y="1891" w="115" h="119" pX="0.5" pY="0.5" oX="34" oY="59" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_08" x="1258" y="1769" w="114" h="146" pX="0.5" pY="0.5" oX="26" oY="14" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_09" x="664" y="1953" w="91" h="91" pX="0.5" pY="0.5" oX="33" oY="93" oW="216" oH="184"/>
+    <sprite n="island14_frog_10" x="757" y="1953" w="159" h="90" pX="0.5" pY="0.5" oX="23" oY="41" oW="216" oH="184"/>
+    <sprite n="island14_frog_11" x="1180" y="1939" w="101" h="106" pX="0.5" pY="0.5" oX="47" oY="62" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_12" x="1879" y="1769" w="99" h="62" pX="0.5" pY="0.5" oX="74" oY="63" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_13" x="1283" y="1935" w="104" h="111" pX="0.5" pY="0.5" oX="50" oY="60" oW="216" oH="184"/>
+    <sprite n="island14_frog_14" x="1586" y="1769" w="79" h="106" pX="0.5" pY="0.5" oX="55" oY="78" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_15" x="1879" y="1925" w="73" h="94" pX="0.5" pY="0.5" oX="61" oY="88" oW="216" oH="184" r="y"/>
+    <sprite n="island14_frog_16" x="1088" y="1949" w="90" h="94" pX="0.5" pY="0.5" oX="59" oY="53" oW="216" oH="184"/>
+    <sprite n="island14_frog_17" x="2" y="1953" w="120" h="92" pX="0.5" pY="0.5" oX="35" oY="42" oW="216" oH="184"/>
+    <sprite n="island14_frog_shadow" x="1028" y="1949" w="58" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_glass_gwirl_02" x="780" y="1347" w="392" h="600" pX="0.5" pY="0.5"/>
+    <sprite n="island14_glass_swirl_01" x="2" y="1347" w="776" h="604" pX="0.5" pY="0.5"/>
+    <sprite n="island14_glass_swirl_03" x="2" y="2" w="825" h="1343" pX="0.5" pY="0.5" oX="0" oY="0" oW="830" oH="1348"/>
+</TextureAtlas>

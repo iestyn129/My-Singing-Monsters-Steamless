@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cd67efd51bc90b81a9eb11fab83ecdb9:c52b27f386141f7dc9e8bd9c4ab42019:ba7fbc10e9585cc4c3a36627fdf23335$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T_fx_sheet.png" width="256" height="1024" hires="true">
+    <sprite n="dot.png" x="155" y="926" w="46" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="48" oH="48"/>
+    <sprite n="ring_01.png" x="2" y="2" w="229" h="229" pX="0.5" pY="0.5"/>
+    <sprite n="ring_02.png" x="2" y="233" w="229" h="229" pX="0.5" pY="0.5"/>
+    <sprite n="ring_03.png" x="2" y="464" w="229" h="229" pX="0.5" pY="0.5"/>
+    <sprite n="ring_04.png" x="2" y="695" w="229" h="229" pX="0.5" pY="0.5"/>
+    <sprite n="spiral.png" x="2" y="926" w="62" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="star_01.png" x="103" y="926" w="50" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="star_02.png" x="103" y="979" w="43" h="43" pX="0.5" pY="0.5" oX="3" oY="4" oW="50" oH="51"/>
+    <sprite n="streak.png" x="2" y="993" w="65" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="timer.png" x="66" y="926" w="35" h="53" pX="0.5" pY="0.5"/>
+</TextureAtlas>

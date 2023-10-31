@@ -1,0 +1,40 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<element name="BBBLogo">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/BBB_logo_loading_screen")
+				component:setScale(Vector2(0.25*game.menuScaleX(), 0.25*game.menuScaleX()))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	<element name="BgElement">
+		<hudScale scale="game.menuScaleX()" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="21" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				lua_sys.playMP3("audio/music/loading_music")
+				component("spriteName"):SetString("gfx/menu/logging_in")
+				component:setScale(Vector2(lua_sys.screenHeight() / 768, lua_sys.screenHeight() / 768))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<spriteComponent name="Sprite2">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/loading_bar_full")
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+	</element>
+	
+</menu>

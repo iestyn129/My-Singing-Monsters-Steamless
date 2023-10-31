@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:642b47cb46597d4b851fed8588780b1e:e2b2ef2b2839961f83bc2bc42af00699:3057c7125da2ccbcfb933f0d48000318$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U04_RARE_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="beam" x="568" y="2" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot" x="780" y="501" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="U04_body" x="407" y="68" w="137" h="187" pX="0.5" pY="0.5" oX="7" oY="10" oW="152" oH="200"/>
+    <sprite n="U04_glow_01" x="2" y="673" w="564" h="344" pX="0.5" pY="0.5" oX="137" oY="130" oW="543" oH="705" r="y"/>
+    <sprite n="U04_glow_02" x="2" y="2" w="403" h="669" pX="0.5" pY="0.5" oX="62" oY="12" oW="543" oH="705"/>
+    <sprite n="U04_head" x="407" y="257" w="136" h="160" pX="0.5" pY="0.5" oX="3" oY="7" oW="156" oH="180"/>
+    <sprite n="U04_horn" x="568" y="331" w="132" h="118" pX="0.5" pY="0.5" oX="4" oY="4" oW="140" oH="126"/>
+    <sprite n="U04_left_fingers_01" x="702" y="379" w="81" h="60" pX="0.5" pY="0.5" oX="28" oY="36" oW="124" oH="108"/>
+    <sprite n="U04_left_fingers_02" x="686" y="451" w="92" h="61" pX="0.5" pY="0.5" oX="20" oY="37" oW="124" oH="108"/>
+    <sprite n="U04_left_foot" x="788" y="334" w="102" h="76" pX="0.5" pY="0.5" oX="10" oY="10" oW="124" oH="96"/>
+    <sprite n="U04_left_foot_RARE" x="447" y="490" w="70" h="116" pX="0.5" pY="0.5" oX="2" oY="3" oW="120" oH="76" r="y"/>
+    <sprite n="U04_left_hand_01" x="673" y="514" w="68" h="64" pX="0.5" pY="0.5" oX="40" oY="11" oW="136" oH="112"/>
+    <sprite n="U04_left_hand_02" x="407" y="419" w="131" h="69" pX="0.5" pY="0.5" oX="2" oY="13" oW="136" oH="112"/>
+    <sprite n="U04_left_hand_03" x="785" y="412" w="96" h="87" pX="0.5" pY="0.5" oX="17" oY="14" oW="136" oH="112" r="y"/>
+    <sprite n="U04_left_neckbolt_01" x="632" y="591" w="39" h="54" pX="0.5" pY="0.5" oX="14" oY="10" oW="80" oH="60" r="y"/>
+    <sprite n="U04_left_neckbolt_02" x="780" y="592" w="55" h="35" pX="0.5" pY="0.5" oX="13" oY="12" oW="80" oH="60"/>
+    <sprite n="U04_left_neckbolt_03" x="567" y="451" w="56" h="25" pX="0.5" pY="0.5" oX="12" oY="17" oW="80" oH="60"/>
+    <sprite n="U04_left_neckbolt_04" x="995" y="373" w="24" h="56" pX="0.5" pY="0.5" oX="12" oY="18" oW="80" oH="60" r="y"/>
+    <sprite n="U04_left_neckbolt_05" x="575" y="591" w="55" h="35" pX="0.5" pY="0.5" oX="13" oY="12" oW="80" oH="60"/>
+    <sprite n="U04_lowerarm" x="407" y="2" w="149" h="64" pX="0.5" pY="0.5" oX="12" oY="9" oW="172" oH="84"/>
+    <sprite n="U04_lowerleg" x="519" y="490" w="43" h="112" pX="0.5" pY="0.5" oX="11" oY="11" oW="64" oH="136"/>
+    <sprite n="U04_mouth01" x="976" y="466" w="45" h="76" pX="0.5" pY="0.5" oX="18" oY="20" oW="128" oH="76" r="y"/>
+    <sprite n="U04_mouth02" x="976" y="544" w="41" h="76" pX="0.5" pY="0.5" oX="18" oY="20" oW="128" oH="76" r="y"/>
+    <sprite n="U04_mouth03" x="871" y="591" w="75" h="29" pX="0.5" pY="0.5" oX="19" oY="20" oW="128" oH="76"/>
+    <sprite n="U04_mouth04" x="871" y="553" w="76" h="36" pX="0.5" pY="0.5" oX="18" oY="7" oW="128" oH="76"/>
+    <sprite n="U04_mouth05" x="546" y="68" w="17" h="76" pX="0.5" pY="0.5" oX="18" oY="20" oW="128" oH="76" r="y"/>
+    <sprite n="U04_right_foot" x="883" y="466" w="91" h="85" pX="0.5" pY="0.5" oX="11" oY="12" oW="108" oH="116" r="y"/>
+    <sprite n="U04_right_foot_rare" x="896" y="278" w="105" h="93" pX="0.5" pY="0.5" oX="10" oY="7" oW="126" oH="106"/>
+    <sprite n="U04_right_hand_01" x="564" y="480" w="107" h="109" pX="0.5" pY="0.5" oX="0" oY="10" oW="120" oH="128" r="y"/>
+    <sprite n="U04_right_hand_02" x="892" y="373" w="101" h="91" pX="0.5" pY="0.5" oX="6" oY="26" oW="120" oH="128"/>
+    <sprite n="U04_right_neckbolt_01" x="673" y="580" w="59" h="39" pX="0.5" pY="0.5" oX="7" oY="10" oW="76" oH="60"/>
+    <sprite n="U04_right_neckbolt_02" x="743" y="514" w="35" h="59" pX="0.5" pY="0.5" oX="7" oY="12" oW="76" oH="60" r="y"/>
+    <sprite n="U04_right_neckbolt_03" x="540" y="419" w="25" h="59" pX="0.5" pY="0.5" oX="7" oY="17" oW="76" oH="60" r="y"/>
+    <sprite n="U04_right_neckbolt_04" x="625" y="451" w="59" h="24" pX="0.5" pY="0.5" oX="7" oY="18" oW="76" oH="60"/>
+    <sprite n="U04_right_neckbolt_05" x="743" y="575" w="35" h="59" pX="0.5" pY="0.5" oX="7" oY="12" oW="76" oH="60" r="y"/>
+    <sprite n="U04_shadow" x="788" y="278" w="106" h="54" pX="0.5" pY="0.5" oX="11" oY="10" oW="128" oH="76"/>
+    <sprite n="U04_shoulder" x="407" y="614" w="63" h="56" pX="0.5" pY="0.5" oX="3" oY="4" oW="62" oH="70" r="y"/>
+    <sprite n="U04_tongue_01" x="568" y="185" w="218" h="42" pX="0.5" pY="0.5" oX="14" oY="31" oW="244" oH="104"/>
+    <sprite n="U04_tongue_02" x="788" y="234" w="217" h="42" pX="0.5" pY="0.5" oX="15" oY="32" oW="244" oH="104"/>
+    <sprite n="U04_tongue_03" x="796" y="68" w="219" h="50" pX="0.5" pY="0.5" oX="14" oY="33" oW="244" oH="104"/>
+    <sprite n="U04_tongue_04" x="789" y="120" w="218" h="58" pX="0.5" pY="0.5" oX="15" oY="33" oW="244" oH="104"/>
+    <sprite n="U04_tongue_05" x="796" y="2" w="219" h="64" pX="0.5" pY="0.5" oX="14" oY="19" oW="244" oH="104"/>
+    <sprite n="U04_tongue_06" x="788" y="180" w="218" h="52" pX="0.5" pY="0.5" oX="15" oY="25" oW="244" oH="104"/>
+    <sprite n="U04_tongue_07" x="568" y="229" w="218" h="42" pX="0.5" pY="0.5" oX="15" oY="29" oW="244" oH="104"/>
+    <sprite n="U04_tongue_08" x="568" y="74" w="219" h="50" pX="0.5" pY="0.5" oX="14" oY="19" oW="244" oH="104"/>
+    <sprite n="U04_tongue_09" x="568" y="126" w="218" h="57" pX="0.5" pY="0.5" oX="14" oY="12" oW="244" oH="104"/>
+    <sprite n="U04_tongue_end" x="568" y="273" w="136" h="56" pX="0.5" pY="0.5" oX="11" oY="17" oW="76" oH="164" r="y"/>
+    <sprite n="U04_upper_jaw" x="706" y="273" w="80" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="U04_upperarm" x="407" y="490" w="38" h="122" pX="0.5" pY="0.5" oX="11" oY="10" oW="144" oH="60" r="y"/>
+    <sprite n="U04_upperleg" x="472" y="608" w="101" h="61" pX="0.5" pY="0.5" oX="5" oY="9" oW="76" oH="116" r="y"/>
+</TextureAtlas>

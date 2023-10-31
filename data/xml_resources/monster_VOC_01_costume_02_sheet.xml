@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:565f96d01aa127fd1e4b330c0d4445a5:1c8e66b593c575fe0ebe595beed1867e:438cab38712bbbe3b7431e32b2b922c5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_01_costume_02_sheet.png" width="512" height="512" hires="true">
+    <sprite n="VOC_01_horn left.png" x="2" y="372" w="109" h="134" pX="0.5" pY="0.5" oX="6" oY="10" oW="152" oH="132" r="y"/>
+    <sprite n="VOC_01_horn_right.png" x="226" y="332" w="128" h="141" pX="0.5" pY="0.5" oX="12" oY="8" oW="164" oH="136" r="y"/>
+    <sprite n="VOC_01_left_lowerarm_wrap.png" x="183" y="76" w="111" h="99" pX="0.5" pY="0.5" oX="32" oY="5" oW="164" oH="112"/>
+    <sprite n="VOC_01_lowerbody.png" x="2" y="188" w="151" h="182" pX="0.5" pY="0.5" oX="7" oY="9" oW="164" oH="196"/>
+    <sprite n="VOC_01_lowerleg.png" x="296" y="72" w="41" h="95" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="116"/>
+    <sprite n="VOC_01_right_lowerarm_wrap.png" x="113" y="372" w="111" h="129" pX="0.5" pY="0.5" oX="26" oY="5" oW="172" oH="116" r="y"/>	
+    <sprite n="VOC_01_upperarm.png" x="155" y="188" w="72" h="142" pX="0.5" pY="0.5" oX="9" oY="11" oW="164" oH="92" r="y"/>
+	<sprite n="VOC_01_upperarm2.png" x="356" y="2" w="139" h="72" pX="0.5" pY="0.5" oX="12" oY="11" oW="164" oH="92"/>
+    <sprite n="VOC_01_upperbody.png" x="2" y="2" w="179" h="184" pX="0.5" pY="0.5" oX="8" oY="12" oW="196" oH="208"/>
+	<sprite n="VOC_01_upperleg2.png" x="183" y="2" w="129" h="68" pX="0.5" pY="0.5" oX="8" oY="17" oW="84" oH="156" r="y"/>
+	<sprite n="VOC_01_upperleg.png" x="229" y="177" w="67" h="127" pX="0.5" pY="0.5" oX="9" oY="19" oW="84" oH="156"/>
+</TextureAtlas>

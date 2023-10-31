@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:277f09f50e67447316fbd139bc6aa6b1:44bfb5394ca04bd57dcfd51211b826cc:9310f6c6d82002ca3310189ecc5700c6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_M_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="M_Left_Hand.png" x="87" y="310" w="82" h="50" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="84" r="y"/>
+    <sprite n="M_Left_Wood.png" x="177" y="242" w="73" h="97" pX="0.5" pY="0.5" oX="-12" oY="10" oW="100" oH="120"/>
+    <sprite n="M_Mushroom.png" x="2" y="2" w="248" h="138" pX="0.5" pY="0.5" oX="-71" oY="-96" oW="300" oH="160"/>
+    <sprite n="M_Right_Hand.png" x="2" y="461" w="83" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="M_Right_Sleeve.png" x="177" y="142" w="74" h="98" pX="0.5" pY="0.5" oX="102" oY="104" oW="100" oH="120"/>
+    <sprite n="M_Right_Wood.png" x="171" y="341" w="65" h="98" pX="0.5" pY="0.5" oX="-2" oY="4" oW="80" oH="100"/>
+    <sprite n="M_Shirt.png" x="2" y="142" w="173" h="166" pX="0.5" pY="0.5" oX="7" oY="55" oW="200" oH="200" r="y"/>
+    <sprite n="M_Upperleg.png" x="2" y="341" w="35" h="118" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="120"/>
+</TextureAtlas>

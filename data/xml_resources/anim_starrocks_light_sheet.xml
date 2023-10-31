@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:df9a8e643a44bada8e098040c735fac4:3f2ad00098e2cb82e8687feea5821976:a806f38c51c24f9641afcb02ea369dc8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_light_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_light" x="2" y="2" w="358" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_light_01" x="362" y="210" w="101" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_light_02" x="362" y="105" w="107" h="103" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_light_03" x="362" y="2" w="110" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_light_04" x="2" y="358" w="97" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_light_bottom" x="101" y="358" w="157" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_shadow" x="362" y="311" w="85" h="173" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200" r="y"/>
+</TextureAtlas>

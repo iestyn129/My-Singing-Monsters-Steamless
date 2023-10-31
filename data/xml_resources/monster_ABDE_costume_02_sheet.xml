@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dd0dfde42179603a647c6dba1e6b7695:1925d15dc4176ab569b780628b358912:87ddb8d7f862831cbf301b4d34f379e5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABDE_costume_02_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (36, 52.5) -> new anchor (40.5, 112.5) diff = (-4.5, -60)-->
+	<!-- add double it to texturepacker output offsets (0, 3) -> (-4.5, -117), because hires-->
+		<sprite n="ABDE_speaker_70s.png" x="2" y="2" w="160" h="333" pX="0.5" pY="0.5" oX="0" oY="-117" oW="160" oH="340"/>
+		<sprite n="empty" x="0" y="350" w="8" h="8"/>
+</TextureAtlas>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<template name="template_load_overlay" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+  <script src="scripts/template_load_overlay.lua" />
+  
+  <element name="TopElement">
+    <size dependentOnElement="element:name()" dependentOnComponent="blackout" />
+    <position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+    <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+    <touchComponent name="Touch">
+      <size dependentOnElement="element:name()" />
+      <position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+      <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+    </touchComponent>
+    <spriteComponent name="blackout">
+      <position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+      <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+    </spriteComponent>
+    <element name="LoaderElement">
+      <position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+      <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+      <spriteComponent name="LoaderBG">
+        <position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+        <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+      </spriteComponent>
+      <spriteComponent name="Loader">
+        <position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+        <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+      </spriteComponent>
+    </element>
+  </element>
+</template>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e16990f26b64213dff16ceb37b2ca1e5:d2f200fac7f09074de5af10598ca906b:8b870d06a30193e613cfbbd9726399b9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island05_sheet02_summer.png" width="2048" height="2048" hires="true">
+    <sprite n="eye_glow" x="1028" y="2" w="820" h="812" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_glow_through_eyelid" x="1850" y="597" w="167" h="435" pX="0.5" pY="0.5" oX="0" oY="1" oW="435" oH="168" r="y"/>
+    <sprite n="eye_ring" x="2" y="2" w="1024" h="740" pX="0.5" pY="0.5" oX="7" oY="0" oW="1036" oH="740"/>
+    <sprite n="eyelid_bottom" x="2" y="744" w="593" h="269" pX="0.5" pY="0.5" oX="9" oY="11" oW="612" oH="292"/>
+    <sprite n="eyelid_bottom_edge" x="1850" y="2" w="179" h="593" pX="0.5" pY="0.5" oX="9" oY="6" oW="612" oH="192" r="y"/>
+    <sprite n="eyelid_bottom_edge_highlight" x="2" y="1836" w="585" h="150" pX="0.5" pY="0.5" oX="7" oY="5" oW="600" oH="160"/>
+    <sprite n="eyelid_glow_solid" x="802" y="744" w="223" h="603" pX="0.5" pY="0.5" oX="0" oY="4" oW="604" oH="232" r="y"/>
+    <sprite n="eyelid_top" x="1202" y="1032" w="538" h="377" pX="0.5" pY="0.5" oX="0" oY="1" oW="562" oH="378"/>
+    <sprite n="eyelid_top_edge" x="1202" y="816" w="619" h="214" pX="0.5" pY="0.5" oX="6" oY="5" oW="632" oH="224"/>
+    <sprite n="eyelid_top_edge_highlight" x="589" y="1836" w="611" h="144" pX="0.5" pY="0.5" oX="6" oY="8" oW="624" oH="160"/>
+    <sprite n="pupil" x="2" y="1034" w="798" h="800" pX="0.5" pY="0.5" oX="0" oY="1" oW="800" oH="800" r="y"/>
+</TextureAtlas>

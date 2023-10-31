@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3b3bba5298c5a185439d91f5d37e3943:58d3ae22e8e4881117b3323ac64d2eaf:419b11a6b0aaee65545ec0ea8296ce89$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island11_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island11_critter_body" x="1774" y="255" w="99" h="86" pX="0.5" pY="0.5" oX="0" oY="1" oW="100" oH="88"/>
+    <sprite n="island11_critter_eyebacks" x="541" y="1561" w="49" h="26" pX="0.5" pY="0.5" oX="0" oY="3" oW="52" oH="32"/>
+    <sprite n="island11_critter_mouth_closed" x="534" y="1589" w="55" h="17" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="20"/>
+    <sprite n="island11_critter_mouth_open" x="592" y="1520" w="18" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="20" r="y"/>
+    <sprite n="island11_critter_pupils" x="1336" y="1742" w="16" h="44" pX="0.5" pY="0.5" oX="1" oY="1" oW="48" oH="20" r="y"/>
+    <sprite n="island11_eye_highlight01" x="541" y="1520" w="38" h="39" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="40"/>
+    <sprite n="island11_eyeback01" x="614" y="1742" w="720" h="225" pX="0.5" pY="0.5" oX="3" oY="6" oW="728" oH="244"/>
+    <sprite n="island11_eyebrow01" x="416" y="723" w="208" h="795" pX="0.5" pY="0.5" oX="0" oY="0" oW="796" oH="212" r="y"/>
+    <sprite n="island11_eyeframe01" x="2" y="2" w="843" h="719" pX="0.5" pY="0.5" oX="4" oY="5" oW="856" oH="728"/>
+    <sprite n="island11_eyelid_lower01" x="1336" y="1844" w="596" h="187" pX="0.5" pY="0.5" oX="1" oY="2" oW="604" oH="192"/>
+    <sprite n="island11_eyelid_upper01" x="2" y="1617" w="610" h="380" pX="0.5" pY="0.5" oX="1" oY="5" oW="616" oH="388"/>
+    <sprite n="island11_eyemid_LEFT" x="614" y="1969" w="120" h="56" pX="0.5" pY="0.5" oX="2" oY="8" oW="64" oH="132" r="y"/>
+    <sprite n="island11_eyemid_RIGHT" x="736" y="1969" w="120" h="53" pX="0.5" pY="0.5" oX="9" oY="4" oW="64" oH="132" r="y"/>
+    <sprite n="island11_eyetop_LEFT" x="416" y="1520" w="123" h="45" pX="0.5" pY="0.5" oX="2" oY="4" oW="52" oH="128" r="y"/>
+    <sprite n="island11_eyetop_RIGHT" x="416" y="1567" w="116" h="37" pX="0.5" pY="0.5" oX="9" oY="6" oW="52" oH="128" r="y"/>
+    <sprite n="island11_filler01" x="1710" y="447" w="311" h="424" pX="0.5" pY="0.5" oX="1" oY="1" oW="428" oH="320" r="y"/>
+    <sprite n="island11_hair01" x="847" y="2" w="513" h="1192" pX="0.5" pY="0.5" oX="2" oY="0" oW="520" oH="1192"/>
+    <sprite n="island11_hair_edge01" x="1710" y="873" w="258" h="241" pX="0.5" pY="0.5" oX="0" oY="0" oW="248" oH="260" r="y"/>
+    <sprite n="island11_nose01" x="1361" y="1196" w="547" h="646" pX="0.5" pY="0.5" oX="3" oY="6" oW="552" oH="652"/>
+    <sprite n="island11_platform01" x="1362" y="2" w="410" h="443" pX="0.5" pY="0.5" oX="3" oY="2" oW="448" oH="412" r="y"/>
+    <sprite n="island11_platform02" x="1362" y="447" w="346" h="443" pX="0.5" pY="0.5" oX="2" oY="2" oW="448" oH="348" r="y"/>
+    <sprite n="island11_platform03" x="626" y="1196" w="733" h="544" pX="0.5" pY="0.5" oX="1" oY="0" oW="736" oH="544"/>
+    <sprite n="island11_tusk01" x="626" y="723" w="172" h="266" pX="0.5" pY="0.5" oX="3" oY="1" oW="176" oH="268"/>
+    <sprite n="island11_tusk02" x="1362" y="892" w="266" h="172" pX="0.5" pY="0.5" oX="3" oY="1" oW="176" oH="268" r="y"/>
+    <sprite n="island11_tusk03" x="1774" y="2" w="150" h="251" pX="0.5" pY="0.5" oX="0" oY="1" oW="152" oH="252"/>
+    <sprite n="island11_tusk04" x="626" y="991" w="213" h="150" pX="0.5" pY="0.5" oX="0" oY="39" oW="152" oH="252" r="y"/>
+    <sprite n="w11_cloud" x="2" y="723" w="412" h="892" pX="0.5" pY="0.5" oX="3" oY="3" oW="900" oH="420" r="y"/>
+</TextureAtlas>

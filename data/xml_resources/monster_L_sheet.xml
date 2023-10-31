@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7b53f89e1108c7907a7277926bd4ed4c:18c7d3b5deef78fcf3742d3042b08d16:425303145f087765e35d3cb7c1d33034$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_L_sheet.png" width="512" height="512" hires="true">
+    <sprite n="L_drum_glow" x="359" y="438" w="34" h="67" pX="0.5" pY="0.5" oX="2" oY="1" oW="72" oH="36" r="y"/>
+    <sprite n="L_eyeballs" x="416" y="377" w="66" h="30" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="L_eyeballs_RARE" x="416" y="409" w="66" h="30" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="L_eyelids_01" x="383" y="364" w="31" h="67" pX="0.5" pY="0.5" oX="2" oY="0" oW="72" oH="32" r="y"/>
+    <sprite n="L_eyelids_02" x="416" y="344" w="67" h="31" pX="0.5" pY="0.5" oX="2" oY="0" oW="72" oH="32"/>
+    <sprite n="L_eyelids_03" x="349" y="364" w="32" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L_gem_RARE" x="60" y="459" w="66" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L_hand_01" x="2" y="459" w="56" h="46" pX="0.5" pY="0.5" oX="5" oY="1" oW="52" oH="60" r="y"/>
+    <sprite n="L_hand_02" x="418" y="441" w="52" h="52" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="60"/>
+    <sprite n="L_hand_03" x="128" y="451" w="42" h="58" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="60"/>
+    <sprite n="L_hand_04" x="283" y="448" w="42" h="56" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="60"/>
+    <sprite n="L_head" x="364" y="2" w="143" h="160" pX="0.5" pY="0.5" oX="0" oY="0" oW="144" oH="160"/>
+    <sprite n="L_head_RARE" x="155" y="236" w="192" h="210" pX="0.5" pY="0.5" oX="0" oY="0" oW="210" oH="196" r="y"/>
+    <sprite n="L_left_lowerarm" x="206" y="448" w="75" h="57" pX="0.5" pY="0.5" oX="1" oY="7" oW="60" oH="84" r="y"/>
+    <sprite n="L_left_upperarm" x="327" y="448" w="30" h="53" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="56"/>
+    <sprite n="L_lowerbody" x="364" y="235" w="126" h="107" pX="0.5" pY="0.5" oX="2" oY="0" oW="112" oH="128" r="y"/>
+    <sprite n="L_mouth_01" x="492" y="267" w="13" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="20" r="y"/>
+    <sprite n="L_mouth_02" x="492" y="317" w="12" h="45" pX="0.5" pY="0.5" oX="2" oY="2" oW="52" oH="20" r="y"/>
+    <sprite n="L_mouth_03" x="395" y="433" w="19" h="52" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="20" r="y"/>
+    <sprite n="L_prisms" x="2" y="2" w="360" h="232" pX="0.5" pY="0.5" oX="0" oY="2" oW="360" oH="236"/>
+    <sprite n="L_pupil" x="492" y="235" w="14" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="L_pupil_RARE" x="492" y="251" w="14" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="L_pupil_RARE_small" x="349" y="236" w="10" h="10" pX="0.5" pY="0.5" oX="3" oY="3" oW="16" oH="16"/>
+    <sprite n="L_right_lowerarm" x="97" y="364" w="56" h="85" pX="0.5" pY="0.5" oX="2" oY="6" oW="60" oH="92"/>
+    <sprite n="L_right_upperarm" x="172" y="448" w="32" h="58" pX="0.5" pY="0.5" oX="2" oY="1" oW="36" oH="60"/>
+    <sprite n="L_sound_ring" x="364" y="164" w="136" h="69" pX="0.5" pY="0.5" oX="2" oY="1" oW="140" oH="72"/>
+    <sprite n="L_upperbody" x="2" y="364" w="93" h="93" pX="0.5" pY="0.5" oX="1" oY="1" oW="96" oH="96"/>
+    <sprite n="RARE_L_eyelid_01" x="484" y="390" w="22" h="21" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24" r="y"/>
+    <sprite n="RARE_L_eyelid_02" x="395" y="487" w="21" h="22" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+    <sprite n="RARE_L_eyelid_03" x="485" y="364" w="24" h="24" pX="0.5" pY="0.5"/>
+</TextureAtlas>

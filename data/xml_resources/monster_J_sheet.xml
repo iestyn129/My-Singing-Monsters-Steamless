@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:30833961207fb622fb0d5a18d5ecb430:53fde4bb1bd3310c2a68decda329a71e:a82b140ba4b7e856c975817b110a342c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_J_sheet.png" width="512" height="512" hires="true">
+    <sprite n="J_body" x="2" y="2" w="167" h="154" pX="0.5" pY="0.5" oX="0" oY="0" oW="168" oH="154"/>
+    <sprite n="J_brow_left" x="397" y="192" w="34" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="34" r="y"/>
+    <sprite n="J_brow_left_RARE" x="315" y="337" w="48" h="34" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="34"/>
+    <sprite n="J_brow_right" x="140" y="477" w="64" h="31" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="34"/>
+    <sprite n="J_brow_right_RARE" x="396" y="242" w="31" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="34" r="y"/>
+    <sprite n="J_horn01_RARE" x="222" y="383" w="38" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="J_horn02_RARE" x="396" y="308" w="30" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="J_horn03_RARE" x="429" y="295" w="52" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="J_horn04_RARE" x="490" y="191" w="20" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="J_left_eyeball" x="222" y="465" w="52" h="45" pX="0.5" pY="0.5" oX="11" oY="10" oW="64" oH="64" r="y"/>
+    <sprite n="J_left_eyeball_RARE" x="276" y="450" w="45" h="52" pX="0.5" pY="0.5" oX="11" oY="10" oW="64" oH="64"/>
+    <sprite n="J_left_eyelid_01" x="483" y="299" w="27" h="37" pX="0.5" pY="0.5" oX="4" oY="5" oW="44" oH="48" r="y"/>
+    <sprite n="J_left_eyelid_02" x="391" y="381" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="2" oW="44" oH="48" r="y"/>
+    <sprite n="J_left_eyelid_03" x="370" y="425" w="42" h="42" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="48"/>
+    <sprite n="J_left_eyelid_04" x="325" y="425" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="3" oW="44" oH="48"/>
+    <sprite n="J_left_lowerarm" x="338" y="142" w="88" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="J_left_lowerarm_02" x="169" y="266" w="87" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="88" r="y"/>
+    <sprite n="J_left_upperarm" x="434" y="92" w="72" h="55" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="72" r="y"/>
+    <sprite n="J_mouth_01" x="357" y="229" w="37" h="65" pX="0.5" pY="0.5" oX="6" oY="7" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_01_RARE" x="262" y="383" w="37" h="65" pX="0.5" pY="0.5" oX="6" oY="7" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_02" x="428" y="149" w="80" h="40" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78"/>
+    <sprite n="J_mouth_02_RARE" x="140" y="435" w="80" h="40" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78"/>
+    <sprite n="J_mouth_03" x="316" y="192" w="79" h="35" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78"/>
+    <sprite n="J_mouth_03_RARE" x="320" y="229" w="35" h="79" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_04" x="213" y="312" w="48" h="69" pX="0.5" pY="0.5" oX="6" oY="5" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_04_RARE" x="151" y="385" w="69" h="48" pX="0.5" pY="0.5" oX="6" oY="5" oW="80" oH="78"/>
+    <sprite n="J_mouth_05" x="254" y="186" w="60" h="71" pX="0.5" pY="0.5" oX="11" oY="1" oW="80" oH="78"/>
+    <sprite n="J_mouth_05_RARE" x="151" y="312" w="60" h="71" pX="0.5" pY="0.5" oX="11" oY="1" oW="80" oH="78"/>
+    <sprite n="J_mouth_06" x="2" y="429" w="67" h="76" pX="0.5" pY="0.5" oX="8" oY="0" oW="80" oH="78"/>
+    <sprite n="J_mouth_06_RARE" x="71" y="429" w="67" h="76" pX="0.5" pY="0.5" oX="8" oY="0" oW="80" oH="78"/>
+    <sprite n="J_mouth_07" x="258" y="259" w="60" h="50" pX="0.5" pY="0.5" oX="14" oY="2" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_07_RARE" x="263" y="311" w="50" h="60" pX="0.5" pY="0.5" oX="14" oY="2" oW="80" oH="78"/>
+    <sprite n="J_mouth_08" x="301" y="373" w="43" h="50" pX="0.5" pY="0.5" oX="15" oY="3" oW="80" oH="78"/>
+    <sprite n="J_mouth_08_RARE" x="346" y="373" w="43" h="50" pX="0.5" pY="0.5" oX="15" oY="3" oW="80" oH="78"/>
+    <sprite n="J_pupil" x="301" y="425" w="22" h="23" pX="0.5" pY="0.5" oX="2" oY="3" oW="26" oH="26"/>
+    <sprite n="J_pupil_RARE" x="323" y="469" w="16" h="22" pX="0.5" pY="0.5" oX="4" oY="0" oW="22" oH="22"/>
+    <sprite n="J_right_eyeball" x="433" y="191" w="55" h="50" pX="0.5" pY="0.5" oX="8" oY="9" oW="64" oH="64"/>
+    <sprite n="J_right_eyeball_RARE" x="429" y="243" w="55" h="50" pX="0.5" pY="0.5" oX="8" oY="9" oW="64" oH="64"/>
+    <sprite n="J_right_eyelid_01" x="357" y="296" w="37" h="35" pX="0.5" pY="0.5" oX="3" oY="5" oW="44" oH="48"/>
+    <sprite n="J_right_eyelid_02" x="414" y="426" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="2" oW="44" oH="48" r="y"/>
+    <sprite n="J_right_eyelid_03" x="436" y="381" w="43" h="43" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="48"/>
+    <sprite n="J_right_eyelid_04" x="414" y="337" w="43" h="42" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="48"/>
+    <sprite n="J_right_lowerarm" x="340" y="92" w="92" h="48" pX="0.5" pY="0.5" oX="0" oY="2" oW="48" oH="96" r="y"/>
+    <sprite n="J_right_lowerarm_02" x="171" y="132" w="91" h="45" pX="0.5" pY="0.5" oX="3" oY="2" oW="48" oH="96" r="y"/>
+    <sprite n="J_right_upperarm" x="264" y="132" w="72" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="J_shadow" x="340" y="2" w="161" h="88" pX="0.5" pY="0.5" oX="0" oY="0" oW="164" oH="88"/>
+    <sprite n="J_smoke_01" x="169" y="179" w="83" h="85" pX="0.5" pY="0.5" oX="9" oY="8" oW="100" oH="100"/>
+    <sprite n="J_wing_01" x="2" y="295" w="147" h="132" pX="0.5" pY="0.5" oX="1" oY="4" oW="168" oH="136"/>
+    <sprite n="J_wing_02" x="2" y="158" w="165" h="135" pX="0.5" pY="0.5" oX="1" oY="1" oW="168" oH="136"/>
+    <sprite n="J_wing_03" x="171" y="2" w="167" h="128" pX="0.5" pY="0.5" oX="1" oY="0" oW="168" oH="136"/>
+    <sprite n="J_wing_arm" x="486" y="243" w="24" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="24" r="y"/>
+</TextureAtlas>

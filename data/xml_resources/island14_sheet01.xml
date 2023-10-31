@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a591e4ca4f37afa0adb5fabb26a2ea4b:fc8a8f8285aff2200e1befe2dd5d34a9:0f5cade501e3da99902c8180ce76b1aa$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island14_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island14_bottom" x="1200" y="335" w="672" h="536" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_cloud" x="1200" y="2" w="826" h="331" pX="0.5" pY="0.5" oX="13" oY="6" oW="850" oH="340"/>
+    <sprite n="island14_eye" x="1189" y="873" w="526" h="1082" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island14_face_edge_01" x="1717" y="873" w="250" h="578" pX="0.5" pY="0.5"/>
+    <sprite n="island14_face_edge_02" x="607" y="1680" w="300" h="306" pX="0.5" pY="0.5"/>
+    <sprite n="island14_face_front" x="2" y="2" w="1196" h="740" pX="0.5" pY="0.5"/>
+    <sprite n="island14_face_side" x="607" y="744" w="580" h="934" pX="0.5" pY="0.5"/>
+    <sprite n="island14_floor_full" x="2" y="873" w="603" h="1106" pX="0.5" pY="0.5" oX="0" oY="0" oW="1106" oH="604" r="y"/>
+    <sprite n="island14_frog_glow_01" x="909" y="1680" w="198" h="196" pX="0.5" pY="0.5" oX="1" oY="1" oW="198" oH="200" r="y"/>
+    <sprite n="island14_frog_glow_02" x="1717" y="1453" w="198" h="196" pX="0.5" pY="0.5" oX="1" oY="1" oW="198" oH="200" r="y"/>
+    <sprite n="island14_frog_glow_03" x="1717" y="1651" w="198" h="196" pX="0.5" pY="0.5" oX="1" oY="1" oW="198" oH="200" r="y"/>
+</TextureAtlas>

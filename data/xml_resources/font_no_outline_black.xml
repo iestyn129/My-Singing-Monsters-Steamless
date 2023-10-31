@@ -1,0 +1,23 @@
+<FontInfo>
+
+	<!--
+	<SpriteFont path="font/font_no_outline_black" />
+	-->
+	
+	<!--
+	<SpriteFont 
+		langs="ru"
+		path="font/font_no_outline_black" />
+	-->
+
+	<TTF 
+		 path="font/OpenDyslexic-Bold.otf"
+		 w="0" h="25"
+		 line_spacing="30"
+		 stroke_size="4"
+		 character_spacing="0"
+		 use_sdf="true"
+		 shader="ShaderFont3"
+	/>
+	
+</FontInfo>

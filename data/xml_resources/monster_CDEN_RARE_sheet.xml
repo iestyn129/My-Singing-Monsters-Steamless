@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0e9f4961f440f26d427e5f125f5babbf:84379c00b69531f58ad50cb803dec5ac:e14d5d3107f6a5daa8148f1ab6581400$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CDEN_RARE_sheet.png" width="1024" height="512" hires="true">
+    <sprite n="CDEN_back_head" x="394" y="338" w="146" h="159" pX="0.5" pY="0.5" oX="5" oY="8" oW="156" oH="176"/>
+    <sprite n="CDEN_body" x="2" y="341" w="153" h="169" pX="0.5" pY="0.5" oX="5" oY="9" oW="180" oH="172" r="y"/>
+    <sprite n="CDEN_body_cover" x="904" y="113" w="95" h="59" pX="0.5" pY="0.5" oX="0" oY="5" oW="100" oH="64"/>
+    <sprite n="CDEN_claw" x="906" y="469" w="65" h="38" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="72" r="y"/>
+    <sprite n="CDEN_eyelids_01" x="963" y="391" w="55" h="68" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="72"/>
+    <sprite n="CDEN_eyelids_02" x="785" y="258" w="69" h="63" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="72" r="y"/>
+    <sprite n="CDEN_eyelids_03" x="914" y="174" w="65" h="69" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="72"/>
+    <sprite n="CDEN_eyelids_04" x="843" y="174" w="69" h="69" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="72"/>
+    <sprite n="CDEN_eyelids_05" x="856" y="245" w="69" h="69" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="72"/>
+    <sprite n="CDEN_front_lowerleg" x="336" y="196" w="122" h="140" pX="0.5" pY="0.5" oX="5" oY="2" oW="132" oH="144"/>
+    <sprite n="CDEN_front_lowerleg_RARE" x="187" y="196" w="147" h="140" pX="0.5" pY="0.5" oX="5" oY="10" oW="160" oH="160"/>
+    <sprite n="CDEN_front_upperleg" x="791" y="446" w="113" h="64" pX="0.5" pY="0.5" oX="4" oY="3" oW="72" oH="120" r="y"/>
+    <sprite n="CDEN_head_front" x="218" y="338" w="174" h="171" pX="0.5" pY="0.5" oX="9" oY="8" oW="192" oH="188"/>
+    <sprite n="CDEN_head_front_RARE" x="187" y="2" w="170" h="192" pX="0.5" pY="0.5" oX="13" oY="6" oW="200" oH="200"/>
+    <sprite n="CDEN_left_lowerleg" x="687" y="194" w="96" h="128" pX="0.5" pY="0.5" oX="4" oY="4" oW="104" oH="136"/>
+    <sprite n="CDEN_left_lowerleg_cover" x="927" y="322" w="88" h="67" pX="0.5" pY="0.5" oX="4" oY="4" oW="76" oH="96" r="y"/>
+    <sprite n="CDEN_left_lowerleg_RARE" x="460" y="195" w="128" h="139" pX="0.5" pY="0.5" oX="8" oY="11" oW="150" oH="150" r="y"/>
+    <sprite n="CDEN_left_upperleg" x="906" y="2" w="112" h="56" pX="0.5" pY="0.5" oX="6" oY="4" oW="124" oH="64"/>
+    <sprite n="CDEN_mouth01" x="894" y="391" w="67" h="40" pX="0.5" pY="0.5" oX="9" oY="7" oW="84" oH="60"/>
+    <sprite n="CDEN_mouth02" x="456" y="157" w="56" h="36" pX="0.5" pY="0.5" oX="16" oY="10" oW="84" oH="60"/>
+    <sprite n="CDEN_mouth03" x="906" y="433" w="54" h="34" pX="0.5" pY="0.5" oX="20" oY="15" oW="84" oH="60"/>
+    <sprite n="CDEN_mouth04" x="514" y="156" w="41" h="35" pX="0.5" pY="0.5" oX="29" oY="15" oW="84" oH="60"/>
+    <sprite n="CDEN_mouth05" x="412" y="157" w="42" h="37" pX="0.5" pY="0.5" oX="32" oY="11" oW="84" oH="60" r="y"/>
+    <sprite n="CDEN_mouth06" x="412" y="157" w="42" h="37" pX="0.5" pY="0.5" oX="32" oY="13" oW="84" oH="60" r="y"/>
+    <sprite n="CDEN_plank_1" x="803" y="2" w="101" h="51" pX="0.5" pY="0.5" oX="4" oY="5" oW="60" oH="112" r="y"/>
+    <sprite n="CDEN_plank_1_RARE" x="723" y="324" w="56" h="122" pX="0.5" pY="0.5" oX="1" oY="10" oW="60" oH="140"/>
+    <sprite n="CDEN_plank_2" x="843" y="55" w="59" h="117" pX="0.5" pY="0.5" oX="6" oY="3" oW="72" oH="124"/>
+    <sprite n="CDEN_plank_2_RARE" x="460" y="2" w="60" h="152" pX="0.5" pY="0.5" oX="0" oY="4" oW="60" oH="160"/>
+    <sprite n="CDEN_plank_3" x="664" y="329" w="57" h="130" pX="0.5" pY="0.5" oX="9" oY="5" oW="76" oH="140"/>
+    <sprite n="CDEN_plank_3_RARE" x="576" y="2" w="57" h="147" pX="0.5" pY="0.5" oX="1" oY="8" oW="60" oH="160"/>
+    <sprite n="CDEN_plank_4" x="635" y="2" w="60" h="144" pX="0.5" pY="0.5" oX="6" oY="6" oW="72" oH="156"/>
+    <sprite n="CDEN_plank_4_RARE" x="157" y="341" w="59" h="169" pX="0.5" pY="0.5" oX="1" oY="5" oW="60" oH="180"/>
+    <sprite n="CDEN_plank_5" x="522" y="2" w="52" h="150" pX="0.5" pY="0.5" oX="4" oY="11" oW="60" oH="172"/>
+    <sprite n="CDEN_plank_5_RARE" x="359" y="2" w="51" h="173" pX="0.5" pY="0.5" oX="5" oY="6" oW="60" oH="180"/>
+    <sprite n="CDEN_plank_6" x="640" y="194" w="45" h="133" pX="0.5" pY="0.5" oX="5" oY="11" oW="56" oH="156"/>
+    <sprite n="CDEN_plank_6_RARE" x="412" y="2" w="46" h="153" pX="0.5" pY="0.5" oX="2" oY="5" oW="50" oH="160"/>
+    <sprite n="CDEN_plank_7" x="664" y="461" w="125" h="48" pX="0.5" pY="0.5" oX="4" oY="9" oW="56" oH="144" r="y"/>
+    <sprite n="CDEN_plank_7_RARE" x="590" y="195" w="48" h="139" pX="0.5" pY="0.5" oX="1" oY="11" oW="50" oH="160"/>
+    <sprite n="CDEN_plank_8" x="788" y="60" w="53" h="85" pX="0.5" pY="0.5" oX="5" oY="5" oW="64" oH="96"/>
+    <sprite n="CDEN_plank_8_RARE" x="733" y="59" w="53" h="87" pX="0.5" pY="0.5" oX="3" oY="7" oW="60" oH="100"/>
+    <sprite n="CDEN_pupil" x="894" y="316" w="31" h="30" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="32" r="y"/>
+    <sprite n="CDEN_right_lowerleg" x="781" y="324" w="111" h="120" pX="0.5" pY="0.5" oX="2" oY="4" oW="116" oH="128"/>
+    <sprite n="CDEN_right_lowerleg_RARE" x="542" y="336" w="120" h="144" pX="0.5" pY="0.5" oX="8" oY="20" oW="160" oH="160" r="y"/>
+    <sprite n="CDEN_right_upperleg" x="697" y="2" w="104" h="55" pX="0.5" pY="0.5" oX="4" oY="8" oW="112" oH="72"/>
+    <sprite n="CDEN_shadow" x="2" y="2" w="183" h="337" pX="0.5" pY="0.5" oX="3" oY="4" oW="344" oH="192" r="y"/>
+    <sprite n="CDEN_stick_1" x="557" y="154" w="70" h="39" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="76" r="y"/>
+    <sprite n="CDEN_stick_2" x="697" y="60" w="34" h="86" pX="0.5" pY="0.5" oX="4" oY="5" oW="40" oH="96"/>
+    <sprite n="CDEN_stick_3" x="981" y="174" w="40" h="99" pX="0.5" pY="0.5" oX="4" oY="4" oW="48" oH="108"/>
+    <sprite n="CDEN_stick_4" x="906" y="60" w="105" h="51" pX="0.5" pY="0.5" oX="6" oY="3" oW="64" oH="112" r="y"/>
+    <sprite n="CDEN_stick_5" x="790" y="147" w="51" h="109" pX="0.5" pY="0.5" oX="4" oY="3" oW="60" oH="116"/>
+    <sprite n="CDEN_stick_6" x="695" y="148" w="93" h="43" pX="0.5" pY="0.5" oX="6" oY="5" oW="56" oH="104" r="y"/>
+    <sprite n="CDEN_stick_7" x="927" y="275" w="93" h="45" pX="0.5" pY="0.5" oX="5" oY="5" oW="56" oH="104" r="y"/>
+    <sprite n="CDEN_stick_8" x="629" y="151" w="64" h="41" pX="0.5" pY="0.5" oX="6" oY="6" oW="52" oH="76" r="y"/>
+</TextureAtlas>

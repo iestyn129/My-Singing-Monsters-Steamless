@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:36d9cb6772ac6dbcbd36fe409190013a:2835e50e0c63ac831642de01634ecf20:9dc86c3bb8a789f1cd1d01d0621f1f3e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S09_EPIC_sheet.png" width="2048" height="1024" hires="true">
+    <sprite n="S09_bamboo_LEFT" x="191" y="443" w="49" h="361" pX="0.5" pY="0.5" oX="4" oY="19" oW="60" oH="400"/>
+    <sprite n="S09_bamboo_RIGHT" x="138" y="443" w="49" h="363" pX="0.5" pY="0.5" oX="1" oY="16" oW="60" oH="400"/>
+    <sprite n="S09_cake_lips" x="1166" y="94" w="70" h="76" pX="0.5" pY="0.5" oX="12" oY="15" oW="100" oH="100" r="y"/>
+    <sprite n="S09_candle_A" x="719" y="967" w="109" h="53" pX="0.5" pY="0.5" oX="23" oY="18" oW="100" oH="160" r="y"/>
+    <sprite n="S09_candle_A_eyelids_01" x="1266" y="872" w="29" h="33" pX="0.5" pY="0.5" oX="15" oY="29" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_eyelids_02" x="1295" y="833" w="29" h="32" pX="0.5" pY="0.5" oX="16" oY="29" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_eyelids_03" x="1267" y="909" w="29" h="33" pX="0.5" pY="0.5" oX="15" oY="29" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_mouth_01" x="744" y="160" w="13" h="10" pX="0.5" pY="0.5" oX="28" oY="56" oW="60" oH="100"/>
+    <sprite n="S09_candle_A_mouth_02" x="913" y="943" w="17" h="15" pX="0.5" pY="0.5" oX="28" oY="55" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_mouth_03" x="857" y="153" w="22" h="17" pX="0.5" pY="0.5" oX="28" oY="55" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_mouth_04" x="1029" y="749" w="27" h="19" pX="0.5" pY="0.5" oX="27" oY="54" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_A_mouth_05" x="247" y="784" w="21" h="34" pX="0.5" pY="0.5" oX="26" oY="52" oW="60" oH="100"/>
+    <sprite n="S09_candle_B" x="744" y="4" w="55" h="152" pX="0.5" pY="0.5" oX="22" oY="1" oW="100" oH="160"/>
+    <sprite n="S09_candle_B_eyelids_01" x="1219" y="384" w="39" h="47" pX="0.5" pY="0.5" oX="12" oY="6" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_eyelids_02" x="1270" y="646" w="38" h="47" pX="0.5" pY="0.5" oX="13" oY="6" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_eyelids_03" x="1250" y="572" w="39" h="47" pX="0.5" pY="0.5" oX="12" oY="6" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_icing" x="1072" y="436" w="38" h="77" pX="0.5" pY="0.5" oX="11" oY="11" oW="100" oH="60" r="y"/>
+    <sprite n="S09_candle_B_mouth_01" x="998" y="568" w="16" h="12" pX="0.5" pY="0.5" oX="28" oY="59" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_mouth_02" x="933" y="568" w="19" h="13" pX="0.5" pY="0.5" oX="27" oY="58" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_mouth_03" x="1324" y="214" w="21" h="18" pX="0.5" pY="0.5" oX="26" oY="58" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_mouth_04" x="1060" y="744" w="21" h="24" pX="0.5" pY="0.5" oX="26" oY="56" oW="60" oH="100"/>
+    <sprite n="S09_candle_B_mouth_05" x="1167" y="254" w="31" h="22" pX="0.5" pY="0.5" oX="26" oY="56" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_B_mouth_06" x="1085" y="744" w="39" h="23" pX="0.5" pY="0.5" oX="26" oY="56" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C" x="803" y="4" w="61" h="145" pX="0.5" pY="0.5" oX="19" oY="2" oW="100" oH="160"/>
+    <sprite n="S09_candle_C_eyelids_01" x="1080" y="129" w="39" h="41" pX="0.5" pY="0.5" oX="13" oY="22" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C_eyelids_02" x="1123" y="129" w="39" h="41" pX="0.5" pY="0.5" oX="13" oY="22" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C_eyelids_03" x="1176" y="390" w="39" h="41" pX="0.5" pY="0.5" oX="13" oY="22" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C_icing" x="1183" y="962" w="32" h="54" pX="0.5" pY="0.5" oX="13" oY="14" oW="80" oH="60" r="y"/>
+    <sprite n="S09_candle_C_mouth_01" x="959" y="943" w="17" h="12" pX="0.5" pY="0.5" oX="16" oY="61" oW="60" oH="100"/>
+    <sprite n="S09_candle_C_mouth_02" x="1279" y="623" w="17" h="18" pX="0.5" pY="0.5" oX="17" oY="61" oW="60" oH="100"/>
+    <sprite n="S09_candle_C_mouth_03" x="1349" y="214" w="21" h="18" pX="0.5" pY="0.5" oX="16" oY="61" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C_mouth_04" x="1300" y="937" w="26" h="21" pX="0.5" pY="0.5" oX="13" oY="61" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_C_mouth_05" x="1274" y="761" w="23" h="33" pX="0.5" pY="0.5" oX="12" oY="58" oW="60" oH="100"/>
+    <sprite n="S09_candle_D" x="925" y="174" w="52" h="135" pX="0.5" pY="0.5" oX="24" oY="4" oW="100" oH="160"/>
+    <sprite n="S09_candle_D_eyelids_01" x="1134" y="925" w="35" h="33" pX="0.5" pY="0.5" oX="21" oY="30" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_D_eyelids_02" x="1173" y="925" w="35" h="33" pX="0.5" pY="0.5" oX="21" oY="30" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_D_eyelids_03" x="1128" y="735" w="35" h="33" pX="0.5" pY="0.5" oX="21" oY="30" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_D_mouth_01" x="803" y="153" w="23" h="17" pX="0.5" pY="0.5" oX="12" oY="51" oW="60" oH="100"/>
+    <sprite n="S09_candle_D_mouth_02" x="1330" y="937" w="17" h="17" pX="0.5" pY="0.5" oX="17" oY="52" oW="60" oH="100"/>
+    <sprite n="S09_candle_D_mouth_03" x="1007" y="749" w="18" h="20" pX="0.5" pY="0.5" oX="14" oY="53" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_D_mouth_04" x="1324" y="995" w="25" h="25" pX="0.5" pY="0.5" oX="9" oY="52" oW="60" oH="100"/>
+    <sprite n="S09_candle_D_mouth_05" x="1202" y="248" w="26" h="28" pX="0.5" pY="0.5" oX="8" oY="52" oW="60" oH="100"/>
+    <sprite n="S09_candle_D_mouth_06" x="1300" y="612" w="32" h="30" pX="0.5" pY="0.5" oX="5" oY="50" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_E" x="526" y="975" w="124" h="44" pX="0.5" pY="0.5" oX="28" oY="11" oW="100" oH="160" r="y"/>
+    <sprite n="S09_candle_E_eyes_01" x="929" y="143" w="33" h="27" pX="0.5" pY="0.5" oX="11" oY="18" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_eyes_02" x="966" y="143" w="33" h="27" pX="0.5" pY="0.5" oX="11" oY="18" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_eyes_03" x="1268" y="279" w="31" h="26" pX="0.5" pY="0.5" oX="12" oY="19" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_icing" x="759" y="174" w="56" h="147" pX="0.5" pY="0.5" oX="6" oY="12" oW="160" oH="80" r="y"/>
+    <sprite n="S09_candle_E_mouth_01" x="229" y="808" w="14" h="10" pX="0.5" pY="0.5" oX="26" oY="48" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_mouth_02" x="1282" y="726" w="16" h="17" pX="0.5" pY="0.5" oX="26" oY="47" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_mouth_03" x="1282" y="697" w="22" h="25" pX="0.5" pY="0.5" oX="26" oY="49" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_mouth_04" x="1324" y="962" w="23" h="29" pX="0.5" pY="0.5" oX="26" oY="49" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_mouth_05" x="1293" y="572" w="25" h="36" pX="0.5" pY="0.5" oX="26" oY="46" oW="60" oH="100"/>
+    <sprite n="S09_candle_E_mouth_06" x="883" y="143" w="42" h="27" pX="0.5" pY="0.5" oX="26" oY="44" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_E_mouth_07" x="977" y="568" w="17" h="12" pX="0.5" pY="0.5" oX="23" oY="46" oW="60" oH="100"/>
+    <sprite n="S09_candle_F" x="348" y="343" w="45" h="94" pX="0.5" pY="0.5" oX="27" oY="27" oW="100" oH="160"/>
+    <sprite n="S09_candle_F_eyelids_01" x="1104" y="280" w="38" h="25" pX="0.5" pY="0.5" oX="17" oY="28" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_eyelids_02" x="1146" y="280" w="38" h="25" pX="0.5" pY="0.5" oX="17" oY="28" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_eyelids_03" x="980" y="933" w="38" h="25" pX="0.5" pY="0.5" oX="17" oY="28" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_icing_01" x="832" y="962" w="171" h="58" pX="0.5" pY="0.5" oX="14" oY="11" oW="200" oH="80"/>
+    <sprite n="S09_candle_F_icing_02" x="1034" y="667" w="59" h="73" pX="0.5" pY="0.5" oX="10" oY="3" oW="80" oH="80"/>
+    <sprite n="S09_candle_F_mouth_01" x="1018" y="568" w="16" h="11" pX="0.5" pY="0.5" oX="21" oY="47" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_mouth_02" x="956" y="568" w="17" h="13" pX="0.5" pY="0.5" oX="20" oY="47" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_mouth_03" x="890" y="943" w="19" h="15" pX="0.5" pY="0.5" oX="18" oY="47" oW="60" oH="100"/>
+    <sprite n="S09_candle_F_mouth_04" x="1145" y="94" w="17" h="21" pX="0.5" pY="0.5" oX="16" oY="47" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_F_mouth_05" x="981" y="749" w="22" h="20" pX="0.5" pY="0.5" oX="15" oY="46" oW="60" oH="100"/>
+    <sprite n="S09_candle_flame_01" x="1167" y="174" w="31" h="76" pX="0.5" pY="0.5" oX="45" oY="23" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_02" x="1006" y="773" w="30" h="76" pX="0.5" pY="0.5" oX="45" oY="23" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_03" x="272" y="784" w="79" h="33" pX="0.5" pY="0.5" oX="45" oY="20" oW="120" oH="120" r="y"/>
+    <sprite n="S09_candle_flame_04" x="1045" y="851" w="29" h="75" pX="0.5" pY="0.5" oX="46" oY="24" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_05" x="1111" y="309" w="32" h="77" pX="0.5" pY="0.5" oX="45" oY="22" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_06" x="1147" y="309" w="32" h="77" pX="0.5" pY="0.5" oX="44" oY="24" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_07" x="763" y="585" w="32" h="79" pX="0.5" pY="0.5" oX="44" oY="20" oW="120" oH="120"/>
+    <sprite n="S09_candle_flame_08" x="1006" y="853" w="35" h="75" pX="0.5" pY="0.5" oX="43" oY="24" oW="120" oH="120"/>
+    <sprite n="S09_candle_G" x="1104" y="174" w="59" h="102" pX="0.5" pY="0.5" oX="20" oY="20" oW="100" oH="160"/>
+    <sprite n="S09_candle_G_eyelids_01" x="1188" y="280" w="36" h="25" pX="0.5" pY="0.5" oX="15" oY="26" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_eyelids_02" x="1266" y="833" w="25" h="35" pX="0.5" pY="0.5" oX="15" oY="26" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_G_eyelids_03" x="1228" y="280" w="36" h="25" pX="0.5" pY="0.5" oX="15" oY="26" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_mouth_01" x="909" y="568" w="20" h="13" pX="0.5" pY="0.5" oX="19" oY="48" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_mouth_02" x="934" y="943" w="21" h="12" pX="0.5" pY="0.5" oX="19" oY="49" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_mouth_03" x="830" y="153" w="23" h="17" pX="0.5" pY="0.5" oX="17" oY="48" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_mouth_04" x="1250" y="623" w="25" h="19" pX="0.5" pY="0.5" oX="16" oY="48" oW="60" oH="100"/>
+    <sprite n="S09_candle_G_mouth_05" x="1232" y="248" w="26" h="27" pX="0.5" pY="0.5" oX="14" oY="47" oW="60" oH="100" r="y"/>
+    <sprite n="S09_candle_glow" x="1183" y="309" w="68" h="71" pX="0.5" pY="0.5" oX="5" oY="4" oW="78" oH="78"/>
+    <sprite n="S09_candle_smoke_01" x="971" y="773" w="31" h="76" pX="0.5" pY="0.5" oX="25" oY="13" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_02" x="1040" y="772" w="30" h="75" pX="0.5" pY="0.5" oX="25" oY="12" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_03" x="971" y="853" w="31" h="76" pX="0.5" pY="0.5" oX="25" oY="10" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_04" x="1058" y="930" w="72" h="28" pX="0.5" pY="0.5" oX="27" oY="13" oW="80" oH="100" r="y"/>
+    <sprite n="S09_candle_smoke_05" x="1078" y="584" w="31" h="72" pX="0.5" pY="0.5" oX="25" oY="11" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_06" x="1042" y="584" w="32" h="72" pX="0.5" pY="0.5" oX="24" oY="13" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_07" x="1036" y="436" w="32" h="78" pX="0.5" pY="0.5" oX="24" oY="9" oW="80" oH="100"/>
+    <sprite n="S09_candle_smoke_08" x="1078" y="849" w="35" h="73" pX="0.5" pY="0.5" oX="23" oY="13" oW="80" oH="100"/>
+    <sprite n="S09_candle_stick" x="191" y="808" w="34" h="10" pX="0.5" pY="0.5" oX="3" oY="3" oW="16" oH="40" r="y"/>
+    <sprite n="S09_eye_A_icing" x="1296" y="4" w="31" h="69" pX="0.5" pY="0.5" oX="15" oY="14" oW="100" oH="60" r="y"/>
+    <sprite n="S09_eye_B_icing" x="1145" y="4" w="32" h="86" pX="0.5" pY="0.5" oX="7" oY="14" oW="100" oH="60" r="y"/>
+    <sprite n="S09_eye_F_icing" x="1181" y="4" w="75" h="82" pX="0.5" pY="0.5" oX="12" oY="9" oW="100" oH="100"/>
+    <sprite n="S09_eye_F_icing_top" x="1260" y="4" w="32" h="69" pX="0.5" pY="0.5" oX="5" oY="4" oW="80" oH="40" r="y"/>
+    <sprite n="S09_eyeball_A" x="1230" y="709" w="48" h="48" pX="0.5" pY="0.5" oX="37" oY="37" oW="120" oH="120"/>
+    <sprite n="S09_eyeball_B" x="1124" y="962" w="55" h="55" pX="0.5" pY="0.5" oX="32" oY="33" oW="120" oH="120"/>
+    <sprite n="S09_eyeball_C" x="1038" y="518" w="62" h="62" pX="0.5" pY="0.5" oX="31" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyeball_D" x="1137" y="772" w="70" h="70" pX="0.5" pY="0.5" oX="25" oY="25" oW="120" oH="120"/>
+    <sprite n="S09_eyeball_E" x="1212" y="920" w="51" h="38" pX="0.5" pY="0.5" oX="38" oY="34" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyeball_F" x="1104" y="517" w="62" h="62" pX="0.5" pY="0.5" oX="32" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_A_01" x="1187" y="583" w="59" h="59" pX="0.5" pY="0.5" oX="31" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_A_02" x="1242" y="509" w="59" h="59" pX="0.5" pY="0.5" oX="31" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_A_03" x="1211" y="770" w="59" h="59" pX="0.5" pY="0.5" oX="31" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_A_04" x="1207" y="646" w="59" h="59" pX="0.5" pY="0.5" oX="31" oY="31" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_B_01" x="1255" y="309" w="66" h="69" pX="0.5" pY="0.5" oX="25" oY="27" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_B_02" x="1240" y="90" w="66" h="69" pX="0.5" pY="0.5" oX="25" oY="27" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_B_03" x="1202" y="174" w="66" h="70" pX="0.5" pY="0.5" oX="25" oY="27" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_B_04" x="1097" y="660" w="66" h="71" pX="0.5" pY="0.5" oX="25" oY="27" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_C_01" x="1113" y="583" w="70" h="70" pX="0.5" pY="0.5" oX="27" oY="27" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_C_02" x="1114" y="436" w="70" h="71" pX="0.5" pY="0.5" oX="26" oY="27" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_C_03" x="1188" y="435" w="70" h="70" pX="0.5" pY="0.5" oX="27" oY="27" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_C_04" x="1192" y="846" w="70" h="70" pX="0.5" pY="0.5" oX="27" oY="27" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_D_01" x="799" y="585" w="77" h="78" pX="0.5" pY="0.5" oX="21" oY="21" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_D_02" x="880" y="585" w="77" h="78" pX="0.5" pY="0.5" oX="21" oY="21" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_D_03" x="953" y="667" w="77" h="78" pX="0.5" pY="0.5" oX="21" oY="21" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_D_04" x="961" y="585" w="77" h="78" pX="0.5" pY="0.5" oX="21" oY="21" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_E_01" x="1167" y="657" w="36" h="61" pX="0.5" pY="0.5" oX="33" oY="29" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_E_02" x="654" y="975" w="61" h="44" pX="0.5" pY="0.5" oX="33" oY="29" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_E_03" x="1324" y="149" w="48" h="61" pX="0.5" pY="0.5" oX="33" oY="29" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_E_04" x="1259" y="962" w="61" h="49" pX="0.5" pY="0.5" oX="33" oY="29" oW="120" oH="120" r="y"/>
+    <sprite n="S09_eyelids_F_01" x="1170" y="511" w="68" h="68" pX="0.5" pY="0.5" oX="29" oY="28" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_F_02" x="1310" y="77" w="68" h="68" pX="0.5" pY="0.5" oX="29" oY="28" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_F_03" x="1331" y="4" w="68" h="68" pX="0.5" pY="0.5" oX="29" oY="28" oW="120" oH="120"/>
+    <sprite n="S09_eyelids_F_04" x="1117" y="849" w="71" h="72" pX="0.5" pY="0.5" oX="27" oY="26" oW="120" oH="120"/>
+    <sprite n="S09_head" x="540" y="440" w="219" h="225" pX="0.5" pY="0.5" oX="67" oY="70" oW="360" oH="360" r="y"/>
+    <sprite n="S09_head_icing" x="360" y="784" w="162" h="235" pX="0.5" pY="0.5" oX="62" oY="39" oW="360" oH="240" r="y"/>
+    <sprite n="S09_left_arm_01" x="295" y="343" w="49" h="96" pX="0.5" pY="0.5" oX="16" oY="12" oW="80" oH="120"/>
+    <sprite n="S09_left_arm_02" x="1272" y="163" w="48" h="69" pX="0.5" pY="0.5" oX="6" oY="5" oW="60" oH="80"/>
+    <sprite n="S09_left_arm_03" x="1003" y="130" w="73" h="39" pX="0.5" pY="0.5" oX="10" oY="13" oW="60" oH="100" r="y"/>
+    <sprite n="S09_left_arm_04" x="1111" y="390" w="61" h="42" pX="0.5" pY="0.5" oX="9" oY="9" oW="60" oH="80" r="y"/>
+    <sprite n="S09_left_arm_05" x="1074" y="772" w="59" h="73" pX="0.5" pY="0.5" oX="21" oY="14" oW="100" oH="100"/>
+    <sprite n="S09_left_leg" x="642" y="174" w="113" h="157" pX="0.5" pY="0.5" oX="43" oY="21" oW="200" oH="200"/>
+    <sprite n="S09_left_upper_arm" x="736" y="784" w="150" h="174" pX="0.5" pY="0.5" oX="14" oY="18" oW="200" oH="180" r="y"/>
+    <sprite n="S09_party_blower_sl_01" x="890" y="773" w="77" h="81" pX="0.5" pY="0.5" oX="93" oY="92" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sl_02" x="397" y="343" w="83" h="93" pX="0.5" pY="0.5" oX="86" oY="80" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sl_03" x="684" y="335" w="102" h="99" pX="0.5" pY="0.5" oX="66" oY="75" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sl_04" x="574" y="669" w="134" h="111" pX="0.5" pY="0.5" oX="35" oY="63" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sl_05" x="431" y="678" w="139" h="102" pX="0.5" pY="0.5" oX="30" oY="72" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sr_01" x="890" y="858" w="77" h="81" pX="0.5" pY="0.5" oX="61" oY="92" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sr_02" x="484" y="343" w="83" h="93" pX="0.5" pY="0.5" oX="62" oY="80" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sr_03" x="850" y="667" w="99" h="102" pX="0.5" pY="0.5" oX="63" oY="75" oW="234" oH="234" r="y"/>
+    <sprite n="S09_party_blower_sr_04" x="712" y="669" w="134" h="111" pX="0.5" pY="0.5" oX="62" oY="63" oW="234" oH="234"/>
+    <sprite n="S09_party_blower_sr_05" x="819" y="174" w="102" h="139" pX="0.5" pY="0.5" oX="62" oY="72" oW="234" oH="234" r="y"/>
+    <sprite n="S09_partyblower_fg_01" x="790" y="325" w="88" h="104" pX="0.5" pY="0.5" oX="100" oY="34" oW="234" oH="234" r="y"/>
+    <sprite n="S09_partyblower_fg_02" x="571" y="339" w="109" h="91" pX="0.5" pY="0.5" oX="95" oY="34" oW="234" oH="234"/>
+    <sprite n="S09_partyblower_fg_03" x="882" y="317" w="102" h="116" pX="0.5" pY="0.5" oX="88" oY="34" oW="234" oH="234" r="y"/>
+    <sprite n="S09_partyblower_fg_04" x="981" y="174" w="119" h="131" pX="0.5" pY="0.5" oX="73" oY="34" oW="234" oH="234" r="y"/>
+    <sprite n="S09_partyblower_fg_05" x="763" y="438" w="142" h="143" pX="0.5" pY="0.5" oX="62" oY="34" oW="234" oH="234"/>
+    <sprite n="S09_partyblower_fg_06" x="519" y="4" w="146" h="166" pX="0.5" pY="0.5" oX="58" oY="34" oW="234" oH="234"/>
+    <sprite n="S09_pupil_A" x="1262" y="248" w="22" h="27" pX="0.5" pY="0.5" oX="50" oY="45" oW="120" oH="120"/>
+    <sprite n="S09_pupil_B" x="1303" y="279" w="22" h="26" pX="0.5" pY="0.5" oX="45" oY="45" oW="120" oH="120"/>
+    <sprite n="S09_pupil_C" x="1274" y="798" w="25" h="31" pX="0.5" pY="0.5" oX="49" oY="45" oW="120" oH="120"/>
+    <sprite n="S09_pupil_D" x="1022" y="932" w="32" h="26" pX="0.5" pY="0.5" oX="46" oY="44" oW="120" oH="120" r="y"/>
+    <sprite n="S09_pupil_E" x="953" y="749" w="24" h="20" pX="0.5" pY="0.5" oX="49" oY="48" oW="120" oH="120" r="y"/>
+    <sprite n="S09_pupil_F" x="1299" y="869" w="25" h="31" pX="0.5" pY="0.5" oX="50" oY="44" oW="120" oH="120"/>
+    <sprite n="S09_right_arm_01" x="669" y="4" w="71" h="166" pX="0.5" pY="0.5" oX="14" oY="7" oW="100" oH="180"/>
+    <sprite n="S09_right_arm_02" x="1167" y="722" w="59" h="44" pX="0.5" pY="0.5" oX="8" oY="10" oW="60" oH="80" r="y"/>
+    <sprite n="S09_right_arm_03" x="1219" y="962" w="36" h="53" pX="0.5" pY="0.5" oX="12" oY="13" oW="60" oH="80"/>
+    <sprite n="S09_right_arm_04" x="1288" y="236" w="60" h="39" pX="0.5" pY="0.5" oX="10" oY="10" oW="60" oH="80" r="y"/>
+    <sprite n="S09_right_arm_05" x="1048" y="962" w="72" h="56" pX="0.5" pY="0.5" oX="22" oY="14" oW="100" oH="100" r="y"/>
+    <sprite n="S09_right_leg" x="519" y="174" w="119" h="161" pX="0.5" pY="0.5" oX="40" oY="19" oW="200" oH="200"/>
+    <sprite n="S09_right_upper_arm" x="526" y="784" w="130" h="187" pX="0.5" pY="0.5" oX="6" oY="26" oW="200" oH="180" r="y"/>
+    <sprite n="S09_shadow" x="244" y="443" w="183" h="337" pX="0.5" pY="0.5" oX="11" oY="8" oW="360" oH="200" r="y"/>
+    <sprite n="S09_sparkle" x="1300" y="904" w="29" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="34" oH="34"/>
+    <sprite n="S09_sparkler_01" x="1023" y="4" w="118" h="121" pX="0.5" pY="0.5" oX="33" oY="30" oW="186" oH="186"/>
+    <sprite n="S09_sparkler_02" x="909" y="437" w="123" h="127" pX="0.5" pY="0.5" oX="29" oY="34" oW="186" oH="186" r="y"/>
+    <sprite n="S09_sparkler_03" x="988" y="309" w="119" h="123" pX="0.5" pY="0.5" oX="39" oY="32" oW="186" oH="186"/>
+    <sprite n="S09_sparkler_04" x="868" y="4" w="131" h="135" pX="0.5" pY="0.5" oX="19" oY="22" oW="186" oH="186" r="y"/>
+    <sprite n="S09_sparkler_holder" x="1003" y="4" w="16" h="122" pX="0.5" pY="0.5" oX="12" oY="7" oW="40" oH="140"/>
+    <sprite n="S09_sprinkles_back" x="1007" y="962" w="37" h="58" pX="0.5" pY="0.5" oX="31" oY="20" oW="100" oH="100"/>
+    <sprite n="S09_sprinkles_bottom" x="4" y="443" w="130" h="375" pX="0.5" pY="0.5" oX="88" oY="71" oW="500" oH="260" r="y"/>
+    <sprite n="S09_sprinkles_top" x="431" y="440" w="105" h="234" pX="0.5" pY="0.5" oX="154" oY="91" oW="500" oH="260" r="y"/>
+    <sprite n="S09_tarp" x="4" y="4" w="287" h="435" pX="0.5" pY="0.5" oX="24" oY="7" oW="500" oH="300" r="y"/>
+    <sprite n="S09_torso" x="295" y="4" w="220" h="335" pX="0.5" pY="0.5" oX="82" oY="40" oW="500" oH="300" r="y"/>
+    <sprite n="S09_torso_icing" x="4" y="822" w="352" h="192" pX="0.5" pY="0.5" oX="34" oY="44" oW="420" oH="280"/>
+    <sprite n="S09_torso_icing_drip" x="660" y="784" w="72" h="179" pX="0.5" pY="0.5" oX="14" oY="10" oW="100" oH="200"/>
+</TextureAtlas>

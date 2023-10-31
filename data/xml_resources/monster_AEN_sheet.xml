@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8c833aece9974d87aaa3ab00b275b73d:7ec5ca5d4d20ee1246f366fb8f6223cc:264f6054e33f3c090532238be160a2e2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AEN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="AEN_adult_behind_horn" x="266" y="4" w="235" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_behind_horn_RARE" x="4" y="134" w="249" h="131" pX="0.5" pY="0.5" oX="5" oY="4" oW="138" oH="254" r="y"/>
+    <sprite n="AEN_adult_bird_body" x="20" y="897" w="40" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_bird_body_RARE" x="20" y="938" w="40" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_bird_head" x="407" y="594" w="47" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_bird_head_RARE" x="272" y="969" w="56" h="46" pX="0.5" pY="0.5" oX="0" oY="0" oW="46" oH="58" r="y"/>
+    <sprite n="AEN_adult_bird_tail" x="227" y="286" w="23" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_bird_tail_RARE" x="227" y="341" w="23" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_body" x="4" y="269" w="219" h="218" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_eyelids_01" x="464" y="389" w="43" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_eyelids_02" x="464" y="477" w="43" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_eyelids_03" x="464" y="565" w="43" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_eyelids_04" x="164" y="878" w="84" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_front_horn" x="266" y="112" w="223" h="127" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_front_horn_RARE" x="4" y="4" w="258" h="126" pX="0.5" pY="0.5" oX="2" oY="5" oW="132" oH="270" r="y"/>
+    <sprite n="AEN_adult_hair" x="394" y="840" w="105" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_hair_RARE" x="394" y="769" w="106" h="67" pX="0.5" pY="0.5" oX="0" oY="0" oW="106" oH="70"/>
+    <sprite n="AEN_adult_head" x="254" y="594" w="149" h="144" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_head_RARE" x="254" y="389" w="206" h="201" pX="0.5" pY="0.5" oX="8" oY="4" oW="220" oH="210"/>
+    <sprite n="AEN_adult_horn_bar" x="4" y="491" w="183" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_horn_bar_RARE" x="4" y="540" w="183" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_left_earhand" x="4" y="707" w="91" h="79" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_left_earhand_RARE" x="69" y="856" w="91" h="79" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_left_foot" x="177" y="606" w="72" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_left_foot_RARE" x="177" y="698" w="72" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_left_lowerear" x="4" y="790" w="61" h="103" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_left_upperear" x="69" y="795" w="102" h="57" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_leg" x="164" y="925" w="50" h="89" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_leg_RARE" x="218" y="925" w="50" h="89" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_mouth_01" x="252" y="899" w="63" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="63" oH="36"/>
+    <sprite n="AEN_adult_mouth_02" x="493" y="189" w="13" h="52" pX="0.5" pY="0.5" oX="6" oY="2" oW="63" oH="36" r="y"/>
+    <sprite n="AEN_adult_mouth_03" x="407" y="634" w="34" h="13" pX="0.5" pY="0.5" oX="24" oY="0" oW="63" oH="36"/>
+    <sprite n="AEN_adult_mouth_04" x="64" y="939" w="12" h="34" pX="0.5" pY="0.5" oX="18" oY="0" oW="63" oH="36" r="y"/>
+    <sprite n="AEN_adult_mouth_05" x="20" y="979" w="11" h="40" pX="0.5" pY="0.5" oX="12" oY="3" oW="63" oH="36" r="y"/>
+    <sprite n="AEN_adult_mouth_06" x="493" y="112" w="15" h="35" pX="0.5" pY="0.5" oX="6" oY="3" oW="63" oH="36" r="y"/>
+    <sprite n="AEN_adult_mouth_07" x="191" y="491" w="29" h="16" pX="0.5" pY="0.5" oX="10" oY="7" oW="63" oH="36"/>
+    <sprite n="AEN_adult_mouth_08" x="67" y="977" w="46" h="31" pX="0.5" pY="0.5" oX="4" oY="4" oW="63" oH="36"/>
+    <sprite n="AEN_adult_mouth_09" x="35" y="979" w="28" h="35" pX="0.5" pY="0.5" oX="18" oY="6" oW="63" oH="36" r="y"/>
+    <sprite n="AEN_adult_mouth_10" x="80" y="939" w="31" h="31" pX="0.5" pY="0.5" oX="28" oY="2" oW="63" oH="36"/>
+    <sprite n="AEN_adult_mouth_11" x="227" y="269" w="25" h="13" pX="0.5" pY="0.5" oX="29" oY="0" oW="63" oH="36"/>
+    <sprite n="AEN_adult_pupil" x="493" y="151" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_pupil_RARE" x="493" y="170" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_right_earhand" x="191" y="516" w="59" h="86" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="61" r="y"/>
+    <sprite n="AEN_adult_right_earhand_RARE" x="319" y="879" w="59" h="86" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="61" r="y"/>
+    <sprite n="AEN_adult_right_foot" x="99" y="707" w="72" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_right_foot_RARE" x="175" y="790" w="72" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AEN_adult_right_lowerear" x="407" y="711" w="99" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_right_upperear" x="407" y="653" w="100" h="54" pX="0.5" pY="0.5" oX="0" oY="1" oW="101" oH="55"/>
+    <sprite n="AEN_adult_shadow" x="257" y="254" w="248" h="131" pX="0.5" pY="0.5"/>
+    <sprite n="AEN_adult_string_01" x="257" y="134" w="5" h="116" pX="0.5" pY="0.5" oX="14" oY="8" oW="33" oH="132"/>
+    <sprite n="AEN_adult_string_02" x="4" y="899" w="12" h="116" pX="0.5" pY="0.5" oX="10" oY="8" oW="33" oH="132"/>
+    <sprite n="AEN_adult_string_03" x="227" y="396" w="18" h="116" pX="0.5" pY="0.5" oX="7" oY="8" oW="33" oH="132"/>
+    <sprite n="AEN_adult_tail" x="4" y="589" w="169" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="spore_AEN" x="253" y="742" w="137" h="133" pX="0.5" pY="0.5" oX="20" oY="20" oW="172" oH="172" r="y"/>
+</TextureAtlas>

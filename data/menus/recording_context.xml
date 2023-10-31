@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<event name="onInit" params="element">
+		element("showRevert"):SetInt(0)
+		element:SetupGenericListener(game.GetRecordingStudioBroadcaster(), "game::msg::MsgRecordingStudioEnableContextbar", "onMsgRecordingStudioEnableContextbar")
+	</event>
+	
+	<event name="onMsgRecordingStudioEnableContextbar" params="element, msg">
+		local infoButton = element:GetElement("InfoButton")
+		local backButton = element:GetElement("BackButton")
+		local muteButton = element:GetElement("MuteMonsterButton")
+		local origButton = element:GetElement("UseOriginalButton")
+		
+		if(msg.enable) then
+			infoButton:DoStoredScript("enable");
+			backButton:DoStoredScript("enable");
+		else
+			infoButton:DoStoredScript("disable");
+			backButton:DoStoredScript("disable");
+		end
+
+		if(msg.enableMute) then
+			muteButton:DoStoredScript("enable");
+		else
+			muteButton:DoStoredScript("disable");
+		end
+		
+		if(msg.showRevert) then
+			element("showRevert"):SetInt(1)
+			origButton:DoStoredScript("setVisible")
+			muteButton:relativeTo(origButton)
+			
+			if(msg.enable) then
+				origButton:DoStoredScript("enable");
+			else
+				origButton:DoStoredScript("disable");
+			end
+		else
+			element("showRevert"):SetInt(0)
+			origButton:DoStoredScript("setInvisible")
+			muteButton:relativeTo(infoButton)
+		end
+		
+		-- needed to reposition the button after reassigning its relative object
+		muteButton:setOrientation(lua_sys.MenuOrientation(3*game.hudScale(), 0, 0, lua_sys.RIGHT, lua_sys.VCENTER))
+	</event>
+	
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="5" />
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			element["Text"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.loadWorldContext()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="InfoButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="BackButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			element["Text"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				menu:pushPopUp("recording_help_pg1")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_info")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_HELP_LABEL")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="UseOriginalButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="InfoButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("setInvisible");
+		</event>
+		<event name="setVisible" params="element">
+			if(element:parent()("showRevert"):GetInt() == 1) then
+				setVisible(element)
+				element["Overlay"]("visible"):SetInt(1)
+				element["Text"]("visible"):SetInt(1)
+			end
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Overlay"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			element["Text"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.GetRecordingStudioBroadcaster():Send(game.MsgRecordingStudioToggleOriginalButtonPushed())
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_back")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("USE_ORIGINAL_SONG")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="MuteMonsterButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="UseOriginalButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="element">
+			onInit(element);
+			element("currentlyMuted"):SetInt(0);
+		</event>		
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			element["Text"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.GetRecordingStudioBroadcaster():Send(game.MsgRecordingStudioMuteMonsterButtonPushed())
+				
+				if(element("currentlyMuted"):GetInt()==1) then
+					element("currentlyMuted"):SetInt(0)
+					element["Overlay"]("spriteName"):SetString("button_mute")
+					element["Text"]("text"):SetString("CONTEXTBAR_MUTE_LABEL")
+				else
+					element("currentlyMuted"):SetInt(1)
+					element["Overlay"]("spriteName"):SetString("button_unmute")
+					element["Text"]("text"):SetString("CONTEXTBAR_UNMUTE_LABEL")
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_mute")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_MUTE_LABEL")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+	
+</menu>

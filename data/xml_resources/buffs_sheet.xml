@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:cc4aac702ea58596e2cf3a3327851510:b56a2d80ebfe0a0b531297406b538680:e47e108ee8a5a8250923e567c852fc5e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/buffs_sheet.png" width="512" height="1024">
+    <sprite n="buff_bakingreduc.png" x="1" y="1" w="223" h="208" oX="24" oY="23" oW="260" oH="260" r="y"/>
+    <sprite n="buff_breedincr.png" x="1" y="211" w="211" h="201" oX="21" oY="43" oW="260" oH="260"/>
+    <sprite n="buff_breedreduc.png" x="226" y="199" w="211" h="203" oX="21" oY="43" oW="260" oH="260"/>
+    <sprite n="buff_costumeincr.png" x="226" y="1" w="217" h="196" oX="36" oY="27" oW="260" oH="260" r="y"/>
+    <sprite n="buff_currencyincr.png" x="1" y="598" w="202" h="201" oX="34" oY="43" oW="260" oH="260"/>
+    <sprite n="buff_incubreduc.png" x="214" y="404" w="208" h="207" oX="25" oY="39" oW="260" oH="260"/>
+    <sprite n="buff_seasonincr.png" x="1" y="801" w="198" h="202" oX="30" oY="46" oW="260" oH="260" r="y"/>
+    <sprite n="buff_skinincr.png" x="1" y="414" w="207" h="182" oX="50" oY="37" oW="260" oH="260" r="y"/>
+    <sprite n="buff_welcomeback.png" x="201" y="801" w="188" h="194" oX="44" oY="50" oW="260" oH="260"/>
+</TextureAtlas>

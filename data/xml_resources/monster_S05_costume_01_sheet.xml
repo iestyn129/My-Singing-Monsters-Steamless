@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:ac1ee96b12378bbdb1833ea63ef1bd58:e4e7c39f12dea96f7aa11ba5208681d8:5310b3a2012e25099bb439f623b8cc05$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_S05_costume_01_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (24, 6) -> new anchor (26, 15) diff = (-2, -9)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (-2, -14), cause hires-->
+	<sprite n="S05_arm_ring_green_left" x="186" y="145" w="67" h="41" oX="-2" oY="-14" oW="44" oH="72" r="y"/>
+
+	<!-- original anchor = (3, 5.5) -> new anchor (-8, 14) diff = (11, -8.5)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (24, -13), cause hires-->
+	<sprite n="S05_arm_ring_green_right" x="186" y="145" w="67" h="41" oX="24" oY="-13" oW="44" oH="72" r="y"/>
+	
+	<!-- original anchor = (21, 4.5) -> new anchor (20, 13) diff = (1, -8.5)-->
+	<!-- add it to texturepacker output offsets (1, 2) -> (4, -13), cause hires-->    
+	<sprite n="S05_arm_ring_purple_left" x="167" y="188" w="67" h="41" oX="4" oY="-13" oW="44" oH="72" r="y"/>
+	
+	<!-- original anchor = (2, 6.5) -> new anchor (1, 14) diff = (1, -7.5)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (4, -11), cause hires-->
+	<sprite n="S05_arm_ring_purple_right" x="167" y="188" w="67" h="41" oX="4" oY="-11" oW="44" oH="72" r="y"/>
+    
+	<!-- original anchor = (24, 6) -> new anchor (20, 17) diff = (4, -11)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (10, -18), cause hires-->
+	<sprite n="S05_arm_ring_red_left" x="88" y="195" w="67" h="41" oX="10" oY="-18" oW="44" oH="72" r="y"/>
+
+	<!-- original anchor = (3, 5.5) -> new anchor (5, 14) diff = (-2, -8.5)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (-2, -13), cause hires-->
+	<sprite n="S05_arm_ring_red_right" x="88" y="195" w="67" h="41" oX="-2" oY="-13" oW="44" oH="72" r="y"/>
+    
+	<sprite n="S05_body_mesh" x="116" y="2" w="107" h="93" oX="1" oY="2" oW="96" oH="112" r="y"/>
+    
+	<!-- original anchor = (22, 36.6) -> new anchor (22, 31) diff = (0, 5.6)-->
+	<!-- add double it to texturepacker output offsets (1, 3) -> (2, 17.2), cause hires-->
+	<sprite n="S05_body_necklace" x="2" y="92" w="93" h="52" oX="2" oY="17.2" oW="96" oH="56"/>
+    <sprite n="S05_hand_01_glove" x="157" y="272" w="60" h="58" oX="2" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="S05_hand_02_glove" x="71" y="238" w="61" h="59" oX="5" oY="0" oW="68" oH="60"/>
+    <sprite n="S05_hand_03_glove" x="2" y="245" w="59" h="52" oX="14" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="S05_hand_04_glove" x="2" y="299" w="56" h="49" oX="14" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="S05_hand_05_glove" x="60" y="299" w="51" h="45" oX="14" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="S05_hand_06_glove" x="113" y="332" w="46" h="45" oX="14" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="S05_hips_mesh" x="2" y="2" w="112" h="88"/>
+    <sprite n="S05_left_lowerarm_mesh" x="186" y="97" w="20" h="46" oX="0" oY="0" oW="48" oH="20" r="y"/>
+    <sprite n="S05_left_lowerleg_boot" x="2" y="146" w="84" h="56" r="y"/>
+    <sprite n="S05_left_upperarm_mesh" x="134" y="238" w="21" h="54" oX="0" oY="1" oW="56" oH="24" r="y"/>
+    <sprite n="S05_left_upperleg_mesh" x="225" y="2" w="28" h="76"/>
+
+	<!-- original anchor = (11, 37) -> new anchor (22, 31) diff = (-11, 6)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-22, 12), cause hires-->
+    <sprite n="S05_leg_ring_green_right" x="2" y="204" w="67" h="39" oX="-22" oY="12"/>
+
+	<!-- original anchor = (6, 36) -> new anchor (17, 28) diff = (-11, 8)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-22, 16), cause hires-->
+    <sprite n="S05_leg_ring_greenleft" x="2" y="204" w="67" h="39" oX="-22" oY="16"/>
+
+	<!-- original anchor = (11, 37) -> new anchor (20, 17) diff = (-9, 20)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-24, 36), cause hires-->
+    <sprite n="S05_leg_ring_red_right" x="157" y="231" w="67" h="39" oX="-24" oY="36"/>
+
+	<!-- original anchor = (6, 36) -> new anchor (18, 18) diff = (-12, 18)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-24, 36), cause hires-->
+    <sprite n="S05_leg_ring_red_left" x="157" y="231" w="67" h="39" oX="-24" oY="36"/>
+    <sprite n="S05_right_lowerarm_mesh" x="225" y="80" w="21" h="63" oX="0" oY="1" oW="64" oH="24" r="y"/>
+    <sprite n="S05_right_lowerleg_boot" x="97" y="97" w="87" h="64" oX="0" oY="0" oW="64" oH="88" r="y"/>
+    <sprite n="S05_right_upperarm_mesh" x="226" y="231" w="21" h="60" oX="0" oY="0" oW="60" oH="24" r="y"/>
+    <sprite n="S05_right_upperleg_mesh" x="88" y="163" w="77" h="30" oX="0" oY="1" oW="32" oH="80" r="y"/>
+</TextureAtlas>

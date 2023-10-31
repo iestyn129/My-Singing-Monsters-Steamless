@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:45955a4fb29deb35c807779f76a25d44:e9d77a12581fbcda9bf5e943d55ef967:afbc1fca359342e2cfe3a2c8b0c85890$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BE_costume_01_sheet.png" width="128" height="128" hires="true">
+    <sprite n="BE_foot01_sockedsandles.png" x="2" y="2" w="73" h="52" pX="0.5" pY="0.5" oX="6" oY="4" oW="80" oH="56"/>
+    <sprite n="BE_leg_bending_sockedsandles.png" x="2" y="56" w="22" h="57" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="64"/>
+    <sprite n="BE_leg_bent_sockedsandles.png" x="47" y="56" w="26" h="56" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="64"/>
+    <sprite n="BE_leg_lower_sockedsandles.png" x="77" y="2" w="34" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="13" oH="38" r="y"/>
+    <sprite n="BE_leg_straight_sockedsandles.png" x="26" y="56" w="19" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="64"/>
+</TextureAtlas>

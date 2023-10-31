@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6dd38e9a388f08114b495953c7b2b2c9:47c8cc7cd2a4daa7858e030497353e9f:016fabc1f6a14514bf09f18ecda1d42a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AN_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="AN_body_EPIC" x="2" y="232" w="139" h="131" pX="0.5" pY="0.5" oX="19" oY="9" oW="160" oH="160"/>
+    <sprite n="AN_eyelids_01" x="211" y="387" w="24" h="66" pX="0.5" pY="0.5" oX="34" oY="113" oW="200" oH="240" r="y"/>
+    <sprite n="AN_eyelids_02" x="452" y="289" w="37" h="66" pX="0.5" pY="0.5" oX="34" oY="100" oW="200" oH="240" r="y"/>
+    <sprite n="AN_eyelids_03" x="413" y="262" w="37" h="67" pX="0.5" pY="0.5" oX="34" oY="100" oW="200" oH="240" r="y"/>
+    <sprite n="AN_eyelids_04" x="373" y="306" w="37" h="67" pX="0.5" pY="0.5" oX="34" oY="100" oW="200" oH="240" r="y"/>
+    <sprite n="AN_head_back_eye_EPIC" x="412" y="331" w="28" h="26" pX="0.5" pY="0.5" oX="34" oY="101" oW="200" oH="240" r="y"/>
+    <sprite n="AN_head_EPIC" x="266" y="2" w="187" h="156" pX="0.5" pY="0.5" oX="24" oY="33" oW="200" oH="240" r="y"/>
+    <sprite n="AN_left_foot" x="455" y="77" w="44" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AN_left_hand" x="252" y="330" w="117" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="64"/>
+    <sprite n="AN_left_upperarm" x="417" y="160" w="34" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AN_left_upperleg" x="453" y="209" w="40" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="AN_left_wing" x="2" y="130" w="248" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="AN_lowerbody_EPIC" x="143" y="232" w="107" h="117" pX="0.5" pY="0.5" oX="12" oY="6" oW="120" oH="140"/>
+    <sprite n="AN_lowerleg" x="452" y="269" w="58" h="18" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AN_mouth_01" x="2" y="365" w="73" h="62" pX="0.5" pY="0.5" oX="51" oY="111" oW="200" oH="240"/>
+    <sprite n="AN_mouth_02" x="139" y="387" w="70" h="66" pX="0.5" pY="0.5" oX="54" oY="117" oW="200" oH="240"/>
+    <sprite n="AN_mouth_03" x="371" y="375" w="69" h="65" pX="0.5" pY="0.5" oX="59" oY="122" oW="200" oH="240" r="y"/>
+    <sprite n="AN_mouth_04" x="455" y="2" w="55" h="73" pX="0.5" pY="0.5" oX="69" oY="128" oW="200" oH="240"/>
+    <sprite n="AN_mouth_05" x="77" y="365" w="60" h="71" pX="0.5" pY="0.5" oX="64" oY="126" oW="200" oH="240"/>
+    <sprite n="AN_mouth_06" x="309" y="442" w="70" h="66" pX="0.5" pY="0.5" oX="59" oY="122" oW="200" oH="240" r="y"/>
+    <sprite n="AN_mouth_07" x="442" y="357" w="68" h="67" pX="0.5" pY="0.5" oX="57" oY="120" oW="200" oH="240" r="y"/>
+    <sprite n="AN_mouth_08" x="237" y="396" w="70" h="66" pX="0.5" pY="0.5" oX="54" oY="117" oW="200" oH="240"/>
+    <sprite n="AN_mouth_09" x="442" y="426" w="68" h="67" pX="0.5" pY="0.5" oX="57" oY="121" oW="200" oH="240" r="y"/>
+    <sprite n="AN_mouth_10" x="2" y="429" w="71" h="66" pX="0.5" pY="0.5" oX="53" oY="115" oW="200" oH="240"/>
+    <sprite n="AN_pupil_EPIC" x="495" y="209" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="AN_right_foot" x="455" y="149" w="44" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="AN_right_hand" x="252" y="244" w="119" h="84" pX="0.5" pY="0.5" oX="8" oY="0" oW="128" oH="84"/>
+    <sprite n="AN_right_lowerleg" x="373" y="244" w="38" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="AN_right_upperarm" x="143" y="351" w="100" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AN_right_wing" x="2" y="2" w="262" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="AN_shadow" x="252" y="160" w="163" h="82" pX="0.5" pY="0.5" oX="1" oY="0" oW="164" oH="82"/>
+</TextureAtlas>

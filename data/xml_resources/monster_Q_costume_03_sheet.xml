@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:2330e7ecb06c3b7eaaf52915cafe7fd7:0b9b01b093fc273b237ba03981fbf63e:5aa51195fef97ff11ed0252c81baa77b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_Q_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="Q01_costume_03.png" x="2" y="341" w="112" h="103" oX="24" oY="13" oW="156" oH="128" r="y"/>
+    <sprite n="Q02_costume_03.png" x="2" y="120" w="133" h="107" oX="8" oY="21" oW="156" oH="128"/>
+    <sprite n="Q03_costume_03.png" x="2" y="229" w="122" h="110" oX="18" oY="0" oW="156" oH="128" r="y"/>
+    <sprite n="Q04_costume_03.png" x="126" y="254" w="122" h="102" oX="19" oY="18" oW="156" oH="128"/>
+    <sprite n="Q05_costume_03.png" x="2" y="2" w="154" h="116" oX="1" oY="7" oW="156" oH="128"/>
+    <sprite n="Q06_costume_03.png" x="137" y="120" w="116" h="132" oX="14" oY="0" oW="156" oH="128" r="y"/>
+    <sprite n="Q07_costume_03.png" x="158" y="2" w="92" h="112" oX="32" oY="8" oW="156" oH="128"/>
+</TextureAtlas>

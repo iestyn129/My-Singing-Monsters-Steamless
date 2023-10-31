@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:349cbde197119a29ec35c3230694370d:f1e14e5d3ad8d0403479c44fd4bc2f09:171427e16957b419a8378288a577070a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island19_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="blue_eye_01" x="321" y="1690" w="500" h="314" pX="0.5" pY="0.5"/>
+    <sprite n="blue_eye_02" x="825" y="1690" w="500" h="314" pX="0.5" pY="0.5"/>
+    <sprite n="blue_eye_03" x="1311" y="854" w="500" h="314" pX="0.5" pY="0.5"/>
+    <sprite n="centre_platform" x="4" y="4" w="1528" h="725" pX="0.5" pY="0.5"/>
+    <sprite n="cheek" x="1536" y="4" w="505" h="846" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye" x="4" y="733" w="1303" h="579" pX="0.5" pY="0.5"/>
+    <sprite n="front_horn" x="4" y="1316" w="1341" h="370" pX="0.5" pY="0.5" oX="7" oY="3" oW="1354" oH="388"/>
+    <sprite n="side_horn_rune_01" x="4" y="1690" w="313" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="side_horn_rune_02" x="1891" y="1112" w="119" h="135" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_01" x="1329" y="1772" w="328" h="224" pX="0.5" pY="0.5" oX="2" oY="2" oW="332" oH="228"/>
+    <sprite n="side_platform_runes_02" x="1719" y="1385" w="98" h="97" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_03" x="1891" y="1251" w="96" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform_runes_04" x="1815" y="854" w="229" h="254" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_05" x="1349" y="1172" w="366" h="228" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_06" x="1349" y="1404" w="360" h="202" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_07" x="1661" y="1772" w="155" h="198" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform_runes_08" x="1349" y="1610" w="372" h="158" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_09" x="1311" y="733" w="167" h="111" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_10" x="1719" y="1172" w="168" h="209" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

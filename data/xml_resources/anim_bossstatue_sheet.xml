@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5c943380c568641f5bf758ff84c69df4:228e6cbe5729bae369dbd30dde79e57a:886665b829cf05a2c8486af8dc85f0d0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_bossstatue_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="boss_statue" x="2" y="2" w="447" h="516" pX="0.5" pY="0.5" oX="11" oY="101" oW="477" oH="632"/>
+    <sprite n="star_01" x="2" y="712" w="84" h="92" pX="0.5" pY="0.5" oX="17" oY="17" oW="130" oH="130" r="y"/>
+    <sprite n="star_02" x="137" y="614" w="82" h="88" pX="0.5" pY="0.5" oX="20" oY="18" oW="130" oH="130"/>
+    <sprite n="star_03" x="2" y="617" w="60" h="93" pX="0.5" pY="0.5" oX="33" oY="17" oW="130" oH="130"/>
+    <sprite n="star_04" x="451" y="2" w="55" h="95" pX="0.5" pY="0.5" oX="37" oY="16" oW="130" oH="130"/>
+    <sprite n="star_05" x="64" y="617" w="71" h="92" pX="0.5" pY="0.5" oX="28" oY="16" oW="130" oH="130"/>
+    <sprite n="star_06" x="2" y="806" w="87" h="89" pX="0.5" pY="0.5" oX="19" oY="16" oW="130" oH="130" r="y"/>
+    <sprite n="star_07" x="88" y="711" w="87" h="89" pX="0.5" pY="0.5" oX="18" oY="16" oW="130" oH="130" r="y"/>
+    <sprite n="star_08" x="65" y="520" w="71" h="92" pX="0.5" pY="0.5" oX="26" oY="16" oW="130" oH="130"/>
+    <sprite n="star_09" x="451" y="99" w="55" h="94" pX="0.5" pY="0.5" oX="34" oY="17" oW="130" oH="130"/>
+    <sprite n="star_10" x="2" y="520" w="61" h="95" pX="0.5" pY="0.5" oX="32" oY="17" oW="130" oH="130"/>
+    <sprite n="star_11" x="138" y="520" w="82" h="88" pX="0.5" pY="0.5" oX="23" oY="18" oW="130" oH="130"/>
+</TextureAtlas>

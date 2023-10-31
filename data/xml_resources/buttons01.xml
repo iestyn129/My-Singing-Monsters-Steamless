@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2721b7faec53fed9218b30841ff41dc9:d0a18a1ab58db5102d48d38059584e72:e1febf814efd20e83838cfed08244f4f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/buttons01.png" width="1024" height="1024">
+    <sprite n="button_anniversary_pack" x="868" y="2" w="125" h="172" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="button_anniversary_warmup_pack" x="260" y="442" w="172" h="125" pX="0.5" pY="0.5"/>
+    <sprite n="button_bamboo_close" x="683" y="279" w="122" h="120" pX="0.5" pY="0.5" oX="1" oY="4" oW="128" oH="128"/>
+    <sprite n="button_base_grey" x="807" y="304" w="124" h="116" pX="0.5" pY="0.5" oX="7" oY="3" oW="130" oH="130" r="y"/>
+    <sprite n="button_battle" x="856" y="806" w="87" h="81" pX="0.5" pY="0.5" oX="21" oY="21" oW="130" oH="130"/>
+    <sprite n="button_buy" x="161" y="717" w="97" h="196" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="110" r="y"/>
+    <sprite n="button_continue" x="221" y="368" w="256" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="button_continue_green" x="186" y="459" w="72" h="256" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="button_costume" x="457" y="913" w="94" h="98" pX="0.5" pY="0.5" oX="8" oY="3" oW="102" oH="102"/>
+    <sprite n="button_extras_big" x="945" y="752" w="66" h="65" pX="0.5" pY="0.5" oX="17" oY="20" oW="102" oH="102"/>
+    <sprite n="button_extras_grey_big" x="945" y="819" w="66" h="65" pX="0.5" pY="0.5" oX="17" oY="20" oW="102" oH="102"/>
+    <sprite n="button_free_diamonds" x="547" y="174" w="299" h="77" pX="0.5" pY="0.5" oX="5" oY="15" oW="306" oH="92"/>
+    <sprite n="button_hide_hud" x="936" y="614" w="67" h="67" pX="0.5" pY="0.5" oX="6" oY="7" oW="80" oH="80"/>
+    <sprite n="button_index" x="647" y="653" w="103" h="104" pX="0.5" pY="0.5" oX="12" oY="11" oW="130" oH="130"/>
+    <sprite n="button_info_small" x="936" y="889" w="59" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60"/>
+    <sprite n="button_invite" x="221" y="174" w="324" h="101" pX="0.5" pY="0.5" oX="7" oY="5" oW="336" oH="112"/>
+    <sprite n="button_light_torch_dotted" x="807" y="253" w="28" h="36" pX="0.5" pY="0.5" oX="6" oY="4" oW="43" oH="43"/>
+    <sprite n="button_light_torch_grey" x="718" y="950" w="28" h="36" pX="0.5" pY="0.5" oX="6" oY="4" oW="43" oH="43"/>
+    <sprite n="button_light_torch_smaller" x="905" y="972" w="28" h="36" pX="0.5" pY="0.5" oX="6" oY="4" oW="43" oH="43"/>
+    <sprite n="button_lock" x="712" y="401" w="84" h="105" pX="0.5" pY="0.5" oX="29" oY="14" oW="130" oH="130"/>
+    <sprite n="button_long_green@2x" x="524" y="279" w="157" h="74" pX="0.5" pY="0.5" oX="2" oY="5" oW="161" oH="82"/>
+    <sprite n="button_long_grey@2x" x="336" y="837" w="157" h="74" pX="0.5" pY="0.5" oX="2" oY="5" oW="161" oH="82"/>
+    <sprite n="button_long_purp@2x" x="434" y="442" w="74" h="157" pX="0.5" pY="0.5" oX="2" oY="5" oW="161" oH="82" r="y"/>
+    <sprite n="button_magnify" x="798" y="422" w="106" h="94" pX="0.5" pY="0.5" oX="15" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_more_games" x="221" y="277" w="301" h="89" pX="0.5" pY="0.5" oX="5" oY="1" oW="306" oH="92"/>
+    <sprite n="button_options_no" x="85" y="960" w="60" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="button_options_play" x="962" y="490" w="60" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="button_options_yes" x="962" y="552" w="60" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="button_play" x="896" y="518" w="64" h="78" pX="0.5" pY="0.5" oX="35" oY="29" oW="130" oH="130"/>
+    <sprite n="button_purchase_promo" x="335" y="913" w="120" h="96" pX="0.5" pY="0.5" oX="18" oY="8" oW="130" oH="130" r="y"/>
+    <sprite n="button_purple_big" x="260" y="696" w="74" h="205" pX="0.5" pY="0.5" oX="7" oY="26" oW="220" oH="132" r="y"/>
+    <sprite n="button_show_hud" x="945" y="683" w="67" h="67" pX="0.5" pY="0.5" oX="6" oY="7" oW="80" oH="80"/>
+    <sprite n="button_tasks" x="856" y="622" w="78" h="90" pX="0.5" pY="0.5" oX="30" oY="30" oW="140" oH="140"/>
+    <sprite n="button_training" x="610" y="430" w="100" h="113" pX="0.5" pY="0.5" oX="9" oY="16" oW="130" oH="130" r="y"/>
+    <sprite n="button_tribal_rewards_02" x="434" y="601" w="98" h="92" pX="0.5" pY="0.5" oX="17" oY="16" oW="130" oH="130"/>
+    <sprite n="button_warmup_pack" x="260" y="569" w="172" h="125" pX="0.5" pY="0.5"/>
+    <sprite n="chain01" x="848" y="176" w="133" h="126" pX="0.5" pY="0.5" oX="0" oY="3" oW="134" oH="134"/>
+    <sprite n="coins" x="545" y="800" w="100" h="95" pX="0.5" pY="0.5" oX="15" oY="20" oW="130" oH="130"/>
+    <sprite n="diamonds" x="933" y="304" w="89" h="95" pX="0.5" pY="0.5" oX="18" oY="24" oW="130" oH="130" r="y"/>
+    <sprite n="dot" x="495" y="837" w="48" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="48"/>
+    <sprite n="facebook" x="856" y="714" w="87" h="90" pX="0.5" pY="0.5" oX="7" oY="8" oW="100" oH="100"/>
+    <sprite n="Furcorn_Happy" x="2" y="174" w="217" h="283" pX="0.5" pY="0.5" oX="14" oY="17" oW="260" oH="314"/>
+    <sprite n="Furcorn_Sad" x="2" y="708" w="157" h="250" pX="0.5" pY="0.5" oX="70" oY="55" oW="260" oH="314"/>
+    <sprite n="Furcorn_Smiling" x="2" y="459" w="182" h="247" pX="0.5" pY="0.5" oX="41" oY="58" oW="260" oH="314"/>
+    <sprite n="gamecenter" x="850" y="889" w="84" h="81" pX="0.5" pY="0.5" oX="3" oY="0" oW="84" oH="84" r="y"/>
+    <sprite n="goal_exclaim" x="721" y="588" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="goals_shimmer00" x="656" y="355" w="25" h="43" pX="0.5" pY="0.5" oX="6" oY="95" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer01" x="843" y="972" w="60" h="50" pX="0.5" pY="0.5" oX="6" oY="60" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer02" x="2" y="960" w="81" h="60" pX="0.5" pY="0.5" oX="12" oY="37" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer03" x="647" y="759" w="104" h="85" pX="0.5" pY="0.5" oX="7" oY="14" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer04" x="647" y="846" w="104" h="102" pX="0.5" pY="0.5" oX="14" oY="13" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer05" x="545" y="692" w="100" h="106" pX="0.5" pY="0.5" oX="23" oY="11" oW="132" oH="132"/>
+    <sprite n="goals_shimmer06" x="553" y="897" w="82" h="103" pX="0.5" pY="0.5" oX="41" oY="11" oW="132" oH="132"/>
+    <sprite n="goals_shimmer07" x="721" y="508" w="68" h="78" pX="0.5" pY="0.5" oX="58" oY="12" oW="132" oH="132"/>
+    <sprite n="goals_shimmer08" x="936" y="951" w="53" h="51" pX="0.5" pY="0.5" oX="76" oY="12" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer09" x="479" y="368" w="40" h="47" pX="0.5" pY="0.5" oX="80" oY="12" oW="132" oH="132" r="y"/>
+    <sprite n="icon_frame" x="336" y="696" w="138" h="139" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="news_generic" x="752" y="622" w="102" h="98" pX="0.5" pY="0.5" oX="14" oY="18" oW="130" oH="130"/>
+    <sprite n="news_handlers" x="263" y="903" w="70" h="111" pX="0.5" pY="0.5" oX="10" oY="35" oW="130" oH="130" r="y"/>
+    <sprite n="news_new" x="753" y="722" w="101" h="97" pX="0.5" pY="0.5" oX="14" oY="20" oW="130" oH="130"/>
+    <sprite n="news_seasonals" x="753" y="821" w="95" h="94" pX="0.5" pY="0.5" oX="17" oY="21" oW="130" oH="130"/>
+    <sprite n="news_social" x="623" y="545" w="96" h="106" pX="0.5" pY="0.5" oX="19" oY="29" oW="140" oH="140" r="y"/>
+    <sprite n="news_system" x="161" y="915" w="100" h="107" pX="0.5" pY="0.5" oX="13" oY="15" oW="130" oH="130"/>
+    <sprite n="news_timed" x="335" y="913" w="120" h="96" pX="0.5" pY="0.5" oX="18" oY="8" oW="130" oH="130" r="y"/>
+    <sprite n="scratch_hand" x="510" y="430" w="98" h="118" pX="0.5" pY="0.5"/>
+    <sprite n="scratch_talons" x="637" y="950" w="79" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="scratch_tentacle" x="476" y="695" w="67" h="140" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="scroll_bar_01" x="547" y="253" w="258" h="24" pX="0.5" pY="0.5" oX="8" oY="21" oW="40" oH="300" r="y"/>
+    <sprite n="scroll_bar_dot" x="755" y="588" w="30" h="30" pX="0.5" pY="0.5" oX="8" oY="10" oW="48" oH="48"/>
+    <sprite n="tiktok" x="933" y="401" w="89" h="87" pX="0.5" pY="0.5" oX="7" oY="9" oW="100" oH="100" r="y"/>
+    <sprite n="time_minus" x="510" y="550" w="86" h="48" pX="0.5" pY="0.5" oX="3" oY="29" oW="92" oH="92"/>
+    <sprite n="time_plus" x="753" y="917" w="88" h="87" pX="0.5" pY="0.5" oX="3" oY="5" oW="92" oH="92"/>
+    <sprite n="time_slider" x="524" y="355" w="130" h="73" pX="0.5" pY="0.5" oX="21" oY="25" oW="172" oH="128"/>
+    <sprite n="time_slider_frame" x="2" y="2" w="864" h="170" pX="0.5" pY="0.5" oX="11" oY="8" oW="900" oH="192"/>
+    <sprite n="treats" x="791" y="518" w="103" h="102" pX="0.5" pY="0.5" oX="13" oY="16" oW="130" oH="130"/>
+    <sprite n="Twitter" x="534" y="600" w="87" h="90" pX="0.5" pY="0.5" oX="7" oY="8" oW="100" oH="100"/>
+</TextureAtlas>

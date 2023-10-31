@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e7a4a0a5482029ddcdeace33a36ba02a:461c9708e4998e2c24a1e359bfd79304:88d5c23123b57394407eb5335f337091$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/crucible_amber.png" width="1024" height="1024">
+    <sprite n="amber_2_back.png" x="505" y="1" w="490" h="480" pX="0.5" pY="0.5" oX="9" oY="92" oW="502" oH="598" r="y"/>
+    <sprite n="amber_3_back.png" x="1" y="295" w="481" h="352" pX="0.5" pY="0.5" oX="9" oY="231" oW="502" oH="598"/>
+    <sprite n="amber_base_3.png" x="1" y="1" w="502" h="292" pX="0.5" pY="0.5" oX="0" oY="306" oW="502" oH="598"/>
+    <sprite n="amber_mid.png" x="252" y="649" w="422" h="281" pX="0.5" pY="0.5" oX="23" oY="165" oW="502" oH="598"/>
+    <sprite n="amber_top.png" x="1" y="649" w="249" h="352" pX="0.5" pY="0.5" oX="80" oY="0" oW="502" oH="598" r="y"/>
+    <sprite n="crack_1.png" x="362" y="932" w="33" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="crack_2.png" x="453" y="932" w="48" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="crack_3.png" x="567" y="932" w="49" h="61" pX="0.5" pY="0.5"/>
+    <sprite n="crack_4.png" x="397" y="932" w="54" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="crack_5.png" x="503" y="932" w="31" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="crack_6.png" x="536" y="932" w="29" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="N_amber_lrg_01.png" x="252" y="932" w="108" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="N_amber_lrg_02.png" x="618" y="932" w="112" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="N_amber_med_01.png" x="484" y="603" w="44" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="N_amber_shrd_01.png" x="656" y="986" w="40" h="35" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="40" r="y"/>
+    <sprite n="N_amber_shrd_02.png" x="997" y="117" w="15" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="56"/>
+    <sprite n="N_amber_shrd_03.png" x="997" y="71" w="16" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="N_amber_sml_01.png" x="997" y="1" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="N_amber_sml_02.png" x="997" y="27" w="24" h="19" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="20"/>
+    <sprite n="N_amber_spark_01.png" x="997" y="48" w="22" h="21" pX="0.5" pY="0.5" oX="51" oY="52" oW="124" oH="124"/>
+    <sprite n="N_amber_spark_02.png" x="618" y="986" w="36" h="37" pX="0.5" pY="0.5" oX="44" oY="44" oW="124" oH="124" r="y"/>
+    <sprite n="N_amber_spark_03.png" x="850" y="586" w="105" h="93" pX="0.5" pY="0.5" oX="14" oY="13" oW="124" oH="124" r="y"/>
+    <sprite n="N_amber_spark_04.png" x="732" y="483" w="116" h="107" pX="0.5" pY="0.5" oX="10" oY="8" oW="124" oH="124" r="y"/>
+    <sprite n="N_amber_spark_05.png" x="484" y="483" w="112" h="118" pX="0.5" pY="0.5" oX="8" oY="6" oW="124" oH="124"/>
+    <sprite n="N_amber_spark_06.png" x="598" y="483" w="109" h="118" pX="0.5" pY="0.5" oX="7" oY="6" oW="124" oH="124"/>
+    <sprite n="N_amber_spark_07.png" x="850" y="483" w="113" h="101" pX="0.5" pY="0.5" oX="5" oY="11" oW="124" oH="124" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8e43854cedbe648b94e4a2fc17b5c941:9e639f487304756f1e9dbae79d76c904:8c598aa21345e089ce5de49715647f7b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island01_MIRROR_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island01_MIRROR_burns" x="2" y="2" w="638" h="1158" pX="0.5" pY="0.5" oX="0" oY="4" oW="638" oH="1166"/>
+    <sprite n="island01_MIRROR_ear" x="795" y="1586" w="803" h="456" pX="0.5" pY="0.5" oX="0" oY="1" oW="456" oH="804" r="y"/>
+    <sprite n="island01_MIRROR_edge" x="795" y="1150" w="331" h="404" pX="0.5" pY="0.5" oX="2" oY="3" oW="414" oH="334" r="y"/>
+    <sprite n="island01_MIRROR_eyeclosed" x="2" y="1162" w="791" h="808" pX="0.5" pY="0.5" oX="50" oY="25" oW="870" oH="816" r="y"/>
+    <sprite n="island01_MIRROR_nose" x="1300" y="2" w="580" h="680" pX="0.5" pY="0.5"/>
+    <sprite n="island01_MIRROR_scarecrow" x="1128" y="1150" w="206" h="215" pX="0.5" pY="0.5" oX="1" oY="0" oW="208" oH="216"/>
+    <sprite n="island01_MIRROR_stumpcenter" x="642" y="725" w="984" h="423" pX="0.5" pY="0.5" oX="3" oY="16" oW="990" oH="460"/>
+    <sprite n="island01_MIRROR_stumpside" x="642" y="2" w="656" h="721" pX="0.5" pY="0.5" oX="7" oY="16" oW="728" oH="672" r="y"/>
+    <sprite n="island01_MIRROR_teleruin" x="1600" y="1586" w="406" h="388" pX="0.5" pY="0.5" oX="3" oY="3" oW="412" oH="392"/>
+    <sprite n="w1_cloud" x="1628" y="684" w="411" h="900" pX="0.5" pY="0.5" oX="0" oY="4" oW="900" oH="420" r="y"/>
+    <sprite n="w1_leaves_1" x="1882" y="2" w="114" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="w1_leaves_2" x="1882" y="198" w="104" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="w1_plant_bird_01" x="2" y="1972" w="94" h="44" pX="0.5" pY="0.5" oX="2" oY="11" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_02" x="98" y="1972" w="55" h="73" pX="0.5" pY="0.5" oX="12" oY="0" oW="96" oH="56" r="y"/>
+    <sprite n="w1_plant_bird_03" x="155" y="1972" w="94" h="42" pX="0.5" pY="0.5" oX="2" oY="13" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_04" x="335" y="1972" w="84" h="42" pX="0.5" pY="0.5" oX="7" oY="14" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_05" x="421" y="1972" w="40" h="41" pX="0.5" pY="0.5" oX="22" oY="15" oW="96" oH="56" r="y"/>
+    <sprite n="w1_vine_1" x="251" y="1972" w="82" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="w1_vine_2" x="1882" y="110" w="140" h="86" pX="0.5" pY="0.5"/>
+</TextureAtlas>

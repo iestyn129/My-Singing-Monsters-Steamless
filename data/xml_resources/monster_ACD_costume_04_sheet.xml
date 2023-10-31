@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7e4587970af34920bef1237a0db04576:ec8d43e2cbc9f1513708d55992a86cac:988ac4be40670693ff73a4e8d12d6b42$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ACD_costume_04_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ACD_feather" x="166" y="340" w="35" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="58"/>
+    <sprite n="ACD_foot_1" x="267" y="677" w="111" h="70" pX="0.5" pY="0.5" oX="9" oY="8" oW="130" oH="82"/>
+	<sprite n="ACD_foot_1_RARE" />
+    <sprite n="ACD_foot_2" x="383" y="156" w="127" h="70" pX="0.5" pY="0.5" oX="1" oY="11" oW="130" oH="82"/>
+	<sprite n="ACD_foot_2_RARE" />
+    <sprite n="ACD_foot_3" x="2" y="718" w="123" h="69" pX="0.5" pY="0.5" oX="3" oY="11" oW="130" oH="82"/>
+	<sprite n="ACD_foot_3_RARE" />
+    <sprite n="ACD_foot_4" x="267" y="749" w="111" h="70" pX="0.5" pY="0.5" oX="9" oY="8" oW="130" oH="82"/>
+	<sprite n="ACD_foot_4_RARE" />
+    <sprite n="ACD_foot_5" x="127" y="762" w="109" h="72" pX="0.5" pY="0.5" oX="10" oY="5" oW="130" oH="82"/>
+	<sprite n="ACD_foot_5_RARE" />
+    <sprite n="ACD_foot_6" x="436" y="817" w="74" h="98" pX="0.5" pY="0.5" oX="15" oY="0" oW="130" oH="82" r="y"/>
+	<sprite n="ACD_foot_6_RARE" />
+    <sprite n="ACD_head" x="2" y="2" w="204" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="ACD_left_eyeback" x="380" y="796" w="54" h="51" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="54"/>
+    <sprite n="ACD_left_eyelid_1" x="448" y="585" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_eyelid_2" x="448" y="644" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_eyelid_3" x="380" y="677" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_eyelid_4" x="443" y="703" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+	<!-- original anchor = (41, 49) -> new anchor (68, 71) diff = (-27, -22)-->
+	<!-- add double it to texturepacker output offsets (3, 0) -> (-51, -44)-->
+    <sprite n="ACD_left_horn" x="388" y="2" w="111" h="152" pX="0.5" pY="0.5" oX="-51" oY="-44" oW="114" oH="152"/>
+    <sprite n="ACD_left_leg_1" x="208" y="2" w="178" h="81" pX="0.5" pY="0.5" oX="17" oY="0" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_2" x="208" y="85" w="173" h="85" pX="0.5" pY="0.5" oX="13" oY="5" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_3" x="2" y="150" w="171" h="87" pX="0.5" pY="0.5" oX="11" oY="7" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_4" x="2" y="239" w="165" h="92" pX="0.5" pY="0.5" oX="6" oY="13" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_5" x="2" y="333" w="162" h="93" pX="0.5" pY="0.5" oX="5" oY="16" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_6" x="2" y="428" w="154" h="96" pX="0.5" pY="0.5" oX="2" oY="24" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_7" x="158" y="510" w="149" h="98" pX="0.5" pY="0.5" oX="0" oY="29" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_8" x="367" y="319" w="143" h="97" pX="0.5" pY="0.5" oX="0" oY="35" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_9" x="2" y="526" w="144" h="98" pX="0.5" pY="0.5" oX="0" oY="34" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_mouth_1" x="175" y="150" w="26" h="101" pX="0.5" pY="0.5" oX="0" oY="0" oW="102" oH="26" r="y"/>
+    <sprite n="ACD_mouth_2" x="169" y="253" w="23" h="85" pX="0.5" pY="0.5" oX="8" oY="2" oW="102" oH="26" r="y"/>
+    <sprite n="ACD_mouth_3" x="158" y="438" w="19" h="67" pX="0.5" pY="0.5" oX="16" oY="4" oW="102" oH="26" r="y"/>
+    <sprite n="ACD_mouth_4" x="166" y="397" w="35" h="15" pX="0.5" pY="0.5" oX="33" oY="10" oW="102" oH="26"/>
+    <sprite n="ACD_pupil" x="166" y="414" w="22" h="22" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+	<sprite n="ACD_pupil_RARE" />
+    <sprite n="ACD_right_eyeback" x="2" y="972" w="47" h="47" pX="0.5" pY="0.5" oX="1" oY="1" oW="50" oH="50"/>
+    <sprite n="ACD_right_eyelid_1" x="2" y="917" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_2" x="2" y="849" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_3" x="441" y="762" w="54" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_4" x="2" y="789" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+	<!-- original anchor = (22, 54) -> new anchor (1, 82) diff = (21, -28)-->
+	<!-- add it to texturepacker output offsets (0, 2) -> (42, -54)-->
+    <sprite n="ACD_right_horn" x="203" y="249" w="162" h="99" pX="0.5" pY="0.5" oX="42" oY="-54" oW="100" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_1" x="203" y="172" w="163" h="75" pX="0.5" pY="0.5" oX="0" oY="0" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_2" x="203" y="350" w="158" h="77" pX="0.5" pY="0.5" oX="0" oY="5" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_3" x="190" y="429" w="154" h="79" pX="0.5" pY="0.5" oX="0" oY="10" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_4" x="346" y="502" w="150" h="81" pX="0.5" pY="0.5" oX="0" oY="13" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_5" x="363" y="418" w="145" h="82" pX="0.5" pY="0.5" oX="0" oY="19" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_6" x="368" y="228" w="141" h="89" pX="0.5" pY="0.5" oX="0" oY="23" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_7" x="309" y="585" w="137" h="90" pX="0.5" pY="0.5" oX="0" oY="27" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_8" x="2" y="626" w="133" h="90" pX="0.5" pY="0.5" oX="0" oY="31" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_9" x="137" y="670" w="128" h="90" pX="0.5" pY="0.5" oX="0" oY="36" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_shadow" x="148" y="610" w="135" h="58" pX="0.5" pY="0.5" oX="0" oY="1" oW="136" oH="60"/>
+	<sprite n="ACD_spike_RARE" />
+	<sprite n="ACD_stache_RARE" />
+		<!-- original anchor = (55, 45) -> new anchor (7, 19) diff = (48, 26)-->
+	<!-- add it to texturepacker output offsets (1, 0) -> (97, 52)-->
+    <sprite n="ACD_XMAS_nose" x="380" y="736" w="59" h="58" pX="0.5" pY="0.5" oX="97" oY="52" oW="60" oH="60" r="y"/>
+</TextureAtlas>

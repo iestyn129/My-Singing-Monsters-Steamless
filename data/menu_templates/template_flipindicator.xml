@@ -1,0 +1,62 @@
+<template name="template_flipindicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_exclaim")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.6*game.hudScale())
+			component("layer"):SetString("ContextBar")
+			
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("vFlip"):SetInt(1)
+			else
+				component("hFlip"):SetInt(1)
+			end
+			
+			component("xOffset"):SetInt(-22*game.hudScale())
+			component("yOffset"):SetInt(3*game.hudScale())
+			
+			if(game.showFreeFlipIndicator()) then
+				element.hasIndicator = true
+
+				if(element.hasIndicator and element.isVisible) then
+					component("visible"):SetInt(1)
+				else
+					component("visible"):SetInt(0)
+				end
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="onInit" params="element">
+		element.hasIndicator = false
+		element["Sprite"]("visible"):SetInt(0)
+		element.isVisible = true
+	</event>
+	
+	<event name="SetVisible" params="element">
+		element.isVisible = true
+
+		if element.hasIndicator then
+			element["Sprite"]("visible"):SetInt(1)
+		else
+			element["Sprite"]("visible"):SetInt(0)
+		end
+	</event>
+	
+	<event name="SetInvisible" params="element">
+		element.isVisible = false
+		element["Sprite"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="SetEnabled" params="element">
+		element["Sprite"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	<event name="SetDisabled" params="element">
+		element["Sprite"]:setColor(0.5, 0.5, 0.5)
+	</event>
+	
+</template>

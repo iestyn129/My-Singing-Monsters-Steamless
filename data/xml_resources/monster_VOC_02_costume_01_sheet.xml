@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:309f8bb9b6df5f860ec9c56eebc9b751:33dad8f8c1cf718cb0912921ee513574:f160f9737031f07f385c384fd2fae0d0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_02_costume_01_sheet.png" width="512" height="512" hires="true">
+	<!-- original anchor = (35, 58) -> new anchor (66, 22) diff = (-31, 36)-->
+	<!-- add double it to texturepacker output offsets (0, 5) -> (-62, 78), cause hires-->
+    <sprite n="VOC_02_dressA_HALLOWEEN.png" x="2" y="2" w="260" h="212" oX="-62" oY="78" oW="260" oH="220"/>
+    <sprite n="VOC_02_hair_front.png" x="2" y="216" w="178" h="41" oX="12" oY="11" oW="72" oH="200" r="y"/>
+    <sprite n="VOC_02_hair_side.png" x="2" y="259" w="177" h="51" oX="11" oY="12" oW="72" oH="200" r="y"/>
+	<!-- original anchor = (36, 101) -> new anchor (58, 67) diff = (-22, 34)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-44, 68), cause hires-->
+    <sprite n="VOC_02_hat_brim_HALLOWEEN.png" x="264" y="138" w="230" h="77" oX="-44" oY="68" oW="230" oH="80"/>
+	<!-- original anchor = (36, 101) -> new anchor (-3, 103) diff = (39, -2)-->
+	<!-- add double it to texturepacker output offsets (1, 0) -> (79, -4), cause hires-->
+    <sprite n="VOC_02_hat_peak_HALLOWEEN.png" x="260" y="217" w="60" h="88" oX="79" oY="-4" oW="90" oH="60" r="y"/>
+    <sprite n="VOC_02_head.png" x="264" y="2" w="244" h="134" oX="0" oY="0" oW="144" oH="244" r="y"/>
+    <sprite n="VOC_02_lower_body.png" x="141" y="312" w="119" h="139" oX="9" oY="9" oW="136" oH="156"/>
+	<!-- original anchor = (36, 101) -> new anchor (44, 30) diff = (-8, 71)-->
+	<!-- add it to texturepacker output offsets (2, 2) -> (-14, 144)-->
+    <sprite n="VOC_02_nose_HALLOWEEN.png" x="182" y="216" w="76" h="45" oX="-14" oY="144" oW="80" oH="50"/>
+    <sprite n="VOC_02_upper_body.png" x="2" y="312" w="137" h="167" oX="8" oY="10" oW="152" oH="184"/>
+    <sprite n="VOC_02_upperarm.png" x="141" y="453" w="113" h="49" oX="9" oY="7" oW="132" oH="64"/>
+</TextureAtlas>

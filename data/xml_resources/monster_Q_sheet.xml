@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5f4945de9c15af851efee3e081a7e60a:94e029fe9cf21696071a57db046de65d:a12947aa0967fb000fb0bed4f3f50a9a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_Q_sheet.png" width="512" height="512" hires="true">
+    <sprite n="Q_body_01" x="288" y="127" w="124" h="118" pX="0.5" pY="0.5" oX="9" oY="10" oW="140" oH="144" r="y"/>
+    <sprite n="Q_body_02" x="130" y="178" w="124" h="114" pX="0.5" pY="0.5" oX="13" oY="10" oW="140" oH="144" r="y"/>
+    <sprite n="Q_body_03" x="290" y="2" w="129" h="123" pX="0.5" pY="0.5" oX="8" oY="9" oW="140" oH="144" r="y"/>
+    <sprite n="Q_body_04" x="2" y="238" w="124" h="114" pX="0.5" pY="0.5" oX="13" oY="10" oW="140" oH="144" r="y"/>
+    <sprite n="Q_dirt_chunk" x="265" y="113" w="21" h="20" pX="0.5" pY="0.5" oX="6" oY="6" oW="32" oH="32" r="y"/>
+    <sprite n="Q_dirtmound_back" x="135" y="113" w="128" h="63" pX="0.5" pY="0.5" oX="12" oY="10" oW="152" oH="84"/>
+    <sprite n="Q_dirtmound_front" x="2" y="2" w="150" h="62" pX="0.5" pY="0.5" oX="2" oY="11" oW="156" oH="84"/>
+    <sprite n="Q_eyeball" x="256" y="178" w="30" h="28" pX="0.5" pY="0.5" oX="10" oY="12" oW="48" oH="48" r="y"/>
+    <sprite n="Q_headtop_01" x="154" y="2" w="134" h="109" pX="0.5" pY="0.5" oX="10" oY="11" oW="156" oH="128"/>
+    <sprite n="Q_headtop_02" x="256" y="247" w="122" h="102" pX="0.5" pY="0.5" oX="19" oY="18" oW="156" oH="128"/>
+    <sprite n="Q_headtop_03" x="414" y="130" w="94" h="105" pX="0.5" pY="0.5" oX="24" oY="26" oW="156" oH="128" r="y"/>
+    <sprite n="Q_headtop_04" x="2" y="66" w="131" h="74" pX="0.5" pY="0.5" oX="14" oY="45" oW="156" oH="128"/>
+    <sprite n="Q_headtop_05" x="128" y="294" w="111" h="97" pX="0.5" pY="0.5" oX="18" oY="22" oW="156" oH="128"/>
+    <sprite n="Q_headtop_06" x="2" y="142" w="126" h="94" pX="0.5" pY="0.5" oX="6" oY="23" oW="156" oH="128"/>
+    <sprite n="Q_headtop_07" x="2" y="393" w="106" h="109" pX="0.5" pY="0.5" oX="23" oY="11" oW="156" oH="128"/>
+    <sprite n="Q_mouth_01" x="421" y="2" w="80" h="24" pX="0.5" pY="0.5" oX="11" oY="15" oW="104" oH="80"/>
+    <sprite n="Q_mouth_02" x="414" y="237" w="77" h="35" pX="0.5" pY="0.5" oX="13" oY="14" oW="104" oH="80"/>
+    <sprite n="Q_mouth_03" x="421" y="84" w="78" h="44" pX="0.5" pY="0.5" oX="13" oY="14" oW="104" oH="80"/>
+    <sprite n="Q_mouth_04" x="421" y="28" w="78" h="54" pX="0.5" pY="0.5" oX="13" oY="14" oW="104" oH="80"/>
+</TextureAtlas>

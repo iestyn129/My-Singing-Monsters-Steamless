@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d6efd98fd24a0a7e488a4f0452253a9d:0ad58257e56a5b203e97a6aa1a962256:236ca101b5e0a91fd670d4e672c2be22$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_WY_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="wy_crack_01" x="276" y="2" w="216" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="wy_crack_02" x="2" y="423" w="176" h="115" pX="0.5" pY="0.5" oX="19" oY="16" oW="216" oH="148"/>
+    <sprite n="wy_eyeball" x="469" y="267" w="41" h="40" pX="0.5" pY="0.5" oX="8" oY="8" oW="56" oH="56" r="y"/>
+    <sprite n="wy_eyelid_01" x="212" y="568" w="44" h="44" pX="0.5" pY="0.5" oX="4" oY="4" oW="52" oH="52"/>
+    <sprite n="wy_eyelid_02" x="212" y="614" w="44" h="44" pX="0.5" pY="0.5" oX="4" oY="4" oW="52" oH="52"/>
+    <sprite n="wy_eyelid_03" x="212" y="660" w="44" h="44" pX="0.5" pY="0.5" oX="4" oY="4" oW="52" oH="52"/>
+    <sprite n="wy_eyelid_04" x="129" y="674" w="44" h="44" pX="0.5" pY="0.5" oX="4" oY="4" oW="52" oH="52"/>
+    <sprite n="wy_glow" x="2" y="2" w="272" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="wy_hair_01" x="481" y="214" w="18" h="41" pX="0.5" pY="0.5" oX="1" oY="3" oW="44" oH="24" r="y"/>
+    <sprite n="wy_hair_02" x="217" y="140" w="57" h="35" pX="0.5" pY="0.5" oX="3" oY="2" oW="64" oH="40"/>
+    <sprite n="wy_hair_03" x="217" y="225" w="53" h="82" pX="0.5" pY="0.5" oX="5" oY="3" oW="64" oH="88"/>
+    <sprite n="wy_hair_04" x="217" y="309" w="50" h="137" pX="0.5" pY="0.5" oX="3" oY="1" oW="56" oH="140"/>
+    <sprite n="wy_hair_05" x="215" y="448" w="50" h="118" pX="0.5" pY="0.5" oX="3" oY="3" oW="56" oH="124"/>
+    <sprite n="wy_hair_06" x="217" y="177" w="55" h="46" pX="0.5" pY="0.5" oX="3" oY="4" oW="52" oH="64" r="y"/>
+    <sprite n="wy_hair_07" x="481" y="152" w="25" h="40" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="32" r="y"/>
+    <sprite n="wy_hair_behind_01" x="469" y="309" w="40" h="59" pX="0.5" pY="0.5" oX="2" oY="2" oW="44" oH="64"/>
+    <sprite n="wy_hair_behind_02" x="180" y="423" w="33" h="108" pX="0.5" pY="0.5" oX="3" oY="2" oW="40" oH="112"/>
+    <sprite n="wy_hair_behind_03" x="443" y="412" w="46" h="90" pX="0.5" pY="0.5" oX="3" oY="1" oW="52" oH="92"/>
+    <sprite n="wy_hair_behind_04" x="443" y="370" w="59" h="40" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="60" r="y"/>
+    <sprite n="wy_head" x="2" y="140" w="213" h="170" pX="0.5" pY="0.5" oX="9" oY="9" oW="188" oH="232" r="y"/>
+    <sprite n="wy_jaw" x="267" y="471" w="170" h="87" pX="0.5" pY="0.5" oX="9" oY="8" oW="188" oH="104"/>
+    <sprite n="wy_left_fist" x="2" y="540" w="138" h="131" pX="0.5" pY="0.5" oX="7" oY="5" oW="152" oH="144"/>
+    <sprite n="wy_left_lowerarm" x="129" y="720" w="111" h="101" pX="0.5" pY="0.5" oX="1" oY="2" oW="104" oH="116" r="y"/>
+    <sprite n="wy_left_upperarm" x="410" y="625" w="95" h="125" pX="0.5" pY="0.5" oX="4" oY="4" oW="132" oH="104" r="y"/>
+    <sprite n="wy_pupil" x="481" y="194" w="19" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="wy_right_fist" x="267" y="560" w="141" h="130" pX="0.5" pY="0.5" oX="5" oY="5" oW="152" oH="144"/>
+    <sprite n="wy_right_lowerarm" x="258" y="692" w="111" h="108" pX="0.5" pY="0.5" oX="0" oY="2" oW="112" oH="112"/>
+    <sprite n="wy_right_upperarm" x="2" y="673" w="125" h="95" pX="0.5" pY="0.5" oX="3" oY="4" oW="132" oH="104"/>
+    <sprite n="wy_ring_01" x="439" y="504" w="71" h="119" pX="0.5" pY="0.5" oX="43" oY="23" oW="204" oH="116" r="y"/>
+    <sprite n="wy_ring_02" x="269" y="370" w="172" h="99" pX="0.5" pY="0.5" oX="16" oY="9" oW="204" oH="116"/>
+    <sprite n="wy_ring_03" x="2" y="312" w="193" h="109" pX="0.5" pY="0.5" oX="6" oY="4" oW="204" oH="116"/>
+    <sprite n="wy_ring_04" x="276" y="152" w="203" h="113" pX="0.5" pY="0.5" oX="1" oY="2" oW="204" oH="116"/>
+    <sprite n="wy_shadow_fist" x="142" y="540" w="68" h="132" pX="0.5" pY="0.5" oX="8" oY="5" oW="146" oH="78" r="y"/>
+    <sprite n="wy_shadow_head" x="272" y="267" w="195" h="101" pX="0.5" pY="0.5" oX="6" oY="6" oW="206" oH="115"/>
+</TextureAtlas>

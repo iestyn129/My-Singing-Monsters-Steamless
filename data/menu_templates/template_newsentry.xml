@@ -1,0 +1,224 @@
+<template name="template_newsentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size w="0.7*lua_sys.screenWidth()" h="52*game.menuScaleY()" />
+	<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+	<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="100" />
+
+	<element name="NewsBackground">
+		<size w="0.7*lua_sys.screenWidth()" h="52*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="1" />
+		<ninesliceComponent name="SpriteySprite">
+			<size w="0.7*lua_sys.screenWidth()" h="52*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/friendGrey"..element:parent()("greyIndex"):GetInt())
+				component("layer"):SetString("Clipping")
+				element:setPositionBroadcast(true)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="NewsIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Frame">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("icon_frame")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.38*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				local placement = game.nativePlacement(element:parent()("placement"):GetString());
+				if (placement ~= nil) then
+					local ad = placement:getAd(element:parent()("index"):GetInt());
+					if (ad ~= nil and ad:hasIcon()) then
+						component:setSprite(ad:getIcon())
+						element["DefaultIcon"]("visible"):SetInt(0)
+					else
+						element["DefaultIcon"]("visible"):SetInt(1)
+						component("visible"):SetInt(0)
+					end
+				else
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				end
+				component("size"):SetFloat(0.40*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+		<spriteSheetComponent name="DefaultIcon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("news_generic")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.40*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Exclaim">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="HCENTER" hAnchor="VCENTER" xOffset="-24*game.menuScaleX()" yOffset="-18*game.menuScaleY()" priorityOffset="-3" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("goal_exclaim")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.6*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+				
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(0)
+				else
+					component("hFlip"):SetInt(0)
+				end
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="NewsTitle">
+		<size w="0.47*lua_sys.screenWidth()" h="52*game.menuScaleY()" />
+		<position relativeTo="NewsIcon" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Title">
+			<size w="0.47*lua_sys.screenWidth()" h="52*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(element:parent()("title"):GetString())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="ViewButton">
+		<templateVar name="$upSpriteName" equals="'button_base_grey'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$text" equals="CONTEXTBAR_VIEW_LABEL" />
+		<templateVar name="$layer" equals="Clipping" />
+		<templateVar name="$spriteScale" equals="0.3*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="5*game.menuScaleY()-5*game.menuScaleX()" yOffset="5*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_magnify")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+				element("viewed"):SetInt(1)
+				element:parent()["NewsIcon"]["Exclaim"]("visible"):SetInt(0)
+				if(lua_sys.getPlatformName() == "pc") then
+					game.pushPopUp("newsflash")
+					game.topPopUp():GetVar("placement"):SetString(element:parent()("placement"):GetString())
+					game.topPopUp():GetVar("index"):SetInt(element:parent()("index"):GetInt())
+					game.topPopUp():DoStoredScript("setUpElements")
+				else
+					if (game.showNewsFlashByIndex ~= nil) then
+						game.showNewsFlashByIndex(element:parent()("placement"):GetString(),element:parent()("index"):GetInt())
+					end
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BoundsSprite" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component:GetVar("yOffset"):SetInt(-2 * game.menuScaleY())
+				component:GetVar("size"):SetFloat(0.2 * game.menuScaleY())
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+		</event>
+	</template>
+
+	<event name="onInit" params="element">
+		print("template_newsentry")
+		element("transitionTime"):SetFloat(1.0)
+		element("transitionState"):SetInt(1)
+		local index = element("index"):GetInt()
+		if(game.hasSeenNewsFlashAd("mailbox", index)) then
+			element("viewed"):SetInt(1)
+			element["NewsIcon"]["Exclaim"]("visible"):SetInt(0)
+		else
+			element("viewed"):SetInt(0)
+			element["NewsIcon"]["Exclaim"]("visible"):SetInt(1)
+		end
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local transitionState = element("transitionState"):GetInt()
+			
+			if(transitionState ~= 0 and dt <= 0.5) then
+				local transitionTime = element("transitionTime"):GetFloat()
+				
+				element["NewsIcon"]["Exclaim"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+
+				if(transitionTime <= 1.0 ) then
+					element("transitionState"):SetInt(1)
+				elseif(transitionTime >= 1.25) then
+					element("transitionState"):SetInt(2)
+				end	
+
+				if(transitionState == 1) then
+					element("transitionTime"):SetFloat(transitionTime + dt)
+				else
+					element("transitionTime"):SetFloat(transitionTime - dt)
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="hide" params="element">
+		element["NewsBackground"]["SpriteySprite"]("visible"):SetInt(0)
+		element["NewsIcon"]["Frame"]("visible"):SetInt(0)
+		element["NewsIcon"]["Icon"]("visible"):SetInt(0)
+		element["NewsIcon"]["Exclaim"]("visible"):SetInt(0)
+		element["NewsTitle"]["Title"]("visible"):SetInt(0)
+		element["ViewButton"]["Overlay"]("visible"):SetInt(0)
+		element["ViewButton"]:DoStoredScript("setInvisible")
+	</event>
+	
+	<event name="show" params="element">
+		element["NewsBackground"]["SpriteySprite"]("visible"):SetInt(1)
+		element["NewsIcon"]["Frame"]("visible"):SetInt(1)
+		element["NewsIcon"]["Icon"]("visible"):SetInt(1)
+		element["NewsTitle"]["Title"]("visible"):SetInt(1)
+		element["ViewButton"]["Overlay"]("visible"):SetInt(1)
+		element["ViewButton"]:DoStoredScript("setVisible")
+		
+		if(element("viewed"):GetInt() == 0) then
+			element["NewsIcon"]["Exclaim"]("visible"):SetInt(1)
+		end
+	</event>
+
+</template>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6a8617acbe7d0fa9a63f0384efb3bd99:9c55b174ee7e365f72ed25590b3fac97:ebc527a5eb9d583dadb42f539fb8fe53$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/colosseye_earth_sheet.png" width="512" height="512" hires="true">
+    <sprite n="block_A_01.png" x="166" y="241" w="98" h="95" pX="0.5" pY="0.5" oX="8" oY="7" oW="112" oH="112" r="y"/>
+    <sprite n="block_B_01.png" x="79" y="411" w="93" h="96" pX="0.5" pY="0.5" oX="9" oY="8" oW="112" oH="112"/>
+    <sprite n="block_base.png" x="191" y="2" w="181" h="136" pX="0.5" pY="0.5" oX="3" oY="3" oW="188" oH="140"/>
+    <sprite n="block_bottom_deco.png" x="2" y="2" w="187" h="103" pX="0.5" pY="0.5" oX="4" oY="41" oW="192" oH="144"/>
+    <sprite n="block_bottom_deco_01.png" x="2" y="426" w="72" h="82" pX="0.5" pY="0.5" oX="0" oY="54" oW="72" oH="148"/>
+    <sprite n="block_bottom_deco_02.png" x="372" y="174" w="104" h="44" pX="0.5" pY="0.5" oX="0" oY="29" oW="44" oH="144" r="y"/>
+    <sprite n="block_bottom_glow.png" x="2" y="107" w="164" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="block_C_01.png" x="281" y="140" w="89" h="95" pX="0.5" pY="0.5" oX="11" oY="8" oW="112" oH="112"/>
+    <sprite n="block_D_01.png" x="79" y="177" w="85" h="99" pX="0.5" pY="0.5" oX="13" oY="6" oW="112" oH="112"/>
+    <sprite n="block_shadow.png" x="2" y="177" w="52" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52" r="y"/>
+    <sprite n="block_top.png" x="2" y="327" w="75" h="97" pX="0.5" pY="0.5" oX="13" oY="18" oW="124" oH="112" r="y"/>
+    <sprite n="block_top_deco.png" x="500" y="2" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="72"/>
+    <sprite n="block_top_glow.png" x="374" y="112" w="124" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="coverage_01.png" x="374" y="2" w="124" h="108" pX="0.5" pY="0.5" oX="8" oY="37" oW="132" oH="156"/>
+    <sprite n="coverage_02.png" x="168" y="140" w="111" h="99" pX="0.5" pY="0.5" oX="7" oY="50" oW="132" oH="156"/>
+    <sprite n="coverage_03.png" x="372" y="220" w="103" h="101" pX="0.5" pY="0.5" oX="12" oY="40" oW="132" oH="156"/>
+    <sprite n="dust.png" x="166" y="338" w="56" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="eye_iris.png" x="43" y="278" w="43" h="44" pX="0.5" pY="0.5" oX="6" oY="6" oW="56" oH="56"/>
+    <sprite n="eye_iris_top.png" x="88" y="278" w="43" h="44" pX="0.5" pY="0.5" oX="6" oY="6" oW="56" oH="56"/>
+    <sprite n="eye_orb.png" x="79" y="324" w="85" h="85" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="eye_orb_white.png" x="281" y="237" w="88" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="eye_pupil.png" x="168" y="107" w="20" h="19" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="24"/>
+    <sprite n="eye_shine.png" x="2" y="278" w="39" h="46" pX="0.5" pY="0.5" oX="3" oY="8" oW="56" oH="56"/>
+    <sprite n="glow_orange.png" x="371" y="323" w="101" h="101" pX="0.5" pY="0.5" oX="2" oY="2" oW="104" oH="104"/>
+</TextureAtlas>

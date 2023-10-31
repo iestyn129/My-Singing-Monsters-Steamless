@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7c2e352732314cbb519d001128c0a882:d82bda9980be7407292f33e0a0099330:85d0a1e3aa48871a08e1ade422e98cd0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCDE_costume_05_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="BCDE_body" x="398" y="2" w="296" h="280" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_chops_RARE" />
+    <sprite n="BCDE_eye_back" x="861" y="406" w="36" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_1" x="507" y="519" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_2" x="507" y="621" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_3" x="980" y="661" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_4" x="980" y="763" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_head" x="2" y="2" w="394" h="272" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_horn_back" x="696" y="2" w="218" h="156" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_horn_top_RARE" />
+    <sprite n="BCDE_leaf_loose" x="861" y="354" w="39" h="50" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="50"/>
+		<sprite n="BCDE_leaf_loose_RARE" />
+    <sprite n="BCDE_leafbody_1" x="2" y="276" w="190" h="98" pX="0.5" pY="0.5"/>
+		<sprite n="BCDE_leafbody_1_RARE" />
+    <sprite n="BCDE_leafbody_2" x="696" y="160" w="204" h="110" pX="0.5" pY="0.5"/>
+		<sprite n="BCDE_leafbody_2_RARE" />
+    <sprite n="BCDE_leafbody_3" x="2" y="639" w="110" h="114" pX="0.5" pY="0.5"/>
+		<sprite n="BCDE_leafbody_3_RARE" />
+		<sprite n="BCDE_leafbody_4_RARE" />
+		<sprite n="BCDE_leafbody_5_RARE" />
+    <sprite n="BCDE_left_foot" x="695" y="428" w="162" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_left_hand_1" x="81" y="774" w="100" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_left_hand_2" x="114" y="639" w="78" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="100"/>
+    <sprite n="BCDE_left_hand_3" x="2" y="774" w="77" h="87" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="100"/>
+    <sprite n="BCDE_left_leg" x="902" y="366" w="120" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_left_lower_arm" x="551" y="683" w="128" h="88" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_left_lower_arm_RARE" />
+    <sprite n="BCDE_left_upper_arm" x="551" y="458" w="142" h="102" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_left_upper_arm_RARE" />
+    <sprite n="BCDE_mouth_01" x="857" y="593" w="159" h="66" pX="0.5" pY="0.5" oX="10" oY="5" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_02" x="695" y="354" w="164" h="72" pX="0.5" pY="0.5" oX="7" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_03" x="859" y="504" w="160" h="87" pX="0.5" pY="0.5" oX="9" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_04" x="380" y="410" w="169" h="107" pX="0.5" pY="0.5" oX="3" oY="1" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_05" x="2" y="376" w="172" h="125" pX="0.5" pY="0.5" oX="0" oY="0" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_06" x="551" y="562" w="140" h="119" pX="0.5" pY="0.5" oX="11" oY="8" oW="172" oH="127"/>
+    <sprite n="BCDE_mouth_07" x="916" y="138" w="106" h="96" pX="0.5" pY="0.5" oX="29" oY="14" oW="172" oH="128" r="y"/>
+    <sprite n="BCDE_mouth_08" x="2" y="576" w="110" h="60" pX="0.5" pY="0.5" oX="26" oY="15" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_09" x="2" y="503" w="165" h="71" pX="0.5" pY="0.5" oX="7" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_10" x="695" y="518" w="160" h="87" pX="0.5" pY="0.5" oX="9" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_11" x="176" y="430" w="169" h="104" pX="0.5" pY="0.5" oX="3" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_12" x="571" y="284" w="122" h="172" pX="0.5" pY="0.5" oX="0" oY="1" oW="172" oH="128" r="y"/>
+    <sprite n="BCDE_mouth_13" x="397" y="284" w="172" h="124" pX="0.5" pY="0.5" oX="0" oY="0" oW="172" oH="128"/>
+    <sprite n="BCDE_pupil" x="380" y="276" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="BCDE_right_foot" x="916" y="2" w="106" h="134" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_right_hand_1" x="902" y="236" w="120" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_right_hand_2" x="851" y="661" w="127" h="111" pX="0.5" pY="0.5" oX="1" oY="0" oW="128" oH="120"/>
+    <sprite n="BCDE_right_hand_3" x="2" y="865" w="94" h="126" pX="0.5" pY="0.5" oX="2" oY="0" oW="128" oH="120" r="y"/>
+    <sprite n="BCDE_right_leg" x="693" y="607" w="156" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_right_lower_arm" x="347" y="519" w="158" h="118" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_right_lower_arm_RARE" />
+    <sprite n="BCDE_right_upper_arm" x="194" y="276" w="184" h="152" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="BCDE_right_upper_arm_RARE" />
+    <sprite n="BCDE_shadow" x="696" y="272" w="192" h="80" pX="0.5" pY="0.5"/>
+		<sprite n="BCDE_small_horn_RARE" />
+		<sprite n="BCDE_small_leaf_RARE" />
+</TextureAtlas>

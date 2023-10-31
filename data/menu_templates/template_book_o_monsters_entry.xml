@@ -1,0 +1,56 @@
+<template type="template_book_o_monsters_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spritePickComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				local MonsterPortraits = include("MonsterPortraits")
+				local spriteName = MonsterPortraits:getBookOfMonstersPortrait(element:parent().MonsterID)
+				component("spriteName"):SetString(spriteName)
+				component("size"):SetFloat(0.75)
+				component("layer"):SetString("Clipping")
+				component("hFlip"):SetInt(element:parent():V("MonsterFlip"):GetInt())
+			</event>
+			<event name="onTick" params="component, element, dt">
+				<![CDATA[
+				if element:parent().pulsing == 1 then
+					local ShaderDesaturateAndFade = include("ShaderDesaturateAndFade")	
+					
+					element:parent().secondsElapsedDuringEase= element:parent().secondsElapsedDuringEase + dt
+					local alpha = lua_sys.Sinusoidal_EaseInOut( element:parent().secondsElapsedDuringEase, 0, 1.0, 2)
+					ShaderDesaturateAndFade:getUniform("blackIntensity"):setFloat(alpha)
+				end
+				]]>	
+			</event>
+
+			<event name="onPick" params="component, element">
+				element:parent():touch()
+			</event>
+		</spritePickComponent>
+	</element>
+	
+	<element name="Silhouette">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spritePickComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				local MonsterPortraits = include("MonsterPortraits")
+				local spriteName = MonsterPortraits:getBookOfMonstersPortraitDark(element:parent().MonsterID)
+				component("spriteName"):SetString(spriteName)
+				component("size"):SetFloat(0.75)
+				component("layer"):SetString("Clipping")
+				component("hFlip"):SetInt(element:parent():V("MonsterFlip"):GetInt())
+			</event>
+			<event name="onPick" params="component, element">
+				element:parent():touch()
+			</event>
+		</spritePickComponent>
+	</element>
+	
+	<script src="scripts/BOMEntry.lua"/>
+</template>

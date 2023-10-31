@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:237a72c80584d7858c9dc27c029b0f5b:df5bdc784baf2dde605df3cbc36b27f3:f8f2baf662b053ecff71160a87c2ca0d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/crucible_building_upgraded.png" width="1024" height="1024">
+    <sprite n="base.png" x="1" y="692" w="200" h="321" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bush.png" x="472" y="485" w="79" h="73" pX="0.5" pY="0.5"/>
+    <sprite n="corner_green.png" x="721" y="143" w="70" h="89" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="flag_air.png" x="264" y="560" w="47" h="128" pX="0.5" pY="0.5" oX="1" oY="0" oW="50" oH="128"/>
+    <sprite n="flag_air_closed.png" x="361" y="956" w="44" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="50" oH="128"/>
+    <sprite n="flag_air_comp.png" x="510" y="1" w="102" h="141" pX="0.5" pY="0.5"/>
+    <sprite n="flag_air_transition.png" x="670" y="317" w="47" h="93" pX="0.5" pY="0.5" oX="1" oY="0" oW="50" oH="128"/>
+    <sprite n="flag_cold.png" x="313" y="560" w="45" h="122" pX="0.5" pY="0.5" oX="4" oY="3" oW="54" oH="128"/>
+    <sprite n="flag_cold_closed.png" x="553" y="475" w="52" h="77" pX="0.5" pY="0.5" oX="2" oY="4" oW="54" oH="128"/>
+    <sprite n="flag_cold_comp.png" x="478" y="181" w="117" h="145" pX="0.5" pY="0.5"/>
+    <sprite n="flag_cold_transition.png" x="597" y="144" w="48" h="116" pX="0.5" pY="0.5" oX="4" oY="6" oW="54" oH="128"/>
+    <sprite n="flag_fire.png" x="542" y="328" w="52" h="145" pX="0.5" pY="0.5" oX="2" oY="2" oW="56" oH="150"/>
+    <sprite n="flag_fire_closed.png" x="670" y="412" w="47" h="51" pX="0.5" pY="0.5" oX="0" oY="3" oW="56" oH="150" r="y"/>
+    <sprite n="flag_fire_comp.png" x="404" y="184" w="72" h="149" pX="0.5" pY="0.5"/>
+    <sprite n="flag_fire_transition.png" x="710" y="1" w="52" h="94" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="150"/>
+    <sprite n="flag_plant.png" x="360" y="560" w="32" h="120" pX="0.5" pY="0.5" oX="4" oY="4" oW="40" oH="128"/>
+    <sprite n="flag_plant_closed.png" x="203" y="956" w="38" h="63" pX="0.5" pY="0.5" oX="0" oY="2" oW="40" oH="128"/>
+    <sprite n="flag_plant_comp.png" x="455" y="883" w="75" h="140" pX="0.5" pY="0.5"/>
+    <sprite n="flag_plant_transition.png" x="662" y="103" w="98" h="38" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="128" r="y"/>
+    <sprite n="flag_rock.png" x="581" y="883" w="44" h="135" pX="0.5" pY="0.5" oX="3" oY="0" oW="50" oH="136"/>
+    <sprite n="flag_rock_closed.png" x="407" y="956" w="46" h="59" pX="0.5" pY="0.5" oX="4" oY="0" oW="50" oH="136"/>
+    <sprite n="flag_rock_comp.png" x="472" y="335" w="68" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="flag_rock_transition.png" x="614" y="1" w="46" h="103" pX="0.5" pY="0.5" oX="3" oY="0" oW="50" oH="136"/>
+    <sprite n="flag_water_1.png" x="532" y="883" w="47" h="138" pX="0.5" pY="0.5" oX="1" oY="6" oW="50" oH="150"/>
+    <sprite n="flag_water_closed.png" x="645" y="262" w="46" h="53" pX="0.5" pY="0.5" oX="2" oY="6" oW="50" oH="150"/>
+    <sprite n="flag_water_comp.png" x="293" y="184" w="109" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="flag_water_transition.png" x="662" y="1" w="46" h="100" pX="0.5" pY="0.5" oX="1" oY="5" oW="50" oH="150"/>
+    <sprite n="inside.png" x="1" y="352" w="261" h="338" pX="0.5" pY="0.5" oX="1" oY="1" oW="262" oH="340"/>
+    <sprite n="inside_glow.png" x="411" y="681" w="170" h="200" pX="0.5" pY="0.5" oX="30" oY="53" oW="262" oH="340" r="y"/>
+    <sprite n="leaves_ol.png" x="243" y="956" w="116" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="overlay.png" x="1" y="1" w="290" h="349" pX="0.5" pY="0.5" oX="0" oY="0" oW="290" oH="350"/>
+    <sprite n="overlay_glow_1.png" x="203" y="692" w="206" h="262" pX="0.5" pY="0.5" oX="35" oY="47" oW="290" oH="350"/>
+    <sprite n="overlay_glow_2.png" x="293" y="1" w="143" h="181" pX="0.5" pY="0.5" oX="50" oY="86" oW="290" oH="350" r="y"/>
+    <sprite n="pole_air.png" x="647" y="144" w="72" h="102" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pole_cold.png" x="394" y="560" w="146" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="146" r="y"/>
+    <sprite n="pole_fire.png" x="596" y="328" w="72" h="142" pX="0.5" pY="0.5"/>
+    <sprite n="pole_plant.png" x="542" y="560" w="77" h="118" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="118"/>
+    <sprite n="pole_rock.png" x="438" y="1" w="70" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="pole_water.png" x="607" y="472" w="72" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="rings_air.png" x="411" y="883" w="40" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="rings_cold.png" x="597" y="262" w="46" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="rings_fire.png" x="438" y="151" w="46" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="rings_plant.png" x="510" y="144" w="44" h="35" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="44" r="y"/>
+    <sprite n="rings_rock.png" x="411" y="921" w="40" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="rings_water.png" x="614" y="106" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="star.png" x="693" y="248" w="50" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="steam.png" x="264" y="352" w="206" h="206" pX="0.5" pY="0.5"/>
+</TextureAtlas>

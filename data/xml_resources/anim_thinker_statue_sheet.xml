@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a770e567380eea3fa412ea611f9ec45d:ae32acdb45a402c670631274e34055c5:f9215c85efd03b28e9dc1b498a39d05e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_thinker_statue_sheet.png" width="256" height="512" hires="true">
+    <sprite n="thinker_statue_base.png" x="2" y="2" w="152" h="266" pX="0.5" pY="0.5"/>
+    <sprite n="thinker_statue_bird_01.png" x="89" y="270" w="58" h="84" pX="0.5" pY="0.5" oX="31" oY="1" oW="102" oH="90"/>
+    <sprite n="thinker_statue_bird_02.png" x="156" y="70" w="89" h="89" pX="0.5" pY="0.5" oX="10" oY="0" oW="102" oH="90"/>
+    <sprite n="thinker_statue_bird_03.png" x="156" y="2" w="94" h="66" pX="0.5" pY="0.5" oX="5" oY="14" oW="102" oH="90"/>
+    <sprite n="thinker_statue_bird_04.png" x="156" y="161" w="85" h="101" pX="0.5" pY="0.5" oX="0" oY="3" oW="102" oH="90" r="y"/>
+    <sprite n="thinker_statue_bird_05.png" x="156" y="264" w="85" h="58" pX="0.5" pY="0.5" oX="31" oY="0" oW="102" oH="90" r="y"/>
+    <sprite n="thinker_statue_bird_06.png" x="2" y="270" w="85" h="58" pX="0.5" pY="0.5" oX="31" oY="0" oW="102" oH="90" r="y"/>
+    <sprite n="thinker_statue_bird_07.png" x="2" y="330" w="84" h="49" pX="0.5" pY="0.5" oX="40" oY="1" oW="102" oH="90" r="y"/>
+</TextureAtlas>

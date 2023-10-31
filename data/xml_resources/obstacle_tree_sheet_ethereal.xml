@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c954c2c929aae66d5f6c3af115587276:5771d6374306f97d0c3e9ebdd0199471:c3bda4e5e9e22287e03a53539e8f1e6e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/obstacle_tree_sheet_ethereal.png" width="1024" height="1024" hires="true">
+    <sprite n="obstacle_tree01_ethereal" x="553" y="584" w="244" h="416" pX="0.5" pY="0.5"/>
+    <sprite n="obstacle_tree02_ethereal" x="553" y="2" w="418" h="580" pX="0.5" pY="0.5" oX="10" oY="0" oW="428" oH="580"/>
+    <sprite n="obstacle_tree03_ethereal" x="2" y="2" w="549" h="700" pX="0.5" pY="0.5" oX="15" oY="0" oW="564" oH="728"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c7047cadee784b534f542fb2fd1563dd:9decac70ecd7af6fe93d095602676523:4f58639bab1cf3377e420323fd210dfc$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/olympic_flame_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="fire_sprite_1_simpleB" x="2" y="474" w="186" h="172" pX="0.5" pY="0.5" oX="14" oY="8" oW="200" oH="200" r="y"/>
+    <sprite n="fire_sprite_2_simpleB" x="2" y="336" w="192" h="136" pX="0.5" pY="0.5" oX="32" oY="4" oW="200" oH="200" r="y"/>
+    <sprite n="glow_sprite_resized" x="190" y="523" w="166" h="166" pX="0.5" pY="0.5" oX="4" oY="4" oW="176" oH="176"/>
+    <sprite n="olympic_flame_base" x="2" y="2" w="384" h="332" pX="0.5" pY="0.5"/>
+    <sprite n="smoke_sprite" x="196" y="336" w="186" h="185" pX="0.5" pY="0.5" oX="8" oY="8" oW="200" oH="200"/>
+    <sprite n="spark_sprite" x="388" y="2" w="76" h="74" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="80"/>
+</TextureAtlas>

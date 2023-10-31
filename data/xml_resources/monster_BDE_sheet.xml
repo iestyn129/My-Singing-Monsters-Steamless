@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c15b572fe21b90fe9c7df2b52319a62b:dadab98c9ca5a243e63135ebdbde2b30:7d5f291bb729a01273fece96a5b16efb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BDE_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BDE_body" x="2" y="347" w="266" h="191" pX="0.5" pY="0.5" oX="1" oY="6" oW="192" oH="272" r="y"/>
+    <sprite n="BDE_body_RARE" x="2" y="540" w="265" h="191" pX="0.5" pY="0.5" oX="1" oY="7" oW="192" oH="272" r="y"/>
+    <sprite n="BDE_cello" x="2" y="2" w="439" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="440" r="y"/>
+    <sprite n="BDE_cello_bow" x="269" y="647" w="221" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="222" oH="28"/>
+    <sprite n="BDE_cello_bow_RARE" x="269" y="677" w="221" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="222" oH="28"/>
+    <sprite n="BDE_cello_RARE" x="2" y="104" w="439" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="440" r="y"/>
+    <sprite n="BDE_eye_back" x="360" y="378" w="80" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eye_back_RARE" x="360" y="422" w="80" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids1" x="270" y="347" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids1_RARE" x="270" y="397" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids2" x="270" y="447" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids2_RARE" x="270" y="497" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids3" x="269" y="547" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids3_RARE" x="269" y="597" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_eyelids4" x="78" y="785" w="48" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_eyelids4_RARE" x="128" y="785" w="88" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_left_foot" x="365" y="206" w="76" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_foot_RARE" x="365" y="292" w="76" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_hand" x="437" y="593" w="46" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_hand_RARE" x="2" y="733" w="46" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_leg" x="442" y="409" w="68" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_leg_RARE" x="442" y="455" w="68" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_lower_arm" x="50" y="733" w="100" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_left_lower_arm_RARE" x="152" y="733" w="100" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_left_upper_arm" x="102" y="883" w="34" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_left_upper_arm_RARE" x="128" y="835" w="84" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_mouth1" x="481" y="707" w="20" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_mouth1_RARE" x="481" y="795" w="20" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_mouth2" x="443" y="76" w="62" h="19" pX="0.5" pY="0.5" oX="14" oY="1" oW="86" oH="20"/>
+    <sprite n="BDE_mouth2_RARE" x="2" y="989" w="86" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_pupil" x="492" y="593" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="BDE_pupil_RARE" x="492" y="610" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="BDE_right_foot" x="360" y="466" w="76" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_right_foot_RARE" x="359" y="552" w="76" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_right_hand1" x="443" y="207" w="54" h="45" pX="0.5" pY="0.5" oX="0" oY="9" oW="54" oH="54"/>
+    <sprite n="BDE_right_hand1_RARE" x="443" y="254" w="54" h="45" pX="0.5" pY="0.5" oX="0" oY="9" oW="54" oH="54"/>
+    <sprite n="BDE_right_hand2" x="443" y="301" w="52" h="52" pX="0.5" pY="0.5" oX="1" oY="2" oW="54" oH="54"/>
+    <sprite n="BDE_right_hand2_RARE" x="443" y="355" w="52" h="52" pX="0.5" pY="0.5" oX="1" oY="2" oW="54" oH="54"/>
+    <sprite n="BDE_right_hand3" x="443" y="97" w="54" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="54" oH="54" r="y"/>
+    <sprite n="BDE_right_hand3_RARE" x="443" y="152" w="54" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="54" oH="54" r="y"/>
+    <sprite n="BDE_right_leg" x="438" y="501" w="68" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_right_leg_RARE" x="438" y="547" w="68" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_right_lower_arm" x="2" y="883" w="48" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_right_lower_arm_RARE" x="52" y="883" w="48" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_right_upper_arm" x="2" y="807" w="36" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_right_upper_arm_RARE" x="40" y="807" w="36" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDE_shadow" x="269" y="707" w="210" h="98" pX="0.5" pY="0.5" oX="1" oY="0" oW="212" oH="98"/>
+    <sprite n="BDE_spike_RARE" x="218" y="785" w="48" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="BDE_strings_1" x="2" y="255" w="361" h="44" pX="0.5" pY="0.5" oX="10" oY="1" oW="60" oH="388" r="y"/>
+    <sprite n="BDE_strings_2" x="2" y="301" w="361" h="44" pX="0.5" pY="0.5" oX="10" oY="1" oW="60" oH="388" r="y"/>
+    <sprite n="BDE_strings_3" x="2" y="206" w="361" h="47" pX="0.5" pY="0.5" oX="7" oY="1" oW="60" oH="388" r="y"/>
+    <sprite n="BDE_toenails_RARE" x="443" y="2" w="63" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="64" r="y"/>
+</TextureAtlas>

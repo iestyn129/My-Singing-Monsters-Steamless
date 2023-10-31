@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:f16d6c5eac475f9977e96d9da15bc859:2ad22d6da767f50e3ebbb1a75734b9c1:7a44c502993ea754398b038859a00212$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CD_costume_04_sheet.png" width="256" height="512" hires="true">
+    <sprite n="CD_body.png" x="2" y="2" w="180" h="140" oX="0" oY="32" oW="180" oH="172"/>
+    <sprite n="CD_frogthroat_1.png" x="2" y="323" w="132" h="71" oX="5" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_2.png" x="2" y="241" w="135" h="80" oX="4" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_3.png" x="149" y="144" w="89" h="141" oX="2" oY="0" oW="146" oH="96" r="y"/>
+    <sprite n="CD_frogthroat_4.png" x="2" y="144" w="145" h="95" oX="1" oY="1" oW="146" oH="96"/>
+	<!-- original anchor = (45, 43) -> new anchor (60, 48) diff = (-15, -5)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (-28, -9), cause hires-->
+    <sprite n="CD_vine.png" x="139" y="287" w="76" h="123" oX="-28" oY="-9" oW="128" oH="80" r="y"/>
+</TextureAtlas>

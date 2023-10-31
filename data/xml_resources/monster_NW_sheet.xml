@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:08c630bf0866f5be4a749f85dbf84c8f:6f6c5c8f7f132081ac07a8cf6fe81f05:5d3eb79467702a4425f07102f7dcb40a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_NW_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="NW_bill" x="2" y="2" w="322" h="257" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_body" x="2" y="335" w="241" h="196" pX="0.5" pY="0.5"/>
+    <sprite n="NW_foot" x="317" y="481" w="109" h="69" pX="0.5" pY="0.5" oX="2" oY="0" oW="111" oH="69"/>
+    <sprite n="NW_head" x="326" y="2" w="143" h="129" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_left_hand_01" x="191" y="574" w="46" h="53" pX="0.5" pY="0.5" oX="0" oY="4" oW="53" oH="57"/>
+    <sprite n="NW_left_hand_02" x="2" y="591" w="56" h="43" pX="0.5" pY="0.5" oX="0" oY="1" oW="53" oH="57" r="y"/>
+    <sprite n="NW_left_hand_03" x="459" y="514" w="47" h="56" pX="0.5" pY="0.5" oX="0" oY="1" oW="53" oH="57"/>
+    <sprite n="NW_left_hand_04" x="102" y="624" w="53" h="44" pX="0.5" pY="0.5" oX="0" oY="13" oW="53" oH="57"/>
+    <sprite n="NW_left_hand_05" x="461" y="426" w="48" h="42" pX="0.5" pY="0.5" oX="0" oY="15" oW="53" oH="57"/>
+    <sprite n="NW_left_hand_06" x="2" y="655" w="53" h="43" pX="0.5" pY="0.5" oX="0" oY="4" oW="53" oH="57" r="y"/>
+    <sprite n="NW_left_lid_01" x="262" y="289" w="35" h="53" pX="0.5" pY="0.5" oX="2" oY="0" oW="37" oH="53"/>
+    <sprite n="NW_left_lid_02" x="371" y="552" w="53" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="37" oH="53" r="y"/>
+    <sprite n="NW_left_lid_03" x="471" y="127" w="37" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="NW_left_lid_04" x="316" y="552" w="53" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_left_lowerarm" x="245" y="346" w="76" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="NW_left_upperarm" x="240" y="537" w="64" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="NW_mouth_01" x="245" y="424" w="70" h="111" pX="0.5" pY="0.5" oX="0" oY="0" oW="111" oH="73" r="y"/>
+    <sprite n="NW_mouth_02" x="2" y="533" w="98" h="56" pX="0.5" pY="0.5" oX="7" oY="8" oW="111" oH="73"/>
+    <sprite n="NW_mouth_03" x="102" y="533" w="87" h="44" pX="0.5" pY="0.5" oX="13" oY="13" oW="111" oH="73"/>
+    <sprite n="NW_mouth_04" x="245" y="392" w="72" h="30" pX="0.5" pY="0.5" oX="20" oY="20" oW="111" oH="73"/>
+    <sprite n="NW_mouth_04_02" x="299" y="261" w="23" h="61" pX="0.5" pY="0.5" oX="25" oY="23" oW="111" oH="73" r="y"/>
+    <sprite n="NW_mouth_05" x="2" y="636" w="55" h="17" pX="0.5" pY="0.5" oX="28" oY="26" oW="111" oH="73"/>
+    <sprite n="NW_mouth_06" x="191" y="561" w="47" h="11" pX="0.5" pY="0.5" oX="35" oY="30" oW="111" oH="73"/>
+    <sprite n="NW_mouth_07" x="59" y="648" w="40" h="8" pX="0.5" pY="0.5" oX="41" oY="31" oW="111" oH="73"/>
+    <sprite n="NW_mouth_08" x="306" y="537" w="8" h="42" pX="0.5" pY="0.5" oX="48" oY="29" oW="111" oH="73" r="y"/>
+    <sprite n="NW_pupil" x="299" y="324" w="21" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="NW_right_hand_01" x="461" y="470" w="48" h="42" pX="0.5" pY="0.5" oX="10" oY="6" oW="58" oH="48"/>
+    <sprite n="NW_right_hand_02" x="371" y="590" w="46" h="46" pX="0.5" pY="0.5" oX="12" oY="2" oW="58" oH="48"/>
+    <sprite n="NW_right_hand_03" x="60" y="591" w="40" h="55" pX="0.5" pY="0.5" oX="3" oY="8" oW="58" oH="48" r="y"/>
+    <sprite n="NW_right_hand_04" x="471" y="68" w="37" h="57" pX="0.5" pY="0.5" oX="1" oY="11" oW="58" oH="48" r="y"/>
+    <sprite n="NW_right_hand_05" x="419" y="590" w="37" h="44" pX="0.5" pY="0.5" oX="14" oY="11" oW="58" oH="48" r="y"/>
+    <sprite n="NW_right_hand_06" x="57" y="658" w="43" h="37" pX="0.5" pY="0.5" oX="15" oY="11" oW="58" oH="48"/>
+    <sprite n="NW_right_lid_01" x="458" y="572" w="47" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="47" r="y"/>
+    <sprite n="NW_right_lid_02" x="191" y="533" w="47" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="47" r="y"/>
+    <sprite n="NW_right_lid_03" x="428" y="530" w="28" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="47"/>
+    <sprite n="NW_right_lid_04" x="428" y="481" w="29" h="47" pX="0.5" pY="0.5"/>
+    <sprite n="NW_right_lowerarm" x="471" y="2" w="37" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_right_upperarm" x="102" y="579" w="83" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="NW_shadow" x="326" y="221" w="133" h="258" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_string" x="2" y="261" w="295" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_string_blur" x="468" y="182" w="42" h="242" pX="0.5" pY="0.5" oX="0" oY="8" oW="44" oH="258"/>
+    <sprite n="NW_string_colour_blur" x="2" y="289" w="258" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NW_top_strings" x="326" y="133" w="140" h="86" pX="0.5" pY="0.5"/>
+</TextureAtlas>

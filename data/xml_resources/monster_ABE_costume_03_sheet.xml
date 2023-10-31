@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ca16b04a9c1112fa0cc23458649a1c5b:3a6b9cbe48406e5e0b8a7cea69a461a7:4795b25e4eefd8ad2bf3bd45b0508e7b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABE_costume_03_sheet.png" width="128" height="256" hires="true">
+    <sprite n="ABE_thumpie_fur_disco.png" x="2" y="2" w="110" h="110" pX="0.5" pY="0.5" oX="1" oY="1" oW="112" oH="112"/>
+    <sprite n="ABE_thumpie_pink_disco.png" x="2" y="114" w="110" h="110" pX="0.5" pY="0.5" oX="1" oY="1" oW="112" oH="112"/>
+</TextureAtlas>

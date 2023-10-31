@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:90a2df19eca9a6393cecf062618192ce:b277dd76343bdb5174a60ed4c2d1be4b:1044b7dfacf43864db3aa4809b578380$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_K_costume_04_sheet.png" width="512" height="512" hires="true">
+    <sprite n="K_BaseCover.png" x="183" y="132" w="114" h="75" pX="0.5" pY="0.5" oX="0" oY="43" oW="128" oH="131"/>
+    <sprite n="K_Bottom.png" x="183" y="2" w="131" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="K_Helmet.png" x="2" y="2" w="179" h="140" pX="0.5" pY="0.5" oX="-134" oY="-70" oW="200" oH="150"/>
+    <sprite n="K_L1_Foot.png" x="316" y="2" w="130" h="119" pX="0.5" pY="0.5" oX="-28" oY="-9" oW="140" oH="140" r="y"/>
+    <sprite n="K_L2_Foot.png" x="2" y="236" w="107" h="94" pX="0.5" pY="0.5" oX="-24" oY="-2" oW="100" oH="120" r="y"/>
+    <sprite n="K_Left_Pipe.png" x="115" y="209" w="110" h="101" pX="0.5" pY="0.5" oX="-1" oY="1" oW="120" oH="120" r="y"/>
+    <sprite n="K_leg_segment.png" x="448" y="53" w="34" h="30" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="36" r="y"/>
+    <sprite n="K_R1_Foot.png" x="316" y="123" w="119" h="101" pX="0.5" pY="0.5" oX="-5" oY="-5" oW="120" oH="140" r="y"/>
+    <sprite n="K_R2_Foot.png" x="2" y="144" w="111" h="90" pX="0.5" pY="0.5" oX="-7" oY="-2" oW="100" oH="120" r="y"/>
+    <sprite n="K_Right_Pipe.png" x="437" y="123" w="67" h="107" pX="0.5" pY="0.5" oX="-2" oY="-1" oW="80" oH="120"/>
+    <sprite n="K_Tank.png" x="448" y="2" w="58" h="49" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9813c7fa8edc206e0f09c9f122663ff6:56243dd077f62476f77a9eea66adcd83:fb90d3cdac24ffd7522974327789d259$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CD_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="CD_body" x="244" y="2" w="180" h="172" pX="0.5" pY="0.5"/>
+    <sprite n="CD_body_RARE" x="2" y="126" w="180" h="170" pX="0.5" pY="0.5" oX="0" oY="2" oW="180" oH="172"/>
+    <sprite n="CD_frogthroat_1" x="139" y="835" w="71" h="132" pX="0.5" pY="0.5" oX="5" oY="0" oW="146" oH="96" r="y"/>
+    <sprite n="CD_frogthroat_2" x="141" y="698" w="80" h="135" pX="0.5" pY="0.5" oX="4" oY="0" oW="146" oH="96" r="y"/>
+    <sprite n="CD_frogthroat_3" x="2" y="560" w="141" h="89" pX="0.5" pY="0.5" oX="2" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_4" x="2" y="298" w="146" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="CD_frogthroat_RARE1" x="368" y="692" w="135" h="73" pX="0.5" pY="0.5" oX="2" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_RARE2" x="230" y="660" w="136" h="82" pX="0.5" pY="0.5" oX="3" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_RARE3" x="238" y="498" w="141" h="89" pX="0.5" pY="0.5" oX="2" oY="0" oW="146" oH="96"/>
+    <sprite n="CD_frogthroat_RARE4" x="2" y="396" w="146" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="CD_horn2_RARE" x="384" y="487" w="117" h="67" pX="0.5" pY="0.5" oX="1" oY="1" oW="70" oH="120" r="y"/>
+    <sprite n="CD_horn_RARE" x="150" y="466" w="86" h="116" pX="0.5" pY="0.5" oX="1" oY="2" oW="88" oH="120"/>
+    <sprite n="CD_left_eyeback1" x="66" y="969" w="34" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyeback2" x="102" y="968" w="34" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyeback3" x="138" y="969" w="34" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyeback4" x="174" y="969" w="34" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyelid1" x="150" y="298" w="32" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyelid2" x="150" y="340" w="32" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyelid3" x="150" y="382" w="32" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_eyelid4" x="150" y="424" w="32" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_foot" x="244" y="176" w="158" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="CD_left_foot_RARE" x="240" y="304" w="158" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="CD_left_leg" x="184" y="254" w="54" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_left_leg_RARE" x="404" y="276" w="100" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mid_eyeback1" x="184" y="126" w="58" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mid_eyeback2" x="184" y="158" w="58" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mid_eyeback3" x="184" y="190" w="58" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mid_eyeback4" x="184" y="222" w="58" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mid_eyelid1" x="404" y="176" w="20" h="54" pX="0.5" pY="0.5" oX="0" oY="6" oW="54" oH="26" r="y"/>
+    <sprite n="CD_mid_eyelid2" x="184" y="409" w="54" h="22" pX="0.5" pY="0.5" oX="0" oY="4" oW="54" oH="26"/>
+    <sprite n="CD_mid_eyelid3" x="184" y="384" w="54" h="23" pX="0.5" pY="0.5" oX="0" oY="3" oW="54" oH="26"/>
+    <sprite n="CD_mid_eyelid4" x="184" y="356" w="54" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="CD_mouth1" x="369" y="622" w="137" h="68" pX="0.5" pY="0.5" oX="5" oY="5" oW="142" oH="84"/>
+    <sprite n="CD_mouth2" x="240" y="432" w="142" h="64" pX="0.5" pY="0.5" oX="0" oY="7" oW="142" oH="84"/>
+    <sprite n="CD_mouth2_RARE" x="2" y="494" w="142" h="64" pX="0.5" pY="0.5" oX="0" oY="7" oW="142" oH="84"/>
+    <sprite n="CD_mouth3" x="2" y="722" w="135" h="74" pX="0.5" pY="0.5" oX="5" oY="3" oW="142" oH="84"/>
+    <sprite n="CD_mouth3_RARE" x="2" y="798" w="135" h="74" pX="0.5" pY="0.5" oX="5" oY="3" oW="142" oH="84"/>
+    <sprite n="CD_mouth4" x="426" y="162" w="83" h="112" pX="0.5" pY="0.5" oX="21" oY="0" oW="142" oH="84" r="y"/>
+    <sprite n="CD_mouth4_RARE" x="145" y="584" w="83" h="112" pX="0.5" pY="0.5" oX="21" oY="0" oW="142" oH="84" r="y"/>
+    <sprite n="CD_mouth5" x="426" y="2" w="84" h="78" pX="0.5" pY="0.5" oX="40" oY="0" oW="142" oH="84"/>
+    <sprite n="CD_mouth5_RARE" x="426" y="82" w="84" h="78" pX="0.5" pY="0.5" oX="40" oY="0" oW="142" oH="84"/>
+    <sprite n="CD_mouth6" x="212" y="838" w="59" h="67" pX="0.5" pY="0.5" oX="54" oY="5" oW="142" oH="84"/>
+    <sprite n="CD_mouth6_RARE" x="212" y="907" w="67" h="59" pX="0.5" pY="0.5" oX="54" oY="5" oW="142" oH="84" r="y"/>
+    <sprite n="CD_mouth7" x="2" y="651" w="137" h="69" pX="0.5" pY="0.5" oX="3" oY="3" oW="142" oH="84"/>
+    <sprite n="CD_mouth7_RARE" x="230" y="589" w="137" h="69" pX="0.5" pY="0.5" oX="3" oY="3" oW="142" oH="84"/>
+    <sprite n="CD_mouth8" x="381" y="556" w="112" h="64" pX="0.5" pY="0.5" oX="18" oY="4" oW="142" oH="84"/>
+    <sprite n="CD_nose_RARE" x="2" y="969" w="62" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="CD_pupil" x="214" y="433" w="21" h="21" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+    <sprite n="CD_pupil_RARE" x="300" y="968" w="21" h="21" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+    <sprite n="CD_right_eyeback1" x="210" y="969" w="28" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyeback2" x="240" y="968" w="28" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyeback3" x="184" y="433" w="28" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="28" r="y"/>
+    <sprite n="CD_right_eyeback4" x="270" y="968" w="28" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyelid1" x="273" y="838" w="26" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyelid2" x="273" y="872" w="26" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyelid3" x="281" y="906" w="26" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CD_right_eyelid4" x="281" y="940" w="32" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="CD_right_foot" x="223" y="744" w="134" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="CD_right_foot_RARE" x="2" y="874" w="134" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="CD_shadow" x="2" y="2" w="240" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="CD_spikes_RARE" x="400" y="332" w="108" h="153" pX="0.5" pY="0.5" oX="14" oY="1" oW="167" oH="109" r="y"/>
+</TextureAtlas>

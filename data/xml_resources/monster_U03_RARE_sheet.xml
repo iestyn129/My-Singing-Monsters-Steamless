@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9dc0c4fcf4bab6a2360d1aad41e31c04:6a970fc64627a432bdffc3503f0de9eb:ae061cd6c289f7439f25693f0fed7d1e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U03_RARE_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="beam" x="596" y="526" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot" x="930" y="1080" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="U03_body" x="791" y="969" w="177" h="87" pX="0.5" pY="0.5" oX="4" oY="10" oW="192" oH="108"/>
+    <sprite n="U03_body_Rare" x="596" y="1048" w="176" h="130" pX="0.5" pY="0.5" oX="21" oY="1" oW="233" oH="131"/>
+    <sprite n="U03_eyelights" x="964" y="1225" w="43" h="75" pX="0.5" pY="0.5" oX="2" oY="10" oW="80" oH="64" r="y"/>
+    <sprite n="U03_feathers_1" x="774" y="1177" w="102" h="99" pX="0.5" pY="0.5" oX="3" oY="2" oW="108" oH="104"/>
+    <sprite n="U03_feathers_2_Rare" x="449" y="1082" w="133" h="119" pX="0.5" pY="0.5" oX="3" oY="0" oW="122" oH="135" r="y"/>
+    <sprite n="U03_foot" x="774" y="1058" w="154" h="56" pX="0.5" pY="0.5" oX="0" oY="22" oW="56" oH="188" r="y"/>
+    <sprite n="U03_foot_Rare" x="855" y="420" w="164" h="63" pX="0.5" pY="0.5" oX="0" oY="12" oW="63" oH="188" r="y"/>
+    <sprite n="U03_glow_01" x="2" y="2" w="620" h="488" pX="0.5" pY="0.5" oX="40" oY="45" oW="700" oH="564"/>
+    <sprite n="U03_glow_02" x="2" y="492" w="592" h="501" pX="0.5" pY="0.5" oX="60" oY="31" oW="700" oH="564"/>
+    <sprite n="U03_hand" x="878" y="70" w="139" h="60" pX="0.5" pY="0.5" oX="0" oY="29" oW="60" oH="180" r="y"/>
+    <sprite n="U03_hand_Rare" x="855" y="485" w="160" h="79" pX="0.5" pY="0.5" oX="19" oY="57" oW="99" oH="222" r="y"/>
+    <sprite n="U03_head" x="449" y="995" w="145" h="85" pX="0.5" pY="0.5" oX="6" oY="0" oW="100" oH="156" r="y"/>
+    <sprite n="U03_key_glow" x="982" y="794" w="34" h="64" pX="0.5" pY="0.5" oX="9" oY="11" oW="84" oH="56" r="y"/>
+    <sprite n="U03_keypad" x="596" y="598" w="193" h="448" pX="0.5" pY="0.5" oX="0" oY="8" oW="448" oH="204" r="y"/>
+    <sprite n="U03_keypad_bg" x="2" y="995" w="445" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="U03_lowerarm" x="985" y="653" w="36" h="139" pX="0.5" pY="0.5" oX="8" oY="7" oW="52" oH="156"/>
+    <sprite n="U03_lowerarm_Rare" x="791" y="821" w="179" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="65" oH="185" r="y"/>
+    <sprite n="U03_lowerleg" x="971" y="961" w="45" h="117" pX="0.5" pY="0.5" oX="6" oY="9" oW="60" oH="132"/>
+    <sprite n="U03_pipe_a" x="624" y="2" w="252" h="80" pX="0.5" pY="0.5" oX="22" oY="2" oW="108" oH="264" r="y"/>
+    <sprite n="U03_pipe_a_2" x="624" y="173" w="240" h="99" pX="0.5" pY="0.5" oX="4" oY="14" oW="108" oH="264" r="y"/>
+    <sprite n="U03_pipe_b" x="791" y="653" w="192" h="86" pX="0.5" pY="0.5" oX="14" oY="0" oW="108" oH="192" r="y"/>
+    <sprite n="U03_pipe_b_2" x="791" y="887" w="178" h="80" pX="0.5" pY="0.5" oX="20" oY="14" oW="108" oH="192" r="y"/>
+    <sprite n="U03_pipe_bump" x="878" y="1270" w="42" h="42" pX="0.5" pY="0.5" oX="11" oY="11" oW="64" oH="64"/>
+    <sprite n="U03_pipe_c" x="870" y="132" w="149" h="54" pX="0.5" pY="0.5" oX="10" oY="11" oW="76" oH="172" r="y"/>
+    <sprite n="U03_pipe_c_RARE" x="624" y="84" w="244" h="87" pX="0.5" pY="0.5" oX="7" oY="6" oW="100" oH="250" r="y"/>
+    <sprite n="U03_pipe_d" x="972" y="860" w="49" h="99" pX="0.5" pY="0.5" oX="8" oY="11" oW="68" oH="124"/>
+    <sprite n="U03_pipe_e" x="824" y="566" w="195" h="85" pX="0.5" pY="0.5" oX="0" oY="26" oW="92" oH="236" r="y"/>
+    <sprite n="U03_pipe_e_2" x="624" y="378" w="229" h="79" pX="0.5" pY="0.5" oX="13" oY="7" oW="92" oH="236" r="y"/>
+    <sprite n="U03_pipe_f" x="878" y="1225" w="84" h="43" pX="0.5" pY="0.5" oX="10" oY="0" oW="64" oH="84" r="y"/>
+    <sprite n="U03_pipe_g" x="624" y="459" w="229" h="65" pX="0.5" pY="0.5" oX="1" oY="7" oW="76" oH="240" r="y"/>
+    <sprite n="U03_pipe_h" x="624" y="274" w="239" h="102" pX="0.5" pY="0.5" oX="2" oY="1" oW="104" oH="240" r="y"/>
+    <sprite n="U03_pipe_I" x="791" y="741" w="189" h="78" pX="0.5" pY="0.5" oX="2" oY="2" oW="86" oH="191" r="y"/>
+    <sprite n="U03_shadow" x="774" y="1116" w="112" h="59" pX="0.5" pY="0.5" oX="8" oY="8" oW="128" oH="76"/>
+    <sprite n="U03_upperarm" x="888" y="1171" w="104" h="52" pX="0.5" pY="0.5" oX="16" oY="34" oW="68" oH="148" r="y"/>
+    <sprite n="U03_upperleg" x="878" y="2" w="143" h="66" pX="0.5" pY="0.5" oX="2" oY="2" oW="71" oH="147" r="y"/>
+    <sprite n="U03_Wing_1" x="866" y="188" w="154" h="230" pX="0.5" pY="0.5" oX="32" oY="7" oW="262" oH="180" r="y"/>
+</TextureAtlas>

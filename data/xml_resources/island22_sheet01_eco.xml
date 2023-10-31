@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a813daf5265bb23dc6b5cc536a764d5d:c22886f7447cc784fe738fb8ea235d0d:0c9dab62472106004fdcfa8c67f75cfb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island22_sheet01_eco.png" width="2048" height="2048" hires="true">
+    <sprite n="island22_braid" x="2" y="2" w="542" h="1387" pX="0.5" pY="0.5" oX="1" oY="2" oW="544" oH="1392"/>
+    <sprite n="island22_central platform" x="1079" y="2" w="936" h="770" pX="0.5" pY="0.5" oX="7" oY="61" oW="950" oH="850"/>
+    <sprite n="island22_cloud" x="2" y="1391" w="330" h="632" pX="0.5" pY="0.5" oX="57" oY="15" oW="760" oH="356" r="y"/>
+    <sprite n="island22_face" x="1234" y="774" w="771" h="1131" pX="0.5" pY="0.5" oX="4" oY="4" oW="1140" oH="780" r="y"/>
+    <sprite n="island22_lightpost" x="546" y="2" w="483" h="219" pX="0.5" pY="0.5" oX="0" oY="0" oW="220" oH="484" r="y"/>
+    <sprite n="island22_nose" x="546" y="774" w="686" h="582" pX="0.5" pY="0.5" oX="9" oY="7" oW="600" oH="700" r="y"/>
+    <sprite n="island22_side_platform" x="334" y="1391" w="743" h="623" pX="0.5" pY="0.5" oX="18" oY="8" oW="780" oH="640"/>
+    <sprite n="island22_tree_01" x="546" y="223" w="470" h="228" pX="0.5" pY="0.5" oX="2" oY="1" oW="232" oH="472" r="y"/>
+    <sprite n="island22_tree_02" x="546" y="453" w="158" h="262" pX="0.5" pY="0.5" oX="1" oY="1" oW="160" oH="264"/>
+    <sprite n="island22_tree_leaves_01" x="1079" y="1907" w="294" h="132" pX="0.5" pY="0.5" oX="1" oY="2" oW="296" oH="136"/>
+    <sprite n="island22_tree_leaves_02" x="706" y="453" w="320" h="260" pX="0.5" pY="0.5" oX="2" oY="2" oW="264" oH="324" r="y"/>
+</TextureAtlas>

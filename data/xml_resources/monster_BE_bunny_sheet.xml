@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7d9bda23f582dc61a7b6f03ea97e0abe:22701810e795f49df126bd7259118e7e:ac097bb5406dd347950b6275dda312d7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BE_bunny_sheet.png" width="128" height="256" hires="true">
+    <sprite n="S08_bunny_01" x="1" y="148" w="50" h="47" pX="0.5" pY="0.5" oX="6" oY="12" oW="64" oH="64"/>
+    <sprite n="S08_bunny_02" x="1" y="50" w="52" h="51" pX="0.5" pY="0.5" oX="6" oY="10" oW="64" oH="64"/>
+    <sprite n="S08_bunny_03" x="57" y="32" w="53" h="52" pX="0.5" pY="0.5" oX="6" oY="7" oW="64" oH="64"/>
+    <sprite n="S08_bunny_04" x="1" y="1" w="56" h="49" pX="0.5" pY="0.5" oX="3" oY="8" oW="64" oH="64"/>
+    <sprite n="S08_bunny_05" x="53" y="84" w="52" h="51" pX="0.5" pY="0.5" oX="6" oY="9" oW="64" oH="64"/>
+    <sprite n="S08_bunny_06" x="52" y="135" w="50" h="48" pX="0.5" pY="0.5" oX="8" oY="10" oW="64" oH="64" r="y"/>
+    <sprite n="S08_bunny_07" x="1" y="101" w="51" h="47" pX="0.5" pY="0.5" oX="8" oY="11" oW="64" oH="64" r="y"/>
+    <sprite n="S08_bunny_shadow" x="57" y="1" w="55" h="31" pX="0.5" pY="0.5" oX="5" oY="19" oW="64" oH="64"/>
+</TextureAtlas>

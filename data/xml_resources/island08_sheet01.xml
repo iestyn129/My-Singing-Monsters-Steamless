@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b2d8e88289b62da9f59935782ac7a51e:3a972402bad53989a7501f589edb8509:8bb5308349a56587895ed7d390ee31a2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island08_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island08_beam01" x="464" y="1433" w="72" h="476" pX="0.5" pY="0.5"/>
+    <sprite n="island08_beam02" x="2" y="1975" w="476" h="70" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="476" r="y"/>
+    <sprite n="island08_burns" x="1024" y="104" w="960" h="460" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island08_ear" x="840" y="1433" w="798" h="450" pX="0.5" pY="0.5" oX="1" oY="3" oW="456" oH="804" r="y"/>
+    <sprite n="island08_edge" x="1640" y="1389" w="331" h="409" pX="0.5" pY="0.5" oX="0" oY="3" oW="414" oH="334" r="y"/>
+    <sprite n="island08_eyeclosed" x="1342" y="657" w="691" h="730" pX="0.5" pY="0.5" oX="13" oY="21" oW="760" oH="712" r="y"/>
+    <sprite n="island08_flag01" x="2005" y="2" w="34" h="97" pX="0.5" pY="0.5" oX="11" oY="5" oW="108" oH="40" r="y"/>
+    <sprite n="island08_flag02" x="2005" y="101" w="34" h="93" pX="0.5" pY="0.5" oX="15" oY="3" oW="108" oH="40" r="y"/>
+    <sprite n="island08_flag03" x="1986" y="463" w="33" h="93" pX="0.5" pY="0.5" oX="15" oY="0" oW="108" oH="40" r="y"/>
+    <sprite n="island08_flag04" x="987" y="565" w="32" h="93" pX="0.5" pY="0.5" oX="15" oY="1" oW="108" oH="40" r="y"/>
+    <sprite n="island08_flag05" x="1986" y="558" w="32" h="97" pX="0.5" pY="0.5" oX="11" oY="2" oW="108" oH="40" r="y"/>
+    <sprite n="island08_flag06" x="1986" y="364" w="33" h="97" pX="0.5" pY="0.5" oX="11" oY="6" oW="108" oH="40" r="y"/>
+    <sprite n="island08_L" x="1986" y="284" w="44" h="78" pX="0.5" pY="0.5" oX="11" oY="11" oW="60" oH="100"/>
+    <sprite n="island08_nose" x="2" y="1433" w="460" h="540" pX="0.5" pY="0.5"/>
+    <sprite n="island08_R" x="1986" y="196" w="48" h="86" pX="0.5" pY="0.5" oX="5" oY="7" oW="60" oH="100"/>
+    <sprite n="island08_spikes" x="1640" y="1800" w="257" h="169" pX="0.5" pY="0.5" oX="5" oY="6" oW="176" oH="264" r="y"/>
+    <sprite n="island08_stumpcenter" x="2" y="2" w="1020" h="561" pX="0.5" pY="0.5" oX="14" oY="0" oW="1040" oH="608"/>
+    <sprite n="island08_stumpside" x="2" y="565" w="867" h="866" pX="0.5" pY="0.5" oX="0" oY="34" oW="890" oH="912"/>
+    <sprite n="island08_stumptop" x="538" y="1433" w="300" h="461" pX="0.5" pY="0.5" oX="0" oY="0" oW="300" oH="464"/>
+    <sprite n="island08_wire" x="1024" y="2" w="979" h="100" pX="0.5" pY="0.5" oX="13" oY="9" oW="120" oH="988" r="y"/>
+    <sprite n="w8_cloud" x="985" y="660" w="355" h="760" pX="0.5" pY="0.5" oX="0" oY="0" oW="760" oH="356" r="y"/>
+    <sprite n="w8_humbird_01" x="871" y="565" w="114" h="85" pX="0.5" pY="0.5" oX="6" oY="0" oW="120" oH="88"/>
+    <sprite n="w8_humbird_02" x="480" y="1911" w="86" h="112" pX="0.5" pY="0.5" oX="5" oY="0" oW="120" oH="88" r="y"/>
+    <sprite n="w8_humbird_03" x="871" y="652" w="112" h="87" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="88"/>
+    <sprite n="w8_humbird_04" x="739" y="1896" w="82" h="84" pX="0.5" pY="0.5" oX="1" oY="1" oW="120" oH="88"/>
+    <sprite n="w8_humbird_05" x="654" y="1896" w="83" h="84" pX="0.5" pY="0.5" oX="1" oY="1" oW="120" oH="88"/>
+    <sprite n="w8_humbird_06" x="568" y="1896" w="84" h="110" pX="0.5" pY="0.5" oX="1" oY="1" oW="120" oH="88" r="y"/>
+</TextureAtlas>

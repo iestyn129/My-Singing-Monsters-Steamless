@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fb9d343570520c74f2b385241b6533a0:dcea4ab6a4c0e67ca34f7c38a07145ca:a79200dc90938a046a830055f9bae816$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_fruithut_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="hut" x="2" y="2" w="498" h="557" pX="0.5" pY="0.5" oX="0" oY="1" oW="498" oH="558"/>
+    <sprite n="mask" x="2" y="561" w="174" h="290" pX="0.5" pY="0.5" oX="1" oY="2" oW="176" oH="294"/>
+    <sprite n="orangevine1" x="160" y="853" w="98" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="98" oH="154"/>
+    <sprite n="orangevine2" x="260" y="561" w="179" h="122" pX="0.5" pY="0.5" oX="0" oY="3" oW="122" oH="182" r="y"/>
+    <sprite n="pineapple" x="2" y="853" w="156" h="169" pX="0.5" pY="0.5" oX="0" oY="4" oW="156" oH="174"/>
+</TextureAtlas>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1bd31699fc8abc4c78c0090ab7417144:258c9ba8e7dff184fc5cfc0277bf7dd2:f906ca01912b100b9d719aaf9c415d95$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_N_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="N_arm_left_lower_01" x="103" y="714" w="95" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="72"/>
+    <sprite n="N_arm_left_lower_02" x="2" y="750" w="95" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="72"/>
+    <sprite n="N_arm_left_upper" x="452" y="234" w="56" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="56" r="y"/>
+    <sprite n="N_arm_right_lower_01" x="200" y="760" w="88" h="69" pX="0.5" pY="0.5" oX="0" oY="0" oW="88" oH="72"/>
+    <sprite n="N_arm_right_lower_02" x="99" y="787" w="88" h="69" pX="0.5" pY="0.5" oX="0" oY="0" oW="88" oH="72"/>
+    <sprite n="N_arm_right_upper" x="184" y="449" w="60" h="104" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="64" r="y"/>
+    <sprite n="N_body" x="2" y="416" w="180" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="N_eye_lid_01" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eye_lid_02" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eye_lid_03" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eye_lid_04" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eye_lid_05" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eye_lid_06" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52"/>
+    <sprite n="N_eyeball" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="34"/>
+    <sprite n="N_foot_left_01" x="319" y="752" w="88" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="N_foot_left_02" x="409" y="762" w="88" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="N_foot_right_01" x="353" y="580" w="95" h="86" pX="0.5" pY="0.5" oX="1" oY="0" oW="88" oH="96" r="y"/>
+    <sprite n="N_foot_right_02" x="222" y="672" w="95" h="86" pX="0.5" pY="0.5" oX="1" oY="0" oW="88" oH="96" r="y"/>
+    <sprite n="N_glow" x="2" y="650" w="99" h="98" pX="0.5" pY="0.5" oX="0" oY="0" oW="98" oH="100" r="y"/>
+    <sprite n="N_hand_01" x="2" y="894" w="72" h="71" pX="0.5" pY="0.5" oX="0" oY="20" oW="72" oH="96" r="y"/>
+    <sprite n="N_hand_02" x="450" y="602" w="49" h="72" pX="0.5" pY="0.5" oX="0" oY="19" oW="72" oH="96" r="y"/>
+    <sprite n="N_hand_03" x="105" y="566" w="73" h="72" pX="0.5" pY="0.5" oX="0" oY="3" oW="72" oH="96" r="y"/>
+    <sprite n="N_hand_04" x="149" y="932" w="71" h="71" pX="0.5" pY="0.5" oX="0" oY="2" oW="72" oH="96"/>
+    <sprite n="N_hand_glow_01" x="76" y="932" w="71" h="72" pX="0.5" pY="0.5" oX="0" oY="20" oW="72" oH="96"/>
+    <sprite n="N_hand_glow_02" x="184" y="555" w="49" h="72" pX="0.5" pY="0.5" oX="0" oY="19" oW="72" oH="96" r="y"/>
+    <sprite n="N_hand_glow_03" x="105" y="640" w="73" h="72" pX="0.5" pY="0.5" oX="0" oY="3" oW="72" oH="96" r="y"/>
+    <sprite n="N_hand_glow_04" x="222" y="903" w="71" h="71" pX="0.5" pY="0.5" oX="0" oY="2" oW="72" oH="96"/>
+    <sprite n="N_head" x="486" y="17" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="168" oH="196"/>
+    <sprite n="N_head_EPIC" x="2" y="2" w="247" h="218" pX="0.5" pY="0.5" oX="5" oY="0" oW="260" oH="220"/>
+    <sprite n="N_leg_left_lower_01" x="356" y="418" w="93" h="79" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="96" r="y"/>
+    <sprite n="N_leg_left_lower_02" x="356" y="499" w="93" h="79" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="96" r="y"/>
+    <sprite n="N_leg_left_upper" x="443" y="676" w="64" h="84" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="88"/>
+    <sprite n="N_leg_right_lower_01" x="340" y="668" w="101" h="82" pX="0.5" pY="0.5" oX="3" oY="1" oW="88" oH="104" r="y"/>
+    <sprite n="N_leg_right_lower_02" x="2" y="566" w="101" h="82" pX="0.5" pY="0.5" oX="3" oY="1" oW="88" oH="104" r="y"/>
+    <sprite n="N_leg_right_upper" x="189" y="831" w="86" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="88" r="y"/>
+    <sprite n="N_mouth_001" x="204" y="222" w="44" h="101" pX="0.5" pY="0.5" oX="3" oY="9" oW="108" oH="72" r="y"/>
+    <sprite n="N_mouth_002" x="246" y="479" w="108" h="52" pX="0.5" pY="0.5" oX="0" oY="3" oW="108" oH="72"/>
+    <sprite n="N_mouth_003" x="246" y="418" w="108" h="59" pX="0.5" pY="0.5" oX="0" oY="2" oW="108" oH="72"/>
+    <sprite n="N_mouth_004" x="235" y="602" w="103" h="68" pX="0.5" pY="0.5" oX="2" oY="0" oW="108" oH="72"/>
+    <sprite n="N_mouth_005" x="2" y="823" w="88" h="69" pX="0.5" pY="0.5" oX="6" oY="0" oW="108" oH="72"/>
+    <sprite n="N_mouth_006" x="92" y="858" w="72" h="72" pX="0.5" pY="0.5" oX="12" oY="0" oW="108" oH="72"/>
+    <sprite n="N_mouth_007" x="452" y="339" w="56" h="62" pX="0.5" pY="0.5" oX="17" oY="7" oW="108" oH="72" r="y"/>
+    <sprite n="N_mouth_008" x="180" y="629" w="40" h="61" pX="0.5" pY="0.5" oX="19" oY="14" oW="108" oH="72" r="y"/>
+    <sprite n="N_mouth_009" x="452" y="403" w="54" h="98" pX="0.5" pY="0.5" oX="3" oY="6" oW="108" oH="72" r="y"/>
+    <sprite n="N_mouth_010" x="451" y="503" w="59" h="97" pX="0.5" pY="0.5" oX="4" oY="4" oW="108" oH="72" r="y"/>
+    <sprite n="N_mouth_011" x="246" y="533" w="105" h="67" pX="0.5" pY="0.5" oX="1" oY="1" oW="108" oH="72"/>
+    <sprite n="N_pupil" x="486" y="2" w="13" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="14" oH="14"/>
+    <sprite n="N_pupil_blink" x="501" y="2" w="6" h="13" pX="0.5" pY="0.5" oX="0" oY="3" oW="14" oH="14" r="y"/>
+    <sprite n="N_shadow" x="204" y="325" w="40" h="122" pX="0.5" pY="0.5" oX="3" oY="0" oW="128" oH="40" r="y"/>
+    <sprite n="N_smoke_01" x="2" y="222" w="200" h="192" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="200"/>
+    <sprite n="N_smoke_02" x="250" y="234" w="200" h="182" pX="0.5" pY="0.5" oX="0" oY="9" oW="200" oH="200"/>
+    <sprite n="N_wing01_EPIC" x="251" y="2" w="233" h="230" pX="0.5" pY="0.5" oX="19" oY="44" oW="300" oH="300" r="y"/>
+</TextureAtlas>

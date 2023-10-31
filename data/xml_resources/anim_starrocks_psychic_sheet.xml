@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:af617f97caa3182cce5f0dd971eced62:ca3edf0a4a854657fec8d4f50b02b43c:77e6bb64df505023746fca6a4989acca$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_psychic_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_psychic" x="2" y="2" w="347" h="345" pX="0.5" pY="0.5" oX="4" oY="5" oW="358" oH="354"/>
+    <sprite n="star_rock_psychic_01" x="2" y="349" w="87" h="89" pX="0.5" pY="0.5" oX="6" oY="6" oW="99" oH="101"/>
+    <sprite n="star_rock_psychic_02" x="351" y="182" w="96" h="91" pX="0.5" pY="0.5" oX="6" oY="5" oW="103" oH="107" r="y"/>
+    <sprite n="star_rock_psychic_03" x="351" y="91" w="99" h="89" pX="0.5" pY="0.5" oX="6" oY="5" oW="101" oH="110" r="y"/>
+    <sprite n="star_rock_psychic_04" x="91" y="349" w="86" h="89" pX="0.5" pY="0.5" oX="6" oY="6" oW="97" oH="100"/>
+    <sprite n="star_rock_psychic_bottom" x="351" y="2" w="145" h="87" pX="0.5" pY="0.5" oX="6" oY="6" oW="99" oH="157" r="y"/>
+    <sprite n="star_rock_shadow" x="351" y="275" w="85" h="173" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200" r="y"/>
+</TextureAtlas>

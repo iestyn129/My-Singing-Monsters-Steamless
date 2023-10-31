@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:755c6d2dbfe89241f8d6b3ac5ab9eec3:827ef950c77d3ecc9639055f22481ba6:f25a21b1282064e0f7d16fb43f130d57$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CV_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CV_back_foot" x="454" y="220" w="56" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="CV_back_lower_leg" x="184" y="321" w="66" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_back_upper_leg" x="440" y="419" w="66" h="39" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird01_body" x="69" y="419" w="46" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird01_eyelid_01" x="354" y="367" w="14" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="15" oH="15"/>
+    <sprite n="CV_bird01_eyelid_02" x="354" y="384" w="14" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="15" oH="15"/>
+    <sprite n="CV_bird01_eyelid_03" x="496" y="460" w="14" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="15" oH="15"/>
+    <sprite n="CV_bird01_head" x="185" y="460" w="38" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird02_body" x="266" y="244" w="110" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird02_eyelid_01" x="370" y="420" w="19" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird02_eyelid_02" x="391" y="420" w="19" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird02_eyelid_03" x="412" y="420" w="19" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird02_head" x="449" y="337" w="58" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird03_body" x="2" y="367" w="30" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird03_eyelid_01" x="496" y="477" w="14" h="15" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird03_eyelid_02" x="496" y="494" w="14" h="15" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird03_eyelid_03" x="2" y="288" w="14" h="15" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird03_head" x="185" y="418" w="52" h="39" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird04_body" x="82" y="321" w="100" h="49" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird04_eyelid_01" x="322" y="460" w="16" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird04_eyelid_02" x="322" y="477" w="16" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird04_eyelid_03" x="322" y="494" w="16" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="CV_bird04_head" x="449" y="288" w="61" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_bird_feet" x="463" y="81" w="12" h="17" pX="0.5" pY="0.5"/>
+    <sprite n="CV_eyelids_01" x="340" y="445" w="43" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_eyelids_02" x="385" y="442" w="43" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_eyelids_03" x="430" y="460" w="64" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="CV_eyelids_04" x="2" y="222" w="43" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_front_foot" x="378" y="244" w="69" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="CV_front_lower_leg" x="194" y="149" w="74" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_front_upper_leg" x="370" y="372" w="68" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="49" oH="68" r="y"/>
+    <sprite n="CV_head" x="117" y="419" w="66" h="81" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_hind_back_foot" x="225" y="459" w="57" h="51" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_hind_back_lower_leg" x="284" y="460" w="36" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="CV_hind_back_upper_leg" x="340" y="401" w="28" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="CV_hind_foot" x="239" y="401" w="56" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="CV_hind_lower_leg" x="114" y="372" w="54" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_hind_upper_leg" x="47" y="222" w="34" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="CV_mouth_01" x="170" y="372" w="67" h="44" pX="0.5" pY="0.5" oX="10" oY="10" oW="86" oH="65"/>
+    <sprite n="CV_mouth_02" x="34" y="372" w="78" h="45" pX="0.5" pY="0.5" oX="5" oY="9" oW="86" oH="65"/>
+    <sprite n="CV_mouth_03" x="463" y="134" w="47" h="84" pX="0.5" pY="0.5" oX="1" oY="9" oW="86" oH="65" r="y"/>
+    <sprite n="CV_mouth_04" x="2" y="419" w="65" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_mouth_05" x="2" y="321" w="78" h="44" pX="0.5" pY="0.5" oX="5" oY="9" oW="86" oH="65"/>
+    <sprite n="CV_mouth_06" x="370" y="326" w="77" h="44" pX="0.5" pY="0.5" oX="6" oY="11" oW="86" oH="65"/>
+    <sprite n="CV_mouth_07" x="297" y="400" w="41" h="58" pX="0.5" pY="0.5" oX="17" oY="10" oW="86" oH="65" r="y"/>
+    <sprite n="CV_mouth_stalk" x="252" y="367" w="100" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="CV_pupil_left" x="463" y="100" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="CV_pupil_right" x="463" y="114" w="9" h="9" pX="0.5" pY="0.5"/>
+    <sprite n="CV_shadow" x="2" y="2" w="266" h="145" pX="0.5" pY="0.5"/>
+    <sprite n="CV_shell" x="270" y="81" w="191" h="95" pX="0.5" pY="0.5" oX="2" oY="0" oW="193" oH="95"/>
+    <sprite n="CV_shell_inside" x="266" y="290" w="102" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="CV_spike_01" x="194" y="203" w="70" h="116" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="117"/>
+    <sprite n="CV_spike_02" x="270" y="2" w="205" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_spike_03" x="477" y="2" w="31" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="CV_spike_04" x="2" y="149" w="190" h="71" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CV_torso" x="270" y="178" w="182" h="64" pX="0.5" pY="0.5"/>
+</TextureAtlas>

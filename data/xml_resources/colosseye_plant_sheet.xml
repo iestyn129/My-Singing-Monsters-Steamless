@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:515ac92183fb5dd5fdc894b7648ffab9:201231c4f4346196956b3605c9a36a05:a0ba31357424fb568af7b28a19e9809e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/colosseye_plant_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="block_A_01.png" x="156" y="340" w="112" h="112"/>
+    <sprite n="block_B_01.png" x="368" y="456" w="112" h="112"/>
+    <sprite n="block_base.png" x="208" y="0" w="188" h="140"/>
+    <sprite n="block_bottom_glow.png" x="208" y="140" w="164" h="68"/>
+    <sprite n="block_bottom_grass.png" x="0" y="340" w="156" h="104"/>
+    <sprite n="block_bottom_grass_back.png" x="112" y="444" w="40" h="84"/>
+    <sprite n="block_bottom_plants.png" x="396" y="0" w="112" h="188" r="y"/>
+    <sprite n="block_C_01.png" x="0" y="444" w="112" h="112"/>
+    <sprite n="block_D_01.png" x="152" y="452" w="112" h="112"/>
+    <sprite n="block_shadow.png" x="268" y="448" w="100" h="52"/>
+    <sprite n="block_top.png" x="372" y="344" w="124" h="112"/>
+    <sprite n="block_top_glow.png" x="312" y="208" w="60" h="124" r="y"/>
+    <sprite n="block_top_plants.png" x="268" y="376" w="100" h="72"/>
+    <sprite n="coverage_01.png" x="372" y="188" w="132" h="156"/>
+    <sprite n="coverage_02.png" x="0" y="208" w="156" h="132" r="y"/>
+    <sprite n="coverage_03.png" x="156" y="208" w="156" h="132" r="y"/>
+    <sprite n="dust.png" x="88" y="556" w="56" h="56"/>
+    <sprite n="eye_iris.png" x="144" y="564" w="56" h="56"/>
+    <sprite n="eye_orb.png" x="264" y="500" w="88" h="88"/>
+    <sprite n="eye_orb_white.png" x="0" y="556" w="88" h="88"/>
+    <sprite n="eye_pupil.png" x="372" y="140" w="24" h="24"/>
+    <sprite n="glow_orange.png" x="0" y="0" w="208" h="208"/>
+    <sprite n="vine_01.png" x="268" y="340" w="44" h="36" r="y"/>
+    <sprite n="vine_02.png" x="312" y="332" w="60" h="44" r="y"/>
+    <sprite n="vine_03.png" x="480" y="456" w="32" h="56"/>
+    <sprite n="vine_04.png" x="372" y="164" w="24" h="20"/>
+</TextureAtlas>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6a8d4dbd9f4e9785511ec6a788a4c5ac:ee7aa034295f6dd862e14f8bb7d4e67b:6d2bb957fa6e00a755ecc36dac9b6755$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island18_fireworks.png" width="1024" height="2048" hires="true">
+    <sprite n="Tail_1" x="457" y="1" w="451" h="96" pX="0.5" pY="0.5" oX="49" oY="113" oW="200" oH="600" r="y"/>
+    <sprite n="Tail_2" x="910" y="1" w="94" h="425" pX="0.5" pY="0.5" oX="51" oY="113" oW="200" oH="600"/>
+    <sprite n="Tail_3" x="1" y="1" w="454" h="154" pX="0.5" pY="0.5" oX="13" oY="79" oW="200" oH="600" r="y"/>
+    <sprite n="firework_1" x="1" y="910" w="358" h="351" pX="0.5" pY="0.5" oX="13" oY="28" oW="400" oH="400"/>
+    <sprite n="firework_1_glow" x="388" y="487" w="383" h="381" pX="0.5" pY="0.5" oX="0" oY="12" oW="400" oH="400"/>
+    <sprite n="firework_2" x="379" y="870" w="363" h="358" pX="0.5" pY="0.5" oX="11" oY="23" oW="400" oH="400"/>
+    <sprite n="firework_2_glow" x="457" y="99" w="387" h="386" pX="0.5" pY="0.5" oX="0" oY="11" oW="400" oH="400"/>
+    <sprite n="firework_3" x="361" y="1230" w="357" h="349" pX="0.5" pY="0.5" oX="13" oY="29" oW="400" oH="400"/>
+    <sprite n="firework_3_glow" x="1" y="157" w="385" h="373" pX="0.5" pY="0.5" oX="0" oY="17" oW="400" oH="400"/>
+    <sprite n="glow" x="1" y="532" w="376" h="376" pX="0.5" pY="0.5" oX="13" oY="13" oW="400" oH="400"/>
+    <sprite n="sparkle" x="720" y="1230" w="301" h="339" pX="0.5" pY="0.5" oX="42" oY="25" oW="400" oH="400"/>
+</TextureAtlas>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7198091e3d02bc6c3a8d28a66a3bd336:865a31a46fd34e125917cc99fe00c3f6:999a83c6114ef840b4f3aa27224c7411$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_creepycauldron_sheet.png" width="512" height="512" hires="true">
+    <sprite n="cauldron_base.png" x="2" y="2" w="370" h="362" pX="0.5" pY="0.5"/>
+    <sprite n="cauldron_bubble_01.png" x="494" y="57" w="14" h="9" pX="0.5" pY="0.5" oX="15" oY="27" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_02.png" x="494" y="44" w="14" h="11" pX="0.5" pY="0.5" oX="15" oY="25" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_03.png" x="494" y="24" w="15" h="18" pX="0.5" pY="0.5" oX="13" oY="21" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_04.png" x="494" y="2" w="15" h="20" pX="0.5" pY="0.5" oX="13" oY="21" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_05.png" x="2" y="366" w="23" h="17" pX="0.5" pY="0.5" oX="11" oY="19" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_06.png" x="482" y="168" w="28" h="27" pX="0.5" pY="0.5" oX="9" oY="9" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_07.png" x="136" y="366" w="31" h="32" pX="0.5" pY="0.5" oX="7" oY="5" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_08.png" x="127" y="413" w="30" h="33" pX="0.5" pY="0.5" oX="9" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_09.png" x="106" y="453" w="33" h="34" pX="0.5" pY="0.5" oX="7" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_10.png" x="92" y="413" w="33" h="38" pX="0.5" pY="0.5" oX="5" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_11.png" x="37" y="456" w="32" h="40" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_12.png" x="36" y="385" w="43" h="25" pX="0.5" pY="0.5" oX="1" oY="11" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_13.png" x="2" y="459" w="33" h="43" pX="0.5" pY="0.5" oX="1" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_14.png" x="2" y="413" w="33" h="44" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_15.png" x="494" y="68" w="8" h="44" pX="0.5" pY="0.5" oX="0" oY="25" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_16.png" x="81" y="385" w="24" h="24" pX="0.5" pY="0.5" oX="11" oY="7" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_17.png" x="2" y="385" w="32" h="26" pX="0.5" pY="0.5" oX="7" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_18.png" x="107" y="366" w="27" h="38" pX="0.5" pY="0.5" oX="5" oY="0" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_19.png" x="59" y="413" w="31" h="40" pX="0.5" pY="0.5" oX="3" oY="0" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_20.png" x="71" y="455" w="33" h="39" pX="0.5" pY="0.5" oX="5" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_21.png" x="37" y="413" w="20" h="41" pX="0.5" pY="0.5" oX="3" oY="9" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_22.png" x="494" y="114" w="8" h="41" pX="0.5" pY="0.5" oX="3" oY="27" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_glow_ember.png" x="374" y="2" w="118" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cauldron_stew_01.png" x="482" y="197" w="27" h="106" pX="0.5" pY="0.5" oX="0" oY="9" oW="106" oH="36" r="y"/>
+    <sprite n="cauldron_stew_02.png" x="374" y="168" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_03.png" x="374" y="199" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_04.png" x="374" y="230" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_05.png" x="374" y="261" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_06.png" x="482" y="305" w="27" h="106" pX="0.5" pY="0.5" oX="0" oY="9" oW="106" oH="36" r="y"/>
+    <sprite n="cauldron_stew_07.png" x="374" y="292" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_08.png" x="374" y="323" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+    <sprite n="cauldron_stew_09.png" x="374" y="354" w="106" h="29" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="36"/>
+</TextureAtlas>

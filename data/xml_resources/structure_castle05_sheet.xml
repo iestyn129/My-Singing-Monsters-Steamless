@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1f20b11339cf9aad91454a71ed292981:eae88761ba35d6c57126b25bcf092c56:f0656ab70f4f309f981a58eaf71831b3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_castle05_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="structure_castle05_base" x="2" y="2" w="688" h="533" pX="0.5" pY="0.5" oX="4" oY="7" oW="694" oH="550"/>
+    <sprite n="structure_castle05_branch01" x="879" y="446" w="135" h="122" pX="0.5" pY="0.5" oX="3" oY="2" oW="138" oH="124"/>
+    <sprite n="structure_castle05_center" x="692" y="2" w="306" h="442" pX="0.5" pY="0.5" oX="8" oY="23" oW="320" oH="465"/>
+    <sprite n="structure_castle05_tower01" x="692" y="446" w="185" h="495" pX="0.5" pY="0.5" oX="3" oY="7" oW="188" oH="502"/>
+    <sprite n="structure_castle05_tower02" x="2" y="537" w="176" h="449" pX="0.5" pY="0.5" oX="4" oY="1" oW="180" oH="452"/>
+    <sprite n="structure_castle05_tower03" x="403" y="537" w="196" h="409" pX="0.5" pY="0.5" oX="5" oY="10" oW="204" oH="422"/>
+    <sprite n="structure_castle05_tower04" x="180" y="537" w="221" h="435" pX="0.5" pY="0.5" oX="3" oY="7" oW="226" oH="444"/>
+</TextureAtlas>

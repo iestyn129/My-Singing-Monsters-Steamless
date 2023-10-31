@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8dcb0630f7e05983bc2df9ce67f033de:d205bfa93e0dfccc2830854dffe9fc99:d43b19d0ab115c3236a3d324163508e2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_KL_sheet.png" width="512" height="512" hires="true">
+    <sprite n="KL_armjoint_01" x="368" y="329" w="59" h="63" pX="0.5" pY="0.5" oX="0" oY="14" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_02" x="339" y="267" w="67" h="60" pX="0.5" pY="0.5" oX="0" oY="10" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_03" x="235" y="132" w="57" h="73" pX="0.5" pY="0.5" oX="0" oY="7" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_04" x="158" y="353" w="77" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_05" x="413" y="2" w="81" h="51" pX="0.5" pY="0.5" oX="0" oY="3" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_06" x="363" y="2" w="48" h="83" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_07" x="316" y="2" w="45" h="85" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="88"/>
+    <sprite n="KL_body" x="2" y="2" w="182" h="205" pX="0.5" pY="0.5" oX="0" oY="1" oW="184" oH="208"/>
+    <sprite n="KL_crystal" x="339" y="201" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="KL_crystal_RARE" x="408" y="125" w="68" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="KL_head" x="2" y="209" w="154" h="198" pX="0.5" pY="0.5" oX="1" oY="0" oW="156" oH="200"/>
+    <sprite n="KL_left_eyeball" x="478" y="125" w="32" h="32" pX="0.5" pY="0.5" oX="2" oY="2" oW="36" oH="36"/>
+    <sprite n="KL_left_eyelid_01" x="252" y="93" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_left_eyelid_02" x="289" y="93" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_left_eyelid_03" x="408" y="246" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_left_eyelid_04" x="408" y="283" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_left_fin" x="378" y="129" w="27" h="62" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="64"/>
+    <sprite n="KL_left_foot" x="157" y="409" w="84" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="84" r="y"/>
+    <sprite n="KL_left_hand" x="413" y="55" w="69" h="68" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="72" r="y"/>
+    <sprite n="KL_left_lowerleg" x="252" y="2" w="62" h="89" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="92"/>
+    <sprite n="KL_left_upperleg" x="2" y="409" w="63" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="100"/>
+    <sprite n="KL_mouth_01" x="326" y="329" w="40" h="72" pX="0.5" pY="0.5" oX="3" oY="6" oW="80" oH="48" r="y"/>
+    <sprite n="KL_mouth_02" x="326" y="89" w="80" h="38" pX="0.5" pY="0.5" oX="0" oY="5" oW="80" oH="48"/>
+    <sprite n="KL_mouth_03" x="237" y="329" w="40" h="77" pX="0.5" pY="0.5" oX="2" oY="4" oW="80" oH="48" r="y"/>
+    <sprite n="KL_mouth_04" x="279" y="329" w="45" h="76" pX="0.5" pY="0.5" oX="3" oY="2" oW="80" oH="48" r="y"/>
+    <sprite n="KL_mouth_05" x="186" y="132" w="47" h="74" pX="0.5" pY="0.5" oX="3" oY="1" oW="80" oH="48" r="y"/>
+    <sprite n="KL_porthole" x="229" y="208" w="108" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="108" r="y"/>
+    <sprite n="KL_pupil" x="496" y="2" w="13" h="13" pX="0.5" pY="0.5" oX="1" oY="1" oW="16" oH="16"/>
+    <sprite n="KL_right_eyeball" x="478" y="159" w="32" h="32" pX="0.5" pY="0.5" oX="2" oY="2" oW="36" oH="36"/>
+    <sprite n="KL_right_eyelid_01" x="445" y="246" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_right_eyelid_02" x="445" y="283" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_right_eyelid_03" x="429" y="320" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_right_eyelid_04" x="466" y="320" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="KL_right_fin" x="407" y="191" w="68" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="68" r="y"/>
+    <sprite n="KL_right_foot" x="67" y="409" w="88" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="92" r="y"/>
+    <sprite n="KL_right_hand" x="294" y="130" w="69" h="69" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="72"/>
+    <sprite n="KL_right_lowerleg" x="308" y="407" w="68" h="91" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="96"/>
+    <sprite n="KL_right_upperleg" x="243" y="408" w="63" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="104"/>
+    <sprite n="KL_shadow" x="186" y="2" w="64" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="KL_shoulder_behind" x="158" y="209" w="69" h="142" pX="0.5" pY="0.5" oX="1" oY="0" oW="72" oH="144"/>
+</TextureAtlas>

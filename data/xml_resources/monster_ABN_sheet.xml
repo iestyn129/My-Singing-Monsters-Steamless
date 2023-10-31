@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:455373a1cebebb971d933ce2f28471f7:19a63a1e6e1dfad09cffe576fa3643d4:3049736f6475eb6c4cdec0388005538c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABN_body.png" x="351" y="233" w="156" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_body_RARE.png" x="2" y="298" w="156" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_eyelid1.png" x="118" y="579" w="93" h="43" pX="0.5" pY="0.5" oX="0" oY="1" oW="94" oH="44"/>
+    <sprite n="ABN_eyelid2.png" x="310" y="613" w="93" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="94" oH="44"/>
+    <sprite n="ABN_eyelid3.png" x="213" y="622" w="93" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="94" oH="44"/>
+    <sprite n="ABN_eyelid4.png" x="102" y="624" w="93" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="94" oH="44"/>
+    <sprite n="ABN_face.png" x="378" y="139" w="122" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_face_RARE.png" x="160" y="380" w="122" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_head.png" x="181" y="142" w="168" h="154" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_head_RARE.png" x="2" y="142" w="177" h="154" pX="0.5" pY="0.5" oX="0" oY="3" oW="154" oH="180" r="y"/>
+    <sprite n="ABN_leaffrill.png" x="2" y="2" w="186" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_leaffrill_RARE.png" x="190" y="2" w="186" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_foot.png" x="2" y="905" w="54" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_foot_RARE.png" x="58" y="905" w="54" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_hand.png" x="2" y="524" w="98" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_hand_RARE.png" x="2" y="600" w="98" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_lowerarm.png" x="2" y="676" w="86" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_lowerarm_RARE.png" x="398" y="697" w="86" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_lowerleg.png" x="90" y="728" w="82" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_lowerleg_RARE.png" x="2" y="762" w="82" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_upperarm.png" x="450" y="371" w="58" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_upperarm_RARE.png" x="450" y="467" w="58" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_left_upperleg.png" x="446" y="607" w="58" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_left_upperleg_RARE.png" x="308" y="657" w="88" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_mouth01.png" x="102" y="524" w="14" h="86" pX="0.5" pY="0.5" oX="2" oY="5" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth02.png" x="351" y="142" w="17" h="88" pX="0.5" pY="0.5" oX="1" oY="4" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth03.png" x="284" y="380" w="27" h="88" pX="0.5" pY="0.5" oX="1" oY="2" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth04.png" x="118" y="436" w="38" h="88" pX="0.5" pY="0.5" oX="1" oY="0" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth05.png" x="315" y="336" w="33" h="59" pX="0.5" pY="0.5" oX="15" oY="4" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth06.png" x="315" y="298" w="34" h="36" pX="0.5" pY="0.5" oX="27" oY="3" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth07.png" x="313" y="397" w="22" h="21" pX="0.5" pY="0.5" oX="34" oY="9" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_mouth08.png" x="313" y="420" w="19" h="51" pX="0.5" pY="0.5" oX="19" oY="9" oW="90" oH="40" r="y"/>
+    <sprite n="ABN_neckleaf_a.png" x="284" y="473" w="63" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="64" r="y"/>
+    <sprite n="ABN_neckleaf_a_RARE.png" x="446" y="563" w="63" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="64" r="y"/>
+    <sprite n="ABN_neckleaf_b.png" x="2" y="436" w="114" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_neckleaf_b_RARE.png" x="2" y="480" w="114" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_pupil_1.png" x="334" y="420" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_pupil_1_RARE.png" x="334" y="436" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_pupil_2.png" x="334" y="436" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_pupil_2_RARE.png" x="334" y="420" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_foot.png" x="375" y="783" w="76" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_foot_RARE.png" x="453" y="783" w="54" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_right_hand.png" x="350" y="371" w="98" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_hand_RARE.png" x="350" y="447" w="98" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_lowerarm.png" x="287" y="717" w="86" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_lowerarm_RARE.png" x="192" y="726" w="86" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_lowerleg.png" x="86" y="800" w="82" h="69" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="82" r="y"/>
+    <sprite n="ABN_right_lowerleg_RARE.png" x="2" y="834" w="82" h="69" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="82" r="y"/>
+    <sprite n="ABN_right_upperarm.png" x="158" y="474" w="94" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_upperarm_RARE.png" x="254" y="517" w="94" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="ABN_right_upperleg.png" x="197" y="666" w="88" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_right_upperleg_RARE.png" x="102" y="668" w="88" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_shadow.png" x="160" y="298" w="153" h="80" pX="0.5" pY="0.5" oX="2" oY="0" oW="158" oH="80"/>
+    <sprite n="RARE_ABN_eyelid1.png" x="350" y="523" w="94" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="44"/>
+    <sprite n="RARE_ABN_eyelid2.png" x="350" y="568" w="94" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="44"/>
+    <sprite n="RARE_ABN_eyelid3.png" x="118" y="534" w="94" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="44"/>
+    <sprite n="RARE_ABN_eyelid4.png" x="214" y="577" w="94" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="44"/>
+    <sprite n="spore_ABN.png" x="378" y="2" w="130" h="135" pX="0.5" pY="0.5" oX="18" oY="23" oW="172" oH="172" r="y"/>
+</TextureAtlas>

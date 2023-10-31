@@ -1,0 +1,63 @@
+<template name="template_battle_reward" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+
+	<size dependentOnElement="Value"/>
+
+	<element name="Value">
+
+		<size w="78*game.menuScaleX()" h="20*game.menuScaleX()" />
+
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString(element:parent()("Icon"):GetString())
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.4*game.menuScaleX())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="Text">
+			<size w="54*game.menuScaleX()" h="20*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.35*game.menuScaleX())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_LEFT_ALIGNED)
+					component("text"):SetString(game.commaizeNumber(element:parent()("Amount"):GetInt()))
+
+					local currencyType = element:parent()("CurrencyType"):GetString();
+					if(currencyType ~= "") then
+						game.StoreContext_setCurrencyTypeColour(currencyType, component)
+					end
+
+					component("layer"):SetString("$layer")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.CenterHorizontally({
+					element:GetComponent("Icon"),
+					MenuHelpers.CreateSpacer(4*game.menuScaleX(), 0),
+					element:GetComponent("Text")
+				})
+			]]>
+		</event>
+
+	</element>
+
+</template>

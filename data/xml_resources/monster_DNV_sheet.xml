@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:48b5322a65262a5a6a044a0c6b75d1a6:525007c5e5a93e2b6ca1f5b6f6629388:c1b25eb33a32a12c58f38ceed1744d82$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_DNV_sheet.png" width="512" height="512" hires="true">
+    <sprite n="DNV_arm_left _01" x="118" y="408" w="62" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_left _01_RARE" x="2" y="411" w="74" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_arm_left _02" x="369" y="74" w="84" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_left _02_RARE" x="78" y="411" w="28" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_arm_left _03" x="377" y="315" w="46" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_left _03_RARE" x="377" y="365" w="46" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_left _04" x="293" y="386" w="26" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_left _04_RARE" x="321" y="386" w="26" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_right _01" x="382" y="179" w="62" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_arm_right _01_RARE" x="446" y="144" w="50" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_right _02" x="389" y="104" w="65" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_right _02_RARE" x="382" y="231" w="65" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_right _03" x="455" y="69" w="43" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_arm_right _03_RARE" x="389" y="144" w="43" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_arm_right _04" x="51" y="475" w="25" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_arm_right _04_RARE" x="349" y="386" w="25" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_eye_sockets" x="307" y="179" w="73" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_eye_sockets_RARE" x="307" y="233" w="73" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_eyeball" x="260" y="370" w="19" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_eyeball_RARE" x="446" y="208" w="20" h="19" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_foot_back" x="166" y="197" w="21" h="47" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_foot_back_RARE" x="2" y="475" w="47" h="21" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_foot_front" x="307" y="287" w="45" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_foot_front_RARE" x="354" y="287" w="45" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_head" x="186" y="370" w="72" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_head_blur" x="2" y="2" w="162" h="260" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_head_RARE" x="166" y="120" w="123" h="75" pX="0.5" pY="0.5" oX="4" oY="0" oW="130" oH="80"/>
+    <sprite n="DNV_jaw_bottom_back" x="186" y="319" w="96" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_jaw_bottom_back_RARE" x="291" y="120" w="96" h="57" pX="0.5" pY="0.5" oX="0" oY="3" oW="96" oH="60"/>
+    <sprite n="DNV_jaw_bottom_front" x="118" y="310" w="66" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_jaw_bottom_front_RARE" x="306" y="2" w="96" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_jaw_top" x="2" y="310" w="114" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_jaw_top_RARE" x="205" y="197" w="100" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_leg_back" x="260" y="392" w="31" h="35" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_leg_back_RARE" x="376" y="415" w="35" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_leg_front" x="456" y="99" w="37" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_leg_front_RARE" x="401" y="271" w="37" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_pupil_01" x="184" y="246" w="14" h="12" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="12"/>
+    <sprite n="DNV_pupil_02" x="189" y="197" w="11" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="12" r="y"/>
+    <sprite n="DNV_pupil_03" x="189" y="214" w="10" h="15" pX="0.5" pY="0.5" oX="1" oY="1" oW="16" oH="12" r="y"/>
+    <sprite n="DNV_pupil_04" x="166" y="246" w="16" h="9" pX="0.5" pY="0.5" oX="0" oY="2" oW="16" oH="12"/>
+    <sprite n="DNV_shadow" x="166" y="2" w="138" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="DNV_tendon" x="2" y="264" w="201" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_tendon_RARE" x="166" y="74" w="201" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_tongue" x="404" y="2" w="91" h="65" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DNV_tongue_RARE" x="284" y="319" w="91" h="65" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

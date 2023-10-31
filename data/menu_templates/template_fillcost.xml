@@ -1,0 +1,40 @@
+<template name="template_lockedEvolveIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<hudScale scale="game.hudScale()" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+	
+	<event name="SetVisible" params="element">
+		element["Text"]("visible"):SetInt(1)
+	</event>
+	<event name="SetInvisible" params="element">
+		element["Text"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="SetEnabled" params="element">
+		local text = element["Text"]
+		text:setColor(text("red"):GetFloat() * 2.0, text("green"):GetFloat() * 2.0, text("blue"):GetFloat() * 2.0)
+	</event>
+	
+	<event name="SetDisabled" params="element">
+		local text = element["Text"]
+		text:setColor(text("red"):GetFloat() * 0.5, text("green"):GetFloat() * 0.5, text("blue"):GetFloat() * 0.5)
+	</event>
+	
+	<textComponent name="Text">
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(0.25)
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString("-"..game.commaizeNumber(game.selectedBoxDiamondFillCost()))
+			game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component);
+			component("layer"):SetString("ContextBar")
+		</event>
+		<event name="onTick" params="component, element, dt">
+			if(manager:isIdle() == true) then
+				component("text"):SetString("-"..game.commaizeNumber(game.selectedBoxDiamondFillCost()))
+			end
+		</event>
+	</textComponent>
+	
+</template>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8bb2dbf4e6be5c8d3e5954c26deb1327:681cb476f9179416f38ab7fd806009e4:7e9c3bc0b686c71c3fc87c16d8caa01e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCD_costume_01_sheet.png" width="128" height="256" hires="true">
+	<!-- original anchor = (43,95) -> new anchor (39,80) diff = (4,15)-->
+	<!-- add double it to texturepacker output offsets (1, 4) -> (9, 34), because hires-->
+    <sprite n="BCD_goggles.png" x="2" y="2" w="118" h="72" pX="0.5" pY="0.5" oX="9" oY="34" oW="120" oH="80"/>
+
+	<!-- original anchor = (43,95) -> new anchor (18,86) diff = (25,9)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (52, 19), because hires-->
+    <sprite n="BCD_snorkel.png" x="2" y="76" w="75" h="168" pX="0.5" pY="0.5" oX="52" oY="19" oW="80" oH="170"/>
+</TextureAtlas>

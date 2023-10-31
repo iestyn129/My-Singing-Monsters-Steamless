@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d365b2e9c5fa72c49f12db5fdf625701:5d1ed64fb00d194e6a506eadc38b1bb3:2bb67c02298a058614952c73060a2a73$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_EN_costume_01_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (11, 13) -> new anchor (18, 17) diff = (-7, -4)-->
+	<!-- add double it to texturepacker output offsets (14, 8) -> (0, 0), because hires-->
+    <sprite n="EN_adult_antler_left.png" x="2" y="273" w="152" h="62" pX="0.5" pY="0.5" oX="0" oY="0" oW="180" oH="80"/>
+
+    <!-- original anchor = (8, 13) -> new anchor (16, 18) diff = (-8, -5)-->
+	<!-- add double it to texturepacker output offsets (14, 7) -> (-2, -3), because hires-->
+    <sprite n="EN_adult_antler_right.png" x="2" y="204" w="152" h="67" pX="0.5" pY="0.5" oX="-2" oY="-3" oW="180" oH="80"/>
+
+    <sprite n="EN_adult_back_foot.png" x="2" y="431" w="107" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_foot.png" x="156" y="204" w="92" h="137" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_front_foot_RIGHT.png" x="2" y="337" w="137" h="92" pX="0.5" pY="0.5" r="y"/>
+
+    <!-- original anchor = (36, 85) -> new anchor (54, 97) diff = (-18, -12)-->
+	<!-- add double it to texturepacker output offsets (4, 9) -> (-32, -15), because hires-->
+    <sprite n="EN_costume_01_head.png" x="2" y="2" w="229" h="200" pX="0.5" pY="0.5" oX="-32" oY="-15" oW="240" oH="220"/>
+</TextureAtlas>

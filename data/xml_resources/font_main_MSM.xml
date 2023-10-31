@@ -1,0 +1,20 @@
+<FontInfo>
+
+	<!--
+	<SpriteFont path="font/font_main_MSM" />
+	-->
+	
+	<!-- -->
+	<TTF 
+		 path="font/OpenDyslexic-Bold.otf"
+		 w="0" h="40"
+		 line_spacing="56"
+		 character_spacing="0"
+		 stroke_size="6"
+		 use_sdf="true"
+		 shader="ShaderFont1"
+		 alphabet="ok"
+	/>
+	<!-- -->
+	
+</FontInfo>

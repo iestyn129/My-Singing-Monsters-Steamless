@@ -1,0 +1,24 @@
+<template name="template_elementicon" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<hudScale scale="game.hudScale()" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString(element("SpriteName"):GetString())
+				component("sheetName"):SetString(element("SheetName"):GetString())
+				component("size"):SetFloat(element("Size"):GetFloat())
+				component("layer"):SetString(element("Layer"):GetString())
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="setInvis" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+	</event>
+	<event name="setVis" params="element">
+		element["Sprite"]("visible"):SetInt(1)
+	</event>
+	
+</template>

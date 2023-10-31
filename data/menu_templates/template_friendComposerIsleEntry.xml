@@ -1,0 +1,134 @@
+<template name="template_friendComposerIsleEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite" >
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="MusicBacking">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_rnd_base_green")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.55*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="MusicSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MusicBacking" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("decoration_filters_musical")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.54*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="SongName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="25*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="155*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				
+				if(element:parent()("islandUid"):GetInt() ~= -1) then
+					if(element:parent()("songName"):GetString()=="") then
+						component("text"):SetString(game.StoreContext_DEFAULT_OWNED_SONGNAME)
+					else
+						component("text"):SetString(element:parent()("songName"):GetString())
+					end
+					component("noTranslate"):SetInt(1)
+				end
+				
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+
+	<!-- template type="template_spritesheetbutton" name="DeleteButton">
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.2*game.menuScaleX()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				--game.displayConfirmation(("TEMPLATE_DELETE"..element:parent():name()), game.getLocalizedText("TEMPLATE_DELETE_CONFIRMATION"))
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("Clipping")
+				component("size"):SetFloat(0.2*game.menuScaleX())
+			</event>
+		</spriteSheetComponent>
+	</template -->
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(component("dragging"):GetInt() < 10) then
+					game.visitFriendComposerIsland(element("islandUid"):GetInt());
+				end
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+	</touchComponent>
+</template>

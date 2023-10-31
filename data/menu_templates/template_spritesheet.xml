@@ -1,0 +1,6 @@
+<template name="template_spritesheet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	<spriteSheetComponent name="Sprite"/>
+
+</template>

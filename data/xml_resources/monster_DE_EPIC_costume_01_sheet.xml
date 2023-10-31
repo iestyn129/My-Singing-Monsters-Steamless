@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dceaf1cd3a017c58e3a1e254f6b0450f:f52c6a7610099d16282f304be4ad81b2:a67d1e873cfabf3d7982a4076b95d418$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_DE_EPIC_costume_01_sheet.png" width="1024" height="1024" hires="true">
+	<sprite n="DE_body03.png" />
+	<sprite n="DE_body04.png" x="2" y="2" w="285" h="320" pX="0.5" pY="0.5" oX="2" oY="0" oW="290" oH="320"/>
+	<sprite n="DE_body_FIX.png" x="279" y="961" w="118" h="58" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="DE_eyeball_right_RARE.png" x="2" y="985" w="35" h="36" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="36"/>
+	<sprite n="DE_holes_RARE.png" x="399" y="951" w="109" h="70" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="DE_horn_big_left_RARE.png" />
+	<sprite n="DE_horn_big_right_RARE.png" />
+	<sprite n="DE_horn_small_right_RARE.png" />
+	<sprite n="DE_lid_left_02_RARE.png" x="144" y="984" w="31" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+	<sprite n="DE_lid_left_03_RARE.png" x="247" y="984" w="30" h="34" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+	<sprite n="DE_lid_left_04_RARE.png" x="110" y="985" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="2" oW="36" oH="36" r="y"/>
+	<sprite n="DE_lid_right_02_RARE.png" x="212" y="984" w="33" h="34" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36" r="y"/>
+	<sprite n="DE_lid_right_03_RARE.png" x="177" y="984" w="33" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36" r="y"/>
+	<sprite n="DE_lid_right_04_RARE.png" x="75" y="985" w="33" h="36" pX="0.5" pY="0.5" oX="0" oY="1" oW="36" oH="36" r="y"/>
+	<sprite n="DE_mouth01.png" x="259" y="752" w="103" h="207" pX="0.5" pY="0.5" oX="11" oY="26" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth02.png" x="2" y="324" w="121" h="228" pX="0.5" pY="0.5" oX="3" oY="24" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth03.png" x="128" y="538" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth04.png" x="364" y="752" w="142" h="197" pX="0.5" pY="0.5" oX="7" oY="19" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth05.png" x="374" y="538" w="164" h="190" pX="0.5" pY="0.5" oX="7" oY="4" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth06.png" x="508" y="730" w="164" h="177" pX="0.5" pY="0.5" oX="13" oY="4" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth07.png" x="728" y="2" w="162" h="136" pX="0.5" pY="0.5" oX="28" oY="15" oW="232" oH="168"/>
+	<sprite n="DE_mouth10.png" x="136" y="770" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth11.png" x="125" y="324" w="137" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth12.png" x="2" y="771" w="132" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth13.png" x="2" y="554" w="124" h="215" pX="0.5" pY="0.5" oX="3" oY="24" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth14.png" x="251" y="538" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_mouth15.png" x="264" y="324" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+	<sprite n="DE_nose_EPIC.png" x="39" y="985" w="34" h="36" pX="0.5" pY="0.5" oX="0" oY="1" oW="36" oH="36" r="y"/>
+	<sprite n="DE_pupil_RARE.png" x="128" y="752" w="16" h="16" pX="0.5" pY="0.5"/>
+	<sprite n="DE_shadow.png" x="585" y="909" w="128" h="64" pX="0.5" pY="0.5"/>
+	<sprite n="DE_socket_left_RARE.png" x="632" y="975" w="44" h="46" pX="0.5" pY="0.5" oX="0" oY="1" oW="46" oH="46" r="y"/>
+	<sprite n="DE_socket_right_RARE.png" x="585" y="975" w="45" h="46" pX="0.5" pY="0.5" oX="0" oY="0" oW="46" oH="46" r="y"/>
+	<!-- original anchor = (72.5, 149) -> new anchor (??, ??) -->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (194, 10)-->
+	<sprite n="DE_twig_EPIC_XMAS.png" x="678" y="975" w="48" h="45" pX="0.5" pY="0.5" oX="194" oY="-10" oW="50" oH="50"/>
+	<!-- original anchor = (72.5, 149) -> new anchor (??, ??) -->
+	<!-- add double it to texturepacker output offsets (3, 0) -> (145, 0)-->
+	<sprite n="DE_mistletoe_EPIC_XMAS.png" x="510" y="909" w="73" h="80" pX="0.5" pY="0.5" oX="145" oY="0" oW="80" oH="80"/>
+</TextureAtlas>

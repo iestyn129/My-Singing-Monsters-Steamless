@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7dffe53d93efd643ef47642459a2a334:260facc5f19ca16615956bec360a480c:310e5c56c5d414433400f96ad6c9584c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AE_costume_02_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (30, 60) -> new anchor (14, 133) diff = (16, -73)-->
+	<!-- add double it to texturepacker output offsets (2, 0) -> (34, -146). because hires-->
+    <sprite n="AE_BACKPACK.png" x="2" y="2" w="116" h="244" pX="0.5" pY="0.5" oX="34" oY="-146" oW="120" oH="250"/>
+	<!-- original anchor = (30, 60) -> new anchor (31, 61) diff = (-1, -1)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-2, -2), because hires-->
+    <sprite n="AE_body_STRAPS.png" x="120" y="2" w="130" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="AE_scarf_TUCKED.png" x="120" y="164" w="122" h="69" pX="0.5" pY="0.5" oX="-2" oY="-2" oW="122" oH="110"/>
+</TextureAtlas>

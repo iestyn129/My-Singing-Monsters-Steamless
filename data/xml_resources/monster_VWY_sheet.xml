@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a9996b766476a838dbefe98a8999cad3:cf37a1c0f2c94109776a82dd3847d275:d9971ff6e09b956f935c798dbd2c461b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_VWY_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="VWY_arm_A_01" x="2" y="812" w="57" h="39" pX="0.5" pY="0.5" oX="37" oY="44" oW="120" oH="140" r="y"/>
+    <sprite n="VWY_arm_A_02" x="210" y="849" w="51" h="23" pX="0.5" pY="0.5" oX="44" oY="44" oW="120" oH="140" r="y"/>
+    <sprite n="VWY_arm_A_03" x="374" y="551" w="24" h="59" pX="0.5" pY="0.5" oX="44" oY="51" oW="120" oH="140"/>
+    <sprite n="VWY_arm_A_04" x="374" y="612" w="24" h="55" pX="0.5" pY="0.5" oX="45" oY="48" oW="120" oH="140"/>
+    <sprite n="VWY_arm_A_05" x="2" y="681" w="66" h="29" pX="0.5" pY="0.5" oX="42" oY="42" oW="120" oH="140" r="y"/>
+    <sprite n="VWY_arm_A_06" x="465" y="264" w="44" h="71" pX="0.5" pY="0.5" oX="38" oY="42" oW="120" oH="140"/>
+    <sprite n="VWY_arm_B_01" x="210" y="746" w="33" h="56" pX="0.5" pY="0.5" oX="30" oY="32" oW="100" oH="120"/>
+    <sprite n="VWY_arm_B_02" x="2" y="740" w="59" h="28" pX="0.5" pY="0.5" oX="36" oY="33" oW="100" oH="120" r="y"/>
+    <sprite n="VWY_arm_B_03" x="193" y="264" w="73" h="27" pX="0.5" pY="0.5" oX="36" oY="26" oW="100" oH="120" r="y"/>
+    <sprite n="VWY_arm_B_04" x="2" y="712" w="66" h="26" pX="0.5" pY="0.5" oX="34" oY="26" oW="100" oH="120" r="y"/>
+    <sprite n="VWY_arm_B_05" x="2" y="853" w="56" h="23" pX="0.5" pY="0.5" oX="37" oY="31" oW="100" oH="120" r="y"/>
+    <sprite n="VWY_arm_B_06" x="245" y="709" w="89" h="39" pX="0.5" pY="0.5" oX="29" oY="14" oW="100" oH="120" r="y"/>
+    <sprite n="VWY_arm_C_01" x="61" y="832" w="52" h="38" pX="0.5" pY="0.5" oX="31" oY="25" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_arm_C_02" x="210" y="678" w="33" h="66" pX="0.5" pY="0.5" oX="33" oY="17" oW="100" oH="100"/>
+    <sprite n="VWY_arm_C_03" x="245" y="750" w="55" h="27" pX="0.5" pY="0.5" oX="34" oY="27" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_arm_C_04" x="438" y="440" w="24" h="66" pX="0.5" pY="0.5" oX="33" oY="16" oW="100" oH="100"/>
+    <sprite n="VWY_arm_C_05" x="178" y="549" w="74" h="23" pX="0.5" pY="0.5" oX="33" oY="12" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_arm_C_06" x="245" y="779" w="55" h="23" pX="0.5" pY="0.5" oX="38" oY="22" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_arm_C_07" x="479" y="133" w="31" h="80" pX="0.5" pY="0.5" oX="33" oY="9" oW="100" oH="100"/>
+    <sprite n="VWY_eyeball_sl" x="179" y="720" w="29" h="47" pX="0.5" pY="0.5" oX="37" oY="28" oW="100" oH="100"/>
+    <sprite n="VWY_eyeball_sr" x="56" y="898" w="50" h="39" pX="0.5" pY="0.5" oX="31" oY="26" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sl_01" x="302" y="750" w="32" h="52" pX="0.5" pY="0.5" oX="35" oY="25" oW="100" oH="100"/>
+    <sprite n="VWY_eyelid_sl_02" x="176" y="809" w="32" h="52" pX="0.5" pY="0.5" oX="35" oY="25" oW="100" oH="100"/>
+    <sprite n="VWY_eyelid_sl_03" x="2" y="878" w="52" h="32" pX="0.5" pY="0.5" oX="35" oY="25" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sl_04" x="265" y="804" w="52" h="32" pX="0.5" pY="0.5" oX="35" oY="25" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sl_05" x="265" y="838" w="52" h="32" pX="0.5" pY="0.5" oX="35" oY="25" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sr_01" x="70" y="681" w="43" h="53" pX="0.5" pY="0.5" oX="29" oY="24" oW="100" oH="100"/>
+    <sprite n="VWY_eyelid_sr_02" x="70" y="736" w="43" h="53" pX="0.5" pY="0.5" oX="29" oY="24" oW="100" oH="100"/>
+    <sprite n="VWY_eyelid_sr_03" x="446" y="840" w="53" h="43" pX="0.5" pY="0.5" oX="29" oY="24" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sr_04" x="210" y="804" w="53" h="43" pX="0.5" pY="0.5" oX="29" oY="24" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_eyelid_sr_05" x="115" y="843" w="53" h="43" pX="0.5" pY="0.5" oX="29" oY="24" oW="100" oH="100" r="y"/>
+    <sprite n="VWY_glow_01" x="2" y="2" w="270" h="126" pX="0.5" pY="0.5" oX="1" oY="1" oW="272" oH="128"/>
+    <sprite n="VWY_glow_02" x="2" y="354" w="174" h="174" pX="0.5" pY="0.5" oX="1" oY="1" oW="176" oH="176"/>
+    <sprite n="VWY_ground_shroom_01" x="438" y="401" w="25" h="37" pX="0.5" pY="0.5" oX="58" oY="75" oW="140" oH="140"/>
+    <sprite n="VWY_ground_shroom_02" x="465" y="405" w="44" h="37" pX="0.5" pY="0.5" oX="52" oY="70" oW="140" oH="140" r="y"/>
+    <sprite n="VWY_ground_shroom_03" x="179" y="769" w="29" h="38" pX="0.5" pY="0.5" oX="54" oY="76" oW="140" oH="140"/>
+    <sprite n="VWY_ground_shroom_04" x="479" y="215" w="31" h="47" pX="0.5" pY="0.5" oX="53" oY="66" oW="140" oH="140"/>
+    <sprite n="VWY_ground_shroom_05" x="2" y="969" w="28" h="40" pX="0.5" pY="0.5" oX="56" oY="73" oW="140" oH="140"/>
+    <sprite n="VWY_hanging_bits" x="2" y="912" w="47" h="23" pX="0.5" pY="0.5" oX="50" oY="40" oW="128" oH="128" r="y"/>
+    <sprite n="VWY_head" x="274" y="2" w="228" h="129" pX="0.5" pY="0.5" oX="36" oY="88" oW="300" oH="300"/>
+    <sprite n="VWY_head_sl" x="400" y="564" w="106" h="97" pX="0.5" pY="0.5" oX="92" oY="103" oW="300" oH="300"/>
+    <sprite n="VWY_head_sr" x="2" y="530" w="125" h="93" pX="0.5" pY="0.5" oX="94" oY="106" oW="300" oH="300"/>
+    <sprite n="VWY_nose" x="115" y="888" w="50" h="40" pX="0.5" pY="0.5" oX="22" oY="35" oW="100" oH="100"/>
+    <sprite n="VWY_pupil" x="178" y="354" w="13" h="22" pX="0.5" pY="0.5" oX="44" oY="40" oW="100" oH="100"/>
+    <sprite n="VWY_shadow" x="2" y="130" w="264" h="132" pX="0.5" pY="0.5" oX="7" oY="29" oW="280" oH="180"/>
+    <sprite n="VWY_shroom_sl_01" x="268" y="243" w="195" h="156" pX="0.5" pY="0.5" oX="40" oY="48" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_glow-01" x="60" y="872" w="53" h="24" pX="0.5" pY="0.5" oX="115" oY="80" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_glow-02" x="400" y="508" w="109" h="54" pX="0.5" pY="0.5" oX="89" oY="66" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_glow-03" x="265" y="401" w="171" h="81" pX="0.5" pY="0.5" oX="56" oY="54" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_glow-04" x="2" y="264" w="189" h="88" pX="0.5" pY="0.5" oX="44" oY="52" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_glow-05" x="268" y="133" w="209" h="108" pX="0.5" pY="0.5" oX="33" oY="42" oW="280" oH="240"/>
+    <sprite n="VWY_shroom_sl_01_lowerarm_sl" x="465" y="337" w="44" h="66" pX="0.5" pY="0.5" oX="49" oY="29" oW="140" oH="120"/>
+    <sprite n="VWY_shroom_sl_01_upperarm_sl" x="246" y="655" w="98" h="52" pX="0.5" pY="0.5" oX="21" oY="38" oW="140" oH="120"/>
+    <sprite n="VWY_shroom_sl_02" x="254" y="551" w="118" h="102" pX="0.5" pY="0.5" oX="55" oY="71" oW="220" oH="220"/>
+    <sprite n="VWY_shroom_sl_02_glow" x="178" y="381" w="85" h="112" pX="0.5" pY="0.5" oX="57" oY="74" oW="220" oH="220" r="y"/>
+    <sprite n="VWY_shroom_sl_02_leg" x="336" y="797" w="53" h="50" pX="0.5" pY="0.5" oX="93" oY="148" oW="220" oH="220"/>
+    <sprite n="VWY_shroom_sl_03" x="2" y="770" w="58" h="40" pX="0.5" pY="0.5" oX="52" oY="38" oW="140" oH="140" r="y"/>
+    <sprite n="VWY_shroom_sl_03_glow" x="468" y="766" w="41" h="37" pX="0.5" pY="0.5" oX="54" oY="38" oW="140" oH="140" r="y"/>
+    <sprite n="VWY_shroom_sl_03_leg" x="44" y="939" w="39" h="28" pX="0.5" pY="0.5" oX="62" oY="80" oW="140" oH="140" r="y"/>
+    <sprite n="VWY_shroom_sl_04" x="115" y="782" w="59" h="59" pX="0.5" pY="0.5" oX="48" oY="71" oW="180" oH="180"/>
+    <sprite n="VWY_shroom_sl_04_glow" x="129" y="530" w="47" h="47" pX="0.5" pY="0.5" oX="52" oY="74" oW="180" oH="180"/>
+    <sprite n="VWY_shroom_sl_04_leg" x="32" y="969" w="39" h="39" pX="0.5" pY="0.5" oX="66" oY="110" oW="180" oH="180"/>
+    <sprite n="VWY_shroom_sl_05" x="468" y="805" w="41" h="33" pX="0.5" pY="0.5" oX="39" oY="45" oW="112" oH="112" r="y"/>
+    <sprite n="VWY_shroom_sl_05_leg" x="73" y="969" w="28" h="29" pX="0.5" pY="0.5" oX="53" oY="68" oW="112" oH="112" r="y"/>
+    <sprite n="VWY_shroom_sr_01" x="265" y="484" w="133" h="65" pX="0.5" pY="0.5" oX="72" oY="58" oW="176" oH="278" r="y"/>
+    <sprite n="VWY_shroom_sr_01_glow" x="2" y="625" w="114" h="54" pX="0.5" pY="0.5" oX="78" oY="64" oW="176" oH="278" r="y"/>
+    <sprite n="VWY_shroom_sr_01_leg" x="118" y="678" w="90" h="40" pX="0.5" pY="0.5" oX="81" oY="159" oW="176" oH="278" r="y"/>
+    <sprite n="VWY_shroom_sr_02" x="400" y="663" w="102" h="101" pX="0.5" pY="0.5" oX="51" oY="64" oW="200" oH="200"/>
+    <sprite n="VWY_shroom_sr_02_glow" x="193" y="293" w="69" h="86" pX="0.5" pY="0.5" oX="58" oY="70" oW="200" oH="200" r="y"/>
+    <sprite n="VWY_shroom_sr_02_leg" x="400" y="766" w="66" h="39" pX="0.5" pY="0.5" oX="91" oY="123" oW="200" oH="200" r="y"/>
+    <sprite n="VWY_shroom_sr_03" x="115" y="720" w="62" h="60" pX="0.5" pY="0.5" oX="48" oY="57" oW="160" oH="160"/>
+    <sprite n="VWY_shroom_sr_03_glow" x="391" y="807" w="53" h="48" pX="0.5" pY="0.5" oX="53" oY="60" oW="160" oH="160"/>
+    <sprite n="VWY_shroom_sr_03_leg" x="170" y="863" w="33" h="39" pX="0.5" pY="0.5" oX="56" oY="97" oW="160" oH="160"/>
+    <sprite n="VWY_shroom_sr_04" x="178" y="495" w="78" h="52" pX="0.5" pY="0.5" oX="56" oY="51" oW="180" oH="180" r="y"/>
+    <sprite n="VWY_shroom_sr_04_glow" x="464" y="444" w="46" h="62" pX="0.5" pY="0.5" oX="59" oY="54" oW="180" oH="180"/>
+    <sprite n="VWY_shroom_sr_04_leg" x="2" y="937" w="40" h="30" pX="0.5" pY="0.5" oX="63" oY="112" oW="180" oH="180" r="y"/>
+    <sprite n="VWY_shroom_sr_05" x="336" y="730" w="62" h="65" pX="0.5" pY="0.5" oX="80" oY="59" oW="180" oH="180"/>
+    <sprite n="VWY_shroom_sr_05_glow" x="346" y="669" w="52" h="59" pX="0.5" pY="0.5" oX="82" oY="63" oW="180" oH="180" r="y"/>
+    <sprite n="VWY_shroom_sr_05_leg" x="62" y="791" w="51" h="39" pX="0.5" pY="0.5" oX="81" oY="103" oW="180" oH="180" r="y"/>
+    <sprite n="VWY_torso" x="129" y="579" w="115" h="97" pX="0.5" pY="0.5" oX="92" oY="103" oW="300" oH="300"/>
+</TextureAtlas>

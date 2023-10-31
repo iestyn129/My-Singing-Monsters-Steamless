@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-16"?>
+<menu>
+
+	<element name="TopElement">
+		<size dependentOnElement="element:name()" dependentOnComponent="blackout"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />		
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+		</touchComponent>
+		<spriteComponent name="blackout">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component("maskX"):SetFloat(0)
+				component("maskY"):SetFloat(0)
+				component("maskW"):SetFloat(1)
+				component("maskH"):SetFloat(1)
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+
+				if(lua_sys.screenWidth() > lua_sys.screenHeight()) then
+					component("size"):SetFloat(lua_sys.screenWidth() * 1.1)
+				else
+					component("size"):SetFloat(lua_sys.screenHeight() * 1.1)
+				end
+				
+				component("layer"):SetString("Loading")
+			</event>
+		</spriteComponent>		
+		<element name="SpinnerElement">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+			<spriteComponent name="LoaderBG" >
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+				<event name="onInit" params="component, element" >
+					component("spriteName"):SetString("gfx/monster_spinner_overlay")
+					component("layer"):SetString("Loading")
+					component("size"):SetFloat(game.hudScale() * 0.25)
+				</event>
+				<event name="onTick" params="component, element, dt">
+					local newRot = component("rotation"):GetFloat() + (120 * dt)
+					component("rotation"):SetFloat(newRot)
+				</event>
+			</spriteComponent>
+		</element>
+	</element>
+		
+</menu>

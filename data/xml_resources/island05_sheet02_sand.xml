@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cbbb1c869ccedbe5577fe09442d0e565:492197f6e7a5607f2b914aa77d80da25:8b870d06a30193e613cfbbd9726399b9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island05_sheet02_sand.png" width="2048" height="2048" hires="true">
+    <sprite n="island05_bowl_middle" x="1695" y="683" w="351" h="520" pX="0.5" pY="0.5" oX="9" oY="0" oW="532" oH="356" r="y"/>
+    <sprite n="island05_bowl_side" x="1695" y="1205" w="348" h="519" pX="0.5" pY="0.5" oX="0" oY="0" oW="520" oH="348" r="y"/>
+    <sprite n="island05_edge_glow_01" x="1225" y="361" w="162" h="472" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_edge_glow_02" x="901" y="77" w="248" h="180" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_glyphs_01" x="1395" y="361" w="608" h="320" pX="0.5" pY="0.5"/>
+    <sprite n="island05_glyphs_02" x="1389" y="683" w="304" h="598" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_rock_edge_01" x="1395" y="1283" w="276" h="268" pX="0.5" pY="0.5"/>
+    <sprite n="island05_rock_edge_02" x="1395" y="1553" w="161" h="382" pX="0.5" pY="0.5" oX="0" oY="0" oW="382" oH="162" r="y"/>
+    <sprite n="island05_sand_cover_01" x="1225" y="835" w="162" h="229" pX="0.5" pY="0.5" oX="1" oY="0" oW="230" oH="162" r="y"/>
+    <sprite n="island05_sand_cover_02" x="891" y="1985" w="166" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_sand_cover_bug" x="901" y="274" w="230" h="162" pX="0.5" pY="0.5"/>
+    <sprite n="island05_sandbowl01_01" x="1141" y="1133" w="70" h="98" pX="0.5" pY="0.5" oX="7" oY="3" oW="86" oH="104"/>
+    <sprite n="island05_sandbowl01_02" x="1213" y="1133" w="70" h="98" pX="0.5" pY="0.5" oX="7" oY="3" oW="86" oH="104"/>
+    <sprite n="island05_sandbowl01_03" x="1063" y="1133" w="76" h="98" pX="0.5" pY="0.5" oX="1" oY="3" oW="86" oH="104"/>
+    <sprite n="island05_sandbowl01_04" x="1285" y="1133" w="98" h="70" pX="0.5" pY="0.5" oX="7" oY="3" oW="86" oH="104" r="y"/>
+    <sprite n="island05_sandbowl01_05" x="1285" y="1205" w="98" h="70" pX="0.5" pY="0.5" oX="7" oY="3" oW="86" oH="104" r="y"/>
+    <sprite n="island05_sandbowl01_06" x="1395" y="1937" w="68" h="98" pX="0.5" pY="0.5" oX="7" oY="3" oW="86" oH="104"/>
+    <sprite n="island05_sandbowl02_01" x="144" y="1990" w="104" h="54" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="114" r="y"/>
+    <sprite n="island05_sandbowl02_02" x="1009" y="1133" w="52" h="100" pX="0.5" pY="0.5" oX="9" oY="9" oW="68" oH="114"/>
+    <sprite n="island05_sandbowl02_03" x="1046" y="1235" w="98" h="52" pX="0.5" pY="0.5" oX="9" oY="11" oW="68" oH="114" r="y"/>
+    <sprite n="island05_sandbowl02_04" x="250" y="1990" w="104" h="54" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="114" r="y"/>
+    <sprite n="island05_sandbowl02_05" x="901" y="1133" w="52" h="104" pX="0.5" pY="0.5" oX="9" oY="5" oW="68" oH="114"/>
+    <sprite n="island05_sandbowl02_06" x="955" y="1133" w="52" h="102" pX="0.5" pY="0.5" oX="7" oY="7" oW="68" oH="114"/>
+    <sprite n="island05_sandbowl03_01" x="356" y="1989" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandbowl03_02" x="452" y="1989" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandbowl03_03" x="548" y="1989" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandbowl03_04" x="699" y="1987" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandbowl03_05" x="795" y="1987" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandbowl03_06" x="1059" y="1985" w="94" h="54" pX="0.5" pY="0.5" oX="7" oY="9" oW="76" oH="112" r="y"/>
+    <sprite n="island05_sandfront_01" x="847" y="1290" w="272" h="693" pX="0.5" pY="0.5" oX="23" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandfront_02" x="1" y="1295" w="284" h="693" pX="0.5" pY="0.5" oX="11" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandfront_03" x="287" y="1294" w="282" h="693" pX="0.5" pY="0.5" oX="13" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandfront_04" x="901" y="438" w="272" h="693" pX="0.5" pY="0.5" oX="23" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandfront_05" x="571" y="1292" w="274" h="693" pX="0.5" pY="0.5" oX="21" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandfront_06" x="1121" y="1289" w="272" h="693" pX="0.5" pY="0.5" oX="23" oY="27" oW="304" oH="720"/>
+    <sprite n="island05_sandside_01" x="747" y="1" w="152" h="1287" pX="0.5" pY="0.5" oX="25" oY="5" oW="188" oH="1292"/>
+    <sprite n="island05_sandside_02" x="441" y="1" w="146" h="1289" pX="0.5" pY="0.5" oX="33" oY="3" oW="188" oH="1292"/>
+    <sprite n="island05_sandside_03" x="147" y="1" w="140" h="1291" pX="0.5" pY="0.5" oX="35" oY="1" oW="188" oH="1292"/>
+    <sprite n="island05_sandside_04" x="1" y="1" w="144" h="1292" pX="0.5" pY="0.5" oX="35" oY="0" oW="188" oH="1292"/>
+    <sprite n="island05_sandside_05" x="289" y="1" w="150" h="1289" pX="0.5" pY="0.5" oX="27" oY="3" oW="188" oH="1292"/>
+    <sprite n="island05_sandside_06" x="589" y="1" w="156" h="1287" pX="0.5" pY="0.5" oX="21" oY="5" oW="188" oH="1292"/>
+    <sprite n="scarab_01" x="1121" y="259" w="27" h="13" pX="0.5" pY="0.5" oX="55" oY="65" oW="132" oH="116"/>
+    <sprite n="scarab_02" x="1121" y="1" w="32" h="19" pX="0.5" pY="0.5" oX="51" oY="59" oW="132" oH="116"/>
+    <sprite n="scarab_03" x="1121" y="22" w="31" h="53" pX="0.5" pY="0.5" oX="42" oY="52" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_04" x="1047" y="1" w="68" h="39" pX="0.5" pY="0.5" oX="36" oY="48" oW="132" oH="116"/>
+    <sprite n="scarab_05" x="901" y="1239" w="65" h="41" pX="0.5" pY="0.5" oX="35" oY="44" oW="132" oH="116"/>
+    <sprite n="scarab_06" x="1133" y="361" w="84" h="71" pX="0.5" pY="0.5" oX="31" oY="6" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_07" x="901" y="1" w="47" h="74" pX="0.5" pY="0.5" oX="30" oY="42" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_08" x="968" y="1237" w="76" h="51" pX="0.5" pY="0.5" oX="29" oY="42" oW="132" oH="116"/>
+    <sprite n="scarab_09" x="1146" y="1233" w="77" h="50" pX="0.5" pY="0.5" oX="29" oY="45" oW="132" oH="116"/>
+    <sprite n="scarab_10" x="92" y="1990" w="50" h="56" pX="0.5" pY="0.5" oX="50" oY="45" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_11" x="644" y="1987" w="53" h="60" pX="0.5" pY="0.5" oX="46" oY="45" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_12" x="1" y="1990" w="89" h="57" pX="0.5" pY="0.5" oX="31" oY="40" oW="132" oH="116"/>
+    <sprite n="scarab_13" x="950" y="1" w="95" h="73" pX="0.5" pY="0.5" oX="33" oY="7" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_14" x="1175" y="1066" w="91" h="65" pX="0.5" pY="0.5" oX="18" oY="33" oW="132" oH="116"/>
+    <sprite n="scarab_15" x="1465" y="1937" w="70" h="93" pX="0.5" pY="0.5" oX="22" oY="37" oW="132" oH="116" r="y"/>
+    <sprite n="scarab_16" x="1268" y="1066" w="90" h="65" pX="0.5" pY="0.5" oX="43" oY="26" oW="132" oH="116" r="y"/>
+    <sprite n="w5_cloud" x="1155" y="1" w="858" h="358" pX="0.5" pY="0.5" oX="15" oY="27" oW="900" oH="420"/>
+</TextureAtlas>

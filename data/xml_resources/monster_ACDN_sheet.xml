@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cc52cc3dc59676522aee52bbeffa8b03:744d74a2963a8328eeebc1a1d52ba442:cd1d065f35ecfa07e4c0266a32c0b6b6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ACDN_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ACDF_beard" x="400" y="862" w="71" h="127" pX="0.5" pY="0.5" oX="8" oY="7" oW="84" oH="141"/>
+    <sprite n="ACDF_body" x="4" y="4" w="199" h="320" pX="0.5" pY="0.5" oX="8" oY="5" oW="207" oH="327"/>
+    <sprite n="ACDF_body_RARE" x="4" y="328" w="199" h="308" pX="0.5" pY="0.5" oX="8" oY="17" oW="207" oH="327"/>
+    <sprite n="ACDF_eyelids_01" x="560" y="185" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_01_RARE" x="605" y="185" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_02" x="650" y="185" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_02_RARE" x="475" y="862" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_03" x="520" y="862" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_03_RARE" x="565" y="862" w="41" h="82" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57" r="y"/>
+    <sprite n="ACDF_eyelids_04" x="782" y="4" w="82" h="41" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57"/>
+    <sprite n="ACDF_eyelids_04_RARE" x="868" y="4" w="82" h="41" pX="0.5" pY="0.5" oX="7" oY="8" oW="96" oH="57"/>
+    <sprite n="ACDF_head" x="646" y="4" w="132" h="177" pX="0.5" pY="0.5" oX="7" oY="4" oW="147" oH="189"/>
+    <sprite n="ACDF_head_RARE" x="4" y="640" w="168" h="284" pX="0.5" pY="0.5" oX="18" oY="2" oW="200" oH="300"/>
+    <sprite n="ACDF_left_antler" x="176" y="640" w="165" h="245" pX="0.5" pY="0.5" oX="7" oY="8" oW="258" oH="180" r="y"/>
+    <sprite n="ACDF_left_antler_RARE" x="207" y="283" w="237" h="237" pX="0.5" pY="0.5" oX="13" oY="11" oW="260" oH="260"/>
+    <sprite n="ACDF_left_ear" x="475" y="948" w="44" h="70" pX="0.5" pY="0.5" oX="2" oY="2" oW="81" oH="51" r="y"/>
+    <sprite n="ACDF_left_ear_RARE" x="782" y="92" w="79" h="46" pX="0.5" pY="0.5" oX="10" oY="10" oW="70" oH="100" r="y"/>
+    <sprite n="ACDF_left_lowerleg" x="448" y="280" w="119" h="226" pX="0.5" pY="0.5" oX="8" oY="7" oW="237" oH="132" r="y"/>
+    <sprite n="ACDF_left_lowerleg_RARE" x="571" y="271" w="119" h="226" pX="0.5" pY="0.5" oX="8" oY="7" oW="237" oH="132" r="y"/>
+    <sprite n="ACDF_left_upperleg" x="399" y="524" w="120" h="95" pX="0.5" pY="0.5" oX="6" oY="1" oW="141" oH="102"/>
+    <sprite n="ACDF_left_upperleg_RARE" x="523" y="510" w="120" h="95" pX="0.5" pY="0.5" oX="6" oY="1" oW="141" oH="102"/>
+    <sprite n="ACDF_mouth_01" x="266" y="889" w="55" h="32" pX="0.5" pY="0.5" oX="18" oY="13" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_01_RARE" x="758" y="234" w="55" h="32" pX="0.5" pY="0.5" oX="18" oY="13" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_02" x="782" y="49" w="82" h="39" pX="0.5" pY="0.5" oX="3" oY="8" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_02_RARE" x="868" y="49" w="82" h="39" pX="0.5" pY="0.5" oX="3" oY="8" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_03" x="865" y="92" w="75" h="43" pX="0.5" pY="0.5" oX="6" oY="9" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_03_RARE" x="944" y="121" w="75" h="43" pX="0.5" pY="0.5" oX="6" oY="9" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_04" x="567" y="948" w="57" h="64" pX="0.5" pY="0.5" oX="12" oY="7" oW="87" oH="69" r="y"/>
+    <sprite n="ACDF_mouth_04_RARE" x="954" y="4" w="64" h="57" pX="0.5" pY="0.5" oX="12" oY="7" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_05" x="954" y="65" w="62" h="52" pX="0.5" pY="0.5" oX="21" oY="4" oW="87" oH="69" r="y"/>
+    <sprite n="ACDF_mouth_05_RARE" x="865" y="139" w="62" h="52" pX="0.5" pY="0.5" oX="21" oY="4" oW="87" oH="69" r="y"/>
+    <sprite n="ACDF_mouth_06" x="345" y="4" w="51" h="41" pX="0.5" pY="0.5" oX="27" oY="8" oW="87" oH="69" r="y"/>
+    <sprite n="ACDF_mouth_06_RARE" x="345" y="49" w="51" h="41" pX="0.5" pY="0.5" oX="27" oY="8" oW="87" oH="69" r="y"/>
+    <sprite n="ACDF_mouth_07" x="176" y="889" w="41" h="33" pX="0.5" pY="0.5" oX="27" oY="14" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_07_RARE" x="221" y="889" w="41" h="33" pX="0.5" pY="0.5" oX="27" oY="14" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_08" x="345" y="94" w="51" h="37" pX="0.5" pY="0.5" oX="21" oY="14" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_08_RARE" x="345" y="135" w="51" h="37" pX="0.5" pY="0.5" oX="21" oY="14" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_09" x="782" y="142" w="59" h="46" pX="0.5" pY="0.5" oX="17" oY="10" oW="87" oH="69"/>
+    <sprite n="ACDF_mouth_09_RARE" x="695" y="185" w="59" h="46" pX="0.5" pY="0.5" oX="17" oY="10" oW="87" oH="69"/>
+    <sprite n="ACDF_pupil" x="207" y="144" w="14" h="15" pX="0.5" pY="0.5" oX="6" oY="6" oW="27" oH="27" r="y"/>
+    <sprite n="ACDF_pupil_RARE" x="225" y="144" w="14" h="15" pX="0.5" pY="0.5" oX="6" oY="6" oW="27" oH="27" r="y"/>
+    <sprite n="ACDF_right_antler" x="400" y="4" w="242" h="177" pX="0.5" pY="0.5" oX="5" oY="3" oW="252" oH="183"/>
+    <sprite n="ACDF_right_antler_RARE" x="345" y="631" w="219" h="227" pX="0.5" pY="0.5" oX="22" oY="17" oW="260" oH="260"/>
+    <sprite n="ACDF_right_ear" x="931" y="168" w="58" h="44" pX="0.5" pY="0.5" oX="3" oY="8" oW="69" oH="60"/>
+    <sprite n="ACDF_right_ear_RARE" x="523" y="948" w="40" h="69" pX="0.5" pY="0.5" oX="16" oY="16" oW="70" oH="100"/>
+    <sprite n="ACDF_right_lowerleg" x="207" y="176" w="188" h="103" pX="0.5" pY="0.5" oX="5" oY="8" oW="201" oH="114"/>
+    <sprite n="ACDF_right_lowerleg_RARE" x="207" y="524" w="188" h="103" pX="0.5" pY="0.5" oX="5" oY="8" oW="201" oH="114"/>
+    <sprite n="ACDF_right_upperleg" x="168" y="928" w="157" h="91" pX="0.5" pY="0.5" oX="7" oY="1" oW="171" oH="99"/>
+    <sprite n="ACDF_right_upperleg_RARE" x="399" y="185" w="157" h="91" pX="0.5" pY="0.5" oX="7" oY="1" oW="171" oH="99"/>
+    <sprite n="ACDF_shadow" x="329" y="889" w="67" h="128" pX="0.5" pY="0.5" oX="6" oY="5" oW="141" oH="78" r="y"/>
+    <sprite n="ACDF_tail" x="4" y="928" w="78" h="92" pX="0.5" pY="0.5" oX="6" oY="7" oW="105" oH="93" r="y"/>
+    <sprite n="ACDF_tail_end" x="758" y="192" w="55" h="38" pX="0.5" pY="0.5" oX="8" oY="10" oW="54" oH="75" r="y"/>
+    <sprite n="ACDF_tail_end_RARE" x="817" y="192" w="38" h="55" pX="0.5" pY="0.5" oX="8" oY="10" oW="54" oH="75"/>
+    <sprite n="ACDF_tail_RARE" x="86" y="928" w="78" h="92" pX="0.5" pY="0.5" oX="6" oY="7" oW="105" oH="93" r="y"/>
+    <sprite n="spore_ACDN" x="207" y="4" w="132" h="136" pX="0.5" pY="0.5" oX="18" oY="23" oW="172" oH="172" r="y"/>
+</TextureAtlas>

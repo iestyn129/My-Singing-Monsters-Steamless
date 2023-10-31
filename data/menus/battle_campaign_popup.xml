@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu for selecting a battle campaign -->
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onInit" params="element">
+		<![CDATA[	
+			include("BattleCampaignPopupUI").onInit(element)
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[	
+			include("BattleCampaignPopupUI").onPostInit(element)
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			include("BattleCampaignPopupUI").onTick(element, dt)
+		]]>
+	</event>
+
+	<event name="queuePop" params="element">
+		<![CDATA[
+			include("BattleCampaignPopupUI").queuePop(element)
+		]]>
+	</event>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="lua_sys.screenHeight() * 2.0" priorityOffset="21" />
+		
+		<spriteComponent name="Sprite">
+			<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				--component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+
+	<!-- contents -->
+	<element name="ItemList">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+
+		<swipeComponent name="Swiper">
+
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("smoothMode"):SetInt(1)
+				]]>
+			</event>
+			
+			<event name="refresh" params="component, element">
+				<![CDATA[
+						include("ScrollingListHelper").SwiperRefresh(component, element)
+				]]>
+			</event>
+			
+			<event name="onTick" params="component, element, dt">
+				<![CDATA[
+					include("ScrollingListHelper").SwiperTick(component, element, dt)
+				]]>
+			</event>
+
+			<event name="scrollToFirstEntry" params="component, element">
+				<![CDATA[
+					include("BattleCampaignPopupUI").SwiperScrollToFirstEntry(component, element)
+				]]>
+			</event>
+			
+		</swipeComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>
+		</touchComponent>
+
+		<event name="onInit" params ="element">
+			<![CDATA[
+				include("BattleCampaignPopupUI").ItemListOnInit(element)
+			]]>
+		</event>
+		
+		<event name="clear" params="element">
+			<![CDATA[
+				include("ScrollingListHelper").ListClear(element)
+			]]>
+		</event>
+		
+		<event name="repopulate" params="element">
+			<![CDATA[
+				element:DoStoredScript("clear")
+				element:DoStoredScript("populate")
+			]]>
+		</event>
+
+		<event name="populate" params="element">
+			<![CDATA[
+				include("BattleCampaignPopupUI").ItemListPopulate(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				include("BattleCampaignPopupUI").ItemListOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="onCardSelected" params="element">
+			<![CDATA[
+				include("BattleCampaignPopupUI").ItemListOnCardSelected(element)
+			]]>
+		</event>
+
+		<event name="onCardUnselected" params="element">
+			<![CDATA[
+				include("BattleCampaignPopupUI").ItemListOnCardUnselected(element)
+			]]>
+		</event>
+		
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="38*game.hudScale()" priorityOffset="-8" />
+		<ninesliceComponent name="Sprite">
+			<size w="216*game.hudScale()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(49.0)
+					component("bottomHeight"):SetFloat(49.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="200*game.hudScale()" h="20*game.hudScale()"  />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					-- component:setColor(0.71, 0.45, 0.94) -- purple
+					component:setColor(0.93, 0.60, 0.11) --orange
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("BATTLE_CAMPAIGNS")
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="FadeLayer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="14" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<template type="template_battle_campaign_infopane" name="InfoPane"/>
+	
+	<template type="template_battle_campaign_infopane_expired" name="InfoPane_Expired">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="80*game.menuScaleX()" yOffset="-4*game.menuScaleY()" priorityOffset="12" />
+	</template>
+	
+	
+</menu>

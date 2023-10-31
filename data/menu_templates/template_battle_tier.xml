@@ -1,0 +1,201 @@
+<template name="template_battle_tier" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$scale" equals="1.0" />
+	<defaultTemplateVar name="$animated" equals="0" />
+
+	<element name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("textPadding"):SetInt(3*game.menuScaleX())
+						component("size"):SetFloat(0.3*element:parent()("scale"):GetFloat()*game.menuScaleY())
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString(element:parent()("layer"):GetString())
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+	<event name="onInit" params="element">
+			<![CDATA[
+				element("enabled"):SetInt(1)
+
+				local layer = "$layer"
+				if element:HasVar("layer") then
+						layer = element("layer"):GetString()
+				end
+				element("layer"):SetString(layer)
+
+				local scale = "$scale"
+				if element:HasVar("scale") then
+						scale = element("scale"):GetFloat()
+				end
+				element("scale"):SetFloat(scale)
+
+				element("centered"):SetInt(1)
+
+				if not element:HasVar("currentStars") then
+					element("currentStars"):SetInt(2)
+				end
+
+				if not element:HasVar("totalStars") then
+					element("totalStars"):SetInt(4)
+				end
+			]]>
+		</event>
+
+	<event name="clear" params="element">
+		<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+
+				MenuHelpers.ForEachEntry(element,
+						function(entry)
+							element:RemoveElement(entry)
+						end,
+						{ entryName = "star" }
+				)
+		]]>
+	</event>
+
+	<event name="populate" params="element">
+			<![CDATA[
+
+				local MenuHelpers = include("MenuHelpers")
+
+				-- clear
+				MenuHelpers.ForEachEntry(element,
+						function(entry)
+							element:RemoveElement(entry)
+						end,
+						{ entryName = "star" }
+				)
+
+				local numStars = element("totalStars"):GetInt()
+				for i=0,numStars-1 do
+					
+					local starTemplate = $animated == 0 and "template_battle_tier_star" or "template_battle_tier_star_animated"
+					
+					local entry = menu:addTemplateElement(starTemplate, "star"..i, element)
+					
+					entry:setOrientation(MenuOrientation(0, 2*game.menuScaleX(), 0, LEFT, VCENTER))
+					entry:setRelativeObjectAnchors(HCENTER, VCENTER)
+					entry("layer"):SetString(element("layer"):GetString())
+					entry("scale"):SetFloat(element("scale"):GetFloat())
+					entry:init()
+					entry:setPositionBroadcast(true)
+					entry:postInit()
+				end
+
+				element:calculatePosition()
+			]]>
+		</event>
+
+	<event name="update" params="element">
+			<![CDATA[
+				if element:HasVar("tierName") then
+					element["Label"]["Text"]("autoScale"):SetInt(1)
+					element["Label"]["Text"]("text"):SetString(element("tierName"):GetString())
+				end
+
+				local MenuHelpers = include("MenuHelpers")
+				local currentStars = element("currentStars"):GetInt()
+				MenuHelpers.ForEachEntry(element,
+						function(entry, i)
+							if i < currentStars then
+								entry:DoStoredScript("enable")
+							else
+								entry:DoStoredScript("disable")
+							end
+
+						end,
+						{ entryName = "star" }
+				)
+			]]>
+		</event>
+
+	<event name="center" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+
+			-- center everything:
+
+			local scale = element("scale"):GetFloat()
+
+			local targets = {}
+			table.insert(targets, element:GetElement("Label"))
+			table.insert(targets, MenuHelpers.CreateSpacer(4*scale*game.menuScaleX(), 0))
+
+			MenuHelpers.ForEachEntry(element,
+				function(entry)
+					table.insert(targets, entry)
+				end,
+				{ entryName = "star" }
+				)
+
+			--if element("centered"):GetInt() == 1 then
+				MenuHelpers.CenterHorizontally(targets)
+			--else
+			--	MenuHelpers.ApplyHorizontalLayout(targets)
+			--end
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+			<![CDATA[
+				element:DoStoredScript("populate")
+				element:DoStoredScript("update")
+				element:DoStoredScript("center")
+			]]>
+		</event>
+
+	<event name="updateClipping" params="element">
+			<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.SetClipFrom(element:GetElement("Label"):GetComponent("Text"), element)
+
+				MenuHelpers.ForEachEntry(element,
+						function(entry)
+							MenuHelpers.SetClipFrom(entry:GetComponent("Sprite"), element)
+						end,
+						{ entryName = "star" }
+				)
+		]]>
+		</event>
+
+	<event name="show" params="element">
+			<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				element["Label"]["Text"]("visible"):SetInt(1)
+				MenuHelpers.ForEachEntry(element,
+					function(entry)
+						entry["Sprite"]("visible"):SetInt(1)
+					end,
+					{ entryName = "star" }
+					)
+			]]>
+		</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+			element["Label"]["Text"]("visible"):SetInt(0)
+			MenuHelpers.ForEachEntry(element,
+				function(entry)
+					entry["Sprite"]("visible"):SetInt(0)
+				end,
+				{ entryName = "star" }
+				)
+			]]>
+		</event>
+
+</template>

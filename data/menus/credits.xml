@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="7" />
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component:GetVar("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+
+				component:GetVar("mouseScrollSpeed"):SetFloat(0.5)
+				
+				local halfScreen = lua_sys.screenHeight()/2 
+				local first = element:parent():GetComponent("BBBLogo")
+				if(first) then
+					halfScreen = halfScreen + first:absH()/2;
+				end
+				local totalHeight = element:parent()("totalHeight"):GetInt()
+				if(totalHeight &gt; element:parent():GetElement("bg"):absH()) then
+					--make scrollsize overly large to prevent SwiperComponent "rollback" when scrolling past credits natural boundaries:
+					component:setScrollSize(totalHeight - element:absH() + halfScreen*3)
+				else
+					component:setScrollSize(0)
+				end
+			</event>
+			<event name="StepScrolling" params="component, element">
+				<![CDATA[
+				
+				local first = element:parent():GetComponent("BBBLogo")
+				if first then
+					local halfScreen = (lua_sys.screenHeight()/2 + first:absH()/2);
+					if(element:parent()("touchDown"):GetInt()==0) then
+
+						local newYPos = component:scrollOffset() - element:parent()("tickIncr"):GetFloat()
+						component:setScrollOffset(newYPos)
+						first("yOffset"):SetFloat(component:scrollOffset() + halfScreen)
+					
+					
+					else
+						
+						--don't allow scrolling off bottom of screen so that it doesn't take forever for credits to roll back to bottom of screen)
+						if(component:scrollOffset() < 0) then
+
+							first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), 
+								component:scrollOffset() + halfScreen ))
+						else
+							--'reset' scrollOffset so it doesn't jump around later when released/dragged back up
+							component:setScrollOffset(0)
+							first("yOffset"):SetFloat(component:scrollOffset() + halfScreen)
+						end
+					end
+				end
+				
+				element:parent()("tickIncr"):SetFloat(0)
+				]]>
+			</event>
+		</swipeComponent>
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("FrontPopUps")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				game.setClipping("FrontClipping", 0, (0.022*lua_sys.screenHeight())*lua_sys.deviceScaleY(), lua_sys.screenWidth()*lua_sys.deviceScaleX(), (0.95 * lua_sys.screenHeight())*lua_sys.deviceScaleY())
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onTouchDown" params="component, element">
+				element:parent()("touchDown"):SetInt(1)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element:parent()("touchDown"):SetInt(0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element:parent()("touchDown"):SetInt(0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="175*game.hudScale()" h="30*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("Tutorial")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="30*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("MAIN_MENU_CREDITS"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</textComponent>
+	</element>
+	
+	<spriteComponent name="BBBLogo">
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/credits_BBB_logo")
+			component("size"):SetFloat(0.75*(lua_sys.screenWidth()/1024.0))
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</spriteComponent>
+	
+	<spriteComponent name="CMFLogo">
+		<position relativeTo="element:name()" component="BBBLogo" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.hudScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/credits_CMF_logo")
+			component("size"):SetFloat(0.75*(lua_sys.screenWidth()/1024.0))
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</spriteComponent>
+	
+	<spriteComponent name="HacksLogo">
+		<position relativeTo="element:name()" component="CMFLogo" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.hudScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/credits_HACKS_logo")
+			component("size"):SetFloat(0.75*(lua_sys.screenWidth()/1024.0))
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</spriteComponent>
+
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="4" />
+				
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.showContextBar()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_back")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BACK")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+	
+	<event name="onInit" params="element">
+		collectgarbage("stop")
+		
+		element("tickIncr"):SetInt(0)
+		element("touchDown"):SetInt(0)
+		
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+	
+		local credits = game.CreditsData()
+		game.read(credits)
+		
+		local totalHeight = element:GetComponent("BBBLogo"):absH() + element:GetComponent("HacksLogo"):absH() + element:GetComponent("CMFLogo"):absH()
+		
+		local paddingTop = {}
+		local paddingBottom = {}
+		
+		for i=0,credits.header:size()-1 do 
+			paddingTop[credits.header[i].header] = credits.header[i].paddingTop
+			paddingBottom[credits.header[i].header] = credits.header[i].paddingBottom
+		end
+		
+		local previous = nil
+		for i=0,credits.credit:size()-1 do 
+		
+			if(credits.credit[i].title == "CREDIT_MSM_TEAM") then
+				
+				template = menu:addTemplateElement("template_MSMLogo", "CreditsImage", element)
+				totalHeight = totalHeight + template:absH()
+				if(previous == nil) then
+					template:relativeTo(element:GetComponent("HacksLogo"))
+					template:setOrientation(lua_sys.MenuOrientation(0,30*game.hudScale(), 0, lua_sys.HCENTER, lua_sys.TOP))
+					template:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+				else
+					template:relativeTo(previous)
+					template:setOrientation(lua_sys.MenuOrientation(0, paddingBottom[credits.credit[i - 1].header] + paddingTop[credits.credit[i].header], 0, lua_sys.HCENTER, lua_sys.TOP))
+					template:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+
+					totalHeight = totalHeight + paddingBottom[credits.credit[i - 1].header] + paddingTop[credits.credit[i].header]
+				end
+				
+				previous = template
+				template:init()	
+				template:setPositionBroadcast(true)
+				
+			end
+		
+			template = menu:addTemplateElement("template_credit", "credit"..i, element)
+			if(previous == nil) then
+				template:relativeTo(element:GetComponent("HacksLogo"))
+				template:setOrientation(lua_sys.MenuOrientation(0,30*game.hudScale(), 0, lua_sys.HCENTER, lua_sys.TOP))
+				template:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+			else
+				template:relativeTo(previous)
+				template:setOrientation(lua_sys.MenuOrientation(0, paddingBottom[credits.credit[i - 1].header] + paddingTop[credits.credit[i].header], 0, lua_sys.HCENTER, lua_sys.TOP))
+				template:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+				totalHeight = totalHeight + paddingBottom[credits.credit[i - 1].header] + paddingTop[credits.credit[i].header]
+			end
+			
+			template["Text"]("font"):SetString(game.getTextFont())
+			template["Text"]("text"):SetString(game.getLocalizedText(credits.credit[i].title))
+
+			previous = template
+			template:init()	
+			template:setPositionBroadcast(true)
+			
+			if(credits.credit[i].header == "H1") then
+				template["Text"]("size"):SetFloat(0.4*(lua_sys.screenWidth()/480))
+				template["Text"]:setColor(0.15, 0.69, 0.97)
+			elseif(credits.credit[i].header == "H2") then
+				template["Text"]("size"):SetFloat(0.32*(lua_sys.screenWidth()/480))
+				template["Text"]:setColor(0.43, 1.0, 0.25)
+			else
+				template["Text"]("size"):SetFloat(0.28*(lua_sys.screenWidth()/480))
+			end
+			totalHeight = totalHeight + template:absH()
+		end
+		
+		element("totalHeight"):SetInt(totalHeight)
+		element("numCredits"):Set(credits.credit:size()-1)
+		
+		element:GetElement("bg"):GetComponent("Swiper"):DoStoredScript("StepScrolling")
+	</event>	
+	
+	<event name="onPostInit" params="element">
+		game.hideContextBar()
+		element:GetElement("bg"):GetComponent("Swiper"):DoStoredScript("StepScrolling")
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+
+				if(transitionState == 0) then
+					
+					element("tickIncr"):SetFloat(dt*35)
+					element:GetElement("bg"):GetComponent("Swiper"):DoStoredScript("StepScrolling")
+
+					if(element:GetElement("credit"..(element("numCredits"):GetInt())):absY() + element:GetElement("credit"..(element("numCredits"):GetInt())):absH() < element:GetElement("bg"):absY()) then
+						game.popPopUp()
+					end
+					
+					collectgarbage("step", 20)
+				else
+					local transitionTime = element("transitionTime"):GetFloat()
+					element:GetElement("bg"):GetComponent("Swiper"):DoStoredScript("StepScrolling")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime > 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:GetElement("bg"):GetComponent("Swiper"):DoStoredScript("StepScrolling")
+					elseif(transitionTime < 0.0) then
+						element:root():popPopUp()
+						game.showContextBar()
+						manager:setContext("OPTIONS")
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+		collectgarbage("collect")
+		collectgarbage("restart")
+	</event>
+	
+</menu>

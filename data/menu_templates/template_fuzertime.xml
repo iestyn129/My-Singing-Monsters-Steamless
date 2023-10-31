@@ -1,0 +1,89 @@
+<template name="template_fuzertime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+	
+	<event name="onInit" params="element">
+		element("visible"):SetInt(1)
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(element("visible"):GetInt() == 1) then
+				local timeLeft = game.timeLeftToFuze()
+				
+				if(timeLeft <= 0) then
+					element:DoStoredScript("setInvisible")
+				else
+					element["Stat"]("text"):SetString(": "..game.timeToString(game.timeLeftToFuze()))
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="setVisible" params="element">
+		element("visible"):SetInt(1)
+		element["Frame"]("visible"):SetInt(1)
+		element["Text"]("visible"):SetInt(1)
+		element["Stat"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element("visible"):SetInt(0)
+		element["Frame"]("visible"):SetInt(0)
+		element["Text"]("visible"):SetInt(0)
+		element["Stat"]("visible"):SetInt(0)
+	</event>
+
+	<ninesliceComponent name="Frame">
+		<size w="290*(lua_sys.screenWidth()/960.0)" h="45*game.hudScale()" />
+		<event name="onInit" params="component, element">
+			component("topHeight"):SetFloat(44.0)
+			component("bottomHeight"):SetFloat(44.0)
+			component("leftWidth"):SetFloat(50.0)
+			component("rightWidth"):SetFloat(50.0)
+			component("size"):SetFloat(0.5)
+			component("includeBorder"):SetInt(1)
+			component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+			component("layer"):SetString("PopUps")
+		</event>
+	</ninesliceComponent>
+	
+	<textComponent name="Text">
+		<size w="75*game.menuScaleX()" h="32*game.hudScale()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="14*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(1)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.18*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString(game.getLocalizedText("LABEL_DIAMOND_TIME"))
+			component("layer"):SetString("PopUps")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+		</event>
+	</textComponent>
+	
+	<textComponent name="Stat">
+		<size w="60*game.menuScaleX()" h="32*game.menuScaleY()" />
+		<position relativeTo="element:name()" component="Text" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.18*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			
+			component("text"):SetString(": "..game.timeToString(game.timeLeftToFuze()))
+			if(game.hasFuzerModifier()) then
+				component:setColor(0.31, 0.94, 0.26)
+			end
+
+			component("layer"):SetString("PopUps")
+			component("autoScale"):SetInt(1)
+			]]>
+		</event>
+	</textComponent>
+	
+</template>

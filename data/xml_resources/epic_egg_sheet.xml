@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b73a0ee33aee13508bb2c0bfdc0ca508:cde7ccd1df424b9fe8e4368f2ae32726:36c52b6a99e4cc59a23abadc9f75c65a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/epic_egg_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="epic_egg_dot.png" x="118" y="247" w="46" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="epic_egg_glow.png" x="2" y="2" w="163" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="epic_egg_swipe_a_01.png" x="221" y="409" w="99" h="88" pX="0.5" pY="0.5" oX="27" oY="26" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_a_02.png" x="2" y="460" w="100" h="91" pX="0.5" pY="0.5" oX="26" oY="23" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_a_03.png" x="2" y="553" w="96" h="74" pX="0.5" pY="0.5" oX="25" oY="18" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_a_04.png" x="112" y="405" w="107" h="84" pX="0.5" pY="0.5" oX="25" oY="7" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_a_05.png" x="282" y="306" w="110" h="101" pX="0.5" pY="0.5" oX="25" oY="4" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_a_06.png" x="2" y="271" w="110" h="109" pX="0.5" pY="0.5" oX="25" oY="4" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_01.png" x="420" y="218" w="90" h="113" pX="0.5" pY="0.5" oX="6" oY="6" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_02.png" x="454" y="2" w="55" h="39" pX="0.5" pY="0.5" oX="5" oY="6" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_03.png" x="394" y="442" w="94" h="60" pX="0.5" pY="0.5" oX="5" oY="6" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_04.png" x="156" y="310" w="108" h="93" pX="0.5" pY="0.5" oX="5" oY="6" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_05.png" x="394" y="333" w="108" h="107" pX="0.5" pY="0.5" oX="5" oY="6" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_b_06.png" x="167" y="128" w="125" h="108" pX="0.5" pY="0.5" oX="5" oY="6" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_c_01.png" x="127" y="142" w="30" h="52" pX="0.5" pY="0.5" oX="36" oY="0" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_c_02.png" x="114" y="295" w="40" h="61" pX="0.5" pY="0.5" oX="27" oY="0" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_c_03.png" x="322" y="409" w="70" h="74" pX="0.5" pY="0.5" oX="14" oY="0" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_c_04.png" x="104" y="491" w="97" h="76" pX="0.5" pY="0.5" oX="12" oY="0" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_c_05.png" x="2" y="382" w="108" h="76" pX="0.5" pY="0.5" oX="12" oY="0" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_c_06.png" x="434" y="102" w="76" h="114" pX="0.5" pY="0.5" oX="12" oY="0" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_d_01.png" x="454" y="43" w="52" h="57" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_d_02.png" x="118" y="205" w="47" h="40" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114" r="y"/>
+    <sprite n="epic_egg_swipe_d_03.png" x="2" y="205" w="114" h="64" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_d_04.png" x="167" y="238" w="113" h="70" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_d_05.png" x="294" y="234" w="124" h="70" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_d_06.png" x="305" y="82" w="127" h="70" pX="0.5" pY="0.5" oX="17" oY="3" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_01.png" x="167" y="82" w="136" h="44" pX="0.5" pY="0.5" oX="8" oY="29" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_02.png" x="2" y="142" w="123" h="61" pX="0.5" pY="0.5" oX="21" oY="29" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_03.png" x="203" y="499" w="85" h="76" pX="0.5" pY="0.5" oX="59" oY="29" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_04.png" x="294" y="154" w="124" h="78" pX="0.5" pY="0.5" oX="20" oY="29" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_05.png" x="313" y="2" w="139" h="78" pX="0.5" pY="0.5" oX="5" oY="29" oW="144" oH="114"/>
+    <sprite n="epic_egg_swipe_e_06.png" x="167" y="2" w="144" h="78" pX="0.5" pY="0.5" oX="0" oY="29" oW="144" oH="114"/>
+</TextureAtlas>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:aecb6db5cab5b7dc4095da1b4c6a2fcf:0c0abc9b8465cac1ff828866e0d593c6:c6c462f5ea12a1f21d3c10de07ba4718$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U03_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U03_body" x="248" y="488" w="177" h="87" pX="0.5" pY="0.5" oX="4" oY="10" oW="192" oH="108"/>
+    <sprite n="U03_eyelights" x="153" y="782" w="58" h="42" pX="0.5" pY="0.5" oX="11" oY="11" oW="80" oH="64"/>
+    <sprite n="U03_feather_big_1" x="242" y="666" w="142" h="42" pX="0.5" pY="0.5" oX="7" oY="8" oW="160" oH="56"/>
+    <sprite n="U03_feather_big_2" x="2" y="690" w="156" h="51" pX="0.5" pY="0.5" oX="6" oY="9" oW="172" oH="68"/>
+    <sprite n="U03_feather_big_3" x="383" y="729" w="127" h="40" pX="0.5" pY="0.5" oX="10" oY="8" oW="148" oH="56"/>
+    <sprite n="U03_feathers_1" x="427" y="497" w="80" h="84" pX="0.5" pY="0.5" oX="12" oY="13" oW="108" oH="104" r="y"/>
+    <sprite n="U03_feathers_2" x="422" y="583" w="86" h="105" pX="0.5" pY="0.5" oX="9" oY="11" oW="124" oH="108" r="y"/>
+    <sprite n="U03_feathers_3" x="379" y="771" w="110" h="42" pX="0.5" pY="0.5" oX="11" oY="11" oW="132" oH="64"/>
+    <sprite n="U03_foot" x="469" y="2" w="41" h="166" pX="0.5" pY="0.5" oX="7" oY="10" oW="56" oH="188"/>
+    <sprite n="U03_hand" x="2" y="650" w="157" h="38" pX="0.5" pY="0.5" oX="12" oY="11" oW="60" oH="180" r="y"/>
+    <sprite n="U03_head" x="161" y="650" w="79" h="130" pX="0.5" pY="0.5" oX="10" oY="13" oW="100" oH="156"/>
+    <sprite n="U03_key_glow" x="442" y="301" w="64" h="34" pX="0.5" pY="0.5" oX="9" oY="11" oW="84" oH="56"/>
+    <sprite n="U03_keypad" x="2" y="299" w="438" h="187" pX="0.5" pY="0.5" oX="0" oY="8" oW="448" oH="204"/>
+    <sprite n="U03_lowerarm" x="242" y="710" w="139" h="36" pX="0.5" pY="0.5" oX="8" oY="7" oW="52" oH="156" r="y"/>
+    <sprite n="U03_lowerleg" x="386" y="690" w="112" h="37" pX="0.5" pY="0.5" oX="12" oY="10" oW="60" oH="132" r="y"/>
+    <sprite n="U03_pipe_a" x="2" y="488" w="244" h="89" pX="0.5" pY="0.5" oX="9" oY="10" oW="108" oH="264" r="y"/>
+    <sprite n="U03_pipe_b" x="248" y="577" w="172" h="87" pX="0.5" pY="0.5" oX="10" oY="10" oW="108" oH="192" r="y"/>
+    <sprite n="U03_pipe_bump" x="107" y="799" w="42" h="42" pX="0.5" pY="0.5" oX="11" oY="11" oW="64" oH="64"/>
+    <sprite n="U03_pipe_c" x="2" y="743" w="149" h="54" pX="0.5" pY="0.5" oX="10" oY="11" oW="76" oH="172" r="y"/>
+    <sprite n="U03_pipe_d" x="2" y="799" w="103" h="47" pX="0.5" pY="0.5" oX="10" oY="10" oW="68" oH="124" r="y"/>
+    <sprite n="U03_pipe_e" x="2" y="579" w="215" h="69" pX="0.5" pY="0.5" oX="11" oY="10" oW="92" oH="236" r="y"/>
+    <sprite n="U03_pipe_f" x="442" y="337" w="63" h="44" pX="0.5" pY="0.5" oX="10" oY="10" oW="64" oH="84" r="y"/>
+    <sprite n="U03_shadow" x="442" y="383" w="59" h="112" pX="0.5" pY="0.5" oX="8" oY="8" oW="128" oH="76" r="y"/>
+    <sprite n="U03_statue" x="2" y="2" w="465" h="295" pX="0.5" pY="0.5" oX="6" oY="8" oW="484" oH="312"/>
+    <sprite n="U03_upperarm" x="242" y="748" w="135" h="54" pX="0.5" pY="0.5" oX="5" oY="5" oW="68" oH="148" r="y"/>
+    <sprite n="U03_upperleg" x="469" y="170" w="40" h="129" pX="0.5" pY="0.5" oX="10" oY="10" oW="60" oH="148"/>
+</TextureAtlas>

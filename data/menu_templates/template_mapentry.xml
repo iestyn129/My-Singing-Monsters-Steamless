@@ -1,0 +1,113 @@
+<template name="template_mapentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+	
+	<spriteSheetComponent name="Overlay">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			local islandId = element("IslandId"):GetInt()
+			local activeThemeId = game.getActiveIslandTheme(islandId)
+			local sheet = game.islandIconSheetForId(islandId);
+			local sprite = game.islandIconSpriteForId(islandId);
+
+			if(activeThemeId ~= -1) then
+				component("spriteName"):SetString(game.islandThemeIconForId(activeThemeId))
+				sheet = game.islandThemeIconSheetForId(activeThemeId)
+			else
+				component("spriteName"):SetString(sprite)
+			end
+			component("sheetName"):SetString("xml_resources/"..sheet)
+			
+			component("size"):SetFloat(0.2*game.menuScaleX()*element("IslandScale"):GetFloat())
+			component("layer"):SetString("MidPopUps")
+		</event>
+		<event name="onPostInit" params="component, element">
+			if(element("IslandId"):GetInt() == 9) then
+				if((game.numIslands() > 1 or game.playerLevel() >= 10) and (game.newTribalInviteNotice() or game.newTribalRequestNotice())) then
+					local tribalIndicator = menu:addTemplateElement("template_tribe_context_alert", "tribe_alert", element)
+					tribalIndicator:relativeTo(element)
+					tribalIndicator:setOrientation(lua_sys.MenuOrientation(0, 0, -0.25, lua_sys.RIGHT, lua_sys.TOP))
+					tribalIndicator:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.TOP)
+					tribalIndicator:init()
+					tribalIndicator["Sprite"]("layer"):SetString("MidPopUps")
+					tribalIndicator:postInit()
+
+					--[[undo the context bar button offset built into the template]]
+					tribalIndicator["Sprite"]("xOffset"):SetInt(0)
+					tribalIndicator["Sprite"]("yOffset"):SetInt(0)
+				end
+			elseif(element("IslandId"):GetInt() == 2) then
+				if(game.playerLevel() >= 6 and not game.isIslandOwned(2) and game.playerCanAffordIsland(2)) then
+					local tribalIndicator = menu:addTemplateElement("template_tribe_context_alert", "tribe_alert", element)
+					tribalIndicator:relativeTo(element)
+					tribalIndicator:setOrientation(lua_sys.MenuOrientation(0, 0, -0.25, lua_sys.RIGHT, lua_sys.TOP))
+					tribalIndicator:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.TOP)
+					tribalIndicator:init()
+					tribalIndicator["Sprite"]("layer"):SetString("MidPopUps")
+					tribalIndicator:postInit()
+
+					--[[undo the context bar button offset built into the template]]
+					tribalIndicator["Sprite"]("xOffset"):SetInt(0)
+					tribalIndicator["Sprite"]("yOffset"):SetInt(0)
+				end
+			end
+			
+			if(not game.isIslandOwned(element("IslandId"):GetInt())) then
+				if(not game.hasNecessaryPrevIslandsToUnlock(element("IslandId"):GetInt())) then
+					element["Lock"]("visible"):SetInt(1)
+				elseif(not game.canUnlockIsland(element("IslandId"):GetInt())) then
+					element["Lock"]("visible"):SetInt(1)
+				end
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Lock">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7*game.menuScaleY()" priorityOffset="-0.01" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("button_lock")
+			component("sheetName"):SetString("xml_resources/buttons01.xml")
+			component("size"):SetFloat(0.35*game.menuScaleX()*element("IslandScale"):GetFloat())
+			component("layer"):SetString("MidPopUps")
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="onPostInit" params="element">
+		if(element("IslandActive"):GetInt() == 1) then
+			if(not game.isIslandOwned(element("IslandId"):GetInt())) then
+				if(not game.hasNecessaryPrevIslandsToUnlock(element("IslandId"):GetInt())) then
+					element["Overlay"]:setColor(0.5, 0.5, 0.5)
+					element["Lock"]("visible"):SetInt(1)
+				elseif(not game.canUnlockIsland(element("IslandId"):GetInt())) then
+					element["Overlay"]:setColor(0.5, 0.5, 0.5)
+					element["Lock"]("visible"):SetInt(1)
+				end
+			end
+		else
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		end
+	</event>
+	
+	<touchComponent name="Touch">	
+		<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+		<event name="onTouchDown" params="component, element, x, y">
+			element:parent()("entryCurrentX"):SetInt(x)
+			element:parent()("entryCurrentY"):SetInt(y)
+			element:parent():DoStoredScript("islandTouched")
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			element:parent()("entryCurrentX"):SetInt(x)
+			element:parent()("entryCurrentY"):SetInt(y)			
+			element:parent():DoStoredScript("islandDragged")
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element:parent():DoStoredScript("islandReleased")	
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element:parent():DoStoredScript("islandReleased")	
+		</event>
+	</touchComponent>
+	
+</template>

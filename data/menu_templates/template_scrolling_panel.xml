@@ -1,0 +1,61 @@
+<template name="template_scrolling_panel">
+
+	<defaultTemplateVar name="$layer" equals="'FrontPopUps'" />
+
+	<element name="ScrollingList">
+		<size dependentOnElement="PARENT"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<swipeComponent name="Swiper"/>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+		</touchComponent>
+	</element>
+
+	<!-- The scrollbar needs to be outside of the scrolling list element, so touching the scrollmarker doesn't affect the scrolling 
+		of the scroll list as it would if it were a child -->
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="16*game.hudScale()" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("scroll_bar_01")
+					component("sheetName"):SetString("xml_resources/buttons01.xml")
+					component("size"):SetFloat(0.6*(game.hudScale()))
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1"/>
+					
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("useOffsets"):SetInt(1)
+					component("spriteName"):SetString("scroll_bar_dot")
+					component("sheetName"):SetString("xml_resources/buttons01.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+
+	</element>
+
+
+	<script src="scripts/ScrollingPanel.lua"/>
+
+</template>

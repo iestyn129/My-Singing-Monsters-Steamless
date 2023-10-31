@@ -1,0 +1,22 @@
+<template name="template_remixbutton" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<template type="template_spritesheetbutton" name="button">
+		<templateVar name="$upSpriteName" equals="button_continue_green" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$text" equals="GET_REMIX" />
+		<templateVar name="$textPadding" equals="8*game.menuScaleX()" />
+		<templateVar name="$autoScaleFactor" equals="0.03" />
+		<templateVar name="$textYOffset" equals="-2*game.hudScale()" />
+		<templateVar name="$spriteScale" equals="0.4*game.menuScaleY()" />
+		<templateVar name="$layer" equals="HUD" />
+		<position relativeTo="element:parent():parent()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="-3*game.menuScaleY()" yOffset="0" priorityOffset="-2" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.ShowWebView(store:getRemixByIndex(element:parent():parent()("ID"):GetInt()))
+			</event>
+		</touchComponent>
+	</template>
+	
+</template>

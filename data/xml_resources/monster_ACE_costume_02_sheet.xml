@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5514b211ebedfa6d2c566442273382e7:909f446efa75d76a79dba892d5294a84:110430c8f1e9fdf5ca976c4fb5f76f23$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ACE_costume_02_sheet.png" width="512" height="512" hires="true">
+	
+	<!-- original anchor = (25, 51) -> new anchor (86, 124) diff = (-61, -73)-->
+	<!-- add double it to texturepacker output offsets (2, 2) -> (-120, -144), because hires-->
+    <sprite n="ACE_WING_LEFT.png" x="2" y="2" w="156" h="276" pX="0.5" pY="0.5" oX="-120" oY="-144" oW="160" oH="280"/>
+
+	<!-- original anchor = (25, 51) -> new anchor (-8, 106) diff = (33, -55)-->
+	<!-- add double it to texturepacker output offsets (9, 0) -> (75, -110), because hires-->
+    <sprite n="ACE_WING_RIGHT.png" x="2" y="280" w="260" h="182" pX="0.5" pY="0.5" oX="75" oY="-110" oW="200" oH="260" r="y"/>
+</TextureAtlas>

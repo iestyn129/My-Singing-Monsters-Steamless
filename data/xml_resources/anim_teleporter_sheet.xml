@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:be2e5641dba26cd758623c5c0403688f:010a53afdbcac6f5e710951047272766:878d3621aec7f6ae1507e4760bb8d625$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_teleporter_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="boltA_01" x="513" y="1370" w="39" h="46" pX="0.5" pY="0.5" oX="127" oY="22" oW="192" oH="72" r="y"/>
+    <sprite n="boltA_02" x="513" y="1311" w="39" h="55" pX="0.5" pY="0.5" oX="118" oY="21" oW="192" oH="72" r="y"/>
+    <sprite n="boltA_03" x="4" y="1128" w="185" h="55" pX="0.5" pY="0.5" oX="4" oY="14" oW="192" oH="72"/>
+    <sprite n="boltA_04" x="846" y="4" w="174" h="46" pX="0.5" pY="0.5" oX="10" oY="17" oW="192" oH="72"/>
+    <sprite n="boltA_05" x="842" y="980" w="140" h="50" pX="0.5" pY="0.5" oX="12" oY="10" oW="192" oH="72"/>
+    <sprite n="boltA_06" x="842" y="1034" w="140" h="50" pX="0.5" pY="0.5" oX="10" oY="10" oW="192" oH="72"/>
+    <sprite n="boltA_07" x="696" y="1089" w="132" h="49" pX="0.5" pY="0.5" oX="8" oY="10" oW="192" oH="72"/>
+    <sprite n="boltA_08" x="4" y="1437" w="111" h="51" pX="0.5" pY="0.5" oX="7" oY="10" oW="192" oH="72"/>
+    <sprite n="boltB_01" x="986" y="901" w="34" h="53" pX="0.5" pY="0.5" oX="69" oY="9" oW="132" oH="60" r="y"/>
+    <sprite n="boltB_02" x="682" y="1328" w="121" h="41" pX="0.5" pY="0.5" oX="11" oY="7" oW="132" oH="60"/>
+    <sprite n="boltB_03" x="189" y="1381" w="117" h="43" pX="0.5" pY="0.5" oX="5" oY="7" oW="132" oH="60"/>
+    <sprite n="boltB_04" x="278" y="873" w="104" h="46" pX="0.5" pY="0.5" oX="8" oY="8" oW="132" oH="60"/>
+    <sprite n="boltB_05" x="278" y="923" w="93" h="53" pX="0.5" pY="0.5" oX="18" oY="4" oW="132" oH="60"/>
+    <sprite n="boltB_06" x="191" y="1235" w="66" h="56" pX="0.5" pY="0.5" oX="19" oY="3" oW="132" oH="60"/>
+    <sprite n="boltC_01" x="189" y="1337" w="56" h="40" pX="0.5" pY="0.5" oX="106" oY="28" oW="176" oH="92"/>
+    <sprite n="boltC_02" x="846" y="54" w="173" h="49" pX="0.5" pY="0.5" oX="2" oY="22" oW="176" oH="92"/>
+    <sprite n="boltC_03" x="842" y="1088" w="138" h="59" pX="0.5" pY="0.5" oX="34" oY="15" oW="176" oH="92"/>
+    <sprite n="boltC_04" x="842" y="901" w="140" h="75" pX="0.5" pY="0.5" oX="31" oY="9" oW="176" oH="92"/>
+    <sprite n="boltC_05" x="193" y="1013" w="80" h="120" pX="0.5" pY="0.5" oX="42" oY="8" oW="176" oH="92" r="y"/>
+    <sprite n="boltC_06" x="277" y="1128" w="84" h="112" pX="0.5" pY="0.5" oX="43" oY="5" oW="176" oH="92" r="y"/>
+    <sprite n="boltC_07" x="277" y="1037" w="88" h="87" pX="0.5" pY="0.5" oX="51" oY="4" oW="176" oH="92"/>
+    <sprite n="boltD_01" x="984" y="1088" w="35" h="43" pX="0.5" pY="0.5" oX="33" oY="9" oW="84" oH="60" r="y"/>
+    <sprite n="boltD_02" x="261" y="1244" w="83" h="39" pX="0.5" pY="0.5" oX="1" oY="10" oW="84" oH="60"/>
+    <sprite n="boltD_03" x="193" y="1137" w="80" h="41" pX="0.5" pY="0.5" oX="3" oY="11" oW="84" oH="60"/>
+    <sprite n="boltD_04" x="193" y="1182" w="74" h="49" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="60"/>
+    <sprite n="boltD_05" x="261" y="1287" w="63" h="54" pX="0.5" pY="0.5" oX="3" oY="4" oW="84" oH="60"/>
+    <sprite n="boltD_06" x="191" y="1295" w="57" h="38" pX="0.5" pY="0.5" oX="14" oY="2" oW="84" oH="60" r="y"/>
+    <sprite n="boltE_01" x="388" y="637" w="319" h="37" pX="0.5" pY="0.5" oX="15" oY="64" oW="344" oH="164"/>
+    <sprite n="boltE_02" x="845" y="608" w="142" h="289" pX="0.5" pY="0.5" oX="32" oY="6" oW="344" oH="164" r="y"/>
+    <sprite n="boltE_03" x="4" y="873" w="270" h="136" pX="0.5" pY="0.5" oX="39" oY="15" oW="344" oH="164"/>
+    <sprite n="boltE_04" x="698" y="819" w="140" h="266" pX="0.5" pY="0.5" oX="41" oY="14" oW="344" oH="164" r="y"/>
+    <sprite n="boltE_05" x="845" y="349" w="143" h="255" pX="0.5" pY="0.5" oX="42" oY="12" oW="344" oH="164" r="y"/>
+    <sprite n="boltE_06" x="846" y="107" w="147" h="238" pX="0.5" pY="0.5" oX="42" oY="8" oW="344" oH="164" r="y"/>
+    <sprite n="door_01" x="4" y="321" w="380" h="272" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="door_02" x="4" y="597" w="380" h="272" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="door_frame_01" x="425" y="320" w="416" h="313" pX="0.5" pY="0.5" oX="5" oY="3" oW="324" oH="424" r="y"/>
+    <sprite n="door_frame_02" x="4" y="4" w="417" h="313" pX="0.5" pY="0.5" oX="6" oY="3" oW="324" oH="424" r="y"/>
+    <sprite n="door_frame_03" x="425" y="4" w="417" h="312" pX="0.5" pY="0.5" oX="6" oY="3" oW="324" oH="424" r="y"/>
+    <sprite n="gem_01" x="4" y="1187" w="183" h="122" pX="0.5" pY="0.5" oX="27" oY="13" oW="172" oH="212" r="y"/>
+    <sprite n="gem_02" x="685" y="1142" w="123" h="182" pX="0.5" pY="0.5" oX="29" oY="14" oW="172" oH="212"/>
+    <sprite n="gem_03" x="4" y="1013" w="185" h="111" pX="0.5" pY="0.5" oX="40" oY="14" oW="172" oH="212" r="y"/>
+    <sprite n="gem_04" x="557" y="1130" w="124" h="182" pX="0.5" pY="0.5" oX="34" oY="15" oW="172" oH="212"/>
+    <sprite n="gem_05" x="4" y="1313" w="181" h="120" pX="0.5" pY="0.5" oX="36" oY="14" oW="172" oH="212" r="y"/>
+    <sprite n="gem_06" x="812" y="1277" w="181" h="122" pX="0.5" pY="0.5" oX="41" oY="13" oW="172" oH="212" r="y"/>
+    <sprite n="gem_07" x="566" y="944" w="126" h="182" pX="0.5" pY="0.5" oX="35" oY="13" oW="172" oH="212"/>
+    <sprite n="gem_08" x="375" y="944" w="187" h="122" pX="0.5" pY="0.5" oX="36" oY="13" oW="172" oH="212" r="y"/>
+    <sprite n="gem_09" x="369" y="1070" w="184" h="122" pX="0.5" pY="0.5" oX="40" oY="14" oW="172" oH="212" r="y"/>
+    <sprite n="gem_10" x="328" y="1311" w="181" h="119" pX="0.5" pY="0.5" oX="38" oY="14" oW="172" oH="212" r="y"/>
+    <sprite n="gem_11" x="365" y="1196" w="183" h="111" pX="0.5" pY="0.5" oX="40" oY="14" oW="172" oH="212" r="y"/>
+    <sprite n="gem_12" x="812" y="1151" w="182" h="122" pX="0.5" pY="0.5" oX="33" oY="13" oW="172" oH="212" r="y"/>
+    <sprite n="gem_13" x="682" y="1373" w="120" h="180" pX="0.5" pY="0.5" oX="32" oY="15" oW="172" oH="212"/>
+    <sprite n="gem_14" x="556" y="1316" w="122" h="180" pX="0.5" pY="0.5" oX="29" oY="15" oW="172" oH="212"/>
+    <sprite n="gem_15" x="711" y="637" w="127" h="178" pX="0.5" pY="0.5" oX="28" oY="15" oW="172" oH="212"/>
+    <sprite n="gem_16" x="189" y="1428" w="116" h="180" pX="0.5" pY="0.5" oX="35" oY="14" oW="172" oH="212"/>
+    <sprite n="gem_glow" x="388" y="678" w="306" h="262" pX="0.5" pY="0.5" oX="1" oY="3" oW="264" oH="312" r="y"/>
+    <sprite n="music_note" x="278" y="980" w="91" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="92" r="y"/>
+</TextureAtlas>

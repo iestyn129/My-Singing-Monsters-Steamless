@@ -1,0 +1,359 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+
+	<template type="template_panel_decorated" name="bg">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<size w="340*game.hudScale()" h="230*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.hudScale()" yOffset="-30*game.hudScale()" priorityOffset="3" />
+	</template>
+	
+	<element name="CloseButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="CloseImage" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="20*game.hudScale()" priorityOffset="-1" />
+		<spriteSheetComponent name="CloseImage">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_bamboo_close")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["CloseImage"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+				element:root():popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<event name="onInit" params="element">
+			element("ButtonMapping"):SetInt(game.cancelButton())
+			element("buttonDown"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDown")
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUp")
+		</event>		
+		<event name="gotMsgKeyDown" params="element, msg">
+			if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == 0) then
+				element["Touch"]("checkOnTop"):SetInt(0)
+				if(element["Touch"]("onTop"):GetInt() == 1) then
+					element("buttonDown"):SetInt(msg.key.val)
+					element["Touch"]:DoStoredScript("onTouchDown")
+				end
+			end
+		</event>
+		<event name="gotMsgKeyUp" params="element, msg">
+			if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == msg.key.val) then
+				element("buttonDown"):SetInt(0)
+				element["Touch"]:DoStoredScript("onTouchUp")
+			end
+		</event>
+	</element>
+	
+	<element name="Notification">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="35*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()" />
+			<event name="onInit" params="component, element">			
+				component("textPadding"):SetInt(30)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("NOTIFICATION_HATCH_MONSTER"))
+				component("size"):SetFloat(0.23*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+				component:calculatePosition()
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Notification" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()"/>
+			<event name="onInit" params="component, element">			
+				component("textPadding"):SetInt(30)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("Mammott")
+				component("size"):SetFloat(0.23*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+				component:setColor(0.31, 0.94, 0.26)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterAnim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/monster_b.bin")
+				component("animation"):SetString( "Store" )
+				component:setScale(Vector2(0.8*game.hudScale(),0.8*game.hudScale()))
+				component("layer"):SetString("FrontPopUps")
+			</event>
+			<event name="reposition" params="component, element">
+				element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 - 45*game.hudScale()))
+			</event>
+		</aeComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="PlaceButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="PLACE" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="-10" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.25)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				if(game.hatchEgg()) then
+					element:root():popPopUp()
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_place")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="BoxButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="BOX_IT" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="setVisible" params="element">
+			element["UpSprite"]("visible"):SetInt(1)
+			element["Overlay"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["UpSprite"]("visible"):SetInt(0)
+			element["DownSprite"]("visible"):SetInt(0)
+			element["Overlay"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+		</event>		
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.25)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.boxEgg();
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_box_monster")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>	
+	
+	<template type="template_spritesheetbutton" name="SellButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="CONTEXTBAR_SELL_LABEL" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="-10" priorityOffset="-2" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				onInit(component, element)
+				component("size"):SetFloat(0.25)
+				if(game.disableEggSell() or game.monsterCount() == 0) then
+					component:setColor(0.5, 0.5, 0.5)
+					element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+					element["DownSprite"]:setColor(0.5, 0.5, 0.5)
+					element["Overlay"]:setColor(0.5, 0.5, 0.5)
+					element["Touch"]("enabled"):SetInt(0)
+				end
+				]]>
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.sellEgg()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				if(game.isAmberIsland()) then
+					component("spriteName"):SetString("button_sell_relics")
+				elseif(game.isEtherealIsland()) then
+					component("spriteName"):SetString("button_sell_shard")
+				else
+					component("spriteName"):SetString("button_sell")
+				end
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			if(game.showBoxMonsterContextButton()) then
+				element["BoxButton"]:DoStoredScript("setVisible")
+			else
+				element["BoxButton"]:DoStoredScript("setInvisible")
+			end
+		]]>
+	</event>
+
+	<event name="queuePop" params="element">
+		<![CDATA[
+			element:root():popPopUp()
+		]]>
+	</event>
+
+	<event name="setupMonster" params="element">
+		<![CDATA[
+			monsterId = element("MonsterID"):GetInt()
+			monsterData = game.getMonsterData(monsterId)
+			costumeId = element("CostumeID"):GetInt()
+
+			print("Setup Monster", monsterId)
+			
+			local monsterName = element:GetElement("MonsterName"):GetComponent("Text")
+			monsterName("text"):SetString(monsterData:name());
+			
+			local monsterAnim = element:GetElement("MonsterAnim"):GetComponent("Sprite")
+			monsterAnim("animationName"):SetString("xml_bin/"..monsterData:animationFile())
+			monsterAnim("animation"):SetString( "Store" )
+
+			if costumeId > 0 then
+				game.applyCostumeToAnimComponent(monsterAnim, costumeId)
+			end
+
+			monsterAnim:DoStoredScript("reposition")
+		]]>
+	</event>
+	
+</menu>

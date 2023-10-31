@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bfb9946b3858ddce4f579e0b2608c37e:62ac6b2afb08683057d59c5b85a607ca:ffbce93de4f8f0024510619f4f968b86$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_DV_sheet.png" width="256" height="512" hires="true">
+    <sprite n="DV_arm_over" x="161" y="352" w="52" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="DV_arm_under" x="163" y="299" w="52" h="51" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_eyelids_01" x="2" y="244" w="103" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="105" oH="47"/>
+    <sprite n="DV_eyelids_02" x="2" y="436" w="102" h="46" pX="0.5" pY="0.5" oX="2" oY="1" oW="105" oH="47"/>
+    <sprite n="DV_eyelids_03" x="2" y="292" w="103" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="105" oH="47"/>
+    <sprite n="DV_eyelids_04" x="2" y="340" w="103" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="105" oH="47"/>
+    <sprite n="DV_eyelids_05" x="2" y="388" w="103" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="105" oH="47"/>
+    <sprite n="DV_eyelids_06" x="107" y="389" w="46" h="103" pX="0.5" pY="0.5" oX="1" oY="1" oW="105" oH="47" r="y"/>
+    <sprite n="DV_foot" x="107" y="244" w="55" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="DV_hand_over" x="164" y="262" w="55" h="35" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_hand_under" x="221" y="262" w="28" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="DV_head" x="2" y="2" w="163" h="146" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_jaw_back" x="2" y="150" w="163" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="163" r="y"/>
+    <sprite n="DV_jaw_bottom" x="167" y="2" w="83" h="124" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_leg" x="107" y="337" w="52" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_mouth_01" x="240" y="193" w="11" h="20" pX="0.5" pY="0.5" oX="2" oY="0" oW="23" oH="13" r="y"/>
+    <sprite n="DV_mouth_02" x="240" y="170" w="11" h="21" pX="0.5" pY="0.5" oX="1" oY="0" oW="23" oH="13" r="y"/>
+    <sprite n="DV_mouth_03" x="240" y="128" w="13" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_mouth_04" x="240" y="153" w="13" h="15" pX="0.5" pY="0.5" oX="4" oY="0" oW="23" oH="13" r="y"/>
+    <sprite n="DV_outter_arm" x="107" y="298" w="54" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_outter_hand" x="155" y="396" w="50" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DV_pupil" x="217" y="300" w="20" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="167" y="128" w="71" h="132" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

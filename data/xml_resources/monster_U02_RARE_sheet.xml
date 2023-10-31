@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3b61ce4b984803eeb719abeebe86abee:669c2599d7fe519a2705023ac2a27254:221e22021d57d24b139944158779d1df$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U02_RARE_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="beam" x="740" y="2" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot" x="575" y="177" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="U02_backbody" x="582" y="2" w="152" h="173" pX="0.5" pY="0.5" oX="12" oY="9" oW="176" oH="192"/>
+    <sprite n="U02_body_fur" x="449" y="2" w="130" h="133" pX="0.5" pY="0.5" oX="23" oY="16" oW="181" oH="170"/>
+    <sprite n="U02_body_glow" x="449" y="305" w="184" h="164" pX="0.5" pY="0.5" oX="8" oY="10" oW="180" oH="204" r="y"/>
+    <sprite n="U02_frontbody" x="449" y="137" w="124" h="166" pX="0.5" pY="0.5" oX="10" oY="12" oW="188" oH="148" r="y"/>
+    <sprite n="U02_glow_01" x="2" y="472" w="390" h="431" pX="0.5" pY="0.5" oX="26" oY="48" oW="480" oH="480"/>
+    <sprite n="U02_glow_02" x="2" y="2" w="445" h="468" pX="0.5" pY="0.5" oX="18" oY="12" oW="480" oH="480"/>
+    <sprite n="U02_head" x="2" y="905" w="110" h="112" pX="0.5" pY="0.5" oX="10" oY="12" oW="132" oH="136"/>
+    <sprite n="U02_head_RARE" x="394" y="721" w="186" h="180" pX="0.5" pY="0.5" oX="5" oY="13" oW="200" oH="210" r="y"/>
+    <sprite n="U02_jaw" x="951" y="246" w="37" h="77" pX="0.5" pY="0.5" oX="11" oY="11" oW="100" oH="60" r="y"/>
+    <sprite n="U02_left_foot" x="968" y="2" w="49" h="58" pX="0.5" pY="0.5" oX="8" oY="12" oW="76" oH="72" r="y"/>
+    <sprite n="U02_left_wing" x="569" y="903" w="169" h="92" pX="0.5" pY="0.5" oX="8" oY="10" oW="112" oH="184" r="y"/>
+    <sprite n="U02_left_wingplate" x="239" y="905" w="236" h="105" pX="0.5" pY="0.5" oX="0" oY="11" oW="116" oH="252" r="y"/>
+    <sprite n="U02_leg_segment_1" x="908" y="74" w="42" h="133" pX="0.5" pY="0.5" oX="11" oY="9" oW="64" oH="152"/>
+    <sprite n="U02_leg_segment_2" x="740" y="215" w="146" h="39" pX="0.5" pY="0.5" oX="10" oY="11" oW="60" oH="168" r="y"/>
+    <sprite n="U02_leg_segment_2_fur" x="477" y="903" w="90" h="95" pX="0.5" pY="0.5" oX="2" oY="5" oW="100" oH="100" r="y"/>
+    <sprite n="U02_leg_segment_3" x="173" y="905" w="64" h="107" pX="0.5" pY="0.5" oX="0" oY="9" oW="64" oH="124"/>
+    <sprite n="U02_lower_eyelid1" x="952" y="123" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid2" x="952" y="164" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid3" x="952" y="205" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid4" x="908" y="209" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_pupil" x="239" y="1012" w="17" h="9" pX="0.5" pY="0.5" oX="9" oY="13" oW="36" oH="36"/>
+    <sprite n="U02_right_foot" x="968" y="62" w="47" h="59" pX="0.5" pY="0.5" oX="10" oY="10" oW="80" oH="68" r="y"/>
+    <sprite n="U02_right_wing" x="740" y="74" w="166" h="139" pX="0.5" pY="0.5" oX="7" oY="10" oW="156" oH="184" r="y"/>
+    <sprite n="U02_right_wingplate" x="394" y="472" w="83" h="247" pX="0.5" pY="0.5" oX="6" oY="11" oW="104" oH="268"/>
+    <sprite n="U02_shadow" x="114" y="905" w="57" h="111" pX="0.5" pY="0.5" oX="8" oY="9" oW="128" oH="76" r="y"/>
+    <sprite n="U02_spark" x="569" y="997" w="24" h="24" pX="0.5" pY="0.5" oX="12" oY="12" oW="48" oH="48"/>
+    <sprite n="U02_upper_eyelid1" x="575" y="268" w="32" h="33" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56" r="y"/>
+    <sprite n="U02_upper_eyelid2" x="609" y="268" w="32" h="33" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56" r="y"/>
+    <sprite n="U02_upper_eyelid3" x="990" y="246" w="32" h="33" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56" r="y"/>
+    <sprite n="U02_upper_eyelid4" x="990" y="281" w="32" h="33" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56" r="y"/>
+</TextureAtlas>

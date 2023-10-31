@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8f6dcec1ef685728b9b7d338dc0b7617:6375aad8303f24c44bbf233f3197678a:507d93f3d9f2f01847c1ad8dc79939a2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_notsure01_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="decoration_notsure01" x="2" y="2" w="394" h="618" pX="0.5" pY="0.5" oX="6" oY="0" oW="408" oH="620"/>
+    <sprite n="decoration_notsure02" x="2" y="622" w="200" h="228" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_notsure_critter" x="398" y="2" w="80" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_notsure_ear1" x="480" y="43" w="29" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="18" oH="30" r="y"/>
+    <sprite n="decoration_notsure_ear2" x="480" y="2" w="30" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="30" r="y"/>
+    <sprite n="decoration_notsure_ear3" x="398" y="54" w="31" h="24" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="24"/>
+    <sprite n="decoration_notsure_ear4" x="480" y="19" w="29" h="22" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="24"/>
+    <sprite n="decoration_notsure_eyelights" x="441" y="54" w="8" h="7" pX="0.5" pY="0.5" oX="0" oY="0" oW="8" oH="8" r="y"/>
+    <sprite n="decoration_notsure_nostril" x="431" y="54" w="8" h="8" pX="0.5" pY="0.5"/>
+</TextureAtlas>

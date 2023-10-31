@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6eaeeb99465a52f8154509cfbf5fee8b:c30ef6700a01ae328a03a924c351aa4d:8c4307805665d6e3054de3f5a0f2f396$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_eth_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_ethereal_circle" x="2" y="2" w="244" h="244" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_dot" x="425" y="166" w="46" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_glow" x="308" y="125" w="115" h="116" pX="0.5" pY="0.5" oX="3" oY="4" oW="122" oH="122"/>
+    <sprite n="star_rock_ethereal_rock_01" x="248" y="59" w="34" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_02" x="353" y="2" w="144" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_03" x="27" y="430" w="90" h="71" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_04" x="119" y="423" w="45" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_05" x="169" y="248" w="138" h="171" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_06" x="248" y="2" w="57" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_07" x="425" y="104" w="61" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_08" x="353" y="243" w="136" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_09" x="184" y="421" w="44" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_10" x="250" y="421" w="50" h="69" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_11" x="309" y="243" w="38" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_12" x="309" y="91" w="40" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_13" x="2" y="248" w="78" h="180" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_14" x="248" y="153" w="54" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_15" x="309" y="2" w="42" h="55" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_rock_16" x="302" y="421" w="37" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_rock_17" x="308" y="59" w="27" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_star" x="353" y="295" w="128" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_01" x="341" y="59" w="9" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_02" x="166" y="495" w="62" h="14" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_tent_03" x="230" y="421" w="18" h="89" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_04" x="248" y="89" w="34" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_05" x="284" y="38" w="22" h="105" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_06" x="2" y="430" w="23" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_ethereal_tent_07" x="250" y="492" w="51" h="18" pX="0.5" pY="0.5" oX="0" oY="1" oW="18" oH="52" r="y"/>
+    <sprite n="star_rock_ethereal_tent_08" x="303" y="491" w="48" h="12" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_ethereal_tent_09" x="166" y="423" w="16" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_shadow" x="82" y="248" w="85" h="173" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200" r="y"/>
+</TextureAtlas>

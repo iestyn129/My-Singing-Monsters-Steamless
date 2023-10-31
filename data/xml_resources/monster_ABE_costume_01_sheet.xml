@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:092d0c18a329b4b5168a9b061e5440d3:17dce129de4657f0c138f9d1213e7079:02bd6874a9188f4eac01a59d079fb001$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABE_costume_01_sheet.png" width="256" height="256" hires="true">
+    <sprite n="ABE_left_mushroom_top_target.png" x="136" y="125" w="66" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABE_right_mushroom_top_target.png" x="2" y="168" w="132" h="72" pX="0.5" pY="0.5"/>
+	
+	<!-- original anchor = (28, 28) -> new anchor (35, 35) diff = (-7, -7)-->
+	<!-- add double it to texturepacker output offsets (9, 6) -> (-5, -8), because hires-->
+    <sprite n="ABE_thumpie_fur_helmet.png" x="154" y="2" w="92" h="121" pX="0.5" pY="0.5" oX="-5" oY="-8" oW="140" oH="140" r="y"/>
+
+	<!-- original anchor = (28, 28) -> new anchor (35, 35) diff = (-7, -7)-->
+	<!-- add double it to texturepacker output offsets (8, 8) -> (-6, -6), because hires-->
+    <sprite n="ABE_thumpie_pink_helmet.png" x="2" y="72" w="121" h="94" pX="0.5" pY="0.5" oX="-6" oY="-6" oW="140" oH="140"/>
+    <sprite n="ABE_treestump_top_target.png" x="2" y="2" w="150" h="68" pX="0.5" pY="0.5"/>
+
+		<sprite n="empty.png" x="230" y="230" w="8" h="8"/>
+</TextureAtlas>

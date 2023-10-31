@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:33433aae0936ee9f3f9fe7f59cfdf874:a1594fdbc7efb8b0a733b6cdab299156:1e8e8f12bfbe7517588953974c3e3419$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U08_RARE_sheet" width="1024" height="1024" hires="true">
+    <sprite n="beam" x="235" y="457" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot" x="305" y="528" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="U08_body" x="179" y="628" w="142" h="190" pX="0.5" pY="0.5" oX="0" oY="10" oW="152" oH="212"/>
+    <sprite n="U08_drumhead" x="235" y="528" w="69" h="93" pX="0.5" pY="0.5" oX="11" oY="11" oW="92" oH="116"/>
+    <sprite n="U08_eyelid_01" x="981" y="80" w="40" h="45" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68"/>
+    <sprite n="U08_eyelid_02" x="981" y="126" w="40" h="45" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68"/>
+    <sprite n="U08_eyelid_03" x="981" y="172" w="40" h="45" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68"/>
+    <sprite n="U08_eyelid_04" x="981" y="218" w="40" h="45" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68"/>
+    <sprite n="U08_face_backhorn" x="381" y="618" w="108" h="118" pX="0.5" pY="0.5" oX="1" oY="4" oW="110" oH="127"/>
+    <sprite n="U08_face_front" x="102" y="837" w="208" h="156" pX="0.5" pY="0.5" oX="7" oY="16" oW="176" oH="232" r="y"/>
+    <sprite n="U08_face_fronthorn" x="1" y="837" w="100" h="163" pX="0.5" pY="0.5" oX="7" oY="10" oW="236" oH="112" r="y"/>
+    <sprite n="U08_foot" x="981" y="423" w="36" h="45" pX="0.5" pY="0.5" oX="10" oY="12" oW="64" oH="60" r="y"/>
+    <sprite n="U08_foot_rare" x="981" y="294" w="38" h="29" pX="0.5" pY="0.5" oX="1" oY="6" oW="40" oH="40"/>
+    <sprite n="U08_Hair" x="1" y="457" w="233" h="170" pX="0.5" pY="0.5" oX="4" oY="3" oW="237" oH="176"/>
+    <sprite n="U08_head" x="1" y="628" w="177" h="208" pX="0.5" pY="0.5" oX="8" oY="13" oW="196" oH="232"/>
+    <sprite n="U08_left_claw" x="311" y="819" w="53" h="148" pX="0.5" pY="0.5" oX="4" oY="8" oW="164" oH="68" r="y"/>
+    <sprite n="U08_lowerarm" x="395" y="528" w="43" h="78" pX="0.5" pY="0.5" oX="8" oY="0" oW="96" oH="52" r="y"/>
+    <sprite n="U08_lowerleg" x="462" y="457" w="25" h="57" pX="0.5" pY="0.5" oX="9" oY="9" oW="44" oH="76"/>
+    <sprite n="U08_lowerleg_rare" x="981" y="264" w="39" h="29" pX="0.5" pY="0.5" oX="14" oY="4" oW="60" oH="40"/>
+    <sprite n="U08_lowerleg_rare2" x="311" y="968" w="53" h="54" pX="0.5" pY="0.5" oX="2" oY="18" oW="60" oH="76" r="y"/>
+    <sprite n="U08_pupil" x="1" y="1001" w="16" h="18" pX="0.5" pY="0.5" oX="12" oY="11" oW="40" oH="40"/>
+    <sprite n="U08_right_claw" x="322" y="618" w="58" h="131" pX="0.5" pY="0.5" oX="9" oY="0" oW="148" oH="68" r="y"/>
+    <sprite n="U08_shadow" x="322" y="750" w="120" h="62" pX="0.5" pY="0.5" oX="9" oY="9" oW="140" oH="80"/>
+    <sprite n="U08_upperarm" x="981" y="324" w="37" h="98" pX="0.5" pY="0.5" oX="8" oY="10" oW="116" oH="56" r="y"/>
+    <sprite n="U08_upperleg" x="981" y="1" w="41" h="78" pX="0.5" pY="0.5" oX="4" oY="1" oW="52" oH="84"/>
+    <sprite n="U12_glow_01" x="1" y="1" w="495" h="455" pX="0.5" pY="0.5" oX="52" oY="68" oW="600" oH="572"/>
+    <sprite n="U12_glow_02" x="497" y="1" w="483" h="456" pX="0.5" pY="0.5" oX="29" oY="28" oW="600" oH="572" r="y"/>
+</TextureAtlas>

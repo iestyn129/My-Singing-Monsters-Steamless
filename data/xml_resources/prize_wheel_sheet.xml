@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2625ea7cba2aa312098760f03867fd8d:3955b6e2eaa97c454d8c0cc0603ef989:acf3b3db0e31742a1d07e13b657344d1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/prize_wheel_sheet.png" width="512" height="1024">
+    <sprite n="jackpot_chest" x="204" y="916" w="120" h="98" pX="0.5" pY="0.5" oX="0" oY="1" oW="121" oH="99"/>
+    <sprite n="prize_wheel_jackpot" x="1" y="935" w="74" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="wheel_BG" x="159" y="682" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_body" x="108" y="674" w="49" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="wheel_bird_feet" x="108" y="916" w="31" h="17" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_head" x="108" y="628" w="54" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="wheel_bird_lid_01" x="497" y="251" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_lid_02" x="497" y="267" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_lid_03" x="497" y="283" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_lid_04" x="497" y="299" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_lid_05" x="497" y="315" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_pupil" x="357" y="102" w="6" h="6" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_bird_tail_01" x="108" y="585" w="70" h="41" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="70" r="y"/>
+    <sprite n="wheel_bird_wing_01" x="108" y="716" w="27" h="30" pX="0.5" pY="0.5" oX="1" oY="8" oW="37" oH="38"/>
+    <sprite n="wheel_bird_wing_02" x="168" y="716" w="25" h="28" pX="0.5" pY="0.5" oX="3" oY="9" oW="37" oH="38" r="y"/>
+    <sprite n="wheel_bird_wing_03" x="164" y="657" w="35" h="23" pX="0.5" pY="0.5" oX="1" oY="8" oW="37" oH="38"/>
+    <sprite n="wheel_bird_wing_04" x="320" y="84" w="35" h="28" pX="0.5" pY="0.5" oX="2" oY="0" oW="37" oH="38"/>
+    <sprite n="wheel_bird_wing_05" x="1" y="610" w="26" h="23" pX="0.5" pY="0.5" oX="22" oY="8" oW="45" oH="34" r="y"/>
+    <sprite n="wheel_bird_wing_06" x="38" y="585" w="26" h="26" pX="0.5" pY="0.5" oX="7" oY="7" oW="45" oH="34"/>
+    <sprite n="wheel_bird_wing_07" x="1" y="585" w="35" h="23" pX="0.5" pY="0.5" oX="1" oY="4" oW="45" oH="34"/>
+    <sprite n="wheel_bird_wing_08" x="164" y="628" w="35" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="45" oH="34"/>
+    <sprite n="wheel_centre" x="320" y="334" w="187" h="182" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="wheel_dandidoo" x="320" y="518" w="186" h="220" pX="0.5" pY="0.5" oX="5" oY="3" oW="191" oH="223"/>
+    <sprite n="wheel_feather" x="1" y="1" w="355" h="81" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_kayna" x="108" y="749" w="156" h="165" pX="0.5" pY="0.5" oX="0" oY="2" oW="158" oH="167"/>
+    <sprite n="wheel_light_glow" x="137" y="716" w="29" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_light_string" x="204" y="585" w="101" h="162" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="wheel_light_string_fuzzy" x="77" y="935" w="125" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_lights_01" x="320" y="214" w="175" h="118" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_lights_02" x="358" y="1" w="143" h="99" pX="0.5" pY="0.5" oX="9" oY="15" oW="175" oH="118"/>
+    <sprite n="wheel_rope" x="503" y="1" w="8" h="248" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_slice_01" x="1" y="84" w="317" h="165" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_slice_02" x="1" y="251" w="317" h="165" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_slice_03" x="1" y="418" w="317" h="165" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_spot_light" x="1" y="740" w="105" h="193" pX="0.5" pY="0.5"/>
+    <sprite n="wheel_toejammer" x="320" y="114" w="178" h="98" pX="0.5" pY="0.5"/>
+</TextureAtlas>

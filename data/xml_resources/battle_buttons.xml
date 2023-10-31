@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bd4173c7fac7d88c74ad500e8b8fcb97:f081365c6aef5c78a8821777c536d9f1:6366c61d2fbb8f8945703112443a6632$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/battle/battle_buttons.png" width="512" height="1024">
+    <sprite n="button_coin_pile" x="2" y="462" w="165" h="140" pX="0.5" pY="0.5" oX="30" oY="25" oW="225" oH="168"/>
+    <sprite n="button_diamond_pile" x="366" y="340" w="143" h="165" pX="0.5" pY="0.5" oX="30" oY="15" oW="225" oH="168" r="y"/>
+    <sprite n="button_food_pile" x="229" y="2" w="204" h="137" pX="0.5" pY="0.5" oX="10" oY="23" oW="225" oH="168"/>
+    <sprite n="button_glow_effect" x="169" y="588" w="103" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="button_keys_pile" x="317" y="507" w="134" h="125" pX="0.5" pY="0.5" oX="45" oY="21" oW="225" oH="168"/>
+    <sprite n="button_metal_pile" x="2" y="2" w="225" h="166" pX="0.5" pY="0.5" oX="0" oY="1" oW="225" oH="168"/>
+    <sprite n="button_relic_pile" x="169" y="469" w="146" h="117" pX="0.5" pY="0.5" oX="39" oY="25" oW="225" oH="168"/>
+    <sprite n="button_starpower_pile" x="190" y="340" w="174" h="127" pX="0.5" pY="0.5" oX="25" oY="20" oW="225" oH="168"/>
+    <sprite n="button_xp_pile" x="2" y="347" w="172" h="113" pX="0.5" pY="0.5" oX="26" oY="27" oW="225" oH="168"/>
+    <sprite n="metal_glow_beam" x="435" y="68" w="56" h="190" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="191"/>
+    <sprite n="metal_glow_white" x="433" y="260" w="76" h="78" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="76" r="y"/>
+    <sprite n="quest_number_time" x="435" y="2" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quests_button" x="2" y="170" w="186" h="175" pX="0.5" pY="0.5" oX="4" oY="3" oW="183" oH="193" r="y"/>
+    <sprite n="versus_button" x="229" y="141" w="202" h="197" pX="0.5" pY="0.5"/>
+</TextureAtlas>

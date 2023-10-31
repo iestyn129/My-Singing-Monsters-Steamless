@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fb0c2f86135bf0f58131acbc1dab165c:8e04928f0988e9a38ddc743d9c930aed:14a2a3398b945a4ca7a365e5497948d2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_VW_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="VW_body" x="231" y="2" w="217" h="200" pX="0.5" pY="0.5" oX="8" oY="3" oW="216" oH="224" r="y"/>
+    <sprite n="VW_bone" x="2" y="292" w="144" h="62" pX="0.5" pY="0.5" oX="13" oY="0" oW="84" oH="144" r="y"/>
+    <sprite n="VW_bone_glow" x="2" y="220" w="144" h="70" pX="0.5" pY="0.5" oX="8" oY="0" oW="84" oH="144" r="y"/>
+    <sprite n="VW_eyelidA_01" x="311" y="761" w="46" h="48" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="52"/>
+    <sprite n="VW_eyelidA_02" x="197" y="867" w="48" h="46" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="52" r="y"/>
+    <sprite n="VW_eyelidA_03" x="247" y="874" w="48" h="46" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="52" r="y"/>
+    <sprite n="VW_eyelidA_04" x="197" y="915" w="48" h="46" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="52" r="y"/>
+    <sprite n="VW_eyelidB_01" x="310" y="811" w="47" h="44" pX="0.5" pY="0.5" oX="3" oY="5" oW="52" oH="52"/>
+    <sprite n="VW_eyelidB_02" x="58" y="840" w="47" h="44" pX="0.5" pY="0.5" oX="3" oY="5" oW="52" oH="52"/>
+    <sprite n="VW_eyelidB_03" x="2" y="963" w="44" h="47" pX="0.5" pY="0.5" oX="3" oY="5" oW="52" oH="52" r="y"/>
+    <sprite n="VW_eyelidB_04" x="48" y="963" w="44" h="47" pX="0.5" pY="0.5" oX="3" oY="5" oW="52" oH="52" r="y"/>
+    <sprite n="VW_eyelidC_01" x="327" y="415" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+    <sprite n="VW_eyelidC_02" x="327" y="453" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+    <sprite n="VW_eyelidC_03" x="327" y="491" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+    <sprite n="VW_eyelidC_04" x="54" y="886" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+    <sprite n="VW_eyelidD_01" x="129" y="966" w="33" h="33" pX="0.5" pY="0.5" oX="3" oY="4" oW="40" oH="40"/>
+    <sprite n="VW_eyelidD_02" x="164" y="966" w="33" h="33" pX="0.5" pY="0.5" oX="3" oY="4" oW="40" oH="40"/>
+    <sprite n="VW_eyelidD_03" x="199" y="963" w="33" h="33" pX="0.5" pY="0.5" oX="3" oY="4" oW="40" oH="40"/>
+    <sprite n="VW_eyelidD_04" x="234" y="963" w="33" h="33" pX="0.5" pY="0.5" oX="3" oY="4" oW="40" oH="40"/>
+    <sprite n="VW_eyelidE_01" x="159" y="848" w="36" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="40" oH="40" r="y"/>
+    <sprite n="VW_eyelidE_02" x="159" y="884" w="36" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="40" oH="40" r="y"/>
+    <sprite n="VW_eyelidE_03" x="2" y="927" w="36" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="40" oH="40" r="y"/>
+    <sprite n="VW_eyelidE_04" x="40" y="927" w="36" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="40" oH="40" r="y"/>
+    <sprite n="VW_eyelidF_01" x="450" y="117" w="59" h="54" pX="0.5" pY="0.5" oX="3" oY="5" oW="64" oH="64"/>
+    <sprite n="VW_eyelidF_02" x="450" y="173" w="59" h="54" pX="0.5" pY="0.5" oX="3" oY="5" oW="64" oH="64"/>
+    <sprite n="VW_eyelidF_03" x="450" y="229" w="59" h="54" pX="0.5" pY="0.5" oX="3" oY="5" oW="64" oH="64"/>
+    <sprite n="VW_eyelidF_04" x="450" y="285" w="59" h="54" pX="0.5" pY="0.5" oX="3" oY="5" oW="64" oH="64"/>
+    <sprite n="VW_glow" x="137" y="920" w="45" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="48" oH="48"/>
+    <sprite n="VW_hair_01" x="450" y="2" w="60" h="37" pX="0.5" pY="0.5" oX="6" oY="1" oW="56" oH="64" r="y"/>
+    <sprite n="VW_hair_02" x="448" y="598" w="55" h="64" pX="0.5" pY="0.5" oX="2" oY="8" oW="64" oH="84"/>
+    <sprite n="VW_hair_03" x="446" y="664" w="64" h="91" pX="0.5" pY="0.5" oX="4" oY="2" oW="72" oH="96"/>
+    <sprite n="VW_hair_04" x="2" y="356" w="122" h="92" pX="0.5" pY="0.5" oX="4" oY="5" oW="100" oH="132" r="y"/>
+    <sprite n="VW_hair_05" x="450" y="384" w="58" h="93" pX="0.5" pY="0.5" oX="3" oY="3" oW="64" oH="100"/>
+    <sprite n="VW_hair_06" x="202" y="682" w="91" h="54" pX="0.5" pY="0.5" oX="5" oY="0" oW="64" oH="92" r="y"/>
+    <sprite n="VW_hair_07" x="148" y="220" w="68" h="47" pX="0.5" pY="0.5" oX="7" oY="8" oW="64" oH="86" r="y"/>
+    <sprite n="VW_hair_08" x="359" y="708" w="81" h="46" pX="0.5" pY="0.5" oX="8" oY="2" oW="64" oH="86" r="y"/>
+    <sprite n="VW_left_foot" x="361" y="387" w="87" h="82" pX="0.5" pY="0.5" oX="2" oY="32" oW="92" oH="116"/>
+    <sprite n="VW_left_hand_01" x="319" y="631" w="38" h="50" pX="0.5" pY="0.5" oX="5" oY="14" oW="56" oH="56" r="y"/>
+    <sprite n="VW_left_hand_02" x="322" y="529" w="36" h="49" pX="0.5" pY="0.5" oX="6" oY="14" oW="56" oH="56" r="y"/>
+    <sprite n="VW_left_hand_03" x="322" y="580" w="36" h="49" pX="0.5" pY="0.5" oX="6" oY="14" oW="56" oH="56" r="y"/>
+    <sprite n="VW_left_hand_04" x="159" y="798" w="36" h="48" pX="0.5" pY="0.5" oX="7" oY="14" oW="56" oH="56" r="y"/>
+    <sprite n="VW_left_hand_05" x="308" y="857" w="49" h="38" pX="0.5" pY="0.5" oX="6" oY="12" oW="56" oH="56"/>
+    <sprite n="VW_left_hand_06" x="2" y="885" w="50" h="40" pX="0.5" pY="0.5" oX="5" oY="10" oW="56" oH="56"/>
+    <sprite n="VW_left_hand_07" x="107" y="798" w="50" h="42" pX="0.5" pY="0.5" oX="5" oY="8" oW="56" oH="56"/>
+    <sprite n="VW_left_hand_08" x="199" y="738" w="54" h="48" pX="0.5" pY="0.5" oX="1" oY="2" oW="56" oH="56"/>
+    <sprite n="VW_left_hand_hold_skull" x="2" y="786" w="54" h="54" pX="0.5" pY="0.5" oX="1" oY="2" oW="56" oH="56"/>
+    <sprite n="VW_left_lowerarm" x="450" y="341" w="59" h="41" pX="0.5" pY="0.5" oX="2" oY="1" oW="64" oH="44"/>
+    <sprite n="VW_left_lowerleg" x="359" y="756" w="80" h="77" pX="0.5" pY="0.5" oX="5" oY="2" oW="92" oH="116" r="y"/>
+    <sprite n="VW_left_upperarm" x="441" y="757" w="69" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="48"/>
+    <sprite n="VW_left_upperleg" x="107" y="718" w="90" h="78" pX="0.5" pY="0.5" oX="3" oY="1" oW="84" oH="92" r="y"/>
+    <sprite n="VW_mouth_01" x="218" y="122" w="9" h="37" pX="0.5" pY="0.5" oX="46" oY="71" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_02" x="295" y="682" w="15" h="40" pX="0.5" pY="0.5" oX="44" oY="67" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_03" x="94" y="962" w="33" h="45" pX="0.5" pY="0.5" oX="40" oY="56" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_04" x="441" y="805" w="64" h="76" pX="0.5" pY="0.5" oX="30" oY="23" oW="128" oH="124"/>
+    <sprite n="VW_mouth_05" x="110" y="555" w="100" h="81" pX="0.5" pY="0.5" oX="22" oY="11" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_06" x="217" y="415" w="108" h="86" pX="0.5" pY="0.5" oX="19" oY="8" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_07" x="449" y="479" w="58" h="31" pX="0.5" pY="0.5" oX="33" oY="58" oW="128" oH="124"/>
+    <sprite n="VW_mouth_08" x="148" y="346" w="67" h="46" pX="0.5" pY="0.5" oX="30" oY="46" oW="128" oH="124"/>
+    <sprite n="VW_mouth_09" x="450" y="41" w="59" h="74" pX="0.5" pY="0.5" oX="26" oY="38" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_10" x="212" y="597" w="105" h="83" pX="0.5" pY="0.5" oX="11" oY="22" oW="128" oH="124"/>
+    <sprite n="VW_mouth_11" x="2" y="450" w="114" h="92" pX="0.5" pY="0.5" oX="7" oY="18" oW="128" oH="124"/>
+    <sprite n="VW_mouth_12" x="393" y="204" w="55" h="93" pX="0.5" pY="0.5" oX="18" oY="39" oW="128" oH="124" r="y"/>
+    <sprite n="VW_mouth_13" x="118" y="502" w="94" h="51" pX="0.5" pY="0.5" oX="18" oY="40" oW="128" oH="124"/>
+    <sprite n="VW_necklace" x="2" y="122" w="214" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="VW_necklace_gem" x="361" y="311" w="29" h="61" pX="0.5" pY="0.5" oX="3" oY="1" oW="36" oH="64"/>
+    <sprite n="VW_necklace_tooth" x="197" y="834" w="50" h="31" pX="0.5" pY="0.5" oX="2" oY="3" oW="36" oH="56" r="y"/>
+    <sprite n="VW_pupil" x="413" y="835" w="23" h="23" pX="0.5" pY="0.5" oX="2" oY="2" oW="28" oH="28"/>
+    <sprite n="VW_right_foot" x="361" y="514" w="85" h="91" pX="0.5" pY="0.5" oX="2" oY="30" oW="96" oH="116" r="y"/>
+    <sprite n="VW_right_hand_01" x="255" y="782" w="53" h="45" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_02" x="254" y="829" w="52" h="43" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_03" x="2" y="842" w="50" h="41" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_04" x="88" y="920" w="47" h="40" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_05" x="359" y="835" w="52" h="42" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_06" x="359" y="879" w="51" h="41" pX="0.5" pY="0.5" oX="2" oY="9" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_07" x="199" y="788" w="53" h="44" pX="0.5" pY="0.5" oX="2" oY="6" oW="56" oH="56"/>
+    <sprite n="VW_right_hand_08" x="58" y="786" w="47" h="52" pX="0.5" pY="0.5" oX="2" oY="3" oW="56" oH="56" r="y"/>
+    <sprite n="VW_right_hand_09" x="107" y="842" w="50" h="42" pX="0.5" pY="0.5" oX="3" oY="10" oW="56" oH="56"/>
+    <sprite n="VW_right_lowerarm" x="255" y="738" w="54" h="42" pX="0.5" pY="0.5" oX="1" oY="3" oW="56" oH="48"/>
+    <sprite n="VW_right_lowerleg" x="148" y="269" w="67" h="75" pX="0.5" pY="0.5" oX="8" oY="19" oW="96" oH="116" r="y"/>
+    <sprite n="VW_right_upperarm" x="312" y="683" w="45" h="76" pX="0.5" pY="0.5" oX="0" oY="3" oW="76" oH="52" r="y"/>
+    <sprite n="VW_right_upperleg" x="109" y="638" w="91" h="78" pX="0.5" pY="0.5" oX="6" oY="0" oW="84" oH="92" r="y"/>
+    <sprite n="VW_shadow" x="2" y="2" w="227" h="118" pX="0.5" pY="0.5" oX="4" oY="3" oW="236" oH="124"/>
+    <sprite n="VW_skull" x="218" y="204" w="173" h="105" pX="0.5" pY="0.5" oX="13" oY="7" oW="132" oH="188" r="y"/>
+    <sprite n="VW_skull_glow" x="217" y="311" w="142" h="102" pX="0.5" pY="0.5" oX="5" oY="5" oW="112" oH="152" r="y"/>
+    <sprite n="VW_skull_jaw_01" x="2" y="715" w="103" h="69" pX="0.5" pY="0.5" oX="9" oY="10" oW="116" oH="116"/>
+    <sprite n="VW_skull_jaw_02" x="2" y="544" w="106" h="79" pX="0.5" pY="0.5" oX="7" oY="10" oW="116" oH="116"/>
+    <sprite n="VW_skull_jaw_03" x="2" y="625" w="105" h="88" pX="0.5" pY="0.5" oX="6" oY="10" oW="116" oH="116"/>
+    <sprite n="VW_skull_jaw_04" x="126" y="394" w="89" h="106" pX="0.5" pY="0.5" oX="4" oY="12" oW="116" oH="116" r="y"/>
+    <sprite n="VW_skull_jaw_05" x="214" y="503" w="106" h="92" pX="0.5" pY="0.5" oX="4" oY="12" oW="116" oH="116"/>
+    <sprite n="VW_skull_jaw_glow_01" x="361" y="471" w="86" h="41" pX="0.5" pY="0.5" oX="15" oY="2" oW="104" oH="72"/>
+    <sprite n="VW_skull_jaw_glow_02" x="359" y="660" w="85" h="46" pX="0.5" pY="0.5" oX="12" oY="6" oW="104" oH="72"/>
+    <sprite n="VW_skull_jaw_glow_03" x="360" y="607" w="85" h="51" pX="0.5" pY="0.5" oX="7" oY="10" oW="104" oH="72"/>
+    <sprite n="VW_skull_jaw_glow_04" x="393" y="299" w="55" h="86" pX="0.5" pY="0.5" oX="4" oY="11" oW="104" oH="72" r="y"/>
+    <sprite n="VW_skull_jaw_glow_05" x="449" y="512" w="57" h="84" pX="0.5" pY="0.5" oX="2" oY="12" oW="104" oH="72" r="y"/>
+</TextureAtlas>

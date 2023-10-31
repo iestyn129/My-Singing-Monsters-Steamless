@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4aaaaddf0513b7f485f99081530efa89:5c114e1ff6354123859d20c47ecdd416:36965cdcd518786af707cac1503b0823$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/hud03.png" width="256" height="512">
+    <sprite n="button_battle_complete" x="1" y="198" w="98" h="97" pX="0.5" pY="0.5" oX="16" oY="16" oW="130" oH="130"/>
+    <sprite n="button_castle" x="100" y="198" w="98" h="97" pX="0.5" pY="0.5" oX="18" oY="14" oW="130" oH="130" r="y"/>
+    <sprite n="button_copypaste" x="1" y="394" w="77" h="93" pX="0.5" pY="0.5" oX="32" oY="24" oW="140" oH="140"/>
+    <sprite n="button_daily_login" x="1" y="296" w="90" h="97" pX="0.5" pY="0.5" oX="20" oY="17" oW="130" oH="130"/>
+    <sprite n="button_evolve_reg_epic" x="114" y="1" w="110" h="96" pX="0.5" pY="0.5" oX="14" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_mirror_in" x="114" y="98" w="101" h="99" pX="0.5" pY="0.5" oX="22" oY="18" oW="130" oH="130" r="y"/>
+    <sprite n="button_mirror_out" x="1" y="101" w="101" h="96" pX="0.5" pY="0.5" oX="22" oY="18" oW="130" oH="130" r="y"/>
+    <sprite n="button_rank" x="79" y="394" w="88" h="91" pX="0.5" pY="0.5" oX="24" oY="25" oW="140" oH="140" r="y"/>
+    <sprite n="button_wait" x="168" y="296" w="84" h="82" pX="0.5" pY="0.5" oX="27" oY="32" oW="140" oH="140" r="y"/>
+    <sprite n="button_zap" x="1" y="1" w="112" h="99" pX="0.5" pY="0.5" oX="14" oY="20" oW="140" oH="140"/>
+    <sprite n="news_islandskins" x="168" y="379" w="82" h="91" pX="0.5" pY="0.5" oX="26" oY="17" oW="130" oH="130"/>
+    <sprite n="saletag" x="199" y="198" w="51" h="85" pX="0.5" pY="0.5" oX="0" oY="2" oW="85" oH="53" r="y"/>
+</TextureAtlas>

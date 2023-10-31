@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dc6bca9b2bf8d89a1b781b7bc8408ec4:165a704481e928d7b7a041297baccb78:4431bf88c4478064ef20caf59ff83017$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABN_costume_01_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (44, 80) -> new anchor (58, 102) diff = (-14, -22)-->
+	<!-- add double it to texturepacker output offsets (6, 8) -> (-22, -36), because hires-->
+    <sprite n="ABN_costume_01_head.png" x="2" y="2" w="205" h="190" pX="0.5" pY="0.5" oX="-22" oY="-36" oW="200" oH="220" r="y"/>
+
+    <!-- original anchor = (10, 0) -> new anchor (16, 3) diff = (-6, -3)-->
+	<!-- add double it to texturepacker output offsets (7, 4) -> (-5, -2), because hires-->
+    <sprite n="ABN_costume_01_leaf_a1.png" x="188" y="244" w="63" h="58" pX="0.5" pY="0.5" oX="-5" oY="-2" oW="70" oH="70" r="y"/>
+
+    <!-- original anchor = (10, 0) -> new anchor (17, 4) diff = (-7, -4)-->
+	<!-- add double it to texturepacker output offsets (14, 4) -> (0, -4), because hires-->
+    <sprite n="ABN_costume_01_leaf_a2.png" x="188" y="304" w="63" h="52" pX="0.5" pY="0.5" oX="0" oY="-4" oW="70" oH="70" r="y"/>
+
+    <!-- original anchor = (10, 0) -> new anchor (13, 4) diff = (-3, -4)-->
+	<!-- add double it to texturepacker output offsets (9, 3) -> (3, -5), because hires-->
+    <sprite n="ABN_costume_01_leaf_a3.png" x="188" y="194" w="64" h="48" pX="0.5" pY="0.5" oX="3" oY="-5" oW="70" oH="70" r="y"/>
+
+    <sprite n="ABN_face.png" x="2" y="358" w="92" h="122" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABN_leaffrill.png" x="2" y="194" w="184" h="137" pX="0.5" pY="0.5" oX="1" oY="0" oW="186" oH="138"/>
+    <sprite n="ABN_neckleaf_b.png" x="209" y="2" w="42" h="114" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3dc9b000531222155ece5d2abbe311f8:173c1baa4d50dcacf99aafbedf57ccb6:94bbf75f98d2965e3a79ef8f900e225a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/flags01.png" width="256" height="256">
+    <sprite n="gene_air" x="78" y="68" w="72" h="68" pX="0.5" pY="0.5" oX="4" oY="1" oW="80" oH="81"/>
+    <sprite n="gene_cold" x="154" y="2" w="73" h="65" pX="0.5" pY="0.5" oX="3" oY="4" oW="80" oH="81"/>
+    <sprite n="gene_earth" x="78" y="2" w="74" h="64" pX="0.5" pY="0.5" oX="2" oY="5" oW="80" oH="81"/>
+    <sprite n="gene_fire" x="2" y="2" w="74" h="66" pX="0.5" pY="0.5" oX="2" oY="4" oW="80" oH="81"/>
+    <sprite n="gene_plant" x="152" y="69" w="72" h="66" pX="0.5" pY="0.5" oX="4" oY="4" oW="80" oH="81"/>
+    <sprite n="gene_water" x="2" y="70" w="72" h="68" pX="0.5" pY="0.5" oX="4" oY="4" oW="80" oH="81"/>
+</TextureAtlas>

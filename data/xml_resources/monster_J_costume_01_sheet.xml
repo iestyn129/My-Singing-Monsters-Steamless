@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5fd452ab021dfdb05e6320366ea244ec:6d28b9ae3b4e2b1fe5f111f4adf929d1:1ff8c13bd25223ad795cc5947360d0cb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_J_costume_01_sheet.png" width="256" height="256" hires="true">
+    <!-- original anchor = (40, 39) -> new anchor (46, 46) diff = (-6, -7)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-12, -14), cause hires-->
+    <sprite n="J_body_costume_01_XMAS" x="2" y="2" w="190" h="228" pX="0.5" pY="0.5" oX="-12" oY="-14" oW="190" oH="230"/>
+</TextureAtlas>

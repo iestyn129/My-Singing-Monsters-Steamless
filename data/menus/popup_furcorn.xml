@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="6" />		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-3" />
+		</touchComponent>
+	</element>
+	
+	<template type="template_fancywindow" name="bg">
+		<templateVar name="$layer" equals="Tutorial" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.hudScale()" priorityOffset="2" />
+	</template>
+	
+	<element name="Sprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="25*game.hudScale()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(1.0*game.hudScale())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Title">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="50*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="320*game.hudScale()" h="75*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("text"):SetString("")
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("layer"):SetString("Tutorial")
+				component:setColor(0.43, 1.0, 0.25)
+				component:calculatePosition()
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Text">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="90*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="210*game.hudScale()" h="113*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("autoScale"):SetInt(1)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("textPadding"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("text"):SetString("")
+				
+				component("size"):SetFloat(0.28*game.hudScale())
+				
+				component("layer"):SetString("Tutorial")
+				component:calculatePosition()
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Monster">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/monster_be.bin")
+				component("animation"):SetString("BE_talking")
+				component:setScale(Vector2(1.0*game.hudScale(),1.0*game.hudScale()))
+				component("layer"):SetString("Tutorial")
+			</event>
+			<event name="onPostInit" params="component, element">
+				element:setOrientationPosition(Vector2(45*game.hudScale(), -component:size().y + 25*game.hudScale()))
+			</event>
+		</aeComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="OkayButton">
+		<templateVar name="$upSpriteName" equals="button_continue_green" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$text" equals="CONTINUE" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="Tutorial" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local msgId
+				if(element:parent()("messageID"):GetString() ~= "") then
+					msgId = element:parent()("messageID"):GetString();
+				else
+					msgId = element:parent():E("Text"):C("Text"):V("text"):GetString()
+				end
+
+				game.notificationDismissed(msgId);
+
+				element:root():popPopUp()
+			</event>
+		</touchComponent>
+		<event name="onPostInit" params="element">
+			element["Text"]("size"):SetFloat(0.25*game.hudScale())
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</template>
+</menu>

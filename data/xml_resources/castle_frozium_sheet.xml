@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2e859edeffe277692876e572b890c4fe:faf15703c5e01c180d1f8a721ad60a3c:c70f243ba323a8d859f621c435b8574f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_frozium_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Frozium_base" x="2" y="2" w="820" h="956" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992"/>
+    <sprite n="castle_Frozium_crystalA" x="824" y="370" w="160" h="149" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="160"/>
+    <sprite n="castle_Frozium_crystalB" x="824" y="2" w="192" h="182" pX="0.5" pY="0.5" oX="0" oY="5" oW="192" oH="192"/>
+    <sprite n="castle_Frozium_crystalC" x="824" y="186" w="192" h="182" pX="0.5" pY="0.5" oX="23" oY="31" oW="240" oH="240"/>
+    <sprite n="castle_Frozium_pyramid" x="824" y="521" w="156" h="222" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240"/>
+</TextureAtlas>

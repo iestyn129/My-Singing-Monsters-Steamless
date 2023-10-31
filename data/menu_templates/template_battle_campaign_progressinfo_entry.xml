@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template name="template_battle_campaign_progressinfo_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size w="90*game.menuScaleX()" h="46*game.menuScaleY()" />
+<!--
+	<spriteComponent name="test_box">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(
+					Vector2( element:absW() / 4.0, element:absH() / 4.0))
+				component:setColor(1.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.25)
+				component("layer"):SetString(element("Layer"):GetString())
+				component("visible"):SetInt(1)
+			]]>
+		</event>
+	</spriteComponent>
+-->
+	<textComponent name="StageLabel">
+		<size w="106*game.menuScaleX()" h="12*game.menuScaleX()"/>
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					--component("text"):SetString("Stage "..element("BattleId"):GetInt())
+					component("layer"):SetString(element("Layer"):GetString())
+				]]>
+		</event>
+	</textComponent>
+
+	<spriteComponent name="Opponent1">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("layer"):SetString(element("Layer"):GetString())
+				]]>
+		</event>
+	</spriteComponent>
+
+	<spriteComponent name="Opponent2">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="20*game.menuScaleX()" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("layer"):SetString(element("Layer"):GetString())
+				]]>
+		</event>
+	</spriteComponent>
+
+	<spriteComponent name="Opponent3">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="40*game.menuScaleX()" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("layer"):SetString(element("Layer"):GetString())
+				]]>
+		</event>
+	</spriteComponent>
+
+	<spriteSheetComponent name="Completed">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString(element("Layer"):GetString())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<element name="Rewards">
+		<size w="90*game.menuScaleX()" h="12*game.menuScaleY()"/>
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0*game.menuScaleX()" yOffset="2*game.menuScaleY()" priorityOffset="-1" />
+
+		<spriteSheetComponent name="MedalIcon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("medal")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+					--component("alpha"):SetFloat(0.0)
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="MedalLabel">
+			<size w="30*game.menuScaleX()" h="30*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					--component("text"):SetString("666")
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+					game.StoreContext_setMedalTextColour(component)
+					--component("alpha"):SetFloat(0.0)
+				]]>
+			</event>
+		</textComponent>
+
+		<spriteSheetComponent name="XpIcon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="100*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("spriteName"):SetString("battle_xp")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+				--component("alpha"):SetFloat(0.0)
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="XpLabel">
+			<size w="30*game.menuScaleX()" h="30*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="110*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					--component("text"):SetString("666")
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+					game.StoreContext_setBattleXpTextColour(component)
+					--component("alpha"):SetFloat(0.0)
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				local campaignId = element("CampaignId"):GetInt()
+				local battleId = element("BattleId"):GetInt()
+				local campaignData = game.getBattleCampaignData(campaignId)
+				local battleData = campaignData.battles[battleId]
+				local reward = battleData.reward
+			
+				if reward then
+
+					if reward.xp > 0 then
+						element["XpLabel"]("text"):SetInt(reward.xp)
+						element["XpLabel"]("visible"):SetInt(1)
+						element["XpIcon"]("visible"):SetInt(1)
+					else
+						element["XpLabel"]("visible"):SetInt(0)
+						element["XpIcon"]("visible"):SetInt(0)
+					end
+					
+			
+					if reward.medals > 0 then
+						element["MedalLabel"]("text"):SetInt(reward.medals)
+						element["MedalLabel"]("visible"):SetInt(1)
+						element["MedalIcon"]("visible"):SetInt(1)
+					else
+						element["MedalLabel"]("visible"):SetInt(1)
+						element["MedalIcon"]("visible"):SetInt(1)
+					end
+			
+				end
+			]]>
+		</event>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+			
+					local MenuHelpers = include("MenuHelpers")
+					
+					local rewardElements = {}
+					if element["XpIcon"]("visible"):GetInt() == 1 then
+						table.insert(rewardElements, element:GetComponent("XpIcon"))
+						table.insert(rewardElements, element:GetComponent("XpLabel"))
+						table.insert(rewardElements, MenuHelpers.CreateSpacer(8*game.menuScaleX(), 30*game.menuScaleY()))
+					end
+					
+					if element["MedalIcon"]("visible"):GetInt() == 1 then
+						table.insert(rewardElements, element:GetComponent("MedalIcon"))
+						table.insert(rewardElements, element:GetComponent("MedalLabel"))
+					end
+					
+					
+					MenuHelpers.ApplyHorizontalLayout(rewardElements)
+					
+			]]>
+		</event>
+
+		<event name="updateClipping" params="element">
+			<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.SetClipFrom(element:GetComponent("MedalIcon"), element)
+				MenuHelpers.SetClipFrom(element:GetComponent("MedalLabel"), element)
+				MenuHelpers.SetClipFrom(element:GetComponent("XpIcon"), element)
+				MenuHelpers.SetClipFrom(element:GetComponent("XpLabel"), element)
+		]]>
+		</event>
+
+
+	</element>
+
+	<spriteComponent name="Separator">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(
+					Vector2( (element:absW()-8*game.menuScaleX()) / 4.0, (1.0 * game.menuScaleY()) / 4.0))
+				component("layer"):SetString(element("Layer"):GetString())
+			]]>
+		</event>
+	</spriteComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			local campaignId = element("CampaignId"):GetInt()
+			local battleId = element("BattleId"):GetInt()
+			element["Rewards"]("CampaignId"):SetInt(campaignId)
+			element["Rewards"]("BattleId"):SetInt(battleId)
+		]]>
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			local campaignId = element("CampaignId"):GetInt()
+			local battleId = element("BattleId"):GetInt()
+			
+			local stageLabelText = LOC("BATTLE_CAMPAIGN_STAGE")
+			stageLabelText = stageLabelText:gsub("%${STAGE}", battleId+1)
+			element["StageLabel"]("text"):SetString(stageLabelText)
+			
+			local campaignData = game.getBattleCampaignData(campaignId)
+			local battleData = campaignData.battles[battleId]
+			
+			local MonsterPortraits = include("MonsterPortraits")
+			
+			local portraitName = MonsterPortraits:getDefaultMonsterPortrait(battleData.monsters[0].monsterId)
+			element["Opponent1"]("spriteName"):SetString(portraitName)
+			
+			if battleData.monsters:size() > 1 then
+				portraitName = MonsterPortraits:getDefaultMonsterPortrait(battleData.monsters[1].monsterId)
+				element["Opponent2"]("spriteName"):SetString(portraitName)
+			end
+			
+			if battleData.monsters:size() > 2 then
+				portraitName = MonsterPortraits:getDefaultMonsterPortrait(battleData.monsters[2].monsterId)
+				element["Opponent3"]("spriteName"):SetString(portraitName)
+			end
+			
+			local progress = game.getBattlePlayerData():getCampaignProgress(campaignId)
+			if progress >  battleId then 
+				element["Completed"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="updateClipping" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+			MenuHelpers.SetClipFrom(element:GetComponent("StageLabel"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Opponent1"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Opponent2"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Opponent3"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Completed"), element)
+			MenuHelpers.SetClipFrom(element:GetComponent("Separator"), element)			
+			
+			element["Rewards"]("clipX"):SetFloat(element("clipX"):GetFloat())
+			element["Rewards"]("clipY"):SetFloat(element("clipY"):GetFloat())
+			element["Rewards"]("clipW"):SetFloat(element("clipW"):GetFloat())
+			element["Rewards"]("clipH"):SetFloat(element("clipH"):GetFloat())
+			element["Rewards"]:DoStoredScript("updateClipping")
+		]]>
+	</event>
+
+</template>

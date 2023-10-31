@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:65cf91d2df15f29f5654b7270dd24b52:e7bdc66f0dc18c417d444c8ceb1c2be0:32aca3e3005eb397c2fa5acb24c54346$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_JK_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="JK_antenna" x="349" y="302" w="46" h="149" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="152"/>
+    <sprite n="JK_antenna_RARE" x="349" y="453" w="149" h="46" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="152" r="y"/>
+    <sprite n="JK_back_lowerleg" x="195" y="506" w="143" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="144" r="y"/>
+    <sprite n="JK_back_lowerleg_RARE" x="195" y="572" w="143" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="144" r="y"/>
+    <sprite n="JK_body" x="2" y="582" w="185" h="172" pX="0.5" pY="0.5" oX="1" oY="0" oW="188" oH="172"/>
+    <sprite n="JK_elec_01" x="335" y="799" w="69" h="33" pX="0.5" pY="0.5" oX="3" oY="5" oW="76" oH="44"/>
+    <sprite n="JK_elec_02" x="308" y="638" w="30" h="65" pX="0.5" pY="0.5" oX="5" oY="7" oW="76" oH="44" r="y"/>
+    <sprite n="JK_elec_03" x="422" y="792" w="37" h="66" pX="0.5" pY="0.5" oX="4" oY="3" oW="76" oH="44" r="y"/>
+    <sprite n="JK_elec_04" x="435" y="723" w="24" h="67" pX="0.5" pY="0.5" oX="5" oY="12" oW="76" oH="44" r="y"/>
+    <sprite n="JK_front_lowerleg" x="345" y="501" w="163" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="168" r="y"/>
+    <sprite n="JK_front_lowerleg_RARE" x="340" y="567" w="163" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="168" r="y"/>
+    <sprite n="JK_glow" x="2" y="756" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="JK_glow_RARE" x="57" y="756" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="JK_guitar" x="2" y="2" w="395" h="119" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="400" r="y"/>
+    <sprite n="JK_guitar_RARE" x="2" y="123" w="395" h="119" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="400" r="y"/>
+    <sprite n="JK_head" x="399" y="164" w="107" h="103" pX="0.5" pY="0.5" oX="0" oY="2" oW="104" oH="112" r="y"/>
+    <sprite n="JK_head_RARE" x="2" y="454" w="191" h="126" pX="0.5" pY="0.5" oX="0" oY="0" oW="192" oH="128"/>
+    <sprite n="JK_left_back_foot" x="461" y="744" w="43" h="40" pX="0.5" pY="0.5" oX="0" oY="2" oW="40" oH="48" r="y"/>
+    <sprite n="JK_left_back_foot_RARE" x="461" y="786" w="43" h="40" pX="0.5" pY="0.5" oX="0" oY="2" oW="40" oH="48" r="y"/>
+    <sprite n="JK_left_eyeball" x="162" y="834" w="34" h="32" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="32"/>
+    <sprite n="JK_left_eyelid_01" x="461" y="828" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="JK_left_eyelid_02" x="68" y="811" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="JK_left_eyelid_03" x="166" y="976" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="JK_left_eyelid_04" x="153" y="869" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="JK_left_front_foot" x="464" y="689" w="43" h="53" pX="0.5" pY="0.5" oX="2" oY="1" oW="48" oH="56"/>
+    <sprite n="JK_left_front_foot_RARE" x="464" y="633" w="45" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="48" oH="56"/>
+    <sprite n="JK_left_hand_01" x="2" y="869" w="55" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="68"/>
+    <sprite n="JK_left_hand_01_RARE" x="2" y="811" w="64" h="55" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="68" r="y"/>
+    <sprite n="JK_left_hand_02" x="397" y="389" w="50" h="60" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="68"/>
+    <sprite n="JK_left_hand_02_RARE" x="449" y="389" w="60" h="49" pX="0.5" pY="0.5" oX="1" oY="2" oW="56" oH="68" r="y"/>
+    <sprite n="JK_left_lowerarm" x="335" y="723" w="98" h="56" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="56"/>
+    <sprite n="JK_left_lowerarm_RARE" x="189" y="710" w="99" h="56" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="56"/>
+    <sprite n="JK_left_upperarm" x="189" y="638" w="117" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="24"/>
+    <sprite n="JK_left_upperarm_RARE" x="189" y="662" w="117" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="24"/>
+    <sprite n="JK_lights_RARE" x="399" y="94" w="110" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="JK_mouth_01" x="58" y="995" w="52" h="23" pX="0.5" pY="0.5" oX="0" oY="2" oW="52" oH="28"/>
+    <sprite n="JK_mouth_02" x="308" y="705" w="25" h="51" pX="0.5" pY="0.5" oX="0" oY="2" oW="52" oH="28" r="y"/>
+    <sprite n="JK_mouth_03" x="349" y="244" w="47" h="27" pX="0.5" pY="0.5" oX="2" oY="1" oW="52" oH="28"/>
+    <sprite n="JK_pupil" x="2" y="1001" w="18" h="18" pX="0.5" pY="0.5" oX="1" oY="2" oW="20" oH="20"/>
+    <sprite n="JK_pupil_RARE" x="22" y="1001" w="18" h="18" pX="0.5" pY="0.5" oX="1" oY="2" oW="20" oH="20"/>
+    <sprite n="JK_right_back_foot" x="109" y="834" w="51" h="32" pX="0.5" pY="0.5" oX="2" oY="0" oW="56" oH="32"/>
+    <sprite n="JK_right_back_foot_RARE" x="152" y="923" w="32" h="51" pX="0.5" pY="0.5" oX="2" oY="0" oW="56" oH="32" r="y"/>
+    <sprite n="JK_right_eyeball" x="178" y="797" w="31" h="32" pX="0.5" pY="0.5" oX="2" oY="0" oW="36" oH="32" r="y"/>
+    <sprite n="JK_right_eyelid_01" x="198" y="831" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="JK_right_eyelid_02" x="277" y="811" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="JK_right_eyelid_03" x="207" y="951" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="JK_right_eyelid_04" x="227" y="910" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="JK_right_front_foot" x="114" y="928" w="36" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="JK_right_front_foot_RARE" x="115" y="869" w="36" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="JK_right_hand_01" x="112" y="756" w="64" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="64" r="y"/>
+    <sprite n="JK_right_hand_01_RARE" x="2" y="935" w="54" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="64"/>
+    <sprite n="JK_right_hand_02" x="58" y="935" w="54" h="58" pX="0.5" pY="0.5" oX="0" oY="6" oW="56" oH="64"/>
+    <sprite n="JK_right_hand_02_RARE" x="59" y="869" w="54" h="57" pX="0.5" pY="0.5" oX="0" oY="6" oW="56" oH="64"/>
+    <sprite n="JK_right_lowerarm" x="398" y="269" w="104" h="58" pX="0.5" pY="0.5" oX="2" oY="1" oW="108" oH="60"/>
+    <sprite n="JK_right_lowerarm_RARE" x="397" y="329" w="104" h="58" pX="0.5" pY="0.5" oX="2" oY="1" oW="108" oH="60"/>
+    <sprite n="JK_right_upperarm" x="189" y="686" w="117" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="24"/>
+    <sprite n="JK_right_upperarm_RARE" x="340" y="699" w="117" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="24"/>
+    <sprite n="JK_shadow" x="340" y="633" w="122" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="124" oH="64"/>
+    <sprite n="JK_small_lowerleg" x="399" y="2" w="111" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="112" r="y"/>
+    <sprite n="JK_small_lowerleg_RARE" x="399" y="48" w="111" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="112" r="y"/>
+    <sprite n="JK_small_upperleg" x="290" y="710" w="16" h="85" pX="0.5" pY="0.5" oX="0" oY="1" oW="16" oH="88"/>
+    <sprite n="JK_small_upperleg_RARE" x="335" y="781" w="85" h="16" pX="0.5" pY="0.5" oX="0" oY="1" oW="16" oH="88" r="y"/>
+    <sprite n="JK_strings_01" x="2" y="350" w="345" h="102" pX="0.5" pY="0.5" oX="8" oY="41" oW="120" oH="400" r="y"/>
+    <sprite n="JK_strings_02" x="2" y="244" w="345" h="104" pX="0.5" pY="0.5" oX="7" oY="41" oW="120" oH="400" r="y"/>
+    <sprite n="JK_upperleg" x="195" y="454" w="148" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="JK_upperleg_RARE" x="195" y="480" w="148" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_JK_left_eyelid_01" x="186" y="910" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="RARE_JK_left_eyelid_02" x="194" y="869" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="RARE_JK_left_eyelid_03" x="236" y="768" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="RARE_JK_left_eyelid_04" x="236" y="809" w="39" h="39" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="40"/>
+    <sprite n="RARE_JK_mouth_01" x="112" y="995" w="52" h="23" pX="0.5" pY="0.5" oX="0" oY="2" oW="52" oH="28"/>
+    <sprite n="RARE_JK_mouth_02" x="308" y="758" w="25" h="51" pX="0.5" pY="0.5" oX="0" oY="2" oW="52" oH="28" r="y"/>
+    <sprite n="RARE_JK_mouth_03" x="349" y="273" w="47" h="27" pX="0.5" pY="0.5" oX="2" oY="1" oW="52" oH="28"/>
+    <sprite n="RARE_JK_right_eyelid_01" x="235" y="869" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_JK_right_eyelid_02" x="245" y="948" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_JK_right_eyelid_03" x="245" y="986" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_JK_right_eyelid_04" x="265" y="907" w="36" h="36" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:439a288aec549451444644b727fe31d5:e5a82ef523b7573988246330a5f0033d:c2adbc96da06ebe627eedf3b7286e720$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T08_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T08_bangs.png" x="263" y="647" w="32" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T08_beard.png" x="129" y="602" w="46" h="31" pX="0.5" pY="0.5" oX="0" oY="1" oW="46" oH="32"/>
+    <sprite n="T08_body.png" x="349" y="494" w="84" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="84" r="y"/>
+    <sprite n="T08_eye_lid_left_01.png" x="416" y="686" w="25" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22"/>
+    <sprite n="T08_eye_lid_left_02.png" x="493" y="70" w="14" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22" r="y"/>
+    <sprite n="T08_eye_lid_left_03.png" x="493" y="42" w="17" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22" r="y"/>
+    <sprite n="T08_eye_lid_left_04.png" x="235" y="648" w="26" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22"/>
+    <sprite n="T08_eye_lid_left_05.png" x="235" y="624" w="26" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="T08_face_01.png" x="443" y="646" w="67" h="42" pX="0.5" pY="0.5" oX="3" oY="13" oW="72" oH="60"/>
+    <sprite n="T08_face_02.png" x="346" y="677" w="68" h="34" pX="0.5" pY="0.5" oX="3" oY="17" oW="72" oH="60"/>
+    <sprite n="T08_face_03.png" x="265" y="573" w="31" h="72" pX="0.5" pY="0.5" oX="0" oY="17" oW="72" oH="60" r="y"/>
+    <sprite n="T08_face_04.png" x="2" y="607" w="60" h="59" pX="0.5" pY="0.5" oX="9" oY="0" oW="72" oH="60" r="y"/>
+    <sprite n="T08_face_05.png" x="66" y="565" w="61" h="60" pX="0.5" pY="0.5" oX="8" oY="0" oW="72" oH="60"/>
+    <sprite n="T08_face_06.png" x="298" y="470" w="49" h="65" pX="0.5" pY="0.5" oX="5" oY="3" oW="72" oH="60" r="y"/>
+    <sprite n="T08_face_07.png" x="312" y="334" w="36" h="68" pX="0.5" pY="0.5" oX="2" oY="16" oW="72" oH="60" r="y"/>
+    <sprite n="T08_fist_left.png" x="452" y="214" w="58" h="45" pX="0.5" pY="0.5" oX="0" oY="2" oW="46" oH="60" r="y"/>
+    <sprite n="T08_foot_left.png" x="177" y="624" w="56" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="T08_glow.png" x="350" y="2" w="141" h="140" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="142"/>
+    <sprite n="T08_glow_crack_01.png" x="2" y="565" w="62" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T08_glow_crack_02.png" x="350" y="144" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_glow_crack_03.png" x="350" y="335" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_glow_crack_04.png" x="350" y="391" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_ground_behind.png" x="2" y="423" w="294" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="T08_ground_front.png" x="444" y="350" w="66" h="294" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_hair_back_left.png" x="120" y="658" w="54" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T08_hair_back_right.png" x="260" y="706" w="35" h="42" pX="0.5" pY="0.5" oX="0" oY="1" oW="42" oH="36" r="y"/>
+    <sprite n="T08_hair_front_left.png" x="181" y="559" w="82" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="82" r="y"/>
+    <sprite n="T08_hair_front_right.png" x="450" y="261" w="60" h="87" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="88"/>
+    <sprite n="T08_hair_mid_left.png" x="266" y="493" w="30" h="78" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="30" r="y"/>
+    <sprite n="T08_hair_mid_right.png" x="348" y="637" w="69" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="38"/>
+    <sprite n="T08_hair_white_left.png" x="350" y="449" w="88" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="88" r="y"/>
+    <sprite n="T08_hair_white_right.png" x="350" y="288" w="96" h="45" pX="0.5" pY="0.5" oX="0" oY="0" oW="46" oH="96" r="y"/>
+    <sprite n="T08_hand_left.png" x="312" y="404" w="36" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_head.png" x="2" y="493" w="177" h="70" pX="0.5" pY="0.5" oX="1" oY="0" oW="178" oH="70"/>
+    <sprite n="T08_ice_drum_01.png" x="298" y="644" w="46" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_ice_drum_02.png" x="452" y="144" w="58" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_ice_drum_03.png" x="443" y="690" w="65" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="66" r="y"/>
+    <sprite n="T08_ice_drum_04.png" x="222" y="668" w="36" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_lower_arm_left.png" x="181" y="493" w="83" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="84" oH="64"/>
+    <sprite n="T08_lower_arm_right.png" x="349" y="575" w="76" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="T08_lower_leg_left.png" x="298" y="591" w="49" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="50" r="y"/>
+    <sprite n="T08_mouth_01.png" x="298" y="624" w="48" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="24"/>
+    <sprite n="T08_mouth_02.png" x="493" y="2" w="17" h="38" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="24" r="y"/>
+    <sprite n="T08_mouth_03.png" x="260" y="683" w="36" h="21" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="24"/>
+    <sprite n="T08_mouth_04.png" x="120" y="700" w="35" h="21" pX="0.5" pY="0.5" oX="5" oY="1" oW="48" oH="24"/>
+    <sprite n="T08_mouth_05.png" x="416" y="708" w="22" h="31" pX="0.5" pY="0.5" oX="9" oY="2" oW="48" oH="24" r="y"/>
+    <sprite n="T08_mouth_06.png" x="2" y="668" w="35" h="21" pX="0.5" pY="0.5" oX="5" oY="3" oW="48" oH="24"/>
+    <sprite n="T08_mouth_07.png" x="298" y="700" w="43" h="21" pX="0.5" pY="0.5" oX="0" oY="3" oW="48" oH="24"/>
+    <sprite n="T08_mouth_08.png" x="419" y="637" w="22" h="47" pX="0.5" pY="0.5" oX="0" oY="2" oW="48" oH="24" r="y"/>
+    <sprite n="T08_mouth_09.png" x="124" y="635" w="46" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="24"/>
+    <sprite n="T08_pupil.png" x="493" y="98" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="T08_rubber_band.png" x="493" y="114" w="12" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_shadow.png" x="2" y="334" w="308" h="87" pX="0.5" pY="0.5" oX="8" oY="9" oW="324" oH="100"/>
+    <sprite n="T08_shoulder_left.png" x="298" y="537" w="49" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="50" r="y"/>
+    <sprite n="T08_shoulder_right.png" x="64" y="650" w="54" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="T08_snow_drum.png" x="350" y="216" w="98" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="T08_statue.png" x="2" y="2" w="346" h="330" pX="0.5" pY="0.5" oX="0" oY="0" oW="330" oH="356" r="y"/>
+    <sprite n="T08_top_knot.png" x="176" y="662" w="44" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T08_upper_arm_left.png" x="64" y="627" w="58" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="58" oH="22"/>
+    <sprite n="T08_upper_leg_left.png" x="129" y="565" w="46" h="35" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="46" r="y"/>
+</TextureAtlas>

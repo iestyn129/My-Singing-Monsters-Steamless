@@ -1,0 +1,349 @@
+<template name="template_bom_costume_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="FrontClipping" />
+	<size dependentOnElement="bg" dependentOnComponent="GreySprite" />
+
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="GreySprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="GreySprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("selectable_bar_grey")
+					component("sheetName"):SetString("xml_resources/breeding01.xml")
+					component("size"):SetFloat(0.525*game.menuScaleX())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="YellowSprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("selectable_bar_yellow")
+					component("sheetName"):SetString("xml_resources/breeding01.xml")
+					component("size"):SetFloat(0.525*game.menuScaleX())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+	<spriteSheetComponent name="EquippedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-4*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.38*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</spriteSheetComponent>
+	<!-- element name="Hourglass">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("news_timed")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.17*game.menuScaleX())
+				component("layer"):SetString("$layer")
+				component("visible"):SetInt(element:parent()("timedAvail"):GetInt())
+			</event>
+		</spriteSheetComponent>
+	</element -->
+
+	<element name="costumeName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="130*game.menuScaleX()" h="32*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					local name = element:parent()("costumeName"):GetString()
+					if string.len(name) == 0 then
+						name = LOC("BATTLE_COSTUME_NONE")
+					end
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("noTranslate"):SetInt(1)
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("text"):SetString(name)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(element("touchDisabled"):GetInt() == 0) then
+					if(component("dragging"):GetInt() < 10) then
+						if(element("disabled"):GetInt() == 0) then
+							element:DoStoredScript("select")
+							--local list = element:root():GetElement(element("Container"):GetString())
+							local list = element:parent();
+							list("NewSelectedEntry"):SetString(element:name())
+							list("NewSelectedEntryID"):SetInt(element("costumeId"):GetInt())
+							list:DoStoredScript("selectNewEntry")
+						end
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+				end
+			]]>
+		</event>
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component:setSize(Vector2(element:GetElement("bg"):absW()*1.25, element:GetElement("bg"):absH() * 1.5))
+				component("yOffset"):SetInt(element:GetElement("bg"):absH()*(-0.25))
+			]]>
+		</event>
+	</touchComponent>
+
+	<!-- spriteSheetComponent name="LockedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_lock")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</spriteSheetComponent -->
+
+	<!-- element name="BattleQuestIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-8*game.menuScaleX()" yOffset="-6*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_battle_complete")
+					component("sheetName"):SetString("xml_resources/hud03.xml")
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("$layer")
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<event name="show" params="element">
+			<![CDATA[
+				element["Sprite"]("visible"):SetInt(1)
+			]]>
+		</event>
+		<event name="hide" params="element">
+			<![CDATA[
+				element["Sprite"]("visible"):SetInt(0)
+			]]>
+		</event>
+	</element -->
+
+	<!-- spriteSheetComponent name="EquippedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_costume")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</spriteSheetComponent -->
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("disabled"):SetInt(0)
+			element("touchDisabled"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="select" params="element">
+		<![CDATA[
+			element("selected"):SetInt(1)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="deselect" params="element">
+		<![CDATA[
+			element("selected"):SetInt(0)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="disableEntry" params="element">
+		<![CDATA[
+			element("disabled"):SetInt(1)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="enableEntry" params="element">
+		<![CDATA[
+			element("disabled"):SetInt(0)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="equip" params="element">
+		<![CDATA[
+			element("equipped"):SetInt(1)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+
+	<event name="unEquip" params="element">
+		<![CDATA[
+			element("equipped"):SetInt(0)
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["bg"]["GreySprite"]("visible"):SetInt(0)
+		element["bg"]["YellowSprite"]("visible"):SetInt(0)
+		element["EquippedIcon"]("visible"):SetInt(0)
+		element["costumeName"]["Text"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["costumeName"]["Text"]("visible"):SetInt(1)
+		element["Touch"]("enabled"):SetInt(1)
+		
+		local selected = element("selected"):GetInt()
+		if selected == 1 then
+			element["bg"]["GreySprite"]("visible"):SetInt(0)
+			element["bg"]["YellowSprite"]("visible"):SetInt(1)
+		else
+			element["bg"]["GreySprite"]("visible"):SetInt(1)
+			element["bg"]["YellowSprite"]("visible"):SetInt(0)
+		end
+		
+		if(game.hasOrHasEverHadCostumeOnIsland(element("costumeId"):GetInt()) == false) then
+			element["EquippedIcon"]("visible"):SetInt(0)
+		else
+			element["EquippedIcon"]("visible"):SetInt(1)
+		end
+
+		element["bg"]["GreySprite"]:setColor(1.0, 1.0, 1.0)
+		element["costumeName"]["Text"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	<event name="refresh" params="element">
+		<![CDATA[
+			local costumeId = element("costumeId"):GetInt()
+
+
+			--[[if isPurchased or isEquipped then
+				element["EquippedIcon"]("visible"):SetInt(1)
+				if isEquipped then
+					element["EquippedIcon"]:setColor(1.0, 1.0, 1.0)
+				else
+					element["EquippedIcon"]:setColor(0.5, 0.5, 0.5)
+				end
+			else
+				element["EquippedIcon"]("visible"):SetInt(0)
+			end
+
+			local locked = element("locked"):GetInt()
+			element["LockedIcon"]("visible"):SetInt(locked)
+
+			if (not game.isBattleIsland())
+				and not isPurchased
+				and game.isCostumeUnlocked(costumeId)
+			then
+				element["BattleQuestIcon"]:DoStoredScript("show")
+
+				if(not game.sawCostumeIntroPopup()) then
+					game.showCostumeIntroPopup();
+				end
+			else
+				element["BattleQuestIcon"]:DoStoredScript("hide")
+			end
+
+			local disabled = element("disabled"):GetInt()
+			if disabled == 1 then
+				element["bg"]["GreySprite"]:setColor(0.5, 0.5, 0.5)
+				element["costumeName"]["Text"]:setColor(0.5, 0.5, 0.5)
+
+				element["bg"]["GreySprite"]("visible"):SetInt(1)
+				element["bg"]["YellowSprite"]("visible"):SetInt(0)
+
+			else]]
+			
+				if(element["Touch"]("enabled"):GetInt() == 1) then
+
+					local selected = element("selected"):GetInt()
+					if selected == 1 then
+						element["bg"]["GreySprite"]("visible"):SetInt(0)
+						element["bg"]["YellowSprite"]("visible"):SetInt(1)
+					else
+						element["bg"]["GreySprite"]("visible"):SetInt(1)
+						element["bg"]["YellowSprite"]("visible"):SetInt(0)
+					end
+
+					element["bg"]["GreySprite"]:setColor(1.0, 1.0, 1.0)
+					element["costumeName"]["Text"]:setColor(1.0, 1.0, 1.0)
+				end
+			--[[end]]
+		]]>
+	</event>
+
+	<!-- event name="updateClipping" params="element">
+		<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.SetClipFrom(element:GetComponent("Touch"), element)
+				MenuHelpers.SetClipFrom(element:GetComponent("LockedIcon"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("BattleQuestIcon"):GetComponent("Sprite"), element)
+				MenuHelpers.SetClipFrom(element:GetComponent("EquippedIcon"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("bg"):GetComponent("GreySprite"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("bg"):GetComponent("YellowSprite"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("costumeName"):GetComponent("Text"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("Hourglass"):GetComponent("Sprite"), element)
+		]]>
+	</event -->
+
+</template>

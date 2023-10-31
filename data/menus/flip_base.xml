@@ -1,0 +1,616 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<script src="scripts/FlipCardBase.lua"/>
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="20" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("background")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY())) 
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="FadeLayer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="14" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("background")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="coinCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				component("text"):SetString(game.commaizeNumber(game.playerCoins()))
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+
+	<element name="diamondCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10+(lua_sys.screenWidth()-20)/6" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				component("text"):SetString(game.commaizeNumber(game.playerDiamonds()))
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+
+	<element name="foodCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10+2*(lua_sys.screenWidth()-20)/6" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_FOOD, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				component("text"):SetString(game.commaizeNumber(game.playerFood()))
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+	<element name="keysCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10+3*(lua_sys.screenWidth()-20)/6" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_KEY)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_KEYS, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				component("text"):SetString(game.commaizeNumber(game.playerKeys()))
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+	<element name="shardCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10+4*(lua_sys.screenWidth()-20)/6" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_ETH_CURRENCY, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				component("text"):SetString(game.commaizeNumber(game.playerEtherealCurrency()))
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+	<element name="xpCounter">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10+5*(lua_sys.screenWidth()-20)/6" yOffset="70*game.menuScaleY()" priorityOffset="30" />
+		<ninesliceComponent name="BackingSprite">
+			<size w="(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_XP)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.7*(lua_sys.screenWidth()-20)/6" h="31*(lua_sys.screenWidth()/480)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.075*(lua_sys.screenWidth()-20)/6" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component:DoStoredScript("updateText")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_XP, component)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="updateText" params="component, element">
+				<![CDATA[
+				if(game.playerLevel() < game.maxPlayerLevel()) then
+					component("text"):SetString(game.commaizeNumber(game.playerCurrentXp()))
+				else
+					component("text"):SetString("MAXED")
+				end
+				]]>
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("hide")
+		</event>
+		<event name="hide" params="element">
+			element["BackingSprite"]("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element["BackingSprite"]("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="updateText" params="element">
+			element["Text"]:DoStoredScript("updateText")
+		</event>
+	</element>
+
+	<element name="Title">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.menuScaleY()" priorityOffset="30" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTitleFont())
+				component("size"):SetFloat(0.35*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("LEVEL").." "..game.curFlipLevel().."/"..game.getFlipLevels())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Mismatches">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Title" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				if(game.limitFlipMismatches()) then
+					-- TODO: the space between the text and the number should be specified in MTF
+					component("text"):SetString(game.getLocalizedText("FLIP_MISMATCHES_REMAINING").." "..game.curFlipMismatches())
+				else
+					component("visible"):SetInt(0)
+				end
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Cards">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+	</element>
+	
+	<element name="PrizeTier">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="20*game.composerScale()" yOffset="20*game.composerScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("FLIP_PRIZE_TIER")
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("emote01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.75*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="RewardParticle">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="15" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("layer"):SetString("HUD")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt(lua_sys.screenWidth()/2 + element:parent().boardCenterOffsetX)
+			element("yOffset"):SetInt(lua_sys.screenHeight()/2 + element:parent().boardCenterOffsetY)
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="FlipAllButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="QuitButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="element">
+			onInit(element)
+			if(not game.isQABuild()) then
+				element:setInvisible()
+				element["Overlay"]("visible"):SetInt(0)
+			end
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.testShuffle()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):SetString(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("FLIP_ALL")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	<template type="template_spritesheetbutton" name="QuitButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="10" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				component:DoStoredScript("quitGame")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):SetString(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+</menu>

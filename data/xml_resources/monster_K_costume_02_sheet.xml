@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ec7861a87e803774e0cccfefa44ec813:19b61289de79f62a8c65a09cb531dc75:42ed00ed8e6b26041a49ecf01f16f47c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_K_costume_02_sheet.png" width="256" height="256" hires="true">
+    <!-- original anchor = (32, 34) -> new anchor (8, 7) diff = (24, 27)-->
+    <!-- add double it to texturepacker output offsets (0, 0) -> (48, 54), cause hires-->
+    <sprite n="Bow-Tie.png" x="136" y="137" w="80" h="80" pX="0.5" pY="0.5" oX="48" oY="54"/>
+    <!-- original anchor = (42, 52) -> new anchor (36, 87) diff = (6, -35)-->
+    <!-- add double it to texturepacker output offsets (4, 12) -> (16, -58), cause hires-->
+    <sprite n="Hat.png" x="1" y="1" w="131" h="122" pX="0.5" pY="0.5" oX="16" oY="-58" oW="140" oH="140"/>
+    <sprite n="K_back_left_foot.png" x="1" y="137" w="67" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="104"/>
+    <sprite n="K_back_right_foot.png" x="70" y="137" w="64" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="104"/>
+    <sprite n="K_front_left_foot.png" x="134" y="67" w="103" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="104" r="y"/>
+    <sprite n="K_front_right_foot.png" x="134" y="1" w="104" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="K_leg_segment.png" x="136" y="219" w="30" h="34" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="36"/>
+</TextureAtlas>

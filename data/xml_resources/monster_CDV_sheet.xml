@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:81448ebfb71ce53b06ddccb76fc4050e:26ebeb62a16259c000bad87660d64c88:865e7d79a1beba19a772d2067584f075$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CDV_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="CDV_cloth_strip_01" x="757" y="303" w="74" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_cloth_strip_01_RARE" x="455" y="953" w="74" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_cloth_strip_02" x="202" y="498" w="69" h="128" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_cloth_strip_02_RARE" x="245" y="678" w="69" h="128" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_cloth_strip_03" x="249" y="976" w="96" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_cloth_strip_03_RARE" x="378" y="794" w="96" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_cloth_strip_04" x="2" y="192" w="45" h="109" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_cloth_strip_04_RARE" x="49" y="192" w="45" h="109" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_cloth_strip_05" x="260" y="192" w="55" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_cloth_strip_05_RARE" x="347" y="967" w="106" h="55" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_extra_bones_01" x="184" y="841" w="42" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_extra_bones_01_RARE" x="158" y="498" w="42" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_extra_bones_02" x="526" y="677" w="73" h="111" pX="0.5" pY="0.5" oX="0" oY="6" oW="118" oH="79" r="y"/>
+    <sprite n="CDV_extra_bones_02_RARE" x="651" y="473" w="73" h="111" pX="0.5" pY="0.5" oX="0" oY="6" oW="118" oH="79" r="y"/>
+    <sprite n="CDV_eyelids_01" x="2" y="984" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_01_RARE" x="79" y="984" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_02" x="717" y="295" w="38" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_eyelids_02_RARE" x="717" y="372" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_03" x="476" y="793" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_03_RARE" x="553" y="790" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_04" x="630" y="777" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_eyelids_04_RARE" x="707" y="776" w="75" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_hair_back_RARE" x="2" y="303" w="145" h="196" pX="0.5" pY="0.5" oX="6" oY="3" oW="160" oH="200"/>
+    <sprite n="CDV_hair_cover" x="305" y="428" w="78" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_hair_cover_RARE" x="385" y="428" w="78" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_head" x="2" y="843" w="131" h="139" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_head_RARE" x="2" y="681" w="137" h="160" pX="0.5" pY="0.5" oX="7" oY="29" oW="180" oH="180" r="y"/>
+    <sprite n="CDV_left_fingers" x="784" y="774" w="29" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_left_fingers_RARE" x="815" y="774" w="29" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_left_hair_01" x="305" y="303" w="60" h="123" pX="0.5" pY="0.5" oX="22" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_01_RARE" x="367" y="303" w="60" h="123" pX="0.5" pY="0.5" oX="22" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_02" x="500" y="303" w="65" h="114" pX="0.5" pY="0.5" oX="17" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_02_RARE" x="377" y="678" w="65" h="114" pX="0.5" pY="0.5" oX="17" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_03" x="418" y="481" w="69" h="116" pX="0.5" pY="0.5" oX="13" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_03_RARE" x="429" y="303" w="69" h="116" pX="0.5" pY="0.5" oX="13" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_04" x="567" y="303" w="73" h="112" pX="0.5" pY="0.5" oX="9" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_04_RARE" x="642" y="303" w="73" h="112" pX="0.5" pY="0.5" oX="9" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_05" x="444" y="678" w="80" h="113" pX="0.5" pY="0.5" oX="2" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_05_RARE" x="489" y="481" w="80" h="113" pX="0.5" pY="0.5" oX="2" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_06" x="571" y="475" w="78" h="111" pX="0.5" pY="0.5" oX="4" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_06_RARE" x="414" y="840" w="78" h="111" pX="0.5" pY="0.5" oX="4" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_07" x="96" y="192" w="80" h="108" pX="0.5" pY="0.5" oX="2" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_07_RARE" x="178" y="192" w="80" h="108" pX="0.5" pY="0.5" oX="2" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_08" x="343" y="481" w="73" h="120" pX="0.5" pY="0.5" oX="9" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_08_RARE" x="351" y="603" w="120" h="73" pX="0.5" pY="0.5" oX="9" oY="0" oW="82" oH="126" r="y"/>
+    <sprite n="CDV_left_hair_09" x="344" y="840" w="68" h="125" pX="0.5" pY="0.5" oX="14" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_09_RARE" x="273" y="483" w="68" h="125" pX="0.5" pY="0.5" oX="14" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_10" x="316" y="678" w="59" h="126" pX="0.5" pY="0.5" oX="23" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hair_10_RARE" x="283" y="840" w="59" h="126" pX="0.5" pY="0.5" oX="23" oY="0" oW="82" oH="126"/>
+    <sprite n="CDV_left_hand" x="197" y="638" w="21" h="39" pX="0.5" pY="0.5" oX="16" oY="1" oW="55" oH="22" r="y"/>
+    <sprite n="CDV_left_hand_RARE" x="220" y="638" w="21" h="39" pX="0.5" pY="0.5" oX="16" oY="1" oW="55" oH="22" r="y"/>
+    <sprite n="CDV_left_lower_arm" x="726" y="473" w="24" h="97" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_left_lower_arm_RARE" x="640" y="817" w="24" h="97" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_left_lower_finger" x="794" y="372" w="29" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="29" r="y"/>
+    <sprite n="CDV_left_lower_finger_RARE" x="829" y="466" w="38" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="29"/>
+    <sprite n="CDV_left_upper_arm" x="135" y="843" w="47" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_left_upper_arm_RARE" x="141" y="681" w="47" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_left_upper_finger" x="149" y="821" w="43" h="18" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_left_upper_finger_RARE" x="717" y="192" w="43" h="18" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_lower_body" x="2" y="501" w="154" h="178" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_lower_body_RARE" x="149" y="303" w="154" h="178" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_mouth_01" x="202" y="628" w="23" h="8" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_mouth_02" x="141" y="821" w="6" h="20" pX="0.5" pY="0.5" oX="1" oY="2" oW="23" oH="8" r="y"/>
+    <sprite n="CDV_mouth_03" x="227" y="628" w="10" h="6" pX="0.5" pY="0.5" oX="7" oY="2" oW="23" oH="8"/>
+    <sprite n="CDV_pupil" x="237" y="483" w="12" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_pupil_RARE" x="251" y="483" w="12" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_right_hair_01" x="756" y="585" w="78" h="89" pX="0.5" pY="0.5" oX="0" oY="1" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_01_RARE" x="836" y="583" w="78" h="89" pX="0.5" pY="0.5" oX="0" oY="1" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_02" x="666" y="817" w="76" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_02_RARE" x="752" y="676" w="76" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_03" x="567" y="830" w="71" h="99" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_03_RARE" x="601" y="676" w="71" h="99" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_04" x="473" y="599" w="98" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hair_04_RARE" x="674" y="676" w="76" h="98" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_05" x="832" y="913" w="81" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_05_RARE" x="830" y="676" w="81" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_06" x="830" y="372" w="82" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_06_RARE" x="915" y="386" w="92" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hair_07" x="675" y="586" w="79" h="88" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_07_RARE" x="932" y="660" w="88" h="79" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hair_08" x="752" y="498" w="82" h="85" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_08_RARE" x="932" y="741" w="85" h="82" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hair_09" x="586" y="212" w="83" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_09_RARE" x="633" y="931" w="83" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="100"/>
+    <sprite n="CDV_right_hair_10" x="915" y="470" w="92" h="79" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hair_10_RARE" x="916" y="579" w="92" h="79" pX="0.5" pY="0.5" oX="1" oY="0" oW="83" oH="100" r="y"/>
+    <sprite n="CDV_right_hand" x="156" y="983" w="37" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_right_hand_RARE" x="158" y="638" w="37" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_right_lower_arm" x="833" y="300" w="78" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_right_lower_arm_RARE" x="194" y="814" w="78" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="26"/>
+    <sprite n="CDV_right_lower_finger" x="195" y="981" w="25" h="41" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_right_lower_finger_RARE" x="222" y="981" w="25" h="41" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_right_upper_arm" x="190" y="679" w="53" h="133" pX="0.5" pY="0.5" oX="0" oY="0" oW="133" oH="57" r="y"/>
+    <sprite n="CDV_right_upper_arm_RARE" x="228" y="841" w="53" h="133" pX="0.5" pY="0.5" oX="0" oY="0" oW="133" oH="57" r="y"/>
+    <sprite n="CDV_right_upper_finger" x="149" y="483" w="42" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_right_upper_finger_RARE" x="193" y="483" w="42" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_skeleton" x="2" y="2" w="381" h="188" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_skeleton_RARE" x="385" y="2" w="380" h="188" pX="0.5" pY="0.5" oX="1" oY="0" oW="381" oH="188"/>
+    <sprite n="CDV_spine_01" x="274" y="808" w="102" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_spine_01_RARE" x="481" y="192" w="30" h="102" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_02" x="986" y="2" w="32" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_02_RARE" x="986" y="116" w="32" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_03" x="718" y="915" w="28" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_03_RARE" x="744" y="816" w="28" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_04" x="913" y="551" w="84" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_spine_04_RARE" x="846" y="772" w="84" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_spine_05" x="986" y="230" w="32" h="71" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_05_RARE" x="833" y="328" w="71" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_spine_06" x="465" y="421" w="38" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_spine_06_RARE" x="505" y="419" w="38" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="CDV_tail_01" x="573" y="588" w="100" h="86" pX="0.5" pY="0.5" oX="6" oY="8" oW="106" oH="95"/>
+    <sprite n="CDV_tail_01_RARE" x="531" y="936" w="100" h="86" pX="0.5" pY="0.5" oX="6" oY="8" oW="106" oH="95"/>
+    <sprite n="CDV_tail_02" x="748" y="914" w="82" h="95" pX="0.5" pY="0.5" oX="11" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_02_RARE" x="774" y="816" w="82" h="95" pX="0.5" pY="0.5" oX="11" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_03" x="671" y="212" w="94" h="81" pX="0.5" pY="0.5" oX="12" oY="6" oW="106" oH="95"/>
+    <sprite n="CDV_tail_03_RARE" x="915" y="303" w="94" h="81" pX="0.5" pY="0.5" oX="12" oY="6" oW="106" oH="95"/>
+    <sprite n="CDV_tail_04" x="752" y="412" w="75" h="84" pX="0.5" pY="0.5" oX="21" oY="3" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_04_RARE" x="836" y="497" w="75" h="84" pX="0.5" pY="0.5" oX="21" oY="3" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_05" x="858" y="825" w="75" h="82" pX="0.5" pY="0.5" oX="24" oY="0" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_05_RARE" x="935" y="825" w="82" h="75" pX="0.5" pY="0.5" oX="24" oY="0" oW="106" oH="95"/>
+    <sprite n="CDV_tail_06" x="545" y="419" w="96" h="54" pX="0.5" pY="0.5" oX="9" oY="6" oW="106" oH="95"/>
+    <sprite n="CDV_tail_06_RARE" x="643" y="417" w="96" h="54" pX="0.5" pY="0.5" oX="9" oY="6" oW="106" oH="95"/>
+    <sprite n="CDV_tail_07" x="243" y="628" w="106" h="48" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="95"/>
+    <sprite n="CDV_tail_07_RARE" x="317" y="192" w="48" h="106" pX="0.5" pY="0.5" oX="0" oY="7" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_08" x="367" y="192" w="55" h="103" pX="0.5" pY="0.5" oX="3" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_08_RARE" x="424" y="192" w="55" h="103" pX="0.5" pY="0.5" oX="3" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_09" x="513" y="192" w="71" h="101" pX="0.5" pY="0.5" oX="5" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_tail_09_RARE" x="494" y="833" w="71" h="101" pX="0.5" pY="0.5" oX="5" oY="8" oW="106" oH="95" r="y"/>
+    <sprite n="CDV_upper_body" x="767" y="2" w="217" h="147" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDV_upper_body_RARE" x="767" y="151" w="217" h="147" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

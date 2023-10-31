@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6d4e009578d48c52e1e41c4e9e62221c:9f1a77c9f8a6a5240a14fb0550ef49df:e1f24a50dd2833261f73cadea96139be$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BD_costume_05_sheet.png" width="512" height="1024" hires="true">
+    <!-- original anchor = (7, 7) -> new anchor (69, -19) diff = (-62, 26)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-124, 52), because hires-->
+    <sprite n="BD_costume_05_egg1.png" x="115" y="351" w="88" h="68" pX="0.5" pY="0.5" oX="-124" oY="52" r="y"/>
+    <!-- original anchor = (7, 7) -> new anchor (-17, -31) diff = (24, 38)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (48, 76), because hires-->
+    <sprite n="BD_costume_05_egg2.png" x="137" y="151" w="72" h="88" pX="0.5" pY="0.5" oX="48" oY="76" r="y"/>
+    <sprite n="BD_costume_06_tentacle_b1.png" x="1" y="151" w="134" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BD_costume_06_tentacle_b2.png" x="1" y="247" w="133" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="134" r="y"/>
+    <sprite n="BD_costume_06_tentacle_b3.png" x="380" y="97" w="126" h="92" pX="0.5" pY="0.5" oX="2" oY="0" oW="94" oH="134" r="y"/>
+    <sprite n="BD_costume_06_tentacle_b4.png" x="380" y="1" w="129" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="134" r="y"/>
+    <sprite n="BD_costume_06_tentacle_c1.png" x="379" y="191" w="112" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="BD_costume_06_tentacle_c2.png" x="1" y="343" w="112" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="BD_costume_06_tentacle_c3.png" x="207" y="280" w="110" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="112" oH="112"/>
+    <sprite n="BD_costume_06_tentacle_c4.png" x="319" y="305" w="108" h="97" pX="0.5" pY="0.5" oX="0" oY="0" oW="112" oH="112"/>
+    <sprite n="BD_costume_06_trunk.png" x="1" y="1" w="210" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BD_costume_tentacle_a1.png" x="424" y="415" w="76" h="102" pX="0.5" pY="0.5" oX="2" oY="0" oW="104" oH="76" r="y"/>
+    <sprite n="BD_costume_tentacle_a2.png" x="115" y="421" w="76" h="98" pX="0.5" pY="0.5" oX="6" oY="0" oW="104" oH="76" r="y"/>
+    <sprite n="BD_costume_tentacle_a3.png" x="1" y="457" w="104" h="62" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="76"/>
+    <sprite n="BD_costume_tentacle_a4.png" x="193" y="466" w="104" h="61" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="76"/>
+    <sprite n="BD_costume_tentacle_d1.png" x="429" y="305" w="80" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BD_costume_tentacle_d2.png" x="205" y="385" w="108" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="80"/>
+    <sprite n="BD_costume_tentacle_d3.png" x="137" y="241" w="68" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="80" r="y"/>
+    <sprite n="BD_costume_tentacle_d4.png" x="315" y="404" w="107" h="80" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="80"/>
+    <!-- original anchor = (54, 49) -> new anchor (65, 57) diff = (-11, -8)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-22, -16), because hires-->
+    <sprite n="squidtree_leaves1.png" x="213" y="139" w="164" h="139" pX="0.5" pY="0.5" oX="-22" oY="-16" oW="166" oH="140"/>
+    <!-- original anchor = (24, 49) -> new anchor (27, 82) diff = (-3, -33)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-6, -66), because hires-->
+    <sprite n="squidtree_leaves2.png" x="213" y="1" w="165" h="136" pX="0.5" pY="0.5" oX="-6" oY="-66" oW="136" oH="166" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,60 @@
+<template name="template_monsterIslandEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<event name="onPostInit" params="element">
+		element:setSize(Vector2(90*game.menuScaleX(), element:GetElement("Overlay"):GetComponent("Sprite"):absH()))
+		--element:setSize(Vector2(element:GetElement("Overlay"):GetComponent("Sprite"):absW()+element:GetElement("IslandName"):GetComponent("Text"):absW(), element:GetElement("Overlay"):GetComponent("Sprite"):absH()))
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["Overlay"]["Sprite"]("visible"):SetInt(1)
+		element["IslandName"]["Text"]("visible"):SetInt(1)
+	</event>
+	<event name="setInvisible" params="element">
+		element["Overlay"]["Sprite"]("visible"):SetInt(0)
+		element["IslandName"]["Text"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="updateComponents" params="element">
+		element["Overlay"]["Sprite"]("alpha"):SetFloat(element("alpha"):GetFloat())
+		element["IslandName"]["Text"]("alpha"):SetFloat(element("alpha"):GetFloat())
+	</event>
+	
+	<element name="Overlay">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				
+				local islandId = element:parent()("islandId"):GetInt();
+				local sheet = game.islandIconSheetForId(islandId);
+				local sprite = game.islandIconSpriteForId(islandId);
+
+				component("spriteName"):SetString(sprite)
+				component("sheetName"):SetString("xml_resources/"..sheet)
+				
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="IslandName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Overlay" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="60*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.islandShortName(element:parent()("islandId"):GetInt()))
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+</template>

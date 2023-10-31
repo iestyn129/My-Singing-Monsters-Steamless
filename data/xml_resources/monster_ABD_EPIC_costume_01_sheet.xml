@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:32c4965130d8c0989f43a4b5be272f3b:ed8ba7f688b94e165ab2d7cfa543e32d:cb827dd1339219862fc827fec8438ceb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABD_EPIC_costume_01_sheet.png" width="256" height="512" hires="true">    
+    <sprite n="ABD_hair.png" x="2" y="194" w="151" h="144" pX="0.5" pY="0.5" oX="0" oY="19" oW="190" oH="170" r="y"/>
+    <sprite n="ABD_ribs.png" x="2" y="2" w="218" h="190" pX="0.5" pY="0.5" oX="1" oY="5" oW="220" oH="200"/>
+</TextureAtlas>

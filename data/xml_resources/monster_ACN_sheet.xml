@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6c6428b503d9e091976fe6c64682cfef:e66539344a2654c02ecbbdb03fa45142:9a66540a6b89a09c560439e7c6d82448$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ACN_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ACN_body" x="346" y="114" w="151" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="102" oH="152" r="y"/>
+    <sprite n="ACN_eyeball" x="250" y="308" w="46" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_eyeball_RARE" x="264" y="423" w="46" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_eyelid_01" x="322" y="120" w="16" h="44" pX="0.5" pY="0.5" oX="6" oY="1" oW="54" oH="52" r="y"/>
+    <sprite n="ACN_eyelid_02" x="56" y="456" w="50" h="51" pX="0.5" pY="0.5" oX="1" oY="1" oW="54" oH="52" r="y"/>
+    <sprite n="ACN_eyelid_03" x="142" y="308" w="50" h="51" pX="0.5" pY="0.5" oX="2" oY="1" oW="54" oH="52" r="y"/>
+    <sprite n="ACN_eyelid_04" x="196" y="308" w="50" h="51" pX="0.5" pY="0.5" oX="2" oY="1" oW="54" oH="52" r="y"/>
+    <sprite n="ACN_foot" x="4" y="456" w="48" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_foot_RARE" x="164" y="443" w="50" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_foot_RARE_left" x="110" y="452" w="50" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="60"/>
+    <sprite n="ACN_hand" x="218" y="437" w="42" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_hand_RARE" x="244" y="363" w="42" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_head" x="164" y="72" w="154" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_head_RARE" x="352" y="4" w="156" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_lowerarm" x="198" y="363" w="42" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ACN_lowerleg" x="152" y="363" w="42" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_neck" x="4" y="364" w="54" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_nosebell" x="4" y="4" w="170" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_nosebell_RARE" x="178" y="4" w="170" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_pupil" x="322" y="72" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_pupil_RARE" x="322" y="96" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_shadow" x="4" y="169" w="148" h="73" pX="0.5" pY="0.5" oX="2" oY="1" oW="152" oH="76"/>
+    <sprite n="ACN_upperarm" x="62" y="364" w="42" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ACN_upperleg" x="108" y="364" w="40" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="ACN_wing_base" x="4" y="246" w="134" h="114" pX="0.5" pY="0.5" oX="1" oY="1" oW="116" oH="136" r="y"/>
+    <sprite n="ACN_wing_end" x="4" y="72" w="156" h="93" pX="0.5" pY="0.5" oX="0" oY="0" oW="156" oH="94"/>
+    <sprite n="spore_ACN" x="164" y="168" w="148" h="136" pX="0.5" pY="0.5" oX="9" oY="21" oW="172" oH="172"/>
+</TextureAtlas>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:442915b40f5fd616f506db6228e2ca9d:a6b099829451daed82c3d4f54a17b33b:ce4ca66c6ece6ef333b6d8070dd85838$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ACDEN_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ACDEN_body_front" x="4" y="4" w="275" h="419" pX="0.5" pY="0.5" oX="0" oY="4" oW="280" oH="428"/>
+    <sprite n="ACDEN_body_hind" x="4" y="427" w="262" h="327" pX="0.5" pY="0.5" oX="9" oY="6" oW="280" oH="340"/>
+    <sprite n="ACDEN_ear_L" x="528" y="4" w="89" h="148" pX="0.5" pY="0.5" oX="3" oY="2" oW="96" oH="152"/>
+    <sprite n="ACDEN_ear_R" x="866" y="4" w="134" h="74" pX="0.5" pY="0.5" oX="3" oY="3" oW="80" oH="140" r="y"/>
+    <sprite n="ACDEN_eyelid_L1" x="564" y="322" w="41" h="45" pX="0.5" pY="0.5" oX="3" oY="1" oW="48" oH="48"/>
+    <sprite n="ACDEN_eyelid_L2" x="976" y="82" w="41" h="45" pX="0.5" pY="0.5" oX="3" oY="1" oW="48" oH="48"/>
+    <sprite n="ACDEN_eyelid_L3" x="976" y="131" w="41" h="45" pX="0.5" pY="0.5" oX="3" oY="1" oW="48" oH="48"/>
+    <sprite n="ACDEN_eyelid_L4" x="866" y="154" w="45" h="41" pX="0.5" pY="0.5" oX="3" oY="1" oW="48" oH="48" r="y"/>
+    <sprite n="ACDEN_eyelid_R1" x="186" y="986" w="38" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="40" oH="40" r="y"/>
+    <sprite n="ACDEN_eyelid_R2" x="228" y="986" w="38" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="40" oH="40" r="y"/>
+    <sprite n="ACDEN_eyelid_R3" x="270" y="986" w="38" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="40" oH="40" r="y"/>
+    <sprite n="ACDEN_eyelid_R4" x="283" y="386" w="38" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="40" oH="40" r="y"/>
+    <sprite n="ACDEN_head" x="4" y="758" w="178" h="226" pX="0.5" pY="0.5" oX="5" oY="7" oW="184" oH="240"/>
+    <sprite n="ACDEN_left_back_foot" x="486" y="167" w="119" h="151" pX="0.5" pY="0.5" oX="4" oY="0" oW="160" oH="120" r="y"/>
+    <sprite n="ACDEN_left_back_lowerleg" x="378" y="560" w="148" h="87" pX="0.5" pY="0.5" oX="7" oY="1" oW="96" oH="152" r="y"/>
+    <sprite n="ACDEN_left_back_upperleg" x="283" y="203" w="115" h="179" pX="0.5" pY="0.5" oX="2" oY="4" oW="120" oH="188"/>
+    <sprite n="ACDEN_left_front_foot" x="345" y="652" w="109" h="98" pX="0.5" pY="0.5" oX="1" oY="4" oW="112" oH="108"/>
+    <sprite n="ACDEN_left_front_lowerleg" x="402" y="203" w="80" h="169" pX="0.5" pY="0.5" oX="4" oY="5" oW="92" oH="180"/>
+    <sprite n="ACDEN_left_front_upperleg" x="283" y="4" w="129" h="195" pX="0.5" pY="0.5" oX="0" oY="1" oW="132" oH="200"/>
+    <sprite n="ACDEN_pupil" x="4" y="988" w="17" h="19" pX="0.5" pY="0.5" oX="1" oY="0" oW="20" oH="20"/>
+    <sprite n="ACDEN_right_back_foot" x="416" y="4" w="108" h="159" pX="0.5" pY="0.5" oX="2" oY="8" oW="164" oH="120" r="y"/>
+    <sprite n="ACDEN_right_back_lowerleg" x="498" y="382" w="85" h="148" pX="0.5" pY="0.5" oX="7" oY="5" oW="96" oH="160"/>
+    <sprite n="ACDEN_right_back_upperleg" x="378" y="386" w="116" h="170" pX="0.5" pY="0.5" oX="2" oY="5" oW="120" oH="180"/>
+    <sprite n="ACDEN_right_front_foot" x="458" y="651" w="121" h="93" pX="0.5" pY="0.5" oX="3" oY="3" oW="128" oH="100"/>
+    <sprite n="ACDEN_right_front_lowerleg" x="557" y="748" w="79" h="158" pX="0.5" pY="0.5" oX="2" oY="0" oW="84" oH="160"/>
+    <sprite n="ACDEN_right_front_upperleg" x="308" y="758" w="127" h="199" pX="0.5" pY="0.5" oX="2" oY="2" oW="132" oH="208"/>
+    <sprite n="ACDEN_shadow" x="186" y="758" w="118" h="224" pX="0.5" pY="0.5" oX="8" oY="1" oW="240" oH="120" r="y"/>
+    <sprite n="ACDEN_tree_A" x="486" y="322" w="74" h="56" pX="0.5" pY="0.5" oX="2" oY="3" oW="60" oH="80" r="y"/>
+    <sprite n="ACDEN_tree_B" x="312" y="961" w="75" h="57" pX="0.5" pY="0.5" oX="2" oY="3" oW="60" oH="80" r="y"/>
+    <sprite n="ACDEN_trunk_L0" x="584" y="910" w="74" h="109" pX="0.5" pY="0.5" oX="3" oY="1" oW="80" oH="112"/>
+    <sprite n="ACDEN_trunk_L1" x="772" y="69" w="75" h="116" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="120"/>
+    <sprite n="ACDEN_trunk_L2" x="483" y="954" w="97" h="64" pX="0.5" pY="0.5" oX="2" oY="1" oW="68" oH="100" r="y"/>
+    <sprite n="ACDEN_trunk_L3" x="583" y="650" w="61" h="93" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="96"/>
+    <sprite n="ACDEN_trunk_L4" x="866" y="82" w="106" h="68" pX="0.5" pY="0.5" oX="2" oY="3" oW="72" oH="112" r="y"/>
+    <sprite n="ACDEN_trunk_L5" x="648" y="4" w="117" h="86" pX="0.5" pY="0.5" oX="3" oY="1" oW="92" oH="120" r="y"/>
+    <sprite n="ACDEN_trunk_L6" x="758" y="891" w="104" h="119" pX="0.5" pY="0.5" oX="2" oY="2" oW="124" oH="108" r="y"/>
+    <sprite n="ACDEN_trunk_R0" x="648" y="94" w="109" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="112" r="y"/>
+    <sprite n="ACDEN_trunk_R1" x="530" y="534" w="72" h="112" pX="0.5" pY="0.5" oX="2" oY="4" oW="76" oH="120"/>
+    <sprite n="ACDEN_trunk_R2" x="772" y="4" w="90" h="61" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="92" r="y"/>
+    <sprite n="ACDEN_trunk_R3" x="391" y="961" w="88" h="56" pX="0.5" pY="0.5" oX="2" oY="2" oW="60" oH="92" r="y"/>
+    <sprite n="ACDEN_trunk_R4" x="270" y="652" w="71" h="102" pX="0.5" pY="0.5" oX="2" oY="3" oW="76" oH="108"/>
+    <sprite n="ACDEN_trunk_R5" x="662" y="891" w="92" h="122" pX="0.5" pY="0.5" oX="2" oY="3" oW="96" oH="128"/>
+    <sprite n="ACDEN_trunk_R6" x="648" y="168" w="107" h="103" pX="0.5" pY="0.5" oX="2" oY="2" oW="108" oH="112" r="y"/>
+    <sprite n="ACDEN_tusk_L" x="270" y="427" w="104" h="221" pX="0.5" pY="0.5" oX="7" oY="4" oW="232" oH="112" r="y"/>
+    <sprite n="ACDEN_tusk_R" x="439" y="754" w="114" h="196" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="120" r="y"/>
+    <sprite n="spore_ACDEN" x="640" y="747" w="128" h="140" pX="0.5" pY="0.5" oX="23" oY="17" oW="172" oH="172"/>
+</TextureAtlas>

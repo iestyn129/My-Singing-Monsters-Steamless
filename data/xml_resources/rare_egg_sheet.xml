@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b49a606fbc795d9a73a4ec9b8b485d62:2784d20ef05e86ef9d7805ecf2db7c6a:059bae05292374d2eac19efc930d6f39$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/rare_egg_sheet.png" width="512" height="512" hires="true">
+    <sprite n="rare_sparkle_01.png" x="139" y="257" w="54" h="84" pX="0.5" pY="0.5" oX="15" oY="16" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_02.png" x="114" y="368" w="68" h="98" pX="0.5" pY="0.5" oX="19" oY="12" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_03.png" x="2" y="368" w="110" h="125" pX="0.5" pY="0.5" oX="24" oY="11" oW="172" oH="140" r="y"/>
+    <sprite n="rare_sparkle_04.png" x="2" y="252" w="135" h="114" pX="0.5" pY="0.5" oX="18" oY="12" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_05.png" x="2" y="133" w="141" h="117" pX="0.5" pY="0.5" oX="15" oY="11" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_06.png" x="161" y="131" w="151" h="124" pX="0.5" pY="0.5" oX="10" oY="7" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_07.png" x="161" y="2" w="155" h="127" pX="0.5" pY="0.5" oX="8" oY="6" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_08.png" x="2" y="2" w="157" h="129" pX="0.5" pY="0.5" oX="7" oY="5" oW="172" oH="140"/>
+    <sprite n="rare_sparkle_09.png" x="318" y="2" w="155" h="127" pX="0.5" pY="0.5" oX="8" oY="6" oW="172" oH="140"/>
+</TextureAtlas>

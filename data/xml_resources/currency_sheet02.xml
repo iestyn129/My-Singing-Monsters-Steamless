@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:099a8385550bc291ae8f8da6b451375b:0fba497a71965c10b74beed84f63b627:ab9a40fcbd804e2ddef1ff9c73e253b4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/currency_sheet02.png" width="512" height="1024">
+    <sprite n="anniversary_deluxe" x="187" y="240" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="anniversary_warmup" x="324" y="240" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="keys_01" x="264" y="1" w="238" h="238" pX="0.5" pY="0.5" oX="9" oY="0" oW="248" oH="240"/>
+    <sprite n="keys_05" x="1" y="1" w="262" h="230" pX="0.5" pY="0.5" oX="1" oY="1" oW="264" oH="234"/>
+    <sprite n="no_ads_01" x="1" y="232" w="148" h="148" pX="0.5" pY="0.5" oX="50" oY="46" oW="248" oH="240"/>
+    <sprite n="warm_up_01" x="150" y="377" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="warm_up_star" x="150" y="232" w="36" h="35" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,1607 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="20" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("background")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY())) 
+			</event>
+		</spriteComponent>
+		<ninesliceComponent name="hacka">
+			<size w="400*game.hudScale()" h="225*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("PopUps")
+				component("visible"):SetString(0)
+			</event>
+		</ninesliceComponent>
+		<ninesliceComponent name="hacka2">
+			<size w="175*game.hudScale()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("PopUps")
+				component("visible"):SetString(0)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="FadeLayer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="14" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("background")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="ShowHideButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="10*game.composerScale()" yOffset="20*game.composerScale()" priorityOffset="10" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerShowHide()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_show_hide")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "SHOW_HIDE_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="LoadTemplateButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="SaveTemplateButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerLoadTemplate()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_template_load")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "LOAD_TEMPLATE_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="SaveTemplateButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="10*game.composerScale()" yOffset="10*game.composerScale()" priorityOffset="10" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("waitingOnTemplateRename"):SetInt(1)
+				game.displayTextEntry(game.getLocalizedText("TEMPLATE_NAME"), "", true, 1, 25, true, "TRACK_NAME")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_template_save")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgTextEntrySubmission", "gotMsgTextEntrySubmission")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "SAVE_TEMPLATE_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+
+		<event name="gotMsgKeyboardEntryResult" params="element, msg">
+			if(element:parent()("waitingOnTemplateRename"):GetInt() == 1) then
+				element:parent()("waitingOnTemplateRename"):SetInt(0)
+				if(not msg.cancelled) then
+					if(game.composerIsDuplicateTrack(msg.text) == true) then
+						element("trackName"):SetString(msg.text)
+						game.displayConfirmation("TEMPLATE_OVERWRITE", game.getLocalizedText("TEMPLATE_OVERWRITE_CONFIRMATION"))
+					else
+						if(game.composerTemplateVector():size() >= game.maxComposerTemplates()) then
+							game.displayNotification(game.getLocalizedText("TEMPLATE_TOO_MANY_NOTIFICATION"))
+						else
+							game.composerSaveTemplate(msg.text)
+						end
+					end
+				end
+			end
+		</event>
+		<event name="gotMsgTextEntrySubmission" params="element, msg">
+			if((msg.messageID == "TRACK_NAME") and (msg.choice == true)) then
+				if(game.composerIsDuplicateTrack(msg.text) == true) then
+					element("trackName"):SetString(msg.text)
+					game.displayConfirmation("TEMPLATE_OVERWRITE", game.getLocalizedText("TEMPLATE_OVERWRITE_CONFIRMATION"))
+				else
+					if(game.composerTemplateVector():size() >= game.maxComposerTemplates()) then
+						game.displayNotification(game.getLocalizedText("TEMPLATE_TOO_MANY_NOTIFICATION"))
+					else
+						game.composerSaveTemplate(msg.text)
+					end
+				end
+			end
+		</event>
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if((msg.messageID == "TEMPLATE_OVERWRITE") and (msg.choice == true)) then
+				game.composerSaveTemplate(element("trackName"):GetString())
+			end
+		</event>
+	</template>
+	
+	<template type="template_composerlabel" name="MonsterLabel">
+		<templateVar name="$MonsterID" equals="game.composerCurrentMonster()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.menuScaleY()" priorityOffset="10" />
+	</template>
+	
+	<template type="template_spritesheetbutton" name="QuitButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="HelpButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				if(game.composerUnsaved()) then
+					game.displayConfirmation("UNSAVED_TRACK", game.getLocalizedText("UNSAVED_TRACK_CONFIRMATION"))
+				else
+					game.loadWorldContext()
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "EXIT")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if(msg.messageID == "UNSAVED_TRACK") then
+				if(msg.choice == true) then
+					game.composerSaveTrack(true)
+				else
+					game.composerRevertTrack()
+					game.loadWorldContext()
+				end
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="HelpButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.composerScale()" yOffset="20*game.composerScale()" priorityOffset="10" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerHelp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_info")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "CONTEXTBAR_HELP_LABEL")				
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ClearButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="10*game.composerScale()" yOffset="10*game.composerScale()" priorityOffset="10" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.displayConfirmation("CLEAR_TRACK", game.getLocalizedText("CLEAR_TRACK_CONFIRMATION"))
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-0.5*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_clear")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "CONTEXTBAR_CLEAR_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if((msg.messageID == "CLEAR_TRACK") and (msg.choice == true)) then
+				game.composerClearTrack()
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="SaveTrackButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="QuitButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.displayConfirmation("SAVE_TRACK", game.getLocalizedText("SAVE_TRACK_CONFIRMATION"))
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_save")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "CONTEXTBAR_SAVE_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if((msg.messageID == "SAVE_TRACK") and (msg.choice == true)) then
+				game.composerSaveTrack()
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PlayButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<templateVar name="$sfx" equals="" />
+		<position relativeTo="MonsterLabel" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleY()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				
+				if(element["Overlay"]("spriteName"):GetString() == "gfx/menu/button_small_play") then
+					element["Overlay"]("spriteName"):SetString("gfx/menu/button_small_stop")
+					element["Text"]("text"):SetString("PAUSE")
+					element:parent():DoStoredScript("disablePlay")
+					game.playComposer()
+				else
+					element["Overlay"]("spriteName"):SetString("gfx/menu/button_small_play")
+					element["Text"]("text"):SetString("MAIN_MENU_PLAY")
+					element:parent():DoStoredScript("enablePlay")
+					game.stopComposer()
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="UpSprite">
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("origSize"):SetFloat(component("size"):GetFloat())
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.9*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "MAIN_MENU_PLAY")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/element["UpSprite"]("origSize"):GetFloat() * element["UpSprite"]("size"):GetFloat()
+			if(element["Overlay"]("size"):GetFloat() ~= newSize) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="AdvancedButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="ClearButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				
+				if(game.showComposerAdvanced()) then
+					element["Overlay"]("visible"):SetInt(0)
+					element:DoStoredScript("hideAdvanced")
+				else
+					element["Overlay"]("visible"):SetInt(1)
+					element:DoStoredScript("showAdvanced")
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="UpSprite">
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("origSize"):SetFloat(component("size"):GetFloat())
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.4*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="OverlayBG">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_advanced_off")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "COMPOSER_ADVANCED_LABEL")
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			if(not game.showComposerAdvanced()) then
+				element["Overlay"]("visible"):SetInt(0)
+				element:DoStoredScript("hideAdvanced")
+			else
+				element["Overlay"]("visible"):SetInt(1)
+				element:DoStoredScript("showAdvanced")
+			end
+		</event>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/element["UpSprite"]("origSize"):GetFloat() * element["UpSprite"]("size"):GetFloat()
+			if(element["Overlay"]("size"):GetFloat() ~= newSize) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+			if(element["UpSprite"]("size"):GetFloat() ~= element["OverlayBG"]("size"):GetFloat()) then
+				element["OverlayBG"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="hideAdvanced" params="element">
+			game.setShowComposerAdvanced(false)
+			element:parent()["AccidentalButton"]:DoStoredScript("setInvisible")
+			element:parent()["AccidentalButton"]["Overlay"]("visible"):SetInt(0)
+			element:parent()["TimeNumeratorButton"]:DoStoredScript("setInvisible")
+			element:parent()["TimeDenomButton"]:DoStoredScript("setInvisible")
+			element:parent()["TimeDenomButton"]["LabelText"]("visible"):SetInt(0)
+			element:parent()["TimeSignatureBar"]["Sprite"]("visible"):SetInt(0)
+			element:parent()["KeySignatureButton"]:DoStoredScript("setInvisible")
+			element:parent()["KeySignatureButton"]["Overlay"]("visible"):SetInt(0)
+			element:parent()["TempoDownButton"]:DoStoredScript("setInvisible")
+			element:parent()["TempoDownButton"]["Overlay"]("visible"):SetInt(0)
+			element:parent()["TempoUpButton"]:DoStoredScript("setInvisible")
+			element:parent()["TempoUpButton"]["Overlay"]("visible"):SetInt(0)
+			element:parent()["TempoLabel"]["Text"]("visible"):SetInt(0)
+
+			element:parent()["IslandTitleBG"]:DoStoredScript("setVisible")
+
+		</event>
+		<event name="showAdvanced" params="element">
+			game.setShowComposerAdvanced(true)
+			element:parent()["AccidentalButton"]:DoStoredScript("setVisible")
+			element:parent()["AccidentalButton"]["Overlay"]("visible"):SetInt(1)
+			element:parent()["TimeNumeratorButton"]:DoStoredScript("setVisible")
+			element:parent()["TimeDenomButton"]:DoStoredScript("setVisible")
+			element:parent()["TimeDenomButton"]["LabelText"]("visible"):SetInt(1)
+			element:parent()["TimeSignatureBar"]["Sprite"]("visible"):SetInt(1)
+			element:parent()["KeySignatureButton"]:DoStoredScript("setVisible")
+			element:parent()["KeySignatureButton"]["Overlay"]("visible"):SetInt(1)
+			element:parent()["TempoDownButton"]:DoStoredScript("setVisible")
+			element:parent()["TempoDownButton"]["Overlay"]("visible"):SetInt(1)
+			element:parent()["TempoUpButton"]:DoStoredScript("setVisible")
+			element:parent()["TempoUpButton"]["Overlay"]("visible"):SetInt(1)
+			element:parent()["TempoLabel"]["Text"]("visible"):SetInt(1)
+			
+			element:parent()["IslandTitleBG"]:DoStoredScript("setInvisible")
+
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="AccidentalButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="KeySignatureButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+
+				local spriteName = element["Overlay"]("spriteName"):GetString()
+				
+				if(spriteName == "gfx/menu/none") then
+					element["Overlay"]("spriteName"):SetString("gfx/menu/sharp")
+					element["Text"]("text"):SetString("SHARP_ACCIDENTAL_LABEL")
+					game.toggleAccidentalMode(1)
+				elseif(spriteName == "gfx/menu/sharp") then
+					element["Overlay"]("spriteName"):SetString("gfx/menu/flat")
+					element["Text"]("text"):SetString("FLAT_ACCIDENTAL_LABEL")
+					game.toggleAccidentalMode(3)
+				elseif(spriteName == "gfx/menu/flat") then
+					element["Overlay"]("spriteName"):SetString("gfx/menu/natural")
+					element["Text"]("text"):SetString("NATURAL_ACCIDENTAL_LABEL")
+					game.toggleAccidentalMode(2)
+				else
+					element["Overlay"]("spriteName"):SetString("gfx/menu/none")
+					element["Text"]("text"):SetString("NO_ACCIDENTAL_LABEL")
+					game.toggleAccidentalMode(0)
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="UpSprite">
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("origSize"):SetFloat(component("size"):GetFloat())
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/none")
+				component("size"):SetFloat(0.9*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "NO_ACCIDENTAL_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/element["UpSprite"]("origSize"):GetFloat() * element["UpSprite"]("size"):GetFloat()
+			if(element["Overlay"]("size"):GetFloat() ~= newSize) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<element name="TimeSignatureBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="AccidentalButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0*16*game.composerScale()" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/time_sig_line_rock")
+				component("size"):SetFloat(0.35*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="TimeNumeratorButton">
+		<templateVar name="$spriteScale" equals="0.3*game.composerScale()" />
+		<templateVar name="$text" equals="''..game.composerTimeNumerator()" />
+		<templateVar name="$textYOffset" equals="-3*game.composerScale()" />
+		<position relativeTo="TimeSignatureBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.composerScale()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerTimeNumerator()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="TimeDenomButton">
+		<templateVar name="$spriteScale" equals="0.3*game.composerScale()" />
+		<templateVar name="$text" equals="''..game.composerTimeDenom()" />
+		<templateVar name="$textYOffset" equals="-3*game.composerScale()" />
+		<position relativeTo="TimeSignatureBar" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerTimeDenom()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<textComponent name="LabelText">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "TIME_SIGNATURE_LABEL")
+			</event>
+		</textComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="KeySignatureButton">
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<position relativeTo="TempoDownButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.showComposerKeySignature()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f7.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "KEY_SIGNATURE_LABEL")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="EndButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<position relativeTo="NextButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.moveComposer(2)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_next_ALT")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="NextButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<position relativeTo="QuitButton" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.moveComposer(1)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_step_ALT")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PrevButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<position relativeTo="HomeButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.moveComposer(-1)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_step_ALT")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("HUD")
+				
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="HomeButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<position relativeTo="ShowHideButton" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.moveComposer(-2)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_next_ALT")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("HUD")
+				
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="TempoUpButton">
+		<templateVar name="$spriteScale" equals="0.3*game.composerScale()" />
+		<templateVar name="$sfx" equals="" />
+		<position relativeTo="AdvancedButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="5*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+				element("isDown"):SetInt(0)
+			</event>
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+				element("isDown"):SetInt(1)
+				game.setComposerTempo(game.composerTempo() + 1)
+				element:parent()["TempoLabel"]["Text"]("text"):SetString(game.getLocalizedText("TEMPO_LABEL")..game.composerTempo())
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element("isDown"):SetInt(0)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element("isDown"):SetInt(0)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+			</event>
+			<event name="onTick" params="component, element, dt">
+			<![CDATA[
+				if(element("isDown"):GetInt() == 1) then
+					local downTimer = element("downTimer"):GetFloat()
+					local downDuration = element("downDuration"):GetFloat()
+					
+					downTimer = downTimer + dt
+					downDuration = downDuration + dt
+					
+					if(downDuration >= 5.0) then
+						downDuration = 5.0
+					end
+					
+					element("downDuration"):SetFloat(downDuration)
+					local scaleFactor = 0.1
+					
+					if(downDuration > 0) then
+						scaleFactor = 0.1 / downDuration
+					end
+					
+					if(downTimer >= (0.5 + scaleFactor)) then
+						element("downTimer"):SetFloat(0.5)
+						game.setComposerTempo(game.composerTempo() + downDuration)
+						element:parent()["TempoLabel"]["Text"]("text"):SetString(game.getLocalizedText("TEMPO_LABEL")..game.composerTempo())
+					else
+						element("downTimer"):SetFloat(downTimer)
+					end
+				end
+			]]>
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_plus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<element name="TempoSpacer">
+		<size dependentOnElement="element:name()" dependentOnComponent="BoundsSprite" />
+		<position relativeTo="TempoUpButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-10*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="element">
+			element["BoundsSprite"]("visible"):SetInt(0)
+		</event>
+		<spriteSheetComponent name="BoundsSprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="TempoDownButton">
+		<templateVar name="$spriteScale" equals="0.3*game.composerScale()" />
+		<templateVar name="$sfx" equals="" />
+		<position relativeTo="TempoSpacer" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-10*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+				element("isDown"):SetInt(0)
+			</event>
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+				element("isDown"):SetInt(1)
+				game.setComposerTempo(game.composerTempo() - 1)
+				element:parent()["TempoLabel"]["Text"]("text"):SetString(game.getLocalizedText("TEMPO_LABEL")..game.composerTempo())
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element("isDown"):SetInt(0)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element("isDown"):SetInt(0)
+				element("downTimer"):SetFloat(0.0)
+				element("downDuration"):SetFloat(0.0)
+			</event>
+			<event name="onTick" params="component, element, dt">
+			<![CDATA[
+				if(element("isDown"):GetInt() == 1) then
+					local downTimer = element("downTimer"):GetFloat()
+					local downDuration = element("downDuration"):GetFloat()
+					
+					downTimer = downTimer + dt
+					downDuration = downDuration + dt
+					
+					if(downDuration >= 5.0) then
+						downDuration = 5.0
+					end
+					
+					element("downDuration"):SetFloat(downDuration)
+					local scaleFactor = 0.1
+					
+					if(downDuration > 0) then
+						scaleFactor = 0.1 / downDuration
+					end
+					
+					if(downTimer >= (0.5 + scaleFactor)) then
+						element("downTimer"):SetFloat(0.5)
+						game.setComposerTempo(game.composerTempo() - downDuration)
+						element:parent()["TempoLabel"]["Text"]("text"):SetString(game.getLocalizedText("TEMPO_LABEL")..game.composerTempo())
+					else
+						element("downTimer"):SetFloat(downTimer)
+					end
+				end
+			]]>
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_minus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<element name="TempoLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TempoSpacer" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="5*game.composerScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="200*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("TEMPO_LABEL")..game.composerTempo())
+				component("size"):SetFloat(0.3*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="IslandTitleBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="10" />
+		<event name="onInit" params="element">
+			element:DoStoredScript("setVisible")
+		</event>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+			--element["BackingSprite"]("visible"):SetInt(0)
+			element:parent()["IslandTitleTouch"]["Touch"]("enabled"):SetInt(0)
+			--dumb hack for autoscaling getting screwed up when text is invisible & changed:
+			if(element:parent()["IslandLabel"]("yOffset"):GetInt() == element:parent()["IslandLabel"]("originalYOffset"):GetInt()) then
+				element:parent()["IslandLabel"]("yOffset"):SetInt(-100)
+			end
+		</event>
+		<event name="setVisible" params="element">
+			if(element["Sprite"]("visible"):GetInt() == 0) then
+				element["Sprite"]("visible"):SetInt(1)
+				--element["BackingSprite"]("visible"):SetInt(1)
+				
+				element:parent()["IslandTitleTouch"]["Touch"]("enabled"):SetInt(1)
+				--dumb hack for autoscaling getting screwed up when text is invisible & changed:
+				if(element:parent()["IslandLabel"]("yOffset"):GetInt() ~= element:parent()["IslandLabel"]("originalYOffset"):GetInt()) then
+					element:parent()["IslandLabel"]("yOffset"):SetInt(element:parent()["IslandLabel"]("originalYOffset"):GetInt())
+				end
+			end
+			--in case it was disabled
+			element:DoStoredScript("enable")
+		</event>
+		<event name="enable" params="element">
+			if(element["Sprite"]("visible"):GetInt() == 1) then
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element:parent()["IslandLabel"]["Text"]:setColor(1.0, 1.0, 1.0)
+				--element["BackingSprite"]:setColor(1.0, 1.0, 1.0)
+				element:parent()["IslandTitleTouch"]["Touch"]("enabled"):SetInt(1)
+			end
+		</event>
+		<event name="disable" params="element">
+			element["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element:parent()["IslandLabel"]["Text"]:setColor(0.5, 0.5, 0.5)
+			--element["BackingSprite"]:setColor(0.5, 0.5, 0.5)
+			element:parent()["IslandTitleTouch"]["Touch"]("enabled"):SetInt(0)
+		</event>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.6*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<!-- spriteComponent name="BackingSprite">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="3*game.composerScale()" yOffset="-5*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_base_grey_mini")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteComponent -->
+	</element>
+	
+	<element name="IslandTitleTouch">
+		<size dependentOnElement="element:name()" dependentOnComponent="TouchSprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="20*game.composerScale()" yOffset="10*game.menuScaleX()" priorityOffset="10" />
+		<spriteSheetComponent name="TouchSprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.7*game.composerScale())
+				component("layer"):SetString("HUD")
+				--component("alpha"):SetFloat(0.5)
+				component("visible"):SetString(0)
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element:parent()["IslandTitleBG"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				--element:parent()["IslandTitleBG"]["BackingSprite"]:setColor(0.5, 0.5, 0.5)
+
+			</event>
+			<event name="onTouchUp" params="component, element">
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				element:parent()("waitingOnComposerRename"):SetInt(1)
+				game.displayTextEntry(game.getLocalizedText("ISLAND_SONG_NAME"), game.islandSongName(), true, -1, 25, true, "ISLAND_SONG_NAME")
+				element:parent()["IslandTitleBG"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				--element:parent()["IslandTitleBG"]["BackingSprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element:parent()["IslandTitleBG"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				--element:parent()["IslandTitleBG"]["BackingSprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="IslandLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="IslandTitleBG" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			element("originalYOffset"):SetInt(-3*game.composerScale());
+		</event>
+		<textComponent name="Text">
+			<size w="180*game.composerScale()" h="32" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("noTranslate"):SetInt(1)
+				component("text"):SetString("")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				
+				component("layer"):SetString("HUD")
+				component:calculatePosition()
+				
+				local songName = game.islandSongName();
+				if(songName == "") then
+					songName = game.StoreContext_DEFAULT_OWNED_SONGNAME;
+				else
+					component("noTranslate"):SetInt(1)
+				end
+				component("text"):SetString(songName)
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgTextEntrySubmission", "gotMsgTextEntrySubmission")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgUpdateIslandSongName", "gotMsgUpdateIslandSongName")
+				
+			</event>
+		</textComponent>
+		<event name="gotMsgTextEntrySubmission" params="element, msg">
+			if((msg.messageID == "ISLAND_SONG_NAME") and msg.choice) then
+				if(element:parent()("waitingOnComposerRename"):GetInt() == 1) then
+					element:parent()("waitingOnComposerRename"):SetInt(0)
+					--if(element["Text"]("visible"):GetInt()==1) then
+					--do it this way because setting it invisible makes the text size go funny:
+					if(element("yOffset"):GetInt() == element("originalYOffset"):GetInt()) then
+						game.setIslandSongName(msg.text)
+					end
+				end
+			end
+		</event>
+		<event name="gotMsgKeyboardEntryResult" params="element, msg">
+			if(element:parent()("waitingOnComposerRename"):GetInt() == 1) then
+				element:parent()("waitingOnComposerRename"):SetInt(0)
+				if(not msg.cancelled) then
+				
+					--if(element["Text"]("visible"):GetInt()==1) then
+					--do it this way because setting it invisible makes the text size go funny:
+					if(element("yOffset"):GetInt() == element("originalYOffset"):GetInt()) then
+						game.setIslandSongName(msg.text)
+					end
+				end
+			end
+		</event>
+		
+		<event name="gotMsgUpdateIslandSongName" params="element, msg">
+			if(element["Text"]("visible"):GetInt()==1) then
+				element["Text"]("autoScale"):SetInt(0)
+				element["Text"]("size"):SetFloat(0.5*game.composerScale())
+				if(msg.name == "") then
+					element["Text"]("noTranslate"):SetInt(0)
+					element["Text"]("text"):SetString(game.StoreContext_DEFAULT_OWNED_SONGNAME)
+				else
+					element["Text"]("noTranslate"):SetInt(1)
+					element["Text"]("text"):SetString(msg.name)
+				end
+				element["Text"]("autoScale"):SetInt(1)
+			end
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="CutButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<templateVar name="$layer" equals="gridOverlay" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="4" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.composerCut()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_cut")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("gridOverlay")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="30*game.composerScale()" h="50" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "CUT_LABEL", "gridOverlay")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="makeVisible" params="element">
+			element:DoStoredScript("setVisible")
+			element["Overlay"]("visible"):SetInt(1)
+			element:parent()["CopyButton"]:DoStoredScript("setVisible")
+			element:parent()["CopyButton"]["Overlay"]("visible"):SetInt(1)
+			element:parent()["PasteButton"]:DoStoredScript("setVisible")
+			element:parent()["PasteButton"]["Overlay"]("visible"):SetInt(1)
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="CopyButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<templateVar name="$layer" equals="gridOverlay" />
+		<position relativeTo="CutButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3.0*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.composerCopy()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_copy")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("gridOverlay")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="30*game.composerScale()" h="50" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "COPY_LABEL", "gridOverlay")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PasteButton">
+		<templateVar name="$spriteScale" equals="0.25*game.composerScale()" />
+		<templateVar name="$layer" equals="gridOverlay" />
+		<position relativeTo="CopyButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3.0*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.composerPaste()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_paste")
+				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.25*game.composerScale())
+				component("layer"):SetString("gridOverlay")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="30*game.composerScale()" h="50" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				__InitComposerButton(component, element, "PASTE_LABEL", "gridOverlay")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<event name="disablePlay" params="element">
+		element["HelpButton"]:DoStoredScript("disable")
+		element["HelpButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["ShowHideButton"]:DoStoredScript("disable")
+		element["ShowHideButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["AdvancedButton"]:DoStoredScript("disable")
+		element["AdvancedButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["AdvancedButton"]["OverlayBG"]:setColor(0.5, 0.5, 0.5)
+		element["AccidentalButton"]:DoStoredScript("disable")
+		element["AccidentalButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["EndButton"]:DoStoredScript("disable")
+		element["EndButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["NextButton"]:DoStoredScript("disable")
+		element["NextButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["PrevButton"]:DoStoredScript("disable")
+		element["PrevButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["HomeButton"]:DoStoredScript("disable")
+		element["HomeButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["TimeNumeratorButton"]:DoStoredScript("disable")
+		element["TimeNumeratorButton"]["Text"]:setColor(0.5, 0.5, 0.5)
+		element["TimeDenomButton"]:DoStoredScript("disable")
+		element["TimeDenomButton"]["Text"]:setColor(0.5, 0.5, 0.5)
+		element["TimeSignatureBar"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["KeySignatureButton"]:DoStoredScript("disable")
+		element["KeySignatureButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["LoadTemplateButton"]:DoStoredScript("disable")
+		element["LoadTemplateButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["SaveTemplateButton"]:DoStoredScript("disable")
+		element["SaveTemplateButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["ClearButton"]:DoStoredScript("disable")
+		element["ClearButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["SaveTrackButton"]:DoStoredScript("disable")
+		element["SaveTrackButton"]["Overlay"]:setColor(0.5, 0.5, 0.5)
+		element["MonsterLabel"]:DoStoredScript("disable")
+	</event>
+	
+	<event name="enablePlay" params="element">
+		element["HelpButton"]:DoStoredScript("enable")
+		element["HelpButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["ShowHideButton"]:DoStoredScript("enable")
+		element["ShowHideButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["AdvancedButton"]:DoStoredScript("enable")
+		element["AdvancedButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["AdvancedButton"]["OverlayBG"]:setColor(1.0, 1.0, 1.0)
+		element["AccidentalButton"]:DoStoredScript("enable")
+		element["AccidentalButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["EndButton"]:DoStoredScript("enable")
+		element["EndButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["NextButton"]:DoStoredScript("enable")
+		element["NextButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["PrevButton"]:DoStoredScript("enable")
+		element["PrevButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["HomeButton"]:DoStoredScript("enable")
+		element["HomeButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["TimeNumeratorButton"]:DoStoredScript("enable")
+		element["TimeNumeratorButton"]["Text"]:setColor(1.0, 1.0, 1.0)
+		element["TimeDenomButton"]:DoStoredScript("enable")
+		element["TimeDenomButton"]["Text"]:setColor(1.0, 1.0, 1.0)
+		element["TimeSignatureBar"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["KeySignatureButton"]:DoStoredScript("enable")
+		element["KeySignatureButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["LoadTemplateButton"]:DoStoredScript("enable")
+		element["LoadTemplateButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["SaveTemplateButton"]:DoStoredScript("enable")
+		element["SaveTemplateButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["ClearButton"]:DoStoredScript("enable")
+		element["ClearButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["SaveTrackButton"]:DoStoredScript("enable")
+		element["SaveTrackButton"]["Overlay"]:setColor(1.0, 1.0, 1.0)
+		element["MonsterLabel"]:DoStoredScript("enable")
+	</event>
+	
+	<event name="onInit" params="element">
+		element("waitingOnComposerRename"):SetInt(0)
+		element("waitingOnTemplateRename"):SetInt(0)
+		element["CutButton"]:DoStoredScript("setInvisible")
+		element["CutButton"]["Overlay"]("visible"):SetInt(0)
+		element["CopyButton"]:DoStoredScript("setInvisible")
+		element["CopyButton"]["Overlay"]("visible"):SetInt(0)
+		element["PasteButton"]:DoStoredScript("setInvisible")
+		element["PasteButton"]["Overlay"]("visible"):SetInt(0)
+
+		__InitComposerButton = function(component, element, text, layer)
+			
+			layer = layer or "HUD"
+
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTitleFont())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("size"):SetFloat(game.composerScale() * 0.2)
+			component("text"):SetString(text)
+			--component("autoScaleFactor"):SetFloat(0.01)
+			--component("autoScale"):SetInt(1)
+			component("layer"):SetString(layer)			
+		
+		end
+
+	</event>
+</menu>

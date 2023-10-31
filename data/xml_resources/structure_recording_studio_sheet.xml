@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c8a40694688ecbe751cc408d61cb6626:7ecbf4e9a6bab7e4fa4f4d0a645535da:22e30a6f61d92a8185c1ac99ce638efa$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_recording_studio_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="structure_recording_studio_bulb" x="2" y="960" w="96" h="45" pX="0.5" pY="0.5" oX="2" oY="2" oW="50" oH="100" r="y"/>
+    <sprite n="structure_recording_studio_door" x="2" y="680" w="417" h="122" pX="0.5" pY="0.5" oX="2" oY="6" oW="144" oH="448" r="y"/>
+    <sprite n="structure_recording_studio_glow" x="421" y="680" w="87" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="90" r="y"/>
+    <sprite n="structure_recording_studio_main" x="2" y="2" w="505" h="676" pX="0.5" pY="0.5" oX="1" oY="3" oW="508" oH="682"/>
+    <sprite n="structure_recording_studio_megaphone" x="421" y="752" w="83" h="90" pX="0.5" pY="0.5" oX="0" oY="0" oW="90" oH="84" r="y"/>
+    <sprite n="structure_recording_studio_mic" x="2" y="844" w="61" h="114" pX="0.5" pY="0.5" oX="1" oY="3" oW="64" oH="120"/>
+    <sprite n="structure_recording_studio_reflect" x="65" y="844" w="76" h="103" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="104"/>
+</TextureAtlas>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1c4a89faf0fd8dd153273e0f926fac60:ef7c929d4d5b67ff375c572bf6ccedae:d8c0873ab05e698df1c2bd7d5d41f04a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCD_costume_06_sheet.png" width="512" height="512" hires="true">
+    <!-- original anchor = (43,95) -> new anchor (50,139) diff = (-7, -44)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-14, -88), because hires-->
+    <sprite n="BCD_costume_06_hat.png" x="1" y="1" w="240" h="206" pX="0.5" pY="0.5" oX="-14" oY="-88"/>
+    <sprite n="BCD_costume_06_mouth1.png" x="1" y="209" w="135" h="145" pX="0.5" pY="0.5" oX="3" oY="1" oW="144" oH="146"/>
+    <sprite n="BCD_costume_06_mouth2.png" x="243" y="1" w="127" h="128" pX="0.5" pY="0.5" oX="5" oY="12" oW="144" oH="146"/>
+    <sprite n="BCD_costume_06_mouth3.png" x="372" y="1" w="122" h="127" pX="0.5" pY="0.5" oX="0" oY="8" oW="144" oH="146"/>
+    <sprite n="BCD_costume_06_mouth4.png" x="238" y="237" w="121" h="99" pX="0.5" pY="0.5" oX="14" oY="31" oW="144" oH="146"/>
+    <sprite n="BCD_costume_06_mouth5.png" x="1" y="356" w="108" h="144" pX="0.5" pY="0.5" oX="0" oY="30" oW="144" oH="146" r="y"/>
+    <sprite n="BCD_costume_06_tongue01.png" x="111" y="357" w="115" h="131" pX="0.5" pY="0.5" oX="34" oY="19" oW="166" oH="164" r="y"/>
+    <sprite n="BCD_costume_06_tongue02.png" x="138" y="209" w="98" h="146" pX="0.5" pY="0.5" oX="19" oY="35" oW="166" oH="164" r="y"/>
+    <sprite n="BCD_costume_06_tongue03.png" x="238" y="338" w="159" h="71" pX="0.5" pY="0.5" oX="6" oY="58" oW="166" oH="164"/>
+    <sprite n="BCD_costume_06_tongue04.png" x="243" y="131" w="136" h="104" pX="0.5" pY="0.5" oX="29" oY="60" oW="166" oH="164"/>
+    <sprite n="BCD_costume_06_tongue05.png" x="361" y="238" w="146" h="78" pX="0.5" pY="0.5" oX="19" oY="36" oW="166" oH="164"/>
+    <sprite n="BCD_costume_06_tongue06.png" x="228" y="411" w="118" h="86" pX="0.5" pY="0.5" oX="79" oY="2" oW="166" oH="164" r="y"/>
+    <sprite n="BCD_costume_06_tongue07.png" x="399" y="318" w="88" h="116" pX="0.5" pY="0.5" oX="77" oY="6" oW="166" oH="164"/>
+    <sprite n="BCD_costume_06_tongue08.png" x="381" y="130" w="110" h="106" pX="0.5" pY="0.5" oX="59" oY="12" oW="166" oH="164" r="y"/>
+</TextureAtlas>

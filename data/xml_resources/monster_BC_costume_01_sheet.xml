@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c302764f151a9d2340b9bebb0b1d95f4:23ca90a9031614f261b1a09525b187ac:7a1f2118b26c36cc8cba4e44788422b3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BC_costume_01_sheet.png" width="256" height="256" hires="true">
+    <sprite n="BC_left_lower_arm_noodle.png" x="2" y="42" w="112" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="BC_left_lower_leg_noodle.png" x="2" y="2" w="164" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="BC_left_upper_arm_noodle.png" x="208" y="2" w="34" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="BC_right_lower_arm_noodle.png" x="116" y="42" w="28" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BC_right_lower_leg_noodle.png" x="168" y="2" w="38" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BC_right_upper_arm_noodle.png" x="208" y="124" w="34" h="120" pX="0.5" pY="0.5"/>
+</TextureAtlas>

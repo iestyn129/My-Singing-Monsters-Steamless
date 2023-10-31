@@ -1,0 +1,304 @@
+<template name="template_tribalentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="0.75*lua_sys.screenWidth()" h="35*game.menuScaleY()" />
+	
+	<event name="onInit" params="element">
+		element:setPositionBroadcast(true)
+	</event>
+
+	<element name="BackgroundElement">
+		<size dependentOnElement="element:name()" dependentOnComponent="SpriteySprite" />
+		<event name="onInit" params="element">
+			element:setPositionBroadcast(true)
+		</event>
+		<ninesliceComponent name="SpriteySprite">
+			<size w="0.7525*lua_sys.screenWidth()" h="75*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(0.0)
+				component("bottomHeight"):SetFloat(0.0)
+				component("leftWidth"):SetFloat(0.0)
+				component("rightWidth"):SetFloat(0.0)
+				component("includeBorder"):SetInt(1)
+				if(element:parent()("Invited"):GetInt() == 0) then
+					component("spriteName"):SetString("gfx/menu/friendGrey"..element:parent()("greyColor"):GetInt())
+				else
+					component("spriteName"):SetString("gfx/menu/friendGreen"..element:parent()("greyColor"):GetInt())
+				end
+				component("layer"):SetString("MidPopUps")
+				element:setPositionBroadcast(true)
+			</event>
+		</ninesliceComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				local list
+				
+				if(element:parent()("IsRandom"):GetInt() == 1) then
+					list = element:root():topPopUp():GetElement("RandomTribesList")
+				else
+					list = element:root():topPopUp():GetElement("TribesList")
+				end
+				
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				local tribeEntry = menu:addTemplateElement("template_tribalentry_large", "tribeentry_large", list)
+				tribeEntry:relativeTo(element:parent():parent())
+				tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+				tribeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+				tribeEntry("greyColor"):SetInt(element:parent()("greyColor"):GetInt())
+				tribeEntry("DisplayName"):SetString(element:parent()("DisplayName"):GetString())
+				tribeEntry("Level"):SetInt(element:parent()("Level"):GetInt())
+				tribeEntry("UserId"):SetInt(element:parent()("UserId"):GetInt())
+				tribeEntry("MonsterType"):SetInt(element:parent()("MonsterType"):GetInt())
+				tribeEntry("MemberListShort"):SetString(game.getTribeMembers(element:parent()("Key"):GetInt()))
+				tribeEntry("NumMembers"):SetInt(element:parent()("NumMembers"):GetInt())
+				tribeEntry("Key"):SetInt(element:parent()("Key"):GetInt())
+				tribeEntry("Invited"):SetInt(element:parent()("Invited"):GetInt())
+				tribeEntry("entryNum"):SetInt(element:parent()("entryNum"):GetInt())
+				tribeEntry("IsRandom"):SetInt(element:parent()("IsRandom"):GetInt())
+				tribeEntry:calculatePosition()
+				tribeEntry:init()
+				tribeEntry:postInit()
+				tribeEntry:setPositionBroadcast(true)
+			</event>
+		</touchComponent>
+	</element>
+
+	<element name="TribePic">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="3*game.menuScaleY()" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.getTribeMonsterPic(element:parent()("MonsterType"):GetInt()))
+				component("size"):SetFloat(game.menuScaleY()*0.5*64/component:absW())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="TribeName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TribePic" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="5*game.menuScaleX()" yOffset="7*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("noTranslate"):SetInt(1)
+				component("text"):SetString(element:parent()("DisplayName"):GetString())
+				include("MenuHelpers").ShrinkTextToWidth(element:parent()("DisplayName"):GetString(),component, 200*game.menuScaleX())
+				component:setColor(0.94, 0.6, 0.11)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MembersLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TribeName" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				if(element:parent()("Invited"):GetInt() == 0) then
+					component("text"):SetString("TRIBAL_MEMBERS_LABEL")
+				else
+					component("text"):SetString("TRIBAL_INVITE_LABEL")
+					component:setColor(0.43, 0.98, 0.02)
+				end
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MembersList">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="MembersLabel" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="250*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				if(element:parent()("Invited"):GetInt() == 0) then
+					component("text"):SetString(element:parent()("MemberListShort"):GetString())
+					component:setColor(1.0, 0.9, 0.09)
+				else
+					component("text"):SetString("TRIBAL_INVITE_DESC")
+				end
+				
+				include("MenuHelpers").ShrinkTextToWidth(component("text"):GetString(),component, 200*game.menuScaleX())
+				
+				--[[because it's pointless to show a MembersLabel in this case, especially since it doesn't indicate the absence of members in the tribe...]]
+				if(component("text"):GetString() == "") then
+					element:parent()["MembersLabel"]["Text"]("visible"):SetInt(0)
+				else
+					element:parent()["MembersLabel"]["Text"]("visible"):SetInt(1)
+				end
+				
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="hack">
+		<template type="template_spritesheetbutton" name="VisitButton">
+			<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="0.38*game.menuScaleX()" />
+			<templateVar name="$layer" equals="MidPopUps" />		
+			<position relativeTo="element:parent():parent()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-2" />
+			<textComponent name="Label">
+				<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(game.localizedUpper("LABEL_VISIT"))
+					component("textPadding"):SetInt(4)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</textComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.visitTribalIsland(element:parent():parent()("Key"):GetInt(), false)
+					element:root():popPopUp()
+				</event>
+			</touchComponent>
+		</template>
+	</element>
+	
+	<element name="TribeLevel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="element:parent()[&quot;hack&quot;][&quot;VisitButton&quot;]" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="4*game.menuScaleX()" yOffset="-1" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="75*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("FRIEND_LEVEL_ABBREV_TAG").." "..element:parent()("Level"):GetInt())
+				component:setColor(0.94, 0.6, 0.11)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="JoinButton">
+		<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.38*game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />		
+		<position relativeTo="element:parent()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			onInit(element)
+			element("disabled"):SetInt(0)
+		</event>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				if(element:parent()("Invited"):GetInt() == 0) then
+					component("text"):SetString(game.localizedUpper("LABEL_JOIN"))
+				else
+					component("text"):SetString(game.localizedUpper("LABEL_ACCEPT"))
+				end
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				
+				element("DoCancel"):SetInt(0)
+				
+				if(game.isIslandOwned(9) == true) then
+					element:DoStoredScript("disable")
+					element["Touch"]("enabled"):SetInt(1)
+					element("disabled"):SetInt(1)
+				else
+					local myTribeRequest = game.getMyTribeRequest()
+					if(myTribeRequest == element:parent()("Key"):GetInt()) then
+						element("DoCancel"):SetInt(1)
+						component("text"):SetString(game.localizedUpper("LABEL_CANCEL"))
+					elseif(myTribeRequest ~= 0) then
+						element:DoStoredScript("disable")
+						element["Touch"]("enabled"):SetInt(1)
+						element("disabled"):SetInt(1)
+					end
+				end
+				
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+			</event>
+		</textComponent>
+        <touchComponent name="Touch">
+            <size dependentOnElement="element:name()"/>
+            <position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+            <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+            <event name="onTouchDown" params="component, element">
+				if(element("disabled"):GetInt()==0) then
+					onTouchDown(component, element)
+				end
+			</event>
+            <event name="onTouchUp" params="component, element">
+				if(element("disabled"):GetInt()==0) then
+					onTouchUp(component, element)
+					if(element("DoCancel"):GetInt() == 0) then
+						tribeText = game.getLocalizedText("CONFIRMATION_JOIN_TRIBE")
+						tribeText = select(1, tribeText:gsub("XXX", element:parent()("DisplayName"):GetString()))
+						game.displayConfirmation("JOIN_TRIBE"..element:parent()("Key"):GetInt(), tribeText)
+					else
+						game.displayConfirmation("CANCEL_TRIBE_REQUEST", "CONFIRMATION_CANCEL_TRIBE_REQUEST")
+					end
+				else
+					if(game.isIslandOwned(9) == true) then
+						game.displayNotification("ALREADY_IN_TRIBE_NOTIFICATION")
+					else
+						game.displayNotification("WAITING_ON_PREV_REQUEST")
+					end
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				if(element("disabled"):GetInt()==0) then
+					onTouchRelease(component, element)
+				end
+			</event>
+        </touchComponent>
+		
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if((msg.choice == true) and (msg.messageID == ("JOIN_TRIBE"..element:parent()("Key"):GetInt()))) then
+				game.setMyTribeRequest(element:parent()("Key"):GetInt())
+				manager:setContext("TRIBAL_CHOOSE")
+			end
+		</event>
+	</template>
+	
+</template>

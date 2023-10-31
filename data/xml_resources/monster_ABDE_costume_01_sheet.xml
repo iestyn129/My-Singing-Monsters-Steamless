@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:766068b53a1d532b6b4eff937f809e14:7f00b59b9fe60da7493fc7f46ff74ae1:60225aa8285f29d42243e69904bf6b28$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABDE_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="ABDE_beard_strapped.png" x="123" y="156" w="94" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="ABDE_head_shorter.png" x="2" y="156" w="119" h="113" pX="0.5" pY="0.5" oX="22" oY="89" oW="156" oH="202"/>
+	<!-- original anchor = (44, 90) -> new anchor (48, 76) diff = (-4, 14)-->
+	<!-- add double it to texturepacker output offsets (3, 4) -> (-5, 32), because hires-->
+    <sprite n="ABDE_helmet.png" x="2" y="2" w="174" h="152" pX="0.5" pY="0.5" oX="-5" oY="32" oW="180" oH="160"/>
+		<sprite n="empty" x="0" y="300" w="8" h="8"/></TextureAtlas>

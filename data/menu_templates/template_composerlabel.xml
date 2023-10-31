@@ -1,0 +1,221 @@
+<template name="template_composerlabel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$MonsterID" equals="0" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="GreySprite" />
+			
+	<spriteSheetComponent name="GreySprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("selectable_bar_grey")
+			component("sheetName"):SetString("xml_resources/breeding01.xml")
+			component("size"):SetFloat(0.525*game.composerScale())
+			component("layer"):SetString("HUD")
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteComponent name="CharacterImage">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/breeding/"..game.getPortraitName($MonsterID))
+			component("size"):SetFloat(0.525*game.composerScale())
+			component("origSize"):SetFloat(component("size"):GetFloat())
+			component("layer"):SetString("HUD")
+		</event>
+	</spriteComponent>
+	<spriteComponent name="EmptyImage">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/breeding/monster_portrait_blank")
+			component("size"):SetFloat(0.525*game.composerScale())
+			component("layer"):SetString("HUD")
+		</event>
+	</spriteComponent>
+	<spriteComponent name="EggImage">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/"..game.getMonsterEggGfx($MonsterID))
+			component("size"):SetFloat(0.25*game.composerScale())
+			component("origSize"):SetFloat(component("size"):GetFloat())
+			component("layer"):SetString("HUD")
+		</event>
+	</spriteComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="CharacterImage" />
+		<position relativeTo="element[&quot;CharacterImage&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("singleTouch"):SetInt(1)
+		</event>
+		<event name="onTouchDown" params="component, element">
+			element:DoStoredScript("onTouchDown")
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element:DoStoredScript("onTouchUp")
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element:DoStoredScript("onTouchRelease")
+		</event>
+	</touchComponent>
+	
+	<touchComponent name="Touch2">
+		<size dependentOnElement="element:name()" dependentOnComponent="GreySprite" />
+		<position relativeTo="element[&quot;GreySprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("singleTouch"):SetInt(1)
+		</event>
+		<event name="onTouchDown" params="component, element">
+			element:DoStoredScript("onTouchDown")
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element:DoStoredScript("onTouchUp")
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element:DoStoredScript("onTouchRelease")
+		</event>
+	</touchComponent>
+	
+	<touchComponent name="Touch3">
+		<size dependentOnElement="element:name()" dependentOnComponent="EmptyImage" />
+		<position relativeTo="element[&quot;EmptyImage&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("singleTouch"):SetInt(1)
+		</event>
+		<event name="onTouchDown" params="component, element">
+			element:DoStoredScript("onTouchDown")
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element:DoStoredScript("onTouchUp")
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element:DoStoredScript("onTouchRelease")
+		</event>
+	</touchComponent>
+	
+	<event name="onTouchDown" params="element">
+		element["CharacterImage"]:setColor(0.5, 0.5, 0.5)
+		element["GreySprite"]:setColor(0.5, 0.5, 0.5)
+		element["EmptyImage"]:setColor(0.5, 0.5, 0.5)
+		element["EggImage"]:setColor(0.5, 0.5, 0.5)
+		element["monsterName"]:setColor(0.5, 0.5, 0.5)
+		element("ButtonState"):SetInt(game.BUTTON_PRESSED)
+		element("TickTimer"):SetFloat(0.0)
+	</event>
+	<event name="onTouchUp" params="element">
+		element["CharacterImage"]:setColor(1.0, 1.0, 1.0)
+		element["GreySprite"]:setColor(1.0, 1.0, 1.0)
+		element["EmptyImage"]:setColor(1.0, 1.0, 1.0)
+		element["EggImage"]:setColor(1.0, 1.0, 1.0)
+		element["monsterName"]:setColor(1.0, 1.0, 1.0)
+		lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+		element("ButtonState"):SetInt(game.BUTTON_RELEASED)
+		element("TickTimer"):SetFloat(0.0)
+		game.showComposerChangeMonster()
+	</event>
+	<event name="onTouchRelease" params="element">
+		element["CharacterImage"]:setColor(1.0, 1.0, 1.0)
+		element["GreySprite"]:setColor(1.0, 1.0, 1.0)
+		element["EmptyImage"]:setColor(1.0, 1.0, 1.0)
+		element["EggImage"]:setColor(1.0, 1.0, 1.0)
+		element["monsterName"]:setColor(1.0, 1.0, 1.0)
+		element("ButtonState"):SetInt(game.BUTTON_RELEASED)
+		element("TickTimer"):SetFloat(0.0)
+	</event>
+			
+	<textComponent name="monsterName">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			local name = game.getMonsterName($MonsterID)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.25*game.composerScale())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("noTranslate"):SetInt(1)
+			component("text"):SetString(name)
+			component("layer"):SetString("HUD")
+		</event>
+	</textComponent>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local buttonState = element("ButtonState"):GetInt()
+			local isLocked = element("isCurrentlyLocked"):GetInt()
+			
+			if(buttonState ~= game.BUTTON_IDLE or isLocked == 1) then
+				local buttonSize = 0.525*game.composerScale()
+				local newTime = element("TickTimer"):GetFloat() + dt
+				element("TickTimer"):SetFloat(newTime)
+				
+				if(buttonState == game.BUTTON_PRESSED) then
+					local size = lua_sys.smooth(buttonSize, buttonSize - 0.03, newTime*15)
+					element["CharacterImage"]("size"):SetFloat(size)
+					element["EmptyImage"]("size"):SetFloat(size)
+					element["EggImage"]("size"):SetFloat(element["EggImage"]("origSize"):GetFloat()/(element["CharacterImage"]("origSize"):GetFloat()) * size)
+
+					if(size == buttonSize - 0.03) then
+						element("ButtonState"):SetInt(game.BUTTON_IDLE)
+					end
+				elseif(buttonState == game.BUTTON_RELEASED) then
+					if(newTime < 0.1) then
+						local size = lua_sys.smooth(buttonSize - 0.03, buttonSize + 0.05, newTime*20)
+						element["CharacterImage"]("size"):SetFloat(size)
+						element["EmptyImage"]("size"):SetFloat(size)
+						element["EggImage"]("size"):SetFloat(element["EggImage"]("origSize"):GetFloat()/(element["CharacterImage"]("origSize"):GetFloat()) * size)
+	
+					elseif(newTime < 0.3) then
+						local size = lua_sys.smooth(buttonSize + 0.05, buttonSize, (newTime-0.1)*20)
+						element["CharacterImage"]("size"):SetFloat(size)
+						element["EmptyImage"]("size"):SetFloat(size)
+						element["EggImage"]("size"):SetFloat(element["EggImage"]("origSize"):GetFloat()/(element["CharacterImage"]("origSize"):GetFloat()) * size)
+						
+						if(size == buttonSize) then
+							element("ButtonState"):SetInt(game.BUTTON_IDLE)
+						end
+					end
+				end
+			end
+			
+			if(isLocked == 1 and element("TickTimer"):GetFloat() > 1) then
+				element("isCurrentlyLocked"):SetInt(0)
+				element["Touch"]("enabled"):SetInt(1)
+				element["Touch2"]("enabled"):SetInt(1)
+			end
+		]]>
+	</event>
+	
+	<event name="onInit" params="element">
+		element:setPositionBroadcast(true)
+		element("locked"):SetInt(0) -- Used so I can disable after a touch		
+		element("ButtonState"):SetInt(game.BUTTON_IDLE)
+		element("TickTimer"):SetFloat(0.0)
+		element("isCurrentlyLocked"):SetInt(0)
+	</event>
+	
+	<function name="enable" params="element">
+		element["CharacterImage"]:setColor(1.0, 1.0, 1.0)
+		element["GreySprite"]:setColor(1.0, 1.0, 1.0)
+		element["EmptyImage"]:setColor(1.0, 1.0, 1.0)
+		element["EggImage"]:setColor(1.0, 1.0, 1.0)
+		element["monsterName"]:setColor(1.0, 1.0, 1.0)
+		element["Touch"]("enabled"):SetInt(1)
+		element["Touch2"]("enabled"):SetInt(1)
+	</function>
+	
+	<function name="disable" params="element">
+		element["CharacterImage"]:setColor(0.5, 0.5, 0.5)
+		element["GreySprite"]:setColor(0.5, 0.5, 0.5)
+		element["EmptyImage"]:setColor(0.5, 0.5, 0.5)
+		element["EggImage"]:setColor(0.5, 0.5, 0.5)
+		element["monsterName"]:setColor(0.5, 0.5, 0.5)
+		element["Touch"]("enabled"):SetInt(0)
+		element["Touch2"]("enabled"):SetInt(0)
+	</function>
+	
+</template>

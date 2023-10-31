@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f9eec6f2a77038e229b0444e1b5aa5df:c87d9b7691e47a93b0eb829437897e2c:2212741488e33bfe22ce40b5f06736d1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island23_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="cloud_anim_lrg" x="1180" y="4" w="831" h="656" pX="0.5" pY="0.5" oX="0" oY="82" oW="868" oH="868"/>
+    <sprite n="side" x="4" y="4" w="1172" h="1344" pX="0.5" pY="0.5"/>
+    <sprite n="side_back" x="4" y="1352" w="740" h="667" pX="0.5" pY="0.5" oX="0" oY="0" oW="668" oH="740" r="y"/>
+    <sprite n="side_platform" x="1448" y="965" w="458" h="329" pX="0.5" pY="0.5" oX="3" oY="1" oW="464" oH="332"/>
+    <sprite n="side_platform_base" x="1180" y="1196" w="208" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform_disk" x="1448" y="1298" w="318" h="149" pX="0.5" pY="0.5" oX="1" oY="1" oW="320" oH="152"/>
+    <sprite n="side_platform_edge" x="928" y="1352" w="227" h="579" pX="0.5" pY="0.5" oX="0" oY="2" oW="580" oH="232" r="y"/>
+    <sprite n="spire_01" x="1159" y="1352" w="225" h="488" pX="0.5" pY="0.5" oX="1" oY="0" oW="228" oH="488"/>
+    <sprite n="spire_01_glow" x="1914" y="664" w="124" h="240" pX="0.5" pY="0.5"/>
+    <sprite n="spire_02" x="1388" y="1451" w="149" h="315" pX="0.5" pY="0.5" oX="1" oY="0" oW="152" oH="316"/>
+    <sprite n="spire_02_glow" x="1320" y="1844" w="124" h="180" pX="0.5" pY="0.5"/>
+    <sprite n="spire_03" x="1180" y="664" w="730" h="297" pX="0.5" pY="0.5" oX="1" oY="1" oW="300" oH="732" r="y"/>
+    <sprite n="spire_03_glow" x="1180" y="1041" w="212" h="151" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="212" r="y"/>
+    <sprite n="spire_04" x="748" y="1352" w="176" h="612" pX="0.5" pY="0.5"/>
+    <sprite n="spire_04_glow" x="1914" y="908" w="124" h="203" pX="0.5" pY="0.5" oX="0" oY="0" oW="124" oH="204"/>
+    <sprite n="spire_05" x="996" y="1935" w="200" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="spire_06" x="1180" y="965" w="240" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="spire_07" x="748" y="1968" w="244" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="spire_08" x="1910" y="1115" w="117" h="216" pX="0.5" pY="0.5"/>
+    <sprite n="spire_08_glow" x="1200" y="1844" w="116" h="191" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="192"/>
+</TextureAtlas>

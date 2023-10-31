@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e4349d3c9b650a5f2143b1bee2a953e2:b1feec131adcb63fd10f094ac4c81e84:3a34c43f406279ea668956e299d53b8c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island05_sheet01_sand.png" width="2048" height="2048" hires="true">
+    <sprite n="island05_back" x="1070" y="2" w="934" h="1264" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_back_cover" x="1176" y="1754" w="70" h="268" pX="0.5" pY="0.5"/>
+    <sprite n="island05_burner_large" x="1248" y="1754" w="222" h="234" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_burner_small" x="283" y="1928" w="128" h="110" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_ear" x="2" y="2" w="336" h="1376" pX="0.5" pY="0.5"/>
+    <sprite n="island05_eye" x="1472" y="1754" w="216" h="218" pX="0.5" pY="0.5"/>
+    <sprite n="island05_eye_back" x="1690" y="1670" w="188" h="188" pX="0.5" pY="0.5"/>
+    <sprite n="island05_eye_edge_01" x="1070" y="1268" w="44" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="island05_eye_edge_02" x="231" y="1928" w="50" h="114" pX="0.5" pY="0.5"/>
+    <sprite n="island05_eye_glow" x="1616" y="1268" w="400" h="400" pX="0.5" pY="0.5"/>
+    <sprite n="island05_face_01" x="426" y="1338" w="748" h="686" pX="0.5" pY="0.5"/>
+    <sprite n="island05_face_02" x="340" y="2" w="728" h="1334" pX="0.5" pY="0.5"/>
+    <sprite n="island05_face_03" x="2" y="1928" w="227" h="116" pX="0.5" pY="0.5" oX="101" oY="0" oW="328" oH="116"/>
+    <sprite n="island05_nose" x="2" y="1380" w="422" h="546" pX="0.5" pY="0.5"/>
+    <sprite n="island05_ring" x="1176" y="1268" w="438" h="484" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9ca4c682dcdf8495b5db224fea50aa9c:e55a9ccf211d6e52e3631989858d54fa:861283192ec8d9988e766af041027ab5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_kabswax.png" width="512" height="1024" hires="true">
+    <sprite n="deco_kabswax_bg" x="1" y="1" w="394" h="282" pX="0.5" pY="0.5" oX="9" oY="13" oW="300" oH="420" r="y"/>
+    <sprite n="deco_kabswax_candle_01" x="397" y="136" w="67" h="27" pX="0.5" pY="0.5" oX="20" oY="15" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_02" x="397" y="269" w="64" h="26" pX="0.5" pY="0.5" oX="21" oY="16" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_03" x="397" y="165" w="67" h="27" pX="0.5" pY="0.5" oX="20" oY="15" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_04" x="389" y="356" w="63" h="25" pX="0.5" pY="0.5" oX="22" oY="17" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_05" x="283" y="350" w="63" h="27" pX="0.5" pY="0.5" oX="20" oY="17" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_06" x="392" y="297" w="63" h="29" pX="0.5" pY="0.5" oX="20" oY="17" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_07" x="397" y="105" w="67" h="29" pX="0.5" pY="0.5" oX="20" oY="15" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_candle_08" x="480" y="1" w="30" h="64" pX="0.5" pY="0.5" oX="19" oY="16" oW="60" oH="100"/>
+    <sprite n="deco_kabswax_fg" x="1" y="285" w="280" h="273" pX="0.5" pY="0.5" oX="18" oY="124" oW="300" oH="420" r="y"/>
+    <sprite n="deco_kabswax_glow" x="397" y="1" w="81" h="58" pX="0.5" pY="0.5" oX="1" oY="19" oW="60" oH="100" r="y"/>
+    <sprite n="deco_kabswax_left_bubbles" x="283" y="285" w="63" h="63" pX="0.5" pY="0.5" oX="15" oY="10" oW="80" oH="80"/>
+    <sprite n="deco_kabswax_middle_bubbles" x="389" y="328" w="63" h="26" pX="0.5" pY="0.5" oX="10" oY="22" oW="80" oH="80"/>
+    <sprite n="deco_kabswax_pop_01" x="496" y="67" w="10" h="16" pX="0.5" pY="0.5" oX="44" oY="48" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_02" x="480" y="67" w="14" h="16" pX="0.5" pY="0.5" oX="44" oY="44" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_03" x="483" y="374" w="23" h="19" pX="0.5" pY="0.5" oX="41" oY="39" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_04" x="454" y="374" w="27" h="20" pX="0.5" pY="0.5" oX="40" oY="38" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_05" x="348" y="364" w="30" h="22" pX="0.5" pY="0.5" oX="38" oY="36" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_06" x="348" y="327" w="39" h="35" pX="0.5" pY="0.5" oX="34" oY="23" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_07" x="348" y="285" w="42" h="40" pX="0.5" pY="0.5" oX="34" oY="16" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_08" x="468" y="87" w="42" h="45" pX="0.5" pY="0.5" oX="34" oY="14" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_09" x="464" y="261" w="47" h="52" pX="0.5" pY="0.5" oX="28" oY="17" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_10" x="457" y="315" w="51" h="57" pX="0.5" pY="0.5" oX="25" oY="16" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_11" x="465" y="199" w="44" h="60" pX="0.5" pY="0.5" oX="24" oY="14" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_12" x="466" y="134" w="45" h="63" pX="0.5" pY="0.5" oX="22" oY="14" oW="100" oH="80" r="y"/>
+    <sprite n="deco_kabswax_pop_13" x="397" y="61" w="69" h="42" pX="0.5" pY="0.5" oX="19" oY="17" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_pop_14" x="397" y="259" w="65" h="8" pX="0.5" pY="0.5" oX="18" oY="45" oW="100" oH="80"/>
+    <sprite n="deco_kabswax_right_bubbles" x="397" y="194" w="66" h="63" pX="0.5" pY="0.5" oX="2" oY="10" oW="80" oH="80"/>
+    <sprite n="deco_kabswax_wick" x="468" y="61" w="10" h="24" pX="0.5" pY="0.5" oX="25" oY="38" oW="60" oH="100"/>
+</TextureAtlas>

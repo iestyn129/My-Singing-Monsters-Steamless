@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:11e17a20af715a6d53a9e0ecbcdafc84:478f92a4449e360e2f9d5ae4e1da665c:217f0254e5c979854971d3df1fd0ab4a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABCE_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="monster_ABCE_costume_beard_01" x="226" y="2" w="82" h="91" pX="0.5" pY="0.5" oX="3" oY="2" oW="98" oH="94" r="y"/>
+    <sprite n="monster_ABCE_costume_beard_02" x="185" y="367" w="90" h="91" pX="0.5" pY="0.5" oX="4" oY="2" oW="98" oH="94" r="y"/>
+    <sprite n="monster_ABCE_costume_beard_03" x="402" y="2" w="90" h="87" pX="0.5" pY="0.5" oX="5" oY="2" oW="98" oH="94" r="y"/>
+    <sprite n="monster_ABCE_costume_beard_04" x="402" y="91" w="90" h="85" pX="0.5" pY="0.5" oX="3" oY="2" oW="98" oH="94" r="y"/>
+    <sprite n="monster_ABCE_costume_beard_05" x="310" y="2" w="90" h="90" pX="0.5" pY="0.5" oX="1" oY="2" oW="98" oH="94"/>
+    <sprite n="monster_ABCE_costume_beard_06" x="139" y="95" w="90" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="98" oH="94"/>
+    <sprite n="monster_ABCE_costume_beard_07" x="231" y="95" w="86" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="98" oH="94"/>
+    <sprite n="monster_ABCE_costume_beard_08" x="139" y="2" w="85" h="91" pX="0.5" pY="0.5" oX="3" oY="2" oW="98" oH="94" r="y"/>
+    <sprite n="monster_ABCE_costume_face_01" x="2" y="185" w="134" h="181" pX="0.5" pY="0.5" oX="0" oY="1" oW="158" oH="182"/>
+    <sprite n="monster_ABCE_costume_face_02" x="2" y="368" w="181" h="134" pX="0.5" pY="0.5" oX="0" oY="1" oW="158" oH="182" r="y"/>
+    <sprite n="monster_ABCE_costume_face_03" x="2" y="2" w="135" h="181" pX="0.5" pY="0.5" oX="0" oY="1" oW="158" oH="182"/>
+    <sprite n="monster_ABCE_costume_face_04" x="138" y="185" w="134" h="180" pX="0.5" pY="0.5" oX="0" oY="1" oW="158" oH="182"/>
+</TextureAtlas>

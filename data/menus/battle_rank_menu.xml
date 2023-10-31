@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<event name="onInit" params="element">
+		element("global"):SetInt(0)
+		element("asc"):SetInt(1)
+		element("prevSeason"):SetInt(0)
+		game.loadBattleFriendKeys(element("asc"):GetInt())
+
+		element("timeToUnlockFriends"):SetInt(0)
+	</event>
+	
+	<event name="onPostInit" params="element">
+		element:DoStoredScript("selectNewTab")
+		element("queueRepopulate"):SetInt(0)
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+	</event>
+	
+	<element name="RankMenuFunctions">
+		<event name="repopulateSeason" params="element">
+			
+			if(element:parent()("prevSeason"):GetInt() == 0) then
+				element:parent()["SeasonTitle"]["Text"]("text"):SetString("CURRENT_SEASON_TITLE")
+			else
+				element:parent()["SeasonTitle"]["Text"]("text"):SetString("PREV_SEASON_TITLE")
+			end
+			
+			element:parent()["FriendCodeLabel"]["Text"]:DoStoredScript("populate")
+			
+			if(element:parent()("global"):GetInt() == 1) then
+				game.loadGlobalBattleRankings(element:parent()("prevSeason"):GetInt())
+				game.setLastBattleFriendsPage(1)
+			end
+			
+			element:parent()["FriendsList"]:DoStoredScript("repopulate")
+		</event>
+	</element>
+
+	<event name="onTick" params="element, dt">
+		if(element("queueRepopulate"):GetInt() == 1) then
+			game.loadBattleFriendKeys(element("asc"):GetInt())
+			element["FriendsList"]:DoStoredScript("repopulate")
+			element("queueRepopulate"):SetInt(0)
+		end
+		
+		if(element["FriendsList"]("locked"):GetInt() == 1) then
+			if(element("timeToUnlockFriends"):GetInt() &lt; 1) then
+				element["FriendsList"]("locked"):SetInt(0)
+				element("timeToUnlockFriends"):SetInt(0)
+			else
+				element("timeToUnlockFriends"):SetInt(element("timeToUnlockFriends"):GetInt() - 1)
+			end
+		end
+		
+		if(dt &lt; game.maxTickTime()) then
+			local transitionState = element("transitionState"):GetInt()
+			
+			if(transitionState ~= 0) then
+				local transitionTime = element("transitionTime"):GetFloat()
+				
+				if(transitionState == 1) then
+					transitionTime = (transitionTime + dt*3)
+				elseif(transitionState == 2) then
+					transitionTime = (transitionTime - dt*3)
+				end
+				
+				transitionTime = clamp(transitionTime, 0.0, 1.0)
+				element("transitionTime"):SetFloat(transitionTime)
+				
+				element["Frame"]("xOffset"):SetFloat((lua_sys.screenWidth() * (0.5)) + (((-0.5) * lua_sys.screenWidth()) * (1 / transitionTime)))
+				element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime * 0.5)
+				
+				if(transitionTime == 1.0) then
+					element("transitionState"):SetInt(0)
+				elseif(transitionTime == 0.0) then
+					element:root():popPopUp()
+				end
+			end
+		end
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="15" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(1)
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="(-1.0)*lua_sys.screenWidth()" yOffset="7*game.hudScale()" priorityOffset="10" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.9*lua_sys.screenWidth()" h="275*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)				
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<event name="selectNewTab" params="element">
+		element["TabFriends"]:DoStoredScript("deselectTab")
+		element["TabGlobal"]:DoStoredScript("deselectTab")
+		
+		if(element("global"):GetInt() == 0) then
+			element["TabFriends"]:DoStoredScript("selectTab")
+		else
+			element["TabGlobal"]:DoStoredScript("selectTab")
+		end
+	</event>	
+	
+	<element name="TabGlobal">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="18*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-7)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(0.94, 0.6, 0.11)
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the selected tab to the back]]
+			element:setOrientationPriority(2)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.705, 0.45, 0.0825)
+		</event>
+		<ninesliceComponent name="Sprite">
+			<size w="116.48*game.menuScaleX()" h="35*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(10.0)
+				component("bottomHeight"):SetFloat(10.0)
+				component("leftWidth"):SetFloat(77.0)
+				component("rightWidth"):SetFloat(77.0)
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="80*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("RANK_GLOBAL_TAB")
+				component:setColor(0.94, 0.6, 0.11)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				element:parent()("global"):SetInt(1)
+				element:parent()("asc"):SetInt(1)
+				
+				game.loadGlobalBattleRankings(element:parent()("prevSeason"):GetInt())
+				game.setLastBattleFriendsPage(1)
+				element:parent():DoStoredScript("selectNewTab")
+				element:parent()["FriendsList"]:DoStoredScript("repopulate")
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TabFriends">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="120*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-1)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(0.71, 0.45, 0.94)
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the unselected tab to the back]]
+			element:setOrientationPriority(2)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.5325, 0.3375, 0.705)
+		</event>
+		<ninesliceComponent name="Sprite">
+			<size w="116.48*game.menuScaleX()" h="35*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(10.0)
+				component("bottomHeight"):SetFloat(10.0)
+				component("leftWidth"):SetFloat(77.0)
+				component("rightWidth"):SetFloat(77.0)
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="80*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("RANK_FRIENDS_TAB")
+				component:setColor(0.71, 0.45, 0.94)
+
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+			
+				if(element:parent()("global"):GetInt() == 0) then
+					if(element:parent()("asc"):GetInt()==0) then
+						element:parent()("asc"):SetInt(1)
+					else
+						element:parent()("asc"):SetInt(0)
+					end
+				else
+					element:parent()("asc"):SetInt(1)
+					element:parent()("global"):SetInt(0)
+				end
+				
+				game.loadBattleFriendKeys(element:parent()("asc"):GetInt())
+				game.setLastBattleFriendsPage(1)
+				element:parent():DoStoredScript("selectNewTab")
+				element:parent()["FriendsList"]:DoStoredScript("repopulate")
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="175*game.hudScale()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(49.0)
+				component("bottomHeight"):SetFloat(49.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="20*game.hudScale()"  />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(1.0, 0.9, 0.09)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MENU_RANK")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="PagesText">
+			<size w="160*game.hudScale()" h="10*game.hudScale()"  />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="5" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.30*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("MENU_PAGE").." 0/0")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="SeasonTitle">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0*10*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="150*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				if(element:parent()("prevSeason"):GetInt() == 0) then
+					component("text"):SetString("CURRENT_SEASON_TITLE")
+				else
+					component("text"):SetString("PREV_SEASON_TITLE")
+				end
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="FriendCodeLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="30*game.menuScaleX()" yOffset="10*game.menuScaleY()" priorityOffset="-4" />
+		<textComponent name="Text">
+			<size w="150*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component:DoStoredScript("populate")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("MidPopUps")
+			</event>
+			<event name="populate" params="component, element">
+			
+				local rank = game.getCurrentRank(element:parent()("prevSeason"):GetInt());
+				local rawTier = game.getCurrentTier(element:parent()("prevSeason"):GetInt());
+
+				if(rank == 0) then
+				
+					local tier = include("BattleVersusHelper").GetUserDisplayableTier(include("BattleVersusHelper").GetSeasonTiers(game.getBattleVersusCampaignId()), rawTier)
+					if(tier ~= -1) then
+						component("text"):SetString(game.getLocalizedText("MY_TIER") .. " " .. tier)
+					else
+						component("text"):SetString("")
+					end
+				else
+					component("text"):SetString(game.getLocalizedText("MY_RANK") .. " " .. rank)
+				end
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="FriendsList">
+		<size w="lua_sys.screenWidth()/5*4" h="135*game.menuScaleY()" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="element">
+			element("locked"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgFriendsUpdated", "gotMsgFriendsUpdated")
+			element("MaxPages"):SetInt(1)
+			element("FriendsPerPage"):SetInt(5)
+			game.loadBattleFriendKeys(element:parent()("asc"):GetInt())
+			element:DoStoredScript("populate")
+		</event>
+		<event name="gotMsgFriendsUpdated" params="element">
+			game.loadBattleFriendKeys(element:parent()("asc"):GetInt())
+			element:DoStoredScript("repopulate")
+		</event>
+		<event name="deselectAll" params="element">
+			local i = 0
+			local friendEntry = nil
+			while(true) do
+				local friendEntry = element:GetElement("friendentry"..i)
+				if(friendEntry == nil) then
+					break
+				end
+				if(friendEntry("selected"):GetInt() == 1) then
+					friendEntry:DoStoredScript("toggle")
+				end
+				i = i + 1
+			end
+		</event>
+		<event name="repopulate" params="element">
+			<![CDATA[
+				local prevNumItems = element("NumEntries"):GetInt()
+				
+				local page = game.getLastBattleFriendsPage()
+				local friends_per_page = element("FriendsPerPage"):GetInt()
+				local totalEntries = game.getCachedFriendKeys():size()
+				
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("friendentry"..i))
+				end
+				
+				--don't go past the number of friends we have
+				while(((page - 1) * friends_per_page) >= totalEntries) do
+					page = page - 1
+				end
+				
+				if(page < 1) then
+					page = 1
+				end
+				
+				if(page ~= game.getLastBattleFriendsPage()) then
+					game.setLastBattleFriendsPage(page)
+				end
+				
+				element:DoStoredScript("populate")
+				
+				element:parent()["PageLeft"]:DoStoredScript("refresh")
+				element:parent()["PageRight"]:DoStoredScript("refresh")
+				element:parent()["PageBeginning"]:DoStoredScript("refresh")
+				element:parent()["PageEnd"]:DoStoredScript("refresh")
+		
+				if(element["FriendsList"]("NumEntries"):GetInt() == 0) then
+					element:parent()["NoFriendsLabel"]:DoStoredScript("show")
+				else
+					element:parent()["NoFriendsLabel"]:DoStoredScript("hide")
+				end
+				
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				local page = game.getLastBattleFriendsPage()
+				local friends_per_page = element("FriendsPerPage"):GetInt()
+				local friendKeys = game.getCachedFriendKeys()
+				local numItems = friendKeys:size()
+				local previous = nil
+				local numThisPage = 0
+				
+				if(numItems > friends_per_page) then
+					numThisPage = numItems - ((page - 1) * friends_per_page)
+					
+					if(numThisPage > friends_per_page) then
+						numThisPage = friends_per_page
+					end
+				else
+					numThisPage = numItems
+				end
+				
+				element("NumEntries"):SetInt(numThisPage)
+				element("MaxPages"):SetInt(math.ceil(numItems / friends_per_page))
+				
+				--Having zero friends when this runs will result in zero pages, but even if you have no friends you still have 1 page
+				if(element("MaxPages"):GetInt() == 0) then
+					element("MaxPages"):SetInt(1)
+				end
+				
+				element:parent()["TitleFrame"]["PagesText"]("text"):SetString(game.getLocalizedText("MENU_PAGE").." "..page.."/"..element("MaxPages"):GetInt())
+				
+				local startIndex = (page - 1) * friends_per_page
+				
+				local seasonTiers = include("BattleVersusHelper").GetSeasonTiers(game.getBattleVersusCampaignId());
+				
+				for i = 0, (numThisPage - 1) do
+					local friendData;
+					if(element:parent()("global"):GetInt() == 0) then
+						friendData = game.getFriend(friendKeys[startIndex+i])
+					else
+						friendData = game.getGlobalPvpUser(friendKeys[startIndex+i], element:parent()("prevSeason"):GetInt())
+					end
+					
+					if(friendData ~= nil) then
+						local friendEntry = menu:addTemplateElement("template_battlerankentry", "friendentry"..i, element)
+
+						if(previous == nil) then
+							friendEntry:relativeTo(element)
+							friendEntry:setOrientation(lua_sys.MenuOrientation(0, 0, -1, lua_sys.HCENTER, lua_sys.TOP))
+							friendEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+						else
+							friendEntry:relativeTo(previous:GetElement("BackgroundElement"))
+							friendEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.TOP))
+							friendEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+						end
+						
+						previous = friendEntry
+						
+						friendEntry("Invite"):SetInt(0)
+						friendEntry("Gift"):SetInt(0)
+						friendEntry("greyColor"):SetInt(i % 2)
+						friendEntry("DisplayName"):SetString(friendData:displayName())
+						friendEntry("UserId"):SetInt(friendData:userId())
+						
+						local playerAvatarData = friendData:getPlayerAvatar()
+						local profilePic = friendEntry:GetElement("ProfilePic")
+						profilePic("Type"):SetInt(playerAvatarData:getType())
+						profilePic("Info"):SetString(playerAvatarData:getInfo())
+						
+						if(element:parent()("global"):GetInt() == 0) then
+							friendEntry("isFriend"):SetInt(1)
+							
+							local rawTier;
+							local rank;
+							if(element:parent()("prevSeason"):GetInt() == 0) then
+								rawTier= friendData:tier();
+								rank = friendData:rank();
+							else
+								rawTier= friendData:prevTier();
+								rank = friendData:prevRank();
+							end
+							
+							local tier = include("BattleVersusHelper").GetUserDisplayableTier(seasonTiers, rawTier)
+							if(tier ~= -1) then
+								friendEntry("Tier"):SetString(game.getLocalizedText("FRIEND_TIER_ABBREV_TAG").." "..tier)
+							else
+								friendEntry("Tier"):SetString("")
+							end
+							friendEntry("Rank"):SetInt(rank)
+						else
+							friendEntry("isFriend"):SetInt(0)
+							friendEntry("Rank"):SetInt(friendData:rank())
+						end
+						
+						friendEntry("BBBId"):SetString(friendData:bbbIdStr())
+						friendEntry("numBattlesWonByMe"):SetInt(friendData:numBattlesWonByMe())
+						friendEntry("numBattlesWonByFriend"):SetInt(friendData:numBattlesWonByFriend())
+						friendEntry("entryNum"):SetInt(i)
+						friendEntry:calculatePosition()
+						friendEntry:init()
+						
+						friendEntry:postInit()
+						friendEntry:setPositionBroadcast(true)
+					end
+				end
+			]]>
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="PageLeft">
+		<templateVar name="$upSpriteName" equals="'button_play'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+			
+			if(element["BoundsSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["BoundsSprite"]("vFlip"):SetInt(1)
+			else
+				element["BoundsSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["UpSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["UpSprite"]("vFlip"):SetInt(1)
+			else
+				element["UpSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["DownSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["DownSprite"]("vFlip"):SetInt(1)
+			else
+				element["DownSprite"]("hFlip"):SetInt(1)
+			end
+		</event>
+		<event name="refresh" params="element">
+			if(element:parent():GetElement("FriendsList"):GetVar("MaxPages"):GetInt() == 1 or game.getLastBattleFriendsPage() == 1) then
+				element:DoStoredScript("setInvisible")
+			else
+				element:DoStoredScript("setVisible")
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="90*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				local friendsList = element:parent():GetElement("FriendsList")
+				
+				if(friendsList("locked"):GetInt() == 0) then
+					friendsList("locked"):SetInt(1)
+					element:parent()("timeToUnlockFriends"):SetInt(2)
+					local curPage = game.getLastBattleFriendsPage()
+					
+					if(curPage &gt; 1) then
+						curPage = curPage - 1
+						game.setLastBattleFriendsPage(curPage)
+						friendsList:DoStoredScript("repopulate")
+					end
+				end
+			</event>
+		</touchComponent>
+	</template>
+	
+	
+	<template type="template_spritesheetbutton" name="PageRight">
+		<templateVar name="$upSpriteName" equals="'button_play'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+		</event>
+		<event name="refresh" params="element">
+			local maxPages = element:parent():GetElement("FriendsList"):GetVar("MaxPages"):GetInt()
+			if(maxPages == 1 or maxPages == game.getLastBattleFriendsPage()) then
+				element:DoStoredScript("setInvisible")
+			else
+				element:DoStoredScript("setVisible")
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="90*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				local friendsList = element:parent():GetElement("FriendsList")
+				
+				if(friendsList("locked"):GetInt() == 0) then
+					friendsList("locked"):SetInt(1)
+					element:parent()("timeToUnlockFriends"):SetInt(4)
+					local curPage = game.getLastBattleFriendsPage()
+					
+					if(curPage &lt; friendsList:GetVar("MaxPages"):GetInt()) then
+						curPage = curPage + 1
+						game.setLastBattleFriendsPage(curPage)
+						friendsList:DoStoredScript("repopulate")
+					end
+				end
+			</event>
+		</touchComponent>		
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PageBeginning">
+		<templateVar name="$upSpriteName" equals="'button_next'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="PageLeft" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.menuScaleY()" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+			
+			if(element["BoundsSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["BoundsSprite"]("vFlip"):SetInt(1)
+			else
+				element["BoundsSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["UpSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["UpSprite"]("vFlip"):SetInt(1)
+			else
+				element["UpSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["DownSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["DownSprite"]("vFlip"):SetInt(1)
+			else
+				element["DownSprite"]("hFlip"):SetInt(1)
+			end
+		</event>
+		<event name="refresh" params="element">
+			if(element:parent():GetElement("FriendsList"):GetVar("MaxPages"):GetInt() == 1 or game.getLastBattleFriendsPage() == 1) then
+				element:DoStoredScript("setInvisible")
+			else
+				element:DoStoredScript("setVisible")
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				local friendsList = element:parent():GetElement("FriendsList")
+				
+				if(friendsList("locked"):GetInt() == 0) then
+					friendsList("locked"):SetInt(1)
+					element:parent()("timeToUnlockFriends"):SetInt(2)
+					local curPage = game.getLastBattleFriendsPage()
+					
+					if(curPage &gt; 1) then
+						curPage = 1
+						game.setLastBattleFriendsPage(curPage)
+						friendsList:DoStoredScript("repopulate")
+					end
+				end
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PageEnd">
+		<templateVar name="$upSpriteName" equals="'button_next'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="PageRight" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.menuScaleY()" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+		</event>
+		<event name="refresh" params="element">
+			local maxPages = element:parent():GetElement("FriendsList"):GetVar("MaxPages"):GetInt()
+			if(maxPages == 1 or maxPages == game.getLastBattleFriendsPage()) then
+				element:DoStoredScript("setInvisible")
+			else
+				element:DoStoredScript("setVisible")
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				local friendsList = element:parent():GetElement("FriendsList")
+				
+				if(friendsList("locked"):GetInt() == 0) then
+					friendsList("locked"):SetInt(1)
+					element:parent()("timeToUnlockFriends"):SetInt(4)
+					local curPage = game.getLastBattleFriendsPage()
+					
+					if(curPage &lt; friendsList:GetVar("MaxPages"):GetInt()) then
+						curPage = friendsList:GetVar("MaxPages"):GetInt()
+						game.setLastBattleFriendsPage(curPage)
+						friendsList:DoStoredScript("repopulate")
+					end
+				end
+			</event>
+		</touchComponent>		
+	</template>
+	
+	<element name="NoFriendsLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-20*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="300*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("NOTIFICATION_NO_FRIENDS")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>		
+		<event name="onPostInit" params="element">
+			if(element:parent()["FriendsList"]("NumEntries"):GetInt() == 0) then
+				element["Text"]("visible"):SetInt(1)
+				local globalSelected = element:parent()("global"):GetInt()
+				if(globalSelected ==0) then
+					element["Text"]("text"):SetString("NOTIFICATION_NO_BATTLE_FRIENDS")
+				else
+					element["Text"]("text"):SetString("NOTIFICATION_NO_GLOBAL_RANKED")
+				end
+			else
+				element["Text"]("visible"):SetInt(0)
+			end
+			
+			game.logEvent("battle_rank_menu", "action", "post_init", "num_friends", element:parent()["FriendsList"]("NumEntries"):GetInt(), "rank", game.getCurrentRank(0), "tier", game.getCurrentTier(0))			
+		</event>
+		<event name="show" params="element">
+			element["Text"]("visible"):SetInt(1)
+			local globalSelected = element:parent()("global"):GetInt()
+			if(globalSelected ==0) then
+				element["Text"]("text"):SetString("NOTIFICATION_NO_BATTLE_FRIENDS")
+			else
+				element["Text"]("text"):SetString("NOTIFICATION_NO_GLOBAL_RANKED")
+			end
+		</event>
+		<event name="hide" params="element">
+			element["Text"]("visible"):SetInt(0)
+		</event>
+	</element>
+	
+</menu>

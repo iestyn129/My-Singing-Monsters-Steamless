@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c3dffd0030be5a120e941ea58fef5853:0936cb1e25d2bfbce25346ab2d75ed22:c3bda4e5e9e22287e03a53539e8f1e6e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/obstacle_rock_sheet_earth_seasonal.png" width="512" height="1024" hires="true">
+    <sprite n="obstacle_rock01_earth" x="297" y="406" w="153" h="132" pX="0.5" pY="0.5" oX="2" oY="0" oW="156" oH="132"/>
+    <sprite n="obstacle_rock02_earth" x="2" y="406" w="293" h="278" pX="0.5" pY="0.5" oX="3" oY="0" oW="300" oH="280"/>
+    <sprite n="obstacle_rock03_earth" x="2" y="2" w="407" h="402" pX="0.5" pY="0.5" oX="9" oY="42" oW="416" oH="456" r="y"/>
+</TextureAtlas>

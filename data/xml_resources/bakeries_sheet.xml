@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3e675e3035ffa49e0097c9ce0088f8d4:0356b0d78bd8454c4593da8d6307173f:a1dea0179dbc3527387a415e1cb61d84$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/bakeries_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="bakery01" x="503" y="2" w="504" h="441" pX="0.5" pY="0.5" oX="34" oY="172" oW="588" oH="628"/>
+    <sprite n="bakery02" x="503" y="445" w="503" h="528" pX="0.5" pY="0.5" oX="37" oY="97" oW="588" oH="628"/>
+    <sprite n="bakery03" x="2" y="2" w="499" h="628" pX="0.5" pY="0.5" oX="34" oY="0" oW="588" oH="628"/>
+    <sprite n="bakery_door_closed" x="163" y="632" w="184" h="132" pX="0.5" pY="0.5" oX="113" oY="4" oW="300" oH="180"/>
+    <sprite n="bakery_door_cooking" x="349" y="632" w="132" h="184" pX="0.5" pY="0.5" oX="113" oY="4" oW="300" oH="180" r="y"/>
+    <sprite n="bakery_door_open" x="2" y="632" w="159" h="278" pX="0.5" pY="0.5" oX="2" oY="16" oW="300" oH="180" r="y"/>
+</TextureAtlas>

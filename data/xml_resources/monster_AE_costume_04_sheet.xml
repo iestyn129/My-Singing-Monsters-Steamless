@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8ac5090d0b85b25715b6f5f46d4bf501:ccfcccba8521ab48264df67045884476:3c1ec89af56c4928af01c6adaa0093dd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AE_costume_04_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="AE_costume04_wings_01.png" x="1" y="303" w="349" h="150" pX="0.5" pY="0.5" oX="15" oY="16" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_02.png" x="353" y="452" w="349" h="150" pX="0.5" pY="0.5" oX="15" oY="16" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_03.png" x="1" y="708" w="351" h="150" pX="0.5" pY="0.5" oX="14" oY="17" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_04.png" x="353" y="302" w="352" h="149" pX="0.5" pY="0.5" oX="14" oY="19" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_05.png" x="353" y="152" w="353" h="149" pX="0.5" pY="0.5" oX="13" oY="20" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_06.png" x="1" y="1" w="354" h="150" pX="0.5" pY="0.5" oX="13" oY="20" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_07.png" x="356" y="1" w="354" h="150" pX="0.5" pY="0.5" oX="13" oY="20" oW="390" oH="193"/>
+    <sprite n="AE_costume04_wings_08.png" x="863" y="354" w="150" h="353" pX="0.5" pY="0.5" oX="13" oY="19" oW="390" oH="193" r="y"/>
+    <sprite n="AE_costume04_wings_09.png" x="870" y="1" w="151" h="352" pX="0.5" pY="0.5" oX="14" oY="17" oW="390" oH="193" r="y"/>
+    <sprite n="AE_costume04_wings_10.png" x="711" y="128" w="151" h="351" pX="0.5" pY="0.5" oX="14" oY="16" oW="390" oH="193" r="y"/>
+    <sprite n="AE_costume04_wings_11.png" x="1" y="152" w="350" h="150" pX="0.5" pY="0.5" oX="15" oY="16" oW="390" oH="193"/>
+    <sprite n="AE_costume_04_body.png" x="711" y="1" w="158" h="126" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_costume_04_left_foot.png" x="226" y="603" w="46" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_costume_04_left_lowerarm.png" x="167" y="603" w="58" h="78" pX="0.5" pY="0.5"/>
+	
+	<!-- original anchor = (6, 6) -> new anchor (10, 10) diff = (-4, -4)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-8, -8), because hires -->
+    <sprite n="AE_costume_04_monocle.png" x="63" y="511" w="39" h="47" pX="0.5" pY="0.5" oX="-8" oY="-8" r="y"/>
+    <sprite n="AE_costume_04_right_foot.png" x="273" y="454" w="66" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_costume_04_right_lowerarm.png" x="1" y="603" w="58" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="AE_costume_04_scarf.png" x="1" y="454" w="61" h="122" pX="0.5" pY="0.5" oX="0" oY="0" oW="122" oH="110" r="y"/>
+    <sprite n="AE_costume_04_head.png" x="60" y="577" w="106" h="108" pX="0.5" pY="0.5"/>
+</TextureAtlas>

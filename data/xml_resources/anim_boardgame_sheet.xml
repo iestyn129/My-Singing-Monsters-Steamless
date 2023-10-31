@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e98c639baebbaad245d93d6d527dc1c8:b6d91245ab11e365e9c44f02cda88591:85e6df1b27194c4615aadb9445bba47b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_boardgame.png" width="512" height="512" hires="true">
+    <sprite n="BE_branch" x="459" y="109" w="36" h="55" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="40" r="y"/>
+    <sprite n="BE_leaf" x="459" y="201" w="35" h="58" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="40" r="y"/>
+    <sprite n="BE_stick" x="324" y="209" w="54" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decoration_boardgame_bg" x="1" y="1" w="321" h="300" pX="0.5" pY="0.5" oX="5" oY="24" oW="330" oH="330"/>
+    <sprite n="decoration_boardgame_fg" x="1" y="303" w="201" h="204" pX="0.5" pY="0.5" oX="59" oY="118" oW="330" oH="330"/>
+    <sprite n="decoration_boardgame_torso_1" x="324" y="1" w="133" h="102" pX="0.5" pY="0.5" oX="4" oY="4" oW="110" oH="140" r="y"/>
+    <sprite n="decoration_boardgame_torso_2" x="324" y="105" w="133" h="102" pX="0.5" pY="0.5" oX="4" oY="3" oW="110" oH="140" r="y"/>
+    <sprite n="eyelid_left_01" x="459" y="1" w="38" h="34" pX="0.5" pY="0.5" oX="4" oY="2" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_left_02" x="459" y="73" w="37" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_left_03" x="459" y="37" w="38" h="34" pX="0.5" pY="0.5" oX="4" oY="2" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_left_04" x="459" y="166" w="36" h="33" pX="0.5" pY="0.5" oX="5" oY="3" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_right_01" x="417" y="241" w="35" h="29" pX="0.5" pY="0.5" oX="38" oY="0" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_right_02" x="324" y="235" w="35" h="29" pX="0.5" pY="0.5" oX="38" oY="0" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_right_03" x="380" y="209" w="35" h="31" pX="0.5" pY="0.5" oX="37" oY="0" oW="70" oH="40" r="y"/>
+    <sprite n="eyelid_right_04" x="417" y="209" w="35" h="30" pX="0.5" pY="0.5" oX="37" oY="0" oW="70" oH="40" r="y"/>
+    <sprite n="pupil" x="361" y="235" w="17" h="17" pX="0.5" pY="0.5" oX="1" oY="1" oW="18" oH="18"/>
+</TextureAtlas>

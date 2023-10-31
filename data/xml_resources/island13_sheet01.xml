@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a7315f068ba957d9c173aa4ddcf8c8b9:c794ca0858083ee662c157f7561e89a2:f22c3550b946003022cb30e3d62a532b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island13_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="bouncy bat 01" x="1211" y="1835" w="82" h="75" pX="0.5" pY="0.5" oX="17" oY="6" oW="112" oH="88"/>
+    <sprite n="bouncy bat 02" x="1309" y="1762" w="90" h="68" pX="0.5" pY="0.5" oX="16" oY="6" oW="112" oH="88"/>
+    <sprite n="bouncy bat 03" x="1211" y="1762" w="96" h="71" pX="0.5" pY="0.5" oX="12" oY="6" oW="112" oH="88"/>
+    <sprite n="bouncy bat 04" x="1702" y="1727" w="76" h="71" pX="0.5" pY="0.5" oX="25" oY="3" oW="112" oH="88" r="y"/>
+    <sprite n="bouncy bat 05" x="1780" y="1727" w="74" h="74" pX="0.5" pY="0.5" oX="22" oY="8" oW="112" oH="88"/>
+    <sprite n="bouncy bat 06" x="721" y="1974" w="76" h="70" pX="0.5" pY="0.5" oX="21" oY="10" oW="112" oH="88"/>
+    <sprite n="bouncy bat 07" x="1401" y="1762" w="85" h="70" pX="0.5" pY="0.5" oX="18" oY="9" oW="112" oH="88"/>
+    <sprite n="bouncy bat 08" x="1134" y="1762" w="75" h="66" pX="0.5" pY="0.5" oX="23" oY="11" oW="112" oH="88"/>
+    <sprite n="bouncy bat 09" x="1149" y="1830" w="60" h="91" pX="0.5" pY="0.5" oX="14" oY="14" oW="112" oH="88" r="y"/>
+    <sprite n="BrokenStone" x="1600" y="1300" w="304" h="316" pX="0.5" pY="0.5"/>
+    <sprite n="BrokenStone_02" x="520" y="1830" w="206" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="candleglow" x="913" y="1830" w="128" h="112" pX="0.5" pY="0.5" oX="5" oY="0" oW="136" oH="136"/>
+    <sprite n="CandlePlatform_L" x="352" y="1384" w="602" h="444" pX="0.5" pY="0.5"/>
+    <sprite n="CandlePlatform_M" x="622" y="598" w="893" h="460" pX="0.5" pY="0.5" oX="0" oY="0" oW="920" oH="460"/>
+    <sprite n="DecorCandle_01" x="1758" y="1080" w="74" h="218" pX="0.5" pY="0.5"/>
+    <sprite n="DecorCandle_02" x="520" y="1962" w="152" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DecorCandle_03" x="1822" y="1618" w="80" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="DecorCandle_04" x="1043" y="1830" w="104" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DecorCandle_05" x="352" y="1236" w="226" h="114" pX="0.5" pY="0.5"/>
+    <sprite n="DecorCandle_06" x="1452" y="1300" w="106" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="DecorCandle_Flame" x="520" y="2032" w="40" h="14" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DecorCandle_Flame_02" x="562" y="2032" w="34" h="14" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Ear" x="2" y="2" w="618" h="1232" pX="0.5" pY="0.5"/>
+    <sprite n="EarCandles" x="1452" y="1080" w="304" h="218" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Earrings_01" x="352" y="1830" w="166" h="216" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Earrings_02" x="1517" y="598" w="484" h="480" pX="0.5" pY="0.5"/>
+    <sprite n="Ember01" x="674" y="1962" w="45" h="66" pX="0.5" pY="0.5" oX="7" oY="2" oW="54" oH="70"/>
+    <sprite n="Ember02" x="799" y="1974" w="66" h="66" pX="0.5" pY="0.5" oX="2" oY="0" oW="74" oH="66"/>
+    <sprite n="Ember03" x="352" y="1352" w="26" h="26" pX="0.5" pY="0.5" oX="2" oY="3" oW="30" oH="30"/>
+    <sprite n="Ember04" x="1452" y="1060" w="15" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16"/>
+    <sprite n="Ember05" x="2" y="2016" w="42" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="28"/>
+    <sprite n="eyeball" x="1542" y="2" w="498" h="594" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EyeballSocket" x="622" y="2" w="918" h="594" pX="0.5" pY="0.5"/>
+    <sprite n="eyeglow" x="1834" y="1080" w="159" h="170" pX="0.5" pY="0.5" oX="12" oY="9" oW="200" oH="168" r="y"/>
+    <sprite n="eyeglow2" x="728" y="1830" w="183" h="142" pX="0.5" pY="0.5" oX="15" oY="26" oW="200" oH="168"/>
+    <sprite n="FaceJewels" x="956" y="1384" w="642" h="376" pX="0.5" pY="0.5"/>
+    <sprite n="FloatingCandle_01" x="1906" y="1464" w="42" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="FloatingCandle_02" x="1488" y="1762" w="108" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="FloatingCandle_03" x="580" y="1236" w="40" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="FloatingCandle_04" x="1600" y="1727" w="100" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="FloatingCandle_05" x="2003" y="709" w="41" h="95" pX="0.5" pY="0.5" oX="0" oY="68" oW="136" oH="188"/>
+    <sprite n="FloatingCandle_06" x="1834" y="1252" w="142" h="46" pX="0.5" pY="0.5" oX="43" oY="0" oW="136" oH="188" r="y"/>
+    <sprite n="FloatingCandle_07" x="2003" y="598" w="41" h="109" pX="0.5" pY="0.5" oX="95" oY="79" oW="136" oH="188"/>
+    <sprite n="HandL" x="622" y="1060" w="828" h="322" pX="0.5" pY="0.5"/>
+    <sprite n="HandR" x="2" y="1236" w="348" h="778" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="HangingJewel" x="1906" y="1300" w="52" h="162" pX="0.5" pY="0.5"/>
+    <sprite n="HangingJewelShadow" x="956" y="1762" w="176" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="WaxDrool_01" x="1600" y="1618" w="220" h="107" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="220" r="y"/>
+</TextureAtlas>

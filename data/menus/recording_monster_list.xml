@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="15" />
+		</touchComponent>
+	</element>	
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="-25" priorityOffset="6" />
+		<ninesliceComponent name="Sprite">
+			<size w="425*lua_sys.screenWidth()/480" h="225*lua_sys.screenHeight()/320" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-20*game.hudScale()" priorityOffset="-3" />
+		<ninesliceComponent name="Sprite">
+			<size w="300*game.menuScaleX()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="LeftEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-7*game.menuScaleX()" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("bookend_monsters")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="RightEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="7*game.menuScaleX()" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("bookend_monsters")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("hFlip"):SetInt(1)
+				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	
+	<!--<element name="FadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(30.0*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+	</element>-->
+	
+	<element name="Title">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="300*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTitleFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component:setColor(1.0, 0.9, 0.09)
+				component("text"):SetString("RECORDING_SELECT")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Entries">
+		<size w="400*lua_sys.screenWidth()/480" h="160*lua_sys.screenHeight()/320" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionHorizontal)
+				component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component:GetVar("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+				
+				if(element:GetElement(element("FirstItem"):GetString())) then
+					local width = element:GetElement(element("FirstItem"):GetString()):absW() * element("numItems"):GetInt()
+					if(width &gt; element:absW()) then
+						component:setScrollSize(width - element:absW())
+					else					
+						component:setScrollSize(0)
+					end	
+				end
+			</event>
+			<event name="onTick" params="component, element, dt">
+				local first = element:GetElement(element("FirstItem"):GetString())
+				if(first) then
+					local offset = component:scrollOffset()
+					if(first:getOrientationPosition().x ~= offset) then
+						first:setOrientationPosition(Vector2(offset, first("yOffset"):GetInt()))
+					end
+				end
+			</event>
+		</swipeComponent>
+		<event name="onInit" params="element">
+			<![CDATA[				
+				element("FirstItem"):SetString("")
+
+				local previous = nil				
+				local monsters = game.getAvailableMonstersForRecording()
+				
+				for i=0,monsters:size()-1 do
+					local monsterid = monsters[i]
+					local monsterEntry = menu:addTemplateElement("template_recordingentry", ""..monsterid, element)
+					
+					monsterEntry("ItemTitle"):SetString(game.monsterTypeName(monsterid))
+					monsterEntry("AnimationFile"):SetString(game.getMonsterAnimationFileFromType(monsterid))
+					monsterEntry("AnimationName"):SetString(game.getMonsterAnimationNameFromType(monsterid))
+					monsterEntry("ID"):SetInt(""..monsterid)
+					
+					if(game.IsBoxMonsterFromType(monsterid)) then
+						monsterEntry("IsBoxMonster"):SetInt(1);
+					else
+						monsterEntry("IsBoxMonster"):SetInt(0);
+					end
+					
+					if(previous == nil) then
+						monsterEntry:relativeTo(element)
+						monsterEntry:setOrientation(lua_sys.MenuOrientation(13 * game.menuScaleX(), -30*lua_sys.screenHeight()/320, 18, lua_sys.LEFT, lua_sys.VCENTER))
+						monsterEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.VCENTER)
+						element("FirstItem"):SetString(monsterEntry:name())
+					else
+						monsterEntry:relativeTo(previous)
+						monsterEntry:setOrientation(lua_sys.MenuOrientation(0,0,0, lua_sys.LEFT, lua_sys.VCENTER))
+						monsterEntry:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.VCENTER)
+					end
+					
+					previous = monsterEntry
+										
+					monsterEntry:init()
+					monsterEntry:setPositionBroadcast(true)
+					monsterEntry:postInit()
+					element:parent():DoStoredScript("TickTransition")
+				end
+								
+				element("numItems"):SetInt(monsters:size())
+			]]>
+		</event>
+	</element>
+	
+	<event name="onInit" params="element">
+		element("transitionTime"):SetFloat(0.0)
+		element("transitionState"):SetInt(1)
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+				
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("TickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					transitionTime = clamp( transitionTime, 0.0, 1.0 )
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime >= 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime <= 0.0) then
+						element:root():popPopUp()
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		local frame = element:GetElement("bg")
+		frame("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)		
+		game.setClipping("Clipping", (frame:absX() + 10)*lua_sys.deviceScaleX(), (frame:absY() + 29*game.hudScale())*lua_sys.deviceScaleY(), (frame:absW() - 20)*lua_sys.deviceScaleX(), (frame:absH() - 50*game.hudScale() - 10)*lua_sys.deviceScaleY())
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+		
+</menu>

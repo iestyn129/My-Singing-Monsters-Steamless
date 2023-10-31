@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7b87b53fbe5b802035f7f0a7da66719c:fee281e2727fc3fb80afe7e16a94c112:431a9b0a47ef10eb3e2f64b903a78bd1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_macho_monument.png" width="1024" height="1024" hires="true">
+    <sprite n="deco_macho_glow" x="481" y="1" w="226" h="187" pX="0.5" pY="0.5" oX="6" oY="7" oW="200" oH="240" r="y"/>
+    <sprite n="deco_macho_monument" x="1" y="1" w="478" h="874" pX="0.5" pY="0.5" oX="1" oY="3" oW="480" oH="880"/>
+</TextureAtlas>

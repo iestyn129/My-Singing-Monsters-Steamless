@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:24d78298f67d73c3ee034046243b50d0:782ee170669d2709065fc9633c97e5ff:4dd102fa10e55f4a33512386908f96ee$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U06_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U06_body" x="2" y="396" w="195" h="150" pX="0.5" pY="0.5" oX="10" oY="12" oW="172" oH="220" r="y"/>
+    <sprite n="U06_eyelids_01" x="147" y="548" w="47" h="71" pX="0.5" pY="0.5" oX="10" oY="10" oW="92" oH="68" r="y"/>
+    <sprite n="U06_eyelids_02" x="76" y="674" w="47" h="69" pX="0.5" pY="0.5" oX="11" oY="10" oW="92" oH="68" r="y"/>
+    <sprite n="U06_eyelids_03" x="125" y="690" w="47" h="69" pX="0.5" pY="0.5" oX="11" oY="10" oW="92" oH="68" r="y"/>
+    <sprite n="U06_head" x="199" y="396" w="191" h="134" pX="0.5" pY="0.5" oX="7" oY="10" oW="148" oH="212" r="y"/>
+    <sprite n="U06_left_foot" x="412" y="345" w="78" h="117" pX="0.5" pY="0.5" oX="11" oY="10" oW="140" oH="100" r="y"/>
+    <sprite n="U06_left_hand" x="2" y="708" w="71" h="44" pX="0.5" pY="0.5" oX="11" oY="11" oW="92" oH="68"/>
+    <sprite n="U06_lower_jaw" x="412" y="2" w="93" h="187" pX="0.5" pY="0.5" oX="14" oY="10" oW="212" oH="112" r="y"/>
+    <sprite n="U06_lowerarm" x="128" y="621" w="66" h="26" pX="0.5" pY="0.5" oX="13" oY="8" oW="92" oH="44"/>
+    <sprite n="U06_lowerleg" x="412" y="296" w="93" h="47" pX="0.5" pY="0.5" oX="9" oY="11" oW="68" oH="116" r="y"/>
+    <sprite n="U06_neckfeathers" x="412" y="191" w="93" h="103" pX="0.5" pY="0.5" oX="10" oY="10" oW="124" oH="112" r="y"/>
+    <sprite n="U06_pupil" x="492" y="345" w="14" h="14" pX="0.5" pY="0.5" oX="10" oY="10" oW="36" oH="36"/>
+    <sprite n="U06_right_foot" x="388" y="571" w="108" h="58" pX="0.5" pY="0.5" oX="10" oY="13" oW="128" oH="84"/>
+    <sprite n="U06_right_hand" x="128" y="649" w="60" h="39" pX="0.5" pY="0.5" oX="9" oY="12" oW="56" oH="84" r="y"/>
+    <sprite n="U06_shadow" x="2" y="607" w="124" h="65" pX="0.5" pY="0.5" oX="10" oY="9" oW="144" oH="84"/>
+    <sprite n="U06_statue" x="2" y="2" w="408" h="392" pX="0.5" pY="0.5" oX="12" oY="11" oW="416" oH="432" r="y"/>
+    <sprite n="U06_tail_feather_01" x="196" y="604" w="106" h="69" pX="0.5" pY="0.5" oX="9" oY="11" oW="124" oH="92"/>
+    <sprite n="U06_tail_feather_02" x="392" y="464" w="110" h="105" pX="0.5" pY="0.5" oX="9" oY="10" oW="124" oH="132" r="y"/>
+    <sprite n="U06_tail_feather_03" x="304" y="604" w="77" h="100" pX="0.5" pY="0.5" oX="10" oY="11" oW="100" oH="120"/>
+    <sprite n="U06_top_jaw" x="199" y="532" w="187" h="70" pX="0.5" pY="0.5" oX="11" oY="10" oW="208" oH="92"/>
+    <sprite n="U06_tube" x="75" y="745" w="32" h="67" pX="0.5" pY="0.5" oX="10" oY="12" oW="84" oH="56" r="y"/>
+    <sprite n="U06_tubetop" x="2" y="548" w="143" h="57" pX="0.5" pY="0.5" oX="2" oY="9" oW="152" oH="76"/>
+    <sprite n="U06_upperarm" x="2" y="674" w="72" h="32" pX="0.5" pY="0.5" oX="13" oY="10" oW="96" oH="52"/>
+    <sprite n="U06_upperleg" x="190" y="675" w="103" h="56" pX="0.5" pY="0.5" oX="9" oY="10" oW="76" oH="124" r="y"/>
+</TextureAtlas>

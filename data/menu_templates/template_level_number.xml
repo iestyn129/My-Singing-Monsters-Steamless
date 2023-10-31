@@ -1,0 +1,58 @@
+<template name="template_level_number" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$scale" equals="0.5*game.menuScaleX()" />
+	<defaultTemplateVar name="$layer" equals="HUD" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					component("sheetName"):SetString("xml_resources/level_numbers.xml")
+					component("size"):SetFloat($scale)
+					
+					local layer = "$layer"
+					if element:HasVar("layer") then
+						layer = element("layer"):GetString()
+					end
+					
+					component("layer"):SetString(layer)
+				]]>
+		</event>
+	</spriteSheetComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("level"):SetInt(-1)
+		]]>
+	</event>
+	
+	<event name="refresh" params="element">
+		<![CDATA[
+				local level = element("level"):GetInt()
+				if level == -1 then
+					element["Sprite"]("visible"):SetInt(0)
+				else
+					local spriteString = "monster_level_numbers_"
+					if(level < 10) then
+						spriteString = (spriteString.."0")
+					end                  
+					element["Sprite"]("spriteName"):SetString(spriteString..level)
+					element["Sprite"]("visible"):SetInt(1)
+				end
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+		element["Sprite"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["Sprite"]("visible"):SetInt(0)
+		]]>
+	</event>
+	
+</template>

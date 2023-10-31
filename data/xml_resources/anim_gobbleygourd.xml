@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:abe9430b8074384fe60b78cd1f9a34bf:bd5804437df1ae8958f05a43222ef994:1e51f29c4a22a49a093b5c46293a79db$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_gobbleygourd.png" width="512" height="512" hires="true">
+    <sprite n="deco_gobbleygourd_eye_bg" x="198" y="204" w="42" h="42" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="deco_gobbleygourd_feather_bg" x="242" y="217" w="88" h="29" pX="0.5" pY="0.5" oX="41" oY="22" oW="180" oH="72"/>
+    <sprite n="deco_gobbleygourd_feather_fg" x="196" y="319" w="38" h="141" pX="0.5" pY="0.5" oX="14" oY="17" oW="180" oH="72" r="y"/>
+    <sprite n="deco_gobbleygourd_feather_mg" x="105" y="464" w="143" h="38" pX="0.5" pY="0.5" oX="13" oY="17" oW="180" oH="72"/>
+    <sprite n="deco_gobbleygourd_hay_bale" x="252" y="13" w="238" h="202" pX="0.5" pY="0.5" oX="13" oY="37" oW="260" oH="260"/>
+    <sprite n="deco_gobbleygourd_head" x="2" y="319" w="101" h="165" pX="0.5" pY="0.5" oX="18" oY="30" oW="200" oH="160" r="y"/>
+    <sprite n="deco_gobbleygourd_knot" x="492" y="13" w="14" h="20" pX="0.5" pY="0.5" oX="4" oY="8" oW="30" oH="30" r="y"/>
+    <sprite n="deco_gobbleygourd_neck" x="2" y="204" w="194" h="113" pX="0.5" pY="0.5" oX="19" oY="22" oW="150" oH="250" r="y"/>
+    <sprite n="deco_gobbleygourd_rope" x="252" y="2" w="243" h="9" pX="0.5" pY="0.5" oX="11" oY="4" oW="30" oH="250" r="y"/>
+    <sprite n="deco_gobbleygourd_snood" x="198" y="248" w="114" h="34" pX="0.5" pY="0.5" oX="21" oY="21" oW="80" oH="160" r="y"/>
+    <sprite n="deco_gobbleygourd_sr_pumpkin" x="236" y="284" w="108" h="111" pX="0.5" pY="0.5" oX="18" oY="14" oW="140" oH="140"/>
+    <sprite n="deco_gobbleygourd_tail" x="105" y="319" w="89" h="143" pX="0.5" pY="0.5" oX="21" oY="30" oW="180" oH="140" r="y"/>
+    <sprite n="deco_gobbleygourd_torso" x="2" y="2" w="248" h="200" pX="0.5" pY="0.5" oX="26" oY="20" oW="300" oH="250"/>
+</TextureAtlas>

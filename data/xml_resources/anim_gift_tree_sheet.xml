@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:41483a4ad63d58db5b4345597a44ce2f:e4b8333e4dbe5b8c7dd97c19e1005d03:99b1bd2b1f452d455d770cb0e1e5cf87$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_gift_tree_sheet.png" width="512" height="512" hires="true">
+    <sprite n="gift_tree_base.png" x="2" y="2" w="324" h="446" pX="0.5" pY="0.5"/>
+    <sprite n="gift_tree_left_lid.png" x="328" y="2" w="128" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="gift_tree_right_lid.png" x="328" y="232" w="112" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="gift_tree_top_lid.png" x="328" y="116" w="124" h="114" pX="0.5" pY="0.5"/>
+</TextureAtlas>

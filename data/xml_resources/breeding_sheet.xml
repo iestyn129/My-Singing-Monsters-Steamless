@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bfb636e9c483ed81e09dfe25e1a2aec5:0d8b9a4037243c56114de6a3f0411285:4c543564cd54bfe77701ab73d4c2c9f5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_breeding.png" width="1024" height="1024" hires="true">
+    <sprite n="air_puff_01.png" x="968" y="676" w="50" h="39" pX="0.5" pY="0.5" oX="0" oY="32" oW="142" oH="104"/>
+    <sprite n="air_puff_02.png" x="908" y="827" w="77" h="55" pX="0.5" pY="0.5" oX="1" oY="25" oW="142" oH="104"/>
+    <sprite n="air_puff_03.png" x="908" y="767" w="91" h="58" pX="0.5" pY="0.5" oX="2" oY="23" oW="142" oH="104"/>
+    <sprite n="air_puff_04.png" x="717" y="543" w="65" h="102" pX="0.5" pY="0.5" oX="2" oY="17" oW="142" oH="104" r="y"/>
+    <sprite n="air_puff_05.png" x="644" y="543" w="71" h="107" pX="0.5" pY="0.5" oX="2" oY="13" oW="142" oH="104" r="y"/>
+    <sprite n="air_puff_06.png" x="644" y="465" w="116" h="76" pX="0.5" pY="0.5" oX="2" oY="9" oW="142" oH="104"/>
+    <sprite n="air_puff_07.png" x="644" y="210" w="118" h="85" pX="0.5" pY="0.5" oX="5" oY="6" oW="142" oH="104"/>
+    <sprite n="air_puff_08.png" x="477" y="884" w="87" h="123" pX="0.5" pY="0.5" oX="8" oY="6" oW="142" oH="104" r="y"/>
+    <sprite n="air_puff_09.png" x="2" y="884" w="94" h="133" pX="0.5" pY="0.5" oX="4" oY="2" oW="142" oH="104" r="y"/>
+    <sprite n="air_puff_10.png" x="644" y="108" w="139" h="100" pX="0.5" pY="0.5" oX="3" oY="1" oW="142" oH="104"/>
+    <sprite n="air_puff_11.png" x="644" y="2" w="142" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="brace_upgraded.png" x="864" y="676" w="102" h="89" pX="0.5" pY="0.5" oX="4" oY="0" oW="110" oH="90"/>
+    <sprite n="cork.png" x="828" y="767" w="78" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="fence_left_upgraded.png" x="788" y="488" w="196" h="186" pX="0.5" pY="0.5" oX="4" oY="24" oW="200" oH="210"/>
+    <sprite n="fence_right_upgraded.png" x="644" y="676" w="182" h="191" pX="0.5" pY="0.5" oX="0" oY="19" oW="200" oH="210"/>
+    <sprite n="fence_slide_upgraded.png" x="98" y="884" w="139" h="132" pX="0.5" pY="0.5" oX="0" oY="0" oW="140" oH="132"/>
+    <sprite n="glass_bowl.png" x="566" y="884" w="220" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="heart.png" x="239" y="884" w="120" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="heart_upgraded.png" x="361" y="884" w="114" h="130" pX="0.5" pY="0.5" oX="2" oY="0" oW="120" oH="132"/>
+    <sprite n="max_ring.png" x="968" y="717" w="46" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="max_star.png" x="864" y="884" w="56" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="max_star_line.png" x="864" y="942" w="56" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="pink_bubble.png" x="986" y="488" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="ribbon.png" x="788" y="2" w="218" h="484" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="seat_upgraded.png" x="788" y="869" w="74" h="152" pX="0.5" pY="0.5" oX="4" oY="3" oW="160" oH="80" r="y"/>
+    <sprite n="structure_body.png" x="2" y="2" w="640" h="880" pX="0.5" pY="0.5"/>
+    <sprite n="x_planks.png" x="644" y="297" w="116" h="166" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

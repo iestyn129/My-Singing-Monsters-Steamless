@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f87e7f79efa8173e4b046e99e369ac6c:1092c8ab0ee498a506dc4cf806964f20:8cfcc196969be526f9054e2fad9e3e1e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U05_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U05_anklebone" x="458" y="687" w="37" h="108" pX="0.5" pY="0.5" oX="8" oY="11" oW="52" oH="132"/>
+    <sprite n="U05_body" x="2" y="301" w="202" h="198" pX="0.5" pY="0.5" oX="10" oY="7" oW="216" oH="220" r="y"/>
+    <sprite n="U05_fur_branch" x="315" y="576" w="23" h="27" pX="0.5" pY="0.5" oX="11" oY="10" oW="48" oH="44" r="y"/>
+    <sprite n="U05_fur_egg_1" x="101" y="820" w="58" h="65" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="68" r="y"/>
+    <sprite n="U05_fur_egg_2" x="458" y="628" w="43" h="57" pX="0.5" pY="0.5" oX="5" oY="5" oW="68" oH="56" r="y"/>
+    <sprite n="U05_fur_leaf" x="315" y="605" w="21" h="33" pX="0.5" pY="0.5" oX="6" oY="7" oW="48" oH="36" r="y"/>
+    <sprite n="U05_head" x="2" y="501" w="188" h="165" pX="0.5" pY="0.5" oX="11" oY="10" oW="204" oH="180"/>
+    <sprite n="U05_hip" x="2" y="800" w="97" h="103" pX="0.5" pY="0.5" oX="9" oY="9" oW="124" oH="116" r="y"/>
+    <sprite n="U05_jaw" x="370" y="219" w="131" h="61" pX="0.5" pY="0.5" oX="8" oY="10" oW="148" oH="80"/>
+    <sprite n="U05_left_foot_1" x="192" y="624" w="119" h="174" pX="0.5" pY="0.5" oX="5" oY="0" oW="180" oH="120" r="y"/>
+    <sprite n="U05_left_foot_2" x="206" y="411" w="155" h="98" pX="0.5" pY="0.5" oX="17" oY="11" oW="180" oH="120"/>
+    <sprite n="U05_lowerleg" x="192" y="576" w="121" h="46" pX="0.5" pY="0.5" oX="9" oY="9" oW="64" oH="140" r="y"/>
+    <sprite n="U05_mouth_01" x="370" y="79" w="137" h="65" pX="0.5" pY="0.5" oX="11" oY="25" oW="160" oH="132"/>
+    <sprite n="U05_mouth_02" x="370" y="282" w="125" h="70" pX="0.5" pY="0.5" oX="23" oY="22" oW="160" oH="132"/>
+    <sprite n="U05_mouth_03" x="370" y="146" w="132" h="71" pX="0.5" pY="0.5" oX="16" oY="21" oW="160" oH="132"/>
+    <sprite n="U05_mouth_04" x="370" y="2" w="137" h="75" pX="0.5" pY="0.5" oX="11" oY="19" oW="160" oH="132"/>
+    <sprite n="U05_mouth_05" x="367" y="354" w="122" h="86" pX="0.5" pY="0.5" oX="26" oY="16" oW="160" oH="132"/>
+    <sprite n="U05_mouth_06" x="338" y="628" w="118" h="100" pX="0.5" pY="0.5" oX="30" oY="13" oW="160" oH="132"/>
+    <sprite n="U05_mouth_07" x="2" y="910" w="96" h="107" pX="0.5" pY="0.5" oX="52" oY="11" oW="160" oH="132"/>
+    <sprite n="U05_mouth_08" x="433" y="797" w="76" h="111" pX="0.5" pY="0.5" oX="69" oY="10" oW="160" oH="132"/>
+    <sprite n="U05_mouth_09" x="101" y="668" w="80" h="73" pX="0.5" pY="0.5" oX="74" oY="17" oW="160" oH="132" r="y"/>
+    <sprite n="U05_mouth_10" x="100" y="910" w="75" h="99" pX="0.5" pY="0.5" oX="48" oY="20" oW="160" oH="132" r="y"/>
+    <sprite n="U05_right_foot_1" x="206" y="301" w="159" h="108" pX="0.5" pY="0.5" oX="1" oY="0" oW="160" oH="108"/>
+    <sprite n="U05_right_foot_2" x="363" y="442" w="146" h="106" pX="0.5" pY="0.5" oX="11" oY="0" oW="160" oH="108"/>
+    <sprite n="U05_shadow" x="342" y="550" w="146" h="76" pX="0.5" pY="0.5" oX="8" oY="10" oW="164" oH="96"/>
+    <sprite n="U05_statue" x="2" y="2" w="366" h="297" pX="0.5" pY="0.5" oX="16" oY="9" oW="392" oH="316"/>
+    <sprite n="U05_tail" x="313" y="730" w="118" h="88" pX="0.5" pY="0.5" oX="9" oY="8" oW="108" oH="140" r="y"/>
+    <sprite n="U05_upperleg" x="192" y="511" w="148" h="63" pX="0.5" pY="0.5" oX="10" oY="11" oW="84" oH="172" r="y"/>
+</TextureAtlas>

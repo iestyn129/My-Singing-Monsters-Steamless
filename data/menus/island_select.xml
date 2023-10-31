@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<event name="onInit" params="element">
+		element("FromHelp"):SetInt(0)
+		element("FromTribal"):SetInt(0)
+		element("TransitionState"):SetInt(0)
+		element("TransitionTime"):SetFloat(0)
+		element("spinning"):SetInt(0)
+		element("exiting"):SetInt(0)
+		element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgMouseScroll", "gotMsgMouseScroll")
+    
+	  <!-- Show Island 3D Menu - brunoma -->
+    <!-- game.AddIslandSelect3d(); -->
+    
+	</event>
+	
+	<event name="gotMsgMouseScroll" params="element, msg">
+		<![CDATA[
+			local spinning = element("spinning"):GetInt()
+			if(spinning == 0) then
+				if( msg.delta > 0) then
+					element("spinning"):SetInt(1)
+					element:parent()["LeftButton"]["Touch"]:DoStoredScript("onTouchDown")
+					element:parent()["LeftButton"]["Touch"]:DoStoredScript("onTouchUp")
+				else
+					element("spinning"):SetInt(1)
+					element:parent()["RightButton"]["Touch"]:DoStoredScript("onTouchDown")
+					element:parent()["RightButton"]["Touch"]:DoStoredScript("onTouchUp")
+				end
+			end
+		]]>
+	</event>	
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="24" />
+    
+<!-- Comment the next block out to show IslandSelect3D - brunoma -->
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("MidPopUps")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("startX"):SetInt(0)
+				component("spinning"):SetInt(0)
+			</event>
+			<event name="onTouchDown" params="component, element, x, y">
+				component("startX"):SetInt(x)
+			</event>
+			<event name="onTouchDrag" params="component, element, x, y">
+				<![CDATA[
+					local spinning = component("spinning"):GetInt()
+					
+					if(spinning == 0) then
+						local startX = component("startX"):GetInt()
+						
+						if((x - startX) > (30 * game.menuScaleX())) then
+							component("spinning"):SetInt(1)
+							component("startX"):SetInt(x)
+							element:parent()["LeftButton"]["Touch"]:DoStoredScript("onTouchDown")
+							element:parent()["LeftButton"]["Touch"]:DoStoredScript("onTouchUp")
+						elseif((startX - x) > (30 * game.menuScaleX())) then
+							component("spinning"):SetInt(1)
+							component("startX"):SetInt(x)
+							element:parent()["RightButton"]["Touch"]:DoStoredScript("onTouchDown")
+							element:parent()["RightButton"]["Touch"]:DoStoredScript("onTouchUp")
+						end
+					end
+				]]>
+			</event>
+		</touchComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="15" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		</function>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="HelpButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="BackButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("FromHelp"):SetInt(1)
+				game.popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_info")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_HELP_LABEL")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		</function>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="BookButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="10*game.hudScale()" yOffset="15*game.hudScale()" priorityOffset="15" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				local activeIslandType = game.islandType(element:parent()["IslandList"]("activeIsland"):GetInt())
+				game.setBookOfMonstersIslandType(activeIslandType)
+				game.popPopUp()
+					
+				if(game.getPopUp() ~= "book_o_monsters") then
+					game.logEvent("book_o_monsters", "island", activeIslandType)
+					manager:setContext("BLANK")
+					if(game.usePagination(game.getBookOfMonstersIslandType())) then
+						game.pushPopUp("book_o_monsters_paged");
+					else
+						game.pushPopUp("book_o_monsters");
+					end
+					
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_index")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_BOOK_LABEL")
+				component("size"):SetFloat(0.125*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		</function>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="MirrorButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="BookButton" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					element["Overlay"]:setColor(1.0, 1.0, 1.0)
+					
+					local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+					
+					if(element["Overlay"]("spriteName"):GetString() == "button_mirror_in") then
+						if(activeIsland < 6) then
+							element:parent()["IslandList"]("activeIsland"):SetInt(activeIsland + 100)
+						else
+							element:parent()["IslandList"]("activeIsland"):SetInt(101)
+						end
+					else
+						if game.isMirrorIsland(activeIsland) then
+							element:parent()["IslandList"]("activeIsland"):SetInt(activeIsland - 100)
+						else
+							element:parent()["IslandList"]("activeIsland"):SetInt(1)
+						end
+					end
+					
+					element:parent()["IslandList"]:DoStoredScript("populate")
+					element:parent()["IslandDetails"]:DoStoredScript("populate")
+					element:parent()["SaleDetails"]:DoStoredScript("populate")
+					element:parent()["IslandTitle"]:DoStoredScript("populate")
+					
+					element:parent()["GoButton"]:DoStoredScript("updateText")
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_mirror_in")
+				component("sheetName"):SetString("xml_resources/hud03.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+			<event name="onPostInit" params="component, element">
+			<![CDATA[
+				local curIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+				
+				if game.isMirrorIsland(curIsland) then
+					component("spriteName"):SetString("button_mirror_out")
+					element["Text"]("text"):SetString("CONTEXTBAR_UNMIRROR_LABEL")
+				else
+					component("spriteName"):SetString("button_mirror_in")
+					element["Text"]("text"):SetString("CONTEXTBAR_MIRROR_LABEL")
+				end
+			]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_MIRROR_LABEL")
+				component("size"):SetFloat(0.125*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<function name="enable" params="element">
+			enable(element)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		<function name="disable" params="element">
+			disable(element)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		</function>
+	</template>
+	
+	<element name="IslandList">
+		<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="23" />
+		<event name="onInit" params="element">
+		<![CDATA[	
+
+			local curIsland = game.currentIsland()
+					
+			if(game.currentIslandType() == 11) then
+				curIsland = 11
+			end
+			
+			include("IslandSelect").onInit(element, curIsland)
+		]]>
+		</event>
+		<event name="onTick" params="element, dt">
+			<![CDATA[			
+				include("IslandSelect").onTick(element, dt)
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				include("IslandSelect").populate(element, "template_mapentry")
+			]]>
+		</event>
+		<event name="islandTouched" params="element">
+			
+			include("IslandSelect").islandTouched(element)
+			
+		</event>
+		<event name="islandDragged" params="element">
+			
+			include("IslandSelect").islandDragged(element)
+			
+		</event>
+		<event name="islandReleased" params="element">
+			
+			include("IslandSelect").islandReleased(element)
+			
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="GoButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$layer" equals="MidPopUps" />	
+		<templateVar name="$text" equals="GO" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="5" />				
+		<event name="updateText" params="element">
+			<![CDATA[
+				local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+				if(game.isIslandOwned(activeIsland) or (game.islandCost(activeIsland) == 0 and game.hasNecessaryPrevIslandsToUnlock(activeIsland) and game.canUnlockIsland(activeIsland))) then
+					element["Text"]("text"):SetString(game.getLocalizedText("GO"))
+				else
+					element["Text"]("text"):SetString(game.getLocalizedText("BUY_BUTTON"))
+				end
+			]]>
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					onTouchDown(component, element)
+					element["Text"]:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					element["Text"]:setColor(1.0, 1.0, 1.0)
+					
+					local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+					
+					if(not game.hasNecessaryPrevIslandsToUnlock(activeIsland) and not game.isIslandOwned(activeIsland)) then
+						local txt = game.getLocalizedText("NOTIFICATION_REQUIRES_ITEM")
+						txt = select(1, txt:gsub("XXX", game.getLocalizedText(game.islandName(game.islandLockIsland(activeIsland)))))
+						game.displayNotification(txt)
+					elseif(not game.canUnlockIsland(activeIsland) and not game.isIslandOwned(activeIsland)) then
+						if(activeIsland ~= 20) then
+							local txt = game.getLocalizedText("NOTIFICATION_REQUIRES_LEVEL")
+							txt = select(1, txt:gsub("XXX", game.islandUnlockLevel(activeIsland)))
+							game.displayNotification(txt)
+						else
+							local txt = game.getLocalizedText("BATTLE_ISLAND_LOCKED");
+							txt = select(1, txt:gsub("XXX", game.islandUnlockLevel(activeIsland)))
+							game.displayNotification(txt)
+						end
+					else
+						if(activeIsland ~= 11) then
+							if(activeIsland == game.currentIsland()) then
+								game.popPopUp()
+							else
+								if(activeIsland == 9) then
+									element:parent()("FromTribal"):SetInt(1)
+								end
+								
+								--this shortcuts the popPopUp, so set this here to prevent contextbar issues:
+								element:parent()("exiting"):SetInt(1)
+
+								game.activateIslandOnIslandMap(activeIsland)
+							end
+						else
+							game.popPopUp()
+							manager:setContext("BLANK")
+							menu:pushPopUp("composer_island_select")
+						end
+					end
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					onTouchRelease(component, element)
+					element["Text"]:setColor(1.0, 1.0, 1.0)
+				]]>
+			</event>
+		</touchComponent>
+	</template>
+	
+	<element name="IslandDetails">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="GoButton" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-3" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				component("text"):SetString("...")
+				element:DoStoredScript("populate")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="CoinSprite">
+			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="populate" params="element">
+      <![CDATA[
+			local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+			
+			element["CoinSprite"]("visible"):SetInt(0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+			
+			if(not game.hasNecessaryPrevIslandsToUnlock(activeIsland) and not game.isIslandOwned(activeIsland)) then
+				local txt = game.getLocalizedText("NOTIFICATION_REQUIRES_ITEM")
+				txt = select(1, txt:gsub("XXX", game.getLocalizedText(game.islandName(game.islandLockIsland(activeIsland)))))
+				element["Text"]("text"):SetString(txt)
+			elseif(not game.canUnlockIsland(activeIsland) and not game.isIslandOwned(activeIsland)) then
+				if(activeIsland ~= 20) then
+					local txt = game.getLocalizedText("NOTIFICATION_REQUIRES_LEVEL")
+					txt = select(1, txt:gsub("XXX", game.islandUnlockLevel(activeIsland)))
+					element["Text"]("text"):SetString(txt)
+				else
+					local txt = game.getLocalizedText("BATTLE_ISLAND_LOCKED");
+					txt = select(1, txt:gsub("XXX", game.islandUnlockLevel(activeIsland)))
+					element["Text"]("text"):SetString(txt)
+				end
+			elseif(game.islandCost(activeIsland) ~= 0 and not game.isIslandOwned(activeIsland)) then
+					element["CoinSprite"]("visible"):SetInt(1)
+					element["Text"]("text"):SetString(game.commaizeNumber(game.islandCost(activeIsland)))
+					if(game.islandCurrency(activeIsland) == "COINS") then
+						element["Text"]:setColor(1.0, 0.9, 0.09)
+						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					else
+						element["Text"]:setColor(0.27, 0.86, 0.6)
+						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+						
+						element:parent()["SaleDetails"]["Text"]:setColor(0.27, 0.86, 0.6)
+						element:parent()["SaleDetails"]["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+					end
+			else
+				element["Text"]("text"):SetString(game.islandBeds(activeIsland))
+			end
+      ]]>
+		</event>
+	</element>
+	
+	<element name="SaleDetails">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="IslandDetails" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.24*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				component("text"):SetString("...")
+				element:DoStoredScript("populate")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="CoinSprite">
+			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.24*game.menuScaleX())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<ninesliceComponent name="RedStrip">
+			<size w="4" h="4" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="6*game.menuScaleX()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("alpha"):SetFloat(0.6)
+				component("spriteName"):SetString("gfx/menu/redstrip")
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+			<event name="updateSize" params="component, element">
+				component:setSize(Vector2(element:parent():GetElement("IslandDetails"):absW(), component:absH()))
+			</event>
+		</ninesliceComponent>
+		<event name="populate" params="element">
+      <![CDATA[
+			local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+			
+			element["CoinSprite"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+			element["RedStrip"]("visible"):SetInt(0)
+			
+			element:parent()["IslandDetails"]["Text"]("alpha"):SetFloat(1.0)
+			element:parent()["IslandDetails"]["CoinSprite"]("alpha"):SetFloat(1.0)
+			
+			if(game.islandSale(activeIsland)) then
+				if(game.islandSaleCost(activeIsland) ~= 0 and not game.isIslandOwned(activeIsland) and game.hasNecessaryPrevIslandsToUnlock(activeIsland) 
+					and game.canUnlockIsland(activeIsland)) then
+					
+					element["CoinSprite"]("visible"):SetInt(1)
+					element["Text"]("visible"):SetInt(1)
+					element["RedStrip"]("visible"):SetInt(1)
+					
+					element:parent()["IslandDetails"]["Text"]("alpha"):SetFloat(0.4)
+					element:parent()["IslandDetails"]["CoinSprite"]("alpha"):SetFloat(0.4)
+					
+					element["Text"]("text"):SetString(game.commaizeNumber(game.islandSaleCost(activeIsland)))
+					
+					if(game.islandCurrency(activeIsland) == "COINS") then
+						element["Text"]:setColor(1.0, 0.9, 0.09)
+						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					else
+						element["Text"]:setColor(0.27, 0.86, 0.6)
+						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+					end
+					
+					element["RedStrip"]:DoStoredScript("updateSize")
+				end
+			end
+      ]]>
+		</event>
+	</element>
+	
+	<element name="IslandTitle">
+		<position relativeTo="IslandDetails" vAnchor="TOP" hAnchor="HCENTER" />
+		<textComponent name="Text">
+			<size w="lua_sys.screenWidth() - (2*lua_sys.deviceMarginX())" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				element:DoStoredScript("populate")
+			</event>
+		</textComponent>
+		<event name="populate" params="element">
+      <![CDATA[
+			local activeIsland = element:parent()["IslandList"]("activeIsland"):GetInt()
+			if(activeIsland ~= 9 and activeIsland ~= 11 and activeIsland ~= 20) then
+				element["Text"]("text"):SetString(game.getLocalizedText(game.islandName(activeIsland)).." "..game.numUniqueMonstersCollectedOnIslandType(game.islandType(activeIsland)).."/"..game.getAllUniqueMonsterTypesForIslandType(game.islandType(activeIsland)))
+			else
+				element["Text"]("text"):SetString(game.islandName(activeIsland))
+			end	
+
+			element["Text"]("size"):SetFloat(0.4*game.menuScaleX())
+			element["Text"]("autoScale"):SetInt(1)
+      ]]>
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="LeftButton">
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$upSpriteName" equals="'button_options_play'" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$spriteScale" equals="0.75*game.menuScaleX()" />
+		<templateVar name="$spriteHFlip" equals="1" />
+		<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.hudScale()" yOffset="15*game.menuScaleX()" priorityOffset="5" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+        <![CDATA[
+				onTouchDown(component, element)
+				
+				local activeIndex = element:parent()["IslandList"]("activeIndex"):GetInt()
+				
+				local oldEntry = element:parent()["IslandList"]:GetElement("islandEntry"..activeIndex)
+				oldEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				
+				if(activeIndex == 0) then
+					activeIndex = element:parent()["IslandList"]("NumIslands"):GetInt()-1
+				else
+					activeIndex = activeIndex - 1
+				end
+				
+				local islandEntry = element:parent()["IslandList"]:GetElement("islandEntry"..activeIndex)
+				local island = islandEntry("IslandId"):GetInt()
+				
+				if(not game.hasNecessaryPrevIslandsToUnlock(island)) then
+					islandEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				elseif(not game.canUnlockIsland(island)) then
+					islandEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				else
+					islandEntry["Overlay"]:setColor(1.0, 1.0, 1.0)
+				end
+				
+				element:parent()["IslandList"]("activeIsland"):SetInt(islandEntry("IslandId"):GetInt())
+				element:parent()["IslandList"]("activeIndex"):SetInt(activeIndex)
+				
+				element:parent()["RightButton"]:DoStoredScript("disable")
+				element:parent()["BookButton"]:DoStoredScript("disable")
+				element:parent()["MirrorButton"]:DoStoredScript("disable")
+				element:parent()["GoButton"]:DoStoredScript("disable")
+				element:parent()["BackButton"]:DoStoredScript("disable")
+				element:parent()["HelpButton"]:DoStoredScript("disable")
+				
+				element:parent()("TransitionState"):SetInt(-1)
+				element:parent()("TransitionTime"):SetFloat(0.25)
+        ]]>
+			</event>
+			
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent()["LeftButton"]:DoStoredScript("disable")
+				element:parent()("TransitionState"):SetInt(-2)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element:parent()["LeftButton"]:DoStoredScript("disable")
+				element:parent()("TransitionState"):SetInt(-2)
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="RightButton">
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$upSpriteName" equals="'button_options_play'" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$spriteScale" equals="0.75*game.menuScaleX()" />
+		<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="15*game.menuScaleX()" priorityOffset="5" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+			<![CDATA[
+				onTouchDown(component, element)
+				
+				local activeIndex = element:parent()["IslandList"]("activeIndex"):GetInt()
+				local numIslands = element:parent()["IslandList"]("NumIslands"):GetInt()
+				
+				local oldEntry = element:parent()["IslandList"]:GetElement("islandEntry"..activeIndex)
+				oldEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				
+				if(activeIndex == numIslands - 1) then
+					activeIndex = 0
+				else
+					activeIndex = activeIndex + 1
+				end
+				
+				local islandEntry = element:parent()["IslandList"]:GetElement("islandEntry"..activeIndex)
+				local island = islandEntry("IslandId"):GetInt()
+				
+				if(not game.hasNecessaryPrevIslandsToUnlock(island)) then
+					islandEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				elseif(not game.canUnlockIsland(island)) then
+					islandEntry["Overlay"]:setColor(0.5, 0.5, 0.5)
+				else
+					islandEntry["Overlay"]:setColor(1.0, 1.0, 1.0)
+				end
+				
+				element:parent()["IslandList"]("activeIsland"):SetInt(island)
+				element:parent()["IslandList"]("activeIndex"):SetInt(activeIndex)
+				
+				element:parent()["LeftButton"]:DoStoredScript("disable")
+				element:parent()["BookButton"]:DoStoredScript("disable")
+				element:parent()["MirrorButton"]:DoStoredScript("disable")
+				element:parent()["GoButton"]:DoStoredScript("disable")
+				element:parent()["BackButton"]:DoStoredScript("disable")
+				element:parent()["HelpButton"]:DoStoredScript("disable")
+				
+				element:parent()("TransitionState"):SetInt(1)
+				element:parent()("TransitionTime"):SetFloat(0.25)
+			]]>
+			</event>
+			
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent()["RightButton"]:DoStoredScript("disable")
+				element:parent()("TransitionState"):SetInt(0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element:parent()["RightButton"]:DoStoredScript("disable")
+				element:parent()("TransitionState"):SetInt(0)
+			</event>
+		</touchComponent>
+	</template>
+	
+	<event name="queuePop" params="element">
+		
+		if(element("exiting"):GetInt() == 0) then
+		
+			element:root():popPopUp()
+			element("exiting"):SetInt(1)
+			
+			if(element("FromHelp"):GetInt() == 1) then
+				manager:setReserveState(manager:getContext())
+				manager:setContext("MAP_HELP")
+			elseif(element("FromTribal"):GetInt() == 1) then
+				manager:setContext("MAP")
+			else
+				manager:setContext(manager:getDefaultContext())
+			end
+		end
+	</event>
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:01162bebeac921e70ab22980d1d14460:2cd4a5e8965a811a661c6a5c952306f6:3808c15e29504b22c1747d1829af373a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/fuzer_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="fuzer_base" x="2" y="2" w="592" h="739" pX="0.5" pY="0.5" oX="0" oY="3" oW="592" oH="744"/>
+    <sprite n="fuzer_blue_glow" x="819" y="2" w="63" h="63" pX="0.5" pY="0.5"/>
+    <sprite n="fuzer_bulbs_01" x="596" y="2" w="221" h="490" pX="0.5" pY="0.5" oX="1" oY="0" oW="224" oH="492"/>
+    <sprite n="fuzer_bulbs_02" x="596" y="494" w="221" h="477" pX="0.5" pY="0.5" oX="2" oY="0" oW="224" oH="492"/>
+    <sprite n="fuzer_red_glow" x="884" y="2" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="2" oW="63" oH="63"/>
+</TextureAtlas>

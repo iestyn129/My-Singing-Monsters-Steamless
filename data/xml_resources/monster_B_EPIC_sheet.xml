@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e8a5fb2d82e14ccdb9df3cfd5f4ab7e7:56cfc81e7b3c21d46e37e4709aca80fa:442a3893a89de7a83bd8103f362c1668$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_B_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="B_belly1.png" x="118" y="116" w="103" h="89" pX="0.5" pY="0.5" oX="1" oY="3" oW="106" oH="92"/>
+    <sprite n="B_belly1_EPIC.png" x="351" y="104" w="105" h="103" pX="0.5" pY="0.5" oX="22" oY="23" oW="152" oH="132" r="y"/>
+    <sprite n="B_belly2.png" x="243" y="103" w="106" h="86" pX="0.5" pY="0.5" oX="0" oY="6" oW="106" oH="92"/>
+    <sprite n="B_belly2_EPIC.png" x="356" y="2" w="108" h="100" pX="0.5" pY="0.5" oX="21" oY="25" oW="152" oH="132"/>
+    <sprite n="B_belly3.png" x="223" y="191" w="96" h="92" pX="0.5" pY="0.5" oX="5" oY="0" oW="106" oH="92"/>
+    <sprite n="B_belly3_EPIC.png" x="243" y="2" w="111" h="99" pX="0.5" pY="0.5" oX="23" oY="17" oW="152" oH="132" r="y"/>
+    <sprite n="B_bighead.png" x="349" y="209" w="94" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="B_horn_and_hawk_EPIC.png" x="180" y="357" w="37" h="48" pX="0.5" pY="0.5" oX="6" oY="1" oW="60" oH="40" r="y"/>
+    <sprite n="B_horn_back_EPIC.png" x="321" y="191" w="26" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="30" oH="40"/>
+    <sprite n="B_mouth01.png" x="104" y="249" w="92" h="80" pX="0.5" pY="0.5" oX="6" oY="0" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth02.png" x="2" y="419" w="77" h="78" pX="0.5" pY="0.5" oX="6" oY="8" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth03.png" x="81" y="419" w="77" h="78" pX="0.5" pY="0.5" oX="6" oY="13" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth04.png" x="445" y="270" w="65" h="79" pX="0.5" pY="0.5" oX="7" oY="18" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth05.png" x="160" y="413" w="47" h="75" pX="0.5" pY="0.5" oX="6" oY="21" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth06.png" x="458" y="192" w="50" h="76" pX="0.5" pY="0.5" oX="8" oY="20" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth07.png" x="198" y="285" w="84" h="70" pX="0.5" pY="0.5" oX="16" oY="4" oW="86" oH="92" r="y"/>
+    <sprite n="B_mouth08.png" x="466" y="2" w="42" h="51" pX="0.5" pY="0.5" oX="30" oY="21" oW="86" oH="92"/>
+    <sprite n="B_mouth09.png" x="321" y="279" w="86" h="70" pX="0.5" pY="0.5" oX="0" oY="10" oW="86" oH="92"/>
+    <sprite n="B_mouth10.png" x="2" y="284" w="91" h="85" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="92" r="y"/>
+    <sprite n="B_neck1.png" x="2" y="371" w="80" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_neck2.png" x="466" y="55" w="42" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_neck3.png" x="223" y="116" w="18" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_pot_back.png" x="127" y="2" w="114" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_pot_behind.png" x="104" y="207" w="94" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="B_pot_front.png" x="2" y="71" w="114" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_roots.png" x="95" y="331" w="83" h="80" pX="0.5" pY="0.5" oX="6" oY="1" oW="92" oH="82"/>
+    <sprite n="B_shadow.png" x="2" y="2" w="123" h="67" pX="0.5" pY="0.5" oX="0" oY="0" oW="124" oH="68"/>
+    <sprite n="B_smallhead.png" x="458" y="126" w="52" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_tongue00_EPIC.png" x="118" y="71" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="92"/>
+    <sprite n="B_tongue01_EPIC.png" x="223" y="142" w="13" h="32" pX="0.5" pY="0.5" oX="36" oY="35" oW="86" oH="92" r="y"/>
+    <sprite n="B_tongue02_EPIC.png" x="321" y="228" w="19" h="37" pX="0.5" pY="0.5" oX="36" oY="35" oW="86" oH="92" r="y"/>
+    <sprite n="B_tongue03_EPIC.png" x="466" y="97" w="42" h="27" pX="0.5" pY="0.5" oX="36" oY="34" oW="86" oH="92"/>
+    <sprite n="B_tongue04_EPIC.png" x="409" y="279" w="34" h="46" pX="0.5" pY="0.5" oX="36" oY="35" oW="86" oH="92" r="y"/>
+    <sprite n="B_wing_EPIC.png" x="2" y="185" w="100" h="97" pX="0.5" pY="0.5" oX="0" oY="3" oW="100" oH="100"/>
+</TextureAtlas>

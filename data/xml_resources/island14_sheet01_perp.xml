@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:afcbc1053dcd58c8820243134214e732:ad9999e0f80873beb9f06003366691b3:0f5cade501e3da99902c8180ce76b1aa$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island14_sheet01_perp.png" width="2048" height="2048" hires="true">
+    <sprite n="island14_bottom.png" x="2" y="1352" w="536" h="672" pX="0.5" pY="0.5"/>
+    <sprite n="island14_cloud.png" x="1111" y="939" w="826" h="331" pX="0.5" pY="0.5" oX="13" oY="6" oW="850" oH="340"/>
+    <sprite n="island14_face_front.png" x="2" y="2" w="1194" h="740" pX="0.5" pY="0.5" oX="0" oY="0" oW="1196" oH="740"/>
+    <sprite n="island14_face_side.png" x="1199" y="2" w="580" h="934" pX="0.5" pY="0.5"/>
+    <sprite n="island14_floor_full.png" x="2" y="745" w="1106" h="604" pX="0.5" pY="0.5"/>
+    <sprite n="island14_scope_body.png" x="1618" y="1273" w="286" h="585" pX="0.5" pY="0.5" oX="5" oY="13" oW="300" oH="610"/>
+    <sprite n="island14_scope_left_controls.png" x="1411" y="1831" w="133" h="126" pX="0.5" pY="0.5" oX="6" oY="7" oW="140" oH="140"/>
+    <sprite n="island14_scope_left_detail.png" x="1782" y="902" w="44" h="29" pX="0.5" pY="0.5" oX="3" oY="1" oW="50" oH="30"/>
+    <sprite n="island14_scope_left_handle_01.png" x="1111" y="745" w="42" h="118" pX="0.5" pY="0.5" oX="9" oY="8" oW="60" oH="130"/>
+    <sprite n="island14_scope_left_handle_02.png" x="1547" y="1831" w="39" h="117" pX="0.5" pY="0.5" oX="11" oY="9" oW="60" oH="130"/>
+    <sprite n="island14_scope_left_knob.png" x="541" y="1961" w="129" h="83" pX="0.5" pY="0.5" oX="5" oY="4" oW="140" oH="90"/>
+    <sprite n="island14_scope_left_lens.png" x="1589" y="1861" w="129" h="124" pX="0.5" pY="0.5" oX="5" oY="31" oW="140" oH="180"/>
+    <sprite n="island14_scope_left_rope.png" x="1138" y="1831" w="137" h="199" pX="0.5" pY="0.5" oX="2" oY="1" oW="140" oH="200"/>
+    <sprite n="island14_scope_right_lens.png" x="1278" y="1831" w="130" h="169" pX="0.5" pY="0.5" oX="9" oY="4" oW="140" oH="180"/>
+    <sprite n="island14_scope_right_wrap.png" x="1782" y="759" w="167" h="140" pX="0.5" pY="0.5" oX="1" oY="5" oW="170" oH="150"/>
+    <sprite n="island14_scope_top.png" x="1782" y="249" w="258" h="187" pX="0.5" pY="0.5" oX="5" oY="34" oW="488" oH="325"/>
+    <sprite n="island14_scope_top_base.png" x="1782" y="605" w="242" h="151" pX="0.5" pY="0.5" oX="60" oY="172" oW="488" oH="325"/>
+    <sprite n="island14_scope_top_left_bg.png" x="1782" y="2" w="249" h="244" pX="0.5" pY="0.5" oX="230" oY="8" oW="488" oH="325"/>
+    <sprite n="island14_scope_top_right_bg.png" x="1782" y="439" w="248" h="163" pX="0.5" pY="0.5" oX="207" oY="48" oW="488" oH="325"/>
+    <sprite n="island14_scope_wheel.png" x="1721" y="1861" w="118" h="114" pX="0.5" pY="0.5" oX="118" oY="150" oW="488" oH="325"/>
+    <sprite n="mag_glass.png" x="1138" y="1273" w="477" h="555" pX="0.5" pY="0.5" oX="1" oY="0" oW="480" oH="556"/>
+    <sprite n="odd_compass.png" x="541" y="1352" w="594" h="606" pX="0.5" pY="0.5" oX="1" oY="1" oW="596" oH="608"/>
+    <sprite n="rope.png" x="1952" y="759" w="91" h="106" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="106"/>
+</TextureAtlas>

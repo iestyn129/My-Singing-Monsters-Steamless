@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:870686b67b0732ab5875b2815923f2fa:4d85d8d59e236c17a9f238e1e237642a:a090dfcaa926acd45e61ec1714fccd2d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island21_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="back_window" x="1233" y="1100" w="711" h="776" pX="0.5" pY="0.5" oX="0" oY="0" oW="712" oH="776"/>
+    <sprite n="cloud" x="1842" y="250" w="202" h="226" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_candles" x="1946" y="1053" w="100" h="95" pX="0.5" pY="0.5" oX="2" oY="0" oW="100" oH="100" r="y"/>
+    <sprite n="deco_extra_candles_flowers" x="1104" y="1810" w="112" h="137" pX="0.5" pY="0.5" oX="3" oY="0" oW="140" oH="112" r="y"/>
+    <sprite n="deco_extra_clover_01" x="1426" y="829" w="27" h="25" pX="0.5" pY="0.5" oX="2" oY="3" oW="32" oH="32"/>
+    <sprite n="deco_extra_clover_02" x="1946" y="1480" w="53" h="58" pX="0.5" pY="0.5" oX="1" oY="3" oW="56" oH="64"/>
+    <sprite n="deco_extra_cloverhang_01" x="1440" y="1878" w="214" h="149" pX="0.5" pY="0.5" oX="3" oY="3" oW="220" oH="156"/>
+    <sprite n="deco_extra_cloverhang_02" x="1844" y="943" w="112" h="108" pX="0.5" pY="0.5" oX="2" oY="2" oW="116" oH="112"/>
+    <sprite n="deco_extra_cloverhat" x="1842" y="2" w="204" h="246" pX="0.5" pY="0.5" oX="4" oY="5" oW="212" oH="256"/>
+    <sprite n="deco_extra_compass" x="1844" y="688" w="128" h="253" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_cupcake" x="1340" y="868" w="156" h="221" pX="0.5" pY="0.5" oX="4" oY="5" oW="164" oH="232"/>
+    <sprite n="deco_extra_dummer" x="1426" y="552" w="166" h="275" pX="0.5" pY="0.5" oX="3" oY="2" oW="172" oH="280"/>
+    <sprite n="deco_extra_form_fung" x="1082" y="1949" w="103" h="91" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="104" r="y"/>
+    <sprite n="deco_extra_form_hand" x="1218" y="1878" w="220" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_fruit_blue" x="1946" y="1337" w="73" h="77" pX="0.5" pY="0.5" oX="2" oY="11" oW="80" oH="88"/>
+    <sprite n="deco_extra_fruit_purple" x="1946" y="1253" w="73" h="82" pX="0.5" pY="0.5" oX="2" oY="3" oW="80" oH="88"/>
+    <sprite n="deco_extra_fruit_red" x="1631" y="1036" w="87" h="62" pX="0.5" pY="0.5" oX="5" oY="1" oW="80" oH="88" r="y"/>
+    <sprite n="deco_extra_fruit_white" x="1946" y="1416" w="73" h="62" pX="0.5" pY="0.5" oX="2" oY="26" oW="80" oH="88"/>
+    <sprite n="deco_extra_fruit_yellow" x="1720" y="1015" w="71" h="80" pX="0.5" pY="0.5" oX="7" oY="5" oW="80" oH="88"/>
+    <sprite n="deco_extra_gold_small" x="1863" y="1878" w="132" h="133" pX="0.5" pY="0.5" oX="1" oY="6" oW="144" oH="144" r="y"/>
+    <sprite n="deco_extra_marigold" x="1498" y="850" w="131" h="235" pX="0.5" pY="0.5" oX="0" oY="2" oW="132" oH="240"/>
+    <sprite n="deco_extra_mind_scrolls" x="1946" y="1150" w="60" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="64" oH="104"/>
+    <sprite n="deco_extra_monkeystatue" x="1594" y="552" w="111" h="296" pX="0.5" pY="0.5" oX="8" oY="8" oW="128" oH="312"/>
+    <sprite n="deco_extra_papel_picado" x="1740" y="2" w="100" h="530" pX="0.5" pY="0.5" oX="1" oY="0" oW="532" oH="100" r="y"/>
+    <sprite n="deco_extra_paper_clover" x="1656" y="1878" w="205" h="137" pX="0.5" pY="0.5" oX="3" oY="3" oW="144" oH="212" r="y"/>
+    <sprite n="deco_extra_pink_flower" x="706" y="1865" w="134" h="151" pX="0.5" pY="0.5" oX="3" oY="0" oW="140" oH="152"/>
+    <sprite n="deco_extra_skull_sign" x="842" y="1896" w="238" h="120" pX="0.5" pY="0.5" oX="2" oY="1" oW="124" oH="240" r="y"/>
+    <sprite n="deco_extra_small_skull" x="1844" y="478" w="179" h="208" pX="0.5" pY="0.5" oX="0" oY="2" oW="180" oH="212"/>
+    <sprite n="floor_board_01" x="1340" y="2" w="84" h="864" pX="0.5" pY="0.5" oX="2" oY="0" oW="868" oH="84" r="y"/>
+    <sprite n="floor_board_02" x="2" y="1865" w="702" h="84" pX="0.5" pY="0.5" oX="1" oY="0" oW="704" oH="84"/>
+    <sprite n="floor_board_03" x="1707" y="552" w="84" h="461" pX="0.5" pY="0.5" oX="3" oY="0" oW="468" oH="84" r="y"/>
+    <sprite n="floor_board_04" x="842" y="1810" w="260" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="264" oH="84"/>
+    <sprite n="floor_board_thin_01" x="2" y="1810" w="838" h="53" pX="0.5" pY="0.5" oX="3" oY="0" oW="844" oH="56"/>
+    <sprite n="floor_board_thin_02" x="2" y="1951" w="677" h="49" pX="0.5" pY="0.5" oX="3" oY="1" oW="680" oH="56"/>
+    <sprite n="floor_board_thin_03" x="1793" y="534" w="49" h="435" pX="0.5" pY="0.5" oX="2" oY="1" oW="440" oH="56" r="y"/>
+    <sprite n="floor_board_thin_04" x="1974" y="688" w="49" h="234" pX="0.5" pY="0.5" oX="4" oY="2" oW="240" oH="56" r="y"/>
+    <sprite n="moth_01" x="1793" y="1028" w="41" h="47" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="48"/>
+    <sprite n="moth_02" x="1946" y="1540" w="41" h="47" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="48"/>
+    <sprite n="moth_03" x="1232" y="1992" w="41" h="47" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="48"/>
+    <sprite n="moth_04" x="1946" y="1589" w="41" h="47" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="48"/>
+    <sprite n="moth_05" x="2001" y="1480" w="45" h="46" pX="0.5" pY="0.5" oX="1" oY="3" oW="48" oH="48" r="y"/>
+    <sprite n="moth_wings_01" x="1187" y="1992" w="43" h="54" pX="0.5" pY="0.5" oX="14" oY="0" oW="64" oH="61"/>
+    <sprite n="moth_wings_02" x="1793" y="971" w="49" h="55" pX="0.5" pY="0.5" oX="11" oY="0" oW="64" oH="61"/>
+    <sprite n="moth_wings_03" x="2" y="2002" w="63" h="40" pX="0.5" pY="0.5" oX="0" oY="19" oW="64" oH="61"/>
+    <sprite n="moth_wings_04" x="2008" y="1150" w="38" h="52" pX="0.5" pY="0.5" oX="5" oY="21" oW="64" oH="61" r="y"/>
+    <sprite n="platform_support" x="1631" y="850" w="39" h="184" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="184"/>
+    <sprite n="side_floor" x="2" y="1100" w="1229" h="708" pX="0.5" pY="0.5" oX="0" oY="18" oW="1251" oH="726"/>
+    <sprite n="side_wall_support_01" x="1426" y="2" w="312" h="548" pX="0.5" pY="0.5" oX="0" oY="0" oW="319" oH="548"/>
+    <sprite n="side_window" x="2" y="2" w="1336" h="1096" pX="0.5" pY="0.5"/>
+</TextureAtlas>

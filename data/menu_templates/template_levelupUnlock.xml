@@ -1,0 +1,149 @@
+<template name="template_levelupUnlock" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="onPostInit" params="element">
+		element:DoStoredScript("setInvisible");
+	</event>
+	
+	<event name="setVisible" params="element">
+		<![CDATA[
+			element["Anim"]["Sprite"]("visible"):SetInt(1)
+			element["BattleQuestIcon"]["Sprite"]("visible"):SetInt((element("CostumeId"):GetInt() == 0) and 0 or 1)
+			element["NameFrame"]["Text"]("visible"):SetInt(1)
+
+			game.playParticle("particles/particle_diamond_get.psi", "gfx/particles/particle_diamond",
+			element:GetElement("Anim"):absX(), element:GetElement("Anim"):absY(), "Tutorial", 0.001, 1, 1);
+
+			if(element("IsMonster"):GetInt() == 1) then
+				game.playMonsterSelectSound(element("ID"):GetInt(), 0)
+			elseif(element("IsStructure"):GetInt() == 1) then
+				game.playStructureSelectSound(element("ID"):GetInt())
+			else
+				playSoundFx("audio/sfx/menu_click_small.wav")
+			end
+		]]>
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["Anim"]["Sprite"]("visible"):SetInt(0)
+		element["BattleQuestIcon"]["Sprite"]("visible"):SetInt(0)
+		element["NameFrame"]["Text"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="reenableTouch" params="element">
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="NameFrame">
+		<size w="120*game.menuScaleX()" h="60*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			
+			<event name="onInit" params="component, element">
+				local itemTitle = game.getLocalizedText(element:parent()("ItemTitle"):GetString())
+				
+				component("textPadding"):SetInt(3*game.menuScaleX())				
+				component("size"):SetFloat(0.25*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				
+				if((string.match(itemTitle, "%s") == nil)) then
+					component("multiline"):SetInt(0)
+				else
+					component("multiline"):SetInt(1)
+				end
+				
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(itemTitle)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()-10" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+					component("animation"):SetString( element:parent()("AnimationName"):GetString() )
+					
+					local costumeId =element:parent()("CostumeId"):GetInt()
+					if costumeId > 0 then
+						game.applyCostumeToAnimComponent(component, costumeId)
+					end
+
+					component:setScale(Vector2(0.45*game.menuScaleX(), 0.45*game.menuScaleX()))
+					component("layer"):SetString("Clipping")
+					element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleX()), component:size().y / 2.0 + (25*game.menuScaleX())))
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+
+	<element name="BattleQuestIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="32*game.menuScaleX()" yOffset="40*game.menuScaleY()" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_battle_complete")
+					component("sheetName"):SetString("xml_resources/hud03.xml")
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			element("deltaX"):SetFloat(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+			element("deltaX"):SetFloat(element("deltaX"):GetFloat()+math.abs(dx))
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(element("deltaX"):GetFloat() < 10 ) then
+					if(element("IsMonster"):GetInt() == 1) then
+						game.playMonsterSelectSound(element("ID"):GetInt(), 0);
+					elseif(element("IsStructure"):GetInt() == 1) then
+						game.playStructureSelectSound(element("ID"):GetInt())
+					end
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+</template>

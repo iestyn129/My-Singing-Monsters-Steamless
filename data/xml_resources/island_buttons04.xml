@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b632c3abf468090a7c0fb6c003ef7ade:7aa5cdb5fb8ff7b8b1dce7150ebd5f47:1b4ee2522771d1ea77f1e1a425215671$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/island_buttons04.png" width="1024" height="1024">
+    <sprite n="islands_button_isl01_hal" x="293" y="421" w="289" h="207" pX="0.5" pY="0.5" oX="10" oY="7" oW="304" oH="228"/>
+    <sprite n="islands_button_isl02_xmas" x="2" y="226" w="289" h="212" pX="0.5" pY="0.5" oX="10" oY="0" oW="304" oH="228"/>
+    <sprite n="islands_button_isl03_val" x="308" y="2" w="300" h="219" pX="0.5" pY="0.5" oX="0" oY="6" oW="304" oH="228"/>
+    <sprite n="islands_button_isl04_easter" x="600" y="404" w="289" h="211" pX="0.5" pY="0.5" oX="7" oY="8" oW="304" oH="228"/>
+    <sprite n="islands_button_isl05_summer" x="610" y="199" w="293" h="203" pX="0.5" pY="0.5" oX="6" oY="9" oW="304" oH="228"/>
+    <sprite n="islands_button_isl06_ann" x="2" y="440" w="289" h="204" pX="0.5" pY="0.5" oX="10" oY="8" oW="304" oH="228"/>
+    <sprite n="islands_button_isl07_lifeformula" x="2" y="2" w="304" h="222" pX="0.5" pY="0.5" oX="0" oY="6" oW="304" oH="228"/>
+    <sprite n="islands_button_isl013_thanks" x="610" y="2" w="300" h="195" pX="0.5" pY="0.5" oX="0" oY="4" oW="304" oH="228"/>
+    <sprite n="islands_button_isl014_perplexplore" x="663" y="617" w="258" h="194" pX="0.5" pY="0.5" oX="30" oY="9" oW="304" oH="228"/>
+    <sprite n="islands_button_isl016_clover" x="2" y="646" w="223" h="285" pX="0.5" pY="0.5" oX="19" oY="5" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl017_bh" x="442" y="630" w="219" h="267" pX="0.5" pY="0.5" oX="30" oY="8" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl019_newyear" x="227" y="646" w="213" h="279" pX="0.5" pY="0.5" oX="21" oY="8" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl022_echosofeco" x="308" y="223" w="290" h="196" pX="0.5" pY="0.5" oX="12" oY="18" oW="304" oH="228"/>
+</TextureAtlas>

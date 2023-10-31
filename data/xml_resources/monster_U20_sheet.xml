@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2062f4ec1687a14f7cbd487e4ce7b2e7:c77d1b2083114f253edfe6b1bc8ed1fc:a0c32580ae75aac4e40f3042a0a7c31c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U20_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U20_actual_head" x="2" y="332" w="158" h="157" pX="0.5" pY="0.5" oX="20" oY="22" oW="196" oH="200"/>
+    <sprite n="U20_body" x="336" y="74" w="163" h="279" pX="0.5" pY="0.5" oX="22" oY="20" oW="308" oH="204" r="y"/>
+    <sprite n="U20_eyeball" x="109" y="491" w="32" h="27" pX="0.5" pY="0.5" oX="19" oY="17" oW="64" oH="68" r="y"/>
+    <sprite n="U20_eyelid1" x="306" y="332" w="28" h="33" pX="0.5" pY="0.5" oX="18" oY="17" oW="64" oH="68"/>
+    <sprite n="U20_eyelid2" x="306" y="367" w="28" h="33" pX="0.5" pY="0.5" oX="18" oY="17" oW="64" oH="68"/>
+    <sprite n="U20_eyelid3" x="306" y="402" w="28" h="33" pX="0.5" pY="0.5" oX="18" oY="17" oW="64" oH="68"/>
+    <sprite n="U20_eyelid4" x="306" y="437" w="28" h="33" pX="0.5" pY="0.5" oX="18" oY="17" oW="64" oH="68"/>
+    <sprite n="U20_hair1" x="283" y="472" w="43" h="30" pX="0.5" pY="0.5" oX="21" oY="20" oW="68" oH="84" r="y"/>
+    <sprite n="U20_hair2" x="283" y="504" w="42" h="81" pX="0.5" pY="0.5" oX="20" oY="9" oW="88" oH="108"/>
+    <sprite n="U20_hair3" x="2" y="743" w="83" h="73" pX="0.5" pY="0.5" oX="16" oY="20" oW="108" oH="116"/>
+    <sprite n="U20_head" x="162" y="332" w="142" h="115" pX="0.5" pY="0.5" oX="15" oY="18" oW="172" oH="152"/>
+    <sprite n="U20_head_leaf" x="98" y="716" w="55" h="55" pX="0.5" pY="0.5" oX="16" oY="16" oW="84" oH="88"/>
+    <sprite n="U20_leaf1" x="396" y="792" w="78" h="73" pX="0.5" pY="0.5" oX="52" oY="115" oW="164" oH="212"/>
+    <sprite n="U20_leaf2" x="314" y="750" w="80" h="54" pX="0.5" pY="0.5" oX="52" oY="93" oW="164" oH="212"/>
+    <sprite n="U20_leaf3" x="2" y="673" w="94" h="68" pX="0.5" pY="0.5" oX="31" oY="32" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf4" x="2" y="491" w="105" h="59" pX="0.5" pY="0.5" oX="28" oY="20" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf5" x="162" y="569" w="97" h="68" pX="0.5" pY="0.5" oX="35" oY="32" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf6" x="74" y="943" w="69" h="73" pX="0.5" pY="0.5" oX="47" oY="69" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf7" x="458" y="456" w="52" h="76" pX="0.5" pY="0.5" oX="53" oY="114" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf9" x="410" y="718" w="83" h="72" pX="0.5" pY="0.5" oX="48" oY="115" oW="164" oH="212"/>
+    <sprite n="U20_leaf10" x="322" y="673" w="86" h="75" pX="0.5" pY="0.5" oX="43" oY="114" oW="164" oH="212"/>
+    <sprite n="U20_leaf11" x="162" y="695" w="84" h="74" pX="0.5" pY="0.5" oX="41" oY="113" oW="164" oH="212"/>
+    <sprite n="U20_leaf_back1" x="261" y="587" w="59" h="89" pX="0.5" pY="0.5" oX="60" oY="116" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf_back2" x="440" y="634" w="70" h="82" pX="0.5" pY="0.5" oX="59" oY="115" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf_back3" x="2" y="867" w="72" h="74" pX="0.5" pY="0.5" oX="54" oY="115" oW="164" oH="212" r="y"/>
+    <sprite n="U20_leaf_back4" x="2" y="943" w="70" h="73" pX="0.5" pY="0.5" oX="46" oY="116" oW="164" oH="212" r="y"/>
+    <sprite n="U20_mouth1" x="2" y="552" w="101" h="64" pX="0.5" pY="0.5" oX="23" oY="21" oW="144" oH="108"/>
+    <sprite n="U20_mouth1A" x="2" y="618" w="98" h="53" pX="0.5" pY="0.5" oX="24" oY="27" oW="144" oH="108"/>
+    <sprite n="U20_mouth2" x="461" y="355" w="43" h="99" pX="0.5" pY="0.5" oX="23" oY="20" oW="144" oH="84" r="y"/>
+    <sprite n="U20_mouth2A" x="458" y="534" w="43" h="98" pX="0.5" pY="0.5" oX="24" oY="20" oW="144" oH="84" r="y"/>
+    <sprite n="U20_mouth2B" x="102" y="620" w="58" h="94" pX="0.5" pY="0.5" oX="25" oY="21" oW="144" oH="84" r="y"/>
+    <sprite n="U20_mouth2C" x="162" y="639" w="92" h="54" pX="0.5" pY="0.5" oX="26" oY="21" oW="144" oH="84"/>
+    <sprite n="U20_mouth2D" x="256" y="678" w="56" h="86" pX="0.5" pY="0.5" oX="27" oY="22" oW="144" oH="84" r="y"/>
+    <sprite n="U20_mouth2E" x="105" y="552" w="55" h="66" pX="0.5" pY="0.5" oX="36" oY="25" oW="144" oH="84" r="y"/>
+    <sprite n="U20_pupil" x="283" y="449" w="19" h="16" pX="0.5" pY="0.5" oX="16" oY="11" oW="48" oH="44" r="y"/>
+    <sprite n="U20_shadow" x="336" y="2" w="167" h="70" pX="0.5" pY="0.5" oX="17" oY="19" oW="204" oH="108"/>
+    <sprite n="U20_statue" x="2" y="2" w="332" h="328" pX="0.5" pY="0.5" oX="13" oY="9" oW="364" oH="346"/>
+    <sprite n="U20_tail1" x="162" y="449" w="119" h="118" pX="0.5" pY="0.5" oX="10" oY="28" oW="148" oH="172"/>
+    <sprite n="U20_tail1A" x="336" y="454" w="120" h="118" pX="0.5" pY="0.5" oX="10" oY="28" oW="148" oH="172"/>
+    <sprite n="U20_tail2" x="327" y="574" w="111" h="97" pX="0.5" pY="0.5" oX="17" oY="29" oW="132" oH="164" r="y"/>
+    <sprite n="U20_tail3" x="336" y="355" w="123" h="97" pX="0.5" pY="0.5" oX="26" oY="20" oW="144" oH="160" r="y"/>
+</TextureAtlas>

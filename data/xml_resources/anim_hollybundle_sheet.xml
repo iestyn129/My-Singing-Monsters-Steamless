@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0704ad097d15b2835b45bf6e0ad2f1ee:4ff4760b6223a580f860f6b0c003263e:11a0a662bded4f95b3a76d101b73937c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_hollybundle_sheet.png" width="256" height="512">
+    <sprite n="Blue Glow.png" x="51" y="343" w="29" h="29" pX="0.5" pY="0.5" oX="1" oY="1" oW="31" oH="30"/>
+    <sprite n="Bow Cane L.png" x="162" y="359" w="30" h="19" pX="0.5" pY="0.5" oX="6" oY="0" oW="28" oH="30" r="y"/>
+    <sprite n="Bow Cane R.png" x="194" y="367" w="30" h="16" pX="0.5" pY="0.5" oX="1" oY="0" oW="20" oH="30" r="y"/>
+    <sprite n="Bow Tail L.png" x="86" y="123" w="48" h="61" pX="0.5" pY="0.5" oX="0" oY="0" oW="49" oH="61"/>
+    <sprite n="Bow Tail R.png" x="73" y="233" w="58" h="63" pX="0.5" pY="0.5" oX="2" oY="0" oW="64" oH="63"/>
+    <sprite n="Bow.png" x="138" y="63" w="87" h="66" pX="0.5" pY="0.5" oX="3" oY="3" oW="90" oH="71"/>
+    <sprite n="Gold Ball.png" x="197" y="274" w="55" h="46" pX="0.5" pY="0.5" oX="3" oY="2" oW="58" oH="53"/>
+    <sprite n="Green Ball.png" x="67" y="298" w="51" h="43" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="54" r="y"/>
+    <sprite n="Holly 1.png" x="136" y="131" w="72" h="67" pX="0.5" pY="0.5" oX="4" oY="0" oW="71" oH="72" r="y"/>
+    <sprite n="Holly 2.png" x="2" y="123" w="82" h="67" pX="0.5" pY="0.5" oX="5" oY="3" oW="75" oH="86" r="y"/>
+    <sprite n="Holly 3.png" x="2" y="192" w="69" h="67" pX="0.5" pY="0.5" oX="4" oY="2" oW="74" oH="71"/>
+    <sprite n="Holly 4.png" x="136" y="200" w="71" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="Icicle Glow.png" x="210" y="131" w="9" h="21" pX="0.5" pY="0.5" oX="0" oY="1" oW="9" oH="22"/>
+    <sprite n="Icicle.png" x="130" y="93" w="6" h="19" pX="0.5" pY="0.5" oX="1" oY="2" oW="9" oH="22"/>
+    <sprite n="Pine 1.png" x="120" y="329" w="40" h="31" pX="0.5" pY="0.5" oX="3" oY="3" oW="43" oH="34"/>
+    <sprite n="Pine 2.png" x="227" y="63" w="27" h="48" pX="0.5" pY="0.5" oX="2" oY="0" oW="50" oH="27" r="y"/>
+    <sprite n="Pine 3.png" x="209" y="225" w="45" h="47" pX="0.5" pY="0.5" oX="2" oY="3" oW="51" oH="50"/>
+    <sprite n="Pine 4.png" x="227" y="113" w="25" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="56"/>
+    <sprite n="Pine 5.png" x="86" y="186" w="48" h="45" pX="0.5" pY="0.5" oX="5" oY="2" oW="52" oH="51" r="y"/>
+    <sprite n="Pinecone.png" x="162" y="329" w="32" h="28" pX="0.5" pY="0.5" oX="3" oY="2" oW="32" oH="36" r="y"/>
+    <sprite n="Poinsetta 1.png" x="133" y="270" w="62" h="57" pX="0.5" pY="0.5" oX="2" oY="6" oW="68" oH="65"/>
+    <sprite n="Poinsetta 2.png" x="2" y="261" w="63" h="57" pX="0.5" pY="0.5" oX="2" oY="5" oW="65" oH="62"/>
+    <sprite n="Poinsetta 3.png" x="2" y="320" w="47" h="43" pX="0.5" pY="0.5" oX="0" oY="2" oW="47" oH="45"/>
+    <sprite n="Red Ball 2.png" x="210" y="171" w="44" h="52" pX="0.5" pY="0.5" oX="3" oY="3" oW="50" oH="58"/>
+    <sprite n="Red Ball.png" x="197" y="322" w="52" h="43" pX="0.5" pY="0.5" oX="3" oY="0" oW="47" oH="52" r="y"/>
+    <sprite n="Shadow.png" x="2" y="2" w="134" h="63" pX="0.5" pY="0.5" oX="4" oY="7" oW="138" oH="70"/>
+    <sprite n="String 2 Glow.png" x="138" y="2" w="113" h="29" pX="0.5" pY="0.5" oX="5" oY="2" oW="119" oH="33"/>
+    <sprite n="String 2.png" x="138" y="33" w="113" h="28" pX="0.5" pY="0.5" oX="4" oY="2" oW="119" oH="33"/>
+    <sprite n="String Glow.png" x="2" y="93" w="126" h="28" pX="0.5" pY="0.5" oX="3" oY="3" oW="133" oH="33"/>
+    <sprite n="String Light.png" x="130" y="114" w="6" h="6" pX="0.5" pY="0.5" oX="0" oY="2" oW="7" oH="9"/>
+    <sprite n="String.png" x="2" y="67" w="129" h="24" pX="0.5" pY="0.5" oX="2" oY="5" oW="133" oH="33"/>
+    <sprite n="White Glow.png" x="82" y="343" w="29" h="29" pX="0.5" pY="0.5" oX="1" oY="1" oW="31" oH="30"/>
+</TextureAtlas>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3a0a00b8db4412098c14ada0fbd5750b:70c49c689872ff79193275f404dd6bc0:7180afc30ffc331f658f2685fe1a767b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BE_costume_06_sheet.png" width="256" height="512" hires="true">
+    <sprite n="BE_body" x="2" y="2" w="128" h="94" pX="0.5" pY="0.5" oX="9" oY="5" oW="112" oH="140" r="y"/>
+	<sprite n="BE_body_RARE"/>
+	<sprite n="BE_bow_right_RARE"/>
+	<sprite n="BE_bow_top_RARE"/>
+    <sprite n="BE_branch" x="204" y="104" w="36" h="55" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="40" r="y"/>
+	<sprite n="BE_branch_long"/>
+    <sprite n="BE_branch_long_nodot"/>
+    <sprite n="BE_branch_short"/>
+    <sprite n="BE_eyeballs" x="2" y="98" w="63" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="60"/>
+    <sprite n="BE_eyelids_almost_shut" x="67" y="98" w="63" h="51" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_closing" x="132" y="123" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_open" x="67" y="151" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_shut" x="131" y="177" w="62" h="51" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_foot01" x="132" y="70" w="70" h="51" pX="0.5" pY="0.5" oX="8" oY="4" oW="80" oH="56"/>
+	<sprite n="BE_foot01_RARE"/>
+    <sprite n="BE_leaf" x="126" y="258" w="58" h="35" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="40"/>
+    <sprite n="BE_leg_bending" x="2" y="158" w="62" h="21" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="64" r="y"/>
+    <sprite n="BE_leg_bent" x="126" y="230" w="60" h="26" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="64" r="y"/>
+	<sprite n="BE_leg_lower"/>
+    <sprite n="BE_leg_straight" x="2" y="181" w="61" h="14" pX="0.5" pY="0.5" oX="3" oY="0" oW="32" oH="64" r="y"/>
+	<sprite n="BE_leg_upper"/>
+	<sprite n="BE_leg_upper_nodot"/>
+    <sprite n="BE_mouth_closing" x="196" y="161" w="58" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60"/>
+	<sprite n="BE_mouth_closing_RARE"/>
+    <sprite n="BE_mouth_eee" x="2" y="197" w="60" h="60" pX="0.5" pY="0.5"/>
+	<sprite n="BE_mouth_eee_RARE"/>
+    <sprite n="BE_mouth_mmm" x="64" y="205" w="60" h="58" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+	<sprite n="BE_mouth_mmm_RARE"/>
+    <sprite n="BE_mouth_ooo" x="64" y="291" w="53" h="51" pX="0.5" pY="0.5" oX="4" oY="7" oW="60" oH="60" r="y"/>
+	<sprite n="BE_mouth_ooo_RARE"/>
+    <sprite n="BE_mouth_open" x="195" y="223" w="59" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60"/>
+	<sprite n="BE_mouth_open_RARE"/>
+    <sprite n="BE_mouth_shut" x="2" y="259" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="60" r="y"/>
+	<sprite n="BE_mouth_shut_RARE"/>
+	<sprite n="BE_pupil_RARE"/>
+	<sprite n="BE_pupils" x="2" y="317" w="51" h="33" pX="0.5" pY="0.5" oX="2" oY="1" oW="56" oH="36"/>
+    <sprite n="BE_shadow" x="132" y="2" w="107" h="66" pX="0.5" pY="0.5" oX="8" oY="2" oW="124" oH="68"/>
+    <sprite n="BE_stick" x="64" y="265" w="54" h="24" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="BE_stick_nodot"/>
+    <sprite n="S08_bunny_01"/>
+    <sprite n="S08_bunny_02"/>
+    <sprite n="S08_bunny_03"/>
+    <sprite n="S08_bunny_04"/>
+    <sprite n="S08_bunny_05"/>
+    <sprite n="S08_bunny_06"/>
+    <sprite n="S08_bunny_07"/>
+    <sprite n="S08_bunny_shadow"/>
+    <!-- original anchor = (28, 35) -> new anchor (9, 36) diff = (19, -1)-->
+    <!-- add double it to texturepacker output offsets (4, 3) -> (42, -1)-->
+    <sprite n="BE_tuft_COSTUME.png" x="204" y="70" w="45" h="32" pX="0.5" pY="0.5" oX="42" oY="-1" oW="56" oH="36"/>
+</TextureAtlas>

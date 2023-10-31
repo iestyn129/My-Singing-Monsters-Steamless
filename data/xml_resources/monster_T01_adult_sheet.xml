@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d32412a4e237ffacabea1d06324a0508:837a660cf43c0d26537d5cd90bac9f15:40a61710871d018069acb2c9c4fd31c1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T01_adult_sheet.png" width="512" height="512" hires="true">
+    <sprite n="T01_adult eyelid_left_01.png" x="409" y="1" w="50" h="36" pX="0.5" pY="0.5" oX="6" oY="14" oW="120" oH="60"/>
+    <sprite n="T01_adult eyelid_left_02.png" x="362" y="165" w="36" h="49" pX="0.5" pY="0.5" oX="7" oY="14" oW="120" oH="60" r="y"/>
+    <sprite n="T01_adult eyelid_left_03.png" x="460" y="1" w="50" h="36" pX="0.5" pY="0.5" oX="6" oY="14" oW="120" oH="60"/>
+    <sprite n="T01_adult eyelid_left_04.png" x="362" y="215" w="36" h="49" pX="0.5" pY="0.5" oX="7" oY="14" oW="120" oH="60" r="y"/>
+    <sprite n="T01_adult eyelid_right_01.png" x="292" y="270" w="36" h="43" pX="0.5" pY="0.5" oX="65" oY="11" oW="120" oH="60" r="y"/>
+    <sprite n="T01_adult eyelid_right_02.png" x="292" y="224" w="36" h="45" pX="0.5" pY="0.5" oX="65" oY="11" oW="120" oH="60" r="y"/>
+    <sprite n="T01_adult eyelid_right_03.png" x="329" y="265" w="45" h="36" pX="0.5" pY="0.5" oX="65" oY="11" oW="120" oH="60"/>
+    <sprite n="T01_adult eyelid_right_04.png" x="375" y="265" w="41" h="37" pX="0.5" pY="0.5" oX="65" oY="10" oW="120" oH="60"/>
+    <sprite n="T01_adult_antennae_left.png" x="318" y="402" w="114" h="22" pX="0.5" pY="0.5" oX="9" oY="8" oW="40" oH="130" r="y"/>
+    <sprite n="T01_adult_antennae_right.png" x="318" y="425" w="100" h="25" pX="0.5" pY="0.5" oX="9" oY="22" oW="40" oH="130" r="y"/>
+    <sprite n="T01_adult_beard_left.png" x="292" y="1" w="38" h="95" pX="0.5" pY="0.5" oX="22" oY="3" oW="80" oH="100"/>
+    <sprite n="T01_adult_beard_middle.png" x="318" y="451" w="81" h="51" pX="0.5" pY="0.5" oX="15" oY="6" oW="80" oH="100" r="y"/>
+    <sprite n="T01_adult_beard_right.png" x="292" y="97" w="41" h="80" pX="0.5" pY="0.5" oX="22" oY="11" oW="80" oH="100"/>
+    <sprite n="T01_adult_ear_left.png" x="108" y="431" w="59" h="72" pX="0.5" pY="0.5" oX="12" oY="5" oW="80" oH="80"/>
+    <sprite n="T01_adult_ear_right.png" x="292" y="178" w="69" h="45" pX="0.5" pY="0.5" oX="12" oY="7" oW="80" oH="80" r="y"/>
+    <sprite n="T01_adult_eyebrows.png" x="62" y="398" w="45" h="108" pX="0.5" pY="0.5" oX="16" oY="42" oW="140" oH="160" r="y"/>
+    <sprite n="T01_adult_foot.png" x="419" y="425" w="75" h="54" pX="0.5" pY="0.5" oX="13" oY="8" oW="80" oH="90" r="y"/>
+    <sprite n="T01_adult_head.png" x="183" y="402" w="134" h="101" pX="0.5" pY="0.5" oX="19" oY="13" oW="140" oH="160" r="y"/>
+    <sprite n="T01_adult_large_claw.png" x="1" y="398" w="60" h="104" pX="0.5" pY="0.5" oX="3" oY="5" oW="110" oH="70" r="y"/>
+    <sprite n="T01_adult_large_lowerarm.png" x="334" y="131" w="50" h="33" pX="0.5" pY="0.5" oX="31" oY="14" oW="110" oH="70"/>
+    <sprite n="T01_adult_large_upperarm.png" x="331" y="1" w="77" h="42" pX="0.5" pY="0.5" oX="17" oY="14" oW="110" oH="70"/>
+    <sprite n="T01_adult_leg.png" x="407" y="44" w="62" h="37" pX="0.5" pY="0.5" oX="21" oY="14" oW="80" oH="90" r="y"/>
+    <sprite n="T01_adult_mouth_01.png" x="1" y="503" w="27" h="7" pX="0.5" pY="0.5" oX="6" oY="14" oW="40" oH="40"/>
+    <sprite n="T01_adult_mouth_02.png" x="183" y="194" w="10" h="25" pX="0.5" pY="0.5" oX="7" oY="14" oW="40" oH="40" r="y"/>
+    <sprite n="T01_adult_mouth_03.png" x="183" y="220" w="12" h="24" pX="0.5" pY="0.5" oX="8" oY="14" oW="40" oH="40" r="y"/>
+    <sprite n="T01_adult_pupil_left.png" x="168" y="431" w="14" h="14" pX="0.5" pY="0.5" oX="3" oY="3" oW="20" oH="20"/>
+    <sprite n="T01_adult_pupil_right.png" x="168" y="446" w="14" h="14" pX="0.5" pY="0.5" oX="3" oY="3" oW="20" oH="20"/>
+    <sprite n="T01_adult_shadow.png" x="1" y="194" w="108" h="203" pX="0.5" pY="0.5" oX="29" oY="27" oW="260" oH="160" r="y"/>
+    <sprite n="T01_adult_shell.png" x="1" y="1" w="194" h="192" pX="0.5" pY="0.5" oX="20" oY="17" oW="230" oH="230"/>
+    <sprite n="T01_adult_sitar.png" x="196" y="1" w="95" h="375" pX="0.5" pY="0.5" oX="47" oY="59" oW="200" oH="480"/>
+    <sprite n="T01_adult_small_claw.png" x="331" y="44" w="75" h="45" pX="0.5" pY="0.5" oX="7" oY="3" oW="88" oH="54"/>
+    <sprite n="T01_adult_small_lowerarm.png" x="400" y="480" w="67" h="29" pX="0.5" pY="0.5" oX="12" oY="12" oW="88" oH="54"/>
+    <sprite n="T01_adult_small_upperarm.png" x="334" y="90" w="73" h="40" pX="0.5" pY="0.5" oX="7" oY="8" oW="88" oH="54"/>
+    <sprite n="T01_adult_strings_1.png" x="183" y="377" w="236" h="24" pX="0.5" pY="0.5" oX="81" oY="161" oW="200" oH="480" r="y"/>
+    <sprite n="T01_adult_strings_2.png" x="110" y="194" w="72" h="236" pX="0.5" pY="0.5" oX="81" oY="161" oW="200" oH="480"/>
+</TextureAtlas>

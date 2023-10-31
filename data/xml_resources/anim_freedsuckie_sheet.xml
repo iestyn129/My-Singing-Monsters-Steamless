@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:209622895521b4c70d1fc98987e26ac0:37c4e250c5cc86a3e7cc3ca3d098fe0b:7753cbc35fe62421aa464f7b8e99b30f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_freedsuckie_sheet.png" width="512" height="512" hires="true">
+    <sprite n="amber_broken" x="2" y="2" w="385" h="267" pX="0.5" pY="0.5" oX="1" oY="0" oW="386" oH="267"/>
+    <sprite n="body_head" x="389" y="64" w="74" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="body_mid" x="463" y="176" w="44" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="body_tail" x="389" y="200" w="58" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eyeback" x="2" y="271" w="36" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="left_lower_wing" x="2" y="299" w="32" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="left_upper_wing" x="389" y="168" w="72" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lids01" x="2" y="343" w="27" h="36" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="28" r="y"/>
+    <sprite n="lids02" x="483" y="2" w="27" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="28" r="y"/>
+    <sprite n="lids03" x="483" y="42" w="27" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="28" r="y"/>
+    <sprite n="lids04" x="483" y="82" w="27" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="28" r="y"/>
+    <sprite n="pupils" x="465" y="64" w="16" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="right_lower_wing" x="389" y="134" w="72" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="right_upper_wing" x="389" y="2" w="92" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="sucker01" x="465" y="122" w="44" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="sucker02" x="441" y="256" w="49" h="41" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="44"/>
+    <sprite n="sucker03" x="389" y="254" w="50" h="41" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="44"/>
+    <sprite n="sucker04" x="449" y="216" w="52" h="38" pX="0.5" pY="0.5" oX="0" oY="4" oW="52" oH="44"/>
+</TextureAtlas>

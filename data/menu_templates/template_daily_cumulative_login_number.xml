@@ -1,0 +1,28 @@
+<!-- A reward that is displayed when collecting daily cumulative login rewards -->
+<template name="template_daily_cumulative_login_number" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">	
+	<defaultTemplateVar name="$layer" equals="FrontPopUps" />
+	<element name="Number" >
+		<size w="64*game.hudScale()" h="64*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="64*game.hudScale()" h="64*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					local parent = element:parent()
+					--component("textPadding"):SetInt(3*game.hudScale())
+					component("size"):SetFloat(0.75*game.hudScale())
+					--component("autoScale"):SetInt(1)
+					--component("autoScaleFactor"):SetFloat(0.01)
+					--component("multiline"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("00")
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+</template>

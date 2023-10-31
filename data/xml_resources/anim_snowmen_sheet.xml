@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fc1b5ee46714a556cdcdd87d01cbb3fa:690e02574b870a7a46548da62a8073a2:c9bc600699a95ec88fff73ecf4264dca$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_snowmen_sheet.png" width="256" height="512">
+    <sprite n="Candle_Glow.png" x="107" y="203" w="36" h="35" pX="0.5" pY="0.5" oX="2" oY="0" oW="40" oH="50"/>
+    <sprite n="Candlestick.png" x="187" y="166" w="24" h="30" pX="0.5" pY="0.5" oX="8" oY="18" oW="40" oH="50"/>
+    <sprite n="Flame1.png" x="51" y="221" w="10" h="15" pX="0.5" pY="0.5" oX="2" oY="1" oW="14" oH="16"/>
+    <sprite n="Flame2.png" x="51" y="238" w="10" h="15" pX="0.5" pY="0.5" oX="2" oY="1" oW="14" oH="16"/>
+    <sprite n="Flame3.png" x="50" y="255" w="11" h="15" pX="0.5" pY="0.5" oX="2" oY="1" oW="14" oH="16"/>
+    <sprite n="Flame4.png" x="198" y="227" w="11" h="15" pX="0.5" pY="0.5" oX="1" oY="1" oW="14" oH="16"/>
+    <sprite n="Flame5.png" x="145" y="239" w="11" h="15" pX="0.5" pY="0.5" oX="1" oY="1" oW="14" oH="16"/>
+    <sprite n="Pole.png" x="123" y="2" w="100" h="47" pX="0.5" pY="0.5" oX="2" oY="2" oW="51" oH="103" r="y"/>
+    <sprite n="Pole_Bow.png" x="2" y="251" w="35" h="33" pX="0.5" pY="0.5" oX="4" oY="1" oW="40" oH="37" r="y"/>
+    <sprite n="Presents.png" x="2" y="145" w="59" h="56" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="59"/>
+    <sprite n="Shadows.png" x="2" y="2" w="119" h="85" pX="0.5" pY="0.5" oX="0" oY="2" oW="123" oH="89"/>
+    <sprite n="SM1_Eye.png" x="215" y="59" w="6" h="6" pX="0.5" pY="0.5" oX="2" oY="2" oW="10" oH="10"/>
+    <sprite n="SM1_Hat.png" x="213" y="185" w="37" h="30" pX="0.5" pY="0.5" oX="1" oY="1" oW="40" oH="34"/>
+    <sprite n="SM1_L_Arm1.png" x="89" y="141" w="31" h="17" pX="0.5" pY="0.5" oX="1" oY="3" oW="33" oH="23"/>
+    <sprite n="SM1_L_Arm2.png" x="89" y="89" w="32" h="12" pX="0.5" pY="0.5" oX="0" oY="5" oW="34" oH="19"/>
+    <sprite n="SM1_L_Arm3.png" x="160" y="174" w="22" h="18" pX="0.5" pY="0.5" oX="1" oY="2" oW="25" oH="22"/>
+    <sprite n="SM1_LowBody.png" x="122" y="131" w="63" h="41" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="42"/>
+    <sprite n="SM1_Midbody.png" x="121" y="174" w="37" h="27" pX="0.5" pY="0.5" oX="1" oY="1" oW="38" oH="29"/>
+    <sprite n="SM1_Mouth.png" x="39" y="251" w="9" h="15" pX="0.5" pY="0.5" oX="2" oY="2" oW="18" oH="14" r="y"/>
+    <sprite n="SM1_R_Arm1.png" x="63" y="145" w="24" h="22" pX="0.5" pY="0.5" oX="2" oY="1" oW="25" oH="28" r="y"/>
+    <sprite n="SM1_R_Arm2.png" x="89" y="160" w="30" h="16" pX="0.5" pY="0.5" oX="1" oY="2" oW="31" oH="21"/>
+    <sprite n="SM1_R_Arm3.png" x="160" y="194" w="21" h="20" pX="0.5" pY="0.5" oX="2" oY="0" oW="23" oH="21"/>
+    <sprite n="SM1_Scarf.png" x="225" y="2" w="29" h="34" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="36"/>
+    <sprite n="SM2_Eye.png" x="215" y="51" w="7" h="6" pX="0.5" pY="0.5" oX="2" oY="2" oW="11" oH="11" r="y"/>
+    <sprite n="SM2_Hat.png" x="225" y="38" w="28" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="29" r="y"/>
+    <sprite n="SM2_Head.png" x="63" y="169" w="22" h="54" pX="0.5" pY="0.5" oX="2" oY="4" oW="57" oH="27" r="y"/>
+    <sprite n="SM2_LowBody.png" x="214" y="134" w="37" h="49" pX="0.5" pY="0.5" oX="1" oY="0" oW="50" oH="37" r="y"/>
+    <sprite n="SM2_MidBody.png" x="89" y="103" w="31" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="37" oH="31" r="y"/>
+    <sprite n="SM3_Eye.png" x="203" y="198" w="6" h="6" pX="0.5" pY="0.5" oX="2" oY="2" oW="11" oH="9"/>
+    <sprite n="SM3_Head.png" x="187" y="131" w="25" h="33" pX="0.5" pY="0.5" oX="1" oY="2" oW="34" oH="28" r="y"/>
+    <sprite n="SM3_Nose.png" x="51" y="203" w="10" h="16" pX="0.5" pY="0.5" oX="1" oY="1" oW="19" oH="12" r="y"/>
+    <sprite n="Snowflake_1_1.png" x="107" y="191" w="12" h="10" pX="0.5" pY="0.5" oX="2" oY="1" oW="14" oH="14" r="y"/>
+    <sprite n="Snowflake_1_2.png" x="107" y="178" w="12" h="11" pX="0.5" pY="0.5" oX="1" oY="1" oW="14" oH="14" r="y"/>
+    <sprite n="Snowflake_2_1.png" x="183" y="198" w="18" h="16" pX="0.5" pY="0.5" oX="1" oY="0" oW="17" oH="18" r="y"/>
+    <sprite n="Snowflake_2_2.png" x="87" y="178" w="18" h="16" pX="0.5" pY="0.5" oX="1" oY="0" oW="17" oH="18" r="y"/>
+    <sprite n="Snowflake_2_3.png" x="87" y="196" w="18" h="16" pX="0.5" pY="0.5" oX="1" oY="0" oW="17" oH="18" r="y"/>
+    <sprite n="Snowflake_3_1.png" x="231" y="217" w="17" h="16" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="18" r="y"/>
+    <sprite n="Snowflake_3_2.png" x="87" y="214" w="18" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Snowflake_4_1.png" x="211" y="235" w="14" h="14" pX="0.5" pY="0.5" oX="0" oY="1" oW="15" oH="15"/>
+    <sprite n="Snowflake_4_2.png" x="63" y="277" w="15" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="15" oH="15" r="y"/>
+    <sprite n="Snowflake_5_1.png" x="50" y="272" w="11" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_5_2.png" x="196" y="244" w="11" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_5_3.png" x="227" y="235" w="14" h="11" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Snowflake_6_1.png" x="63" y="225" w="17" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_6_2.png" x="82" y="232" w="17" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_6_3.png" x="63" y="243" w="17" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_7_1.png" x="39" y="268" w="9" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_7_2.png" x="198" y="216" w="12" h="9" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Snowflake_8_1.png" x="119" y="240" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_8_2.png" x="100" y="256" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_8_3.png" x="81" y="266" w="15" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="Snowflake_9_1.png" x="145" y="203" w="13" h="16" pX="0.5" pY="0.5" oX="0" oY="0" oW="14" oH="16"/>
+    <sprite n="Snowflake_9_2.png" x="145" y="221" w="13" h="16" pX="0.5" pY="0.5" oX="0" oY="0" oW="14" oH="16"/>
+    <sprite n="Snowflake_10_1.png" x="160" y="216" w="17" h="16" pX="0.5" pY="0.5" oX="1" oY="1" oW="18" oH="20" r="y"/>
+    <sprite n="Snowflake_10_2.png" x="179" y="216" w="17" h="16" pX="0.5" pY="0.5" oX="1" oY="1" oW="18" oH="20" r="y"/>
+    <sprite n="Snowflake_10_3.png" x="212" y="217" w="17" h="16" pX="0.5" pY="0.5" oX="1" oY="1" oW="18" oH="20" r="y"/>
+    <sprite n="Snowman_3.png" x="123" y="51" w="90" h="78" pX="0.5" pY="0.5" oX="4" oY="2" oW="94" oH="80"/>
+    <sprite n="Star1.png" x="160" y="234" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="Star2.png" x="178" y="234" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="Star3.png" x="101" y="240" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="Star4.png" x="82" y="250" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="Star5.png" x="63" y="261" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="Tree_Base.png" x="2" y="89" w="85" h="54" pX="0.5" pY="0.5" oX="6" oY="2" oW="91" oH="57"/>
+    <sprite n="Tree_Mid.png" x="215" y="70" w="38" h="62" pX="0.5" pY="0.5" oX="4" oY="3" oW="67" oH="42" r="y"/>
+    <sprite n="Tree_Top.png" x="2" y="203" w="47" h="46" pX="0.5" pY="0.5" oX="2" oY="2" oW="49" oH="49" r="y"/>
+</TextureAtlas>

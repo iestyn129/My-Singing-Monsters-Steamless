@@ -1,0 +1,225 @@
+<template name="template_minigame_monster_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<event name="onInit" params="element">
+	
+		element("FLY_EASING_DURATION"):SetFloat(0.4)
+		element("BOUNCE_EASING_DURATION"):SetFloat(1.2)
+		
+		element("flyUpEase"):SetInt(0)
+		element("bounceDownEase"):SetInt(0)
+		element("curEaseTime"):SetFloat(0.0)
+		
+		element("NORMAL_SCALE"):SetFloat(1.0)
+		element("LOWER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+		element("UPPER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat() + 0.10)
+		element("ARROW_SCALE_DIFF"):SetFloat(0.0)
+		
+		element("selected"):SetInt(0)
+	</event>
+	<event name="onPostInit" params="element">
+		element("NORMAL_SCALE"):SetFloat(element["CharacterImage"]["Sprite"]("size"):GetFloat())
+		element("LOWER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+		element("UPPER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat() + 0.10)
+		element("ARROW_SCALE_DIFF"):SetFloat(element["CharacterImage"]["Sprite"]("size"):GetFloat() - element["CheckmarkSprite"]["Sprite"]("size"):GetFloat())
+		
+	</event>
+	<event name="setVisible" params="element">
+		element["CharacterImage"]:DoStoredScript("setVisible")
+		if(element("selected"):GetInt()==1) then
+			element["CheckmarkSprite"]:DoStoredScript("setVisible")
+		end
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	<event name="setInvisible" params="element">
+		element["CharacterImage"]:DoStoredScript("setInvisible")
+		element["CheckmarkSprite"]:DoStoredScript("setInvisible")
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="toggle" params="element">
+		<![CDATA[
+		
+			local numMonstersSelected = element:root():GetElement(element("List"):GetString())("NumSelected"):GetInt();
+			if(element("selected"):GetInt()==0) then
+				
+				if(numMonstersSelected < 4) then
+				
+					--select
+					element("selected"):SetInt(1)
+					element["CharacterImage"]:DoStoredScript("select")
+					element["CheckmarkSprite"]:DoStoredScript("select")
+					
+					--play monster sound
+					game.playMonsterSelectSound(element("MonsterID"):GetInt(), numMonstersSelected)
+					
+					element("flyUpEase"):SetInt(1)
+					
+					local parentList = element:root():GetElement(element("List"):GetString())
+					parentList:DoStoredScript("selectEntry")
+				end
+			else
+			
+				--deselect
+				element("selected"):SetInt(0)
+				element["CharacterImage"]:DoStoredScript("deselect")
+				element["CheckmarkSprite"]:DoStoredScript("deselect")
+				
+				--play monster sound
+				game.playMonsterSelectSound(element("MonsterID"):GetInt(), numMonstersSelected-2)
+				
+				--end the bouncing/easing
+				element("flyUpEase"):SetInt(0)
+				element("bounceDownEase"):SetInt(0)
+				element("curEaseTime"):SetFloat(0.0)
+				element["CharacterImage"]["Sprite"]("size"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+				element["CheckmarkSprite"]["Sprite"]("size"):SetFloat(element("NORMAL_SCALE"):GetFloat() - element("ARROW_SCALE_DIFF"):GetFloat())
+				
+				local parentList = element:root():GetElement(element("List"):GetString())
+				parentList:DoStoredScript("deselectEntry")
+
+			end
+		]]>
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(element("flyUpEase"):GetInt()==1) then
+		
+				local FLY_EASING_DURATION = element("FLY_EASING_DURATION"):GetFloat();
+				
+				if(element("curEaseTime"):GetFloat() < FLY_EASING_DURATION) then
+				
+					local beginScale = element("LOWER_BOUND"):GetFloat();
+					local delta = (element("UPPER_BOUND"):GetFloat()) - beginScale;
+					
+					local ease=lua_sys.Exponential_EaseOut(element("curEaseTime"):GetFloat(), beginScale, delta, FLY_EASING_DURATION);
+					element["CharacterImage"]["Sprite"]("size"):SetFloat(ease)
+					--element["CheckmarkSprite"]["Sprite"]("size"):SetFloat(ease - element("ARROW_SCALE_DIFF"):GetFloat())
+					element("curEaseTime"):SetFloat(element("curEaseTime"):GetFloat()+dt)
+				else
+					element("flyUpEase"):SetInt(0)
+					element("bounceDownEase"):SetInt(1)
+
+					element("curEaseTime"):SetFloat(0.0)
+				end
+
+			elseif(element("bounceDownEase"):GetInt()==1) then
+			
+				local BOUNCE_EASING_DURATION = element("BOUNCE_EASING_DURATION"):GetFloat();
+				
+				if(element("curEaseTime"):GetFloat() < BOUNCE_EASING_DURATION) then
+				
+					local beginScale = element("UPPER_BOUND"):GetFloat();
+					local delta = (element("LOWER_BOUND"):GetFloat()) - beginScale;
+					
+					local ease=lua_sys.Bounce_EaseOut(element("curEaseTime"):GetFloat(), beginScale, delta, BOUNCE_EASING_DURATION);
+					element["CharacterImage"]["Sprite"]("size"):SetFloat(ease)
+					--element["CheckmarkSprite"]["Sprite"]("size"):SetFloat(ease - element("ARROW_SCALE_DIFF"):GetFloat())
+					element("curEaseTime"):SetFloat(element("curEaseTime"):GetFloat()+dt)
+				else
+					element("bounceDownEase"):SetInt(0)
+					element("flyUpEase"):SetInt(1)
+
+					element("curEaseTime"):SetFloat(0.0)
+				end	
+			end
+		]]>
+	</event>	
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("deselect")
+		</event>
+		<event name="setVisible" params="element">
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<event name="select" params="element">
+			element["Sprite"]("red"):SetFloat(1.0)
+			element["Sprite"]("green"):SetFloat(1.0)
+			element["Sprite"]("blue"):SetFloat(1.0)
+		</event>
+		<event name="deselect" params="element">
+			element["Sprite"]("red"):SetFloat(0.5)
+			element["Sprite"]("green"):SetFloat(0.5)
+			element["Sprite"]("blue"):SetFloat(0.5)
+		</event>
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				local MonsterPortraits = include("MonsterPortraits")
+				local monsterImage = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+				component("spriteName"):SetString(monsterImage)
+				component("size"):SetFloat(0.525*(lua_sys.screenWidth() / 480.0))
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="CheckmarkSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:parent()[&quot;CharacterImage&quot;]" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("deselect")
+		</event>
+		<event name="setVisible" params="element">
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<event name="select" params="element">
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="deselect" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.23*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element:GetElement("CharacterImage"):absW(), element:GetElement("CharacterImage"):absH()))
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()) )
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+			if(component("dragging"):GetInt() < 10) then
+				lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+				element:DoStoredScript("toggle")
+			end
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+			]]>
+		</event>
+	</touchComponent>
+
+
+</template>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b662f6bbd81bc549e2fb5085ab6d592a:9a9f4be6e0133c24770c1f3ba9ecfc52:4f7bde1e809ce524b31114f4419f6e54$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_Amber_tiers_8-10.png" width="1024" height="1024" hires="true">
+    <sprite n="structure_castle_amber_07" x="1" y="1" w="760" h="1006" pX="0.5" pY="0.5" oX="128" oY="0" oW="1024" oH="1024"/>
+    <sprite n="structure_castle_amber_glow" x="763" y="1" w="186" h="169" pX="0.5" pY="0.5" oX="15" oY="7" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_08-1" x="951" y="154" w="68" h="102" pX="0.5" pY="0.5" oX="64" oY="45" oW="200" oH="200"/>
+    <sprite n="structure_castle_amber_tier_08-2" x="939" y="258" w="84" h="104" pX="0.5" pY="0.5" oX="56" oY="45" oW="200" oH="200"/>
+    <sprite n="structure_castle_amber_tier_08-3" x="951" y="84" w="69" h="68" pX="0.5" pY="0.5" oX="64" oY="63" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_09-1" x="763" y="264" w="89" h="82" pX="0.5" pY="0.5" oX="58" oY="53" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_09-2" x="854" y="333" w="65" h="57" pX="0.5" pY="0.5" oX="67" oY="67" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_09-3" x="869" y="172" w="68" h="100" pX="0.5" pY="0.5" oX="64" oY="48" oW="200" oH="200"/>
+    <sprite n="structure_castle_amber_tier_09-4" x="763" y="172" w="104" h="90" pX="0.5" pY="0.5" oX="54" oY="46" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_10-1" x="951" y="1" w="70" h="81" pX="0.5" pY="0.5" oX="62" oY="56" oW="200" oH="200"/>
+    <sprite n="structure_castle_amber_tier_10-2" x="854" y="274" w="83" h="57" pX="0.5" pY="0.5" oX="67" oY="57" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_10-3" x="921" y="364" w="62" h="61" pX="0.5" pY="0.5" oX="69" oY="67" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_10-4" x="851" y="392" w="58" h="56" pX="0.5" pY="0.5" oX="70" oY="67" oW="200" oH="200" r="y"/>
+    <sprite n="structure_castle_amber_tier_10-5" x="763" y="348" w="86" h="53" pX="0.5" pY="0.5" oX="67" oY="57" oW="200" oH="200" r="y"/>
+</TextureAtlas>

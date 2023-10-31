@@ -1,0 +1,95 @@
+<template name="template_battle_campaign_infopane_expired_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+
+	<!-- 
+		required variables:
+			AnimationFile
+			AnimationName
+			Name
+			CostumeId
+	-->
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+	
+	<spriteSheetComponent name="Frame">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("market_frame")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("layer"):SetString("$layer")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="NameFrame">
+		<size w="130*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.25*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(element:parent()("Name"):GetString())
+				component("layer"):SetString("$layer")
+				component("alpha"):SetFloat(0)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()-10" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+					component("animation"):SetString(element:parent()("AnimationName"):GetString())
+					component("layer"):SetString("$layer")
+					
+					component:setScale(Vector2(0.7*game.menuScaleX(),0.7*game.menuScaleX()))
+
+					element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleX()), component:size().y / 2.0 + (25*game.menuScaleX())))
+
+					game.applyCostumeToAnimComponent(component, element:parent()("CostumeId"):GetInt())
+					
+					component("alpha"):SetFloat(0)
+					component:setColor(0,0,0)
+					
+					
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("alpha"):SetFloat(1.0)
+		]]>
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			element["NameFrame"]["Text"]("alpha"):SetFloat(alpha)
+			element["Anim"]["Sprite"]("alpha"):SetFloat(alpha)
+			element["Anim"]["Sprite"]:setColor(alpha, alpha, alpha)
+		]]>
+	</event>
+	
+</template>

@@ -1,0 +1,169 @@
+<template name="template_buybackitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("HUD")
+			component("size"):SetFloat(0.5*game.menuScaleX())
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="TitleFrame">
+		<size w="130*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				local itemTitle = store:buybackName()
+				
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				
+				if(store:Category() == game.StoreCategories_TYPE_CURRENCY and element:parent():name() ~= "freeDiamonds") then
+					component("size"):SetFloat(0.25*game.menuScaleY())
+					component("yOffset"):SetInt(-6*game.menuScaleY())
+				else
+					component("size"):SetFloat(0.3*game.menuScaleY())
+				end
+				
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				
+				if((string.match(itemTitle, "%s") == nil) or (store:Category() == game.StoreCategories_TYPE_CURRENCY)) then
+					component("multiline"):SetInt(0)
+				else
+					component("multiline"):SetInt(1)
+				end
+				
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("'"..itemTitle.."'")
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterAnim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-4*game.menuScaleX()" yOffset="36" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..game.entityAnimFile(store:buybackEntityId()))
+				component("animation"):SetString(game.entityAnimName(store:buybackEntityId()))
+				
+				local equippedCostume = store:buybackEquippedCostume()
+				game.applyCostumeToAnimComponent(component, equippedCostume)
+
+				component:setScale(Vector2(0.7*game.menuScaleX(),0.7*game.menuScaleX()))
+				component("layer"):SetString("HUD")
+			</event>
+		</aeComponent>
+	</element>
+	
+	<element name="CoinCost">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="32*game.menuScaleX()" yOffset="50*game.menuScaleX()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="90*game.hudScale()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				
+				if(store:Category() ~= game.StoreCategories_TYPE_CURRENCY) and (store:Category() ~= game.StoreCategories_TYPE_ISLAND) then
+					if(game.isAmberIsland() and store:Category() == game.StoreCategories_TYPE_MONSTER) then
+						game.StoreContext_setRelicTextColour(component)
+					else
+						if game.isEtherealIsland() then
+							game.StoreContext_setEtherealTextColour(component)
+						else
+							game.StoreContext_setCoinTextColour(component)
+						end
+					end
+				else
+					game.StoreContext_setCoinTextColour(component)
+				end
+
+				component("text"):SetString(game.commaizeNumber(store:BuybackCost()))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(game.isAmberIsland() and store:Category() == game.StoreCategories_TYPE_MONSTER) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_RELIC)
+				else
+					component("spriteName"):SetString(game.coinsSpriteImgForThisIsland())
+				end
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="onInit" params="element">
+			if((store:Category() == game.StoreCategories_TYPE_CURRENCY) and (element:parent():name() ~= "coinsToEthCurrencyExchange")) then
+				element["Text"]("visible"):SetInt(0)
+				element["Sprite"]("visible"):SetInt(0)
+			end
+		</event>
+	</element>
+		
+	<element name="BuybackFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7*game.menuScaleX()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="120*game.menuScaleX()" h="34*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="100*game.menuScaleX()" h="26*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BUYBACK_LABEL")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchUp" params="component, element">
+			store:SelectItem(element:name())
+		</event>
+	</touchComponent>
+	
+</template>

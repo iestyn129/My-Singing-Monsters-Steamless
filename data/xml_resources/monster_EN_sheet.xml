@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7d820322b6b2dc5d66a80afca930c889:3d93ea5d430a22278fc6d4b25bf7d839:f1a1c0b78b93447e2821ec8f7956b929$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_EN_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="EN_adult_antler" x="779" y="4" w="150" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_antler_RARE_LEFT" x="779" y="67" w="150" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_antler_RARE_RIGHT" x="779" y="130" w="150" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_back_foot" x="906" y="246" w="107" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_back_foot_RARE" x="904" y="405" w="107" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_back_lowerleg" x="380" y="314" w="37" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_back_lowerleg_RARE" x="132" y="514" w="74" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_back_upperleg" x="779" y="193" w="123" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_back_upperleg_RARE" x="778" y="269" w="123" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_body_behind" x="113" y="555" w="101" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_body_behind_RARE" x="4" y="619" w="101" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_body_front" x="423" y="4" w="174" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_body_front_RARE" x="601" y="4" w="174" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_eyelids_01" x="188" y="129" w="47" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_eyelids_02" x="188" y="225" w="47" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_eyelids_03" x="367" y="392" w="47" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_eyelids_04" x="645" y="345" w="47" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_foot" x="239" y="158" w="137" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_foot_RARE" x="239" y="254" w="137" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_foot_RIGHT" x="4" y="283" w="137" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_foot_RIGHT_RARE" x="4" y="379" w="137" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_lowerleg" x="380" y="158" w="38" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_front_lowerleg_RARE" x="380" y="236" w="38" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_front_upperleg" x="551" y="272" w="122" h="69" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_front_upperleg_RARE" x="421" y="336" w="122" h="69" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_head" x="239" y="4" w="180" h="150" pX="0.5" pY="0.5" oX="0" oY="4" oW="150" oH="184" r="y"/>
+    <sprite n="EN_adult_head_RARE" x="4" y="129" w="180" h="150" pX="0.5" pY="0.5" oX="0" oY="4" oW="150" oH="184" r="y"/>
+    <sprite n="EN_adult_mouth_01" x="238" y="350" w="125" h="61" pX="0.5" pY="0.5" oX="0" oY="2" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_02" x="569" y="132" w="125" h="66" pX="0.5" pY="0.5" oX="0" oY="1" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_03" x="778" y="345" w="122" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_04" x="698" y="255" w="76" h="116" pX="0.5" pY="0.5" oX="2" oY="1" oW="125" oH="77" r="y"/>
+    <sprite n="EN_adult_mouth_05" x="569" y="202" w="125" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_06" x="226" y="415" w="121" h="61" pX="0.5" pY="0.5" oX="1" oY="0" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_07" x="4" y="475" w="124" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="125" oH="77"/>
+    <sprite n="EN_adult_mouth_08" x="422" y="270" w="125" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="125" oH="77"/>
+    <sprite n="EN_adult_nose_01" x="145" y="403" w="77" h="107" pX="0.5" pY="0.5" oX="5" oY="5" oW="83" oH="112"/>
+    <sprite n="EN_adult_nose_02" x="226" y="480" w="105" h="75" pX="0.5" pY="0.5" oX="6" oY="3" oW="83" oH="112" r="y"/>
+    <sprite n="EN_adult_nose_03" x="547" y="345" w="94" h="72" pX="0.5" pY="0.5" oX="3" oY="1" oW="83" oH="112" r="y"/>
+    <sprite n="EN_adult_nose_04" x="933" y="85" w="80" h="77" pX="0.5" pY="0.5" oX="0" oY="2" oW="83" oH="112" r="y"/>
+    <sprite n="EN_adult_nose_05" x="933" y="166" w="80" h="76" pX="0.5" pY="0.5" oX="0" oY="1" oW="83" oH="112" r="y"/>
+    <sprite n="EN_adult_pupil" x="169" y="283" w="15" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EN_adult_pupil_RARE" x="145" y="283" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="EN_adult_shadow" x="4" y="4" w="231" h="121" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_EN_adult_eyelids_01" x="696" y="375" w="67" h="65" pX="0.5" pY="0.5" oX="9" oY="9" oW="88" oH="88" r="y"/>
+    <sprite n="RARE_EN_adult_eyelids_02" x="418" y="409" w="67" h="65" pX="0.5" pY="0.5" oX="9" oY="9" oW="88" oH="88" r="y"/>
+    <sprite n="RARE_EN_adult_eyelids_03" x="767" y="419" w="67" h="65" pX="0.5" pY="0.5" oX="9" oY="9" oW="88" oH="88" r="y"/>
+    <sprite n="RARE_EN_adult_eyelids_04" x="489" y="421" w="67" h="65" pX="0.5" pY="0.5" oX="9" oY="9" oW="88" oH="88" r="y"/>
+    <sprite n="RARE_EN_adult_nose_01" x="698" y="132" w="77" h="119" pX="0.5" pY="0.5" oX="7" oY="5" oW="88" oH="140"/>
+    <sprite n="RARE_EN_adult_nose_02" x="905" y="326" w="115" h="75" pX="0.5" pY="0.5" oX="8" oY="3" oW="88" oH="140" r="y"/>
+    <sprite n="RARE_EN_adult_nose_03" x="4" y="543" w="105" h="72" pX="0.5" pY="0.5" oX="5" oY="1" oW="88" oH="140" r="y"/>
+    <sprite n="RARE_EN_adult_nose_04" x="145" y="321" w="89" h="78" pX="0.5" pY="0.5" oX="1" oY="2" oW="88" oH="140" r="y"/>
+    <sprite n="RARE_EN_adult_nose_05" x="933" y="4" w="85" h="77" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="140" r="y"/>
+    <sprite n="spore_EN" x="423" y="132" w="142" h="134" pX="0.5" pY="0.5" oX="17" oY="21" oW="172" oH="172"/>
+</TextureAtlas>

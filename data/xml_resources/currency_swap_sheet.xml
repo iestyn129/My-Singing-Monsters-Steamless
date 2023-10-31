@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4a86d644604c25394b8631e8bfd905dd:f7fdb1eb3e60c4989ffada017186bccc:8186af54facefd55c121a7c4ca2667d4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/currency_swap_sheet.png" width="256" height="256">
+    <sprite n="currency_swap" x="1" y="1" w="200" h="172" pX="0.5" pY="0.5" oX="55" oY="20" oW="288" oH="280"/>
+</TextureAtlas>

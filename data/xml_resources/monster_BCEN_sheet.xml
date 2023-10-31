@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3839f850f0689bf6532eb2e9e6a05ba6:b6ff645fbed738b8e094c01b4ac5d1f2:bf19cd513d3836d6f13fa13c53e0eb1e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCEN_sheet.png" width="2048" height="2048" hires="true">
+    <sprite n="arm_lower_l" x="278" y="1140" w="106" h="72" pX="0.5" pY="0.5" oX="3" oY="6" oW="112" oH="80"/>
+    <sprite n="arm_lower_l_RARE" x="386" y="1140" w="106" h="72" pX="0.5" pY="0.5" oX="3" oY="6" oW="112" oH="80"/>
+    <sprite n="arm_lower_r" x="494" y="1139" w="106" h="72" pX="0.5" pY="0.5" oX="3" oY="5" oW="112" oH="80"/>
+    <sprite n="arm_lower_r_RARE" x="699" y="1734" w="106" h="72" pX="0.5" pY="0.5" oX="3" oY="5" oW="112" oH="80"/>
+    <sprite n="arm_upper_l" x="987" y="1681" w="94" h="34" pX="0.5" pY="0.5" oX="0" oY="3" oW="96" oH="40"/>
+    <sprite n="arm_upper_l_RARE" x="777" y="628" w="94" h="34" pX="0.5" pY="0.5" oX="0" oY="3" oW="99" oH="40"/>
+    <sprite n="arm_upper_r" x="793" y="1682" w="95" h="34" pX="0.5" pY="0.5" oX="0" oY="4" oW="96" oH="40"/>
+    <sprite n="arm_upper_r_RARE" x="890" y="1682" w="95" h="34" pX="0.5" pY="0.5" oX="0" oY="4" oW="96" oH="40"/>
+    <sprite n="beard" x="807" y="1718" w="104" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="beard_RARE" x="913" y="1718" w="104" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="cheek_l_1" x="1202" y="1969" w="152" h="52" pX="0.5" pY="0.5" oX="75" oY="23" oW="128" oH="208" r="y"/>
+    <sprite n="cheek_l_1_RARE" x="906" y="819" w="52" h="152" pX="0.5" pY="0.5" oX="75" oY="23" oW="128" oH="208"/>
+    <sprite n="cheek_l_2" x="890" y="1974" w="154" h="70" pX="0.5" pY="0.5" oX="57" oY="23" oW="128" oH="208" r="y"/>
+    <sprite n="cheek_l_2_RARE" x="1046" y="1973" w="154" h="70" pX="0.5" pY="0.5" oX="57" oY="23" oW="128" oH="208" r="y"/>
+    <sprite n="cheek_l_3" x="709" y="1508" w="92" h="172" pX="0.5" pY="0.5" oX="35" oY="14" oW="128" oH="208"/>
+    <sprite n="cheek_l_3_RARE" x="803" y="1508" w="92" h="172" pX="0.5" pY="0.5" oX="35" oY="14" oW="128" oH="208"/>
+    <sprite n="cheek_l_4" x="739" y="668" w="105" h="192" pX="0.5" pY="0.5" oX="22" oY="6" oW="128" oH="208"/>
+    <sprite n="cheek_l_4_RARE" x="799" y="862" w="105" h="192" pX="0.5" pY="0.5" oX="22" oY="6" oW="128" oH="208"/>
+    <sprite n="cheek_l_5" x="498" y="885" w="123" h="201" pX="0.5" pY="0.5" oX="4" oY="4" oW="128" oH="208"/>
+    <sprite n="cheek_l_5_RARE" x="602" y="1088" w="201" h="123" pX="0.5" pY="0.5" oX="4" oY="4" oW="128" oH="208" r="y"/>
+    <sprite n="cheek_r_1" x="677" y="1" w="100" h="159" pX="0.5" pY="0.5" oX="2" oY="22" oW="200" oH="216"/>
+    <sprite n="cheek_r_1_RARE" x="677" y="162" w="100" h="159" pX="0.5" pY="0.5" oX="2" oY="22" oW="200" oH="216"/>
+    <sprite n="cheek_r_2" x="777" y="473" w="104" h="153" pX="0.5" pY="0.5" oX="3" oY="26" oW="200" oH="216"/>
+    <sprite n="cheek_r_2_RARE" x="846" y="664" w="104" h="153" pX="0.5" pY="0.5" oX="3" oY="26" oW="200" oH="216"/>
+    <sprite n="cheek_r_3" x="630" y="1390" w="154" h="116" pX="0.5" pY="0.5" oX="2" oY="25" oW="200" oH="216" r="y"/>
+    <sprite n="cheek_r_3_RARE" x="805" y="1056" w="116" h="154" pX="0.5" pY="0.5" oX="2" oY="25" oW="200" oH="216"/>
+    <sprite n="cheek_r_4" x="609" y="1213" w="154" h="175" pX="0.5" pY="0.5" oX="3" oY="17" oW="200" oH="216"/>
+    <sprite n="cheek_r_4_RARE" x="765" y="1213" w="154" h="175" pX="0.5" pY="0.5" oX="3" oY="17" oW="200" oH="216"/>
+    <sprite n="cheek_r_5" x="601" y="473" w="174" h="193" pX="0.5" pY="0.5" oX="2" oY="9" oW="200" oH="216"/>
+    <sprite n="cheek_r_5_RARE" x="623" y="879" w="174" h="193" pX="0.5" pY="0.5" oX="2" oY="9" oW="200" oH="216"/>
+    <sprite n="cheek_r_6" x="388" y="1" w="192" h="205" pX="0.5" pY="0.5" oX="3" oY="5" oW="200" oH="216"/>
+    <sprite n="cheek_r_6_RARE" x="388" y="208" w="192" h="205" pX="0.5" pY="0.5" oX="3" oY="5" oW="200" oH="216"/>
+    <sprite n="eyelids_1" x="1042" y="1491" w="93" h="162" pX="0.5" pY="0.5" oX="3" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_1_RARE" x="1121" y="1805" w="93" h="162" pX="0.5" pY="0.5" oX="3" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_2" x="921" y="1212" w="94" h="164" pX="0.5" pY="0.5" oX="2" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_2_RARE" x="833" y="1808" w="94" h="164" pX="0.5" pY="0.5" oX="2" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_3" x="929" y="1808" w="94" h="164" pX="0.5" pY="0.5" oX="2" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_3_RARE" x="1025" y="1807" w="94" h="164" pX="0.5" pY="0.5" oX="2" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_4" x="582" y="1" w="93" h="162" pX="0.5" pY="0.5" oX="3" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="eyelids_4_RARE" x="582" y="165" w="93" h="162" pX="0.5" pY="0.5" oX="3" oY="1" oW="168" oH="96" r="y"/>
+    <sprite n="hand_l_1" x="559" y="1509" w="148" h="223" pX="0.5" pY="0.5" oX="12" oY="23" oW="192" oH="252"/>
+    <sprite n="hand_l_1_RARE" x="328" y="1511" w="157" h="233" pX="0.5" pY="0.5" oX="3" oY="13" oW="192" oH="252"/>
+    <sprite n="hand_l_2" x="582" y="1814" w="123" h="220" pX="0.5" pY="0.5" oX="43" oY="25" oW="192" oH="252"/>
+    <sprite n="hand_l_2_RARE" x="374" y="1815" w="134" h="230" pX="0.5" pY="0.5" oX="32" oY="15" oW="192" oH="252"/>
+    <sprite n="hand_l_3" x="897" y="1508" w="143" h="171" pX="0.5" pY="0.5" oX="33" oY="73" oW="192" oH="252"/>
+    <sprite n="hand_l_4" x="510" y="1814" w="70" h="230" pX="0.5" pY="0.5" oX="110" oY="10" oW="192" oH="252"/>
+    <sprite n="hand_l_4_RARE" x="517" y="1213" w="90" h="227" pX="0.5" pY="0.5" oX="99" oY="13" oW="192" oH="252"/>
+    <sprite n="hand_l_5" x="415" y="908" w="81" h="229" pX="0.5" pY="0.5" oX="97" oY="6" oW="192" oH="252"/>
+    <sprite n="hand_l_5_RARE" x="243" y="1511" w="83" h="234" pX="0.5" pY="0.5" oX="97" oY="1" oW="192" oH="252"/>
+    <sprite n="hand_r_1" x="278" y="909" w="135" h="229" pX="0.5" pY="0.5" oX="12" oY="152" oW="156" oH="388"/>
+    <sprite n="hand_r_1_RARE" x="1" y="1815" w="150" h="231" pX="0.5" pY="0.5" oX="3" oY="152" oW="156" oH="389"/>
+    <sprite n="hand_r_2" x="707" y="1808" w="124" h="218" pX="0.5" pY="0.5" oX="9" oY="157" oW="156" oH="388"/>
+    <sprite n="hand_r_2_RARE" x="276" y="1815" w="96" h="231" pX="0.5" pY="0.5" oX="9" oY="159" oW="156" oH="390"/>
+    <sprite n="hand_r_3" x="484" y="680" w="105" h="203" pX="0.5" pY="0.5" oX="11" oY="149" oW="156" oH="388"/>
+    <sprite n="hand_r_4" x="487" y="1511" w="70" h="230" pX="0.5" pY="0.5" oX="3" oY="3" oW="156" oH="388"/>
+    <sprite n="hand_r_5" x="462" y="473" w="137" h="205" pX="0.5" pY="0.5" oX="8" oY="29" oW="156" oH="388"/>
+    <sprite n="hand_r_6" x="336" y="478" w="124" h="229" pX="0.5" pY="0.5" oX="19" oY="8" oW="156" oH="388"/>
+    <sprite n="head" x="1" y="478" w="333" h="429" pX="0.5" pY="0.5" oX="12" oY="6" oW="352" oH="440"/>
+    <sprite n="head_RARE" x="1" y="1" w="385" h="475" pX="0.5" pY="0.5" oX="7" oY="12" oW="400" oH="500"/>
+    <sprite n="mouth_1" x="388" y="415" w="173" h="56" pX="0.5" pY="0.5" oX="5" oY="15" oW="184" oH="160"/>
+    <sprite n="mouth_1_RARE" x="563" y="415" w="173" h="56" pX="0.5" pY="0.5" oX="5" oY="15" oW="184" oH="160"/>
+    <sprite n="mouth_2" x="243" y="1747" w="160" h="66" pX="0.5" pY="0.5" oX="7" oY="19" oW="184" oH="160"/>
+    <sprite n="mouth_2_RARE" x="405" y="1746" w="160" h="66" pX="0.5" pY="0.5" oX="7" oY="19" oW="184" oH="160"/>
+    <sprite n="mouth_3" x="1107" y="1655" w="99" h="148" pX="0.5" pY="0.5" oX="11" oY="19" oW="184" oH="160" r="y"/>
+    <sprite n="mouth_3_RARE" x="738" y="323" w="99" h="148" pX="0.5" pY="0.5" oX="11" oY="19" oW="184" oH="160" r="y"/>
+    <sprite n="mouth_4" x="923" y="1054" w="133" h="143" pX="0.5" pY="0.5" oX="21" oY="11" oW="184" oH="160"/>
+    <sprite n="mouth_4_RARE" x="1017" y="1199" w="133" h="143" pX="0.5" pY="0.5" oX="21" oY="11" oW="184" oH="160"/>
+    <sprite n="mouth_5" x="786" y="1390" w="99" h="116" pX="0.5" pY="0.5" oX="33" oY="22" oW="184" oH="160"/>
+    <sprite n="mouth_5_RARE" x="887" y="1390" w="99" h="116" pX="0.5" pY="0.5" oX="33" oY="22" oW="184" oH="160"/>
+    <sprite n="mouth_6" x="906" y="973" w="87" h="79" pX="0.5" pY="0.5" oX="41" oY="31" oW="184" oH="160" r="y"/>
+    <sprite n="mouth_6_RARE" x="1137" y="1573" w="87" h="79" pX="0.5" pY="0.5" oX="41" oY="31" oW="184" oH="160" r="y"/>
+    <sprite n="mouth_7" x="517" y="1442" w="111" h="65" pX="0.5" pY="0.5" oX="26" oY="31" oW="184" oH="160"/>
+    <sprite n="mouth_7_RARE" x="988" y="1378" w="65" h="111" pX="0.5" pY="0.5" oX="26" oY="31" oW="184" oH="160" r="y"/>
+    <sprite n="mustache_l_RARE" x="567" y="1734" w="68" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mustache_r_RARE" x="582" y="329" w="104" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="neck" x="1" y="1215" w="240" h="298" pX="0.5" pY="0.5" oX="8" oY="4" oW="256" oH="308"/>
+    <sprite n="neck_RARE" x="1" y="1515" w="240" h="298" pX="0.5" pY="0.5" oX="8" oY="5" oW="256" oH="308"/>
+    <sprite n="pupil_l" x="709" y="1682" w="40" h="42" pX="0.5" pY="0.5" oX="4" oY="4" oW="48" oH="48"/>
+    <sprite n="pupil_l_RARE" x="751" y="1682" w="40" h="42" pX="0.5" pY="0.5" oX="4" oY="4" oW="48" oH="48"/>
+    <sprite n="pupil_r" x="498" y="1088" w="44" h="44" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="pupil_r_RARE" x="544" y="1088" w="44" h="44" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="shadow" x="153" y="1815" w="121" h="231" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="shoulder" x="833" y="1974" w="55" h="71" pX="0.5" pY="0.5" oX="4" oY="5" oW="64" oH="80"/>
+    <sprite n="shoulder_RARE" x="637" y="1734" w="60" h="76" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="80"/>
+    <sprite n="spore_BCEN" x="1055" y="1344" w="131" h="133" pX="0.5" pY="0.5" oX="21" oY="24" oW="172" oH="172"/>
+    <sprite n="tail" x="336" y="709" w="146" h="197" pX="0.5" pY="0.5" oX="3" oY="1" oW="200" oH="152" r="y"/>
+    <sprite n="tail_RARE" x="591" y="680" w="146" h="197" pX="0.5" pY="0.5" oX="3" oY="1" oW="200" oH="152" r="y"/>
+    <sprite n="tail_tip" x="1137" y="1479" w="91" h="92" pX="0.5" pY="0.5" oX="8" oY="5" oW="104" oH="104"/>
+    <sprite n="tail_tip_RARE" x="1208" y="1654" w="91" h="92" pX="0.5" pY="0.5" oX="8" oY="5" oW="104" oH="104"/>
+    <sprite n="tail_tipfur_RARE" x="1019" y="1717" w="86" h="88" pX="0.5" pY="0.5" oX="1" oY="2" oW="90" oH="90" r="y"/>
+    <sprite n="tummy" x="243" y="1215" w="272" h="294" pX="0.5" pY="0.5" oX="1" oY="5" oW="280" oH="304"/>
+    <sprite n="tummy_RARE" x="1" y="909" w="275" h="304" pX="0.5" pY="0.5" oX="1" oY="0" oW="280" oH="304"/>
+</TextureAtlas>

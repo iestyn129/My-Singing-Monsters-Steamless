@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:eab146ba5c3a50304872361c8ce1f173:b4d1ce6857287baaf0c8233a8d560a6a:17b11d70d34f3f0f71ae62a1c4aae42b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ADEN_EPIC_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ADEN_body_back_EPIC" x="410" y="179" w="182" h="155" pX="0.5" pY="0.5" oX="7" oY="4" oW="170" oH="190" r="y"/>
+    <sprite n="ADEN_body_front_EPIC" x="663" y="329" w="176" h="150" pX="0.5" pY="0.5" oX="2" oY="4" oW="180" oH="160"/>
+    <sprite n="ADEN_bubble_01" x="1006" y="314" w="12" h="8" pX="0.5" pY="0.5" oX="17" oY="24" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_02" x="1006" y="299" w="12" h="11" pX="0.5" pY="0.5" oX="17" oY="21" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_03" x="1006" y="278" w="14" h="17" pX="0.5" pY="0.5" oX="15" oY="18" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_04" x="1005" y="402" w="15" h="20" pX="0.5" pY="0.5" oX="14" oY="17" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_05" x="816" y="483" w="22" h="16" pX="0.5" pY="0.5" oX="13" oY="16" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_06" x="972" y="402" w="29" h="27" pX="0.5" pY="0.5" oX="9" oY="5" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_07" x="614" y="740" w="31" h="30" pX="0.5" pY="0.5" oX="9" oY="1" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_08" x="577" y="740" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_09" x="540" y="714" w="33" h="33" pX="0.5" pY="0.5" oX="8" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_10" x="803" y="600" w="33" h="37" pX="0.5" pY="0.5" oX="6" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_11" x="803" y="556" w="35" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_12" x="105" y="657" w="43" h="33" pX="0.5" pY="0.5" oX="3" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_13" x="105" y="620" w="44" h="33" pX="0.5" pY="0.5" oX="2" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_14" x="482" y="643" w="47" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_15" x="1006" y="326" w="7" h="45" pX="0.5" pY="0.5" oX="0" oY="22" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_cheek" x="482" y="680" w="54" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_ember" x="593" y="698" w="39" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_eye" x="780" y="740" w="54" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_foot" x="781" y="696" w="53" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_hand_EPIC" x="657" y="556" w="70" h="67" pX="0.5" pY="0.5" oX="0" oY="2" oW="70" oH="70"/>
+    <sprite n="ADEN_head_EPIC" x="410" y="4" w="252" h="171" pX="0.5" pY="0.5" oX="14" oY="10" oW="280" oH="200"/>
+    <sprite n="ADEN_ice_frill_back_EPIC" x="843" y="329" w="34" h="43" pX="0.5" pY="0.5" oX="10" oY="10" oW="60" oH="60" r="y"/>
+    <sprite n="ADEN_ice_frill_EPIC" x="171" y="193" w="154" h="154" pX="0.5" pY="0.5" oX="4" oY="2" oW="160" oH="160"/>
+    <sprite n="ADEN_jaw" x="666" y="4" w="219" h="107" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_lava_blob_01" x="816" y="503" w="17" h="15" pX="0.5" pY="0.5" oX="13" oY="0" oW="30" oH="16"/>
+    <sprite n="ADEN_lava_blob_02" x="234" y="682" w="19" h="16" pX="0.5" pY="0.5" oX="11" oY="0" oW="30" oH="16"/>
+    <sprite n="ADEN_lava_blob_04" x="816" y="522" w="15" h="28" pX="0.5" pY="0.5" oX="2" oY="1" oW="30" oH="16" r="y"/>
+    <sprite n="ADEN_lava_blob_05" x="513" y="570" w="16" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_lava_left_01" x="931" y="402" w="37" h="27" pX="0.5" pY="0.5" oX="70" oY="45" oW="108" oH="108" r="y"/>
+    <sprite n="ADEN_lava_left_02" x="838" y="644" w="58" h="51" pX="0.5" pY="0.5" oX="49" oY="23" oW="108" oH="108" r="y"/>
+    <sprite n="ADEN_lava_left_03" x="4" y="748" w="77" h="70" pX="0.5" pY="0.5" oX="27" oY="8" oW="108" oH="108" r="y"/>
+    <sprite n="ADEN_lava_left_04" x="323" y="480" w="79" h="75" pX="0.5" pY="0.5" oX="16" oY="13" oW="108" oH="108" r="y"/>
+    <sprite n="ADEN_lava_left_05" x="322" y="559" w="78" h="71" pX="0.5" pY="0.5" oX="13" oY="16" oW="108" oH="108" r="y"/>
+    <sprite n="ADEN_lava_left_06" x="660" y="483" w="74" h="69" pX="0.5" pY="0.5" oX="10" oY="28" oW="108" oH="108"/>
+    <sprite n="ADEN_lava_left_07" x="738" y="483" w="74" h="69" pX="0.5" pY="0.5" oX="10" oY="29" oW="108" oH="108"/>
+    <sprite n="ADEN_lava_left_08" x="404" y="614" w="74" h="69" pX="0.5" pY="0.5" oX="10" oY="29" oW="108" oH="108"/>
+    <sprite n="ADEN_lava_right_01" x="513" y="536" w="16" h="30" pX="0.5" pY="0.5" oX="82" oY="43" oW="120" oH="120"/>
+    <sprite n="ADEN_lava_right_02" x="880" y="402" w="47" h="27" pX="0.5" pY="0.5" oX="71" oY="30" oW="120" oH="120" r="y"/>
+    <sprite n="ADEN_lava_right_03" x="842" y="594" w="67" h="46" pX="0.5" pY="0.5" oX="52" oY="17" oW="120" oH="120" r="y"/>
+    <sprite n="ADEN_lava_right_04" x="596" y="264" w="63" h="75" pX="0.5" pY="0.5" oX="35" oY="10" oW="120" oH="120"/>
+    <sprite n="ADEN_lava_right_05" x="596" y="179" w="65" h="81" pX="0.5" pY="0.5" oX="31" oY="14" oW="120" oH="120"/>
+    <sprite n="ADEN_lava_right_06" x="4" y="673" w="85" h="71" pX="0.5" pY="0.5" oX="25" oY="20" oW="120" oH="120" r="y"/>
+    <sprite n="ADEN_lava_right_07" x="319" y="634" w="72" h="67" pX="0.5" pY="0.5" oX="24" oY="40" oW="120" oH="120"/>
+    <sprite n="ADEN_lava_right_08" x="533" y="480" w="58" h="73" pX="0.5" pY="0.5" oX="23" oY="50" oW="120" oH="120" r="y"/>
+    <sprite n="ADEN_lava_right_09" x="533" y="338" w="59" h="72" pX="0.5" pY="0.5" oX="24" oY="50" oW="120" oH="120" r="y"/>
+    <sprite n="ADEN_left_lid_01" x="719" y="735" w="57" h="57" pX="0.5" pY="0.5" oX="5" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_02" x="533" y="619" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_03" x="93" y="694" w="55" h="58" pX="0.5" pY="0.5" oX="4" oY="2" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_04" x="731" y="613" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_05" x="657" y="627" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_06" x="595" y="637" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_07" x="719" y="674" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_08" x="657" y="688" w="58" h="57" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_lower_arm" x="4" y="620" w="97" h="49" pX="0.5" pY="0.5" oX="5" oY="0" oW="102" oH="49"/>
+    <sprite n="ADEN_lower_leg" x="793" y="641" w="41" h="51" pX="0.5" pY="0.5" oX="0" oY="3" oW="41" oH="54"/>
+    <sprite n="ADEN_middle_lid_01" x="900" y="655" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_02" x="838" y="699" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_03" x="959" y="656" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_04" x="897" y="714" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_05" x="838" y="758" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_06" x="956" y="715" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_07" x="897" y="773" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_middle_lid_08" x="956" y="774" w="55" h="55" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="60"/>
+    <sprite n="ADEN_nose__big_base_EPIC" x="666" y="115" w="211" h="210" pX="0.5" pY="0.5" oX="14" oY="16" oW="240" oH="240"/>
+    <sprite n="ADEN_nose__bubble_01" x="540" y="680" w="49" h="30" pX="0.5" pY="0.5" oX="132" oY="91" oW="180" oH="180" r="y"/>
+    <sprite n="ADEN_nose__bubble_02" x="843" y="376" w="33" h="53" pX="0.5" pY="0.5" oX="129" oY="88" oW="180" oH="180"/>
+    <sprite n="ADEN_nose__bubble_03" x="596" y="466" w="60" h="43" pX="0.5" pY="0.5" oX="120" oY="83" oW="180" oH="180" r="y"/>
+    <sprite n="ADEN_nose__bubble_04" x="731" y="556" w="68" h="53" pX="0.5" pY="0.5" oX="110" oY="77" oW="180" oH="180" r="y"/>
+    <sprite n="ADEN_nose__bubble_05" x="152" y="682" w="78" h="69" pX="0.5" pY="0.5" oX="93" oY="69" oW="180" oH="180" r="y"/>
+    <sprite n="ADEN_nose__bubble_06" x="153" y="581" w="100" h="97" pX="0.5" pY="0.5" oX="65" oY="51" oW="180" oH="180" r="y"/>
+    <sprite n="ADEN_nose__bubble_07" x="881" y="278" w="121" h="120" pX="0.5" pY="0.5" oX="41" oY="34" oW="180" oH="180"/>
+    <sprite n="ADEN_nose__bubble_08" x="881" y="140" w="138" h="134" pX="0.5" pY="0.5" oX="24" oY="23" oW="180" oH="180"/>
+    <sprite n="ADEN_nose__bubble_09" x="4" y="352" w="145" h="143" pX="0.5" pY="0.5" oX="17" oY="16" oW="180" oH="180"/>
+    <sprite n="ADEN_nose__bubble_10" x="171" y="351" w="148" h="148" pX="0.5" pY="0.5" oX="14" oY="12" oW="180" oH="180"/>
+    <sprite n="ADEN_nose_big_nostril_EPIC" x="843" y="433" w="163" h="157" pX="0.5" pY="0.5" oX="35" oY="27" oW="240" oH="240"/>
+    <sprite n="ADEN_nose_big_nostril_glow_EPIC" x="4" y="193" w="163" h="155" pX="0.5" pY="0.5" oX="35" oY="28" oW="240" oH="240"/>
+    <sprite n="ADEN_nostril_base_left" x="889" y="4" w="128" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_nostril_base_right" x="4" y="499" w="145" h="117" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_left_01" x="406" y="536" w="103" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_left_02" x="153" y="503" w="103" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_right_01" x="329" y="193" w="77" h="115" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_nostril_right_02" x="329" y="312" w="77" h="115" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_pupil_left" x="513" y="604" w="16" h="24" pX="0.5" pY="0.5" oX="1" oY="7" oW="22" oH="31"/>
+    <sprite n="ADEN_pupil_middle" x="482" y="614" w="27" h="25" pX="0.5" pY="0.5" oX="6" oY="1" oW="31" oH="29" r="y"/>
+    <sprite n="ADEN_pupil_right" x="649" y="749" w="28" h="25" pX="0.5" pY="0.5" oX="6" oY="1" oW="31" oH="29" r="y"/>
+    <sprite n="ADEN_right_lid_01" x="913" y="594" w="58" h="57" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_02" x="260" y="503" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_03" x="260" y="565" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_04" x="257" y="627" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_05" x="595" y="513" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_06" x="533" y="557" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_07" x="257" y="689" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_08" x="595" y="575" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_shadow_EPIC" x="4" y="4" w="402" h="185" pX="0.5" pY="0.5" oX="19" oY="15" oW="440" oH="200"/>
+    <sprite n="ADEN_tail_EPIC" x="533" y="414" w="59" h="62" pX="0.5" pY="0.5" oX="3" oY="1" oW="70" oH="60" r="y"/>
+    <sprite n="ADEN_upper_arm" x="323" y="431" w="83" h="45" pX="0.5" pY="0.5" oX="0" oY="12" oW="83" oH="57"/>
+    <sprite n="ADEN_upper_leg" x="975" y="594" w="40" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_water_01" x="410" y="338" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="ADEN_water_02" x="410" y="404" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="ADEN_water_03" x="596" y="343" w="62" h="119" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63" r="y"/>
+    <sprite n="ADEN_water_04" x="410" y="470" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+</TextureAtlas>

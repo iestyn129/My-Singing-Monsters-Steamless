@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:126f0179a315458af8890c3a3de98cda:df0c8e57711d73ed618f66b479dd5453:6778a672ba8928ac976d855f41a4f8ce$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/context_buttons.png" width="1024" height="1024">
+    <sprite n="button_activities" x="509" y="224" w="114" h="108" pX="0.5" pY="0.5" oX="8" oY="11" oW="130" oH="130"/>
+    <sprite n="button_ascension" x="723" y="504" w="107" h="98" pX="0.5" pY="0.5" oX="16" oY="6" oW="130" oH="130" r="y"/>
+    <sprite n="button_back" x="325" y="742" w="101" h="68" pX="0.5" pY="0.5" oX="20" oY="35" oW="140" oH="140"/>
+    <sprite n="button_bake" x="221" y="711" w="102" h="90" pX="0.5" pY="0.5" oX="26" oY="23" oW="140" oH="140" r="y"/>
+    <sprite n="button_base_grey" x="261" y="2" w="124" h="116" pX="0.5" pY="0.5" oX="7" oY="3" oW="130" oH="130" r="y"/>
+    <sprite n="button_battle" x="406" y="812" w="87" h="81" pX="0.5" pY="0.5" oX="21" oY="21" oW="130" oH="130"/>
+    <sprite n="button_box_monster" x="133" y="2" w="126" h="106" pX="0.5" pY="0.5" oX="4" oY="16" oW="130" oH="130"/>
+    <sprite n="button_breed" x="2" y="920" w="92" h="97" pX="0.5" pY="0.5" oX="22" oY="29" oW="140" oH="140" r="y"/>
+    <sprite n="button_breedpromoeth" x="447" y="647" w="102" h="97" pX="0.5" pY="0.5" oX="12" oY="20" oW="130" oH="130"/>
+    <sprite n="button_breedpromomyth" x="462" y="547" w="104" h="98" pX="0.5" pY="0.5" oX="11" oY="20" oW="130" oH="130"/>
+    <sprite n="button_bulb_off" x="230" y="539" w="109" h="73" pX="0.5" pY="0.5" oX="32" oY="22" oW="140" oH="140" r="y"/>
+    <sprite n="button_bulb_on" x="115" y="562" w="109" h="73" pX="0.5" pY="0.5" oX="32" oY="22" oW="140" oH="140" r="y"/>
+    <sprite n="button_buy_all" x="512" y="106" w="120" h="116" pX="0.5" pY="0.5" oX="7" oY="6" oW="130" oH="130"/>
+    <sprite n="button_buy_another" x="237" y="429" w="111" h="108" pX="0.5" pY="0.5" oX="8" oY="16" oW="130" oH="130"/>
+    <sprite n="button_buy_spore" x="611" y="402" w="110" h="104" pX="0.5" pY="0.5" oX="18" oY="24" oW="140" oH="140"/>
+    <sprite n="button_buy_vessel" x="637" y="2" w="123" h="87" pX="0.5" pY="0.5" oX="42" oY="6" oW="140" oH="140" r="y"/>
+    <sprite n="button_clear" x="480" y="441" w="110" h="104" pX="0.5" pY="0.5" oX="18" oY="18" oW="140" oH="140" r="y"/>
+    <sprite n="button_collect" x="568" y="613" w="103" h="93" pX="0.5" pY="0.5" oX="18" oY="28" oW="140" oH="140"/>
+    <sprite n="button_collect_relic" x="2" y="641" w="104" h="92" pX="0.5" pY="0.5" oX="18" oY="26" oW="140" oH="140"/>
+    <sprite n="button_collect_shard" x="332" y="650" w="102" h="90" pX="0.5" pY="0.5" oX="19" oY="28" oW="140" oH="140"/>
+    <sprite n="button_collectall" x="833" y="423" w="107" h="100" pX="0.5" pY="0.5" oX="16" oY="6" oW="130" oH="130" r="y"/>
+    <sprite n="button_colossal_conundrum" x="96" y="920" w="87" h="97" pX="0.5" pY="0.5" oX="17" oY="22" oW="130" oH="130" r="y"/>
+    <sprite n="button_colossus_awaken" x="767" y="709" w="90" h="88" pX="0.5" pY="0.5" oX="21" oY="20" oW="130" oH="130" r="y"/>
+    <sprite n="button_colossus_sleep" x="661" y="748" w="90" h="88" pX="0.5" pY="0.5" oX="21" oY="20" oW="130" oH="130" r="y"/>
+    <sprite n="button_compose" x="122" y="345" w="113" h="107" pX="0.5" pY="0.5" oX="15" oY="8" oW="130" oH="130"/>
+    <sprite n="button_contents" x="2" y="229" w="120" h="80" pX="0.5" pY="0.5" oX="9" oY="34" oW="140" oH="140"/>
+    <sprite n="button_create" x="497" y="334" w="112" h="105" pX="0.5" pY="0.5" oX="17" oY="23" oW="140" oH="140"/>
+    <sprite n="button_evolve" x="2" y="429" w="113" h="107" pX="0.5" pY="0.5" oX="12" oY="9" oW="130" oH="130" r="y"/>
+    <sprite n="button_evolve_both" x="752" y="222" w="113" h="98" pX="0.5" pY="0.5" oX="12" oY="6" oW="130" oH="130" r="y"/>
+    <sprite n="button_feed" x="387" y="2" w="123" h="112" pX="0.5" pY="0.5" oX="14" oY="14" oW="140" oH="140" r="y"/>
+    <sprite n="button_finish" x="117" y="454" w="111" h="106" pX="0.5" pY="0.5" oX="10" oY="14" oW="140" oH="140"/>
+    <sprite n="button_finish_video" x="886" y="2" w="118" h="114" pX="0.5" pY="0.5" oX="3" oY="6" oW="140" oH="140"/>
+    <sprite n="button_flip" x="698" y="604" w="104" h="68" pX="0.5" pY="0.5" oX="16" oY="39" oW="140" oH="140"/>
+    <sprite n="button_friends" x="832" y="525" w="106" h="96" pX="0.5" pY="0.5" oX="19" oY="29" oW="140" oH="140"/>
+    <sprite n="button_fuse" x="637" y="91" w="121" h="111" pX="0.5" pY="0.5" oX="8" oY="11" oW="140" oH="140"/>
+    <sprite n="button_home" x="314" y="812" w="90" h="81" pX="0.5" pY="0.5" oX="19" oY="25" oW="130" oH="130"/>
+    <sprite n="button_hotel" x="942" y="424" w="80" h="90" pX="0.5" pY="0.5" oX="23" oY="17" oW="130" oH="130"/>
+    <sprite n="button_index" x="592" y="508" w="104" h="103" pX="0.5" pY="0.5" oX="12" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_info" x="495" y="773" w="72" h="92" pX="0.5" pY="0.5" oX="36" oY="28" oW="140" oH="140"/>
+    <sprite n="button_info2" x="963" y="326" w="46" h="96" pX="0.5" pY="0.5" oX="41" oY="19" oW="130" oH="130"/>
+    <sprite n="button_inventory" x="387" y="116" w="120" h="116" pX="0.5" pY="0.5" oX="7" oY="6" oW="130" oH="130"/>
+    <sprite n="button_jukebox" x="341" y="550" w="104" h="98" pX="0.5" pY="0.5" oX="16" oY="13" oW="130" oH="130" r="y"/>
+    <sprite n="button_light_torch" x="374" y="895" w="68" h="94" pX="0.5" pY="0.5" oX="30" oY="16" oW="130" oH="130"/>
+    <sprite n="button_light_torch_highlight" x="762" y="2" w="122" h="122" pX="0.5" pY="0.5" oX="0" oY="5" oW="130" oH="130"/>
+    <sprite n="button_light_torch_infinite" x="2" y="825" w="97" h="93" pX="0.5" pY="0.5" oX="18" oY="17" oW="130" oH="130"/>
+    <sprite n="button_light_torch_unhighlight" x="444" y="895" w="68" h="94" pX="0.5" pY="0.5" oX="30" oY="16" oW="130" oH="130"/>
+    <sprite n="button_logout" x="279" y="896" w="93" h="95" pX="0.5" pY="0.5" oX="22" oY="18" oW="130" oH="130"/>
+    <sprite n="button_map" x="105" y="820" w="98" h="95" pX="0.5" pY="0.5" oX="22" oY="29" oW="140" oH="140"/>
+    <sprite n="button_market" x="226" y="614" w="104" h="95" pX="0.5" pY="0.5" oX="25" oY="25" oW="140" oH="140" r="y"/>
+    <sprite n="button_memory" x="723" y="412" w="108" h="90" pX="0.5" pY="0.5" oX="10" oY="20" oW="130" oH="130"/>
+    <sprite n="button_microphone" x="185" y="917" w="92" h="96" pX="0.5" pY="0.5" oX="17" oY="16" oW="130" oH="130"/>
+    <sprite n="button_monsters" x="237" y="347" w="112" h="80" pX="0.5" pY="0.5" oX="9" oY="24" oW="130" oH="130"/>
+    <sprite n="button_move" x="2" y="735" w="101" h="88" pX="0.5" pY="0.5" oX="27" oY="25" oW="140" oH="140" r="y"/>
+    <sprite n="button_mute" x="381" y="234" w="114" h="108" pX="0.5" pY="0.5" oX="14" oY="16" oW="140" oH="140" r="y"/>
+    <sprite n="button_next" x="940" y="606" w="82" h="80" pX="0.5" pY="0.5" oX="22" oY="23" oW="130" oH="130"/>
+    <sprite n="button_no" x="942" y="516" w="80" h="88" pX="0.5" pY="0.5" oX="30" oY="30" oW="140" oH="140"/>
+    <sprite n="button_options" x="601" y="890" w="86" h="88" pX="0.5" pY="0.5" oX="29" oY="32" oW="140" oH="140"/>
+    <sprite n="button_perm_megafy" x="259" y="120" w="120" h="115" pX="0.5" pY="0.5" oX="8" oY="5" oW="130" oH="130"/>
+    <sprite n="button_place" x="512" y="2" w="123" h="102" pX="0.5" pY="0.5" oX="20" oY="14" oW="140" oH="140" r="y"/>
+    <sprite n="button_power_up" x="634" y="204" w="116" h="106" pX="0.5" pY="0.5" oX="13" oY="1" oW="130" oH="130" r="y"/>
+    <sprite n="button_purchase_promo_old" x="2" y="125" w="124" h="102" pX="0.5" pY="0.5" oX="11" oY="4" oW="130" oH="130" r="y"/>
+    <sprite n="button_replay" x="760" y="126" w="117" h="94" pX="0.5" pY="0.5" oX="8" oY="22" oW="130" oH="130"/>
+    <sprite n="button_report" x="569" y="800" w="89" h="88" pX="0.5" pY="0.5" oX="21" oY="21" oW="130" oH="130"/>
+    <sprite n="button_retry" x="898" y="688" w="92" h="83" pX="0.5" pY="0.5" oX="24" oY="21" oW="130" oH="130" r="y"/>
+    <sprite n="button_revive" x="886" y="118" w="118" h="100" pX="0.5" pY="0.5" oX="4" oY="7" oW="130" oH="130"/>
+    <sprite n="button_scratch" x="804" y="623" w="92" h="84" pX="0.5" pY="0.5" oX="17" oY="24" oW="130" oH="130"/>
+    <sprite n="button_sell" x="514" y="890" w="85" h="89" pX="0.5" pY="0.5" oX="24" oY="33" oW="140" oH="140" r="y"/>
+    <sprite n="button_sell_relics" x="673" y="674" w="92" h="72" pX="0.5" pY="0.5" oX="30" oY="24" oW="130" oH="130" r="y"/>
+    <sprite n="button_sell_shard" x="115" y="637" w="104" h="94" pX="0.5" pY="0.5" oX="19" oY="29" oW="140" oH="140"/>
+    <sprite n="button_storage" x="853" y="326" w="108" h="95" pX="0.5" pY="0.5" oX="18" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_teleport" x="250" y="237" w="114" h="108" pX="0.5" pY="0.5" oX="10" oY="11" oW="130" oH="130" r="y"/>
+    <sprite n="button_temp_megafy" x="128" y="228" w="120" h="115" pX="0.5" pY="0.5" oX="8" oY="5" oW="130" oH="130"/>
+    <sprite n="button_thumbsdown" x="740" y="322" w="111" h="88" pX="0.5" pY="0.5" oX="20" oY="19" oW="130" oH="130" r="y"/>
+    <sprite n="button_thumbsup" x="625" y="312" w="113" h="88" pX="0.5" pY="0.5" oX="18" oY="3" oW="130" oH="130" r="y"/>
+    <sprite n="button_time_warp" x="2" y="538" w="111" h="101" pX="0.5" pY="0.5" oX="21" oY="20" oW="140" oH="140" r="y"/>
+    <sprite n="button_to_nursery" x="133" y="110" w="124" h="116" pX="0.5" pY="0.5" oX="8" oY="6" oW="130" oH="130" r="y"/>
+    <sprite n="button_tribal" x="350" y="446" w="110" h="102" pX="0.5" pY="0.5" oX="13" oY="13" oW="130" oH="130" r="y"/>
+    <sprite n="button_tribal_select" x="366" y="344" w="112" h="100" pX="0.5" pY="0.5" oX="14" oY="7" oW="130" oH="130" r="y"/>
+    <sprite n="button_un_megafy" x="2" y="2" w="129" h="121" pX="0.5" pY="0.5" oX="0" oY="3" oW="130" oH="130"/>
+    <sprite n="button_unmute" x="2" y="311" w="118" h="116" pX="0.5" pY="0.5" oX="14" oY="14" oW="140" oH="140"/>
+    <sprite n="button_upgrade" x="879" y="220" w="113" h="104" pX="0.5" pY="0.5" oX="20" oY="15" oW="140" oH="140" r="y"/>
+    <sprite n="button_wakeup" x="108" y="733" w="102" h="85" pX="0.5" pY="0.5" oX="26" oY="18" oW="140" oH="140" r="y"/>
+    <sprite n="button_wheel" x="212" y="803" w="100" h="91" pX="0.5" pY="0.5" oX="21" oY="12" oW="130" oH="130" r="y"/>
+    <sprite n="button_yes" x="569" y="708" w="90" h="90" pX="0.5" pY="0.5" oX="26" oY="29" oW="140" oH="140"/>
+</TextureAtlas>

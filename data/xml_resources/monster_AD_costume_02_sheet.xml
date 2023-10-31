@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8980206e2caecc565174472c2ade628c:b3b632f47b42da59f8c81d8b1411dafd:6001fe388dff5ecf6e3f1a372411f850$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AD_costume_02_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (56, 34) -> new anchor (24, 55) diff = (32, -21)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (68, -41), because hires-->
+    <sprite n="AD_left_hat.png" x="2" y="94" w="109" h="125" pX="0.5" pY="0.5" oX="68" oY="-41" oW="130" oH="110" r="y"/>
+
+	<!-- original anchor = (34, 24) -> new anchor (45, 48) diff = (-11, -24)-->
+	<!-- add double it to texturepacker output offsets (0, 5) -> (-22, -43), because hires-->
+    <sprite n="AD_right_hat.png" x="2" y="2" w="156" h="90" pX="0.5" pY="0.5" oX="-22" oY="-43" oW="160" oH="100"/>
+</TextureAtlas>

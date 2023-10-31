@@ -1,0 +1,131 @@
+<template name="template_storecrosspitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="FrameSprite" />
+	
+	<event name="hideItem" params="element">
+
+		element["FrameSprite"]("visible"):SetInt(0)
+		element["Icon"]["Sprite"]("visible"):SetInt(0)
+
+		element["ButtonText"]["Text"]("alpha"):SetFloat(0.0)
+		
+		element["Touch"]("enabled"):SetInt(0)
+	
+	</event>
+	
+	<event name="showItem" params="element">
+		element["FrameSprite"]("visible"):SetInt(1)
+		element["Icon"]["Sprite"]("visible"):SetInt(1)
+		
+		element["ButtonText"]["Text"]("alpha"):SetFloat(1.0)
+	
+		element["Touch"]("enabled"):SetInt(1)
+		
+	</event>
+	
+	<spriteSheetComponent name="FrameSprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("menu_market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+			component("layer"):SetString("HUD")
+			component("useOffsets"):SetInt(1)
+			component("size"):SetFloat(0.5*game.menuScaleX())
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="Icon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*2*game.menuScaleX()" yOffset="-18" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				--component("spriteName"):SetString("gfx/menu/store_button_amazon")
+				if(element:parent()("AnimationName"):GetString() ~= "") then
+					component("spriteName"):SetString(element:parent()("AnimationName"):GetString())
+				else
+					component:setSprite(store:mainImage(element:parent()("ID"):GetInt()))
+				end
+				
+				component("layer"):SetString("HUD")
+				component:setScale(Vector2(0.5*game.menuScaleX(),0.5*game.menuScaleX()))
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="ButtonBackground">
+		<size w="(35+35+100)*game.menuScaleX()" h="(30+30+2)*game.menuScaleX()" />
+		<position relativeTo="element:parent()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="100*game.menuScaleX()" h="2*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(0)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(35.0)
+				component("rightWidth"):SetFloat(35.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/button_green_gem")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<event name="onPostInit" params="element">
+			element("yOffset"):SetFloat(-element["Sprite"]("bottomHeight"):GetFloat()/2*game.menuScaleX())
+		</event>
+	</element>
+	
+	<element name="ButtonText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="ButtonBackground" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="100*game.menuScaleX()" h="62*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(element:parent()("Action"):GetString())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+			component("realStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(x - component("touchStart"):GetInt()) )
+			component("touchStart"):SetInt(x)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(x)	
+			component("realStart"):SetInt(x)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+			
+				if(math.abs(component("touchStart"):GetInt() - component("realStart"):GetInt()) < 10.0) then
+					store:SelectItem(element:name())
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+					component("realStart"):SetInt(0)
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+</template>

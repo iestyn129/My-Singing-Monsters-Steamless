@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2c014a053424622bb536b57a39e93c3f:398b859cb1bc8753c3659a026d0ec509:f25cee04988f5b9aacb0bca709e49213$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_DEN_costume_01_sheet.png" width="512" height="1024" hires="true">
+    <!-- original anchor = (40, 17) -> new anchor (63, 60) diff = (-23, -43)-->
+	<!-- add double it to texturepacker output offsets (5, 19) -> (-41, -67), because hires-->
+    <sprite n="DEN_costume_01_boot_left.png" x="233" y="559" w="189" h="162" pX="0.5" pY="0.5" oX="-41" oY="-67" oW="200" oH="200"/>
+    
+    <!-- original anchor = (20, 19) -> new anchor (44, 62) diff = (-24, -43)-->
+	<!-- add double it to texturepacker output offsets (13, 0) -> (-35, -86), because hires-->
+    <sprite n="DEN_costume_01_boot_right.png" x="233" y="384" w="199" h="173" pX="0.5" pY="0.5" oX="-35" oY="-86" oW="200" oH="200" r="y"/>
+    
+    <!-- original anchor = (66, 139) -> new anchor (-33, 46) diff = (99, 93)-->
+	<!-- add double it to texturepacker output offsets (9, 0) -> (207, 186), because hires-->
+    <sprite n="DEN_costume_01_lasso_fg.png" x="434" y="384" w="62" h="159" pX="0.5" pY="0.5" oX="207" oY="186" oW="80" oH="160"/>
+    
+    <!-- original anchor = (56, 5) -> new anchor (63, 18) diff = (-7, -13)-->
+	<!-- add double it to texturepacker output offsets (5, 6) -> (-9, -20), because hires-->
+    <sprite n="DEN_costume_01_mustache.png" x="2" y="384" w="229" h="187" pX="0.5" pY="0.5" oX="-9" oY="-20" oW="240" oH="200"/>
+
+    <!-- original anchor = (66, 139) -> new anchor (99, 185) diff = (-33, -46)-->
+	<!-- add double it to texturepacker output offsets (10, 10) -> (-56, -82), because hires-->
+    <sprite n="DEN_costume_01_torso.png" x="2" y="2" w="479" h="380" pX="0.5" pY="0.5" oX="-56" oY="-82" oW="400" oH="500" r="y"/>
+</TextureAtlas>

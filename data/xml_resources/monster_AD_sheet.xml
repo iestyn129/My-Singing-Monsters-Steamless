@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9040dba0ff2c2349392a4f83c30feba7:f6bb73c03b14c1119ea93a0836f2179f:7f579eb0a733f4e2ce3bc605001f4189$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AD_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="AD_body" x="786" y="84" w="150" h="116" pX="0.5" pY="0.5"/>
+    <sprite n="AD_body_RARE" x="786" y="202" w="150" h="116" pX="0.5" pY="0.5"/>
+    <sprite n="AD_hook_RARE" x="722" y="170" w="18" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_a" x="570" y="504" w="98" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_aflat" x="524" y="252" w="52" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_b" x="2" y="216" w="106" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_bflat" x="722" y="240" w="60" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_c1" x="580" y="244" w="108" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_c2" x="782" y="320" w="108" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_d" x="110" y="216" w="106" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_dflat" x="948" y="2" w="68" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_e" x="2" y="384" w="98" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_eflat" x="722" y="278" w="60" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_f" x="102" y="384" w="78" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_g" x="2" y="456" w="78" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_keyboard_gflat" x="524" y="294" w="48" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_eyeback" x="148" y="540" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_eyelid_1" x="676" y="332" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_eyelid_2" x="880" y="468" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_eyelid_3" x="524" y="340" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_eyelid_4" x="878" y="504" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_hair_RARE" x="914" y="530" w="100" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_head" x="588" y="76" w="152" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_head_RARE" x="426" y="158" w="152" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neck_1" x="948" y="38" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neck_2" x="182" y="420" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neck_3" x="82" y="458" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neck_4" x="2" y="530" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neck_5" x="248" y="420" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_neckruff" x="722" y="316" w="58" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_wing" x="892" y="320" w="34" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_left_wing_RARE" x="742" y="76" w="42" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="AD_poolbase" x="2" y="2" w="422" h="212" pX="0.5" pY="0.5"/>
+    <sprite n="AD_pupil" x="722" y="190" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="AD_rack_RARE" x="938" y="176" w="82" h="174" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_eyeback" x="512" y="506" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_eyelid_1" x="878" y="540" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_eyelid_2" x="878" y="576" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_eyelid_3" x="512" y="434" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_eyelid_4" x="512" y="470" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_hair_RARE" x="928" y="352" w="78" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_head" x="426" y="2" w="178" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_head_RARE" x="606" y="2" w="178" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neck_1" x="314" y="420" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neck_2" x="380" y="456" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neck_3" x="446" y="456" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neck_4" x="512" y="576" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neck_5" x="578" y="576" w="64" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_neckruff" x="512" y="376" w="58" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_wing" x="880" y="394" w="34" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_right_wing_RARE" x="742" y="158" w="42" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="AD_ripple" x="786" y="2" w="160" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="AD_spare_RARE" x="690" y="244" w="30" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="AD_spare_shadow_RARE" x="548" y="434" w="20" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="AD_spare_used_RARE" x="148" y="458" w="32" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="AD_tail" x="580" y="170" w="140" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AD_tail_RARE" x="426" y="76" w="160" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="bug_01_01" x="218" y="216" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_01_02" x="320" y="216" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_02_01" x="422" y="252" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_02_02" x="574" y="300" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_03_01" x="676" y="374" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_03_02" x="778" y="376" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_04_01" x="916" y="428" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_04_02" x="2" y="282" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_05_01" x="104" y="282" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_05_02" x="206" y="318" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_06_01" x="308" y="318" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_06_02" x="410" y="354" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_07_01" x="572" y="402" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_07_02" x="674" y="476" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="bug_shadow" x="776" y="478" w="100" h="100" pX="0.5" pY="0.5"/>
+</TextureAtlas>

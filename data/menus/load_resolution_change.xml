@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+
+	<element name="TopElement">
+		<size dependentOnElement="element:name()" dependentOnComponent="blackout"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />		
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+		</touchComponent>
+		<spriteComponent name="blackout">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				
+				component("layer"):SetString("Loading")
+			</event>
+		</spriteComponent>		
+		<element name="LoaderElement">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+			<spriteComponent name="LoaderBG" >
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+				<event name="onInit" params="component, element" >
+					component("spriteName"):SetString("gfx/loadbar_bg")
+					component("layer"):SetString("Loading")
+					component("size"):SetFloat(game.hudScale() * 0.5)
+				</event>
+			</spriteComponent>
+			<spriteComponent name="Loader" >
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element" >
+					component("spriteName"):SetString("gfx/loadbar")
+					component("layer"):SetString("Loading")
+					component("size"):SetFloat(game.hudScale() * 0.5)
+				</event>
+			</spriteComponent>
+		</element>
+		<event name="updateLoader" params="element, completion, state">
+			local loader = element:GetElement("LoaderElement"):GetComponent("Loader")
+			local width = loader("width"):GetInt()
+
+			if(state == 0) then
+				loader("maskW"):SetFloat(0)
+			elseif(state == 1) then
+				loader("maskW"):SetFloat(width * (completion * 0.25))
+			elseif(state == 2) then
+				loader("maskW"):SetFloat(width * (0.25 + (completion * 0.75)))
+			elseif(state == 3) then
+				loader("maskW"):SetFloat(width)
+			end
+		</event>
+	</element>
+		
+</menu>

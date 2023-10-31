@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1ad8a9ab6fb9c6cd4b9276c698cd1796:d8855b4067a17c79b4931b13684b8fef:b58770bd1c1deeccd376f43f711220e3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_C_sheet.png" width="512" height="512" hires="true">
+    <sprite n="C_body" x="2" y="112" w="192" h="180" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_body_RARE" x="248" y="2" w="200" h="171" pX="0.5" pY="0.5" oX="0" oY="0" oW="172" oH="200" r="y"/>
+    <sprite n="C_eyeback" x="450" y="2" w="54" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_eyelid1" x="2" y="344" w="66" h="118" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_eyelid2" x="70" y="344" w="66" h="118" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_eyelid3" x="194" y="344" w="66" h="118" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_eyelid4" x="297" y="356" w="118" h="65" pX="0.5" pY="0.5" oX="0" oY="1" oW="118" oH="66"/>
+    <sprite n="C_eyelid5" x="242" y="278" w="118" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="118" oH="66"/>
+    <sprite n="C_jaw" x="246" y="175" w="176" h="101" pX="0.5" pY="0.5" oX="0" oY="0" oW="176" oH="102"/>
+    <sprite n="C_left_finger1" x="408" y="452" w="83" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="84" r="y"/>
+    <sprite n="C_left_finger2" x="372" y="423" w="34" h="83" pX="0.5" pY="0.5" oX="6" oY="0" oW="60" oH="84"/>
+    <sprite n="C_left_finger3" x="86" y="464" w="81" h="43" pX="0.5" pY="0.5" oX="6" oY="2" oW="60" oH="84" r="y"/>
+    <sprite n="C_left_finger4" x="362" y="278" w="54" h="76" pX="0.5" pY="0.5" oX="6" oY="8" oW="60" oH="84"/>
+    <sprite n="C_left_foot" x="418" y="344" w="88" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="C_left_palm" x="196" y="112" w="48" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="C_left_shoulder" x="196" y="266" w="44" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="C_pupil" x="30" y="314" w="25" h="27" pX="0.5" pY="0.5" oX="2" oY="2" oW="30" oH="30"/>
+    <sprite n="C_right_finger1" x="339" y="423" w="31" h="84" pX="0.5" pY="0.5" oX="25" oY="0" oW="56" oH="84"/>
+    <sprite n="C_right_finger2" x="262" y="356" w="33" h="84" pX="0.5" pY="0.5" oX="19" oY="0" oW="56" oH="84"/>
+    <sprite n="C_right_finger3" x="2" y="464" w="82" h="43" pX="0.5" pY="0.5" oX="9" oY="2" oW="56" oH="84" r="y"/>
+    <sprite n="C_right_finger4" x="262" y="452" w="75" h="52" pX="0.5" pY="0.5" oX="0" oY="9" oW="56" oH="84" r="y"/>
+    <sprite n="C_right_foot" x="424" y="204" w="86" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_right_palm" x="450" y="112" w="54" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="C_shadow" x="2" y="2" w="244" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="eyeback_left_RARE" x="196" y="210" w="46" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eyeback_right_RARE" x="169" y="464" w="42" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="toenails_left" x="2" y="294" w="76" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="toenails_right_A" x="424" y="175" w="24" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="toenails_right_B" x="2" y="320" w="12" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="toenails_right_C" x="16" y="320" w="12" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tusk_left" x="138" y="380" w="52" h="82" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tusk_right" x="138" y="294" w="54" h="84" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

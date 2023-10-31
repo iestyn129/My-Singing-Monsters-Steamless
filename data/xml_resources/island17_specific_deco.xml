@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:553579d060a07254e159bf7d78b91298:d9d6ec201aee9477644901d269d8fdfa:c07e19667a8c6265f1cd28bf649fec1c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/island17_specific_deco.png" width="256" height="512" hires="true">
+    <sprite n="decoration_ground_W17_01" x="135" y="159" w="70" h="130" pX="0.5" pY="0.5" oX="35" oY="15" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W17_02" x="2" y="149" w="131" h="84" pX="0.5" pY="0.5" oX="34" oY="8" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W17_03" x="2" y="61" w="132" h="86" pX="0.5" pY="0.5" oX="34" oY="7" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W17_04" x="2" y="2" w="137" h="57" pX="0.5" pY="0.5" oX="31" oY="21" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W17_05" x="136" y="70" w="110" h="42" pX="0.5" pY="0.5" oX="44" oY="29" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W17_06" x="136" y="114" w="108" h="43" pX="0.5" pY="0.5" oX="45" oY="18" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W17_07" x="2" y="235" w="62" h="60" pX="0.5" pY="0.5" oX="70" oY="15" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W17_08" x="141" y="2" w="112" h="66" pX="0.5" pY="0.5" oX="42" oY="13" oW="200" oH="100"/>
+</TextureAtlas>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7c0c68a643d27db72ba43de39b52a51a:6fff6f1e71c12e0165303367d820451e:654135c5b2c45a9deb12ebeff5356f59$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_J_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="J_Hair_01.png" x="169" y="2" w="83" h="69" pX="0.5" pY="0.5" oX="125" oY="8" oW="80" oH="100" r="y"/>
+    <sprite n="J_Hair_02.png" x="167" y="141" w="78" h="53" pX="0.5" pY="0.5" oX="-20" oY="1" oW="60" oH="80" r="y"/>
+    <sprite n="J_Hair_03.png" x="169" y="73" w="80" h="66" pX="0.5" pY="0.5" oX="33" oY="130" r="y"/>
+    <sprite n="J_Hat_02.png" x="2" y="139" w="163" h="162" pX="0.5" pY="0.5" oX="6" oY="-101" oW="180" oH="180"/>
+    <sprite n="J_Wing_02.png" x="2" y="2" w="165" h="135" pX="0.5" pY="0.5" oX="1" oY="1" oW="168" oH="136"/>
+</TextureAtlas>

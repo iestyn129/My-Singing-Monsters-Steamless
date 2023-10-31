@@ -1,0 +1,108 @@
+<template name="template_battle_contextinfo_progressbar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="135*game.menuScaleX()" h="30*game.menuScaleX()"/>
+	
+	<spriteSheetComponent name="PowerBar">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("power_bar")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+				element:setPositionBroadcast(true)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="PowerText">
+		<size h="14*game.menuScaleY()" />
+		<position relativeTo="element:name()" component="PowerBar" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component:setColor(0.95, 0.68, 0.3)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				local selectedMonsterId = game.selectedMonsterId();
+				local level = game.monsterLevel(selectedMonsterId)
+				local power = game.getBattleMonsterPowerForLevel(selectedMonsterId, level)
+				component("text"):SetString(power)
+
+				component("layer"):SetString("ContextBar")
+			]]>
+		</event>
+	</textComponent>
+
+	<spriteSheetComponent name="StaminaBar">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("stamina_bar")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+				element:setPositionBroadcast(true)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="StaminaText">
+		<size h="14*game.menuScaleY()" />
+		<position relativeTo="element:name()" component="StaminaBar" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component:setColor(0.95, 0.68, 0.3)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+				local selectedMonsterId = game.selectedMonsterId();
+				local level = game.monsterLevel(selectedMonsterId)
+				local power = game.getBattleMonsterStaminaForLevel(selectedMonsterId, level)
+				component("text"):SetString(power)
+
+				component("layer"):SetString("ContextBar")
+			]]>
+		</event>
+	</textComponent>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.CenterHorizontally({
+					element:GetComponent("PowerBar"),
+					element:GetComponent("StaminaBar"),
+				})
+		]]>
+	</event>
+
+	<event name="setVisible" params="element">
+		<![CDATA[
+			element["PowerBar"]("visible"):SetInt(1)
+			element["PowerText"]("visible"):SetInt(1)
+			element["StaminaBar"]("visible"):SetInt(1)
+			element["StaminaText"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element["PowerBar"]("visible"):SetInt(0)
+			element["PowerText"]("visible"):SetInt(0)
+			element["StaminaBar"]("visible"):SetInt(0)
+			element["StaminaText"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+
+</template>

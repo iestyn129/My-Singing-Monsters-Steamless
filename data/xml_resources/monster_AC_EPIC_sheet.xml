@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6928a5750994ef01a1e3c4cc65a2b75c:d4846f2dfccb85d4fb0c254a713a538f:aacd53494afcde184dae21d17010a699$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AC_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AC_ball_EPIC" x="471" y="210" w="39" h="38" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="40"/>
+    <sprite n="AC_body_EPIC" x="2" y="2" w="151" h="186" pX="0.5" pY="0.5" oX="2" oY="0" oW="154" oH="186"/>
+    <sprite n="AC_body_RARE" x="2" y="190" w="150" h="172" pX="0.5" pY="0.5" oX="0" oY="4" oW="152" oH="176"/>
+    <sprite n="AC_eyeback_RARE" x="370" y="454" w="58" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="AC_eyelid_1" x="380" y="79" w="64" h="67" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="68" r="y"/>
+    <sprite n="AC_eyelid_2" x="446" y="79" w="64" h="67" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="68" r="y"/>
+    <sprite n="AC_eyelid_3" x="393" y="253" w="67" h="64" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="68"/>
+    <sprite n="AC_eyelid_4" x="393" y="319" w="67" h="64" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="68"/>
+    <sprite n="AC_eyelid_5" x="370" y="385" w="64" h="67" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="68" r="y"/>
+    <sprite n="AC_goggle_EPIC" x="307" y="185" w="84" h="147" pX="0.5" pY="0.5" oX="1" oY="3" oW="150" oH="90" r="y"/>
+    <sprite n="AC_hook_EPIC" x="395" y="2" w="88" h="75" pX="0.5" pY="0.5" oX="5" oY="10" oW="100" oH="100"/>
+    <sprite n="AC_hook_RARE" x="462" y="253" w="42" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="AC_mouth_01_RARE" x="221" y="344" w="73" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="76" r="y"/>
+    <sprite n="AC_mouth_02_RARE" x="155" y="2" w="73" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="76" r="y"/>
+    <sprite n="AC_mouth_03_RARE" x="154" y="190" w="76" h="152" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AC_mouth_04_RARE" x="230" y="2" w="73" h="152" pX="0.5" pY="0.5" oX="0" oY="3" oW="152" oH="76" r="y"/>
+    <sprite n="AC_mouth_05_RARE" x="232" y="187" w="73" h="152" pX="0.5" pY="0.5" oX="0" oY="3" oW="152" oH="76" r="y"/>
+    <sprite n="AC_mouth_06_RARE" x="305" y="2" w="73" h="152" pX="0.5" pY="0.5" oX="0" oY="3" oW="152" oH="76" r="y"/>
+    <sprite n="AC_mouth_07_RARE" x="296" y="341" w="72" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="76" r="y"/>
+    <sprite n="AC_propshaft" x="89" y="457" w="16" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="AC_pupil_EPIC" x="282" y="156" w="27" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="28" oH="28"/>
+    <sprite n="AC_pupil_RARE" x="369" y="156" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AC_shadow" x="393" y="210" w="76" h="41" pX="0.5" pY="0.5" oX="7" oY="1" oW="92" oH="46"/>
+    <sprite n="AC_spine_01_RARE" x="256" y="156" w="24" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AC_spine_02_RARE" x="485" y="2" w="24" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="AC_spine_03_RARE" x="485" y="24" w="20" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AC_spine_04_RARE" x="311" y="156" w="56" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AC_tail_1" x="150" y="364" w="68" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AC_tail_2" x="153" y="456" w="66" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="AC_tail_3" x="107" y="457" w="44" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AC_tail_4" x="155" y="156" w="40" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="AC_thruster_RARE" x="89" y="364" w="59" h="91" pX="0.5" pY="0.5" oX="0" oY="13" oW="60" oH="108"/>
+    <sprite n="AC_thruster_RARE_back" x="197" y="156" w="57" h="29" pX="0.5" pY="0.5" oX="0" oY="2" oW="60" oH="108"/>
+    <sprite n="AC_wing_RARE" x="395" y="148" w="84" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="AC_wing_tip_RARE" x="2" y="364" w="85" h="141" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="144"/>
+</TextureAtlas>

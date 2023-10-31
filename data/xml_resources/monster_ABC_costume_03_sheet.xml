@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a88c6c07c2d138cee5cd47ee81f0c97c:ad7a4e3f14f994b9809c18ef3e0c7f4f:e899faa8aae6554fa45ffe256630a3a8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABC_costume_03_sheet.png" width="512" height="512" hires="true">
+	<!-- original anchor = (51, 41) -> new anchor (9, 55) diff = (42, -14)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (86, -27), because hires-->
+    <sprite n="ABC_dorsal_fin.png" x="1" y="427" w="86" h="67" pX="0.5" pY="0.5" oX="86" oY="-27" oW="72" oH="88" r="y"/>
+	<!-- original anchor = (28, 31) -> new anchor (49, 23) diff = (-21, 8)-->
+	<!-- add double it to texturepacker output offsets (0, 2) -> (-42, 18), because hires-->
+    <sprite n="ABC_head_fins.png" x="1" y="1" w="188" h="87" pX="0.5" pY="0.5" oX="-42" oY="18" oW="188" oH="92"/>
+    <sprite n="ABC_tailfin_01.png" x="1" y="179" w="136" h="112" pX="0.5" pY="0.5" oX="9" oY="19" oW="124" oH="160" r="y"/>
+    <sprite n="ABC_tailfin_02.png" x="111" y="293" w="119" h="131" pX="0.5" pY="0.5" oX="2" oY="21" oW="124" oH="160"/>
+    <sprite n="ABC_tailfin_03.png" x="1" y="293" w="108" h="132" pX="0.5" pY="0.5" oX="12" oY="18" oW="124" oH="160"/>
+    <sprite n="ABC_tailfin_04.png" x="338" y="81" w="140" h="97" pX="0.5" pY="0.5" oX="23" oY="11" oW="124" oH="160" r="y"/>
+    <sprite n="ABC_tailfin_05.png" x="142" y="101" w="139" h="77" pX="0.5" pY="0.5" oX="44" oY="8" oW="124" oH="160" r="y"/>
+    <sprite n="ABC_tailfin_06.png" x="338" y="1" w="144" h="78" pX="0.5" pY="0.5" oX="42" oY="4" oW="124" oH="160" r="y"/>
+    <sprite n="ABC_tailfin_07.png" x="1" y="90" w="139" h="87" pX="0.5" pY="0.5" oX="33" oY="8" oW="124" oH="160" r="y"/>
+    <sprite n="ABC_tailfin_08.png" x="191" y="1" w="145" h="98" pX="0.5" pY="0.5" oX="23" oY="8" oW="124" oH="160" r="y"/>
+</TextureAtlas>

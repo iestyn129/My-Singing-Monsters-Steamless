@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:3249aabcd97566676706bafb8a55a7dc:21af411919a0a21972d40a89305981ef:fba14f0b051c3c2c946aba229273cba5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/battle/element_buttons.png" width="512" height="512">
+    <sprite n="battle_arow_down" x="1" y="427" w="64" h="50" oX="7" oY="0" oW="64" oH="64" r="y"/>
+    <sprite n="battle_arow_up" x="41" y="361" w="50" h="62" oX="7" oY="1" oW="64" oH="64"/>
+    <sprite n="battle_name_backing" x="41" y="95" w="55" h="265" r="y"/>
+    <sprite n="button_battle_attack" x="97" y="1" w="74" h="333" r="y"/>
+    <sprite n="button_name_plank" x="1" y="95" w="39" h="331" r="y"/>
+    <sprite n="monster_portrait_air" x="1" y="1" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_cold" x="97" y="335" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_crystal" x="172" y="1" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_earth" x="172" y="95" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_locked" x="193" y="189" w="93" h="95" oX="3" oY="3" oW="100" oH="100" r="y"/>
+    <sprite n="monster_portrait_mech" x="268" y="1" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_musical" x="268" y="95" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_plant" x="193" y="285" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_plasma" x="287" y="189" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_poison" x="364" y="1" w="93" h="95" oX="3" oY="3" oW="100" oH="100" r="y"/>
+    <sprite n="monster_portrait_random02" x="289" y="283" w="93" h="95" oX="3" oY="3" oW="100" oH="100" r="y"/>
+    <sprite n="monster_portrait_shadow" x="193" y="379" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+    <sprite n="monster_portrait_water" x="289" y="379" w="95" h="93" oX="3" oY="3" oW="100" oH="100"/>
+</TextureAtlas>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cbea8cb11a157858c3f0e56acb971078:634166bf19821d2bf262eb264f70db79:64b13f2a648b88dce3a1b48226bccf1e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ABC_body" x="2" y="2" w="204" h="164" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_body_RARE" x="208" y="2" w="204" h="164" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_eyeback" x="348" y="261" w="43" h="89" pX="0.5" pY="0.5" oX="0" oY="1" oW="90" oH="46" r="y"/>
+    <sprite n="ABC_eyelids_1" x="414" y="51" w="94" h="47" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="54"/>
+    <sprite n="ABC_eyelids_2" x="414" y="100" w="94" h="47" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="54"/>
+    <sprite n="ABC_eyelids_3" x="414" y="149" w="94" h="47" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="54"/>
+    <sprite n="ABC_eyelids_4" x="414" y="2" w="95" h="47" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="54"/>
+    <sprite n="ABC_front_reed" x="393" y="285" w="104" h="34" pX="0.5" pY="0.5" oX="2" oY="11" oW="40" oH="120" r="y"/>
+    <sprite n="ABC_front_reedmouth" x="164" y="267" w="66" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_head" x="2" y="198" w="123" h="128" pX="0.5" pY="0.5" oX="1" oY="1" oW="130" oH="124" r="y"/>
+    <sprite n="ABC_head_RARE" x="2" y="328" w="123" h="128" pX="0.5" pY="0.5" oX="1" oY="1" oW="130" oH="124" r="y"/>
+    <sprite n="ABC_left_ear_1" x="127" y="193" w="37" h="47" pX="0.5" pY="0.5" oX="15" oY="1" oW="54" oH="50"/>
+    <sprite n="ABC_left_ear_2" x="296" y="321" w="47" h="40" pX="0.5" pY="0.5" oX="5" oY="1" oW="54" oH="50"/>
+    <sprite n="ABC_left_ear_3" x="320" y="363" w="31" h="52" pX="0.5" pY="0.5" oX="0" oY="1" oW="54" oH="50" r="y"/>
+    <sprite n="ABC_left_foot" x="185" y="329" w="109" h="110" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="110" r="y"/>
+    <sprite n="ABC_left_lowerarm" x="232" y="267" w="59" h="60" pX="0.5" pY="0.5" oX="0" oY="1" oW="62" oH="62" r="y"/>
+    <sprite n="ABC_left_midleg" x="2" y="458" w="80" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="54"/>
+    <sprite n="ABC_left_tooth_RARE" x="30" y="168" w="25" h="26" pX="0.5" pY="0.5" oX="2" oY="0" oW="30" oH="26" r="y"/>
+    <sprite n="ABC_left_upperarm" x="353" y="352" w="34" h="47" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="50"/>
+    <sprite n="ABC_left_upperleg" x="313" y="168" w="78" h="91" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="94"/>
+    <sprite n="ABC_left_upperleg_RARE" x="414" y="198" w="91" h="78" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="94" r="y"/>
+    <sprite n="ABC_mouth_1" x="289" y="168" w="22" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_mouth_2" x="393" y="168" w="19" h="78" pX="0.5" pY="0.5" oX="10" oY="3" oW="92" oH="22" r="y"/>
+    <sprite n="ABC_mouth_3" x="296" y="363" w="22" h="72" pX="0.5" pY="0.5" oX="18" oY="0" oW="92" oH="22" r="y"/>
+    <sprite n="ABC_nail01_RARE" x="353" y="401" w="16" h="14" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_nail02_RARE" x="2" y="168" w="26" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_nail03_RARE" x="320" y="417" w="22" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_nail04_RARE" x="77" y="168" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_nail05_RARE" x="393" y="248" w="18" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_nose" x="393" y="270" w="18" h="13" pX="0.5" pY="0.5" oX="3" oY="2" oW="24" oH="20"/>
+    <sprite n="ABC_pupil" x="103" y="168" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="1" oW="24" oH="24"/>
+    <sprite n="ABC_pupil_RARE" x="128" y="168" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="1" oW="24" oH="24"/>
+    <sprite n="ABC_right_ear_1" x="402" y="438" w="31" h="39" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="42"/>
+    <sprite n="ABC_right_ear_2" x="380" y="401" w="40" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="42"/>
+    <sprite n="ABC_right_ear_3" x="389" y="352" w="30" h="42" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="42" r="y"/>
+    <sprite n="ABC_right_foot" x="166" y="168" w="121" h="97" pX="0.5" pY="0.5" oX="0" oY="0" oW="122" oH="98"/>
+    <sprite n="ABC_right_lowerarm" x="293" y="262" w="53" h="57" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="58"/>
+    <sprite n="ABC_right_midleg" x="84" y="458" w="80" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="54"/>
+    <sprite n="ABC_right_reed" x="127" y="242" w="35" h="90" pX="0.5" pY="0.5" oX="3" oY="9" oW="40" oH="100"/>
+    <sprite n="ABC_right_reedmouth" x="242" y="441" w="50" h="69" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="70"/>
+    <sprite n="ABC_right_tooth_RARE" x="57" y="168" w="18" h="25" pX="0.5" pY="0.5" oX="1" oY="1" oW="20" oH="26"/>
+    <sprite n="ABC_right_upperarm" x="370" y="439" w="30" h="46" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="48"/>
+    <sprite n="ABC_shadow" x="127" y="334" w="56" h="118" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABC_tail" x="166" y="454" w="74" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_tail_RARE" x="294" y="441" w="74" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_tuft_RARE" x="344" y="417" w="34" h="20" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

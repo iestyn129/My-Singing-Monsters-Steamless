@@ -1,0 +1,18 @@
+<template type="template_buff">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite"/>
+		
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	</touchComponent>
+	
+	<template type="template_tooltip" name="Tooltip">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+	</template>
+
+	<script src="scripts/Buff.lua"/>
+
+</template>

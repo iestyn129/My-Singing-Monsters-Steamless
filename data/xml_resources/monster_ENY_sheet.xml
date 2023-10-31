@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ce552fc61c275be6fea707ef1326ef87:b48e5ae52c5debee29c339d5f1310ab8:69aefadd7c44b1ed75c732a956f2ad9d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ENY_sheet.png" width="512" height="512" hires="true">
+    <sprite n="Antenai_1" x="76" y="161" w="28" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="Antenai_1_front" x="275" y="298" w="25" h="15" pX="0.5" pY="0.5" oX="13" oY="0" oW="28" oH="36" r="y"/>
+    <sprite n="Antenai_2" x="234" y="150" w="20" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="Antenai_2_front" x="160" y="486" w="20" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="46"/>
+    <sprite n="Ball_Back_Dim" x="217" y="82" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="Ball_Back_lit" x="285" y="82" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="Ball_Front_Dim" x="217" y="2" w="78" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="Ball_Front_lit" x="255" y="198" w="78" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="Body" x="2" y="388" w="78" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="Eyeback" x="276" y="150" w="42" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="Eyeball" x="318" y="469" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="Eyelid_01" x="216" y="477" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Eyelid_02" x="250" y="477" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Eyelid_03" x="182" y="486" w="32" h="21" pX="0.5" pY="0.5" oX="0" oY="11" oW="32" oH="32"/>
+    <sprite n="Eyelid_04" x="301" y="469" w="15" h="32" pX="0.5" pY="0.5" oX="0" oY="17" oW="32" oH="32" r="y"/>
+    <sprite n="Eyelid_05" x="66" y="372" w="32" h="14" pX="0.5" pY="0.5" oX="0" oY="18" oW="32" oH="32"/>
+    <sprite n="Eyelid_06" x="10" y="502" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32"/>
+    <sprite n="Eyeshine" x="2" y="502" w="6" h="8" pX="0.5" pY="0.5"/>
+    <sprite n="Leaf1" x="255" y="367" w="76" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Leaf2" x="106" y="161" w="22" h="35" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="22" r="y"/>
+    <sprite n="Leaf3" x="82" y="430" w="16" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="16" r="y"/>
+    <sprite n="Leaf4" x="253" y="331" w="49" h="34" pX="0.5" pY="0.5" oX="0" oY="0" oW="34" oH="50" r="y"/>
+    <sprite n="Leaf5" x="231" y="331" w="20" h="35" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="20" r="y"/>
+    <sprite n="Leaf6" x="156" y="336" w="54" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Leaf7" x="320" y="150" w="28" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="Leaf8" x="82" y="462" w="16" h="25" pX="0.5" pY="0.5" oX="1" oY="0" oW="26" oH="16" r="y"/>
+    <sprite n="Leaf9" x="275" y="278" w="26" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="Leaf10" x="297" y="2" w="64" h="77" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="64" r="y"/>
+    <sprite n="Leg_Spike_1" x="208" y="200" w="45" h="129" pX="0.5" pY="0.5" oX="3" oY="0" oW="134" oH="46" r="y"/>
+    <sprite n="Leg_Spike_2" x="160" y="372" w="46" h="112" pX="0.5" pY="0.5" oX="2" oY="0" oW="114" oH="48" r="y"/>
+    <sprite n="Leg_Spike_3" x="156" y="200" w="50" h="134" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Leg_Spike_4" x="208" y="372" w="45" h="103" pX="0.5" pY="0.5" oX="1" oY="1" oW="104" oH="46" r="y"/>
+    <sprite n="Leg_Thigh_1" x="284" y="469" w="15" h="34" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="16" r="y"/>
+    <sprite n="Leg_Thigh_2" x="214" y="158" w="18" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Leg_Thigh_3" x="256" y="150" w="18" h="45" pX="0.5" pY="0.5" oX="1" oY="0" oW="48" oH="18" r="y"/>
+    <sprite n="Leg_Thigh_4" x="212" y="331" w="17" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="18" r="y"/>
+    <sprite n="Mouth" x="255" y="278" w="18" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Pupil" x="304" y="342" w="18" h="18" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="66" y="200" w="88" h="170" pX="0.5" pY="0.5" oX="0" oY="1" oW="170" oH="90" r="y"/>
+    <sprite n="Sprig1" x="123" y="2" w="92" h="154" pX="0.5" pY="0.5"/>
+    <sprite n="Sprig2" x="76" y="2" w="45" h="157" pX="0.5" pY="0.5" oX="1" oY="1" oW="48" oH="158"/>
+    <sprite n="Sprig3" x="2" y="2" w="72" h="196" pX="0.5" pY="0.5"/>
+    <sprite n="Sprig4" x="100" y="372" w="28" h="136" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Sprig5" x="130" y="372" w="28" h="136" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Sprig6" x="2" y="200" w="62" h="186" pX="0.5" pY="0.5"/>
+    <sprite n="Stalk_1" x="82" y="388" w="16" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Stalk_2" x="184" y="158" w="28" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="Stalk_3" x="82" y="489" w="14" h="12" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Wing_1" x="304" y="278" w="56" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="Wing_2" x="130" y="158" w="52" h="40" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

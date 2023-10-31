@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:958e50cba78389e35ebd96ad8ec1dccc:cfc153b428a5120cf551fd02b0f86ecf:3ce85c6a234bd94cdd567d4ac7256efe$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_R_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="L foot" x="205" y="517" w="80" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="L lower leg" x="474" y="374" w="34" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="L upper leg" x="132" y="627" w="56" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R foot" x="317" y="439" w="47" h="79" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R lower leg" x="237" y="679" w="33" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="R upper leg" x="319" y="313" w="45" h="61" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_L foot" x="139" y="545" w="60" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_L lower leg" x="240" y="629" w="34" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_L upper leg" x="83" y="650" w="47" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_R foot" x="2" y="606" w="79" h="47" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_R lower leg" x="392" y="710" w="33" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_R upper leg" x="319" y="376" w="45" h="61" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_brain" x="368" y="164" w="142" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_bubble 1" x="496" y="753" w="11" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_bubble 2" x="496" y="714" w="12" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_eyesockets 1" x="287" y="520" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="RARE_eyesockets 2" x="364" y="560" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="RARE_eyesockets 3" x="287" y="570" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="RARE_eyesockets 4" x="364" y="610" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="RARE_finger 1a" x="415" y="780" w="39" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 1b" x="132" y="676" w="45" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 1c" x="83" y="606" w="21" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_finger 2a" x="456" y="787" w="39" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 2b" x="427" y="714" w="44" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 2c" x="323" y="670" w="21" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_finger 3a" x="427" y="758" w="39" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 3b" x="465" y="642" w="45" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_finger 3c" x="318" y="714" w="21" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_gummymouth" x="472" y="424" w="38" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_lower arm" x="483" y="319" w="25" h="53" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_lower body" x="209" y="281" w="108" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_mouth 1" x="325" y="273" w="39" h="38" pX="0.5" pY="0.5" oX="37" oY="6" oW="114" oH="81"/>
+    <sprite n="RARE_mouth 2" x="467" y="598" w="43" h="42" pX="0.5" pY="0.5" oX="35" oY="5" oW="114" oH="81"/>
+    <sprite n="RARE_mouth 3" x="416" y="2" w="89" h="52" pX="0.5" pY="0.5" oX="25" oY="4" oW="114" oH="81"/>
+    <sprite n="RARE_mouth 4" x="366" y="500" w="103" h="58" pX="0.5" pY="0.5" oX="10" oY="8" oW="114" oH="81"/>
+    <sprite n="RARE_mouth 5" x="146" y="159" w="61" h="108" pX="0.5" pY="0.5" oX="3" oY="8" oW="114" oH="81" r="y"/>
+    <sprite n="RARE_mouth 6" x="209" y="200" w="114" h="79" pX="0.5" pY="0.5" oX="0" oY="2" oW="114" oH="81"/>
+    <sprite n="RARE_mouth 7" x="366" y="424" w="104" h="74" pX="0.5" pY="0.5" oX="5" oY="0" oW="114" oH="81"/>
+    <sprite n="RARE_nose" x="441" y="608" w="23" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_palm" x="368" y="114" w="44" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_pupil" x="441" y="640" w="22" h="21" pX="0.5" pY="0.5" oX="2" oY="2" oW="25" oH="24"/>
+    <sprite n="RARE_tail 1" x="118" y="365" w="26" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_tail 2" x="112" y="472" w="25" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_tail 3" x="173" y="697" w="17" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_thumb a" x="441" y="560" w="24" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_thumb b" x="106" y="572" w="25" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_upper arm" x="2" y="655" w="73" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_upper body" x="2" y="2" w="205" h="155" pX="0.5" pY="0.5" oX="7" oY="0" oW="170" oH="205" r="y"/>
+    <sprite n="brain outline" x="2" y="159" w="142" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="brain" x="2" y="262" w="142" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="bubble 1" x="415" y="751" w="10" h="11" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bubble 2" x="496" y="727" w="12" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="bubble outline 1" x="415" y="764" w="10" h="11" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bubble outline 2" x="496" y="740" w="12" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="ear" x="139" y="489" w="64" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="eyeback" x="325" y="200" w="40" h="71" pX="0.5" pY="0.5" oX="3" oY="2" oW="76" oH="48" r="y"/>
+    <sprite n="eyesockets 1" x="201" y="579" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="eyesockets 2" x="278" y="620" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="eyesockets 3" x="355" y="660" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="eyesockets 4" x="432" y="664" w="75" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="48"/>
+    <sprite n="finger 1a" x="132" y="697" w="39" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="finger 1b" x="276" y="670" w="45" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="finger 1c" x="473" y="714" w="21" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="finger 2a" x="77" y="708" w="39" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="finger 2b" x="427" y="736" w="44" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="finger 2c" x="392" y="751" w="21" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="finger 3a" x="468" y="765" w="39" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="finger 3b" x="190" y="675" w="45" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="finger 3c" x="341" y="754" w="42" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="gummymouth" x="472" y="471" w="38" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lower arm" x="118" y="417" w="25" h="53" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lower body" x="2" y="446" w="108" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mouth 1" x="471" y="518" w="39" h="38" pX="0.5" pY="0.5" oX="37" oY="6" oW="114" oH="81"/>
+    <sprite n="mouth 2" x="272" y="691" w="44" h="42" pX="0.5" pY="0.5" oX="35" oY="5" oW="114" oH="81"/>
+    <sprite n="mouth 3" x="416" y="56" w="89" h="52" pX="0.5" pY="0.5" oX="25" oY="4" oW="114" oH="81"/>
+    <sprite n="mouth 4" x="209" y="457" w="102" h="58" pX="0.5" pY="0.5" oX="10" oY="8" oW="114" oH="81"/>
+    <sprite n="mouth 5" x="146" y="269" w="61" h="108" pX="0.5" pY="0.5" oX="3" oY="8" oW="114" oH="81" r="y"/>
+    <sprite n="mouth 6" x="2" y="365" w="114" h="79" pX="0.5" pY="0.5" oX="0" oY="2" oW="114" oH="81"/>
+    <sprite n="mouth 7" x="366" y="348" w="106" h="74" pX="0.5" pY="0.5" oX="5" oY="0" oW="114" oH="81"/>
+    <sprite n="mouth outline 1" x="471" y="558" w="39" h="38" pX="0.5" pY="0.5" oX="37" oY="6" oW="114" oH="81"/>
+    <sprite n="mouth outline 2" x="346" y="710" w="44" h="42" pX="0.5" pY="0.5" oX="35" oY="5" oW="114" oH="81"/>
+    <sprite n="mouth outline 3" x="416" y="110" w="89" h="52" pX="0.5" pY="0.5" oX="25" oY="4" oW="114" oH="81"/>
+    <sprite n="mouth outline 4" x="2" y="546" w="102" h="58" pX="0.5" pY="0.5" oX="10" oY="8" oW="114" oH="81"/>
+    <sprite n="mouth outline 5" x="146" y="379" w="61" h="108" pX="0.5" pY="0.5" oX="3" oY="8" oW="114" oH="81" r="y"/>
+    <sprite n="mouth outline 6" x="367" y="267" w="114" h="79" pX="0.5" pY="0.5" oX="0" oY="2" oW="114" oH="81"/>
+    <sprite n="mouth outline 7" x="209" y="381" w="106" h="74" pX="0.5" pY="0.5" oX="5" oY="0" oW="114" oH="81"/>
+    <sprite n="nose" x="441" y="624" w="23" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="palm" x="190" y="629" w="48" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="pupil" x="106" y="616" w="24" h="23" pX="0.5" pY="0.5" oX="1" oY="0" oW="25" oH="24" r="y"/>
+    <sprite n="shadow" x="209" y="114" w="157" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="tail 1" x="483" y="267" w="26" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tail 2" x="112" y="522" w="25" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tail 3" x="192" y="697" w="17" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="thumb a" x="441" y="584" w="24" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="thumb b" x="106" y="594" w="25" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="upper arm" x="2" y="690" w="73" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="upper body" x="209" y="2" w="205" h="110" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6f7fe47b43404a11abb5e315bf85af6e:3be7b6240e4b6510a7c48ac23c677be8:6c2cfd3e7680cd51a9ce35857c876e2b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T12_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T12_ball.png" x="226" y="311" w="90" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="T12_ball_centre.png" x="274" y="514" w="42" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="T12_ball_glow.png" x="2" y="311" w="128" h="128" pX="0.5" pY="0.5"/>
+    <sprite n="T12_ball_shadow.png" x="382" y="434" w="69" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="30"/>
+    <sprite n="T12_body.png" x="453" y="452" w="56" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_collar.png" x="386" y="356" w="78" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_glow.png" x="466" y="367" w="44" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_lid_01.png" x="318" y="399" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_lid_02.png" x="222" y="403" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_lid_03.png" x="318" y="439" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_lid_04.png" x="382" y="466" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T12_eye_lid_05.png" x="132" y="425" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T12_glow.png" x="386" y="58" w="116" h="116" pX="0.5" pY="0.5" oX="0" oY="0" oW="118" oH="116"/>
+    <sprite n="T12_glow_crack_01.png" x="318" y="357" w="62" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T12_glow_crack_02.png" x="386" y="284" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_glow_crack_03.png" x="132" y="311" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_glow_crack_04.png" x="132" y="367" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_head.png" x="386" y="176" w="108" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_left_foot.png" x="452" y="514" w="42" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="T12_left_hand_01.png" x="466" y="413" w="44" h="37" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="44" r="y"/>
+    <sprite n="T12_left_hand_02.png" x="280" y="468" w="36" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="44"/>
+    <sprite n="T12_left_hand_03.png" x="370" y="506" w="44" h="37" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="44" r="y"/>
+    <sprite n="T12_left_hand_04.png" x="318" y="515" w="44" h="37" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="44" r="y"/>
+    <sprite n="T12_left_lower_arm.png" x="222" y="487" w="50" h="37" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="38"/>
+    <sprite n="T12_left_upper_arm.png" x="496" y="176" w="14" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_leg.png" x="318" y="311" w="66" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_leg_bottom.png" x="222" y="443" w="56" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="T12_mouth_01.png" x="491" y="587" w="19" h="26" pX="0.5" pY="0.5" oX="3" oY="2" oW="32" oH="22" r="y"/>
+    <sprite n="T12_mouth_02.png" x="491" y="615" w="19" h="26" pX="0.5" pY="0.5" oX="3" oY="2" oW="32" oH="22" r="y"/>
+    <sprite n="T12_mouth_03.png" x="135" y="515" w="27" h="20" pX="0.5" pY="0.5" oX="2" oY="1" oW="32" oH="22"/>
+    <sprite n="T12_mouth_04.png" x="106" y="511" w="27" h="21" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="22"/>
+    <sprite n="T12_mouth_05.png" x="164" y="515" w="24" h="21" pX="0.5" pY="0.5" oX="4" oY="0" oW="32" oH="22"/>
+    <sprite n="T12_mouth_06.png" x="134" y="537" w="21" h="20" pX="0.5" pY="0.5" oX="6" oY="1" oW="32" oH="22"/>
+    <sprite n="T12_mouth_07.png" x="157" y="538" w="19" h="18" pX="0.5" pY="0.5" oX="8" oY="1" oW="32" oH="22"/>
+    <sprite n="T12_mouth_08.png" x="190" y="530" w="21" h="18" pX="0.5" pY="0.5" oX="6" oY="2" oW="32" oH="22"/>
+    <sprite n="T12_pupil.png" x="496" y="272" w="14" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="T12_right_foot.png" x="479" y="643" w="30" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="T12_right_hand_01.png" x="364" y="545" w="42" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_right_hand_02.png" x="318" y="554" w="42" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_right_hand_03.png" x="362" y="575" w="39" h="28" pX="0.5" pY="0.5" oX="0" oY="3" oW="28" oH="42" r="y"/>
+    <sprite n="T12_right_hand_04.png" x="154" y="487" w="34" h="26" pX="0.5" pY="0.5" oX="0" oY="3" oW="28" oH="42" r="y"/>
+    <sprite n="T12_right_lower_arm.png" x="318" y="479" w="50" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T12_right_upper_arm.png" x="496" y="224" w="14" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T12_shadow.png" x="386" y="2" w="119" h="54" pX="0.5" pY="0.5" oX="9" oY="13" oW="134" oH="80"/>
+    <sprite n="T12_spark_a_01.png" x="2" y="516" w="28" h="28" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="32"/>
+    <sprite n="T12_spark_a_02.png" x="190" y="502" w="30" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="32"/>
+    <sprite n="T12_spark_a_03.png" x="74" y="511" w="30" h="24" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="32"/>
+    <sprite n="T12_spark_a_04.png" x="38" y="514" w="30" h="24" pX="0.5" pY="0.5" oX="1" oY="3" oW="32" oH="32"/>
+    <sprite n="T12_spark_a_05.png" x="488" y="290" w="22" h="24" pX="0.5" pY="0.5" oX="5" oY="9" oW="32" oH="32" r="y"/>
+    <sprite n="T12_spark_a_06.png" x="488" y="342" w="22" h="23" pX="0.5" pY="0.5" oX="7" oY="9" oW="32" oH="32"/>
+    <sprite n="T12_spark_a_07.png" x="488" y="316" w="22" h="24" pX="0.5" pY="0.5" oX="5" oY="7" oW="32" oH="32" r="y"/>
+    <sprite n="T12_spark_a_08.png" x="106" y="534" w="26" h="26" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32"/>
+    <sprite n="T12_spark_b_01.png" x="408" y="572" w="41" h="28" pX="0.5" pY="0.5" oX="1" oY="1" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_02.png" x="452" y="552" w="41" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_03.png" x="416" y="506" w="34" h="33" pX="0.5" pY="0.5" oX="0" oY="5" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_04.png" x="286" y="436" w="30" h="30" pX="0.5" pY="0.5" oX="1" oY="7" oW="34" oH="42"/>
+    <sprite n="T12_spark_b_05.png" x="286" y="403" w="30" h="31" pX="0.5" pY="0.5" oX="0" oY="7" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_06.png" x="416" y="541" w="34" h="29" pX="0.5" pY="0.5" oX="0" oY="5" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_07.png" x="403" y="602" w="36" h="29" pX="0.5" pY="0.5" oX="0" oY="3" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_b_08.png" x="451" y="587" w="38" h="28" pX="0.5" pY="0.5" oX="1" oY="3" oW="34" oH="42" r="y"/>
+    <sprite n="T12_spark_c_01.png" x="76" y="467" w="34" h="20" pX="0.5" pY="0.5" oX="1" oY="3" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_02.png" x="76" y="489" w="34" h="20" pX="0.5" pY="0.5" oX="1" oY="3" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_03.png" x="40" y="467" w="34" h="23" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_04.png" x="222" y="526" w="34" h="24" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_05.png" x="2" y="469" w="34" h="23" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_06.png" x="38" y="492" w="34" h="20" pX="0.5" pY="0.5" oX="1" oY="3" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_07.png" x="2" y="494" w="34" h="20" pX="0.5" pY="0.5" oX="1" oY="3" oW="36" oH="24"/>
+    <sprite n="T12_spark_c_08.png" x="112" y="491" w="34" h="18" pX="0.5" pY="0.5" oX="1" oY="3" oW="36" oH="24"/>
+    <sprite n="T12_spark_d_01.png" x="196" y="464" w="24" h="36" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="38"/>
+    <sprite n="T12_spark_d_02.png" x="441" y="617" w="36" h="28" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_spark_d_03.png" x="2" y="441" w="36" h="26" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_spark_d_04.png" x="40" y="441" w="36" h="24" pX="0.5" pY="0.5" oX="5" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_spark_d_05.png" x="196" y="425" w="24" h="37" pX="0.5" pY="0.5" oX="7" oY="1" oW="32" oH="38"/>
+    <sprite n="T12_spark_d_06.png" x="154" y="465" w="36" h="20" pX="0.5" pY="0.5" oX="9" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_spark_d_07.png" x="78" y="441" w="36" h="24" pX="0.5" pY="0.5" oX="5" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_spark_d_08.png" x="116" y="465" w="36" h="24" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="38" r="y"/>
+    <sprite n="T12_statue.png" x="2" y="2" w="382" h="307" pX="0.5" pY="0.5" oX="0" oY="0" oW="308" oH="382" r="y"/>
+</TextureAtlas>

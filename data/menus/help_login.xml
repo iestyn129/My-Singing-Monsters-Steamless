@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-4" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*game.hudScale()" h="225*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="175*game.hudScale()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1"/>
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="40"  />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("MAIN_MENU_HELP"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="HelpSiteButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.65*game.hudScale()" />
+		<templateVar name="$text" equals="FAQ" />
+		<templateVar name="$textYOffset" equals="-5*game.hudScale()" />
+		<templateVar name="$textPadding" equals="6.0*game.hudScale()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="35*game.hudScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				onTouchUp(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				if(game.amazonStreamBox() == 1) then
+					game.showTapjoyEvent("help_faq")
+				else
+					local url = game.getLocalizedText("SUPPORT_FAQ_URL")
+					url = url.."?version="..game.urlEncode(game.versionNumber()) 
+					url = url.."&deviceType="..game.urlEncode(game.getDeviceType())
+					url = url.."&os="..game.urlEncode(game.getDeviceOs())
+					game.ShowWebView(url)
+				end
+			]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</template>
+	
+	<element name="InfoLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="HelpSiteButton" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="65*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.localizedUpper("PLAYER_INFO")..":")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Version">
+		<size dependentOnElement="element:name()" dependentOnComponent="Label" />
+		<position relativeTo="InfoLabel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="4*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Id">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.versionNumber())
+				component:setColor(0.31, 0.94, 0.26)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="Label">
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("VERSION")..": ")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt((element:GetComponent("Id"):absW() + element:GetComponent("Label"):absW())/(-2))
+		</event>
+	</element>
+	
+	<element name="BBBId">
+		<size dependentOnElement="element:name()" dependentOnComponent="Label" />
+		<position relativeTo="Version" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="4*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Id">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLastBBBID())
+				component:setColor(0.31, 0.94, 0.26)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="Label">
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("LAST_BBB_ID")..": ")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt((element:GetComponent("Id"):absW() + element:GetComponent("Label"):absW())/(-2.2))
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="EmailSupportButton">
+		<templateVar name="$upSpriteName" equals="'button_invite'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.38*game.hudScale()" />
+		<templateVar name="$text" equals="EMAIL_SUPPORT" />
+		<templateVar name="$textPadding" equals="5.0*game.hudScale()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$multiLine" equals="1" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="20*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.30*game.hudScale())
+				component("autoScale"):SetInt(1)
+				if(game.amazonStreamBox() == 1) then
+					component("visible"):SetInt(0)
+					element:GetComponent("UpSprite")("visible"):SetInt(0)
+					element:GetComponent("Touch")("enabled"):SetInt(0)
+				end
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				onTouchUp(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				local url = game.getLocalizedText("SUPPORT_CONTACT_URL")
+				url = url.."?version="..game.urlEncode(game.versionNumber()) 
+				url = url.."&deviceType="..game.urlEncode(game.getDeviceType())
+				url = url.."&os="..game.urlEncode(game.getDeviceOs())
+				url = url.."&showForm=true"
+				url = url.."&g=" .. game.urlEncode(game.gameIdString())
+				url = url.."&game=" .. game.urlEncode(game.gameName())
+				game.ShowWebView(url)
+			]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>	
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PrivacyPolicyButton">
+		<templateVar name="$upSpriteName" equals="'button_invite'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.38*game.hudScale()" />
+		<templateVar name="$text" equals="PRIVACY_POLICY_LABEL" />
+		<templateVar name="$textPadding" equals="5.0*game.hudScale()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$multiLine" equals="1" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="20*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("size"):SetFloat(0.30*game.hudScale())
+				component("autoScale"):SetInt(1)
+				if(game.amazonStreamBox() == 1) then
+					component("visible"):SetInt(0)
+					element:GetComponent("UpSprite")("visible"):SetInt(0)
+					element:GetComponent("Touch")("enabled"):SetInt(0)
+				end
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				game.ShowWebView("https://www.bigbluebubble.com/privacy-policy/")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>	
+	</template>
+	
+	<template type="template_spritesheetbutton" name="CloseButton">
+		<templateVar name="$spriteScale" equals="0.4*game.menuScaleX()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.menuScaleX()" yOffset="10*game.menuScaleY()" priorityOffset="2" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+				element["TextLabel"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element["TextLabel"]:setColor(1.0, 1.0, 1.0)
+				menu:popPopUp()
+				component("enabled"):SetInt(0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element["TextLabel"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<textComponent name="TextLabel">
+			<size w="126*game.menuScaleX()" h="24*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-8*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component:GetVar("font"):Set(game.getTitleFont())
+				component:GetVar("size"):SetFloat(0.2*game.menuScaleX())
+				component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component:GetVar("text"):SetString("CONTEXTBAR_CLOSE_LABEL")
+				component:GetVar("autoScale"):SetInt(1)
+				component:GetVar("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+
+</menu>

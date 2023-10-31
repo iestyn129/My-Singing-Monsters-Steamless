@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e63bc15e2ee3e7afdf7cd4e2ae265b7c:7bbed459d3a3e00ba9aefb33577a1847:7e745d24545dccf9b8c08a88f28ed464$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_L_costume_02_sheet.png" width="256" height="256" hires="true">
+    <sprite n="L_Crown.png" x="2" y="2" w="195" h="135" pX="0.5" pY="0.5" oX="-44" oY="-79" oW="200" oH="150"/>
+    <sprite n="L_Left_Lower_Arm.png" x="153" y="139" w="75" h="57" pX="0.5" pY="0.5" oX="1" oY="7" oW="60" oH="84" r="y"/>
+    <sprite n="L_Necklace.png" x="2" y="139" w="81" h="111" pX="0.5" pY="0.5" oX="-8" oY="-7" oW="120" oH="100" r="y"/>
+    <sprite n="L_Right_Shoulder.png" x="199" y="2" w="34" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="60"/>
+    <sprite n="L_Right_Tattoo_2.png" x="85" y="139" w="66" h="78" pX="0.5" pY="0.5" oX="-14" oY="-1" oW="100" oH="111" r="y"/>
+</TextureAtlas>

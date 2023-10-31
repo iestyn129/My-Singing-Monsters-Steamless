@@ -1,0 +1,252 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onInit" params="element">
+		element["Cards"]("NumCards"):SetInt(0)
+	</event>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="20" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("background")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY())) 
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				--for dragging across cards, this one is just to make it a bit nicer for when the user doesn't start the drag directly on one of the cards:
+				component:setGroupedTouch(true);
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="FadeLayer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="14" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("background")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="Title">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTitleFont())
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_GAMEOVER_TITLE")
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="LevelReached">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Title" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.menuScaleX()" h="0" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("FLIP_MATCHES_CORRECT").." "..game.totalFlipMatches())
+				component("size"):SetFloat(0.7*game.menuScaleX())
+				component("layer"):SetString("HUD")
+				component("autoScale"):SetInt(1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Reward">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="LevelReached" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.menuScaleX()" h="160*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("FLIP_ENDGAME_REWARD_SUMMARY")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("HUD")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Cards">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="populate" params="element">
+		<![CDATA[
+
+			local numCards = element("NumCards"):GetInt()
+			for i = 0, numCards - 1 do
+				local cardEntry = element:GetElement("cardEntry"..i)
+				if(cardEntry ~= nil) then
+					element:RemoveElement(cardEntry)
+				end
+			end
+			
+			local cards = game.getNumFlipRewards()
+			
+			local rows = 1
+			local cols = 1
+				
+			for i = math.ceil(math.sqrt(cards)), 10 do
+				if(cards % i == 0) then
+					cols = i
+					rows = math.floor(cards / i)
+					break
+				end
+			end
+			
+			--this handles cases where the above didn't catch
+			if(rows == 1 and cols == 1) then
+				cols = math.ceil(math.sqrt(cards))
+				rows = math.ceil(cards / cols)
+			end
+			
+			local parentElementWidth = 0;
+			local parentElementHeight = 0;
+			
+			local xFactor = 1 / (cols / 10)
+			local yFactor = 1 / (rows / 4)
+			local scaleFactor = math.min(math.min(xFactor, yFactor), 1.75)
+
+			local portraitWidth = (40*lua_sys.screenWidth() / 480.0)*scaleFactor;
+			local portraitHeight = (40*lua_sys.screenWidth() / 480.0)*scaleFactor;
+			local xBuf = 10.3*lua_sys.screenWidth() / 480.0;
+			local yBuf = 8*lua_sys.screenHeight() / 480.0;
+			local titleBufY = portraitHeight * 0.75*lua_sys.screenHeight() / 480.0;
+			
+			--center the list properly (since elements are HCENTERed wrt lists LEFT)
+			element("xOffset"):SetInt((portraitWidth+xBuf)*0.5)
+			element("yOffset"):SetInt((portraitHeight+yBuf+titleBufY)*0.5)
+			
+			for i=0, cards-1 do
+				local cardEntry = menu:addTemplateElement("template_flip_reward_entry", "cardEntry"..i, element)
+				cardEntry("cardID"):SetInt(i)
+				cardEntry("ScaleFactor"):SetFloat(scaleFactor)
+				
+				if(i~=0 and i%cols==0) then
+					parentElementHeight = parentElementHeight + (portraitHeight+yBuf)
+				else
+					if(i<cols) then
+						if(i==0) then
+							parentElementHeight = parentElementHeight + (portraitHeight+yBuf)
+						end
+						
+						parentElementWidth = parentElementWidth + (portraitWidth+xBuf)
+					end
+				end
+				
+				cardEntry:setParent(element)
+				cardEntry:relativeTo(element)
+				cardEntry:setOrientation(lua_sys.MenuOrientation(math.floor(i%cols)*(portraitWidth+xBuf), math.floor(i/cols)*(portraitHeight+yBuf), 4, lua_sys.HCENTER, lua_sys.VCENTER))
+				cardEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+				
+				cardEntry:calculatePosition()
+				cardEntry:init()
+				cardEntry:postInit()
+
+				cardEntry:setPositionBroadcast(true)
+			end
+			
+			element:setSize(Vector2(parentElementWidth, parentElementHeight))
+			element:setPositionBroadcast(true)
+			--this calls postInit on all children, which sizes the touch areas appropriately (otherwise it never gets called...)
+			element:postInit()
+			element("NumCards"):SetInt(cards)
+			]]>
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="QuitButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="10" />
+		<event name="onInit" params="element">
+			onInit(element)
+			element:DoStoredScript("setInvisible");
+		</event>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Overlay"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Overlay"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.replayOrQuitFlip()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):SetString(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</template>
+</menu>

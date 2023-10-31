@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e6d1314d0939f024c8491c33e227876c:059df7e2a278c44a6c4208969dffbca8:b88f4d7f60d1f9696edb8e39ccee6157$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABCEN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABCEN_drummidary_back_foot" x="371" y="152" w="31" h="56" pX="0.5" pY="0.5" oX="2" oY="4" oW="60" oH="40" r="y"/>
+    <sprite n="ABCEN_drummidary_back_midleg" x="331" y="234" w="37" h="61" pX="0.5" pY="0.5" oX="4" oY="6" oW="70" oH="50" r="y"/>
+    <sprite n="ABCEN_drummidary_back_upper_leg" x="348" y="452" w="41" h="76" pX="0.5" pY="0.5" oX="7" oY="9" oW="90" oH="60" r="y"/>
+    <sprite n="ABCEN_drummidary_body" x="2" y="2" w="202" h="174" pX="0.5" pY="0.5" oX="29" oY="23" oW="260" oH="220"/>
+    <sprite n="ABCEN_drummidary_drum" x="2" y="178" w="131" h="126" pX="0.5" pY="0.5" oX="7" oY="4" oW="140" oH="140" r="y"/>
+    <sprite n="ABCEN_drummidary_drum_stick" x="397" y="343" w="89" h="86" pX="0.5" pY="0.5" oX="27" oY="15" oW="140" oH="120" r="y"/>
+    <sprite n="ABCEN_drummidary_drumhead_01" x="2" y="306" w="117" h="81" pX="0.5" pY="0.5" oX="19" oY="6" oW="120" oH="130" r="y"/>
+    <sprite n="ABCEN_drummidary_drumhead_02" x="2" y="389" w="117" h="81" pX="0.5" pY="0.5" oX="19" oY="6" oW="120" oH="130" r="y"/>
+    <sprite n="ABCEN_drummidary_drumhead_03" x="408" y="94" w="91" h="116" pX="0.5" pY="0.5" oX="19" oY="7" oW="120" oH="130"/>
+    <sprite n="ABCEN_drummidary_eyelids_1" x="201" y="487" w="80" h="51" pX="0.5" pY="0.5" oX="10" oY="4" oW="100" oH="60"/>
+    <sprite n="ABCEN_drummidary_eyelids_2" x="394" y="431" w="80" h="51" pX="0.5" pY="0.5" oX="10" oY="4" oW="100" oH="60"/>
+    <sprite n="ABCEN_drummidary_eyelids_3" x="2" y="472" w="80" h="51" pX="0.5" pY="0.5" oX="10" oY="4" oW="100" oH="60"/>
+    <sprite n="ABCEN_drummidary_eyelids_4" x="84" y="516" w="80" h="51" pX="0.5" pY="0.5" oX="10" oY="4" oW="100" oH="60"/>
+    <sprite n="ABCEN_drummidary_head" x="206" y="102" w="163" h="130" pX="0.5" pY="0.5" oX="35" oY="18" oW="200" oH="200" r="y"/>
+    <sprite n="ABCEN_drummidary_jaw" x="135" y="242" w="62" h="86" pX="0.5" pY="0.5" oX="7" oY="19" oW="100" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_left_claw" x="201" y="437" w="87" h="48" pX="0.5" pY="0.5" oX="6" oY="6" oW="60" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_left_forearm" x="291" y="401" w="55" h="87" pX="0.5" pY="0.5" oX="7" oY="7" oW="100" oH="70" r="y"/>
+    <sprite n="ABCEN_drummidary_left_middle_lower_leg" x="283" y="490" w="55" h="47" pX="0.5" pY="0.5" oX="2" oY="6" oW="60" oH="60"/>
+    <sprite n="ABCEN_drummidary_left_thumb" x="370" y="269" w="26" h="43" pX="0.5" pY="0.5" oX="7" oY="3" oW="40" oH="50"/>
+    <sprite n="ABCEN_drummidary_left_upper_arm" x="2" y="525" w="71" h="48" pX="0.5" pY="0.5" oX="6" oY="5" oW="60" oH="80" r="y"/>
+    <sprite n="ABCEN_drummidary_left_wrist" x="201" y="351" w="88" h="84" pX="0.5" pY="0.5" oX="8" oY="6" oW="100" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_middle_leg_lower_right" x="291" y="351" w="57" h="48" pX="0.5" pY="0.5" oX="12" oY="5" oW="80" oH="60"/>
+    <sprite n="ABCEN_drummidary_neck" x="402" y="212" w="104" h="77" pX="0.5" pY="0.5" oX="11" oY="8" oW="100" oH="120" r="y"/>
+    <sprite n="ABCEN_drummidary_pupil" x="331" y="297" w="18" h="18" pX="0.5" pY="0.5" oX="3" oY="3" oW="24" oH="24"/>
+    <sprite n="ABCEN_drummidary_right_claw" x="398" y="291" w="90" h="50" pX="0.5" pY="0.5" oX="15" oY="5" oW="80" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_right_forearm" x="135" y="178" w="64" h="62" pX="0.5" pY="0.5" oX="19" oY="18" oW="100" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_right_middle_upper_leg" x="351" y="314" w="44" h="73" pX="0.5" pY="0.5" oX="4" oY="8" oW="80" oH="60" r="y"/>
+    <sprite n="ABCEN_drummidary_right_thumb" x="371" y="102" w="33" h="48" pX="0.5" pY="0.5" oX="13" oY="6" oW="60" oH="60"/>
+    <sprite n="ABCEN_drummidary_right_upperarm" x="350" y="389" w="42" h="61" pX="0.5" pY="0.5" oX="19" oY="9" oW="80" oH="80"/>
+    <sprite n="ABCEN_drummidary_right_wrist" x="408" y="2" w="98" h="90" pX="0.5" pY="0.5" oX="21" oY="25" oW="140" oH="140"/>
+    <sprite n="ABCEN_drummidary_shadow" x="206" y="2" w="200" h="98" pX="0.5" pY="0.5" oX="0" oY="1" oW="200" oH="100"/>
+    <sprite n="ABCEN_drummidary_wheel_01" x="121" y="330" w="78" h="60" pX="0.5" pY="0.5" oX="10" oY="11" oW="80" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_wheel_02" x="121" y="392" w="78" h="60" pX="0.5" pY="0.5" oX="10" oY="11" oW="80" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_wheel_03" x="121" y="454" w="78" h="60" pX="0.5" pY="0.5" oX="10" oY="11" oW="80" oH="100" r="y"/>
+    <sprite n="ABCEN_drummidary_wheel_foot" x="371" y="210" w="29" h="57" pX="0.5" pY="0.5" oX="6" oY="6" oW="70" oH="40" r="y"/>
+    <sprite n="spore_ABCEN" x="201" y="234" w="128" h="115" pX="0.5" pY="0.5" oX="22" oY="29" oW="172" oH="172"/>
+</TextureAtlas>

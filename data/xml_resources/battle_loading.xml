@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="gfx/menu/logging_in.png" width="1664" height="768">
+    <sprite n="main" x="0" y="0" w="1664" h="768"/>
+</TextureAtlas>

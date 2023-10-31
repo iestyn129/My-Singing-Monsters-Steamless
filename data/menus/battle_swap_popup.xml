@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<size dependentOnElement="PopupBG" dependentOnComponent="Sprite"/>
+
+	<element name="Fade">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="8" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+					component:setColor(0.0, 0.0, 0.0)
+					component("alpha"):SetFloat(0.5)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+
+	<element name="PopupBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="300*game.menuScaleX()" h="230*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(50.0)
+					component("bottomHeight"):SetFloat(50.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5)
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="CloseButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="CloseImage" />
+		<position relativeTo="PopupBG" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="20*game.hudScale()" priorityOffset="-1" />
+		<spriteSheetComponent name="CloseImage">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_bamboo_close")
+					component("sheetName"):SetString("xml_resources/buttons01.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					element["CloseImage"]:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+          element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+          lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+          game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Cancel, -1))
+        ]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+				]]>
+			</event>
+		</touchComponent>
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("ButtonMapping"):SetInt(game.cancelButton())
+				element("buttonDown"):SetInt(0)
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDown")
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUp")
+			]]>
+		</event>
+		<event name="gotMsgKeyDown" params="element, msg">
+			<![CDATA[
+				if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == 0) then
+					element["Touch"]("checkOnTop"):SetInt(0)
+					if(element["Touch"]("onTop"):GetInt() == 1) then
+						element("buttonDown"):SetInt(msg.key.val)
+						element["Touch"]:DoStoredScript("onTouchDown")
+					end
+				end
+			]]>
+		</event>
+		<event name="gotMsgKeyUp" params="element, msg">
+			<![CDATA[
+				if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == msg.key.val) then
+					element("buttonDown"):SetInt(0)
+					element["Touch"]:DoStoredScript("onTouchUp")
+				end
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				element["CloseImage"]("visible"):SetInt(0)
+				element["Touch"]("enabled"):SetInt(0)
+			]]>
+		</event>
+	</element>
+
+	<element name="Title">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PopupBG" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("SELECT_MONSTER")
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+
+		</textComponent>
+	</element>
+
+	<template type="template_battle_team_select_entry" name="Slot0">
+		<position relativeTo="PopupBG" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="16*game.menuScaleX()" yOffset="64*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("id"):SetInt(0)
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[0]
+				if not player then
+					element("MonsterID"):SetInt(0)
+				else
+					element("MonsterID"):SetInt(player:data().monsterId)
+					element("MonsterName"):SetString(player:name())
+					element("MonsterLevel"):SetInt(player:level())
+				end
+			]]>
+		</event>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				element:DoStoredScript("refresh")
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[0]
+				if not player or player:isDead() then
+					element:DoStoredScript("disable")
+				end
+			]]>
+		</event>
+		
+		<event name="onSelected" params="element">
+			<![CDATA[
+				game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, 0))
+			]]>
+		</event>
+	</template>
+
+	<template type="template_battle_team_select_entry" name="Slot1">
+		<position relativeTo="Slot0" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="0" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("id"):SetInt(1)
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[1]
+				if not player then
+					element("MonsterID"):SetInt(0)
+				else				
+					element("MonsterID"):SetInt(player:data().monsterId)
+					element("MonsterName"):SetString(player:name())
+					element("MonsterLevel"):SetInt(player:level())
+				end
+			]]>
+		</event>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				element:DoStoredScript("refresh")
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[1]
+				if not player or player:isDead() then
+					element:DoStoredScript("disable")
+				end
+			]]>
+		</event>
+
+		<event name="onSelected" params="element">
+			<![CDATA[
+				game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, 1))
+			]]>
+		</event>
+	</template>
+
+	<template type="template_battle_team_select_entry" name="Slot2">
+		<position relativeTo="Slot1" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="0" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("id"):SetInt(2)
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[2]
+				if not player then
+					element("MonsterID"):SetInt(0)
+				else
+					element("MonsterID"):SetInt(player:data().monsterId)
+					element("MonsterName"):SetString(player:name())
+					element("MonsterLevel"):SetInt(player:level())
+				end
+			]]>
+		</event>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				element:DoStoredScript("refresh")
+				local player = game.battleSystem():getBattleTeam(game.BattleSystem_PLAYER)[2]
+				if not player or player:isDead() then
+					element:DoStoredScript("disable")
+				end
+			]]>
+		</event>
+
+		<event name="onSelected" params="element">
+			<![CDATA[
+				game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, 2))
+			]]>
+		</event>
+	</template>
+
+
+
+</menu>

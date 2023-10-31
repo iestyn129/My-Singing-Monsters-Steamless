@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2c000ea5ca934628d4d5bcfcb56ec99f:9455267eb4c25cbb3e719abad6425557:db67567660bc88cefc188f4626c47bf5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_energyorb.png" width="1024" height="1024" hires="true">
+    <sprite n="Base_Pole" x="1" y="1" w="165" h="485" pX="0.5" pY="0.5"/>
+    <sprite n="Behind_Glass" x="168" y="1" w="161" h="262" pX="0.5" pY="0.5" oX="31" oY="0" oW="192" oH="262"/>
+    <sprite n="E1" x="411" y="262" w="177" h="241" pX="0.5" pY="0.5" oX="39" oY="43" oW="280" oH="280" r="y"/>
+    <sprite n="E2" x="590" y="356" w="244" h="175" pX="0.5" pY="0.5" oX="35" oY="45" oW="280" oH="280"/>
+    <sprite n="E3" x="592" y="1" w="250" h="173" pX="0.5" pY="0.5" oX="28" oY="51" oW="280" oH="280"/>
+    <sprite n="E4" x="592" y="176" w="246" h="178" pX="0.5" pY="0.5" oX="31" oY="46" oW="280" oH="280"/>
+    <sprite n="E5" x="168" y="265" w="241" h="183" pX="0.5" pY="0.5" oX="36" oY="41" oW="280" oH="280"/>
+    <sprite n="E6" x="844" y="1" w="179" h="244" pX="0.5" pY="0.5" oX="33" oY="44" oW="280" oH="280" r="y"/>
+    <sprite n="E7" x="836" y="486" w="180" h="242" pX="0.5" pY="0.5" oX="35" oY="43" oW="280" oH="280" r="y"/>
+    <sprite n="E8" x="840" y="247" w="181" h="237" pX="0.5" pY="0.5" oX="38" oY="42" oW="280" oH="280" r="y"/>
+    <sprite n="Glass" x="331" y="1" w="259" h="259" pX="0.5" pY="0.5"/>
+    <sprite n="Glow_Blue" x="1" y="930" w="87" h="87" pX="0.5" pY="0.5"/>
+    <sprite n="Glow_Middle" x="423" y="505" w="153" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="Glow_Red" x="90" y="930" w="87" h="87" pX="0.5" pY="0.5"/>
+    <sprite n="Glow_Yellow" x="179" y="930" w="87" h="87" pX="0.5" pY="0.5"/>
+    <sprite n="Over_Glass_Lower" x="273" y="730" w="148" h="161" pX="0.5" pY="0.5"/>
+    <sprite n="Over_Glass_Top" x="1" y="488" w="270" h="440" pX="0.5" pY="0.5"/>
+</TextureAtlas>

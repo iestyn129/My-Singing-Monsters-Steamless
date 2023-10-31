@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:85ee4c08628cfb0906f32b23a0b21ced:f55c06491ecfc784a4d769997a25ad66:004a416fe7427b92819189d9e46cfd15$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_C_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="C_body.png" x="248" y="2" w="194" h="182" pX="0.5" pY="0.5" oX="9" oY="3" oW="200" oH="200" r="y"/>
+    <sprite n="C_ember.png" x="422" y="186" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="C_eyeback.png" x="333" y="401" w="115" h="56" pX="0.5" pY="0.5" oX="5" oY="2" oW="120" oH="60"/>
+    <sprite n="C_eyelid1.png" x="243" y="280" w="127" h="78" pX="0.5" pY="0.5" oX="9" oY="3" oW="140" oH="90"/>
+    <sprite n="C_eyelid2.png" x="372" y="326" w="126" h="73" pX="0.5" pY="0.5" oX="9" oY="5" oW="140" oH="90"/>
+    <sprite n="C_eyelid3.png" x="174" y="212" w="67" h="126" pX="0.5" pY="0.5" oX="8" oY="9" oW="140" oH="90" r="y"/>
+    <sprite n="C_eyelid4.png" x="172" y="340" w="67" h="126" pX="0.5" pY="0.5" oX="8" oY="9" oW="140" oH="90" r="y"/>
+    <sprite n="C_eyelid5.png" x="444" y="2" w="64" h="126" pX="0.5" pY="0.5" oX="8" oY="10" oW="140" oH="90" r="y"/>
+    <sprite n="C_glow.png" x="2" y="210" w="170" h="88" pX="0.5" pY="0.5" oX="30" oY="112" oW="200" oH="200"/>
+    <sprite n="C_jaw.png" x="2" y="112" w="187" h="96" pX="0.5" pY="0.5" oX="2" oY="7" oW="190" oH="110"/>
+    <sprite n="C_left_finger1.png" x="191" y="468" w="101" h="39" pX="0.5" pY="0.5" oX="27" oY="9" oW="120" oH="120" r="y"/>
+    <sprite n="C_left_finger2.png" x="86" y="468" w="103" h="41" pX="0.5" pY="0.5" oX="35" oY="7" oW="120" oH="120" r="y"/>
+    <sprite n="C_left_finger3.png" x="191" y="112" w="54" h="98" pX="0.5" pY="0.5" oX="31" oY="8" oW="120" oH="120"/>
+    <sprite n="C_left_finger4.png" x="241" y="401" w="90" h="62" pX="0.5" pY="0.5" oX="33" oY="15" oW="120" oH="120" r="y"/>
+    <sprite n="C_left_foot.png" x="394" y="234" w="116" h="90" pX="0.5" pY="0.5" oX="0" oY="4" oW="90" oH="120" r="y"/>
+    <sprite n="C_left_palm.png" x="112" y="300" w="58" h="102" pX="0.5" pY="0.5" oX="0" oY="8" oW="60" oH="120"/>
+    <sprite n="C_left_shoulder.png" x="86" y="404" w="47" h="57" pX="0.5" pY="0.5" oX="7" oY="3" oW="60" oH="60"/>
+    <sprite n="C_pupil.png" x="394" y="186" w="26" h="27" pX="0.5" pY="0.5" oX="2" oY="2" oW="30" oH="30"/>
+    <sprite n="C_right_finger1.png" x="2" y="300" w="108" h="38" pX="0.5" pY="0.5" oX="52" oY="10" oW="120" oH="120" r="y"/>
+    <sprite n="C_right_finger2.png" x="2" y="401" w="34" h="109" pX="0.5" pY="0.5" oX="50" oY="9" oW="120" oH="120"/>
+    <sprite n="C_right_finger3.png" x="38" y="401" w="46" h="107" pX="0.5" pY="0.5" oX="41" oY="13" oW="120" oH="120"/>
+    <sprite n="C_right_finger4.png" x="444" y="130" w="62" h="102" pX="0.5" pY="0.5" oX="25" oY="18" oW="120" oH="120"/>
+    <sprite n="C_right_foot.png" x="247" y="186" w="145" h="92" pX="0.5" pY="0.5" oX="5" oY="5" oW="150" oH="100"/>
+    <sprite n="C_right_palm.png" x="2" y="340" w="89" h="59" pX="0.5" pY="0.5" oX="5" oY="14" oW="70" oH="110" r="y"/>
+    <sprite n="C_shadow.png" x="2" y="2" w="244" h="108" pX="0.5" pY="0.5"/>
+</TextureAtlas>

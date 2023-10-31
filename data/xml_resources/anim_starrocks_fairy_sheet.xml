@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3229d893d9b7c94959d76d773cc7ca74:630093234e3f784e281ff9c6ef1a8a04:62dc8b912a23d105198e0b9d16c6490d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_fairy_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_fairy" x="2" y="2" w="358" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_fairy_01" x="362" y="210" w="101" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_fairy_02" x="362" y="105" w="107" h="103" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_fairy_03" x="362" y="2" w="110" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_fairy_04" x="2" y="358" w="97" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_fairy_bottom" x="101" y="358" w="157" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_shadow" x="362" y="311" w="85" h="173" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200" r="y"/>
+</TextureAtlas>

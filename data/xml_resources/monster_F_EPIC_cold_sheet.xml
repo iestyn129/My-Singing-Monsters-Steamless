@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b6b1b33b0e804553f6fc5c7c973f1a58:d7418f7d6ee95c1fe3a698b2cd617bfd:c106a2b2c53dbbb6dbe8448f97df37e7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_F_EPIC_cold_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="F_EPIC_cold_ankle" x="693" y="648" w="72" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_beam_1" x="378" y="1268" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_cold_beam_2" x="667" y="1070" w="96" h="200" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100" r="y"/>
+    <sprite n="F_EPIC_cold_beam_3" x="360" y="1458" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_cold_beam_4" x="360" y="1364" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_cold_big_orb" x="4" y="1507" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_cold_castle" x="4" y="4" w="761" h="640" pX="0.5" pY="0.5" oX="51" oY="195" oW="760" oH="980" r="y"/>
+    <sprite n="F_EPIC_cold_castleglow" x="4" y="648" w="386" h="318" pX="0.5" pY="0.5" oX="42" oY="91" oW="410" oH="490" r="y"/>
+    <sprite n="F_EPIC_cold_chest_bg" x="768" y="832" w="219" h="256" pX="0.5" pY="0.5" oX="2" oY="0" oW="260" oH="220" r="y"/>
+    <sprite n="F_EPIC_cold_chest_front" x="4" y="1252" w="256" h="156" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_cloud" x="769" y="148" w="234" h="227" pX="0.5" pY="0.5" oX="11" oY="14" oW="256" oH="256"/>
+    <sprite n="F_EPIC_cold_crown_back" x="394" y="648" w="295" h="268" pX="0.5" pY="0.5" oX="16" oY="4" oW="300" oH="300" r="y"/>
+    <sprite n="F_EPIC_cold_crown_nose" x="4" y="970" w="262" h="58" pX="0.5" pY="0.5" oX="2" oY="10" oW="60" oH="280" r="y"/>
+    <sprite n="F_EPIC_cold_eyeball_1" x="956" y="1517" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_cold_eyeball_2" x="191" y="1504" w="88" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_cold_eyelid_1" x="996" y="778" w="24" h="54" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60" r="y"/>
+    <sprite n="F_EPIC_cold_eyelid_2" x="991" y="836" w="28" h="57" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60" r="y"/>
+    <sprite n="F_EPIC_cold_eyelid_3" x="582" y="1348" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_cold_eyelid_4" x="956" y="1455" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_cold_eyesockets" x="956" y="1577" w="55" h="158" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56" r="y"/>
+    <sprite n="F_EPIC_cold_fist_1B_longer" x="268" y="1051" w="106" h="257" pX="0.5" pY="0.5" oX="3" oY="4" oW="260" oH="112" r="y"/>
+    <sprite n="F_EPIC_cold_foot_large" x="767" y="1252" w="206" h="199" pX="0.5" pY="0.5" oX="0" oY="1" oW="200" oH="210" r="y"/>
+    <sprite n="F_EPIC_cold_foot_pad" x="378" y="1088" w="254" h="176" pX="0.5" pY="0.5" oX="3" oY="18" oW="260" oH="200"/>
+    <sprite n="F_EPIC_cold_fxray" x="769" y="498" w="226" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="F_EPIC_cold_glow" x="191" y="1412" w="48" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_icicle_A" x="983" y="1094" w="31" h="155" pX="0.5" pY="0.5" oX="4" oY="3" oW="40" oH="170"/>
+    <sprite n="F_EPIC_cold_icicle_B" x="991" y="929" w="27" h="131" pX="0.5" pY="0.5" oX="7" oY="0" oW="40" oH="170"/>
+    <sprite n="F_EPIC_cold_icicle_C" x="996" y="659" w="24" h="115" pX="0.5" pY="0.5" oX="9" oY="2" oW="40" oH="170"/>
+    <sprite n="F_EPIC_cold_icicle_D" x="999" y="498" w="21" h="84" pX="0.5" pY="0.5" oX="9" oY="4" oW="40" oH="170"/>
+    <sprite n="F_EPIC_cold_knee" x="582" y="1268" w="79" h="76" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="84" r="y"/>
+    <sprite n="F_EPIC_cold_lowerarm" x="394" y="920" w="269" h="164" pX="0.5" pY="0.5" oX="5" oY="6" oW="280" oH="200"/>
+    <sprite n="F_EPIC_cold_mouth_01" x="769" y="572" w="225" h="83" pX="0.5" pY="0.5" oX="17" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_cold_mouth_02" x="693" y="820" w="71" h="145" pX="0.5" pY="0.5" oX="56" oY="15" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_03" x="270" y="970" w="117" h="77" pX="0.5" pY="0.5" oX="87" oY="11" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_04" x="4" y="1412" w="183" h="91" pX="0.5" pY="0.5" oX="80" oY="12" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_05" x="769" y="379" w="233" h="115" pX="0.5" pY="0.5" oX="68" oY="7" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_06" x="769" y="4" w="237" h="140" pX="0.5" pY="0.5" oX="56" oY="5" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_07" x="769" y="659" w="223" h="169" pX="0.5" pY="0.5" oX="41" oY="3" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_cold_mouth_08" x="564" y="1410" w="197" h="161" pX="0.5" pY="0.5" oX="26" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_cold_mouth_09" x="4" y="1032" w="260" h="112" pX="0.5" pY="0.5" oX="0" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_cold_mouth_10" x="4" y="1148" w="260" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_cold_neck" x="977" y="1317" w="39" h="66" pX="0.5" pY="0.5" oX="1" oY="3" oW="68" oH="44" r="y"/>
+    <sprite n="F_EPIC_cold_orb_1" x="665" y="1274" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_orb_2" x="264" y="1312" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_orb_3" x="264" y="1408" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_pupil" x="991" y="1064" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_cold_pupil_glow" x="991" y="897" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_cold_shadow" x="765" y="1455" w="187" h="83" pX="0.5" pY="0.5" oX="3" oY="3" oW="192" oH="88"/>
+    <sprite n="F_EPIC_cold_shock" x="667" y="969" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_cold_spring" x="765" y="1542" w="187" h="47" pX="0.5" pY="0.5" oX="6" oY="1" oW="200" oH="50"/>
+    <sprite n="F_EPIC_cold_toes" x="767" y="1092" w="212" h="156" pX="0.5" pY="0.5" oX="14" oY="21" oW="260" oH="200"/>
+    <sprite n="F_EPIC_cold_upperarm" x="693" y="752" w="72" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="F_EPIC_cold_upperleg" x="977" y="1253" w="40" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="40" r="y"/>
+</TextureAtlas>

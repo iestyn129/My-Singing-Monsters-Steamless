@@ -1,0 +1,175 @@
+<template name="jukebox_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+
+	<element name="bg">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite" >
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("selectable_bar_grey")
+						component("sheetName"):SetString("xml_resources/breeding01.xml")
+						component("size"):SetFloat(0.525*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+
+	<element name="MusicBacking">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("button_rnd_base_green")
+						component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+						component("size"):SetFloat(0.4*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+
+	<element name="MusicSprite">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="MusicBacking" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("decoration_filters_musical")
+						component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+						component("size"):SetFloat(0.4*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+
+	<element name="LockedIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="8 * game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("spriteName"):SetString("button_lock")
+						component("sheetName"):SetString("xml_resources/buttons01.xml")
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+					]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="SongName">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="MusicBacking" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="8 * game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<textComponent name="Text">
+				<size w="155*game.menuScaleX()" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						
+						component:setSize(Vector2(100*game.menuScaleX(), 0))
+						component("text"):SetString(element:parent()("songName"):GetString())
+						
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()"/>
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+			if(component("dragging"):GetInt() < 10) then
+				local list = element:parent()
+				list("SelectedEntry"):SetString(element:name())
+				list:DoStoredScript("onSelectEntry")
+			end
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+	</touchComponent>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element:DoStoredScript("refresh")
+		]]>
+	</event>
+	
+	<event name="refresh" params="element">
+		<![CDATA[
+			if element("selected"):GetInt() == 1 then
+				element["bg"]["Sprite"]("spriteName"):SetString("selectable_bar_yellow")
+			else
+				element["bg"]["Sprite"]("spriteName"):SetString("selectable_bar_grey")
+			end
+		
+			if element("locked"):GetInt() == 1 then
+				--element["bg"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				element["MusicBacking"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				element["MusicSprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				element["SongName"]["Text"]:setColor(0.5, 0.5, 0.5)
+				element["LockedIcon"]["Sprite"]("visible"):SetInt(1)
+			else
+				element["LockedIcon"]["Sprite"]("visible"):SetInt(0)
+			end
+			
+		]]>
+	</event>
+
+	<event name="updateClipping" params="element">
+		<![CDATA[
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.SetClipFrom(element:GetComponent("Touch"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("SongName"):GetComponent("Text"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("MusicSprite"):GetComponent("Sprite"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("MusicBacking"):GetComponent("Sprite"), element)
+				MenuHelpers.SetClipFrom(element:GetElement("bg"):GetComponent("Sprite"), element)				
+				MenuHelpers.SetClipFrom(element:GetElement("LockedIcon"):GetComponent("Sprite"), element)
+		]]>
+	</event>
+
+
+
+</template>

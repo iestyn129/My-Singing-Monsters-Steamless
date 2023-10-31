@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1614ffcad595cd5bb38f72de2532d2b7:db7c5f32a221fc13e02b9a8cf386ff30:1620d65af838ee8f9701a6beb8eaa196$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/island08_specific_deco.png" width="256" height="512" hires="true">
+    <sprite n="decoration_ground_W8_01" x="167" y="124" w="84" h="126" pX="0.5" pY="0.5" oX="38" oY="7" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W8_02" x="2" y="2" w="168" h="98" pX="0.5" pY="0.5" oX="16" oY="1" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W8_03" x="172" y="2" w="69" h="120" pX="0.5" pY="0.5" oX="41" oY="13" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W8_04" x="161" y="252" w="69" h="120" pX="0.5" pY="0.5" oX="41" oY="13" oW="200" oH="100" r="y"/>
+    <sprite n="decoration_ground_W8_05" x="2" y="194" w="157" h="96" pX="0.5" pY="0.5" oX="27" oY="1" oW="200" oH="100"/>
+    <sprite n="decoration_ground_W8_06" x="2" y="102" w="163" h="90" pX="0.5" pY="0.5" oX="17" oY="6" oW="200" oH="100"/>
+</TextureAtlas>

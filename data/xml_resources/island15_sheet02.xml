@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f26e941adbd71e3354250884c5e87ed2:b852e7e5fb5db481fe9cfda04a80b3ba:1ed071c2a215b53d860957ed89652876$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island15_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="Centre_Eyeball" x="904" y="2" w="750" h="578" pX="0.5" pY="0.5"/>
+    <sprite n="Centre_Eyeshine" x="1927" y="356" w="110" h="125" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Centre_Pupil" x="1656" y="166" w="302" h="127" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Eye_Mandable" x="2" y="569" w="733" h="610" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Eyeball001" x="1656" y="295" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball002" x="1656" y="565" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball003" x="428" y="1181" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball004" x="428" y="1452" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball009" x="428" y="1723" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball010" x="698" y="1181" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball011" x="737" y="835" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball012" x="698" y="1452" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball013" x="698" y="1723" w="268" h="269" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271"/>
+    <sprite n="Eyeball014" x="1007" y="582" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball015" x="1278" y="582" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball016" x="1549" y="835" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball017" x="1007" y="852" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball018" x="1278" y="852" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball019" x="1549" y="1105" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="Eyeball022" x="968" y="1122" w="269" h="268" pX="0.5" pY="0.5" oX="0" oY="2" oW="269" oH="271" r="y"/>
+    <sprite n="OpenMandablesBacking01" x="1656" y="2" w="379" h="162" pX="0.5" pY="0.5" oX="0" oY="2" oW="162" oH="381" r="y"/>
+    <sprite n="OpenMandablesBacking02" x="1960" y="166" w="82" h="188" pX="0.5" pY="0.5"/>
+    <sprite n="OpenMandablesBacking03" x="1927" y="483" w="101" h="87" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="87"/>
+    <sprite n="OpenShadow" x="2" y="1181" w="424" h="670" pX="0.5" pY="0.5" oX="1" oY="3" oW="432" oH="673"/>
+    <sprite n="RimFrontMandablesOpen" x="2" y="415" w="736" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="w1_cloud" x="2" y="2" w="900" h="411" pX="0.5" pY="0.5" oX="0" oY="4" oW="900" oH="420"/>
+</TextureAtlas>

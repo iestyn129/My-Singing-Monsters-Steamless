@@ -1,0 +1,219 @@
+<template name="template_contextinfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$luaPointer" equals="element:root():getLuaPointer()" />
+	<defaultTemplateVar name="$textScale" equals="0.5" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="TestBar" />
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("numItems"):SetInt($luaPointer:numProgressBars())
+		
+			local previous = nil
+			local firstItemPriority = 3
+			local numItems = element("numItems"):GetInt()
+			
+			for i=0,numItems-1 do
+				local progressBar = menu:addTemplateElement($luaPointer:progressBarMenuTemplate(i), "progressBar"..i, element)
+				
+				progressBar("EmptySpriteName"):SetString($luaPointer:progressBarEmptySprite(i))
+				progressBar("FullSpriteName"):SetString($luaPointer:progressBarFullSprite(i))
+				progressBar("FullSpriteNegativeName"):SetString($luaPointer:progressBarFullSpriteNegative(i))
+				progressBar("SheetName"):SetString($luaPointer:progressBarSheetName(i))
+				progressBar("ProgressLabel"):SetString($luaPointer:progressBarLabel(i))
+				progressBar("ProgressLabelSize"):SetFloat($luaPointer:progressBarLabelSize(i))
+				progressBar("ListenerAttribute"):SetString($luaPointer:getListenerAttributeForBar(i))
+				progressBar("AttachedTemplate"):SetString($luaPointer:getAttachedTemplateForBar(i))
+				progressBar("AttachedTemplateAlignment"):SetString($luaPointer:getAttachedTemplateAlignmentForBar(i))
+				progressBar("LabelXOffset"):SetInt($luaPointer:progressBarLabelXOffset(i))
+				progressBar("LabelYOffset"):SetInt($luaPointer:progressBarLabelYOffset(i))
+				progressBar("LabelColourR"):SetFloat($luaPointer:progressBarLabelRed(i))
+				progressBar("LabelColourG"):SetFloat($luaPointer:progressBarLabelGreen(i))
+				progressBar("LabelColourB"):SetFloat($luaPointer:progressBarLabelBlue(i))
+				progressBar("size"):SetFloat(480.0/lua_sys.screenWidth()*(game.bgScale()*2.0))
+				progressBar("layer"):SetString("ContextBar")
+				
+				if(previous == nil) then
+					progressBar:setParent(element)
+					progressBar:setOrientation(lua_sys.MenuOrientation(0, 0, firstItemPriority, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+					progressBar:setRelativeObjectAnchors($luaPointer:getHAnchor(), $luaPointer:getVAnchor())
+				else
+					progressBar:setParent(previous)
+					progressBar:setOrientation(lua_sys.MenuOrientation(0, -6*game.hudScale(), 0, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+					progressBar:setRelativeObjectAnchors($luaPointer:getHAnchor(), $luaPointer:getInfoVAnchor())
+				end
+				
+				previous = progressBar
+				progressBar:init()
+				progressBar:setPositionBroadcast(true)
+				progressBar:postInit()
+				$luaPointer:setProgressElement(i, progressBar)
+				
+				if(i%2 == 1) then
+					local flourish1 = menu:addTemplateElement("template_instancespritesheet", "flourish1", progressBar)
+					
+					flourish1("SpriteName"):SetString("swirls")
+					flourish1("SheetName"):SetString("xml_resources/hud01.xml")
+					flourish1("Size"):SetFloat(0.5*game.hudScale())
+					flourish1("Layer"):SetString("ContextBar")
+					flourish1:relativeTo(progressBar)
+					flourish1:setOrientation(lua_sys.MenuOrientation(0,0,1,lua_sys.HCENTER, lua_sys.VCENTER))
+					flourish1:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					flourish1:init()
+					flourish1:setPositionBroadcast(true)
+					flourish1["Sprite"]("rotation"):SetFloat(-0.3)
+				end
+			end
+			
+			local labelElement = menu:addTemplateElement("template_instancelabel", "Label", element)
+			
+			labelElement("sizeVar"):SetFloat(element("titleScale"):GetFloat())
+
+			local selectedObject = game.SelectedObject()
+
+			if((game.isObjectSelected() == false) or ($luaPointer:getMenuLabel() == "")) then
+				labelElement("textVar"):SetString(game.getLocalizedText($luaPointer:getMenuLabel()))
+			else
+				--if it's a new monster (no monster name yet), show monster type name
+				if (manager:getContext() == "MOVE") and game.selectedObjIsMonster() and game.isNewSelectedObject() then
+					labelElement("textVar"):SetString(game.selectedMonsterTypeName());
+				elseif game.isBattleTrophy() then
+					local text = LOC(game.objectName())
+					local campaignTitle = LOC(game.battleTrophyInfo())
+					text = text:gsub("%${CAMPAIGN}", campaignTitle)
+					labelElement("textVar"):SetString(text)
+				elseif selectedObject and selectedObject:isAwakener() then
+					-- special hack for Awakener to show deactivated name
+					local calendarId = game.player():getDailyCumulativeLogin():calendar()
+					if calendarId <= selectedObject:getCalendarId() then
+						-- show deactivated name
+						local textId = "STRUCTURE_AWAKENER_DEACTIVATED"
+						labelElement("textVar"):SetString(textId);
+					else
+						-- show regular name
+						labelElement("textVar"):SetString(game.objectName());
+					end
+				else
+					labelElement("textVar"):SetString(game.objectName());
+				end
+			end
+			
+			labelElement("layerVar"):SetString("ContextBar")
+			
+			if(previous == nil) then
+				labelElement:setParent(element)
+				labelElement:setOrientation(lua_sys.MenuOrientation(0, 8 * game.hudScale(), firstItemPriority, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+			else
+				labelElement:setParent(previous)
+				labelElement:setOrientation(lua_sys.MenuOrientation(0, 0 * game.hudScale(), 0, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+			end
+			
+			labelElement:setRelativeObjectAnchors($luaPointer:getHAnchor(), $luaPointer:getInfoVAnchor())
+
+			labelElement:GetComponent("Text"):setOrientation(lua_sys.MenuOrientation(-12*lua_sys.screenWidth()/960, 0, 0, lua_sys.LEFT, lua_sys.VCENTER))
+			labelElement:GetComponent("Text"):setRelativeObjectAnchors(lua_sys.LEFT,  lua_sys.VCENTER)
+			
+			labelElement:init()
+			labelElement:setPositionBroadcast(true)
+			labelElement:postInit()
+			
+			previous = labelElement
+			
+			element("numTopsideItems"):SetInt($luaPointer:numTopsideItems())
+		
+			local numTopsideItems = element("numTopsideItems"):GetInt()
+			
+			for i=0,numTopsideItems-1 do
+				local emptyItem = menu:addTemplateElement("template_barbutton", "topsideItem"..i, element)
+				
+				emptyItem("SheetName"):SetString($luaPointer:getSheetName())
+				emptyItem("ButtonSheetName"):SetString($luaPointer:getSheetForTopsideButton(i))
+				emptyItem("UpSpriteName"):SetString($luaPointer:getUpSprite())
+				emptyItem("ButtonImageName"):SetString($luaPointer:getImageForTopsideButton(i))
+				emptyItem("ButtonLabelText"):SetString($luaPointer:getLabelForTopsideButton(i))
+				emptyItem("ButtonScale"):SetFloat($luaPointer:getScaleForTopsideButton(i))
+				emptyItem("ButtonHFlip"):SetInt($luaPointer:getHFlipForTopsideButton(i))
+				emptyItem("ButtonVFlip"):SetInt($luaPointer:getVFlipForTopsideButton(i))
+				emptyItem("AttachedTemplate"):SetString($luaPointer:getAttachedTemplateForTopsideButton(i))
+				emptyItem("FunctionName"):SetString($luaPointer:getFunctionForTopsideButton(i))
+				emptyItem("ButtonMapping"):SetString($luaPointer:getButtonMappingForTopsideButton(i))
+				emptyItem("ReactToTouches"):SetInt(1)
+				emptyItem("TextScale"):SetFloat($textScale)
+				
+				--this shouldn't ever happen, but just in case:
+				if(previous == nil) then
+					emptyItem:setParent(element)
+					emptyItem:setOrientation(lua_sys.MenuOrientation(0, 5, firstItemPriority, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+				else
+					emptyItem:setParent(previous)
+					emptyItem:setOrientation(lua_sys.MenuOrientation(0, 5, 0, $luaPointer:getHAnchor(), $luaPointer:getVAnchor()))
+				end
+
+				emptyItem:setRelativeObjectAnchors($luaPointer:getHAnchor(), $luaPointer:getInfoVAnchor())
+				
+				--hacka hacka!!
+				previous:addLuaEventFn("collect_all", "element", "element\:parent\(\)\:DoStoredScript\(\"collect\_all\"\)")
+				previous:compileLuaEventFn("collect_all")
+				
+				previous = emptyItem
+				emptyItem:init()
+				emptyItem:setPositionBroadcast(true)
+				emptyItem:postInit()
+				$luaPointer:setTopsideElement(i, emptyItem)
+				if(emptyItem("FunctionName"):GetString() == "") then
+					manager:setButtonVisible($luaPointer:getIdForTopsideButton(i), false)
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="collect_all" params="element">
+		element:parent():DoStoredScript("collect_all")
+	</event>
+	
+	<event name="setVisible" params="element">
+		local numBars = element("numItems"):GetInt()
+		
+		for i=0,numBars-1 do
+			local progressBar = element:GetElement("progressBar"..i)
+			progressBar:DoStoredScript("setVisible")
+			if(i%2 == 1) then
+				progressBar["flourish1"]["Sprite"]("visible"):SetInt(1)
+			end
+		end
+		
+		element:GetElement("Label")["Text"]("visible"):SetInt(1)
+		
+		local numTopsideItems = element("numTopsideItems"):GetInt()
+		for i=0,numTopsideItems-1 do
+			local button = element:GetElement("topsideItem"..i)
+			if(button ~= nil) then
+				button:DoStoredScript("SetVisible")
+			end
+		end
+
+	</event>
+	
+	<event name="setInvisible" params="element">
+		local numBars = element("numItems"):GetInt()
+		
+		for i=0,numBars-1 do
+			local progressBar = element:GetElement("progressBar"..i)
+			progressBar:DoStoredScript("setInvisible")
+			if(i%2 == 1) then
+				progressBar["flourish1"]["Sprite"]("visible"):SetInt(0)
+			end
+		end
+		
+		element:GetElement("Label")["Text"]("visible"):SetInt(0)
+		
+		local numTopsideItems = element("numTopsideItems"):GetInt()
+		for i=0,numTopsideItems-1 do
+			local button = element:GetElement("topsideItem"..i)
+			if(button ~= nil) then
+				button:DoStoredScript("SetInvisible")
+			end
+		end
+	</event>
+	
+</template>

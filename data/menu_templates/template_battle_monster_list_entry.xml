@@ -1,0 +1,324 @@
+<template name="template_battle_monster_list_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size dependentOnElement="bg" dependentOnComponent="GreySprite" />
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="GreySprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+
+		<spriteSheetComponent name="GreySprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("selectable_bar_grey")
+					component("sheetName"):SetString("xml_resources/breeding01.xml")
+					component("size"):SetFloat(0.525*game.menuScaleX())
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<spriteSheetComponent name="YellowSprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("selectable_bar_yellow")
+					component("sheetName"):SetString("xml_resources/breeding01.xml")
+					component("size"):SetFloat(0.525*game.menuScaleX())
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="16*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					local monsterId = element:parent()("MonsterID"):GetInt()
+					if monsterId == 0 then
+						component("visible"):SetInt(0)
+					else
+						component("spriteName"):SetString("gfx/breeding/"..game.getPortraitName(monsterId))
+						component("size"):SetFloat(0.525*game.menuScaleX())
+					end
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="monsterName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="-6*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+
+					local monsterId = element:parent()("MonsterID"):GetInt()
+					if monsterId == 0 then
+
+						component:relativeTo(element:parent())
+						component:setOrientation(MenuOrientation(0, 0, -1, HCENTER, VCENTER))
+						component:setRelativeObjectAnchors(HCENTER, VCENTER)
+
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString("EMPTY")
+
+					else
+
+						component("size"):SetFloat(0.25*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("noTranslate"):SetInt(1)
+
+						local name = game.getMonsterName(monsterId)
+						include("MenuHelpers").ShrinkTextToWidth(name, component, 60*game.menuScaleX())
+
+					end
+
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="monsterType">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="6*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+
+					local monsterId = element:parent()("MonsterID"):GetInt()
+
+					if monsterId == 0 then
+
+						component("visible"):SetInt(0)
+
+					else
+
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.18*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("text"):SetString(game.monsterType(monsterId))
+						component:setColor(0.75, 0.75, 0.75)
+
+					end
+
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="levelSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="monsterName" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+
+					local monsterId = element:parent()("MonsterID"):GetInt()
+
+					if monsterId == 0 then
+
+						component("visible"):SetInt(0)
+
+					else
+
+						local spriteString = "monster_level_numbers_"
+
+						local level = game.monsterLevel(monsterId)
+
+						if(level < 10) then
+							spriteString = (spriteString.."0")
+						end
+
+						component("spriteName"):SetString(spriteString..level)
+						component("sheetName"):SetString("xml_resources/level_numbers.xml")
+						component("size"):SetFloat(0.5*game.menuScaleX())
+
+					end
+
+					component("layer"):SetString(element:parent()("Layer"):GetString())
+
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<template type="template_genes" name="Genes">
+		<templateVar name="$Spacing" equals="-1*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("Layer"):SetString(element:parent()("Layer"):GetString())
+				element("Size"):SetString(0.25*game.hudScale())
+			]]>
+		</event>
+	</template>
+
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(y)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(element("touchDisabled"):GetInt() == 0) then
+					if(component("dragging"):GetInt() < 10) then
+
+						if element("disabled"):GetInt() == 0 then
+
+							local target = element:root():GetElement(element("List"):GetString())
+							target("NewSelectedEntry"):SetString(element:name())
+							target("NewSelectedEntryID"):SetString(element("MonsterID"):GetInt())
+							target:DoStoredScript("selectNewEntry")
+
+						end
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+				end
+			]]>
+		</event>
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component:setSize(Vector2(element:GetElement("bg"):absW()*1.25, element:GetElement("bg"):absH() * 1.5))
+				component("yOffset"):SetInt(element:GetElement("bg"):absH()*(-0.25))
+			]]>
+		</event>
+	</touchComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("touchDisabled"):SetInt(0)
+
+			element("clipX"):SetFloat(0)
+			element("clipY"):SetFloat(0)
+			element("clipW"):SetFloat(lua_sys.screenWidth())
+			element("clipH"):SetFloat(lua_sys.screenHeight())
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+
+			local isSelected = element("selected"):GetInt()
+			element["bg"]["YellowSprite"]("visible"):SetInt(isSelected)
+			element["bg"]["GreySprite"]("visible"):SetInt(1-isSelected)
+
+			local monsterId = element("MonsterID"):GetInt()
+			local monsterType = game.monsterTypeId(monsterId)
+			element["Genes"]("MonsterId"):SetInt(monsterType)
+			element["Genes"]:DoStoredScript("populate")
+
+			local isDisabled = element("disabled"):GetInt()
+			if isDisabled == 1 then
+				element:DoStoredScript("setDisabled")
+			end
+		]]>
+	</event>
+
+	<event name="updateClipping" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+			MenuHelpers.SetClipFrom(element:GetComponent("Touch"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("bg"):GetComponent("GreySprite"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("bg"):GetComponent("YellowSprite"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("CharacterImage"):GetComponent("Sprite"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("monsterName"):GetComponent("Text"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("monsterType"):GetComponent("Text"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("levelSprite"):GetComponent("Sprite"), element)
+
+			element["Genes"]("clipX"):SetFloat(element("clipX"):GetFloat())
+			element["Genes"]("clipY"):SetFloat(element("clipY"):GetFloat())
+			element["Genes"]("clipW"):SetFloat(element("clipW"):GetFloat())
+			element["Genes"]("clipH"):SetFloat(element("clipH"):GetFloat())
+			element["Genes"]:DoStoredScript("updateClipping")
+		]]>
+	</event>
+  
+	<event name="setDisabled" params="element">
+		<![CDATA[
+			element("disabled"):SetInt(1)
+			element["bg"]["YellowSprite"]("visible"):SetInt(0)
+			element["bg"]["GreySprite"]("visible"):SetInt(1)
+			element["bg"]["GreySprite"]:setColor(0.5, 0.5, 0.5)
+			element["CharacterImage"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["monsterName"]["Text"]:setColor(0.5, 0.5, 0.5)
+			element["monsterType"]["Text"]:setColor(0.25, 0.25, 0.25)
+			element["levelSprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["Genes"]:DoStoredScript("disable")
+		]]>
+	</event>
+
+  <event name="select" params="element">
+    <![CDATA[
+			element("selected"):SetInt(1)
+			element["bg"]["YellowSprite"]("visible"):SetInt(1)
+			element["bg"]["GreySprite"]("visible"):SetInt(0)
+		]]>
+  </event>
+
+  <event name="deselect" params="element">
+    <![CDATA[
+			element("selected"):SetInt(0)
+			element["bg"]["YellowSprite"]("visible"):SetInt(0)
+			element["bg"]["GreySprite"]("visible"):SetInt(1)
+		]]>
+  </event>
+
+  <event name="updateAlpha" params="element">
+    <![CDATA[
+      local alpha = element("alpha"):GetFloat()
+      element:GetElement("bg"):GetComponent("GreySprite")("alpha"):SetFloat(alpha)
+      element:GetElement("bg"):GetComponent("YellowSprite")("alpha"):SetFloat(alpha)
+      element:GetElement("CharacterImage"):GetComponent("Sprite")("alpha"):SetFloat(alpha)
+      element:GetElement("monsterName"):GetComponent("Text")("alpha"):SetFloat(alpha)
+      element:GetElement("monsterType"):GetComponent("Text")("alpha"):SetFloat(alpha)
+      element:GetElement("levelSprite"):GetComponent("Sprite")("alpha"):SetFloat(alpha)      
+      
+      element:GetElement("Genes")("alpha"):SetFloat(alpha)
+      element:GetElement("Genes"):DoStoredScript("update")
+      
+      element["Touch"]("enabled"):SetInt(alpha > 0.1 and 1 or 0)
+    ]]>
+  </event>
+
+  <event name="hide" params="element">
+    <![CDATA[
+      element:GetElement("bg"):GetComponent("GreySprite")("visible"):SetInt(0)
+      element:GetElement("bg"):GetComponent("YellowSprite")("visible"):SetInt(0)
+      element:GetElement("CharacterImage"):GetComponent("Sprite")("visible"):SetInt(0)
+      element:GetElement("monsterName"):GetComponent("Text")("visible"):SetInt(0)
+      element:GetElement("monsterType"):GetComponent("Text")("visible"):SetInt(0)
+      element:GetElement("levelSprite"):GetComponent("Sprite")("visible"):SetInt(0)
+      element:GetElement("Genes"):DoStoredScript("hide")
+      element["Touch"]("enabled"):SetInt(0)
+    ]]>
+  </event>
+</template>

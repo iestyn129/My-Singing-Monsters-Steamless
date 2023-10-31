@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0568a989bd542fe9941e3b105f6b9861:d13f691cc14e12831e093c8ff6f16471:ddc915ba320527fc0fd93db4d3c466d1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AE_costume_06_sheet.png" width="256" height="256" hires="true">
+	
+    <sprite n="AE_costume_06_head" x="2" y="140" w="106" h="108" pX="0.5" pY="0.5"/>
+	
+	<!-- original anchor = (17, 6) -> new anchor (20, -5) diff = (-3, 11)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (-4, 23)-->
+    <sprite n="AE_costume_06_left_mitten" x="177" y="2" w="59" h="58" pX="0.5" pY="0.5" oX="-4" oY="23" oW="60" oH="60" r="y"/>
+
+	<!-- original anchor = (14, 3) -> new anchor (17.5, -9) diff = (-3.5, 12)-->
+	<!-- add double it to texturepacker output offsets (0, 2) -> (-7, 26)-->
+    <sprite n="AE_costume_06_right_mitten" x="110" y="140" w="65" h="66" pX="0.5" pY="0.5" oX="-7" oY="26" oW="70" oH="70"/>
+
+	<!-- original anchor = (29, 20) -> new anchor (33, 27) diff = (-4, -7)-->
+	<!-- add double it to texturepacker output offsets (3, 5) -> (-5, -9)-->
+    <sprite n="AE_costume_06_scarf_long" x="2" y="2" w="123" h="136" pX="0.5" pY="0.5" oX="-5" oY="-9" oW="140" oH="160"/>
+	
+</TextureAtlas>

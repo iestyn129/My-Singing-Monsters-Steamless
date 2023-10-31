@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:72b1cdcfbc7524d46ef4b902558ed911:0319a506b8410c4d6f36f067e2cca94e:fd92d075a24de8d09cbf4a703bd488c3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_A_costume_04_sheet.png" width="256" height="256" hires="true">
+    <sprite n="A_left_foot_spurboot.png" x="2" y="2" w="97" h="106" pX="0.5" pY="0.5" oX="1" oY="1" oW="100" oH="108"/>
+    <sprite n="A_right_foot_spurboot.png" x="2" y="110" w="89" h="100" pX="0.5" pY="0.5" oX="0" oY="1" oW="100" oH="92" r="y"/>
+    <sprite n="A_spur_01.png" x="101" y="61" w="56" h="45" pX="0.5" pY="0.5" oX="5" oY="0" oW="52" oH="60" r="y"/>
+    <sprite n="A_spur_02.png" x="93" y="110" w="43" h="59" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="60"/>
+    <sprite n="A_spur_03.png" x="101" y="2" w="44" h="57" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="60"/>
+    <sprite n="A_spur_04.png" x="93" y="171" w="45" h="57" pX="0.5" pY="0.5" oX="2" oY="0" oW="52" oH="60"/>
+</TextureAtlas>

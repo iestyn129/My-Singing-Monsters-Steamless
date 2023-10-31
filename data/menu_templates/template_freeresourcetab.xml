@@ -1,0 +1,397 @@
+<template name="template_freeresourcetab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component("size"):SetFloat(256.0)
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				element:parent()("transitionState"):SetInt(2)
+			</event>
+			<event name="onInit" params="component, element">
+				component("enabled"):SetInt(0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="20*game.menuScaleX()" yOffset="-25*game.menuScaleX()" priorityOffset="0" />
+		<ninesliceComponent name="Sprite">
+			<size w="120*game.menuScaleX()" h="65*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Coin">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-4*game.menuScaleX()" yOffset="18*game.menuScaleX()" priorityOffset="2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("coin")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Diamond">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="2*game.menuScaleX()" yOffset="34*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("diamond")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="ExclaimMenu">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-10*game.menuScaleX()" yOffset="6*game.menuScaleX()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("goal_exclaim")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.6*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(0)
+				else
+					component("hFlip"):SetInt(0)
+				end
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="94*game.menuScaleX()" h="28*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="24*game.menuScaleX()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("FREE_CURRENCY_LABEL"))
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+				element["Text"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("transitionState"):SetInt(1)
+				element:parent()["FadedBG"]["Touch"]("enabled"):SetInt(1)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element["Text"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+			element["Coin"]("visible"):SetInt(0)
+			element["Diamond"]("visible"):SetInt(0)
+			element["ExclaimMenu"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<event name="setBonusOffer" params="element">
+			if(game.hasDoneOffer()) then
+				element["ExclaimMenu"]("visible"):SetInt(0)
+			end
+		</event>
+	</element>
+	
+	<element name="MainFrame">
+		<size w="190*game.menuScaleX()" h="170*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<template type="template_spritesheetbutton" name="EarnCoins">
+			<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="0.625*game.menuScaleX()" />
+			<templateVar name="$layer" equals="'FrontPopUps'" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="-8*game.menuScaleX()" yOffset="20*game.menuScaleX()" priorityOffset="-3" />
+			<textComponent name="EarnCoinsText">
+				<size w="141*game.menuScaleX()" h="31*game.menuScaleX()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(1)
+					component("textPadding"):SetInt(0.0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.20*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("VIDEOS_EARN_COINS")
+					component("rotation"):SetFloat(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("FrontPopUps")
+				</event>
+			</textComponent>
+			<spriteSheetComponent name="Coin">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-3*game.menuScaleX()" yOffset="2*game.menuScaleX()" priorityOffset="1" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("coin")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+				</event>
+			</spriteSheetComponent>
+			<touchComponent name="Touch">
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.showTapjoyEvent("watch_video_earn_coins")
+				</event>
+			</touchComponent>
+			<event name="setInvisible" params="element">
+				setInvisible(element)
+				element["EarnCoinsText"]("visible"):SetInt(0)
+				element["Coin"]("visible"):SetInt(0)			
+			</event>
+		</template>
+		<template type="template_spritesheetbutton" name="EarnDiamonds">
+			<!--Will Update this Spritesheet when available-->
+			<templateVar name="$upSpriteName" equals="'button_free_diamonds'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="0.57*game.menuScaleX()" />
+			<templateVar name="$layer" equals="'FrontPopUps'" />
+			<position relativeTo="EarnCoins" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="6*game.menuScaleX()" priorityOffset="0" />
+			<textComponent name="EarnDiamondsText">
+				<size w="141*game.menuScaleX()" h="31*game.menuScaleX()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-5*game.menuScaleX()" yOffset="-1" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(1)
+					component("textPadding"):SetInt(0.0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.20*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("FREE_DIAMONDS")
+					component("rotation"):SetFloat(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("FrontPopUps")
+				</event>
+			</textComponent>
+			<touchComponent name="Touch">
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					if (not game.hasDoneOffer()) then
+						game.showTapjoyOfferWallPlus()
+						element:DoStoredScript("setBonusOffer")
+						element:parent():parent()["TitleFrame"]:DoStoredScript("setBonusOffer")
+					else
+						game.showTapjoyOfferWall()
+					end
+				</event>
+			</touchComponent>
+			<event name="setInvisible" params="element">
+				setInvisible(element)
+				element["EarnDiamondsText"]("visible"):SetInt(0)
+			</event>
+			<spriteSheetComponent name="Exclaim">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-14*game.menuScaleX()" yOffset="14*game.menuScaleX()" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("goal_exclaim")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.6*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+					
+					if(component("isSourceRotated"):GetInt() == 1) then
+						component("vFlip"):SetInt(0)
+					else
+						component("hFlip"):SetInt(0)
+					end
+
+				</event>
+			</spriteSheetComponent>
+			<spriteSheetComponent name="Tag">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="33*game.menuScaleX()" yOffset="20*game.menuScaleX()" priorityOffset="1" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("sale_tag_updated_taller")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("layer"):SetString("FrontPopUps")
+					component("size"):SetFloat(0.3125*game.menuScaleX())
+				</event>
+			</spriteSheetComponent>
+			<textComponent name="TextBonus">
+				<size w="94*game.menuScaleX()" h="32*game.menuScaleX()" />
+				<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="35*game.menuScaleX()" yOffset="41*game.menuScaleX()" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.28*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(game.getLocalizedText("OFFERWALL_PLUS_BONUS_TEXT"))
+					component("layer"):SetString("FrontPopUps")
+					component:setColor(0.29, 0.92, 0.91)
+				</event>
+			</textComponent>
+			<event name="setBonusOffer" params="element">
+				if (game.hasDoneOffer()) then
+					element["Exclaim"]("visible"):SetInt(0)
+					element["Tag"]("visible"):SetInt(0)
+					element["TextBonus"]("visible"):SetInt(0)	
+				end
+			</event>
+		</template>
+		<template type="template_spritesheetbutton" name="CloseButton">
+			<templateVar name="$layer" equals="FrontPopUps" />
+			<templateVar name="$upSpriteName" equals="'button_bamboo_close'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="0.3*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-14*game.menuScaleX()" yOffset="14*game.menuScaleX()" priorityOffset="-2" />
+			<touchComponent name="Touch">
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					element:parent():parent()("transitionState"):SetInt(2)
+				</event>
+			</touchComponent>
+		</template>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+			element["EarnCoins"]:DoStoredScript("setInvisible")
+			element["EarnDiamonds"]:DoStoredScript("setInvisible")
+			element["CloseButton"]:DoStoredScript("setInvisible")
+			element["Touch"]("enabled"):SetInt(0)
+		</event>
+		<event name="setBonusOffer" params="element">
+			element["EarnDiamonds"]:DoStoredScript("setBonusOffer")
+		</event>
+	</element>
+	
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(0)
+		element("transitionTimer"):SetFloat(0.0)
+
+		element("transitionTime"):SetFloat(1.0)
+		element("transitionStateBonus"):SetInt(1)
+
+		element["TitleFrame"]:DoStoredScript("setBonusOffer")
+		element["MainFrame"]:DoStoredScript("setBonusOffer")
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local transitionState = element("transitionState"):GetInt()
+			local transitionStateBonus = element("transitionStateBonus"):GetInt()
+			
+			if(transitionStateBonus ~= 0 and dt <= 0.5) then
+				local transitionTime = element("transitionTime"):GetFloat()
+				
+				element["TitleFrame"]["ExclaimMenu"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+				element["MainFrame"]["EarnDiamonds"]["Exclaim"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+
+				if(transitionTime <= 1.0 ) then
+					element("transitionStateBonus"):SetInt(1)
+				elseif(transitionTime >= 1.25) then
+					element("transitionStateBonus"):SetInt(2)
+				end	
+
+				if(transitionStateBonus == 1) then
+					element("transitionTime"):SetFloat(transitionTime + dt)
+				else
+					element("transitionTime"):SetFloat(transitionTime - dt)
+				end
+			end
+
+			if(transitionState == 1) then
+				local transitionTimer = element("transitionTimer"):GetFloat()
+				
+				transitionTimer = transitionTimer + dt
+				
+				if(transitionTimer >= 0.5) then
+					transitionTimer = 0.5
+					element("transitionState"):SetInt(0)				
+				end
+			
+				element("transitionTimer"):SetFloat(transitionTimer)
+				element:DoStoredScript("tickTransition")
+			elseif(transitionState == 2) then
+				local transitionTimer = element("transitionTimer"):GetFloat()
+				
+				transitionTimer = transitionTimer - dt
+				
+				if(transitionTimer <= 0) then
+					transitionTimer = 0
+					element("transitionState"):SetInt(0)	
+					element["FadedBG"]["Touch"]("enabled"):SetInt(0)				
+				end
+			
+				element("transitionTimer"):SetFloat(transitionTimer)
+				element:DoStoredScript("tickTransition")
+			end
+		]]>
+	</event>
+	
+	<event name="tickTransition" params="element">
+		local time = element("transitionTimer"):GetFloat()
+		local mainFrame = element:GetElement("MainFrame")
+		mainFrame("yOffset"):SetInt( lua_sys.Quadratic_EaseIn(time, 10*game.menuScaleX(), (-1)*(mainFrame:absH()-(25*game.menuScaleX())), 0.5))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(lua_sys.Quadratic_EaseIn(time, 0.0, 0.5, 0.5))
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["TitleFrame"]:DoStoredScript("setInvisible")
+		element["MainFrame"]:DoStoredScript("setInvisible")
+	</event>
+	
+</template>

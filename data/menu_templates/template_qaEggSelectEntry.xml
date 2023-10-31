@@ -1,0 +1,118 @@
+<template name="template_qaEggSelectEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<event name="onInit" params="element">
+		if(game.hasOrHasEverHadMonsterOnBookOfMonstersIsland(element("MonsterID"):GetInt()) == true) then
+			element("highlighted"):SetInt(1)
+		else
+			element("highlighted"):SetInt(0)
+		end
+	</event>
+	<event name="onPostInit" params="element">
+		if(element("highlighted"):GetInt() == 1) then
+			element:DoStoredScript("highlight")
+		else
+			element:DoStoredScript("unhighlight")
+		end
+		
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["CharacterImage"]:DoStoredScript("setVisible")
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	<event name="setInvisible" params="element">
+		element["CharacterImage"]:DoStoredScript("setInvisible")
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="disable" params="element">
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	<event name="enable" params="element">
+		if(element["CharacterImage"]["Sprite"]("visible"):GetInt()==1) then
+			element["Touch"]("enabled"):SetInt(1)
+		end
+	</event>
+	
+	<event name="highlight" params="element">
+		element["CharacterImage"]:DoStoredScript("highlight")
+	</event>
+	<event name="unhighlight" params="element">
+		element["CharacterImage"]:DoStoredScript("unhighlight")
+	</event>
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="setVisible" params="element">
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<event name="highlight" params="element">
+			element["Sprite"]("red"):SetFloat(1.0)
+			element["Sprite"]("green"):SetFloat(1.0)
+			element["Sprite"]("blue"):SetFloat(1.0)
+		</event>
+		<event name="unhighlight" params="element">
+			element["Sprite"]("red"):SetFloat(0.5)
+			element["Sprite"]("green"):SetFloat(0.5)
+			element["Sprite"]("blue"):SetFloat(0.5)
+		</event>
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				local MonsterPortraits = include("MonsterPortraits")
+				local monsterImage = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+				component("spriteName"):SetString(monsterImage)
+				component("size"):SetFloat(0.525*(lua_sys.screenWidth() / 480.0))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element:GetElement("CharacterImage"):absW(), element:GetElement("CharacterImage"):absH()))
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()) )
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				--this is kind of a fuzzywuzzy way of doing this, but has the most consistent results:
+				if(((element:absY()+element:absH()) >= (element:parent():parent():GetElement("TopFadeSprite"):absY()+element:parent():parent():GetElement("TopFadeSprite"):absH())) and (element:absY() <= element:parent():parent():GetElement("BotFadeSprite"):absY())) then
+				
+					if(component("dragging"):GetInt() < 10) then
+
+
+						lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+						
+						element:parent():parent():GetElement("SelectedMonsterView")("selectedMonst"):SetInt(element("MonsterID"):GetInt())
+						game.playMonsterBookSelectSound(element("MonsterID"):GetInt(), 0)
+						menu:popPopUp()
+						game.selectMonsterRequest(element("MonsterID"):GetInt());
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+				end
+			]]>
+		</event>
+	</touchComponent>
+
+
+</template>

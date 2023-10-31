@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b49c39c6754a3bd957b77d1667e7c6bc:231a560585d24741d2eb65d3cae29153:1737043ec5c3c47678541a37315ed0d3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_D_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="D_body1_sock.png" x="2" y="236" w="192" h="212" pX="0.5" pY="0.5" oX="0" oY="2" oW="212" oH="194" r="y"/>
+    <sprite n="D_body2_sock.png" x="2" y="2" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body3_sock.png" x="216" y="2" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body_sock_back.png" x="196" y="198" w="212" h="139" pX="0.5" pY="0.5" oX="0" oY="26" oW="212" oH="194"/>
+    <sprite n="D_thumb1_sock.png" x="2" y="198" w="46" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb2_sock.png" x="2" y="450" w="46" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb3_sock.png" x="430" y="122" w="70" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb4_sock.png" x="430" y="2" w="74" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb5_sock.png" x="430" y="60" w="72" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb6_sock.png" x="430" y="188" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb7_sock.png" x="50" y="198" w="46" h="36" pX="0.5" pY="0.5"/>
+</TextureAtlas>

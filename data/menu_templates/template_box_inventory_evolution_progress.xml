@@ -1,0 +1,27 @@
+<template type="template_box_inventory_evolution_progress">
+				
+	<ninesliceComponent name="Sprite">
+		<size dependentOnElement="element:name()"/>
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*(lua_sys.screenHeight()/320.0))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidFrontPopUps")
+			]]>
+		</event>
+	</ninesliceComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	</touchComponent>
+	
+	<swiperComponent name="Swiper" />
+
+	<script src="scripts/BoxInventoryEvolutionProgress.lua"/>
+
+</template>

@@ -1,0 +1,112 @@
+<template name="template_battle_action_store_stat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="HUD" />
+	
+	<size w="130*game.menuScaleX()" h="32*game.menuScaleX()" />
+
+	<ninesliceComponent name="BG">
+		<size w="226*game.menuScaleX()" h="30*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				--component("alpha"):SetFloat(0.15)
+				component("layer"):SetString("$layer")
+				component:setColor(1.0, 0, 0)
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</ninesliceComponent>
+	
+	<spriteSheetComponent name="Icon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_feed")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="ActionName">
+		<size w="92*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="36*game.menuScaleX()" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ATTACK")
+				component("size"):SetFloat(0.30*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="ActionTypeName">
+		<size w="60*game.menuScaleX()" h="12*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="38*game.menuScaleX()" yOffset="18*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("Action Type")
+				component("size"):SetFloat(0.16*game.menuScaleX())
+				component("layer"):SetString("$layer")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
+		</event>
+	</textComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("visible"):SetInt(1)
+		]]>
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element["Icon"]("spriteName"):SetString(element("IconSprite"):GetString())
+			element["Icon"]("sheetName"):SetString(element("IconSpriteSheet"):GetString())
+			element["ActionName"]("text"):SetString(element("ActionName"):GetString())
+			element["ActionTypeName"]("text"):SetString(element("ActionTypeName"):GetString())
+		]]>
+	</event>
+	
+	<event name="setVisible" params="element">
+		<![CDATA[
+			element("visible"):SetInt(1)
+			element["Icon"]("visible"):SetInt(1)
+			element["ActionName"]("visible"):SetInt(1)
+			element["ActionTypeName"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["ActionName"]("visible"):SetInt(0)
+			element["ActionTypeName"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="updateComponents" params="element">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			element["Icon"]("alpha"):SetFloat(alpha)
+			element["ActionName"]("alpha"):SetFloat(alpha)
+			element["ActionTypeName"]("alpha"):SetFloat(alpha)
+		]]>
+	</event>
+	
+</template>

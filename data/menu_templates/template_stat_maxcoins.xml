@@ -1,0 +1,77 @@
+<template name="template_stat_maxcoins" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="228*game.menuScaleX()" h="20*game.menuScaleX()" />
+	
+	<textComponent name="Stat">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.22*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString(game.getLocalizedText("MAX"))
+			component("layer"):SetString("PopUps")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+		</event>
+	</textComponent>
+	
+	<event name="repopulate" params="element">
+	
+		-- the extra 'stupid' is for extra stupid things, make sure text position updates appropriately while invisible, by making it visible... [MON-4904]
+		local stupid = element["Value"]["Text"]("visible"):GetInt()
+		if(stupid == 0) then
+			element["Value"]["Text"]("visible"):SetInt(1)
+		end
+			
+		--because removing the elements and repopulating via object_info moves snazzledazzle all over the place
+		element["Value"]["Text"]("text"):SetString(game.commaizeNumber(game.objectResourceCap()))
+		
+		if(stupid == 0) then
+			element["Value"]["Text"]("visible"):SetInt(0)
+		end
+	</event>
+	
+	<element name="Value">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="CoinSprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.objectRateUnitCurrencySprite())
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" component="CoinSprite" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.commaizeNumber(game.objectResourceCap()))
+				component("layer"):SetString("PopUps")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="setVisible" params="element">
+		element["Stat"]("visible"):SetInt(1)
+		element["Value"]["Text"]("visible"):SetInt(1)
+		element["Value"]["CoinSprite"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["Stat"]("visible"):SetInt(0)
+		element["Value"]["Text"]("visible"):SetInt(0)
+		element["Value"]["CoinSprite"]("visible"):SetInt(0)
+	</event>
+	
+</template>

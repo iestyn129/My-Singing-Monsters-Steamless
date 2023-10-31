@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:553eef2008bba513a3ddb0bbb9696022:1be867f14b00f8ab79eaf50165c8c923:324191d71fcbdf368e48556a5e93568d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_tree_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="fallentree2" x="2" y="1761" w="370" h="278" pX="0.5" pY="0.5"/>
+    <sprite n="sign01" x="374" y="1761" w="316" h="236" pX="0.5" pY="0.5" oX="2" oY="2" oW="240" oH="320" r="y"/>
+    <sprite n="sign02" x="472" y="992" w="460" h="240" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tree02" x="2" y="378" w="500" h="356" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tree03" x="2" y="1099" w="455" h="355" pX="0.5" pY="0.5" oX="1" oY="39" oW="356" oH="500" r="y"/>
+    <sprite n="tree04" x="574" y="2" w="447" h="319" pX="0.5" pY="0.5" oX="43" oY="0" oW="368" oH="454" r="y"/>
+    <sprite n="tree05" x="2" y="736" w="468" h="361" pX="0.5" pY="0.5" oX="5" oY="0" oW="368" oH="468" r="y"/>
+    <sprite n="tree06" x="504" y="633" w="471" h="357" pX="0.5" pY="0.5" oX="7" oY="6" oW="372" oH="480" r="y"/>
+    <sprite n="tree07" x="2" y="2" w="570" h="374" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tree09" x="2" y="1456" w="410" h="303" pX="0.5" pY="0.5" oX="9" oY="24" oW="330" oH="444" r="y"/>
+    <sprite n="tree10" x="692" y="1569" w="325" h="361" pX="0.5" pY="0.5" oX="0" oY="65" oW="330" oH="444"/>
+    <sprite n="tree11" x="459" y="1234" w="433" h="333" pX="0.5" pY="0.5" oX="12" oY="35" oW="360" oH="468" r="y"/>
+    <sprite n="tree12" x="574" y="323" w="444" h="308" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

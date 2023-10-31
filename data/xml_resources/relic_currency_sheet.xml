@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dd92b449ca62393170c5e6f54885a167:a18348d23bd8a77c35b1d0593cf292b2:927b40f3787a91e1fd7ed0f56b50f7c0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/relic_currency_sheet.png" width="512" height="256">
+    <sprite n="relic_pack_01" x="1" y="1" w="149" h="189" pX="0.5" pY="0.5" oX="46" oY="25" oW="248" oH="240"/>
+    <sprite n="relic_pack_02" x="317" y="1" w="188" h="167" pX="0.5" pY="0.5" oX="31" oY="49" oW="248" oH="240"/>
+    <sprite n="relic_pack_03" x="151" y="1" w="165" h="187" pX="0.5" pY="0.5" oX="41" oY="33" oW="248" oH="240"/>
+</TextureAtlas>

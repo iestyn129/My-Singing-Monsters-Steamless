@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cdb7e082a3dbbec47cb71aae457fc259:ffceb004d10e1c57b97ec264f294e596:36155b0ec2b878988e4df00a4c2f5175$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island18_sheet02.png" width="1024" height="2048" hires="true">
+    <sprite n="island18_cheek_glow_01" x="2" y="782" w="499" h="261" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island18_cheek_glow_02" x="2" y="525" w="562" h="255" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island18_cloud" x="566" y="525" w="378" h="338" pX="0.5" pY="0.5" oX="0" oY="0" oW="389" oH="338"/>
+    <sprite n="island18_critter_01" x="961" y="29" w="60" h="24" pX="0.5" pY="0.5" oX="1" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_02" x="961" y="2" w="60" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_03" x="961" y="222" w="59" h="24" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_04" x="961" y="176" w="60" h="21" pX="0.5" pY="0.5" oX="4" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_05" x="961" y="80" w="60" h="22" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_06" x="913" y="265" w="22" h="59" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="60"/>
+    <sprite n="island18_critter_07" x="961" y="248" w="59" h="24" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_08" x="961" y="55" w="60" h="23" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_09" x="961" y="199" w="60" h="21" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_10" x="961" y="104" w="60" h="22" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_11" x="961" y="128" w="60" h="22" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_critter_12" x="961" y="152" w="60" h="22" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="60" r="y"/>
+    <sprite n="island18_side" x="2" y="2" w="791" h="521" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island18_side_glow" x="795" y="2" w="164" h="261" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island18_side_glow_01" x="795" y="265" w="116" h="85" pX="0.5" pY="0.5"/>
+</TextureAtlas>

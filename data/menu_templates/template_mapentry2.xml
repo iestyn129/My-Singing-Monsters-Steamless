@@ -1,0 +1,105 @@
+<template name="template_mapentry2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<event name="onPostInit" params="element">
+		element:setSize(Vector2(90*lua_sys.screenWidth()/480, element:GetComponent("Overlay"):absH()))
+	</event>
+
+	<spriteSheetComponent name="Overlay">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			
+			local islandType = element("islandType"):GetInt();
+			local activeThemeId = game.getActiveIslandTheme(islandType)
+			local sheet = game.islandIconSheetForId(islandType);
+			local sprite = game.islandIconSpriteForId(islandType);
+
+			if(activeThemeId ~= -1) then
+				component("spriteName"):SetString(game.islandThemeIconForId(activeThemeId))
+				sheet = game.islandThemeIconSheetForId(activeThemeId)
+			else
+				component("spriteName"):SetString(sprite)
+			end
+			component("sheetName"):SetString("xml_resources/"..sheet)
+			
+			component("size"):SetFloat(0.25*lua_sys.screenWidth()/480)
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</spriteSheetComponent>
+	
+	<textComponent name="IslandName">
+		<size w="60*lua_sys.screenWidth()/480" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.3*lua_sys.screenWidth()/480)
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("text"):SetString(game.islandShortName(element("islandType"):GetInt()))
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</textComponent>
+	
+	<textComponent name="TotalCountText">
+		<size w="60*lua_sys.screenWidth()/480" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.22*lua_sys.screenWidth()/480)
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			
+			local monsters = game.getAllMonstersForBookOfMonstersIsland(element("islandType"):GetInt());
+			
+			component("text"):SetString(game.numUniqueMonstersCollectedOnIslandType(element("islandType"):GetInt()).."/".. monsters:size() )
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("layer"):SetString("FrontClipping")
+		</event>
+	</textComponent>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element:GetComponent("Overlay"):absW()*2, element:GetComponent("Overlay"):absH()))
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()) )
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				--this is kind of a fuzzywuzzy way of doing this, but has the most consistent results:
+				if(((element:absY()+element:absH()) >= (element:parent():parent():GetElement("FadeSprite"):absY()+element:parent():parent():GetElement("FadeSprite"):absH())) and (element:absY() <= element:parent():parent():GetElement("BotFadeSprite"):absY())) then
+					if(component("dragging"):GetInt() < 10) then
+						element["Overlay"]:setColor(1.0, 1.0, 1.0)
+						lua_sys.playSoundFx("audio/sfx/new_island_tap.wav")
+						
+						--pop off monster_book_island_select
+						local islandSelectTouchstone = element:root():GetElement("IslandSelectTouchstone")
+						if(islandSelectTouchstone ~= nil) then
+							islandSelectTouchstone("nextIsland"):SetInt(element("islandType"):GetInt())
+							islandSelectTouchstone:parent()("transitionState"):SetInt(3)
+						end
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+	
+</template>

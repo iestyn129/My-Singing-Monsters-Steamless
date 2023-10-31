@@ -1,0 +1,150 @@
+<template name="template_newsitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size w="360*game.menuScaleX()" h="52*game.menuScaleY()" />
+	<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+	<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="100" />
+	
+	<element name="NewsBackground">
+		<size dependentOnElement="element:name()" dependentOnComponent="SpriteySprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="1" />
+		<ninesliceComponent name="SpriteySprite">
+			<size w="350*game.menuScaleX()" h="52*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/friendGrey"..element:parent()("greyIndex"):GetInt())
+				component("layer"):SetString("Clipping")
+				element:setPositionBroadcast(true)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="NewsIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="37*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Frame">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("icon_frame")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.38*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				local placement = game.nativePlacement(element:parent()("placement"):GetString());
+				if (placement ~= nil) then
+					local ad = placement:getAd(element:parent()("index"):GetInt());
+					if (ad ~= nil) then
+						if (ad:hasIcon()) then
+							component:setSprite(ad:getIcon())
+							element["DefaultIcon"]("visible"):SetInt(0)
+						else
+							element["DefaultIcon"]("visible"):SetInt(1)
+							component("visible"):SetInt(0)
+						end
+					else
+						component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					end
+				else
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				end				
+				component("size"):SetFloat(0.40*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+		<spriteSheetComponent name="DefaultIcon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("news_generic")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.40*game.menuScaleY())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="NewsTitle">
+		<size w="260*game.menuScaleX()" h="52*game.menuScaleY()" />
+		<position relativeTo="NewsIcon" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="30*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Title">
+			<size w="230*game.menuScaleX()" h="52*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.225*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				local placement = game.nativePlacement(element:parent()("placement"):GetString());
+				if (placement ~= nil) then
+					local ad = placement:getAd(element:parent()("index"):GetInt());
+					if (ad ~= nil) then
+						component("text"):SetString(ad:getTitle())
+					else
+						component("text"):SetString("AD NIL")
+					end
+				else
+					component("text"):SetString("PLACEMENT NIL")
+				end
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="ViewButton">
+		<templateVar name="$upSpriteName" equals="'button_base_grey'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$text" equals="CONTEXTBAR_VIEW_LABEL" />
+		<templateVar name="$layer" equals="Clipping" />
+		<templateVar name="$spriteScale" equals="0.3*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="10*game.menuScaleX()" yOffset="5 * game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_magnify")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+				menu:pushPopUp("popup_newsitem")
+				game.sendPlacementInfo(element:parent()("placement"):GetString(),element:parent()("index"):GetInt())
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BoundsSprite" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component:GetVar("yOffset"):SetInt(-2 * game.menuScaleY())
+				component:GetVar("size"):SetFloat(0.2 * game.menuScaleY())
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+		</event>
+	</template>
+
+</template>

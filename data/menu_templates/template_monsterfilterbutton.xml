@@ -1,0 +1,106 @@
+<template name="template_monsterfilterbutton" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$baseSheetName" equals="'xml_resources/store_buttons01.xml'" />
+	<defaultTemplateVar name="$baseUpSpriteName" equals="'decoration_filters_base'" />
+	<defaultTemplateVar name="$baseDownSpriteName" equals="''" />
+	<defaultTemplateVar name="$baseSpriteScale" equals="0.5*game.menuScaleX()" />
+	<defaultTemplateVar name="$upSpriteName" equals="'button_rnd_base'" />
+	<defaultTemplateVar name="$baseSfx" equals="[[audio/sfx/menu_click.wav]]" />
+	<defaultTemplateVar name="$baseLayer" equals="HUD" />
+	<defaultTemplateVar name="$filterName" equals="plant" />
+	<defaultTemplateVar name="$overlaySprite" equals="'decoration_filters_plants'" />
+	<defaultTemplateVar name="$overlaySpriteSheet" equals="'xml_resources/store_buttons01.xml'" />
+	<defaultTemplateVar name="$selectBaseSprite" equals="'decoration_filters_base_green'" />
+	<defaultTemplateVar name="$selectBaseSpriteSheet" equals="'xml_resources/store_buttons01.xml'" />
+	
+	<size dependentOnElement="FilterButton" />
+
+	<event name="setVisible" params="element">
+		element["FilterButton"]:DoStoredScript("setVisible")
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["FilterButton"]:DoStoredScript("setInvisible")
+	</event>
+	
+	<event name="select" params="element">
+		element["FilterButton"]:DoStoredScript("select")
+	</event>
+
+	<event name="deselect" params="element">
+		element["FilterButton"]:DoStoredScript("deselect")
+	</event>
+		
+	<template type="template_spritesheetbutton" name="FilterButton">
+		<templateVar name="$sheetName" equals="'$baseSheetName'" />
+		<templateVar name="$upSpriteName" equals="'$baseUpSpriteName'" />
+		<templateVar name="$downSpriteName" equals="'$baseDownSpriteName'" />
+		<templateVar name="$spriteScale" equals="'$baseSpriteScale'" />
+		<templateVar name="$sfx" equals="'$baseSfx'" />
+		<templateVar name="$layer" equals="'$baseLayer'" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("$overlaySprite")
+				component("sheetName"):SetString("$overlaySpriteSheet")
+				component("size"):SetFloat($baseSpriteScale)
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="select" params="element">
+			element["UpSprite"]("spriteName"):SetString("$selectBaseSprite")
+			element["UpSprite"]("sheetName"):SetString("$selectBaseSpriteSheet")
+			element["UpSprite"]("size"):SetFloat($baseSpriteScale)
+			element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+
+			element.isSelected = true
+		</event>
+		<event name="deselect" params="element">
+			element["UpSprite"]("spriteName"):SetString("$upSpriteName")
+			element["UpSprite"]("sheetName"):SetString("$baseSheetName")
+			element["UpSprite"]("size"):SetFloat($baseSpriteScale)
+			element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+
+			element.isSelected = false
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Overlay"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Overlay"]("visible"):SetInt(0)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				if(store:getFilter() == "$filterName") then
+					store:setFilter("")
+					element:DoStoredScript("deselect")
+				else
+					store:setFilter("$filterName")
+					element:parent():parent():DoStoredScript("deselectAllMonsters");
+					element:DoStoredScript("select")
+				end
+			</event>
+
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+
+				if element.isSelected then
+					element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+					element["Overlay"]:setColor(0.5, 0.5, 0.5)
+				else
+					element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+					element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				end
+			</event>
+		</touchComponent>
+	</template>	
+
+</template>

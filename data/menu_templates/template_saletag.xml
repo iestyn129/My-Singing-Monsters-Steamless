@@ -1,0 +1,321 @@
+<template name="template_saletag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<!-- THIS IS ONLY USED FOR CURRENCY SALES, see template_itemsaletag.xml for store item sales -->
+
+	<!-- these appear to only be used by filters, but since we changed how the currency filter works, I don't think we use these functions anymore: -->
+	<event name="hide" params="element">
+		element["SaleTag"]["Sprite"]("visible"):SetInt(0)
+		element["OriginalCurrencyAmount"]["Text"]("visible"):SetInt(0)
+		element["SaleCurrencyAmount"]:DoStoredScript("setInvisible")
+		element["SaleIAPAmount"]["Text"]("visible"):SetInt(0)
+		element["SaleFrame"]("visible"):SetInt(0)
+		element["Text"]("visible"):SetInt(0)
+		element["RedStripCurrency"]["Sprite"]("visible"):SetInt(0)
+		element["RedStripIAP"]["Sprite"]("visible"):SetInt(0)
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+		if(element:parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent()("IsPromoItem"):GetInt() == 1) then
+			element["OriginalCurrencyAmount"]["Text"]("visible"):SetInt(0)
+			element["SaleTag"]["Sprite"]("visible"):SetInt(1)
+			element["RedStripIAP"]["Sprite"]("visible"):SetInt(1)
+			element["SaleCurrencyAmount"]:DoStoredScript("setInvisible")
+			element["SaleIAPAmount"]["Text"]("visible"):SetInt(1)
+		else
+			element["OriginalCurrencyAmount"]["Text"]("visible"):SetInt(1)
+			element["SaleTag"]["Sprite"]("visible"):SetInt(0)
+			element["RedStripCurrency"]["Sprite"]("visible"):SetInt(1)
+			if(element:parent()("1LeftIAP"):GetInt() == 0) then
+				element["SaleFrame"]("visible"):SetInt(1)
+				element["Text"]("visible"):SetInt(1)
+			else
+				element["SaleFrame"]("visible"):SetInt(0)
+				element["Text"]("visible"):SetInt(0)
+			end
+		end
+		]]>
+	</event>
+
+	<element name="SaleTag">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="25*game.menuScaleX()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_sale_ribbon")
+					component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("HUD")
+
+					if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent():parent()("IsPromoItem"):GetInt() == 1) then
+						component("visible"):SetInt(1)
+					else
+						component("visible"):SetInt(0)
+					end
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="SaleCurrencyAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="element:parent():parent()[&quot;CurrencyAmount&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="setVisible" params="element">
+			element["Text"]("visible"):SetInt(1)
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["Text"]("visible"):SetInt(0)
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" h="50*game.menuScaleX()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(game.commaizeNumber(element:parent()("SaleAmount"):GetInt()))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("HUD")
+					game.StoreContext_setCurrencyTypeColour(element:parent()("CurrencyType"):GetString(), component)
+				]]>
+			</event>
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent():parent()("IsPromoItem"):GetInt() == 1) then
+						component("visible"):SetInt(0)
+					else
+						component("text"):SetString(game.commaizeNumber(element:parent()("SaleAmount"):GetInt()))
+						game.StoreContext_setCurrencyTypeColour(element:parent()("CurrencyType"):GetString(), component)
+						element:parent():parent():GetElement("CurrencyAmount"):DoStoredScript("setInvisible")
+					end
+				]]>
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 0 or element:parent():parent()("IsPromoItem"):GetInt() == 0) then
+					local currencyType = element:parent()("CurrencyType"):GetString()
+
+					if(currencyType == game.StoreContext_TYPE_COINS) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					elseif(currencyType == game.StoreContext_TYPE_ETH_CURRENCY) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
+					elseif(currencyType == game.StoreContext_TYPE_DIAMOND) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+					elseif(currencyType == game.StoreContext_TYPE_FOOD) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
+					elseif(currencyType == game.StoreContext_TYPE_KEYS) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_KEY)
+					elseif(currencyType == game.StoreContext_TYPE_MEDALS) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_MEDAL)
+					end
+
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("visible"):SetInt(1)
+
+					local currencyScale = 1.0
+					if(component("spriteName"):GetString() ~= "") then
+						currencyScale = game.StoreContext_currencySpriteHeightNormalize(component("spriteName"):GetString());
+					end
+					component("size"):SetFloat(0.5*game.hudScale()*currencyScale)
+					component("layer"):SetString("HUD")
+				else
+					component("visible"):SetInt(0)
+				end
+				]]>
+			</event>
+			<event name="onPostInit" params="component, element">
+				local currencyScale = 1.0
+				if(component("spriteName"):GetString() ~= "") then
+					currencyScale = game.StoreContext_currencySpriteHeightNormalize(component("spriteName"):GetString());
+				end
+
+				component("size"):SetFloat(element:GetComponent("Text")("size"):GetFloat()*currencyScale)
+
+				local textWidth = element:GetComponent("Text"):absW();
+				local totalWidth = textWidth + component:absW();
+
+				element["Text"]("xOffset"):SetFloat(-textWidth/2+totalWidth/2)
+				component("xOffset"):SetFloat(-element["Text"]("xOffset"):GetFloat())
+
+				element:parent()["OriginalCurrencyAmount"]("xOffset"):SetFloat(-component("xOffset"):GetFloat())
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="OriginalCurrencyAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="20*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 0) then
+
+					--more currency for same IAP price
+					component("text"):SetString(game.commaizeNumber(store:ItemCost(element:parent():parent()("ID"):GetInt())))
+					game.StoreContext_setCurrencyTypeColour(element:parent()("CurrencyType"):GetString(), component)
+
+				else
+					component("visible"):SetInt(0)
+				end
+				--component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				component("alpha"):SetFloat(0.5)
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RedStripCurrency">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="OriginalCurrencyAmount" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0*game.menuScaleX()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="4" h="1" />
+			<position relativeTo="PARENT" vAnchor="VCENTER " hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(2.0)
+				component("bottomHeight"):SetFloat(2.0)
+				component("leftWidth"):SetFloat(2.0)
+				component("rightWidth"):SetFloat(2.0)
+				component("alpha"):SetFloat(0.6)
+				component("spriteName"):SetString("gfx/menu/menu_sale_redline_3slice")
+				component("layer"):SetString("HUD")
+				component("size"):SetFloat(0.50*game.menuScaleX())
+
+				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent():parent()("IsPromoItem"):GetInt() == 1) then
+					component("visible"):SetInt(0)
+				end
+
+			</event>
+			<event name="onPostInit" params="component, element">
+				component:setSize(Vector2(element:parent():GetElement("OriginalCurrencyAmount"):absW()+4*game.menuScaleX(), component:absH()))
+				element("xOffset"):SetFloat(component("leftWidth"):GetFloat()/2*game.menuScaleX())
+				component:calculatePosition()
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="SaleIAPAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SaleTag" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="120*game.hudScale()" h="62*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("HUD")
+				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent():parent()("IsPromoItem"):GetInt() == 1) then
+
+					component("text"):SetString(element:parent():parent()("SaleItemPriceAsStr"):GetString())
+					component:setColor(1.0, 1.0, 1.0)
+				else
+					component("visible"):SetInt(0)
+				end
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RedStripIAP">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:parent():parent()[&quot;IAPCost&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="4" h="1" />
+			<position relativeTo="PARENT" vAnchor="VCENTER " hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(2.0)
+				component("bottomHeight"):SetFloat(2.0)
+				component("leftWidth"):SetFloat(2.0)
+				component("rightWidth"):SetFloat(2.0)
+				component("alpha"):SetFloat(0.6)
+				component("spriteName"):SetString("gfx/menu/menu_sale_redline_3slice")
+				component("layer"):SetString("HUD")
+				component("size"):SetFloat(0.50*game.menuScaleX())
+
+				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 0 and element:parent():parent()("IsPromoItem"):GetInt() == 0) then
+					component("visible"):SetInt(0)
+				end
+
+			</event>
+			<event name="onPostInit" params="component, element">
+				component:setSize(Vector2(element:parent():parent():GetElement("IAPCost"):absW(), component:absH()))
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<spriteComponent name="SaleFrame">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="15.0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/menu_sale_banner_3slice")
+			component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
+			component("layer"):SetString("HUD")
+
+			if(element:parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent()("IsPromoItem"):GetInt() == 1) then
+				component("visible"):SetInt(0)
+			end
+		</event>
+	</spriteComponent>
+
+	<!-- "150%" or "Best Value" text -->
+	<textComponent name="Text">
+		<size w="40*game.menuScaleX()" />
+		<position relativeTo="element:name()" component="SaleFrame" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="5*game.menuScaleX()" yOffset="-2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.3*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+
+			if(element:parent()("TimedAvailabilityOn"):GetInt() == 0 and element:parent()("IsPromoItem"):GetInt() == 0) then
+				local originalPrice = store:ItemCost(element:parent()("ID"):GetInt())
+				local salePrice = element:parent()("SaleAmount"):GetInt()
+				if(originalPrice < salePrice) then
+					component("text"):SetString("+"..store:SaleDesc(element:parent()("ID"):GetInt()).."%")
+				else
+					component("text"):SetString("-"..store:SaleDesc(element:parent()("ID"):GetInt()).."%")
+				end
+			else
+				component("visible"):SetInt(0)
+			end
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+
+			component("layer"):SetString("HUD")
+			]]>
+		</event>
+	</textComponent>
+
+</template>

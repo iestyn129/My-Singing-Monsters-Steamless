@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6d85ff328354db59894d97b1e3572139:d8acaf37baf78c484a5678b86b98ef5d:e99e966687ae2af7428500051179a098$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AB_sheet.png" width="256" height="512" hires="true">
+    <sprite n="AB_body" x="157" y="2" w="90" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AB_eyeback" x="225" y="106" w="28" h="55" pX="0.5" pY="0.5" oX="2" oY="3" oW="60" oH="34" r="y"/>
+    <sprite n="AB_eyelids_1" x="64" y="338" w="59" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="34"/>
+    <sprite n="AB_eyelids_2" x="125" y="356" w="59" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="34"/>
+    <sprite n="AB_eyelids_3" x="64" y="373" w="59" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="34"/>
+    <sprite n="AB_eyelids_4" x="2" y="380" w="59" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="34"/>
+    <sprite n="AB_head" x="157" y="134" w="64" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="AB_head_puff" x="2" y="2" w="153" h="136" pX="0.5" pY="0.5" oX="0" oY="0" oW="154" oH="136"/>
+    <sprite n="AB_left_foot" x="197" y="325" w="52" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="AB_left_leg" x="157" y="106" w="66" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AB_leg_fixer" x="40" y="454" w="34" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="AB_mouth_01" x="134" y="283" w="63" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_02" x="223" y="163" w="30" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="40" r="y"/>
+    <sprite n="AB_mouth_03" x="134" y="318" w="61" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_04" x="199" y="283" w="55" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_05" x="125" y="391" w="47" h="40" pX="0.5" pY="0.5" oX="7" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_06" x="148" y="186" w="40" h="41" pX="0.5" pY="0.5" oX="8" oY="0" oW="64" oH="40" r="y"/>
+    <sprite n="AB_mouth_07" x="63" y="408" w="41" h="40" pX="0.5" pY="0.5" oX="8" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_08" x="2" y="415" w="41" h="37" pX="0.5" pY="0.5" oX="8" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_mouth_09" x="186" y="363" w="52" h="33" pX="0.5" pY="0.5" oX="5" oY="0" oW="64" oH="40"/>
+    <sprite n="AB_neck" x="2" y="276" w="130" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AB_pupil" x="235" y="76" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="AB_right_foot" x="2" y="338" w="60" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="AB_right_leg" x="157" y="76" w="76" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AB_shadow" x="148" y="229" w="100" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="AB_tail_puff" x="2" y="140" w="144" h="134" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="136"/>
+    <sprite n="AB_tail_puff_fixer" x="2" y="454" w="36" h="38" pX="0.5" pY="0.5"/>
+</TextureAtlas>

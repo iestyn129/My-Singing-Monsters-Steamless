@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:80d3e271560d13b7511eb29be31d0ca2:cb7a00c3d5766d9db1862bf70e0d5b44:425303145f087765e35d3cb7c1d33034$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_L_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="L_drum_glow" x="441" y="380" w="67" h="34" pX="0.5" pY="0.5" oX="2" oY="1" oW="72" oH="36"/>
+    <sprite n="L_eyeballs" x="236" y="373" w="66" h="30" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="L_eyelids_01" x="236" y="307" w="67" h="31" pX="0.5" pY="0.5" oX="2" oY="0" oW="72" oH="32"/>
+    <sprite n="L_eyelids_02" x="236" y="340" w="67" h="31" pX="0.5" pY="0.5" oX="2" oY="0" oW="72" oH="32"/>
+    <sprite n="L_eyelids_03" x="367" y="348" w="72" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="L_hand_01" x="323" y="248" w="46" h="56" pX="0.5" pY="0.5" oX="5" oY="1" oW="52" oH="60"/>
+    <sprite n="L_hand_02" x="236" y="438" w="52" h="52" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="60"/>
+    <sprite n="L_hand_03" x="323" y="306" w="42" h="58" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="60"/>
+    <sprite n="L_hand_04" x="305" y="366" w="56" h="42" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="60" r="y"/>
+    <sprite n="L_head_EPIC" x="2" y="2" w="386" h="134" pX="0.5" pY="0.5" oX="1" oY="15" oW="390" oH="150"/>
+    <sprite n="L_left_lowerarm" x="371" y="290" w="75" h="56" pX="0.5" pY="0.5" oX="2" oY="7" oW="60" oH="84" r="y"/>
+    <sprite n="L_left_upperarm" x="236" y="405" w="55" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="56" r="y"/>
+    <sprite n="L_lowerbody" x="390" y="74" w="102" h="125" pX="0.5" pY="0.5" oX="3" oY="2" oW="112" oH="128"/>
+    <sprite n="L_mouth_01" x="494" y="121" w="13" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="20" r="y"/>
+    <sprite n="L_mouth_02" x="494" y="171" w="12" h="46" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="20" r="y"/>
+    <sprite n="L_mouth_03" x="448" y="290" w="19" h="52" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="20" r="y"/>
+    <sprite n="L_prisms" x="2" y="138" w="232" h="360" pX="0.5" pY="0.5" oX="0" oY="1" oW="360" oH="236" r="y"/>
+    <sprite n="L_pupil" x="494" y="105" w="14" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="L_pupil_small" x="374" y="138" w="11" h="11" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="L_right_lowerarm" x="236" y="248" w="85" h="57" pX="0.5" pY="0.5" oX="1" oY="6" oW="60" oH="92" r="y"/>
+    <sprite n="L_right_upperarm" x="448" y="344" w="60" h="34" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="60" r="y"/>
+    <sprite n="L_sound_ring" x="236" y="138" w="136" h="69" pX="0.5" pY="0.5" oX="2" oY="1" oW="140" oH="72"/>
+    <sprite n="L_stone_01" x="469" y="292" w="38" h="31" pX="0.5" pY="0.5" oX="2" oY="6" oW="40" oH="40"/>
+    <sprite n="L_stone_02" x="469" y="219" w="40" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="40" r="y"/>
+    <sprite n="L_stone_03" x="322" y="438" w="21" h="25" pX="0.5" pY="0.5" oX="12" oY="8" oW="40" oH="40"/>
+    <sprite n="L_stone_04" x="293" y="410" w="20" h="26" pX="0.5" pY="0.5" oX="12" oY="8" oW="40" oH="40"/>
+    <sprite n="L_stone_05" x="290" y="473" w="27" h="30" pX="0.5" pY="0.5" oX="6" oY="8" oW="40" oH="40"/>
+    <sprite n="L_stone_06" x="469" y="257" w="39" h="33" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="40"/>
+    <sprite n="L_stone_07" x="319" y="473" w="28" h="29" pX="0.5" pY="0.5" oX="8" oY="7" oW="40" oH="40"/>
+    <sprite n="L_stone_08" x="290" y="438" w="30" h="33" pX="0.5" pY="0.5" oX="8" oY="0" oW="40" oH="40"/>
+    <sprite n="L_stone_09" x="469" y="325" w="32" h="17" pX="0.5" pY="0.5" oX="12" oY="6" oW="40" oH="40" r="y"/>
+    <sprite n="L_stone_10" x="494" y="74" w="16" h="14" pX="0.5" pY="0.5" oX="13" oY="13" oW="40" oH="40" r="y"/>
+    <sprite n="L_stone_11" x="315" y="416" w="22" h="20" pX="0.5" pY="0.5" oX="12" oY="6" oW="40" oH="40" r="y"/>
+    <sprite n="L_stone_12" x="339" y="416" w="19" h="20" pX="0.5" pY="0.5" oX="8" oY="11" oW="40" oH="40" r="y"/>
+    <sprite n="L_stone_13" x="494" y="90" w="15" h="13" pX="0.5" pY="0.5" oX="14" oY="13" oW="40" oH="40" r="y"/>
+    <sprite n="L_upperbody" x="374" y="201" w="93" h="87" pX="0.5" pY="0.5" oX="1" oY="8" oW="96" oH="96"/>
+    <sprite n="small_L_eyelids_01" x="390" y="2" w="118" h="34" pX="0.5" pY="0.5" oX="12" oY="11" oW="140" oH="60"/>
+    <sprite n="small_L_eyelids_02" x="390" y="38" w="118" h="34" pX="0.5" pY="0.5" oX="12" oY="11" oW="140" oH="60"/>
+    <sprite n="small_L_eyelids_03" x="236" y="209" w="121" h="37" pX="0.5" pY="0.5" oX="11" oY="9" oW="140" oH="60"/>
+</TextureAtlas>

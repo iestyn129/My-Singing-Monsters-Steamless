@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:934f60c6986aed591d7309b8f5b3bbc8:24e8b0a5d7a50c879fc183b3537a9f26:7aaee33ed1f5d541adc5ed6d37cee4ea$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_P15_sheet.png" width="512" height="512" hires="true">
+    <sprite n="P15_Arm_Lower_L" x="385" y="139" w="106" h="50" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="50"/>
+    <sprite n="P15_Arm_Lower_R" x="383" y="191" w="105" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="P15_Arm_Upper_L" x="93" y="335" w="27" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="32" r="y"/>
+    <sprite n="P15_Arm_Upper_R" x="122" y="335" w="27" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="32" r="y"/>
+    <sprite n="P15_Body_Lower" x="385" y="1" w="111" h="104" pX="0.5" pY="0.5" oX="4" oY="0" oW="112" oH="112" r="y"/>
+    <sprite n="P15_Body_Upper" x="1" y="335" w="90" h="96" pX="0.5" pY="0.5" oX="2" oY="1" oW="100" oH="100" r="y"/>
+    <sprite n="P15_Eyeball" x="209" y="335" w="50" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="P15_Eyeball_Held_1" x="383" y="243" w="100" h="83" pX="0.5" pY="0.5" oX="2" oY="11" oW="100" oH="120" r="y"/>
+    <sprite n="P15_Eyeball_Held_2" x="101" y="433" w="95" h="67" pX="0.5" pY="0.5" oX="14" oY="16" oW="100" oH="120" r="y"/>
+    <sprite n="P15_Eyelid_1" x="151" y="228" w="58" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="P15_Eyelid_2" x="1" y="195" w="58" h="57" pX="0.5" pY="0.5" oX="0" oY="1" oW="58" oH="58"/>
+    <sprite n="P15_Eyelid_3" x="61" y="195" w="58" h="57" pX="0.5" pY="0.5" oX="0" oY="1" oW="58" oH="58"/>
+    <sprite n="P15_Eyelid_4" x="151" y="335" w="56" h="58" pX="0.5" pY="0.5" oX="0" oY="1" oW="58" oH="58" r="y"/>
+    <sprite n="P15_Eyelid_5" x="198" y="425" w="56" h="58" pX="0.5" pY="0.5" oX="0" oY="1" oW="58" oH="58" r="y"/>
+    <sprite n="P15_Eyelid_6" x="121" y="195" w="28" h="58" pX="0.5" pY="0.5" oX="30" oY="0" oW="58" oH="58"/>
+    <sprite n="P15_Eyelid_7" x="114" y="294" w="56" h="28" pX="0.5" pY="0.5" oX="30" oY="1" oW="58" oH="58" r="y"/>
+    <sprite n="P15_Eyelid_8" x="151" y="395" w="56" h="28" pX="0.5" pY="0.5" oX="30" oY="1" oW="58" oH="58" r="y"/>
+    <sprite n="P15_Finger_1" x="485" y="243" w="24" h="53" pX="0.5" pY="0.5" oX="0" oY="3" oW="54" oH="44" r="y"/>
+    <sprite n="P15_Finger_2" x="151" y="195" w="52" h="31" pX="0.5" pY="0.5" oX="1" oY="3" oW="54" oH="44"/>
+    <sprite n="P15_Finger_3" x="75" y="254" w="41" h="38" pX="0.5" pY="0.5" oX="12" oY="3" oW="54" oH="44"/>
+    <sprite n="P15_Finger_4" x="75" y="294" w="37" h="38" pX="0.5" pY="0.5" oX="15" oY="3" oW="54" oH="44" r="y"/>
+    <sprite n="P15_Foot_L" x="1" y="254" w="35" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="36" r="y"/>
+    <sprite n="P15_Foot_R" x="38" y="254" w="35" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="36" r="y"/>
+    <sprite n="P15_Head" x="1" y="1" w="204" h="192" pX="0.5" pY="0.5" oX="3" oY="4" oW="209" oH="200"/>
+    <sprite n="P15_Leg_Lower_L" x="357" y="144" w="24" h="53" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="54"/>
+    <sprite n="P15_Leg_Lower_R" x="357" y="199" w="24" h="53" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="54"/>
+    <sprite n="P15_Leg_Upper_L" x="1" y="433" w="23" h="76" pX="0.5" pY="0.5" oX="2" oY="1" oW="28" oH="78"/>
+    <sprite n="P15_Leg_Upper_R" x="26" y="433" w="23" h="76" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="78"/>
+    <sprite n="P15_Mask" x="207" y="1" w="176" h="141" pX="0.5" pY="0.5" oX="2" oY="7" oW="180" oH="150"/>
+    <sprite n="P15_Mask_OL" x="51" y="433" w="48" h="75" pX="0.5" pY="0.5" oX="69" oY="39" oW="180" oH="150"/>
+    <sprite n="P15_Pupil" x="485" y="298" w="24" h="35" pX="0.5" pY="0.5" oX="2" oY="1" oW="28" oH="36"/>
+    <sprite n="P15_Shadow" x="207" y="144" w="148" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="P15_String_2" x="385" y="107" w="110" h="30" pX="0.5" pY="0.5" oX="0" oY="8" oW="110" oH="46"/>
+</TextureAtlas>

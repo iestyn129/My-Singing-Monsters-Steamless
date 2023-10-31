@@ -1,0 +1,69 @@
+<template name="template_battle_gym_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+	</touchComponent>
+
+	<element name="Empty">
+		<hudScale scale="0.5*game.hudScale()"/>
+		<size dependentOnElement="element:name()" dependentOnComponent="BG" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="32*game.hudScale()" priorityOffset="-1" />
+
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.5)
+					component("text"):SetString("EMPTY_LABEL")
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RequiredLevel">
+		<hudScale scale="0.5*game.hudScale()"/>
+		<size dependentOnElement="element:name()" dependentOnComponent="BG" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="32*game.hudScale()" priorityOffset="-1" />
+
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.3)
+					component("text"):SetString(element:parent()("GymLevel"):GetString())
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+</template>

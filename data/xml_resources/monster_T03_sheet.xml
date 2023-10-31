@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0ba87d8baeb5c68af73bc6e13911f9ce:f5936cdaf90fb3af7b9f958de15b40d7:a19577cc175efee7dc90a3b0d7b23865$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T03_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T03_back_hair.png" x="70" y="521" w="62" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_back_strap.png" x="380" y="2" w="127" h="40" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="128" r="y"/>
+    <sprite n="T03_body.png" x="2" y="371" w="161" h="148" pX="0.5" pY="0.5" oX="0" oY="1" oW="148" oH="162" r="y"/>
+    <sprite n="T03_drum.png" x="380" y="44" w="116" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="T03_drum_side.png" x="323" y="465" w="54" h="82" pX="0.5" pY="0.5" oX="0" oY="2" oW="82" oH="56" r="y"/>
+    <sprite n="T03_ear.png" x="134" y="550" w="28" h="18" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_eyeball.png" x="238" y="601" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T03_front_strap.png" x="490" y="134" w="20" h="156" pX="0.5" pY="0.5"/>
+    <sprite n="T03_glow.png" x="165" y="444" w="156" h="155" pX="0.5" pY="0.5" oX="0" oY="1" oW="160" oH="157"/>
+    <sprite n="T03_glow_beam.png" x="380" y="102" w="112" h="30" pX="0.5" pY="0.5" oX="1" oY="4" oW="32" oH="116" r="y"/>
+    <sprite n="T03_glow_crack_01.png" x="2" y="562" w="60" h="40" pX="0.5" pY="0.5" oX="1" oY="0" oW="62" oH="40"/>
+    <sprite n="T03_glow_crack_02.png" x="380" y="222" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_glow_crack_03.png" x="324" y="371" w="54" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="T03_glow_crack_04.png" x="380" y="401" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_head.png" x="380" y="134" w="108" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_high_hat.png" x="380" y="459" w="86" h="40" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="42"/>
+    <sprite n="T03_jaw.png" x="441" y="582" w="66" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_left_eyelid_00.png" x="132" y="570" w="31" h="25" pX="0.5" pY="0.5" oX="3" oY="0" oW="34" oH="34"/>
+    <sprite n="T03_left_eyelid_01.png" x="201" y="625" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T03_left_eyelid_02.png" x="158" y="640" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T03_left_eyelid_03.png" x="274" y="601" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T03_left_eyelid_04.png" x="82" y="662" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T03_left_foot.png" x="95" y="617" w="35" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="36" r="y"/>
+    <sprite n="T03_left_hand_01.png" x="2" y="604" w="45" h="33" pX="0.5" pY="0.5" oX="1" oY="0" oW="46" oH="34"/>
+    <sprite n="T03_left_lower_arm.png" x="323" y="581" w="47" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="34"/>
+    <sprite n="T03_left_lower_leg.png" x="380" y="294" w="94" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="94" r="y"/>
+    <sprite n="T03_left_upper_arm.png" x="476" y="376" w="34" h="84" pX="0.5" pY="0.5" oX="0" oY="1" oW="84" oH="36" r="y"/>
+    <sprite n="T03_left_upper_leg.png" x="2" y="521" w="66" h="39" pX="0.5" pY="0.5" oX="3" oY="1" oW="42" oH="68" r="y"/>
+    <sprite n="T03_pupil.png" x="132" y="625" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="T03_right_eyelid_00.png" x="201" y="601" w="35" h="22" pX="0.5" pY="0.5" oX="6" oY="0" oW="42" oH="38"/>
+    <sprite n="T03_right_eyelid_01.png" x="2" y="679" w="38" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="42" oH="38" r="y"/>
+    <sprite n="T03_right_eyelid_02.png" x="161" y="601" w="38" h="37" pX="0.5" pY="0.5" oX="3" oY="0" oW="42" oH="38" r="y"/>
+    <sprite n="T03_right_eyelid_03.png" x="2" y="639" w="38" h="38" pX="0.5" pY="0.5" oX="2" oY="0" oW="42" oH="38"/>
+    <sprite n="T03_right_eyelid_04.png" x="42" y="653" w="38" h="38" pX="0.5" pY="0.5" oX="2" oY="0" oW="42" oH="38"/>
+    <sprite n="T03_right_foot.png" x="49" y="617" w="44" h="34" pX="0.5" pY="0.5" oX="0" oY="1" oW="44" oH="36"/>
+    <sprite n="T03_right_hand_01.png" x="468" y="462" w="42" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="44" r="y"/>
+    <sprite n="T03_right_lower_arm.png" x="459" y="513" w="50" h="35" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="38"/>
+    <sprite n="T03_right_lower_leg.png" x="380" y="348" w="94" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="94" r="y"/>
+    <sprite n="T03_right_upper_arm.png" x="379" y="501" w="78" h="33" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="34"/>
+    <sprite n="T03_right_upper_leg.png" x="372" y="582" w="67" h="35" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="68" r="y"/>
+    <sprite n="T03_shell_behind.png" x="379" y="536" w="74" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="T03_shell_edge.png" x="323" y="549" w="52" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="T03_spike_01.png" x="42" y="693" w="34" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="T03_spike_02.png" x="132" y="597" w="27" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="26"/>
+    <sprite n="T03_spike_03.png" x="132" y="651" w="24" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T03_spike_04.png" x="455" y="550" w="47" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="32"/>
+    <sprite n="T03_spike_05.png" x="134" y="521" w="29" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="28"/>
+    <sprite n="T03_spike_pole.png" x="482" y="292" w="28" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="T03_statue.png" x="2" y="2" w="376" h="367" pX="0.5" pY="0.5" oX="0" oY="0" oW="376" oH="370"/>
+    <sprite n="T03_tail.png" x="70" y="557" w="60" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T09_shadow.png" x="165" y="371" w="157" h="71" pX="0.5" pY="0.5" oX="11" oY="18" oW="178" oH="106"/>
+</TextureAtlas>

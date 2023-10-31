@@ -1,0 +1,57 @@
+<template name="template_fade" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$priority" equals="20" />
+	<defaultTemplateVar name="$touchPriority" equals="0" />
+	<defaultTemplateVar name="$maxAlpha" equals="0.5" />
+	<defaultTemplateVar name="$transitionDuration" equals="0.66" />
+	<defaultTemplateVar name="$autoShow" equals="1" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+
+	<!--
+	<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="$priorityOffset" />
+	-->
+
+	<spriteComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+			component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+			component:setColor(0.0, 0.0, 0.0)
+			component("alpha"):SetFloat(0)
+			component("layer"):SetString("$layer")
+			]]>
+		</event>
+	</spriteComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+	</touchComponent>
+
+	<!-- overrides onInit in the BasicFader script -->
+	<event name="onInit" params="element">
+		<![CDATA[
+			element:setOrientation(MenuOrientation(0, 0, $priority, HCENTER, VCENTER))
+			local touchComponent = element:GetComponent("Touch")
+			touchComponent:setOrientation(MenuOrientation(0, 0, $touchPriority, HCENTER, VCENTER))
+			element("duration"):SetFloat($transitionDuration)
+			element("maxFade"):SetFloat($maxAlpha)
+			element:Init()
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			if $autoShow == 1 then
+				element:Show()
+			end
+		]]>
+	</event>
+
+	<script src="scripts/BasicFader.lua"/>
+
+</template>

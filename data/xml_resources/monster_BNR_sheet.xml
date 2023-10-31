@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4ca32bb6e4ec5691bc57c0e751840b79:35cc1f16b5bd5df7163d0de5e6c5100b:4dbb3b6faf4fdc46c99bb72662d48b14$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BNR_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="L foot" x="138" y="287" w="33" h="53" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L hand 1" x="370" y="605" w="61" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="61" oH="66"/>
+    <sprite n="L hand 2" x="2" y="741" w="61" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="61" oH="66"/>
+    <sprite n="L hand 3" x="315" y="649" w="51" h="54" pX="0.5" pY="0.5" oX="6" oY="0" oW="61" oH="66" r="y"/>
+    <sprite n="L hand 4" x="164" y="670" w="66" h="52" pX="0.5" pY="0.5" oX="4" oY="0" oW="61" oH="66" r="y"/>
+    <sprite n="L hand 5" x="155" y="724" w="55" h="55" pX="0.5" pY="0.5" oX="5" oY="0" oW="61" oH="66"/>
+    <sprite n="L hand 6" x="232" y="674" w="56" h="55" pX="0.5" pY="0.5" oX="4" oY="1" oW="61" oH="66"/>
+    <sprite n="L hand 7" x="2" y="683" w="63" h="56" pX="0.5" pY="0.5" oX="5" oY="0" oW="61" oH="66" r="y"/>
+    <sprite n="L lower arm" x="164" y="618" w="72" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L lower leg" x="432" y="75" w="78" h="101" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="102"/>
+    <sprite n="L upper arm" x="174" y="270" w="90" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L upper leg" x="164" y="592" w="74" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L_HairDown1" x="393" y="370" w="117" h="63" pX="0.5" pY="0.5" oX="4" oY="0" oW="88" oH="120" r="y"/>
+    <sprite n="L_HairDown2" x="2" y="449" w="116" h="64" pX="0.5" pY="0.5" oX="9" oY="0" oW="88" oH="120" r="y"/>
+    <sprite n="L_HairDown3" x="2" y="515" w="116" h="63" pX="0.5" pY="0.5" oX="14" oY="0" oW="88" oH="120" r="y"/>
+    <sprite n="L_HairDown4" x="258" y="495" w="111" h="75" pX="0.5" pY="0.5" oX="13" oY="0" oW="88" oH="120" r="y"/>
+    <sprite n="L_HairDown5" x="262" y="432" w="120" h="61" pX="0.5" pY="0.5" oX="11" oY="0" oW="88" oH="120" r="y"/>
+    <sprite n="L_HairDown6" x="186" y="46" w="80" h="117" pX="0.5" pY="0.5" oX="0" oY="0" oW="88" oH="120"/>
+    <sprite n="L_HairDownTop" x="267" y="216" w="146" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R foot" x="91" y="723" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="R hand 1" x="120" y="502" w="45" h="52" pX="0.5" pY="0.5" oX="1" oY="0" oW="46" oH="52"/>
+    <sprite n="R hand 2" x="433" y="605" w="41" h="51" pX="0.5" pY="0.5" oX="2" oY="1" oW="46" oH="52"/>
+    <sprite n="R hand 3" x="460" y="2" w="50" h="38" pX="0.5" pY="0.5" oX="0" oY="2" oW="46" oH="52" r="y"/>
+    <sprite n="R hand 4" x="120" y="461" w="47" h="39" pX="0.5" pY="0.5" oX="0" oY="3" oW="46" oH="52" r="y"/>
+    <sprite n="R lower arm" x="67" y="683" w="22" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="R lower leg" x="2" y="580" w="104" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R upper arm" x="2" y="658" w="70" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R upper leg" x="164" y="644" w="70" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R_HairBack1" x="412" y="296" w="92" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBack2" x="172" y="358" w="89" h="52" pX="0.5" pY="0.5" oX="8" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBack3" x="167" y="532" w="86" h="58" pX="0.5" pY="0.5" oX="9" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBack4" x="169" y="468" w="87" h="62" pX="0.5" pY="0.5" oX="21" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBack5" x="172" y="412" w="88" h="54" pX="0.5" pY="0.5" oX="17" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBack6" x="173" y="298" w="92" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="83" oH="92" r="y"/>
+    <sprite n="R_HairBackTop" x="267" y="262" w="143" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="144" r="y"/>
+    <sprite n="R_HairFront1" x="2" y="396" w="131" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFront2" x="2" y="252" w="134" h="46" pX="0.5" pY="0.5" oX="10" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFront3" x="2" y="202" w="134" h="48" pX="0.5" pY="0.5" oX="9" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFront4" x="263" y="371" w="122" h="59" pX="0.5" pY="0.5" oX="9" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFront5" x="2" y="300" w="134" h="43" pX="0.5" pY="0.5" oX="7" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFront6" x="2" y="345" w="133" h="49" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="134" r="y"/>
+    <sprite n="R_HairFrontTop" x="267" y="316" w="124" h="53" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="124" r="y"/>
+    <sprite n="body" x="175" y="165" w="90" h="103" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="106"/>
+    <sprite n="bow" x="2" y="2" w="266" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="hair strings 1" x="2" y="126" w="171" h="74" pX="0.5" pY="0.5" oX="12" oY="0" oW="186" oH="78"/>
+    <sprite n="hair strings 2" x="2" y="46" w="182" h="78" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="78"/>
+    <sprite n="hair strings 3" x="268" y="66" w="162" h="77" pX="0.5" pY="0.5" oX="23" oY="0" oW="186" oH="78"/>
+    <sprite n="hair strings 4" x="268" y="145" w="162" h="69" pX="0.5" pY="0.5" oX="23" oY="0" oW="186" oH="78"/>
+    <sprite n="hair top" x="371" y="541" w="103" h="62" pX="0.5" pY="0.5" oX="1" oY="0" oW="104" oH="62"/>
+    <sprite n="hairtip 1" x="138" y="342" w="32" h="85" pX="0.5" pY="0.5" oX="11" oY="5" oW="44" oH="90"/>
+    <sprite n="hairtip 2" x="138" y="202" w="34" h="83" pX="0.5" pY="0.5" oX="10" oY="4" oW="44" oH="90"/>
+    <sprite n="hairtip 3" x="432" y="178" w="77" h="39" pX="0.5" pY="0.5" oX="4" oY="0" oW="44" oH="90" r="y"/>
+    <sprite n="hairtip 4" x="332" y="572" w="36" h="75" pX="0.5" pY="0.5" oX="5" oY="0" oW="44" oH="90"/>
+    <sprite n="hairtip 5" x="255" y="572" w="75" h="39" pX="0.5" pY="0.5" oX="0" oY="4" oW="44" oH="90" r="y"/>
+    <sprite n="hairtip 6" x="99" y="661" w="63" h="60" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="96" r="y"/>
+    <sprite n="hairtip 7" x="108" y="594" w="54" h="65" pX="0.5" pY="0.5" oX="0" oY="3" oW="64" oH="96"/>
+    <sprite n="hairtip 8" x="240" y="613" w="73" h="59" pX="0.5" pY="0.5" oX="5" oY="5" oW="64" oH="96" r="y"/>
+    <sprite n="head" x="415" y="219" w="95" h="75" pX="0.5" pY="0.5" oX="0" oY="2" oW="75" oH="97" r="y"/>
+    <sprite n="mouth1" x="460" y="42" w="50" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="32"/>
+    <sprite n="mouth2" x="135" y="429" w="32" h="30" pX="0.5" pY="0.5" oX="8" oY="2" oW="52" oH="32"/>
+    <sprite n="mouth3" x="74" y="658" w="23" h="23" pX="0.5" pY="0.5" oX="12" oY="6" oW="52" oH="32"/>
+    <sprite n="mouth4" x="476" y="594" w="25" h="37" pX="0.5" pY="0.5" oX="7" oY="3" oW="52" oH="32" r="y"/>
+    <sprite n="mouth5" x="476" y="541" w="28" h="51" pX="0.5" pY="0.5" oX="1" oY="0" oW="52" oH="32" r="y"/>
+    <sprite n="shadow" x="270" y="2" w="188" h="62" pX="0.5" pY="0.5" oX="0" oY="2" oW="188" oH="64"/>
+    <sprite n="skirt" x="384" y="435" w="116" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="skirt_back" x="120" y="556" w="42" h="36" pX="0.5" pY="0.5" oX="41" oY="68" oW="104" oH="116" r="y"/>
+</TextureAtlas>

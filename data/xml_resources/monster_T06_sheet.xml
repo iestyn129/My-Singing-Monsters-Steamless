@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ccc70b68152fb2d332ae4c6e085086c5:794357f69f1abb11370b5ca9049ebed8:295a434a38b374abf1642e9f7d4779d3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T06_sheet.png" width="512" height="512" hires="true">
+    <sprite n="T06_back_shell.png" x="2" y="320" w="116" h="153" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="156"/>
+    <sprite n="T06_body.png" x="262" y="320" w="86" h="118" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_claw_hinge.png" x="321" y="244" w="24" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="T06_claw_large.png" x="225" y="463" w="60" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_claw_small.png" x="321" y="194" w="24" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="T06_cone_shell_large.png" x="337" y="80" w="50" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="T06_cone_shell_left.png" x="443" y="242" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="T06_cone_shell_right.png" x="2" y="475" w="50" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_eye_left_01.png" x="497" y="312" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T06_eye_left_02.png" x="337" y="66" w="11" h="12" pX="0.5" pY="0.5" oX="0" oY="1" oW="12" oH="12" r="y"/>
+    <sprite n="T06_eye_left_03.png" x="134" y="463" w="12" h="8" pX="0.5" pY="0.5" oX="0" oY="3" oW="12" oH="12"/>
+    <sprite n="T06_eye_left_04.png" x="176" y="463" w="12" h="7" pX="0.5" pY="0.5" oX="0" oY="4" oW="12" oH="12"/>
+    <sprite n="T06_eye_right_01.png" x="495" y="326" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T06_eye_right_02.png" x="120" y="463" w="12" h="10" pX="0.5" pY="0.5" oX="0" oY="2" oW="12" oH="12"/>
+    <sprite n="T06_eye_right_03.png" x="148" y="463" w="12" h="8" pX="0.5" pY="0.5" oX="0" oY="3" oW="12" oH="12"/>
+    <sprite n="T06_eye_right_04.png" x="162" y="463" w="12" h="8" pX="0.5" pY="0.5" oX="0" oY="3" oW="12" oH="12"/>
+    <sprite n="T06_foot_right.png" x="483" y="186" w="26" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_glow.png" x="120" y="320" w="140" h="141" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="142" r="y"/>
+    <sprite n="T06_glow_beam.png" x="111" y="475" w="112" h="30" pX="0.5" pY="0.5" oX="1" oY="4" oW="32" oH="116" r="y"/>
+    <sprite n="T06_glow_crack_01.png" x="279" y="2" w="60" h="40" pX="0.5" pY="0.5" oX="1" oY="0" oW="62" oH="40"/>
+    <sprite n="T06_glow_crack_02.png" x="287" y="440" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_glow_crack_03.png" x="389" y="154" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_glow_crack_04.png" x="279" y="66" w="56" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="T06_hand_right_01.png" x="279" y="156" w="40" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="54"/>
+    <sprite n="T06_hand_right_02.png" x="389" y="210" w="52" h="39" pX="0.5" pY="0.5" oX="1" oY="0" oW="42" oH="54" r="y"/>
+    <sprite n="T06_hand_right_03.png" x="389" y="251" w="52" h="39" pX="0.5" pY="0.5" oX="1" oY="0" oW="42" oH="54" r="y"/>
+    <sprite n="T06_hand_right_04.png" x="443" y="280" w="52" h="39" pX="0.5" pY="0.5" oX="1" oY="0" oW="42" oH="54" r="y"/>
+    <sprite n="T06_hand_right_05.png" x="279" y="250" w="40" h="53" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="54"/>
+    <sprite n="T06_hand_right_06.png" x="442" y="321" w="51" h="41" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="54" r="y"/>
+    <sprite n="T06_head.png" x="389" y="54" w="100" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_horn_end_left.png" x="491" y="54" w="19" h="30" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="20" r="y"/>
+    <sprite n="T06_horn_end_mid.png" x="350" y="356" w="30" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_horn_end_right.png" x="365" y="250" w="22" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_horn_left.png" x="321" y="156" w="26" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="T06_horn_mid.png" x="321" y="260" w="42" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="T06_horn_right.png" x="70" y="475" w="39" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="40" r="y"/>
+    <sprite n="T06_leaf_behind_right.png" x="382" y="384" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="T06_leaf_bottom.png" x="262" y="440" w="18" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_leaf_cover_left.png" x="389" y="432" w="42" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="T06_leaf_cover_right.png" x="389" y="292" w="51" h="44" pX="0.5" pY="0.5" oX="1" oY="0" oW="52" oH="44"/>
+    <sprite n="T06_leaf_mid.png" x="491" y="86" w="18" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_leaf_top.png" x="350" y="152" w="36" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_lower_arm_right.png" x="389" y="338" w="46" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_mouth_01.png" x="491" y="144" w="14" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_mouth_02.png" x="483" y="228" w="14" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_mouth_03.png" x="365" y="288" w="14" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_mouth_04.png" x="350" y="2" w="37" h="14" pX="0.5" pY="0.5" oX="2" oY="0" oW="40" oH="14"/>
+    <sprite n="T06_mouth_05.png" x="54" y="475" w="14" h="34" pX="0.5" pY="0.5" oX="3" oY="0" oW="40" oH="14" r="y"/>
+    <sprite n="T06_mouth_06.png" x="279" y="305" w="40" h="13" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="14"/>
+    <sprite n="T06_mouth_07.png" x="350" y="314" w="13" h="40" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="14" r="y"/>
+    <sprite n="T06_mouth_08.png" x="497" y="270" w="13" h="40" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="14" r="y"/>
+    <sprite n="T06_sea_weed.png" x="279" y="44" w="58" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_shadow.png" x="389" y="2" w="111" h="50" pX="0.5" pY="0.5" oX="13" oY="15" oW="134" oH="80"/>
+    <sprite n="T06_statue.png" x="2" y="2" w="275" h="316" pX="0.5" pY="0.5" oX="2" oY="0" oW="296" oH="326"/>
+    <sprite n="T06_tan_coral_left.png" x="443" y="210" w="38" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_tan_coral_right.png" x="350" y="206" w="36" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="T06_upper_arm_left.png" x="279" y="210" w="40" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="T06_upper_arm_right.png" x="350" y="18" w="36" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T06_upper_leg_right.png" x="437" y="364" w="44" h="42" pX="0.5" pY="0.5"/>
+</TextureAtlas>

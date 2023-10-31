@@ -1,0 +1,88 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<element name="BgElement">
+		<hudScale scale="game.bgScale()" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/logging_in")
+				component:setScale(Vector2(lua_sys.screenHeight() / 768, lua_sys.screenHeight() / 768))
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.hudScale()" priorityOffset="2" />
+		<ninesliceComponent name="Sprite">
+			<size w="340*game.hudScale()" h="230*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="Notification">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="250*game.hudScale()" h="160*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("FrontPopUps")
+				component("text"):SetString("UPDATE_VERSION")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="OkayButton">
+		<templateVar name="$upSpriteName" equals="button_continue_green" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.75" />
+		<templateVar name="$textPadding" equals="12.5" />
+		<templateVar name="$textYOffset" equals="-2*game.hudScale()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			if(lua_sys.getPlatformName() == "pc") then
+				element["Text"]("text"):SetString("MAIN_MENU_EXIT")
+			else
+				element["Text"]("text"):SetString("UPDATE_BUTTON")
+			end
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				if(lua_sys.getPlatformName() == "pc") then
+					lua_sys.exitGame()
+				else
+					game.goToUpdateURL()
+				end				
+			</event>
+		</touchComponent>
+	</template>
+	
+</menu>

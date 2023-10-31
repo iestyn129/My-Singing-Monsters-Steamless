@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9cb94d6884bc90a3ef82969b643c35aa:dfb44cedf6965c845bcab0eb811a2bd7:064b0e831e283879a36e856cd01fd4c3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_AE_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AE_beak_01" x="200" y="300" w="104" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_beak_02" x="306" y="292" w="102" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_03" x="220" y="410" w="108" h="98" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104"/>
+    <sprite n="AE_beak_04" x="409" y="2" w="97" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_05" x="409" y="112" w="94" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_06" x="303" y="182" w="104" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_body" x="2" y="2" w="126" h="158" pX="0.5" pY="0.5"/>
+    <sprite n="AE_body_RARE" x="2" y="162" w="126" h="158" pX="0.5" pY="0.5"/>
+    <sprite n="AE_head" x="195" y="190" w="106" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="AE_head_RARE" x="67" y="322" w="131" h="133" pX="0.5" pY="0.5" oX="0" oY="1" oW="134" oH="134"/>
+    <sprite n="AE_left_eyeback" x="468" y="370" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_eyelid_01" x="410" y="338" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_eyelid_02" x="440" y="338" w="26" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_eyelid_03" x="410" y="366" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_eyelid_04" x="468" y="342" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_foot" x="2" y="463" w="78" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_foot_RARE" x="344" y="84" w="56" h="93" pX="0.5" pY="0.5" oX="3" oY="0" oW="96" oH="60" r="y"/>
+    <sprite n="AE_left_leg" x="82" y="457" w="54" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_lowerarm" x="409" y="222" w="78" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_lowerarm_RARE" x="130" y="190" w="63" h="122" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="140"/>
+    <sprite n="AE_left_pupil" x="200" y="98" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_pupil_RARE" x="200" y="112" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_upperarm" x="198" y="126" w="72" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyeback" x="440" y="368" w="26" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_eyelid_01" x="130" y="2" w="28" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_eyelid_02" x="160" y="2" w="28" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_eyelid_03" x="468" y="282" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyelid_04" x="468" y="312" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_foot" x="272" y="114" w="56" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_foot_RARE" x="344" y="2" w="58" h="80" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="80"/>
+    <sprite n="AE_right_leg" x="410" y="282" w="56" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_lowerarm" x="130" y="38" w="86" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_lowerarm_RARE" x="2" y="322" w="63" h="139" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="140"/>
+    <sprite n="AE_right_upperarm" x="130" y="98" w="66" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="AE_scarf" x="220" y="2" w="122" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="AE_shadow" x="138" y="457" w="80" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="AE_spike_RARE" x="200" y="2" w="18" h="34" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

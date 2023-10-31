@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e631ea00c650b7eaf6618112092ff4b8:e7a202e0b6c48e435aec89672f3af896:4ad89d0c9ebc5c411b9da1230b084723$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U12_RARE_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="beam" x="401" y="757" w="70" h="226" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228"/>
+    <sprite n="Eyeball" x="958" y="334" w="46" h="44" pX="0.5" pY="0.5" oX="2" oY="0" oW="48" oH="46" r="y"/>
+    <sprite n="Glass" x="2" y="759" w="148" h="249" pX="0.5" pY="0.5" oX="12" oY="5" oW="168" oH="338"/>
+    <sprite n="Glow" x="152" y="759" w="148" h="249" pX="0.5" pY="0.5" oX="12" oY="5" oW="168" oH="338"/>
+    <sprite n="glow_spot" x="740" y="372" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="Hand Light" x="593" y="923" w="55" h="97" pX="0.5" pY="0.5" oX="2" oY="0" oW="64" oH="116"/>
+    <sprite n="Left Elbow" x="453" y="985" w="35" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="38"/>
+    <sprite n="Left Foot" x="498" y="690" w="75" h="63" pX="0.5" pY="0.5" oX="19" oY="0" oW="98" oH="66"/>
+    <sprite n="Left Hand" x="958" y="380" w="42" h="42" pX="0.5" pY="0.5" oX="2" oY="30" oW="106" oH="76"/>
+    <sprite n="Left Knee" x="490" y="984" w="35" h="36" pX="0.5" pY="0.5" oX="1" oY="6" oW="40" oH="42" r="y"/>
+    <sprite n="Left Lower Arm RARE" x="850" y="298" w="106" h="82" pX="0.5" pY="0.5" oX="0" oY="1" oW="82" oH="108" r="y"/>
+    <sprite n="Left Lower Arm" x="740" y="132" w="107" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="74" oH="108" r="y"/>
+    <sprite n="Left Lower Leg RARE" x="850" y="87" w="125" h="57" pX="0.5" pY="0.5" oX="1" oY="6" oW="60" oH="132" r="y"/>
+    <sprite n="Left Lower Leg" x="850" y="146" w="119" h="57" pX="0.5" pY="0.5" oX="3" oY="9" oW="60" oH="132" r="y"/>
+    <sprite n="Left Mic Base" x="552" y="984" w="22" h="31" pX="0.5" pY="0.5" oX="39" oY="85" oW="88" oH="122" r="y"/>
+    <sprite n="Left Mic" x="740" y="2" w="108" h="70" pX="0.5" pY="0.5" oX="3" oY="0" oW="88" oH="122" r="y"/>
+    <sprite n="Left Upper Arm" x="650" y="923" w="121" h="91" pX="0.5" pY="0.5" oX="9" oY="11" oW="130" oH="104"/>
+    <sprite n="Left Upper Leg" x="850" y="44" w="136" h="41" pX="0.5" pY="0.5" oX="2" oY="0" oW="48" oH="138" r="y"/>
+    <sprite n="Line 1" x="410" y="985" w="21" h="37" pX="0.5" pY="0.5" oX="32" oY="39" oW="126" oH="82" r="y"/>
+    <sprite n="Line 2" x="310" y="994" w="30" h="28" pX="0.5" pY="0.5" oX="39" oY="31" oW="126" oH="82"/>
+    <sprite n="Line 2b" x="376" y="994" w="32" h="27" pX="0.5" pY="0.5" oX="42" oY="28" oW="126" oH="82" r="y"/>
+    <sprite n="Line 3" x="989" y="2" w="29" h="27" pX="0.5" pY="0.5" oX="42" oY="31" oW="126" oH="82" r="y"/>
+    <sprite n="Line 3b" x="527" y="984" w="23" h="33" pX="0.5" pY="0.5" oX="42" oY="37" oW="126" oH="82" r="y"/>
+    <sprite n="Line 4" x="433" y="985" w="18" h="37" pX="0.5" pY="0.5" oX="42" oY="42" oW="126" oH="82" r="y"/>
+    <sprite n="Mouth 1" x="650" y="690" w="88" h="58" pX="0.5" pY="0.5" oX="0" oY="20" oW="88" oH="86"/>
+    <sprite n="Mouth 2" x="352" y="690" w="88" h="65" pX="0.5" pY="0.5" oX="0" oY="16" oW="88" oH="86"/>
+    <sprite n="Mouth 3" x="720" y="320" w="88" h="50" pX="0.5" pY="0.5" oX="0" oY="27" oW="88" oH="86"/>
+    <sprite n="Pupil 01" x="988" y="55" w="24" h="24" pX="0.5" pY="0.5" oX="12" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 02" x="988" y="81" w="24" h="24" pX="0.5" pY="0.5" oX="16" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 03" x="810" y="320" w="24" h="24" pX="0.5" pY="0.5" oX="21" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 04" x="720" y="2" w="18" h="24" pX="0.5" pY="0.5" oX="28" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 05" x="720" y="54" w="13" h="24" pX="0.5" pY="0.5" oX="32" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 06" x="231" y="1010" w="24" h="9" pX="0.5" pY="0.5" oX="36" oY="13" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil 07" x="284" y="1010" w="24" h="8" pX="0.5" pY="0.5" oX="3" oY="13" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil 08" x="576" y="984" w="14" h="24" pX="0.5" pY="0.5" oX="2" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 09" x="720" y="28" w="17" h="24" pX="0.5" pY="0.5" oX="3" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 10" x="810" y="346" w="24" h="24" pX="0.5" pY="0.5" oX="4" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil 11" x="810" y="320" w="24" h="24" pX="0.5" pY="0.5" oX="8" oY="13" oW="48" oH="46"/>
+    <sprite n="Pupil b 01" x="342" y="994" w="15" h="28" pX="0.5" pY="0.5" oX="17" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 02" x="342" y="994" w="15" h="28" pX="0.5" pY="0.5" oX="22" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 03" x="342" y="994" w="15" h="28" pX="0.5" pY="0.5" oX="27" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 04" x="2" y="1010" w="28" h="12" pX="0.5" pY="0.5" oX="31" oY="10" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil b 05" x="174" y="1010" w="28" h="9" pX="0.5" pY="0.5" oX="34" oY="10" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil b 06" x="368" y="994" w="6" h="28" pX="0.5" pY="0.5" oX="38" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 07" x="359" y="994" w="7" h="28" pX="0.5" pY="0.5" oX="4" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 08" x="90" y="1010" w="28" h="10" pX="0.5" pY="0.5" oX="4" oY="10" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil b 09" x="32" y="1010" w="29" h="11" pX="0.5" pY="0.5" oX="7" oY="10" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil b 10" x="342" y="994" w="15" h="28" pX="0.5" pY="0.5" oX="8" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil b 11" x="342" y="994" w="15" h="28" pX="0.5" pY="0.5" oX="12" oY="10" oW="48" oH="46"/>
+    <sprite n="Pupil c 01" x="63" y="1010" w="25" h="11" pX="0.5" pY="0.5" oX="19" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 02" x="63" y="1010" w="25" h="11" pX="0.5" pY="0.5" oX="24" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 03" x="63" y="1010" w="25" h="11" pX="0.5" pY="0.5" oX="29" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 04" x="120" y="1010" w="25" h="10" pX="0.5" pY="0.5" oX="32" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 05" x="257" y="1010" w="25" h="8" pX="0.5" pY="0.5" oX="35" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 06" x="650" y="1016" w="25" h="6" pX="0.5" pY="0.5" oX="38" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 07" x="773" y="1015" w="25" h="7" pX="0.5" pY="0.5" oX="3" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 08" x="204" y="1010" w="25" h="9" pX="0.5" pY="0.5" oX="3" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 09" x="147" y="1010" w="25" h="10" pX="0.5" pY="0.5" oX="5" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 10" x="63" y="1010" w="25" h="11" pX="0.5" pY="0.5" oX="9" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Pupil c 11" x="63" y="1010" w="25" h="11" pX="0.5" pY="0.5" oX="14" oY="12" oW="48" oH="46" r="y"/>
+    <sprite n="Right Elbow" x="453" y="985" w="35" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="38"/>
+    <sprite n="Right Foot" x="575" y="690" w="73" h="63" pX="0.5" pY="0.5" oX="16" oY="0" oW="90" oH="76"/>
+    <sprite n="Right Hand" x="850" y="382" w="42" h="39" pX="0.5" pY="0.5" oX="22" oY="72" oW="64" oH="116"/>
+    <sprite n="Right Knee" x="490" y="984" w="35" h="36" pX="0.5" pY="0.5" oX="1" oY="6" oW="40" oH="42" r="y"/>
+    <sprite n="Right Lower Arm RARE" x="735" y="74" w="112" h="56" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="118" r="y"/>
+    <sprite n="Right Lower Arm" x="968" y="218" w="52" h="114" pX="0.5" pY="0.5" oX="2" oY="4" oW="56" oH="118"/>
+    <sprite n="Right Lower Leg RARE" x="473" y="923" w="118" h="59" pX="0.5" pY="0.5" oX="1" oY="4" oW="60" oH="122" r="y"/>
+    <sprite n="Right Lower Leg" x="850" y="255" w="112" h="41" pX="0.5" pY="0.5" oX="0" oY="7" oW="42" oH="122" r="y"/>
+    <sprite n="Right Mic Base" x="989" y="31" w="27" h="22" pX="0.5" pY="0.5" oX="8" oY="84" oW="72" oH="112"/>
+    <sprite n="Right Mic" x="977" y="107" w="44" h="109" pX="0.5" pY="0.5" oX="13" oY="1" oW="76" oH="112"/>
+    <sprite n="Right Upper Arm" x="740" y="208" w="106" h="110" pX="0.5" pY="0.5" oX="4" oY="5" oW="110" oH="116"/>
+    <sprite n="Right Upper Leg" x="850" y="2" w="137" h="40" pX="0.5" pY="0.5" oX="5" oY="3" oW="50" oH="148" r="y"/>
+    <sprite n="Screen" x="773" y="923" w="75" h="90" pX="0.5" pY="0.5" oX="5" oY="7" oW="126" oH="82" r="y"/>
+    <sprite n="Shadow Overlay" x="894" y="382" w="41" h="41" pX="0.5" pY="0.5" oX="3" oY="4" oW="48" oH="46"/>
+    <sprite n="Shadow" x="302" y="759" w="97" h="233" pX="0.5" pY="0.5" oX="2" oY="1" oW="236" oH="98" r="y"/>
+    <sprite n="Torso top" x="442" y="690" w="54" h="64" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="74"/>
+    <sprite n="Torso" x="473" y="756" w="335" h="165" pX="0.5" pY="0.5" oX="0" oY="1" oW="168" oH="338" r="y"/>
+    <sprite n="U12_glow_01" x="352" y="2" w="366" h="686" pX="0.5" pY="0.5" oX="12" oY="7" oW="390" oH="700"/>
+    <sprite n="U12_glow_02" x="2" y="2" w="348" h="755" pX="0.5" pY="0.5" oX="21" oY="23" oW="390" oH="800"/>
+    <sprite n="Water Surface" x="850" y="205" w="116" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="116" oH="50"/>
+</TextureAtlas>

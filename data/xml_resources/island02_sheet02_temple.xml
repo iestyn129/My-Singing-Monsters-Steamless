@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8ed9aa6ad65fa62a3b57e5d7d0a04af5:e7db442ec9362d6ad39738dfff433a2b:658438ba26ba75100890aef339493130$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island02_sheet02_temple.png" width="2048" height="2048" hires="true">
+    <sprite n="island02_flags01_01" x="1235" y="154" w="159" h="91" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags01_02" x="1883" y="95" w="160" h="90" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags01_03" x="668" y="224" w="91" h="159" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98" r="y"/>
+    <sprite n="island02_flags01_04" x="1874" y="187" w="159" h="90" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags01_05" x="1874" y="279" w="159" h="90" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags01_06" x="1883" y="2" w="160" h="91" pX="0.5" pY="0.5" oX="0" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags01_07" x="668" y="385" w="90" h="159" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98" r="y"/>
+    <sprite n="island02_flags01_08" x="1235" y="247" w="159" h="91" pX="0.5" pY="0.5" oX="1" oY="7" oW="161" oH="98"/>
+    <sprite n="island02_flags02_01" x="1405" y="2" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_02" x="1644" y="2" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_03" x="996" y="154" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_04" x="429" y="224" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_05" x="429" y="377" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_06" x="1396" y="155" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_07" x="996" y="307" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags02_08" x="1635" y="155" w="237" h="151" pX="0.5" pY="0.5" oX="1" oY="1" oW="238" oH="155"/>
+    <sprite n="island02_flags03_01" x="768" y="2" w="216" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_02" x="1396" y="308" w="215" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_03" x="1613" y="308" w="215" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_04" x="1830" y="371" w="215" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_05" x="761" y="382" w="215" h="189" pX="0.5" pY="0.5" oX="2" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_06" x="429" y="530" w="215" h="189" pX="0.5" pY="0.5" oX="2" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_07" x="996" y="460" w="215" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_flags03_08" x="768" y="192" w="216" h="188" pX="0.5" pY="0.5" oX="3" oY="1" oW="192" oH="218" r="y"/>
+    <sprite n="island02_side_platform_01" x="2" y="1267" w="992" h="707" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_side_spikes" x="2" y="2" w="425" h="1263" pX="0.5" pY="0.5"/>
+    <sprite n="island02_string_01" x="2" y="1976" w="264" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="island02_string_02" x="996" y="2" w="407" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="island02_string_03" x="429" y="2" w="337" h="220" pX="0.5" pY="0.5"/>
+</TextureAtlas>

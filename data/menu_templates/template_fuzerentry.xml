@@ -1,0 +1,60 @@
+<template name="template_fuzerentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="highlight" params="element">
+		element["Anim"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	<event name="disable" params="element">
+		element["Anim"]["Sprite"]:setColor(0.33, 0.33, 0.33)
+	</event>
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-3*game.menuScaleX()" yOffset="25*game.menuScaleX() - 10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+				component("animation"):SetString(element:parent()("AnimationName"):GetString())
+				component:setScale(Vector2(game.menuScaleX(), game.menuScaleX()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</aeComponent>
+	</element>
+		
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			element("deltaX"):SetFloat(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+			element("deltaX"):SetFloat(element("deltaX"):GetFloat()+math.abs(dx))
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				--no selection if dragging or if the menu is transitioning away
+				if(element("deltaX"):GetFloat() < 10 and element:parent():parent()("transitionState"):GetInt() ~= 2) then
+					game.setSelectedFuzerItemID(element("ID"):GetString())
+					element:parent():parent():DoStoredScript("select")
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+</template>

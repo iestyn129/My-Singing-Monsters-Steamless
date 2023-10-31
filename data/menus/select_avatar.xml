@@ -1,0 +1,172 @@
+<menu name="select_avatar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$priority" equals="10" />
+		<templateVar name="$touchPriority" equals="-7" />
+		<templateVar name="$maxAlpha" equals="0.75" />
+	</template>
+
+	<template type="template_panel_decorated" name="BG">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<size w="360*game.menuScaleX()" h="256*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="screenHeight() * 2.0" priorityOffset="8" />
+
+		<template type="template_closebutton" name="CloseButton">
+			<templateVar name="$TouchPriority" equals="-5" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-16*game.hudScale()" yOffset="16*game.hudScale()" priorityOffset="-1" />
+			<event name="onClose" params="element">
+				<![CDATA[
+						local panel = element:parent()
+						panel:parent():DoStoredScript("Hide")
+					]]>
+			</event>
+		</template>
+
+		<element name="Title">
+			<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-22*game.menuScaleY()" priorityOffset="0" />
+
+			<ninesliceComponent name="Sprite">
+				<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("topHeight"):SetFloat(45.0)
+						component("bottomHeight"):SetFloat(45.0)
+						component("leftWidth"):SetFloat(50.0)
+						component("rightWidth"):SetFloat(50.0)
+						component("size"):SetFloat(0.5*game.menuScaleX())
+						component("includeBorder"):SetInt(1)
+						component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+						component("layer"):SetString("FrontPopUps")
+					]]>
+				</event>
+			</ninesliceComponent>
+
+			<textComponent name="Text">
+				<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.4*game.menuScaleY())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component:setColor(0.26, 0.96, 0.26)
+					component("layer"):SetString("FrontPopUps")
+					component("text"):SetString("SELECT_AVATAR")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+		<template type="template_spritesheetbutton" name="LeftButton">
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$upSpriteName" equals="'button_options_play'" />
+			<templateVar name="$layer" equals="FrontPopUps" />
+			<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+			<templateVar name="$spriteHFlip" equals="1" />
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-50*game.hudScale()" yOffset="0" priorityOffset="-6" />
+			<touchComponent name="Touch">
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						onTouchDown(component, element)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						onTouchUp(component, element)
+						element:parent():DoStoredScript("PreviousPage")
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						onTouchRelease(component, element)
+					]]>
+				</event>
+			</touchComponent>
+		</template>
+
+		<template type="template_spritesheetbutton" name="RightButton">
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$upSpriteName" equals="'button_options_play'" />
+			<templateVar name="$layer" equals="FrontPopUps" />
+			<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+			<templateVar name="$spriteHFlip" equals="0" />
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="50*game.hudScale()" yOffset="0" priorityOffset="-6" />
+			<touchComponent name="Touch">
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						onTouchDown(component, element)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						onTouchUp(component, element)
+						element:parent():DoStoredScript("NextPage")
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						onTouchRelease(component, element)
+					]]>
+				</event>
+			</touchComponent>
+		</template>
+
+		<textComponent name="PageText">
+			<size w="42*game.menuScaleX()" h="28*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.menuScaleY())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component:setColor(0.26, 0.96, 0.26)
+					component("layer"):SetString("FrontPopUps")
+					component("text"):SetString("1/4")
+					]]>
+			</event>
+		</textComponent>
+			
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				include("SelectAvatarUI").ContentInit(element)
+			]]>
+		</event>
+		
+		<event name="NextPage" params="element">
+			<![CDATA[
+				include("SelectAvatarUI").NextPage(element)
+			]]>
+		</event>
+
+		<event name="PreviousPage" params="element">
+			<![CDATA[
+				include("SelectAvatarUI").PreviousPage(element)
+			]]>
+		</event>
+
+		<event name="OnEntrySelected" params="element">
+			<![CDATA[
+				include("SelectAvatarUI").OnEntrySelected(element)
+			]]>
+		</event>
+		
+	</template>
+
+	<script src="scripts/SelectAvatarUI.lua"/>
+
+</menu>

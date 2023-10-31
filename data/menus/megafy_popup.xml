@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onPostInit" params="element">
+		element("transitionTime"):SetFloat(0.0)
+		element("transitionState"):SetInt(1)
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+				
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("TickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					transitionTime = clamp(transitionTime, 0.0, 1.0)
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime >= 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime <= 0.0) then
+						element:root():popPopUp()
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		local frame = element:GetElement("bg")
+		frame("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+		game.setClipping("Clipping", (frame:absX() + 10)*lua_sys.deviceScaleX(), (frame:absY() + 50*game.hudScale())*lua_sys.deviceScaleY(), (frame:absW() - 20)*lua_sys.deviceScaleX(), (frame:absH() - 50*game.hudScale() - 10)*lua_sys.deviceScaleY())
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-lua_sys.screenWidth()" yOffset="-25" priorityOffset="6" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*game.menuScaleX()" h="200*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Notification">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-25*game.menuScaleX()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="360*game.menuScaleX()"  h="200*game.menuScaleY()"/>
+			<position relativeTo="element" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">			
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("MEGAFY_DESCRIPTION"))
+				component("size"):SetFloat(0.27*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-3" />
+		<ninesliceComponent name="Sprite">
+			<size w="200*game.menuScaleX()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="TempMega">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="CONTEXTBAR_MEGAFY_TEMPORARY" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("autoScale"):SetFloat(0)
+				component("size"):SetFloat(0.3)
+				component("text"):SetString("CONTEXTBAR_MEGAFY_TEMPORARY")
+				component("font"):SetString(game.getTitleFont())
+			</event>
+		</textComponent>
+		<textComponent name="PriceText">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTitleFont())
+				component("size"):SetFloat(0.3)
+				component("autoScale"):SetFloat(0)
+				local diamondPrice = game.temporaryMegaDiamondPrice()
+				local coinPrice = game.temporaryMegaCoinPrice()
+				local priceToDisplay = 0
+				
+				if(diamondPrice > 0) then
+					game.StoreContext_setDiamondTextColour(component)
+					priceToDisplay = diamondPrice
+				else
+					game.StoreContext_setCoinTextColour(component)
+					priceToDisplay = coinPrice
+				end
+				
+				component("text"):SetString("-"..priceToDisplay);
+				component("layer"):SetString("FrontPopUps")
+				component("multiline"):SetInt(0)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.makeMegaMonster(false);
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_temp_megafy")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+				component("size"):SetFloat(0.5)
+			</event>
+		</spriteSheetComponent>
+	</template>	
+	
+	<template type="template_spritesheetbutton" name="PermaMega">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="CONTEXTBAR_MEGAFY_PERMANENT" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("autoScale"):SetFloat(0)
+				component("size"):SetFloat(0.3)
+				component("text"):SetString("CONTEXTBAR_MEGAFY_PERMANENT")
+				component("font"):SetString(game.getTitleFont())
+			</event>
+		</textComponent>
+		<textComponent name="PriceText">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTitleFont())
+				component("size"):SetFloat(0.3)
+				component("font"):SetString(game.getTitleFont())
+				component("autoScale"):SetFloat(0)
+				local diamondPrice = game.permaMegaDiamondPrice()
+				local coinPrice = game.permaMegaCoinPrice()
+				local priceToDisplay = 0
+				
+				if(diamondPrice > 0) then
+					game.StoreContext_setDiamondTextColour(component)
+					priceToDisplay = diamondPrice
+				else
+					game.StoreContext_setCoinTextColour(component)
+					priceToDisplay = coinPrice
+				end
+
+				component("text"):SetString("-"..priceToDisplay)
+				
+				if(game.permaMegaSale()) then
+					component:setColor(0.13, 0.43, 0.3)
+				else
+					component:setColor(0.27, 0.86, 0.6)
+				end
+				
+				component("layer"):SetString("FrontPopUps")
+				component("multiline"):SetInt(0)
+			</event>
+		</textComponent>
+		<spriteComponent name="RedStrip">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6/game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/redstrip")
+				component:setScale(Vector2(8.0*game.hudScale(), 1.5*game.hudScale()))
+				component("size"):SetFloat(1.0)
+				component("alpha"):SetFloat(0.6)
+				component("layer"):SetString("FrontPopUps")
+				
+				if(not game.permaMegaSale()) then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<textComponent name="SalePriceText">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="12" />
+			<event name="onInit" params="component, element">
+				component("font"):SetString(game.getTitleFont())
+				component("size"):SetFloat(0.3)
+				component("font"):SetString(game.getTitleFont())
+				component("autoScale"):SetFloat(0)
+				component("text"):SetString("-"..game.permaMegaSalePrice())
+				component:setColor(0.27, 0.86, 0.6)
+				component("layer"):SetString("FrontPopUps")
+				component("multiline"):SetInt(0)
+				
+				if(not game.permaMegaSale()) then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.makeMegaMonster(true);
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_perm_megafy")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+				component("size"):SetFloat(0.5)
+			</event>
+		</spriteSheetComponent>
+	</template>	
+
+</menu>

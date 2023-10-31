@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7383a7728fff09e4eb84711ec9364dbb:bf1efd4bd5a926f10c058a92cb227224:5d2f5f85d870fd7f0b501319b72b1cf7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AC_costume_03_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="AC_parasol_01.png" x="2" y="2" w="300" h="156" pX="0.5" pY="0.5" oX="0" oY="1" oW="300" oH="180"/>
+    <sprite n="AC_parasol_02.png" x="2" y="160" w="294" h="156" pX="0.5" pY="0.5" oX="3" oY="4" oW="300" oH="180"/>
+    <sprite n="AC_parasol_03.png" x="2" y="318" w="278" h="166" pX="0.5" pY="0.5" oX="11" oY="4" oW="300" oH="180"/>
+    <sprite n="AC_parasol_04.png" x="298" y="256" w="174" h="262" pX="0.5" pY="0.5" oX="19" oY="4" oW="300" oH="180" r="y"/>
+    <sprite n="AC_parasol_05.png" x="304" y="2" w="176" h="252" pX="0.5" pY="0.5" oX="24" oY="4" oW="300" oH="180" r="y"/>
+</TextureAtlas>

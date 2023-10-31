@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:13b82d1b262304c3e5e8710513f38197:7f1322894f2652b6791635e00d0deeb9:a7729422a9bcbaf614bf960c2f394d4c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_AC_EPIC_costume_04_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AC_ball_EPIC.png" x="199" y="462" w="38" h="40" pX="0.5" pY="0.5" oX="0" oY="2" oW="40" oH="40" r="y"/>
+
+    <!-- original anchor = (39, 47) -> new anchor (61, 65) diff = (-22, -18) -->
+    <!-- add double it to texturepacker output offsets (3, 0) -> (-41, -36), because hires -->
+    <sprite n="AC_body_EPIC.png" x="1" y="1" w="218" h="223" pX="0.5" pY="0.5" oX="-41" oY="-36" oW="224" oH="224"/>
+    <sprite n="AC_goggle_EPIC.png" x="124" y="226" w="84" h="147" pX="0.5" pY="0.5" oX="1" oY="3" oW="150" oH="90" r="y"/>
+    <!-- original anchor = (20, 12) -> new anchor (34, 13) diff = (-14, -1) -->
+    <!-- add double it to texturepacker output offsets (0, 2) -> (-28, 0), because hires -->
+    <sprite n="AC_tail_1.png" x="1" y="385" w="132" h="106" pX="0.5" pY="0.5" oX="-28" oY="0" oW="132" oH="108"/>
+    <!-- original anchor = (16, 5) -> new anchor (24, 6) diff = (-8, -1) -->
+    <!-- add double it to texturepacker output offsets (0, 2) -> (-16, 0), because hires -->
+    <sprite n="AC_tail_2.png" x="135" y="375" w="62" h="106" pX="0.5" pY="0.5" oX="-16" oY="0" oW="108" oH="64" r="y"/>
+    <!-- original anchor = (13, 4) -> new anchor (20, 6) diff = (-7, -2) -->
+    <!-- add double it to texturepacker output offsets (1, 2) -> (-13, -2), because hires -->
+    <sprite n="AC_tail_3.png" x="263" y="313" w="70" h="51" pX="0.5" pY="0.5" oX="-13" oY="-2" oW="72" oH="54"/>
+    <!-- original anchor = (13, 4) -> new anchor (18, 9) diff = (-5, -5) -->
+    <!-- add double it to texturepacker output offsets (0, 1) -> (-10, -9), because hires -->
+    <sprite n="AC_tail_4.png" x="210" y="313" w="51" h="53" pX="0.5" pY="0.5" oX="-10" oY="-9" oW="54" oH="54" r="y"/>
+    <!-- original anchor = (-1, 10) -> new anchor (1, 23) diff = (2, -13) -->
+    <!-- add double it to texturepacker output offsets (2, 2) -> (6, -24), because hires -->
+    <sprite n="AC_wing_RARE1.png" x="210" y="226" w="84" h="85" pX="0.5" pY="0.5" oX="6" oY="-24" oW="88" oH="88"/>
+    <sprite n="AC_wing_tip_RARE1.png" x="199" y="375" w="142" h="85" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="144" r="y"/>
+    <!-- original anchor = (38, 44) -> new anchor (31, 43) diff = (7, 1) -->
+    <!-- add double it to texturepacker output offsets (4, 0) -> (18, 2), because hires -->
+    <sprite n="Vines-Over.png" x="1" y="226" w="121" h="157" pX="0.5" pY="0.5" oX="18" oY="2" oW="164" oH="124" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,45 @@
+<template name="template_flip_card_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<element name="CharacterImage">
+		<script src="scripts/FlipCardEntry.lua"/>
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+				component("size"):SetFloat(0.4*(lua_sys.screenWidth() / 480.0))
+				component("layer"):SetString("gridLayer")
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="8*game.menuScaleX()" h="8*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0")
+				component("size"):SetFloat(0.2*game.menuScaleX()*element:parent()("ScaleFactor"):GetFloat())
+				component("layer"):SetString("gridLayer")
+				component("autoScale"):SetInt(1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				component:setSize(Vector2(element:absW(), element:absH()))
+			</event>
+		</touchComponent>
+	</element>
+	<event name="StartFade" params="element">
+		element["CharacterImage"]:DoStoredScript("StartFade")
+	</event>
+</template>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c7215bc9f5e512195fb1ce42839d1dab:c828ac0a1a3ac5e9d57eb0d2885eb132:ca71d5ab75af292604cdf5ad4d99bd3e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_inverdiguscemetery_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="cemetery_base.png" x="2" y="2" w="412" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_branch.png" x="2" y="358" w="330" h="216" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye1_01.png" x="416" y="2" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye1_02.png" x="416" y="70" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye1_03.png" x="416" y="138" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye1_04.png" x="416" y="206" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye2_01.png" x="416" y="274" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye2_02.png" x="416" y="342" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye2_03.png" x="334" y="358" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eye2_04.png" x="245" y="576" w="66" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eyeball_01.png" x="313" y="628" w="64" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_eyeball_02.png" x="245" y="644" w="64" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="cemetery_glow.png" x="128" y="576" w="115" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="116" r="y"/>
+    <sprite n="cemetery_head.png" x="334" y="426" w="150" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cemetery_leaf.png" x="2" y="576" w="124" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cemetery_pupil.png" x="128" y="692" w="30" h="28" pX="0.5" pY="0.5"/>
+</TextureAtlas>

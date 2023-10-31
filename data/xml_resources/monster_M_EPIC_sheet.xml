@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7c337701ee3813159dc3da909506ce63:543c2e1dd9aa41f9748cac0ba1f4df8e:99d899a86eeca388295ad3fa655058fd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_M_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="M_body_behind_EPIC" x="264" y="264" w="127" h="123" pX="0.5" pY="0.5" oX="13" oY="1" oW="140" oH="124"/>
+    <sprite n="M_body_front" x="269" y="140" w="168" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="M_eye_01" x="466" y="536" w="27" h="24" pX="0.5" pY="0.5" oX="1" oY="0" oW="28" oH="24"/>
+    <sprite n="M_head" x="251" y="391" w="100" h="89" pX="0.5" pY="0.5" oX="0" oY="1" oW="100" oH="92"/>
+    <sprite n="M_head_EPIC" x="4" y="4" w="261" h="224" pX="0.5" pY="0.5" oX="10" oY="6" oW="280" oH="230"/>
+    <sprite n="M_left_foot" x="437" y="389" w="70" h="91" pX="0.5" pY="0.5" oX="5" oY="2" oW="100" oH="72" r="y"/>
+    <sprite n="M_left_hand" x="331" y="495" w="81" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="84" r="y"/>
+    <sprite n="M_left_lowerleg_EPIC" x="269" y="75" w="175" h="61" pX="0.5" pY="0.5" oX="13" oY="0" oW="84" oH="180" r="y"/>
+    <sprite n="M_lowerarm_EPIC" x="132" y="362" w="115" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="120" r="y"/>
+    <sprite n="M_mini_arm_hand_left" x="206" y="419" w="37" h="46" pX="0.5" pY="0.5" oX="9" oY="8" oW="60" oH="60"/>
+    <sprite n="M_mini_arm_hand_right" x="437" y="484" w="53" h="48" pX="0.5" pY="0.5" oX="5" oY="6" oW="60" oH="60" r="y"/>
+    <sprite n="M_mini_arm_lower_left" x="465" y="4" w="42" h="47" pX="0.5" pY="0.5" oX="5" oY="2" oW="50" oH="50"/>
+    <sprite n="M_mini_arm_lower_right" x="112" y="419" w="90" h="52" pX="0.5" pY="0.5" oX="1" oY="6" oW="100" oH="60"/>
+    <sprite n="M_mini_arm_upper_left" x="465" y="55" w="39" h="33" pX="0.5" pY="0.5" oX="11" oY="8" oW="60" oH="50"/>
+    <sprite n="M_mini_arm_upper_right" x="416" y="536" w="46" h="33" pX="0.5" pY="0.5" oX="7" oY="8" oW="60" oH="50"/>
+    <sprite n="M_right_foot" x="437" y="303" w="71" h="82" pX="0.5" pY="0.5" oX="2" oY="9" oW="84" oH="80" r="y"/>
+    <sprite n="M_right_hand" x="4" y="464" w="84" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="88" r="y"/>
+    <sprite n="M_right_lowerleg_EPIC" x="269" y="4" w="192" h="67" pX="0.5" pY="0.5" oX="8" oY="1" oW="84" oH="200" r="y"/>
+    <sprite n="M_shadow" x="4" y="408" w="104" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="M_spike_base_1" x="206" y="469" w="36" h="81" pX="0.5" pY="0.5" oX="11" oY="13" oW="100" oH="60" r="y"/>
+    <sprite n="M_spike_base_2" x="441" y="214" w="54" h="85" pX="0.5" pY="0.5" oX="6" oY="8" oW="60" oH="100"/>
+    <sprite n="M_spike_base_3" x="246" y="484" w="81" h="52" pX="0.5" pY="0.5" oX="3" oY="10" oW="60" oH="100" r="y"/>
+    <sprite n="M_spike_base_4" x="246" y="540" w="79" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="30"/>
+    <sprite n="M_spike_tip_1" x="355" y="391" w="78" h="100" pX="0.5" pY="0.5" oX="6" oY="6" oW="110" oH="90" r="y"/>
+    <sprite n="M_spike_tip_2" x="395" y="264" w="38" h="123" pX="0.5" pY="0.5" oX="11" oY="4" oW="60" oH="130"/>
+    <sprite n="M_spike_tip_3" x="4" y="326" w="124" h="48" pX="0.5" pY="0.5" oX="6" oY="4" oW="60" oH="130" r="y"/>
+    <sprite n="M_spike_tip_4" x="448" y="92" w="57" h="118" pX="0.5" pY="0.5" oX="4" oY="8" oW="130" oH="70" r="y"/>
+    <sprite n="M_upperarm" x="4" y="378" w="107" h="26" pX="0.5" pY="0.5" oX="5" oY="2" oW="36" oH="112" r="y"/>
+    <sprite n="M_upperleg" x="132" y="326" w="118" h="32" pX="0.5" pY="0.5" oX="2" oY="0" oW="36" oH="120" r="y"/>
+    <sprite n="M_wing" x="4" y="232" w="256" h="90" pX="0.5" pY="0.5" oX="0" oY="3" oW="256" oH="100"/>
+</TextureAtlas>

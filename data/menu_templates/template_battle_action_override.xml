@@ -1,0 +1,307 @@
+<template name="template_battle_action_override" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<spriteSheetComponent name="Icon">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_feed")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="ReplacesText">
+		<size w="130*game.menuScaleX()" h="32*game.menuScaleY()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(1)
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				--component("size"):SetFloat(0.25*game.menuScaleX())
+				--component("text"):SetString(element("Replaces"):GetString())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="ActionName">
+		<size w="110*game.menuScaleX()" h="18*game.menuScaleY()"/>
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="32*game.menuScaleX()" yOffset="-18*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				--component("size"):SetFloat(0.25*game.menuScaleX())
+				--component("text"):SetString(element("ActionName"):GetString())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="ActionTypeName">
+		<size w="110*game.menuScaleX()" h="10*game.menuScaleY()"/>
+		<position relativeTo="element:name()" relativeToComponent="ActionName" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="32*game.menuScaleX()" yOffset="-9*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				--component("size"):SetFloat(0.2*game.menuScaleX())
+				--component("text"):SetString(element("ActionTypeName"):GetString())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</textComponent>
+
+
+
+	<!-- Leaving commented out components and events in case costumes can have locked abilities -->
+	<!--<spriteSheetComponent name="LockedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_lock")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="LockedText">
+		<size w="180*game.hudScale()" h="18" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="36*game.hudScale()" yOffset="2*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("Locked")
+				component("size"):SetFloat(0.24*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+				component:setColor(0.5, 0.5, 0.5)
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="LockedInfo">
+		<size w="180*game.hudScale()" h="12" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="38*game.hudScale()" yOffset="18*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("Locked Info")
+				component("size"):SetFloat(0.16*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
+		</event>
+	</textComponent>-->
+
+	<!--
+		<spriteComponent name="test_box">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(1.0, 0.0, 0.0)
+					component("alpha"):SetFloat(0.5)
+					component("layer"):SetString("MidPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+	-->
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("locked"):SetInt(0)
+			element("visible"):SetInt(1)
+			element("costumeId"):SetInt(0)
+
+			element("ActionName"):SetString("ACTION")
+			element("ActionTypeName"):SetString("ACTION_TYPE")
+			element("IconSprite"):SetString("button_feed")
+			element("IconSpriteSheet"):SetString("xml_resources/context_buttons.xml")
+			element("Replaces"):SetString("???")
+		]]>
+	</event>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+		local selectedMonsterId = game.selectedMonsterId()
+		local costumeId = element("costumeId"):GetInt()
+
+		local equippedCostume = game.getEquippedCostumeForMonster(selectedMonsterId)
+
+		local costumeData = game.getCostumeData(costumeId)
+
+		if(costumeData.action > 0) then
+
+			local action = game.getBattleMonsterActionData(costumeData.action)
+
+			element("ActionName"):SetString(action.name)
+			element("ActionTypeName"):SetString(action:getDamageTypeString())
+			element("IconSprite"):SetString(action:getIconSprite())
+			element("IconSpriteSheet"):SetString(action:getIconSpriteSheet())
+
+			local baseBattleActions = game.getBaseBattleMonsterActions(selectedMonsterId)
+
+			if action.replaces < baseBattleActions:size() then
+
+				--get action that is replaced
+				local baseActionName = LOC(baseBattleActions[action.replaces].name)
+				local replacesText = LOC("BATTLE_ACTION_REPLACES")
+				replacesText = replacesText:gsub("%${ACTION}", baseActionName)
+				element("Replaces"):SetString(replacesText)
+
+			else
+				--adds a new action
+				element("Replaces"):SetString("BATTLE_ACTION_NEW")
+			end
+
+			element:DoStoredScript("setVisible")
+		else
+			element:DoStoredScript("setInvisible")
+		end
+		]]>
+	</event>
+
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+		
+			element:DoStoredScript("refresh")
+			
+			if element("locked"):GetInt() == 1 then
+				local unlockInfoText = game.getLocalizedText("BATTLE_ACTION_UNLOCK_INFO")
+				unlockInfoText = unlockInfoText:gsub("%${LEVEL}", element("UnlockLevel"):GetInt())
+				element["LockedInfo"]("text"):SetString(unlockInfoText)
+				element:DoStoredScript("setLocked")
+			else
+				element["Icon"]("spriteName"):SetString(element("IconSprite"):GetString())
+				element["Icon"]("sheetName"):SetString(element("IconSpriteSheet"):GetString())
+				element["ActionName"]("text"):SetString(element("ActionName"):GetString())
+				element["ActionTypeName"]("text"):SetString(element("ActionTypeName"):GetString())
+			end
+		]]>
+	</event>
+
+	<event name="setVisible" params="element">
+		<![CDATA[
+			if not game.isBattleIsland() then
+				return
+			end
+		
+			element("visible"):SetInt(1)
+			local locked = element("locked"):GetInt() == 1
+			if locked then
+				element["Icon"]("visible"):SetInt(0)
+				element["ActionName"]("alpha"):SetFloat(0.0)
+				element["ActionTypeName"]("alpha"):SetFloat(0.0)
+				element["ReplacesText"]("alpha"):SetFloat(0.0)
+				--element["LockedIcon"]("visible"):SetInt(1)
+				--element["LockedText"]("visible"):SetInt(1)
+				--element["LockedInfo"]("visible"):SetInt(1)
+				--element["BG"]("visible"):SetInt(1)
+			else
+				element["Icon"]("spriteName"):SetString(element("IconSprite"):GetString())
+				element["Icon"]("sheetName"):SetString(element("IconSpriteSheet"):GetString())
+				element["Icon"]("visible"):SetInt(1)
+
+				element["ReplacesText"]("size"):SetFloat(0.20*game.menuScaleX())
+				element["ReplacesText"]("text"):SetString(element("Replaces"):GetString())
+				element["ReplacesText"]("autoScale"):SetInt(1)
+				element["ReplacesText"]("alpha"):SetFloat(1.0)
+
+				element["ActionName"]("size"):SetFloat(0.20*game.menuScaleX())
+				element["ActionName"]("text"):SetString(element("ActionName"):GetString())
+				element["ActionName"]("autoScale"):SetInt(1)
+				element["ActionName"]("alpha"):SetFloat(1.0)
+
+				element["ActionTypeName"]("size"):SetFloat(0.15*game.menuScaleX())
+				element["ActionTypeName"]("text"):SetString(element("ActionTypeName"):GetString())
+				element["ActionTypeName"]("autoScale"):SetInt(1)
+				element["ActionTypeName"]("alpha"):SetFloat(1.0)
+
+				--element["LockedIcon"]("visible"):SetInt(0)
+				--element["LockedText"]("visible"):SetInt(0)
+				--element["LockedInfo"]("visible"):SetInt(0)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["ActionName"]("alpha"):SetFloat(0.0)
+			element["ActionTypeName"]("alpha"):SetFloat(0.0)
+			element["ReplacesText"]("alpha"):SetFloat(0.0)
+			--element["LockedIcon"]("visible"):SetInt(0)
+			--element["LockedText"]("visible"):SetInt(0)
+			--element["LockedInfo"]("visible"):SetInt(0)
+			--element["BG"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="setLocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(1)
+			local isVisible = element("visible") == 1
+			if isVisible then
+				element["Icon"]("visible"):SetInt(0)
+				element["ActionName"]("visible"):SetInt(0)
+				element["ActionTypeName"]("visible"):SetInt(0)
+				element["ReplacesText"]("visible"):SetInt(0)
+				--element["LockedIcon"]("visible"):SetInt(1)
+				--element["LockedText"]("visible"):SetInt(1)
+				--element["LockedInfo"]("visible"):SetInt(1)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="setUnlocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(0)
+			local isVisible = element("visible") == 1
+			if isVisible then
+				element["Icon"]("visible"):SetInt(1)
+				element["ActionName"]("visible"):SetInt(1)
+				element["ActionTypeName"]("visible"):SetInt(1)
+				element["ReplacesText"]("visible"):SetInt(1)
+				--element["LockedIcon"]("visible"):SetInt(0)
+				--element["LockedText"]("visible"):SetInt(0)
+				--element["LockedInfo"]("visible"):SetInt(0)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+
+</template>

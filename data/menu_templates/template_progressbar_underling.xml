@@ -1,0 +1,151 @@
+<template name="template_progressbar_wublin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<hudScale scale="lua_sys.screenWidth()/960" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="EmptySprite" />
+	
+	<spriteSheetComponent name="EmptySprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("EmptySpriteName"):GetString())
+			component("sheetName"):SetString(element("SheetName"):GetString())
+			component("size"):SetFloat(element("size"):GetFloat())
+			component("layer"):SetString(element("layer"):GetString())
+			element:setPositionBroadcast(true)
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="PositiveBar">
+		<position relativeTo="element:name()" component="EmptySprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-0.1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("FullSpriteName"):GetString())
+			component("sheetName"):SetString(element("SheetName"):GetString())
+			component("size"):SetFloat(element("size"):GetFloat())
+			component("layer"):SetString(element("layer"):GetString())
+			if(component("isSourceRotated"):GetInt() == 1) then
+				element("PositiveMaskW"):SetFloat(component("maskHeight"):GetFloat())
+				element("PositiveMaskH"):SetFloat(component("maskWidth"):GetFloat())
+			else
+				element("PositiveMaskW"):SetFloat(component("maskWidth"):GetFloat())
+				element("PositiveMaskH"):SetFloat(component("maskHeight"):GetFloat())
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="NegativeBar">
+		<position relativeTo="element:name()" component="EmptySprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-0.1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("FullSpriteNegativeName"):GetString())
+			component("sheetName"):SetString(element("SheetName"):GetString())
+			component("size"):SetFloat(element("size"):GetFloat())
+			component("layer"):SetString(element("layer"):GetString())
+			if(component("isSourceRotated"):GetInt() == 1) then
+				element("NegativeMaskW"):SetFloat(component("maskHeight"):GetFloat())
+				element("NegativeMaskH"):SetFloat(component("maskWidth"):GetFloat())
+			else
+				element("NegativeMaskW"):SetFloat(component("maskWidth"):GetFloat())
+				element("NegativeMaskH"):SetFloat(component("maskHeight"):GetFloat())
+			end
+			
+			element("NegativeMaskX"):SetFloat(component("maskX"):GetFloat())
+			element("NegativeSizeX"):SetFloat(component:size().x)
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Plus">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-1*game.menuScaleX()" yOffset="0" priorityOffset="-0.2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("magnet_positive_icon")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(element("size"):GetFloat())
+				component("layer"):SetString(element("layer"):GetString())
+			</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Divider">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-0.2" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("magnet_electric_icon")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(element("size"):GetFloat())
+			component("layer"):SetString(element("layer"):GetString())
+		</event>
+	</spriteSheetComponent>
+
+		<spriteSheetComponent name="Minus">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-1*game.menuScaleX()" yOffset="0" priorityOffset="-0.2" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("magnet_negative_icon")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(element("size"):GetFloat())
+			component("layer"):SetString(element("layer"):GetString())
+		</event>
+	</spriteSheetComponent>
+	
+	<!--textComponent name="Label">
+		<size h="14*game.menuScaleY()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component:setColor(element("LabelColourR"):GetFloat(), element("LabelColourG"):GetFloat(), element("LabelColourB"):GetFloat())
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(element("ProgressLabelSize"):GetFloat())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_RIGHT_ALIGNED)
+			component("text"):SetString(game.getLocalizedText(element("ProgressLabel"):GetString()))
+			component("layer"):SetString(element("layer"):GetString())
+			component("xOffset"):SetInt(element("LabelXOffset"):GetInt())
+			component("yOffset"):SetInt(element("LabelYOffset"):GetInt())
+		</event>
+	</textComponent-->
+	
+	<event name="onInit" params="element">
+		if(element("AttachedTemplate"):GetString() ~= "") then
+			local attachedTemplate = menu:addTemplateElement(element("AttachedTemplate"):GetString(), "attachedTemplate", element)
+			
+			if(element("AttachedTemplateAlignment"):GetString() == "right") then
+				attachedTemplate:setOrientation(lua_sys.MenuOrientation(0, 0, -0.2, lua_sys.RIGHT, lua_sys.VCENTER))
+				attachedTemplate:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.VCENTER)
+			elseif(element("AttachedTemplateAlignment"):GetString() == "center") then
+				attachedTemplate:setOrientation(lua_sys.MenuOrientation(0, 0, -0.2, lua_sys.HCENTER, lua_sys.VCENTER))
+				attachedTemplate:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.VCENTER)
+			else
+				attachedTemplate:setOrientation(lua_sys.MenuOrientation(0, 0, -0.2, lua_sys.LEFT, lua_sys.VCENTER))
+				attachedTemplate:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.VCENTER)
+			end
+			
+			attachedTemplate:setPositionBroadcast(true)
+			attachedTemplate:init()
+		end
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["EmptySprite"]("visible"):SetInt(1)
+		element["PositiveBar"]("visible"):SetInt(1)
+		element["NegativeBar"]("visible"):SetInt(1)
+		element["Plus"]("visible"):SetInt(1)
+		element["Minus"]("visible"):SetInt(1)
+		--element["Label"]("visible"):SetInt(1)
+		if(element("AttachedTemplate"):GetString() ~= "") then
+			element:GetElement("attachedTemplate"):DoStoredScript("setVisible")
+		end
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["EmptySprite"]("visible"):SetInt(0)
+		element["PositiveBar"]("visible"):SetInt(0)
+		element["NegativeBar"]("visible"):SetInt(0)
+		--element["Label"]("visible"):SetInt(0)
+		element["Plus"]("visible"):SetInt(0)
+		element["Minus"]("visible"):SetInt(0)
+		if(element("AttachedTemplate"):GetString() ~= "") then
+			element:GetElement("attachedTemplate"):DoStoredScript("setInvisible")
+		end
+	</event>
+	
+</template>

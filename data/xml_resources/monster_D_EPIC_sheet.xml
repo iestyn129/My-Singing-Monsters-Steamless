@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f8fa31b32a7ce03db7b61cccb003ce55:01a78b770e0d2f3a70a2b9a1b5d56279:386058237a485693a6c3cb9f6a5aac40$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_D_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="D_body1.png" x="260" y="2" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body2.png" x="2" y="184" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body3.png" x="216" y="198" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth1.png" x="214" y="394" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth2.png" x="2" y="466" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth3.png" x="214" y="474" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth4.png" x="2" y="546" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth5.png" x="210" y="554" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth6.png" x="2" y="626" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth7.png" x="360" y="584" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_noodles_EPIC.png" x="2" y="2" w="256" h="180" pX="0.5" pY="0.5"/>
+    <sprite n="D_pupil_EPIC.png" x="152" y="454" w="60" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="D_right_eyeback.png" x="312" y="634" w="46" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid1.png" x="364" y="514" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid2.png" x="152" y="592" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid3.png" x="422" y="526" w="68" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="D_right_eyelid4.png" x="152" y="662" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_shadow.png" x="2" y="380" w="148" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb1.png" x="474" y="2" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb1_EPIC.png" x="430" y="198" w="80" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb2.png" x="104" y="706" w="46" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb2_EPIC.png" x="430" y="280" w="80" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb3.png" x="364" y="394" w="64" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb3_EPIC.png" x="210" y="634" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb4.png" x="152" y="516" w="56" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb4_EPIC.png" x="2" y="706" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb5.png" x="152" y="380" w="60" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb5_EPIC.png" x="430" y="362" w="80" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb6.png" x="364" y="466" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb6_EPIC.png" x="360" y="664" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb7.png" x="474" y="50" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb7_EPIC.png" x="430" y="444" w="80" h="80" pX="0.5" pY="0.5"/>
+</TextureAtlas>

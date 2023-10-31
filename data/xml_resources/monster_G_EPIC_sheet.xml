@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e078eed6fde182462c93ef051b949445:c56440dc7e01e804add5a43ce2a341d8:df7d78e647197e1f619b27c7889b5570$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_G_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="G_body" x="2" y="2" w="152" h="283" pX="0.5" pY="0.5" oX="0" oY="1" oW="152" oH="284"/>
+    <sprite n="G_head_EPIC" x="2" y="287" w="181" h="207" pX="0.5" pY="0.5" oX="7" oY="4" oW="220" oH="190" r="y"/>
+    <sprite n="G_left_eye_1" x="467" y="285" w="37" h="25" pX="0.5" pY="0.5" oX="2" oY="0" oW="28" oH="40" r="y"/>
+    <sprite n="G_left_eye_2" x="467" y="312" w="37" h="25" pX="0.5" pY="0.5" oX="2" oY="0" oW="28" oH="40" r="y"/>
+    <sprite n="G_left_eye_3" x="258" y="316" w="37" h="25" pX="0.5" pY="0.5" oX="2" oY="0" oW="28" oH="40" r="y"/>
+    <sprite n="G_left_eye_4" x="439" y="332" w="25" h="37" pX="0.5" pY="0.5" oX="2" oY="0" oW="28" oH="40"/>
+    <sprite n="G_left_hand" x="439" y="371" w="63" h="59" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="60"/>
+    <sprite n="G_left_lowerarm" x="391" y="270" w="74" h="60" pX="0.5" pY="0.5" oX="2" oY="0" oW="76" oH="60"/>
+    <sprite n="G_left_upperarm" x="303" y="278" w="69" h="62" pX="0.5" pY="0.5" oX="1" oY="2" oW="68" oH="72" r="y"/>
+    <sprite n="G_legthings_EPIC" x="156" y="2" w="146" h="224" pX="0.5" pY="0.5" oX="7" oY="6" oW="240" oH="160" r="y"/>
+    <sprite n="G_right_eye_1" x="258" y="228" w="43" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44"/>
+    <sprite n="G_right_eye_2" x="258" y="272" w="43" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44"/>
+    <sprite n="G_right_eye_3" x="468" y="195" w="42" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44" r="y"/>
+    <sprite n="G_right_eye_4" x="468" y="240" w="42" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44" r="y"/>
+    <sprite n="G_right_hand" x="360" y="397" w="59" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="G_right_lowerarm" x="185" y="282" w="71" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="68" oH="76" r="y"/>
+    <sprite n="G_right_upperarm" x="391" y="195" w="75" h="73" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="G_shadow" x="156" y="228" w="100" h="52" pX="0.5" pY="0.5" oX="3" oY="1" oW="108" oH="56"/>
+    <sprite n="G_sphere_01" x="374" y="332" w="63" h="63" pX="0.5" pY="0.5" oX="20" oY="20" oW="104" oH="104"/>
+    <sprite n="G_sphere_02" x="297" y="342" w="61" h="59" pX="0.5" pY="0.5" oX="21" oY="19" oW="104" oH="104" r="y"/>
+    <sprite n="G_sphere_03" x="304" y="192" w="85" h="84" pX="0.5" pY="0.5" oX="9" oY="9" oW="104" oH="104" r="y"/>
+    <sprite n="G_sphere_04" x="402" y="2" w="95" h="95" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_05" x="304" y="100" w="92" h="90" pX="0.5" pY="0.5" oX="4" oY="6" oW="104" oH="104"/>
+    <sprite n="G_sphere_06" x="402" y="99" w="94" h="94" pX="0.5" pY="0.5" oX="4" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_07" x="304" y="2" w="96" h="96" pX="0.5" pY="0.5" oX="3" oY="3" oW="104" oH="104"/>
+</TextureAtlas>

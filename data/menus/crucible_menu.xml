@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="11" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	<element name="LeftMonsterBg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-217*game.menuScaleX()+50*game.hudScale()/2" yOffset="-10" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="219*game.menuScaleX()" h="225*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+				
+				local borderHeight = 50*0.5
+				
+				local titleHeight = element:parent():GetElement("LeftTitleFrame"):absH()*lua_sys.deviceScaleY()*game.hudScale()
+				local y = element:absY()*lua_sys.deviceScaleY() + titleHeight
+				local h = element:absH()*lua_sys.deviceScaleY() - (titleHeight + borderHeight)
+				
+				game.setClipping("Clipping", 
+					element:absX(), 
+					y-2, 
+					lua_sys.screenWidth()/2*lua_sys.deviceScaleX(), 
+					h)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="LeftTitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="LeftMonsterBg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="219*game.menuScaleX()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="LeftTitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="LeftTitleFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="50*0.5*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="220*game.menuScaleX()" h="35*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component:setColor(0.43, 0.98, 0.02)
+				component("text"):SetString(game.localizedUpper("SELECT_MONSTER"))
+				component("layer"):SetString("MidPopUps")
+				
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="FlagsFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="LeftMonsterBg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-(50-2)*game.hudScale()" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="0" h="225*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(49.0)
+				component("bottomHeight"):SetFloat(49.0)
+				component("leftWidth"):SetFloat(49.0)
+				component("rightWidth"):SetFloat(49.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50Sm")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		
+		<template type="template_crucibleFlagIndicator" name="Gene2">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="2" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="(49.0/2+1)*game.hudScale()" yOffset="-225*game.hudScale()/2" priorityOffset="-1" />
+		</template>
+		<template type="template_crucibleFlagIndicator" name="Gene3">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="3" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="(49.0/2+1)*game.hudScale()" yOffset="225*game.hudScale()/2" priorityOffset="-1" />
+		</template>
+		<template type="template_crucibleFlagIndicator" name="Gene1">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="1" />
+			<position relativeTo="Gene2" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</template>
+		<template type="template_crucibleFlagIndicator" name="Gene4">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="4" />
+			<position relativeTo="Gene3" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</template>
+		<template type="template_crucibleFlagIndicator" name="Gene0">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="0" />
+			<position relativeTo="Gene1" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</template>
+		<template type="template_crucibleFlagIndicator" name="Gene5">
+			<templateVar name="$layer" equals="'MidPopUps'" />
+			<templateVar name="$ind" equals="5" />
+			<position relativeTo="Gene4" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</template>
+		
+	</element>
+
+	<element name="LeftMonsterList">
+		<size w="235*game.menuScaleX()" h="(215*game.menuScaleY())-50" />
+		<position relativeTo="LeftMonsterBg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="8*0.5*game.menuScaleX()" yOffset="(50+3)*game.hudScale()" priorityOffset="-1" />
+		<swipeComponent name="Swiper">
+			<!-- event name="enableScrolling" params="component, element">
+				component:GetVar("enableMouseScroll"):SetInt(1)
+			</event>
+			<event name="disableScrolling" params="component, element">
+				component:GetVar("enableMouseScroll"):SetInt(0)
+			</event -->
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="LeftMonsterBg" dependentOnComponent="Sprite" />
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>
+		</touchComponent>
+	</element>
+	
+	
+	<touchComponent name="TouchBlockerTop">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="6" />
+	</touchComponent>
+	
+	<touchComponent name="TouchBlockerBot">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()/2" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<!-- priority 6 so we dont' block contextbar buttons, which are at priority 5 -->
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="6" />
+	</touchComponent>
+	
+	<element name="HeatLevelBg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="LeftMonsterBg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="217*game.menuScaleX()-2" yOffset="0" priorityOffset="0" />
+		<ninesliceComponent name="Sprite">
+			<size w="217*game.menuScaleX()" h="225*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="HeatTitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="HeatLevelBg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="217*game.menuScaleX()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="HeatTitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="HeatTitleFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="50*0.5*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="220*game.menuScaleX()" h="35*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.35*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component:setColor(0.43, 0.98, 0.02)
+				component("text"):SetString(game.localizedUpper("SELECT_HEAT_LEVEL"))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Thermometer">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="HeatLevelBg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/anim_crucible_themometer.bin")
+				component("animation"):SetString("thermometer_01")
+				component:setScale(Vector2(0.4*game.menuScaleY(),0.4*game.menuScaleY()))
+				element:setOrientationPosition(Vector2(component:size().x / 2.0 + (30*game.menuScaleY()), component:size().y / 2.0 + 15*game.hudScale()))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</aeComponent>
+	</element>
+	
+	<element name="HeatControlRelic">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="HeatLevelBg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="50*game.menuScaleY()" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("relic")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="IncrHeat">
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.25*game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="HeatControlRelic" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0*5*game.hudScale()" yOffset="0*15*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_plus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				local heatLevel = element:parent()("heatLevel"):GetInt()
+				heatLevel = heatLevel+1
+				local selectedMonsterUid = element:parent():E("LeftMonsterList"):V("SelectedEntryID"):GetInt()
+				local maxSupportedHeat = game.maxSupportedHeat(selectedMonsterUid)
+				if(heatLevel >= maxSupportedHeat) then
+					heatLevel = maxSupportedHeat
+				end
+				
+				element:parent()("heatLevel"):SetInt(heatLevel)
+				element:parent():DoStoredScript("updateTemperature")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				onTouchRelease(component, element)
+				--do this to update the appearance of the button:
+				element:parent():DoStoredScript("updateTemperature")
+			]]>
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="DecrHeat">
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.25*game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="HeatControlRelic" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0*5*game.hudScale()" yOffset="5*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_minus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				local heatLevel = element:parent()("heatLevel"):GetInt()
+				heatLevel = heatLevel-1
+			
+				local selectedMonsterUid = element:parent():E("LeftMonsterList"):V("SelectedEntryID"):GetInt()
+				local minSupportedHeat = game.minSupportedHeat(selectedMonsterUid)
+				local min = math.max(game.crucHeatLevel(), minSupportedHeat)
+				if(heatLevel < min) then
+					heatLevel = min
+				end
+				element:parent()("heatLevel"):SetInt(heatLevel)
+				element:parent():DoStoredScript("updateTemperature")
+			]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				--do this to update the appearance of the button:
+				element:parent():DoStoredScript("updateTemperature")
+			</event>
+		</touchComponent>
+	</template>
+	
+	<element name="HeatDescrText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="HeatControlRelic" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" h="200*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):SetString(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(0)
+				component("text"):SetString("HEAT_LEVEL_DESCRIPTION")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="EvolveButton">
+		<templateVar name="$upSpriteName" equals="'button_buy'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="LeftMonsterBg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="30*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Label">
+			<size w="65*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):SetString(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(0)
+				component("text"):SetString("EVOLVE_BUTTON")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					onTouchDown(component, element)
+					element["Label"]:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					element["Label"]:setColor(1.0, 1.0, 1.0)
+					component:DoStoredScript("startEvolve")
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					onTouchRelease(component, element)
+					element["Label"]:setColor(1.0, 1.0, 1.0)
+				]]>
+			</event>
+		</touchComponent>
+	</template>
+	<element name="Price">
+		<size dependentOnElement="element:name()" dependentOnComponent="RelicBackingSprite" />
+		<position relativeTo="EvolveButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-20*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<event name="setRelicSaleVisible" params="element">
+			element["RelicsStrikeout"]["Sprite"]("visible"):SetInt(1)
+			element["RelicSaleTag"]["Sprite"]("visible"):SetInt(1)
+			element["RelicSalePrice"]["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="setRelicSaleInvisible" params="element">
+			element["RelicsStrikeout"]["Sprite"]("visible"):SetInt(0)
+			element["RelicSaleTag"]["Sprite"]("visible"):SetInt(0)
+			element["RelicSalePrice"]["Text"]("visible"):SetInt(0)
+		</event>
+		
+		<spriteSheetComponent name="RelicBackingSprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("stats_bar")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		
+		<spriteSheetComponent name="RelicSprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString(game.StoreContext_SPRITE_RELIC)
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="RelicCostText">
+			<size w="65*game.menuScaleX()" h="50*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("text"):SetString(""..game.crucibleHeatRelicCost(element:parent()("heatLevel"):GetInt(), false))
+					game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_RELICS, component)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+		
+
+		
+		<element name="RelicsStrikeout">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-4" />
+			
+			<ninesliceComponent name="Sprite">
+				<size w="4" h="1" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("includeBorder"):SetInt(1)
+						component("topHeight"):SetFloat(2.0)
+						component("bottomHeight"):SetFloat(2.0)
+						component("leftWidth"):SetFloat(2.0)
+						component("rightWidth"):SetFloat(2.0)
+						component("alpha"):SetFloat(0.6)
+						component("spriteName"):SetString("gfx/menu/menu_sale_redline_3slice")
+						component("layer"):SetString("MidPopUps")
+						component("size"):SetFloat(0.50*game.menuScaleX())
+						component("visible"):SetInt(0)
+					]]>
+				</event>
+				<event name="onPostInit" params="component, element">
+					<![CDATA[
+						component:DoStoredScript("refresh")
+					]]>
+				</event>
+				<event name="refresh" params="component, element">
+					<![CDATA[
+						local width = element:parent():GetComponent("RelicCostText")("renderWidth"):GetFloat() + 4 * game.menuScaleX()
+						component:setSize(Vector2(width, component:absH()))
+						component:calculatePosition()
+					]]>
+				</event>
+			</ninesliceComponent>
+		</element>
+		
+		<element name="RelicSalePrice">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="-8*game.menuScaleY()" priorityOffset="-3" />
+			<textComponent name="Text">
+				<size w="65*game.menuScaleX()" h="16*game.menuScaleX()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("100")
+					component("layer"):SetString("MidPopUps")
+					component("visible"):SetInt(0)
+				]]>
+				</event>
+			</textComponent>
+		</element>
+
+		<element name="RelicSaleTag">
+			<hudScale scale="game.hudScale()" />
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="RelicSalePrice" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+
+			<spriteSheetComponent name="Sprite">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("sale_tag_updated_taller")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.32)
+					component("visible"):SetInt(0)
+				</event>
+			</spriteSheetComponent>
+		</element>
+		
+		
+		
+		<element name="Plus">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+				<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("size"):SetFloat(0.4*game.menuScaleX())
+						component("text"):SetString("+")
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+		<element name="KeyBackingSprite">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="Plus" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("stats_bar")
+						component("sheetName"):SetString("xml_resources/hud01.xml")
+						component("size"):SetFloat(0.5*game.menuScaleX())
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<spriteSheetComponent name="KeySprite">
+			<position relativeTo="KeyBackingSprite" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString(game.StoreContext_SPRITE_KEY)
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="KeyCostText">
+			<size w="65*game.menuScaleX()" h="50*game.menuScaleX()" />
+			<position relativeTo="KeyBackingSprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("text"):SetString("")
+					game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_KEYS, component)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="queuePop" params="element">
+		element:root():popPopUp()
+	</event>
+	
+	<script src="scripts/CrucibleMenu.lua"/>
+</menu>

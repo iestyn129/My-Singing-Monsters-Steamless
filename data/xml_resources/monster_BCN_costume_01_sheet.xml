@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4057304e7f7125e42c53c33aa25832eb:1819afb01d52d456b6ff2428b349f249:2756ca234801c99c1610702086fd639b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCN_costume_01_sheet.png" width="512" height="512" hires="true">
+	<!-- original anchor = (46, 42) -> new anchor (69, 22) diff = (-23, 20)-->
+	<!-- add double it to texturepacker output offsets (7, 2) -> (-39, 42)-->
+    <sprite n="monster_BCN_gobbley_beak.png" x="2" y="2" w="125" h="75" pX="0.5" pY="0.5" oX="-39" oY="42" oW="140" oH="80"/>
+	<!-- original anchor = (46, 42) -> new anchor (52, 43) diff = (-6, -1)-->
+	<!-- add double it to texturepacker output offsets (3, 0) -> (-9, -2)-->
+    <sprite n="monster_BCN_gobbley_mask.png" x="129" y="2" w="134" h="100" pX="0.5" pY="0.5" oX="-9" oY="-2" oW="140" oH="100"/>
+	<!-- original anchor = (14, 46) -> new anchor (58, 100) diff = (-44, -54)-->
+	<!-- add double it to texturepacker output offsets (14, 8) -> (-74, -100)-->
+    <sprite n="monster_BCN_gobbley_tail.png" x="2" y="104" w="267" h="249" pX="0.5" pY="0.5" oX="-74" oY="-100" oW="280" oH="280" r="y"/>
+</TextureAtlas>

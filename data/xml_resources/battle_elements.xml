@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2582cc21833527220be550afc02e47b0:a9ae7ac90205b18d0f8e75bcbe86ac87:e873b0d888e72b2dda14a4b35a1776db$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/battle/battle_elements.png" width="1024" height="1024">
+    <sprite n="menu_frame_transparent" x="2" y="2" w="336" h="381" pX="0.5" pY="0.5"/>
+    <sprite n="menu_quest_frame" x="2" y="385" w="336" h="381" pX="0.5" pY="0.5"/>
+    <sprite n="menu_quest_frame_timed" x="396" y="2" w="381" h="336" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="menu_quest_frame_timed_top" x="340" y="340" w="60" h="262" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="menu_tier_highlight" x="2" y="768" w="127" h="229" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_crown" x="131" y="768" w="169" h="174" pX="0.5" pY="0.5"/>
+    <sprite n="monster_crown_pupil" x="112" y="999" w="18" h="19" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_crown_shadow" x="2" y="999" w="108" h="23" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_blank" x="132" y="944" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_christmas" x="198" y="944" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_easter" x="264" y="944" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_halloween" x="302" y="768" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_summer" x="302" y="834" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_thanksgiving" x="330" y="900" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_time" x="340" y="604" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="quest_number_valentines" x="340" y="670" w="64" h="64" pX="0.5" pY="0.5"/>
+</TextureAtlas>

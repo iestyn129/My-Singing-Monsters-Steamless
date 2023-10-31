@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:25048cc47bc6ac790a8fd46f06744161:388d97c4deb0a80529f61eb63af175a8:5f9a96d44e6602b9da9779c7decb2e28$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_MIRROR_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="breathing_pipe" x="1776" y="4" w="246" h="595" pX="0.5" pY="0.5" oX="0" oY="0" oW="600" oH="246" r="y"/>
+    <sprite n="island04_burns" x="1168" y="4" w="604" h="967" pX="0.5" pY="0.5" oX="2" oY="0" oW="606" oH="1010"/>
+    <sprite n="island04_ear" x="1776" y="603" w="198" h="460" pX="0.5" pY="0.5" oX="247" oY="205" oW="456" oH="804"/>
+    <sprite n="island04_edge" x="688" y="1416" w="408" h="403" pX="0.5" pY="0.5" oX="13" oY="2" oW="416" oH="410" r="y"/>
+    <sprite n="island04_extra01" x="807" y="743" w="351" h="359" pX="0.5" pY="0.5" oX="0" oY="0" oW="360" oH="360"/>
+    <sprite n="island04_eyeclosed" x="4" y="4" w="1160" h="735" pX="0.5" pY="0.5" oX="0" oY="0" oW="1160" oH="810"/>
+    <sprite n="island04_fin" x="1620" y="1241" w="382" h="695" pX="0.5" pY="0.5" oX="32" oY="0" oW="456" oH="804"/>
+    <sprite n="island04_nose" x="4" y="1416" w="680" h="580" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island04_stumpcenter" x="1162" y="975" w="454" h="988" pX="0.5" pY="0.5" oX="1" oY="6" oW="990" oH="460" r="y"/>
+    <sprite n="island04_stumpside" x="4" y="743" w="799" h="669" pX="0.5" pY="0.5" oX="1" oY="3" oW="800" oH="672"/>
+    <sprite n="w4_bubble" x="1978" y="603" w="44" h="44" pX="0.5" pY="0.5" oX="3" oY="1" oW="48" oH="48"/>
+    <sprite n="w4_coral" x="807" y="1106" w="224" h="199" pX="0.5" pY="0.5" oX="1" oY="0" oW="200" oH="224" r="y"/>
+    <sprite n="w4_fish" x="1035" y="1106" w="114" h="156" pX="0.5" pY="0.5" oX="3" oY="3" oW="160" oH="120" r="y"/>
+    <sprite n="w4_jellybottom" x="1620" y="975" w="148" h="262" pX="0.5" pY="0.5" oX="7" oY="1" oW="160" oH="264"/>
+    <sprite n="w4_jellytop" x="1772" y="1067" w="176" h="112" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4eaee2bb89a205f34dda0fbb9bc8a2a6:120213252eb22b631b4a1648290438e2:c3231ffa7dca58f24e78520b23aa5e29$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCN_sheet.png" width="512" height="512" hires="true">
+    <sprite n="BCF_body_seg1.png" x="2" y="223" w="132" h="110" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_body_seg2.png" x="354" y="136" w="142" h="130" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_body_seg3.png" x="184" y="87" w="168" h="136" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_body_seg4.png" x="358" y="2" w="144" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_head.png" x="86" y="389" w="96" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_head_RARE.png" x="2" y="101" w="134" h="120" pX="0.5" pY="0.5" oX="0" oY="6" oW="120" oH="140" r="y"/>
+    <sprite n="BCF_left_claw.png" x="310" y="225" w="38" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_left_claw_RARE.png" x="310" y="287" w="38" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_left_foot.png" x="152" y="335" w="48" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_left_foot_RARE.png" x="2" y="335" w="64" h="56" pX="0.5" pY="0.5" oX="3" oY="1" oW="70" oH="60"/>
+    <sprite n="BCF_left_lower_arm.png" x="479" y="324" w="30" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_left_lowerleg.png" x="138" y="159" w="40" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_left_upper_arm.png" x="265" y="406" w="82" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_left_upperleg.png" x="2" y="394" w="82" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_left_upperleg_RARE.png" x="215" y="309" w="87" h="64" pX="0.5" pY="0.5" oX="2" oY="0" oW="66" oH="88" r="y"/>
+    <sprite n="BCF_lids_01.png" x="479" y="364" w="29" h="83" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="34" r="y"/>
+    <sprite n="BCF_lids_02.png" x="265" y="375" w="83" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="34"/>
+    <sprite n="BCF_lids_03.png" x="349" y="406" w="29" h="83" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="34" r="y"/>
+    <sprite n="BCF_lids_04.png" x="380" y="394" w="83" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="34"/>
+    <sprite n="BCF_mouth1.png" x="301" y="491" w="74" h="13" pX="0.5" pY="0.5" oX="4" oY="4" oW="78" oH="22"/>
+    <sprite n="BCF_mouth2.png" x="136" y="311" w="77" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="78" oH="22"/>
+    <sprite n="BCF_mouth3.png" x="380" y="425" w="20" h="76" pX="0.5" pY="0.5" oX="2" oY="2" oW="78" oH="22" r="y"/>
+    <sprite n="BCF_mouth4.png" x="498" y="160" w="8" h="26" pX="0.5" pY="0.5" oX="23" oY="9" oW="78" oH="22" r="y"/>
+    <sprite n="BCF_pupil.png" x="498" y="136" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_pupil_RARE.png" x="498" y="148" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_right_claw.png" x="2" y="449" w="38" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_right_claw_RARE.png" x="42" y="449" w="38" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_right_foot.png" x="138" y="101" w="44" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_right_foot_RARE.png" x="184" y="394" w="79" h="48" pX="0.5" pY="0.5" oX="2" oY="0" oW="50" oH="80" r="y"/>
+    <sprite n="BCF_right_lower_arm.png" x="184" y="449" w="26" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_right_lowerleg.png" x="136" y="235" w="40" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="BCF_right_upper_arm.png" x="479" y="268" w="30" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_right_upperleg.png" x="68" y="335" w="82" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_right_upperleg_RARE.png" x="212" y="444" w="87" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="88" r="y"/>
+    <sprite n="BCF_shadow.png" x="2" y="2" w="180" h="97" pX="0.5" pY="0.5" oX="6" oY="4" oW="192" oH="108"/>
+    <sprite n="BCF_tail.png" x="180" y="225" w="128" h="82" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCF_tail_RARE.png" x="184" y="2" w="172" h="83" pX="0.5" pY="0.5" oX="0" oY="0" oW="84" oH="172" r="y"/>
+    <sprite n="spore_BCN.png" x="350" y="268" w="127" h="124" pX="0.5" pY="0.5" oX="25" oY="30" oW="172" oH="172" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:61118fa02383a10d051c9b69922e8847:f56d30316f7c01c95fbb5d2871b6e2fa:5aaa9b6fb6744ccf3952730f9bf64f04$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_VOC_02_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="VOC_02_hair_back" x="2" y="2" w="227" h="105" pX="0.5" pY="0.5" oX="9" oY="12" oW="124" oH="252" r="y"/>
+    <sprite n="VOC_02_hair_front" x="2" y="109" w="178" h="48" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="200" r="y"/>
+    <sprite n="VOC_02_hair_side" x="231" y="137" w="177" h="51" pX="0.5" pY="0.5" oX="11" oY="12" oW="72" oH="200" r="y"/>
+    <sprite n="VOC_02_hand_01" x="2" y="579" w="102" h="93" pX="0.5" pY="0.5" oX="13" oY="10" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_02" x="228" y="502" w="101" h="72" pX="0.5" pY="0.5" oX="19" oY="12" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_03" x="2" y="510" w="103" h="67" pX="0.5" pY="0.5" oX="18" oY="11" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_04" x="388" y="447" w="107" h="84" pX="0.5" pY="0.5" oX="8" oY="10" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_05" x="139" y="420" w="87" h="101" pX="0.5" pY="0.5" oX="6" oY="18" oW="116" oH="128"/>
+    <sprite n="VOC_02_hand_06" x="157" y="239" w="70" h="105" pX="0.5" pY="0.5" oX="15" oY="15" oW="116" oH="128"/>
+    <sprite n="VOC_02_hand_07" x="2" y="431" w="103" h="77" pX="0.5" pY="0.5" oX="19" oY="11" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_08" x="410" y="182" w="99" h="78" pX="0.5" pY="0.5" oX="19" oY="11" oW="116" oH="128" r="y"/>
+    <sprite n="VOC_02_hand_09" x="139" y="523" w="84" h="81" pX="0.5" pY="0.5" oX="19" oY="11" oW="116" oH="128"/>
+    <sprite n="VOC_02_hand_10" x="383" y="633" w="76" h="70" pX="0.5" pY="0.5" oX="19" oY="11" oW="116" oH="128"/>
+    <sprite n="VOC_02_hand_11" x="213" y="641" w="70" h="68" pX="0.5" pY="0.5" oX="19" oY="11" oW="116" oH="128"/>
+    <sprite n="VOC_02_head" x="231" y="2" w="220" h="133" pX="0.5" pY="0.5" oX="1" oY="12" oW="144" oH="244" r="y"/>
+    <sprite n="VOC_02_left_eyelid_01" x="182" y="153" w="46" h="42" pX="0.5" pY="0.5" oX="5" oY="0" oW="52" oH="56" r="y"/>
+    <sprite n="VOC_02_left_eyelid_02" x="410" y="137" w="41" h="43" pX="0.5" pY="0.5" oX="4" oY="5" oW="52" oH="56" r="y"/>
+    <sprite n="VOC_02_left_eyelid_03" x="451" y="737" w="36" h="34" pX="0.5" pY="0.5" oX="7" oY="10" oW="52" oH="56" r="y"/>
+    <sprite n="VOC_02_left_eyelid_04" x="412" y="705" w="37" h="36" pX="0.5" pY="0.5" oX="4" oY="10" oW="52" oH="56"/>
+    <sprite n="VOC_02_left_foot" x="225" y="576" w="76" h="63" pX="0.5" pY="0.5" oX="19" oY="11" oW="108" oH="88"/>
+    <sprite n="VOC_02_left_lowerarm" x="229" y="393" w="134" h="107" pX="0.5" pY="0.5" oX="4" oY="5" oW="148" oH="124"/>
+    <sprite n="VOC_02_lower_body" x="392" y="262" w="118" h="137" pX="0.5" pY="0.5" oX="9" oY="10" oW="136" oH="156"/>
+    <sprite n="VOC_02_lowerleg" x="385" y="533" w="97" h="39" pX="0.5" pY="0.5" oX="10" oY="9" oW="60" oH="116" r="y"/>
+    <sprite n="VOC_02_midleg" x="331" y="554" w="50" h="84" pX="0.5" pY="0.5" oX="8" oY="11" oW="68" oH="104"/>
+    <sprite n="VOC_02_mouth_01" x="157" y="159" w="23" h="78" pX="0.5" pY="0.5" oX="17" oY="14" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_02" x="383" y="574" w="83" h="27" pX="0.5" pY="0.5" oX="15" oY="13" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_03" x="107" y="431" w="30" h="86" pX="0.5" pY="0.5" oX="13" oY="12" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_04" x="139" y="385" w="88" h="33" pX="0.5" pY="0.5" oX="12" oY="11" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_05" x="107" y="519" w="30" h="76" pX="0.5" pY="0.5" oX="18" oY="13" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_06" x="152" y="346" w="75" h="37" pX="0.5" pY="0.5" oX="18" oY="12" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_07" x="464" y="617" w="44" h="74" pX="0.5" pY="0.5" oX="18" oY="11" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_08" x="453" y="84" w="52" h="75" pX="0.5" pY="0.5" oX="19" oY="10" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_09" x="368" y="326" w="21" h="63" pX="0.5" pY="0.5" oX="22" oY="17" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_10" x="106" y="672" w="29" h="59" pX="0.5" pY="0.5" oX="24" oY="16" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_11" x="453" y="2" w="57" h="35" pX="0.5" pY="0.5" oX="24" oY="15" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_12" x="453" y="39" w="54" h="43" pX="0.5" pY="0.5" oX="25" oY="13" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_13" x="331" y="502" w="52" h="50" pX="0.5" pY="0.5" oX="26" oY="12" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_14" x="453" y="161" w="44" h="18" pX="0.5" pY="0.5" oX="31" oY="20" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_15" x="303" y="576" w="23" h="30" pX="0.5" pY="0.5" oX="34" oY="20" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_16" x="106" y="597" w="30" h="37" pX="0.5" pY="0.5" oX="35" oY="18" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_17" x="182" y="197" w="46" h="30" pX="0.5" pY="0.5" oX="35" oY="16" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_18" x="484" y="533" w="26" h="82" pX="0.5" pY="0.5" oX="15" oY="12" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_19" x="303" y="640" w="76" h="29" pX="0.5" pY="0.5" oX="16" oY="14" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_20" x="383" y="603" w="79" h="28" pX="0.5" pY="0.5" oX="16" oY="13" oW="112" oH="72"/>
+    <sprite n="VOC_02_mouth_21" x="368" y="391" w="18" h="65" pX="0.5" pY="0.5" oX="23" oY="19" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_22" x="106" y="636" w="30" h="34" pX="0.5" pY="0.5" oX="34" oY="15" oW="112" oH="72" r="y"/>
+    <sprite n="VOC_02_mouth_23" x="182" y="109" w="47" h="42" pX="0.5" pY="0.5" oX="23" oY="8" oW="100" oH="58" r="y"/>
+    <sprite n="VOC_02_mouth_24" x="372" y="705" w="38" h="36" pX="0.5" pY="0.5" oX="25" oY="10" oW="100" oH="58" r="y"/>
+    <sprite n="VOC_02_pupil" x="365" y="458" w="17" h="17" pX="0.5" pY="0.5" oX="9" oY="9" oW="36" oH="36"/>
+    <sprite n="VOC_02_right_eyelid_01" x="461" y="693" w="49" h="42" pX="0.5" pY="0.5" oX="6" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="VOC_02_right_eyelid_02" x="137" y="677" w="43" h="42" pX="0.5" pY="0.5" oX="6" oY="6" oW="60" oH="60" r="y"/>
+    <sprite n="VOC_02_right_eyelid_03" x="329" y="671" w="41" h="39" pX="0.5" pY="0.5" oX="7" oY="10" oW="60" oH="60"/>
+    <sprite n="VOC_02_right_eyelid_04" x="285" y="671" w="42" h="39" pX="0.5" pY="0.5" oX="6" oY="10" oW="60" oH="60"/>
+    <sprite n="VOC_02_right_foot" x="138" y="606" w="73" h="69" pX="0.5" pY="0.5" oX="13" oY="10" oW="92" oH="88" r="y"/>
+    <sprite n="VOC_02_right_lowerarm" x="2" y="159" w="153" h="110" pX="0.5" pY="0.5" oX="9" oY="6" oW="168" oH="116"/>
+    <sprite n="VOC_02_right_lowerarm_2" x="2" y="271" w="148" h="88" pX="0.5" pY="0.5" oX="13" oY="28" oW="168" oH="116"/>
+    <sprite n="VOC_02_shadow" x="2" y="361" w="135" h="68" pX="0.5" pY="0.5" oX="3" oY="6" oW="140" oH="80"/>
+    <sprite n="VOC_02_upper_body" x="230" y="190" w="160" h="134" pX="0.5" pY="0.5" oX="9" oY="12" oW="152" oH="184" r="y"/>
+    <sprite n="VOC_02_upperarm" x="388" y="401" w="113" h="44" pX="0.5" pY="0.5" oX="9" oY="10" oW="132" oH="64"/>
+    <sprite n="VOC_02_upperleg" x="229" y="326" w="137" h="65" pX="0.5" pY="0.5" oX="5" oY="11" oW="76" oH="156" r="y"/>
+</TextureAtlas>

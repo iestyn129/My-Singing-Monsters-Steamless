@@ -1,0 +1,391 @@
+<template name="template_battle_campaign_infopane_expired" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+
+	<ninesliceComponent name="bg">
+		<size w="310*game.menuScaleX()" h="180*game.menuScaleY()" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</ninesliceComponent>
+
+	<textComponent name="ExpiredLabel">
+		<size w="290*game.menuScaleX()" h="32*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="16*game.menuScaleX()" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.3*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("MidPopUps")
+				component("alpha"):SetFloat(0)
+				component("multiline"):SetInt(1)
+				]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="TimerLabel">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="32*game.menuScaleX()" priorityOffset="-3" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.4*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("MidPopUps")
+				component("alpha"):SetFloat(0)
+				component("multiline"):SetInt(0)
+				]]>
+		</event>
+	</textComponent>
+
+	<element name="ItemList">
+		<size w="294*game.menuScaleX()" h="135*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleY()" priorityOffset="-5" />
+
+		<swipeComponent name="Swiper">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						--component("smoothMode"):SetInt(1)
+					]]>
+			</event>
+			<event name="refresh" params="component, element">
+				<![CDATA[
+						include("ScrollingListHelper").SwiperRefresh(component, element)
+					]]>
+			</event>
+			<event name="onTick" params="component, element, dt">
+				<![CDATA[
+						include("ScrollingListHelper").SwiperTick(component, element, dt)
+					]]>
+			</event>
+		</swipeComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("singleTouch"):SetInt(1)
+						component("enabled"):SetInt(0)
+					]]>
+			</event>
+		</touchComponent>
+<!--
+		<spriteComponent name="test_box">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(1.0, 0.0, 0.0)
+					component("alpha"):SetFloat(0.5)
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+-->
+		<event name="onInit" params="element">
+			<![CDATA[
+			element("alpha"):SetFloat(1.0)
+			include("ScrollingListHelper").ListInit(element,
+				{
+					direction = MenuSwipeComponent_SwipeDirectionHortizontal,
+					alwaysBounce = 0
+				})
+		]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			include("ScrollingListHelper").ListTick(element, dt)
+
+			--update alpha and clipping
+			include("MenuHelpers").ForEachEntry(element,
+				function(entry)
+
+					entry("alpha"):SetFloat(alpha)
+					entry:DoStoredScript("updateAlpha")
+
+					entry("clipX"):SetFloat(element:absX())
+					entry("clipY"):SetFloat(element:absY())
+					entry("clipW"):SetFloat(element:absW())
+					entry("clipH"):SetFloat(element:absH())
+					entry:DoStoredScript("updateClipping")
+
+				end
+			)
+
+		]]>
+		</event>
+
+		<event name="repopulate" params="element">
+			<![CDATA[
+				include("ScrollingListHelper").ListClear(element)
+				element:DoStoredScript("populate")
+			]]>
+		</event>
+
+		<event name="populate" params="element">
+			<![CDATA[
+				local campaignId = game.getBattleClientData():getSelectedCampaignId()
+				local campaignData = game.getBattleCampaignData(campaignId)
+				include("RewardListUI").Populate(element, campaignData.reward)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				element["Touch"]("enabled"):SetInt(0)
+				include("ScrollingListHelper").ListClear(element)
+			]]>
+		</event>
+
+	</element>
+
+	<template type="template_nineslicebutton" name="PurchaseButton">
+		<templateVar name="$upSpriteName" equals="'gfx/menu/button_green_gem'" />
+		<templateVar name="$spriteScale" equals="0.45*game.menuScaleX()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$lockEnabled" equals="'1'" />
+		<templateVar name="$topHeight" equals="30.0" />
+		<templateVar name="$bottomHeight" equals="30.0" />
+		<templateVar name="$leftWidth" equals="35.0" />
+		<templateVar name="$rightWidth" equals="35.0" />
+		<templateVar name="$width" equals="100*game.menuScaleX()" />
+		<templateVar name="$height" equals="16*game.menuScaleX()" />
+		<templateVar name="$includeBorder" equals="0" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.hudScale()" priorityOffset="-1" />
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+			]]>
+		</event>
+
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			<![CDATA[
+				if msg.messageID == "PURCHASE_CAMPAIGN_REWARD" and msg.choice then
+					game.purchaseBattleCampaignReward(game.getBattleClientData():getSelectedCampaignId())
+					element:root():popPopUp()
+					manager:setContext(manager:getDefaultContext())
+				end
+			]]>
+		</event>
+
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					local text = LOC("BATTLE_PURCHASE_CAMPAIGN_REWARD_CONFIRMATION")
+					local campaignId = game.getBattleClientData():getSelectedCampaignId()
+					local campaignData = game.getBattleCampaignData(campaignId)
+					text = text:gsub("%${DIAMONDS}", campaignData.rewardBuyoutCost)
+
+					game.displayConfirmation("PURCHASE_CAMPAIGN_REWARD", text)
+				]]>
+			</event>
+		</touchComponent>
+
+		<!--Currency Icon -->
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+				component("alpha"):SetFloat(0.0)
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="Label">
+			<size w="80*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					--component("text"):SetString("1000")
+					component("layer"):SetString("MidPopUps")
+					component("alpha"):SetFloat(0.0)
+
+					game.StoreContext_setDiamondTextColour(component);
+				]]>
+			</event>
+		</textComponent>
+<!--
+		<spriteComponent name="Test">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(100*game.menuScaleX() / 4.0, 16 * game.menuScaleX() / 4.0))
+				component("layer"):SetString("MidPopUps")
+				component("alpha"):SetFloat(0.5)
+			</event>
+		</spriteComponent>
+-->
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local FadeTransition = include("FadeTransition")
+				element.FadeTransition = FadeTransition:new({
+					duration = 0.66,
+					onDoneShow = function(e)
+						element:DoStoredScript("enable")
+					end,
+					onUpdate = function(alpha)
+						element("alpha"):SetFloat(alpha)
+						element:DoStoredScript("updateComponents")
+						element["Label"]("alpha"):SetFloat(alpha)
+						element["Sprite"]("alpha"):SetFloat(alpha)
+					end
+				})
+				element.FadeTransition:SetAlpha(0.0)
+
+				element["Touch"]("enabled"):SetInt(0)
+
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				onTick(element, dt)
+				element.FadeTransition:Tick(dt)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				element["Touch"]("enabled"):SetInt(1)
+				element.FadeTransition:Show()
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				element["Touch"]("enabled"):SetInt(0)
+				element.FadeTransition:Hide()
+			]]>
+		</event>
+
+		<event name="center" params="element">
+			<![CDATA[
+				local contentWidth = element:GetComponent("Sprite"):absW() + element:GetComponent("Label"):absW()
+				local offsetX = -contentWidth * 0.5
+				element["Sprite"]("xOffset"):SetFloat(offsetX)
+				element["Label"]("xOffset"):SetFloat(offsetX + element:GetComponent("Sprite"):absW())
+			]]>
+		</event>
+
+	</template>
+
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("IsActive"):SetInt(0)
+			local FadeTransition = include("FadeTransition")
+			element.FadeTransition = FadeTransition:new({
+				duration = 0.66,
+				onUpdate = function(alpha)
+					element["bg"]("alpha"):SetFloat(alpha)
+					element["ExpiredLabel"]("alpha"):SetFloat(alpha)
+					element["TimerLabel"]("alpha"):SetFloat(alpha)
+					element["ItemList"]("alpha"):SetFloat(alpha)
+				end
+			})
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element.FadeTransition:SetAlpha(0)
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			element.FadeTransition:Tick(dt)
+
+			if element("IsActive"):GetInt() == 1 then
+				local selectedCampaignId = game.getBattleClientData():getSelectedCampaignId()
+				local secsRemaining = game.getBattleCampaignPostSecsRemaining(selectedCampaignId)
+				if secsRemaining > 0 then
+						element["TimerLabel"]("text"):SetString(game.timeToString(secsRemaining))
+				else
+					--exit
+					element("IsActive"):SetInt(0)
+					element:root():popPopUp()
+				end
+			end
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			element.FadeTransition:Show()
+			element["PurchaseButton"]:DoStoredScript("show")
+			element("IsActive"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element.FadeTransition:Hide()
+			element["PurchaseButton"]:DoStoredScript("hide")
+			element["ItemList"]:DoStoredScript("hide")
+			element("IsActive"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+			local campaignId = game.getBattleClientData():getSelectedCampaignId()
+			local campaignData = game.getBattleCampaignData(campaignId)
+			local progress = game.getBattlePlayerData():getCampaignProgress(campaignId)
+
+			local campaignReward = campaignData.reward
+
+			element["ExpiredLabel"]("text"):SetString("BATTLE_CAMPAIGN_LAST_CHANCE")
+			element["PurchaseButton"]["Label"]("text"):SetString(campaignData.rewardBuyoutCost)
+			element["PurchaseButton"]:DoStoredScript("center")
+
+			element["ItemList"]:DoStoredScript("repopulate")
+
+		]]>
+	</event>
+
+</template>

@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		element("choice"):SetString("none")
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+	</event>
+	
+	<event name="onPostInit" params="element">
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgUpdateMemoryMinigameRewards", "gotUpdateRewards")		
+		element["NewHighScore"]["Text"]("visible"):SetInt(0)
+		element["DiamondSprite"]["Sprite"]("visible"):SetInt(0)
+		element["DiamondNum"]["Text"]("visible"):SetInt(0)
+		
+		local highscoreHeight = element["NewHighScore"]["Text"]("height"):GetInt() + element["NewHighScore"]("yOffset"):GetInt()
+		element["Reward"]("yOffset"):SetInt(-highscoreHeight/2)
+		element["LevelReached"]("yOffset"):SetInt(-highscoreHeight)
+		element["FoodSprite"]("xOffset"):SetInt(element["FoodSprite"]["Sprite"]("width"):GetInt()/2*game.menuScaleX())
+		element["CoinSprite"]("xOffset"):SetInt(element["FoodSprite"]["Sprite"]("width"):GetInt()/2*game.menuScaleX())
+	</event>
+	
+	<event name="gotUpdateRewards" params="element, msg">
+		<![CDATA[
+			element["DiamondNum"]["Text"]("text"):SetString(""..msg.diamondReward)
+			element["CoinNum"]["Text"]("text"):SetString(""..msg.coinReward)
+			element["FoodNum"]["Text"]("text"):SetString(""..msg.foodReward)
+			
+			local replayTxt = "";
+			
+			if((msg.diamondReplayCost == 0) and (msg.coinReplayCost == 0)) then
+				replayTxt = "MEMORY_GAME_PLAY_AGAIN"
+			else
+				local price = 0
+				local currency
+				
+				if(msg.coinReplayCost > 0) then
+					price = msg.coinReplayCost
+					currency = "GOLD"
+				else
+					price = msg.diamondReplayCost;
+					currency = "DIAMONDS";
+				end
+				
+				replayTxt = game.getLocalizedText("MEMORY_GAME_PURCHASE_AGAIN")
+				replayTxt = select(1, replayTxt:gsub("XXX", price))
+				replayTxt = select(1, replayTxt:gsub("YYY", game.getLocalizedText(currency)))
+			end
+
+			element["PlayAgainPrompt"]["Text"]("text"):SetString(replayTxt)
+			element["YesButton"]:DoStoredScript("setVisible")
+			element["NoButton"]:DoStoredScript("setVisible")
+			
+			if(msg.diamondReward > 0) then
+				element["NewHighScore"]["Text"]("visible"):SetInt(1)
+				element["DiamondSprite"]["Sprite"]("visible"):SetInt(1)
+				element["DiamondNum"]["Text"]("visible"):SetInt(1)
+				element["LevelReached"]("yOffset"):SetInt(-8*game.hudScale())				
+								
+				local highscoreHeight = element["NewHighScore"]["Text"]("height"):GetInt() + element["NewHighScore"]("yOffset"):GetInt()
+				element["Reward"]("yOffset"):SetInt(-highscoreHeight/2);
+				element["FoodSprite"]("xOffset"):SetInt(0)
+				element["CoinSprite"]("xOffset"):SetInt(-element:parent()["FoodSprite"]["Sprite"]("width"):GetInt()*game.menuScaleY())
+				element["DiamondSprite"]("xOffset"):SetInt(element:parent()["FoodSprite"]["Sprite"]("width"):GetInt()*game.menuScaleY())
+				element["PlayAgainPrompt"]("xOffset"):SetInt(0)
+			end
+		]]>
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then		
+				local transitionState = element("transitionState"):GetInt()
+
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("tickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					transitionTime = clamp(transitionTime, 0.0, 1.0)
+					
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime >= 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("tickTransition")
+					elseif(transitionTime <= 0.0) then
+						if(element("choice"):GetString() == "true") then
+							element:root():popPopUp()
+							game.submitConfirmation(element("messageID"):GetString(), true)
+						else
+							element:root():popPopUp()
+							game.submitConfirmation(element("messageID"):GetString(), false)
+						end
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="tickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		element["bg"]("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-lua_sys.screenWidth()" yOffset="-15*game.hudScale()" priorityOffset="4" />
+		<ninesliceComponent name="Sprite">
+			<size w="440*game.menuScaleX()" h="260*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="260*game.menuScaleX()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+			<event name="onPostInit" params="component, element">
+				local topEdge = component("topHeight"):GetFloat()
+				local bottomEdge = component("bottomHeight"):GetFloat()
+				local frameHeight = (component("height"):GetInt() + topEdge + bottomEdge)/game.menuScaleX();
+				element("yOffset"):SetInt(-frameHeight/2*component("size"):GetFloat()/game.menuScaleX())
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element("yOffset"):SetInt(element["Text"]("height"):GetInt() * (game.hudScale() - 1.0))
+		</event>
+		<textComponent name="Text">
+			<size w="240*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.43, 0.98, 0.02)
+				component("size"):SetFloat(0.6*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("CONFIRMATION_TITLE"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="LevelReached">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="NewHighScore" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-8*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.menuScaleX()" h="0" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("...")
+				component("size"):SetFloat(0.7*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="NewHighScore">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Reward" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="380*game.menuScaleX()" h="160*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_NEW_RECORD_MSG")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component:setColor(1.0, 0.82, 0.25)
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Reward">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="340*game.menuScaleX()" h="160*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_YOU_WON")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>	
+	
+	<element name="FoodSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Reward" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.50*game.menuScaleX())
+				component("visible"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>	
+	
+	<element name="FoodNum">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="FoodSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()" h="0" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>		
+	
+	<element name="CoinSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Reward" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt(-element:parent()["FoodSprite"]["Sprite"]("width"):GetInt()*game.menuScaleY())
+		</event>
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.50*game.menuScaleX())
+				component("visible"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="CoinNum">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CoinSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()" h="0" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="DiamondSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Reward" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt(element:parent()["FoodSprite"]["Sprite"]("width"):GetInt()*game.menuScaleY())
+		</event>
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.50*game.menuScaleX())
+				component("visible"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="DiamondNum">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="DiamondSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="340*game.hudScale()" h="0" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="PlayAgainPrompt">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="22*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="340*game.menuScaleX()" h="53*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_PLAY_AGAIN")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="YesButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="MAIN_YES" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-50" yOffset="5/game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			onInit(element)
+			element:DoStoredScript("setInvisible")
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Text"]("visible"):SetInt(1)
+			element["Overlay"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Text"]("visible"):SetInt(0)
+			element["Overlay"]("visible"):SetInt(0)
+		</event>
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("transitionState"):SetInt(2)
+				element:parent()("choice"):SetString("true")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("yOffset"):SetInt(-5*game.hudScale())
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="NoButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="MAIN_NO" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="50" yOffset="5/game.hudScale()" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			element["Overlay"]("size"):SetFloat(0.5)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("transitionState"):SetInt(2)
+				element:parent()("choice"):SetString("false")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("yOffset"):SetInt(-5*game.hudScale())
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</template>
+	
+</menu>

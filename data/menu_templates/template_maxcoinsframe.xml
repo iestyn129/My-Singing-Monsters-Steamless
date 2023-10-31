@@ -1,0 +1,80 @@
+<template name="template_maxcoinsframe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+	
+	<ninesliceComponent name="Frame">
+		<size w="160*game.hudScale()" h="41*game.hudScale()" />
+		<event name="onInit" params="component, element">
+			component("topHeight"):SetFloat(40.0)
+			component("bottomHeight"):SetFloat(40.0)
+			component("leftWidth"):SetFloat(50.0)
+			component("rightWidth"):SetFloat(50.0)
+			component("size"):SetFloat(0.5)
+			component("width"):SetInt(element:parent():absW()/2)
+			component("includeBorder"):SetInt(1)
+			component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+			component("layer"):SetString(element("Layer"):GetString())
+		</event>
+	</ninesliceComponent>
+	
+	<element name="StatName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="15" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("MAX")
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="CoinSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="StatName" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.objectRateUnitCurrencySprite())
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.4)
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="StatValue">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CoinSprite" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(element:parent()("MaxCoins"):GetInt())
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="onInit" params="element">
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgMonsterLevelUp", "gotMsgMonsterLevelUp")
+	</event>
+	
+	<event name="gotMsgMonsterLevelUp" params="element, msg">
+		element["StatValue"]["Text"]("text"):SetString(game.objectResourceCap())
+	</event>
+	
+	<event name="updateComponents" params="element">
+		local alpha = element("alpha"):GetFloat()
+		element["StatName"]["Text"]("alpha"):SetFloat(alpha)
+		element["Frame"]("alpha"):SetFloat(alpha)
+		element["CoinSprite"]["Sprite"]("alpha"):SetFloat(alpha)
+		element["StatValue"]["Text"]("alpha"):SetFloat(alpha)
+	</event>
+	
+</template>

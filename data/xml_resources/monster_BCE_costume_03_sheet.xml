@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4a3616a9562b268e8f1008f81e76e3da:fd9adae81f3e79152ad2faf7ad6c316d:7881b978c619cc5d4145a3e3e457b8a8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCE_costume_03_sheet.png" width="256" height="256" hires="true">
+    <sprite n="BCE_body_A_CHAINMAIL.png" x="129" y="2" w="124" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_body_B_CHAINMAIL.png" x="2" y="150" w="110" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_body_C_CHAINMAIL.png" x="2" y="2" w="125" h="146" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="146"/>
+    <sprite n="BCE_left_upperarm_CHAINMAIL.png" x="129" y="90" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_upperarm_CHAINMAIL.png" x="129" y="118" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

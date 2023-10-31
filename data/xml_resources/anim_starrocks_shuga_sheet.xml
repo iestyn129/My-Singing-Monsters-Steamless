@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d85fa9e9c17c4410914113a2739cd729:da120501c4daf6dc6413550746db622e:5b1bc77aa939ddd6a97a67dca16a852a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_shuga_sheet.png" width="256" height="1024" hires="true">
+    <sprite n="star_rock_glow_shuga" x="126" y="794" w="121" h="120" pX="0.5" pY="0.5" oX="1" oY="0" oW="121" oH="121" r="y"/>
+    <sprite n="star_rock_shadow" x="2" y="555" w="173" h="85" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200"/>
+    <sprite n="star_rock_shuga" x="2" y="43" w="208" h="510" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_shuga_01" x="2" y="794" w="122" h="134" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_shuga_02" x="2" y="642" w="151" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_shuga_03" x="2" y="2" w="230" h="39" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_stones_shuga_04" x="212" y="43" w="40" h="204" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_shuga_05" x="234" y="2" w="16" h="23" pX="0.5" pY="0.5"/>
+</TextureAtlas>

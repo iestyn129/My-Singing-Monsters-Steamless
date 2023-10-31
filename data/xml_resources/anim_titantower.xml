@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2d3751f0881dbe18df4c45dbe8aa5a2d:4c41619be0eef8b5a9562dd8b0f13908:2bd46475ae26269ae76983626f58ebe6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_titantower.png" width="512" height="1024" hires="true">
+    <sprite n="deco_titantower" x="1" y="1" w="355" h="819" pX="0.5" pY="0.5" oX="80" oY="34" oW="500" oH="900"/>
+    <sprite n="deco_titantower_floatie" x="358" y="1" w="44" h="35" pX="0.5" pY="0.5" oX="8" oY="14" oW="60" oH="60"/>
+    <sprite n="deco_titantower_lifesaver" x="404" y="1" w="36" h="33" pX="0.5" pY="0.5" oX="6" oY="5" oW="46" oH="46" r="y"/>
+    <sprite n="deco_titantower_swimmer_01" x="404" y="36" w="35" h="28" pX="0.5" pY="0.5" oX="8" oY="4" oW="43" oH="43" r="y"/>
+    <sprite n="deco_titantower_swimmer_02" x="442" y="1" w="36" h="28" pX="0.5" pY="0.5" oX="8" oY="4" oW="43" oH="43" r="y"/>
+    <sprite n="deco_titantower_swimmer_03" x="480" y="1" w="28" h="36" pX="0.5" pY="0.5" oX="8" oY="4" oW="43" oH="43"/>
+    <sprite n="deco_titantower_swimmer_04" x="442" y="31" w="36" h="28" pX="0.5" pY="0.5" oX="8" oY="4" oW="43" oH="43" r="y"/>
+</TextureAtlas>

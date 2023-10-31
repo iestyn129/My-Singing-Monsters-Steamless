@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:16ecbf00a7c9504f35a383f20f7d482d:2a3204915ffa685ee50b848693915a6e:60e7ed2f40bce790cd4283e7e07b4c38$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCE_costume_05_sheet.png" width="765" height="251" hires="true">
+    <sprite n="BCE_c5_beard.png" x="528" y="143" w="84" h="100" pX="0.5" pY="0.5" oX="10" oY="32" oW="104" oH="90" r="y"/>
+    <sprite n="BCE_c5_body_A.png" x="255" y="1" w="156" h="150" pX="0.5" pY="0.5" oX="1" oY="-1" oW="160" oH="160"/>
+    <sprite n="BCE_c5_body_B.png" x="413" y="143" w="113" h="107" pX="0.5" pY="0.5" oX="-9" oY="-3" oW="112" oH="116" r="y"/>
+    <sprite n="BCE_c5_body_C.png" x="569" y="1" w="147" h="134" pX="0.5" pY="0.5" oX="-5" oY="-3" oW="138" oH="148" r="y"/>
+    <sprite n="BCE_c5_gong.png" x="255" y="153" w="129" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="90" oH="130" r="y"/>
+    <sprite n="BCE_c5_hat.png" x="413" y="1" w="154" h="140" pX="0.5" pY="0.5" oX="-22" oY="-76.8" oW="160" oH="142"/>
+    <sprite n="BCE_c5_left_lowerarm.png" x="614" y="195" w="117" h="54" pX="0.5" pY="0.5" oX="-5.6" oY="-4.6" oW="120" oH="54"/>
+    <sprite n="BCE_c5_left_upperarm.png" x="614" y="137" w="130" h="56" pX="0.5" pY="0.5" oX="-2.925398906" oY="-2.900424603" r="y"/>
+    <sprite n="BCE_c5_stache.png" x="718" y="1" w="38" h="95" pX="0.5" pY="0.5" oX="32" oY="39" oW="100" oH="42" r="y"/>
+    <sprite n="BCE_c5_staff.png" x="1" y="1" w="252" h="248" pX="0.5" pY="0.5" oX="-120" oY="-94.4" r="y"/>
+</TextureAtlas>

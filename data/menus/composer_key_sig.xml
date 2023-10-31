@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="8" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="485*game.composerScale()" h="330*game.composerScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.7*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.7*game.composerScale())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="250*game.composerScale()" h="50" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="230*game.composerScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.65*game.composerScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIGNATURE_TITLE")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="ExitButton">
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.5*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="10" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				game.setComposerKeySignature(element:parent()("curVal"):GetInt())
+				element:parent():root():popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.5*game.composerScale())
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN7">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-7)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F7")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f7.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN6">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN7" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="15*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-6)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F6")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f6.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN5">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN6" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="15*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-5)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F5")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f5.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button1">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN7" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="15*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(1)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S1")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s1.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button2">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Button1" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="15*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(2)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S2")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s2.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button0">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN5" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(0)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_NONE")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("0.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN1">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN6" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-1)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F1")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f1.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN2">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN7" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-2)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F2")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f2.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN3">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Button1" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-3)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F3")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f3.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="ButtonN4">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Button2" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(-4)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_F4")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("f4.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button3">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN5" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(3)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S3")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s3.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button4">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN6" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(4)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S4")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s4.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button5">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="ButtonN7" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(5)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S5")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s5.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button6">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Button1" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(6)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S6")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s6.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="Button7">
+		<templateVar name="$spriteScale" equals="0.6*game.composerScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Button2" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*game.composerScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				local curVal = element:parent()("curVal"):GetInt()
+				if(curVal >= 0) then
+					element:parent()["Button"..curVal]:DoStoredScript("enable")
+				else
+					element:parent()["ButtonN"..-curVal]:DoStoredScript("enable")
+				end
+				element:DoStoredScript("disable")
+				element:parent()("curVal"):SetInt(7)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size w="85*game.composerScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-9*game.composerScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("KEY_SIG_S7")
+				component("size"):SetFloat(0.15*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.composerScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("s7.png")
+				component("sheetName"):SetString("xml_resources/sig_sheet.xml")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("origSize"):SetFloat(component("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			local newSize = element["Overlay"]("origSize"):GetFloat()/(0.5*game.composerScale()) * element["UpSprite"]("size"):GetFloat()
+			if(newSize ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(newSize)
+			end
+		</event>
+	</template>
+	
+	<event name="onInit" params="element">
+		local curVal = game.composerKeySignature()
+		element("curVal"):SetInt(curVal)
+		
+		if(curVal >= 0) then
+			element["Button"..curVal]:DoStoredScript("disable")
+		else
+			element["ButtonN"..-curVal]:DoStoredScript("disable")
+		end
+	</event>
+	
+</menu>

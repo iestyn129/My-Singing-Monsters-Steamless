@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0ac1f8d82eb73900e67e44d6e4afc3b7:09aabc488c5df9a70d555953bdcbb7b5:7504a045c31c8931e2a372b75dd89170$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_03_costume_02_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (35, 55) -> new anchor (13, 29) diff = (22, 26)-->
+    <!-- add double it to texturepacker output offsets (0, 0) -> (44, 52), cause hires-->
+    <sprite n="Toga_Leg_Right.png" x="174" y="96" w="80" h="120" pX="0.5" pY="0.5" oX="44" oY="52" r="y"/>
+    <!-- original anchor = (35, 55) -> new anchor (48, 38) diff = (-13, 17)-->
+    <!-- add double it to texturepacker output offsets (5, 7) -> (-21, 41), cause hires-->
+    <sprite n="Toga_Lower.png" x="1" y="1" w="184" h="90" pX="0.5" pY="0.5" oX="-21" oY="41" oW="200" oH="100"/>
+    <!-- original anchor = (39, 72) -> new anchor (40, 34) diff = (-1, 38)-->
+    <!-- add double it to texturepacker output offsets (6, 2) -> (4, 78), cause hires-->
+    <sprite n="Toga_Top.png" x="1" y="93" w="171" h="106" pX="0.5" pY="0.5" oX="4" oY="78" oW="180" oH="108"/>
+    <!-- original anchor = (39, 72) -> new anchor (65, 80) diff = (-26, -8)-->
+    <!-- add double it to texturepacker output offsets (7, 1) -> (-45, -15), cause hires-->
+    <sprite n="VOC_03_costume_02_wingL.png" x="1" y="365" w="85" h="96" pX="0.5" pY="0.5" oX="-45" oY="-15" oW="100" oH="100"/>
+    <!-- original anchor = (39, 72) -> new anchor (-34, 74) diff = (73, -2)-->
+    <!-- add double it to texturepacker output offsets (6, 1) -> (152, -3), cause hires-->
+    <sprite n="VOC_03_costume_02_wingR.png" x="88" y="365" w="85" h="96" pX="0.5" pY="0.5" oX="152" oY="-3" oW="100" oH="100"/>
+    <!-- original anchor = (19, 28) -> new anchor (25, 27) diff = (-6, 1)-->
+    <!-- add double it to texturepacker output offsets (6, 0) -> (-6, 2), cause hires-->
+    <sprite n="VOC_03_foot_left.png" x="119" y="218" w="116" h="99" pX="0.5" pY="0.5" oX="-6" oY="2" oW="126" oH="100"/>
+    <!-- original anchor = (22, 31) -> new anchor (28, 32) diff = (-6, -1)-->
+    <!-- add double it to texturepacker output offsets (2, 0) -> (-10, -2), cause hires-->
+    <sprite n="VOC_03_foot_right.png" x="1" y="201" w="116" h="106" pX="0.5" pY="0.5" oX="-10" oY="-2" oW="124" oH="111"/>
+    <sprite n="VOC_03_lowerleg_left.png" x="187" y="1" w="56" h="93" pX="0.5" pY="0.5"/>
+    <sprite n="VOC_03_lowerleg_right.png" x="1" y="309" w="100" h="54" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

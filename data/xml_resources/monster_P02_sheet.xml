@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:843ccbe96a2f6cf517ac31608427d07c:1eae85c0d49d0f8575c0899feabbea5e:214d54b425bae8ce5b620a4643d673c9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_P02_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="P02_eyeballs" x="666" y="338" w="92" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="96" oH="40"/>
+    <sprite n="P02_eyeballs_RARE" x="118" y="548" w="35" h="93" pX="0.5" pY="0.5" oX="2" oY="2" oW="96" oH="40" r="y"/>
+    <sprite n="P02_eyelids_01" x="666" y="377" w="92" h="21" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="40"/>
+    <sprite n="P02_eyelids_02" x="4" y="681" w="93" h="23" pX="0.5" pY="0.5" oX="1" oY="1" oW="96" oH="40"/>
+    <sprite n="P02_eyelids_03" x="157" y="612" w="94" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="40"/>
+    <sprite n="P02_eyelids_04" x="4" y="639" w="94" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="40"/>
+    <sprite n="P02_head" x="382" y="4" w="295" h="140" pX="0.5" pY="0.5" oX="0" oY="3" oW="296" oH="144"/>
+    <sprite n="P02_head_RARE" x="4" y="4" w="374" h="166" pX="0.5" pY="0.5" oX="9" oY="16" oW="400" oH="200"/>
+    <sprite n="P02_jaw" x="852" y="382" w="72" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="P02_jaw_RARE" x="762" y="417" w="72" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="72" r="y"/>
+    <sprite n="P02_left_back_flipper" x="4" y="541" w="110" h="94" pX="0.5" pY="0.5" oX="0" oY="1" oW="96" oH="112" r="y"/>
+    <sprite n="P02_left_back_flipper_RARE" x="567" y="324" w="95" h="109" pX="0.5" pY="0.5" oX="0" oY="1" oW="96" oH="112"/>
+    <sprite n="P02_left_front_flipper" x="679" y="168" w="171" h="81" pX="0.5" pY="0.5" oX="1" oY="1" oW="84" oH="172" r="y"/>
+    <sprite n="P02_left_front_flipper_RARE" x="677" y="253" w="171" h="81" pX="0.5" pY="0.5" oX="1" oY="1" oW="84" oH="172" r="y"/>
+    <sprite n="P02_left_lowerarm" x="366" y="500" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="120" r="y"/>
+    <sprite n="P02_left_lowerarm_RARE" x="500" y="410" w="63" h="117" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="120"/>
+    <sprite n="P02_left_tusk" x="4" y="174" w="156" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="156" r="y"/>
+    <sprite n="P02_left_tusk_RARE" x="852" y="321" w="156" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="156" r="y"/>
+    <sprite n="P02_left_upperarm" x="517" y="312" w="46" h="94" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="96"/>
+    <sprite n="P02_left_upperarm_RARE" x="316" y="366" w="46" h="94" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="96"/>
+    <sprite n="P02_lowerbody" x="681" y="4" w="184" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="P02_lowerbody_RARE" x="382" y="148" w="183" h="160" pX="0.5" pY="0.5" oX="0" oY="0" oW="184" oH="160"/>
+    <sprite n="P02_moustache_left" x="119" y="469" w="36" h="75" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="36" r="y"/>
+    <sprite n="P02_moustache_left_RARE" x="4" y="708" w="92" h="91" pX="0.5" pY="0.5" oX="12" oY="9" oW="110" oH="110"/>
+    <sprite n="P02_moustache_right" x="102" y="645" w="38" h="74" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="40" r="y"/>
+    <sprite n="P02_moustache_right_RARE" x="762" y="338" w="86" h="75" pX="0.5" pY="0.5" oX="14" oY="9" oW="110" oH="110" r="y"/>
+    <sprite n="P02_pupil" x="294" y="412" w="16" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="P02_pupil_RARE" x="852" y="253" w="12" h="16" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16"/>
+    <sprite n="P02_right_front_flipper" x="4" y="355" w="152" h="110" pX="0.5" pY="0.5" oX="0" oY="2" oW="112" oH="156" r="y"/>
+    <sprite n="P02_right_front_flipper_RARE" x="164" y="174" w="153" h="112" pX="0.5" pY="0.5" oX="0" oY="1" oW="112" oH="156" r="y"/>
+    <sprite n="P02_right_lowerarm" x="294" y="464" w="68" h="111" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="112"/>
+    <sprite n="P02_right_lowerarm_RARE" x="4" y="469" w="111" h="68" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="112" r="y"/>
+    <sprite n="P02_right_tusk" x="366" y="384" w="130" h="112" pX="0.5" pY="0.5" oX="0" oY="1" oW="112" oH="132" r="y"/>
+    <sprite n="P02_right_tusk_RARE" x="160" y="412" w="130" h="112" pX="0.5" pY="0.5" oX="0" oY="0" oW="112" oH="132" r="y"/>
+    <sprite n="P02_right_upperarm" x="321" y="270" w="55" h="92" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="92"/>
+    <sprite n="P02_right_upperarm_RARE" x="321" y="174" w="56" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="P02_shadow" x="380" y="312" w="133" h="68" pX="0.5" pY="0.5" oX="1" oY="0" oW="136" oH="68"/>
+    <sprite n="P02_tail_base" x="160" y="290" w="152" h="118" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="152" r="y"/>
+    <sprite n="P02_tail_base_RARE" x="4" y="232" w="152" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="152" r="y"/>
+    <sprite n="P02_tail_end" x="569" y="236" w="104" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="108" oH="84"/>
+    <sprite n="P02_tail_end_RARE" x="569" y="148" w="106" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="84"/>
+    <sprite n="P02_upperbody" x="869" y="4" w="148" h="156" pX="0.5" pY="0.5"/>
+    <sprite n="P02_upperbody_RARE" x="869" y="164" w="148" h="153" pX="0.5" pY="0.5" oX="0" oY="1" oW="148" oH="156"/>
+    <sprite n="RARE_P02_eyelids_01" x="666" y="402" w="92" h="21" pX="0.5" pY="0.5" oX="2" oY="0" oW="96" oH="40"/>
+    <sprite n="RARE_P02_eyelids_02" x="258" y="528" w="23" h="94" pX="0.5" pY="0.5" oX="1" oY="1" oW="96" oH="40" r="y"/>
+    <sprite n="RARE_P02_eyelids_03" x="159" y="528" w="95" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="40"/>
+    <sprite n="RARE_P02_eyelids_04" x="157" y="570" w="95" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="40"/>
+</TextureAtlas>

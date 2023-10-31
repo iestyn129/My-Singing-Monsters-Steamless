@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e7790b49894f92e0618c514c4b06fe38:6b74dde42bc31c0e0049c8a242b7baf2:244c8710632509766f896e978225a343$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/Relic_confetti01_sheet.png" width="512" height="512">
+    <sprite n="blue" x="468" y="204" w="30" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="green" x="344" y="238" w="60" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="pink" x="406" y="204" w="60" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="purple" x="406" y="236" w="60" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="red" x="344" y="266" w="60" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="relic_confetti" x="344" y="2" w="154" h="200" pX="0.5" pY="0.5" oX="43" oY="24" oW="248" oH="240"/>
+    <sprite n="starburst01" x="2" y="2" w="340" h="334" pX="0.5" pY="0.5" oX="0" oY="3" oW="340" oH="340"/>
+    <sprite n="yellow" x="344" y="204" w="60" h="32" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

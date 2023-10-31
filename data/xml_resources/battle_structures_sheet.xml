@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d7d7e964a73b30440867d45e43cb90ff:2e75cb6a9d43de9dd96d07b7ca763866:d997d0031df5c280569b7835b5ff7510$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/battle_structures_sheet" width="2048" height="2048" hires="true">
+    <sprite n="temple_01" x="2" y="2" w="772" h="654" pX="0.5" pY="0.5"/>
+    <sprite n="temple_02" x="1466" y="456" w="502" h="620" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="temple_03" x="2" y="658" w="598" h="495" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="temple_eye" x="726" y="916" w="366" h="234" pX="0.5" pY="0.5"/>
+    <sprite n="temple_spike" x="1970" y="456" w="56" h="81" pX="0.5" pY="0.5"/>
+    <sprite n="tent_01" x="1466" y="2" w="542" h="452" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tent_02" x="776" y="510" w="604" h="404" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tent_03" x="776" y="2" w="688" h="506" pX="0.5" pY="0.5" oX="1" oY="0" oW="507" oH="688" r="y"/>
+    <sprite n="tent_flags" x="602" y="658" w="122" h="346" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

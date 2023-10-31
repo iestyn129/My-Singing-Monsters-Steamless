@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7f7efdf1139db87bb12413f134f6aa88:484d1381e2a2da5b647e72669f0cc8f0:74177018cd370ff5375351d1495a80f1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_hottub_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="cauldron_bubble_01" x="415" y="310" w="9" h="14" pX="0.5" pY="0.5" oX="15" oY="27" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_02" x="402" y="310" w="11" h="14" pX="0.5" pY="0.5" oX="15" oY="25" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_03" x="492" y="587" w="18" h="15" pX="0.5" pY="0.5" oX="13" oY="21" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_04" x="492" y="630" w="15" h="20" pX="0.5" pY="0.5" oX="13" oY="21" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_05" x="492" y="604" w="17" h="24" pX="0.5" pY="0.5" oX="11" oY="19" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_06" x="464" y="765" w="28" h="27" pX="0.5" pY="0.5" oX="9" oY="9" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_07" x="464" y="732" w="32" h="31" pX="0.5" pY="0.5" oX="7" oY="5" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_08" x="470" y="294" w="33" h="30" pX="0.5" pY="0.5" oX="9" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_09" x="470" y="168" w="34" h="33" pX="0.5" pY="0.5" oX="7" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_10" x="470" y="104" w="38" h="33" pX="0.5" pY="0.5" oX="5" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_11" x="470" y="2" w="40" h="32" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_12" x="464" y="683" w="43" h="25" pX="0.5" pY="0.5" oX="1" oY="11" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_13" x="470" y="249" w="33" h="43" pX="0.5" pY="0.5" oX="1" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_14" x="470" y="203" w="33" h="44" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_15" x="464" y="673" w="44" h="8" pX="0.5" pY="0.5" oX="0" oY="25" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_16" x="464" y="794" w="24" h="24" pX="0.5" pY="0.5" oX="11" oY="7" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_17" x="464" y="639" w="26" h="32" pX="0.5" pY="0.5" oX="7" oY="3" oW="44" oH="36" r="y"/>
+    <sprite n="cauldron_bubble_18" x="470" y="139" w="38" h="27" pX="0.5" pY="0.5" oX="5" oY="0" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_19" x="470" y="36" w="40" h="31" pX="0.5" pY="0.5" oX="3" oY="0" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_20" x="470" y="69" w="39" h="33" pX="0.5" pY="0.5" oX="5" oY="3" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_21" x="464" y="710" w="41" h="20" pX="0.5" pY="0.5" oX="3" oY="9" oW="44" oH="36"/>
+    <sprite n="cauldron_bubble_22" x="426" y="310" w="41" h="8" pX="0.5" pY="0.5" oX="3" oY="27" oW="44" oH="36"/>
+    <sprite n="flame1" x="394" y="587" w="96" h="50" pX="0.5" pY="0.5" oX="5" oY="9" oW="56" oH="108" r="y"/>
+    <sprite n="flame2" x="402" y="533" w="100" h="52" pX="0.5" pY="0.5" oX="3" oY="5" oW="56" oH="108" r="y"/>
+    <sprite n="flame3" x="402" y="326" w="105" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="108" r="y"/>
+    <sprite n="flame4" x="402" y="427" w="104" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="108" r="y"/>
+    <sprite n="flame5" x="402" y="483" w="104" h="48" pX="0.5" pY="0.5" oX="7" oY="1" oW="56" oH="108" r="y"/>
+    <sprite n="flame6" x="402" y="379" w="105" h="46" pX="0.5" pY="0.5" oX="9" oY="0" oW="56" oH="108" r="y"/>
+    <sprite n="glow" x="250" y="788" w="140" h="140" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="146"/>
+    <sprite n="torch" x="2" y="540" w="320" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tub back" x="2" y="310" w="398" h="228" pX="0.5" pY="0.5"/>
+    <sprite n="tub front" x="2" y="2" w="466" h="306" pX="0.5" pY="0.5"/>
+    <sprite n="water1" x="2" y="800" w="246" h="62" pX="0.5" pY="0.5" oX="0" oY="9" oW="246" oH="72"/>
+    <sprite n="water3" x="324" y="540" w="68" h="246" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72" r="y"/>
+    <sprite n="water4" x="394" y="639" w="68" h="246" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72" r="y"/>
+    <sprite n="water5" x="2" y="887" w="246" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72"/>
+    <sprite n="water6" x="2" y="957" w="246" h="62" pX="0.5" pY="0.5" oX="0" oY="9" oW="246" oH="72"/>
+    <sprite n="water7" x="2" y="590" w="246" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72"/>
+    <sprite n="water8" x="2" y="660" w="246" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72"/>
+    <sprite n="water9" x="2" y="730" w="246" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="246" oH="72"/>
+</TextureAtlas>

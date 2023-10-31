@@ -1,0 +1,95 @@
+<template name="template_warehouseentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="highlight" params="element">
+		element["Anim"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["TitleFrame"]["Text"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	<event name="disable" params="element">
+		element["Anim"]["Sprite"]:setColor(0.33, 0.33, 0.33)
+		element["TitleFrame"]["Text"]:setColor(0.33, 0.33, 0.33)
+	</event>
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="TitleFrame">
+		<size w="130*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				
+					local itemTitle = game.getLocalizedText(element:parent()("ItemTitle"):GetString())
+
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.3*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+
+					if ((string.match(itemTitle, "%s") == nil)) then
+						component("multiline"):SetInt(0)
+					else
+						component("multiline"):SetInt(1)
+					end
+
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(itemTitle)
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-3*game.menuScaleX()" yOffset="-10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+				component("animation"):SetString( element:parent()("AnimationName"):GetString() )
+				component:setScale(Vector2(0.9*game.menuScaleX(),0.9*game.menuScaleX()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</aeComponent>
+	</element>
+		
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			element("deltaX"):SetFloat(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+			element("deltaX"):SetFloat(element("deltaX"):GetFloat()+math.abs(dx))
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				--no selection if dragging or if the menu is transitioning away
+				if(element("deltaX"):GetFloat() < 10 and element:parent():parent()("transitionState"):GetInt() ~= 2) then
+					game.setSelectedWarehouseItemID(element("ID"):GetString())
+					element:parent():parent():DoStoredScript("select")
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+</template>

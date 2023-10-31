@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:46746fabaa8c8a9bb3585a36bcfbdb98:17045f3cc440595cdc696f2e9398f9a4:93fa3e5466a6037f0ae9adee70d43d93$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_big_pies.png" width="512" height="512" hires="true">
+    <sprite n="deco_apple_01" x="207" y="234" w="124" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="deco_apple_02" x="207" y="414" w="116" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="116" r="y"/>
+    <sprite n="deco_apple_03" x="207" y="328" w="116" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_apple_base" x="340" y="2" w="160" h="252" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_apple_crust" x="333" y="256" w="76" h="237" pX="0.5" pY="0.5" oX="2" oY="0" oW="240" oH="76" r="y"/>
+    <sprite n="deco_cherry_base" x="2" y="2" w="336" h="230" pX="0.5" pY="0.5" oX="0" oY="2" oW="336" oH="232"/>
+    <sprite n="deco_pie_tin" x="411" y="256" w="72" h="216" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_pumpkin" x="2" y="234" w="203" h="272" pX="0.5" pY="0.5" oX="0" oY="0" oW="272" oH="204" r="y"/>
+</TextureAtlas>

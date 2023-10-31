@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onInit" params="element">
+		manager:setContext("BREED_SELECT")
+	</event>
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-1" yOffset="-1" priorityOffset="10" />
+		<event name="onPostInit" params="element">
+			<![CDATA[
+			element:parent():GetElement("TitleFrame"):postInit()
+			element:parent():setPositionBroadcast(true)
+			
+			local portraitWidth = 50.3*lua_sys.screenWidth() / 480.0;
+			local scrollerX = (lua_sys.screenWidth()/2 - (portraitWidth*3))
+			
+			local titleY = element:parent():GetElement("TitleFrame"):absY()
+			local titleHeight = element:parent():GetElement("TitleFrame"):absH()
+			local scrollerY = (titleY + titleHeight ) 
+			
+			if((lua_sys.deviceScaleX() <= 1) and ((lua_sys.screenWidth()/480) <= 1)) then
+				scrollerY = scrollerY + 10;
+			end
+			
+			local scrollerHeight = (scrollerY + portraitWidth * 2.5);
+			local scrollerWidth = portraitWidth*6;
+			
+			game.setClipping("FrontClipping", scrollerX*lua_sys.deviceScaleX(), scrollerY*lua_sys.deviceScaleY(), scrollerWidth*lua_sys.deviceScaleX(), scrollerHeight*lua_sys.deviceScaleY())
+			element:parent():GetElement("TopFadeSprite")("yOffset"):SetInt(scrollerY);
+			element:parent():GetElement("BotFadeSprite")("yOffset"):SetInt(-(scrollerY+scrollerHeight+3))
+			
+			element:setPositionBroadcast(true)
+			]]>
+		</event>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="1" />
+		<ninesliceComponent name="Sprite">
+			<size w="240*game.hudScale()" h="42*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(40.0)
+					component("bottomHeight"):SetFloat(40.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("FrontPopUps")
+					
+					if(game.hudScale() > 1) then
+						component("width"):SetInt(component("width"):GetInt() + 35*game.hudScale())
+						component("height"):SetInt(component("height"):GetInt() + 20*game.hudScale())
+					end
+				]]>
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component:setColor(0.996, 0.843, 0.007)
+
+				component("size"):SetFloat(0.35*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("BOOK_O_MONSTERS_TITLE")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="LeftEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("bookend_bookof")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("layer"):SetString("FrontPopUps")
+				
+				if(game.hudScale() > 1) then
+					component("size"):SetFloat(lua_sys.screenWidth()/960.0)
+				else
+					component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				end
+			]]>
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="RightEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("bookend_bookof")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("hFlip"):SetInt(1)
+				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("layer"):SetString("FrontPopUps")
+				
+				if(game.hudScale() > 1) then
+					component("size"):SetFloat(lua_sys.screenWidth()/960.0)
+				else
+					component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				end
+			]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TopFadeSprite">	
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(30.0*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="BotFadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(30.5*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	
+	<element name="MonsterListBg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+
+		<ninesliceComponent name="Sprite">
+			<size w="430*(lua_sys.screenWidth()/480.0)" h="236*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				
+					component("topHeight"):SetFloat(50.0)
+					component("bottomHeight"):SetFloat(50.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)					
+					component("size"):SetFloat(0.5*(lua_sys.screenWidth()/480.0))
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="8*game.menuScaleX()" yOffset="9*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(0.5*math.pi)
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="9*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MonsterListBg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="30*game.hudScale()" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("scroll_bar_01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				component("useOffsets"):SetInt(1)
+				component("spriteName"):SetString("scroll_bar_dot")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("layer"):SetString("FrontPopUps")
+				element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y">
+			
+				local scrollBar = element:parent():GetElement("ScrollBar")
+				local fromTopOfMarkerRange = y - scrollBar:absY() - element("originalYOffset"):GetInt();
+				
+				local markerBookend = element("originalYOffset"):GetInt()
+				
+				local scrollSize = 0;
+				if(element:parent():GetElement("MonsterList")("scrollSize") ~= nil) then
+					scrollSize = element:parent():GetElement("MonsterList")("scrollSize"):GetFloat();
+				end
+				
+				local scrollOffset = (-(fromTopOfMarkerRange - markerBookend)/(scrollBar:absH() - 2*markerBookend - element:absH()))*scrollSize;
+				scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+				
+				element("scrollOffset"):SetFloat(scrollOffset);
+				element:parent():GetElement("MonsterList")["Swiper"]:DoStoredScript("setScrollOffsetToMarker");
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TotalCount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="1" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element" >
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.35*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0/0\nDiscovered")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("text"):SetString(game.numUniqueMonstersCollectedOnIslandType(game.currentIslandType()).."/"..element:parent()["MonsterList"]("NumMonsters"):GetInt().."\n"..game.getLocalizedText("DISCOVERED_MONSTERS_POSTFIX"))
+				
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MonsterList">
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.menuScaleY()" priorityOffset="1" />
+		<event name="onInit" params="element">
+			element("NumMonsters"):SetInt(0)
+			element("origYOffset"):SetInt(element("yOffset"):GetInt())
+			element:DoStoredScript("populate")
+		</event>
+		<event name="disable" params="element">
+			local monsterIds = game.getAllMonstersForBookOfMonstersIsland(game.currentIslandType())
+			for i=0, monsterIds:size()-1 do
+				local monsterEntry = element:GetElement("monsterEntry"..i)
+				if(monsterEntry ~= nil) then
+					monsterEntry:DoStoredScript("disable");
+				end
+			end
+		</event>
+		<event name="enable" params="element">
+		
+			local monsterIds = game.getAllMonstersForBookOfMonstersIsland(game.currentIslandType())
+			for i=0, monsterIds:size()-1 do
+				local monsterEntry = element:GetElement("monsterEntry"..i)
+				if(monsterEntry ~= nil) then
+					monsterEntry:DoStoredScript("enable");
+				end
+			end
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+			
+				
+				local monsterIds = game.getAllMonstersForBookOfMonstersIsland(game.currentIslandType())
+				
+				local parentElementWidth = 0;
+				local parentElementHeight = 0;
+				local portraitWidth = 50.3*lua_sys.screenWidth() / 480.0;
+				local portraitHeight = 49.3*lua_sys.screenWidth() / 480.0;
+				
+				--center the list properly (since elements are HCENTERed wrt lists LEFT):
+				element("xOffset"):SetInt(portraitWidth*0.5)
+				
+				for i=0, monsterIds:size()-1 do
+					local monsterEntry = menu:addTemplateElement("template_qaEggSelectEntry", "monsterEntry"..i, element)
+					
+					monsterEntry("List"):SetString("MonsterList")
+					monsterEntry("MonsterID"):SetInt(monsterIds[i])
+
+					if(i~=0 and i%6==0) then
+						parentElementHeight = parentElementHeight + portraitHeight
+					else
+						if(i<6) then
+							if(i==0) then
+								parentElementHeight = parentElementHeight + portraitHeight
+							end
+							
+							parentElementWidth = parentElementWidth + portraitWidth
+						end
+					end
+					
+					monsterEntry:setParent(element)
+					monsterEntry:relativeTo(element)
+					monsterEntry:setOrientation(lua_sys.MenuOrientation(math.floor(i%6)*portraitWidth, math.floor(i/6)*portraitHeight, 4, lua_sys.HCENTER, lua_sys.VCENTER))
+					monsterEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+					monsterEntry:setPositionBroadcast(false)
+				end
+				
+				element:setSize(Vector2(parentElementWidth, parentElementHeight))
+				element:setPositionBroadcast(true)
+
+				element("NumMonsters"):SetInt(monsterIds:size())
+			]]>
+		</event>
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				element:parent():setPositionBroadcast(true)
+				component:DoStoredScript("refresh")
+			</event>
+			<function name="refresh" params="component, element">
+			<![CDATA[
+				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component:GetVar("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+
+				local scrollContainerHeight = element:parent():GetElement("BotFadeSprite"):absY() - element:parent():GetElement("TopFadeSprite"):absY();
+				--use the same height that's used when creating the templates to set the rows:
+				local portraitHeight = 49.3*lua_sys.screenWidth() / 480.0;
+				--local itemHeight = element:parent():GetElement("monsterEntry0"):absH() * math.floor((element("NumMonsters"):GetInt() + 3)/6)
+				local itemHeight = portraitHeight * math.ceil(((element("NumMonsters"):GetInt() + 3)/6)-0.5)
+				if(scrollContainerHeight > 0 and itemHeight > scrollContainerHeight) then
+					component:setScrollSize(itemHeight - scrollContainerHeight)
+					component("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+					element:parent()["ScrollBar"]["Sprite"]("visible"):SetInt(1)
+					element:parent()["ScrollMarker"]["Marker"]("visible"):SetInt(1)
+					element:parent()["ScrollMarker"]["Touch"]("enable"):SetInt(1)
+				else
+					component:setScrollSize(0)
+					component("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
+					element:parent()["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+					element:parent()["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+					element:parent()["ScrollMarker"]["Touch"]("enable"):SetInt(0)
+				end
+				element("scrollSize"):SetFloat(component:scrollSize())
+			]]>
+			</function>
+			<event name="onTick" params="component, element, dt">
+				local swipeAnchor = element;
+				
+				if(swipeAnchor) then
+					local offset = element("origYOffset"):GetInt() + component:scrollOffset()
+					
+					if(swipeAnchor:getOrientationPosition().y ~= offset) then
+						swipeAnchor:setOrientationPosition(Vector2(swipeAnchor("xOffset"):GetInt(), offset))
+						
+						local scrollMarker = element:parent():GetElement("ScrollMarker");
+						local markerBookend = scrollMarker("originalYOffset"):GetInt()
+						
+						--range without borders is [0, (scrollbarH-scrollMarkerH)]
+						local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH();
+						local scrollMarkerYOffset = -(component:scrollOffset()/component:scrollSize()) * markerMovementHeight;
+						
+						scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+
+						scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+					end
+				end
+			</event>
+			<event name="setScrollOffsetToMarker" params="component, element">
+				component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+			</event>
+		</swipeComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>
+		</touchComponent>	
+	</element>
+	
+	<element name="SelectedMonsterView">
+		<event name="onInit" params="element">
+			element("selectedMonst"):SetInt(-1)
+		</event>
+	</element>
+
+	
+	
+	
+	<event name="queuePop" params="element">
+		menu:popPopUp()
+	</event>
+</menu>

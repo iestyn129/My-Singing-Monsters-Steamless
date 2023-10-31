@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:78cfda9c6965d17b1eb9b036507b75d8:29a1d410ecab2219c5a7bb9c11d80a48:137fd396a23956c68b3bfa27c273541d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CE_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CE_belly" x="166" y="2" w="132" h="146" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_body" x="2" y="2" w="162" h="260" pX="0.5" pY="0.5"/>
+    <sprite n="CE_eyeback" x="454" y="224" w="32" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_eyelid1" x="250" y="484" w="74" h="18" pX="0.5" pY="0.5" oX="0" oY="16" oW="74" oH="34"/>
+    <sprite n="CE_eyelid2" x="467" y="2" w="34" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_eyelid3" x="456" y="78" w="34" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_eyelid4" x="300" y="224" w="74" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="CE_head_RARE" x="106" y="264" w="126" h="158" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_left_arm" x="166" y="424" w="82" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_left_foot" x="370" y="285" w="70" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="CE_left_foot_RARE" x="389" y="357" w="70" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="CE_left_hand" x="306" y="260" w="62" h="124" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_left_hand_RARE" x="326" y="386" w="61" h="124" pX="0.5" pY="0.5" oX="0" oY="0" oW="124" oH="62" r="y"/>
+    <sprite n="CE_left_leg" x="454" y="154" w="56" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="CE_mouth1" x="232" y="150" w="32" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_mouth1_RARE" x="166" y="246" w="58" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="CE_mouth2" x="266" y="150" w="32" h="93" pX="0.5" pY="0.5" oX="1" oY="0" oW="94" oH="32" r="y"/>
+    <sprite n="CE_mouth2_RARE" x="226" y="246" w="53" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="58" oH="14"/>
+    <sprite n="CE_pupil" x="281" y="245" w="10" h="10" pX="0.5" pY="0.5" oX="1" oY="1" oW="12" oH="12"/>
+    <sprite n="CE_right_arm" x="166" y="150" w="64" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="CE_right_foot" x="250" y="406" w="70" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="CE_right_foot_RARE" x="376" y="213" w="76" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_right_hand" x="234" y="262" w="70" h="142" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_right_hand_RARE" x="326" y="2" w="139" h="69" pX="0.5" pY="0.5" oX="1" oY="0" oW="142" oH="70"/>
+    <sprite n="CE_right_leg" x="106" y="424" w="58" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="CE_shadow" x="2" y="264" w="102" h="235" pX="0.5" pY="0.5" oX="2" oY="0" oW="240" oH="102" r="y"/>
+    <sprite n="CE_tail" x="326" y="73" w="128" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="CE_tail_RARE" x="326" y="143" w="126" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="68"/>
+</TextureAtlas>

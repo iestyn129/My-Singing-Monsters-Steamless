@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b7a91ae0f81469d9360b0f8373ed04db:0ad9294598c54d2e1281bc61f93cfa1c:ee508b6318e74a6aa0f74a199a4827a5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/buddy_sheet.png" width="256" height="512" hires="true">
+    <sprite n="C1_body" x="2" y="322" w="91" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="64"/>
+    <sprite n="C1_body_behind_colour" x="2" y="289" w="93" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="C1_body_behind_colour_02" x="97" y="312" w="93" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="C1_body_colour_01" x="2" y="464" w="91" h="40" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="40"/>
+    <sprite n="C1_body_colour_02" x="80" y="386" w="91" h="40" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="40"/>
+    <sprite n="C1_body_colour_03" x="95" y="428" w="91" h="40" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="40"/>
+    <sprite n="C1_body_colour_04" x="95" y="470" w="91" h="40" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="40"/>
+    <sprite n="C1_eye" x="223" y="116" w="27" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="28"/>
+    <sprite n="C1_globe" x="2" y="181" w="109" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="C1_glow_body" x="113" y="248" w="97" h="62" pX="0.5" pY="0.5" oX="0" oY="2" oW="100" oH="64"/>
+    <sprite n="C1_glow_large" x="2" y="2" w="179" h="177" pX="0.5" pY="0.5" oX="22" oY="14" oW="224" oH="212"/>
+    <sprite n="C1_glow_small" x="183" y="116" w="38" h="38" pX="0.5" pY="0.5" oX="6" oY="3" oW="44" oH="44"/>
+    <sprite n="C1_glow_white_body" x="183" y="2" w="71" h="35" pX="0.5" pY="0.5" oX="14" oY="18" oW="100" oH="64"/>
+    <sprite n="C1_glow_white_lrg" x="2" y="386" w="76" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="C1_glow_white_sml" x="183" y="156" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="C1_lower_arm_01" x="183" y="39" w="44" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="C1_lower_arm_colour_01" x="183" y="69" w="44" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="C1_lower_arm_globe" x="229" y="39" w="19" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="16"/>
+    <sprite n="C1_pupil" x="229" y="56" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="C1_shadow" x="113" y="190" w="100" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="C1_upper_arm" x="183" y="99" w="43" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="16"/>
+</TextureAtlas>

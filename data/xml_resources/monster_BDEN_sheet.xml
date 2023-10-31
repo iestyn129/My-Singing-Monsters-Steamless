@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7ab322eb148f06f79ad774153dd76dc5:e3328e57543fa0304d309c82a6a950fb:4c2f2199f1945fc56e32256f2756a3ae$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BDEN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BDEN_BackLeg" x="408" y="3" w="90" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Body" x="405" y="205" w="84" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Chest" x="212" y="406" w="110" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="71" oH="111" r="y"/>
+    <sprite n="BDEN_Drool" x="493" y="256" w="10" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_EyeBack" x="132" y="475" w="68" h="60" pX="0.5" pY="0.5" oX="0" oY="4" oW="68" oH="68"/>
+    <sprite n="BDEN_EyelidL_01" x="493" y="223" w="13" h="13" pX="0.5" pY="0.5" oX="0" oY="8" oW="23" oH="21"/>
+    <sprite n="BDEN_EyelidL_02" x="440" y="488" w="21" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="23" oH="21"/>
+    <sprite n="BDEN_EyelidL_03" x="152" y="264" w="21" h="22" pX="0.5" pY="0.5" oX="0" oY="0" oW="23" oH="21" r="y"/>
+    <sprite n="BDEN_EyelidL_04" x="440" y="463" w="22" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="23" oH="21"/>
+    <sprite n="BDEN_EyelidL_05" x="437" y="513" w="21" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="23" oH="21"/>
+    <sprite n="BDEN_EyelidR_01" x="494" y="196" w="13" h="23" pX="0.5" pY="0.5" oX="6" oY="12" oW="29" oH="29" r="y"/>
+    <sprite n="BDEN_EyelidR_02" x="3" y="512" w="25" h="25" pX="0.5" pY="0.5" oX="4" oY="0" oW="29" oH="29"/>
+    <sprite n="BDEN_EyelidR_03" x="32" y="512" w="25" h="25" pX="0.5" pY="0.5" oX="4" oY="0" oW="29" oH="29"/>
+    <sprite n="BDEN_EyelidR_04" x="3" y="541" w="25" h="25" pX="0.5" pY="0.5" oX="4" oY="0" oW="29" oH="29"/>
+    <sprite n="BDEN_EyelidR_05" x="32" y="541" w="25" h="25" pX="0.5" pY="0.5" oX="4" oY="0" oW="29" oH="29"/>
+    <sprite n="BDEN_Fin01B" x="177" y="219" w="27" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin01F" x="82" y="504" w="25" h="63" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin02B" x="405" y="123" w="89" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin02F" x="356" y="422" w="106" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin03F" x="326" y="451" w="25" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin04F" x="489" y="315" w="19" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Fin05F" x="498" y="123" w="11" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_FootB" x="405" y="153" w="85" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_FootF" x="408" y="69" w="89" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_FootToeF01" x="152" y="318" w="54" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_FootToeF02" x="152" y="290" w="56" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_FootToeF03" x="489" y="402" w="18" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Head" x="214" y="114" w="187" h="183" pX="0.5" pY="0.5" oX="2" oY="0" oW="187" oH="187" r="y"/>
+    <sprite n="BDEN_Hip" x="489" y="379" w="19" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Jaw" x="214" y="3" w="190" h="107" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_LegF" x="3" y="463" w="75" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Mouth" x="3" y="152" w="170" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Neck" x="3" y="3" w="207" h="145" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Pupil" x="493" y="240" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Shadow" x="355" y="504" w="78" h="36" pX="0.5" pY="0.5" oX="0" oY="8" oW="78" oH="52"/>
+    <sprite n="BDEN_ShoulderB" x="177" y="152" w="28" h="63" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_ShoulderF" x="355" y="463" w="81" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Tail" x="361" y="343" w="124" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Teeth_Bottom" x="3" y="264" w="145" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Teeth_Top" x="212" y="301" w="145" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_Teeth_Top_Back" x="212" y="359" w="122" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_ThighF" x="82" y="463" w="46" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_ToeInnerB" x="404" y="315" w="26" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_ToeInnerF" x="434" y="315" w="38" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BDEN_ToeMiddleB" x="326" y="406" w="26" h="41" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_ToeMiddleF" x="465" y="504" w="42" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_ToeOuterB" x="494" y="169" w="14" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_ToeOuterF" x="361" y="301" w="39" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BDEN_Tongue01" x="466" y="440" w="43" h="60" pX="0.5" pY="0.5" oX="17" oY="40" oW="167" oH="105" r="y"/>
+    <sprite n="BDEN_Tongue02" x="142" y="418" w="63" h="53" pX="0.5" pY="0.5" oX="14" oY="30" oW="167" oH="105"/>
+    <sprite n="BDEN_Tongue03" x="142" y="348" w="66" h="66" pX="0.5" pY="0.5" oX="11" oY="17" oW="167" oH="105"/>
+    <sprite n="spore_BDEN" x="3" y="328" w="135" h="131" pX="0.5" pY="0.5" oX="20" oY="22" oW="172" oH="172" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:425af22eb0da93c004053c97d72dad03:5a020a111e983a1f2b32b1c176e4c4a5:ae3854ef70b21f1cda70d26b9eae742b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/battle/battle_background_sheet.png" width="2048" height="2048" hires="true">
+    <sprite n="battle_bg_column.png" x="958" y="2" w="854" h="445" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_column_seams_01_A.png" x="1675" y="725" w="112" h="235" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_column_seams_01_B.png" x="1814" y="2" w="227" h="139" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_seams_01_C.png" x="716" y="919" w="215" h="79" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_seams_02_A.png" x="1371" y="837" w="293" h="273" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_column_seams_02_B.png" x="440" y="845" w="274" h="305" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_seams_02_C.png" x="440" y="1152" w="274" h="303" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_seams_03_A.png" x="719" y="481" w="220" h="436" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_column_seams_03_B.png" x="2" y="1052" w="436" h="149" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_seams_03_C.png" x="2" y="845" w="436" h="205" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_column_top.png" x="1786" y="449" w="15" h="274" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_fade.png" x="958" y="449" w="785" h="18" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_inner_stones_01.png" x="958" y="469" w="715" h="366" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_inner_stones_02.png" x="2" y="481" w="715" h="362" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_notes.png" x="2" y="2" w="954" h="477" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_outer_stones_01.png" x="941" y="837" w="428" h="424" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_outer_stones_02.png" x="1814" y="143" w="220" h="852" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_rock_01.png" x="1675" y="526" w="74" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="battle_bg_rock_02.png" x="1745" y="449" w="39" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_rock_03.png" x="1751" y="526" w="30" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_speaker_01.png" x="716" y="1000" w="213" h="243" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="battle_bg_speaker_02.png" x="1666" y="997" w="262" h="253" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:99fc3513b0e7538e5dcbd5d4a89cfca8:89d891a14e2cd8ac14cb79c84b4a26b1:fd1425daf3027738d4766c78f2d566d1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABC_EPIC_costume06_sheet.png" width="167" height="495" hires="true">
+    <sprite n="ABC_c06_front_reed.png" x="130" y="1" w="36" h="106" pX="0.5" pY="0.5" oX="1" oY="10" oW="40" oH="120"/>
+    <sprite n="ABC_c06_front_reedmouth.png" x="95" y="439" w="60" h="55" pX="0.5" pY="0.5" oX="5" oY="6" oW="60" oH="66" r="y"/>
+    <sprite n="ABC_c06_left_foot.png" x="1" y="275" w="110" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="110" r="y"/>
+    <sprite n="ABC_c06_left_upperleg.png" x="1" y="377" w="92" h="78" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="94" r="y"/>
+    <sprite n="ABC_c06_right_foot.png" x="1" y="175" w="122" h="98" pX="0.5" pY="0.5"/>
+    <sprite n="ABC_c06_right_midleg.png" x="113" y="275" w="52" h="80" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="54" r="y"/>
+    <sprite n="ABC_c06_right_reed.png" x="125" y="175" w="37" h="92" pX="0.5" pY="0.5" oX="2" oY="8" oW="40" oH="100"/>
+    <sprite n="ABC_c06_left_midleg.png" x="113" y="357" w="52" h="80" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="54" r="y"/>
+    <sprite n="ABC_c06_head.png" x="1" y="1" w="127" h="172" pX="0.5" pY="0.5" oX="-13.46153846" oY="3" oW="174" oH="128" r="y"/>
+</TextureAtlas>

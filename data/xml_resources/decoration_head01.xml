@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<AEAnim>
+  <animImage name="decoration_head01.png" id="0" width="204" height="310" />
+  <animComp name="decoration_head01" width="800" height="800" loopOffset="-1" centered="1">
+    <animObj name="decoration_head01.png" parent="-1" id="0" type="TYPE_IMAGE" refId="0" blend="NORMAL">
+      <animFrame time="0">
+        <animMask x="0" y="0" w="204" h="310" immediate="0" />
+        <animAnchor x="102" y="155" immediate="0" />
+        <animPosition x="400" y="261" immediate="0" />
+        <animScale x="100" y="100" immediate="0" />
+        <animRotation value="0" immediate="0" />
+        <animOpacity value="100" immediate="0" />
+      </animFrame>
+      <animFrame time="7" />
+    </animObj>
+  </animComp>
+  <animComp name="Store" width="150" height="150" loopOffset="-1" centered="1">
+    <animObj name="decoration_head01.png" parent="-1" id="0" type="TYPE_IMAGE" refId="0" blend="NORMAL">
+      <animFrame time="0">
+        <animMask x="0" y="0" w="204" h="310" immediate="0" />
+        <animAnchor x="102" y="155" immediate="0" />
+        <animPosition x="74" y="75" immediate="0" />
+        <animScale x="45.5882352941176" y="45.5882352941176" immediate="0" />
+        <animRotation value="0" immediate="0" />
+        <animOpacity value="100" immediate="0" />
+      </animFrame>
+      <animFrame time="7" />
+    </animObj>
+  </animComp>
+</AEAnim>

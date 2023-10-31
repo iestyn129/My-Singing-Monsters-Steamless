@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d4c78c0efec0d68214fa25944aafd3fa:2e6042cdd1a4da5fe326fb2862de3186:6f623903291dac422e291f994807b5a6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CNV_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CNV_body_ring" x="2" y="400" w="61" h="67" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_eye" x="487" y="345" w="23" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_eye_rims" x="417" y="345" w="68" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_head" x="229" y="210" w="129" h="102" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_head_inside" x="425" y="144" w="74" h="73" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_jaw" x="65" y="400" w="62" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_claw_01" x="32" y="268" w="24" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_claw_02" x="2" y="366" w="44" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="44" r="y"/>
+    <sprite n="CNV_left_claw_03" x="41" y="469" w="30" h="41" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_finger_01" x="2" y="314" w="45" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_finger_02" x="115" y="464" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_finger_03" x="154" y="232" w="72" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_horn" x="2" y="125" w="150" h="125" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_lowerarm" x="230" y="173" w="140" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_upperarm" x="418" y="291" w="88" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_01" x="372" y="173" w="48" h="67" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_02" x="154" y="125" w="74" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_03" x="360" y="298" w="55" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_neck_04" x="425" y="2" w="82" h="87" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_neck_05" x="422" y="219" w="88" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_06" x="360" y="242" w="56" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_pupil_01" x="487" y="371" w="14" h="13" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_pupil_02" x="501" y="144" w="8" h="14" pX="0.5" pY="0.5" oX="0" oY="3" oW="14" oH="13" r="y"/>
+    <sprite n="CNV_right_claw_01" x="115" y="252" w="36" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_claw_02" x="2" y="268" w="28" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_claw_03" x="75" y="366" w="38" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="39" oH="27"/>
+    <sprite n="CNV_right_finger_01" x="73" y="464" w="40" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_finger_02" x="48" y="366" w="25" h="31" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_finger_03" x="2" y="469" w="37" h="41" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_horn" x="237" y="2" w="186" h="169" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_lowerarm" x="425" y="91" w="80" h="51" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_upperarm" x="154" y="193" w="73" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_shadow" x="2" y="2" w="233" h="121" pX="0.5" pY="0.5" oX="0" oY="11" oW="233" oH="142"/>
+</TextureAtlas>

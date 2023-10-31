@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b414d69e4f858e2fcddb12e9924089a8:ff01e71fd2ce9823ec6c9be564911386:9b195d4e749e630f3ab2b8613c11174f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island12_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="island12_collapsedplatform_002.png" x="2" y="1148" w="1050" h="770" pX="0.5" pY="0.5" oX="1" oY="3" oW="1052" oH="776"/>
+    <sprite n="island12_extrarock_001.png" x="1482" y="1148" w="185" h="184" pX="0.5" pY="0.5" oX="4" oY="7" oW="200" oH="200"/>
+    <sprite n="island12_floor_001.png" x="2" y="2" w="2032" h="1144" pX="0.5" pY="0.5"/>
+    <sprite n="island12_lefttusks_001.png" x="1066" y="1782" w="253" h="256" pX="0.5" pY="0.5" oX="3" oY="7" oW="260" oH="260" r="y"/>
+    <sprite n="island12_righttusks_001.png" x="1321" y="1782" w="159" h="256" pX="0.5" pY="0.5" oX="3" oY="0" oW="260" oH="160" r="y"/>
+    <sprite n="island12_rubble_air_off.png" x="172" y="1920" w="84" h="120" pX="0.5" pY="0.5" oX="27" oY="85" oW="220" oH="220"/>
+    <sprite n="island12_rubble_air_on.png" x="84" y="1920" w="86" h="122" pX="0.5" pY="0.5" oX="25" oY="83" oW="220" oH="220"/>
+    <sprite n="island12_rubble_cog_off.png" x="622" y="1920" w="90" h="102" pX="0.5" pY="0.5" oX="25" oY="83" oW="220" oH="220"/>
+    <sprite n="island12_rubble_cog_on.png" x="528" y="1920" w="92" h="102" pX="0.5" pY="0.5" oX="25" oY="83" oW="220" oH="220"/>
+    <sprite n="island12_rubble_crystal_off.png" x="1769" y="1148" w="86" h="56" pX="0.5" pY="0.5" oX="123" oY="95" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_crystal_on.png" x="1386" y="1319" w="88" h="56" pX="0.5" pY="0.5" oX="123" oY="93" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_electricity_on.png" x="2" y="1920" w="80" h="126" pX="0.5" pY="0.5" oX="29" oY="77" oW="220" oH="220"/>
+    <sprite n="island12_rubble_fire_off.png" x="714" y="1920" w="76" h="101" pX="0.5" pY="0.5" oX="115" oY="85" oW="220" oH="220"/>
+    <sprite n="island12_rubble_fire_on.png" x="1669" y="1148" w="98" h="76" pX="0.5" pY="0.5" oX="115" oY="85" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_plant_on.png" x="258" y="1920" w="76" h="116" pX="0.5" pY="0.5" oX="31" oY="73" oW="220" oH="220"/>
+    <sprite n="island12_rubble_plasm_on.png" x="1386" y="1237" w="92" h="80" pX="0.5" pY="0.5" oX="109" oY="75" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_rock_on.png" x="792" y="1920" w="90" h="100" pX="0.5" pY="0.5" oX="109" oY="87" oW="220" oH="220"/>
+    <sprite n="island12_rubble_shadow_off.png" x="336" y="1920" w="94" h="114" pX="0.5" pY="0.5" oX="107" oY="75" oW="220" oH="220"/>
+    <sprite n="island12_rubble_shadow_on.png" x="432" y="1920" w="94" h="114" pX="0.5" pY="0.5" oX="107" oY="75" oW="220" oH="220"/>
+    <sprite n="island12_rubble_snow_on.png" x="1857" y="1148" w="78" h="66" pX="0.5" pY="0.5" oX="33" oY="93" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_toxic_on.png" x="976" y="1920" w="88" h="98" pX="0.5" pY="0.5" oX="107" oY="93" oW="220" oH="220"/>
+    <sprite n="island12_rubble_water_off.png" x="1386" y="1148" w="93" h="87" pX="0.5" pY="0.5" oX="107" oY="84" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_water_on.png" x="884" y="1920" w="90" h="98" pX="0.5" pY="0.5" oX="107" oY="81" oW="220" oH="220"/>
+    <sprite n="w12_cloud.png" x="1054" y="1148" w="330" h="632" pX="0.5" pY="0.5" oX="57" oY="15" oW="760" oH="356" r="y"/>
+</TextureAtlas>

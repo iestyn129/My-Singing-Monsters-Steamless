@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f914d6181ea245a5650804530e211943:af15e43a69e273177810f8a0bb17ba33:0dc63289ca88f2067b1ef01e6e853f36$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BC_EPIC_costume_01_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (50, 50) -> new anchor (52, 76) diff = (-2, -26)-->
+    <!-- add double it to texturepacker output offsets (2, 0) -> (-2, -52), because hires-->
+    <sprite n="BC_costume_05_body_RARE.png" x="1" y="1" w="251" h="208" pX="0.5" pY="0.5" oX="-2" oY="-52" oW="212" oH="252" r="y"/>
+    <sprite n="BC_costume_05_right_foot_RARE.png" x="1" y="211" w="120" h="110" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

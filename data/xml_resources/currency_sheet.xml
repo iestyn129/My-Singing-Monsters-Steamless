@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e82c5df158785ad6c8dd341fb38d5887:da2c76d3898e5a662d2cda6ea9e2a2ca:9e37c919f307deb48e6526011343ce0a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/currency_sheet.png" width="1024" height="1024">
+    <sprite n="coins_01" x="563" y="392" w="201" h="172" pX="0.5" pY="0.5" oX="3" oY="3" oW="210" oH="177"/>
+    <sprite n="coins_02" x="1" y="779" w="184" h="229" pX="0.5" pY="0.5" oX="1" oY="0" oW="231" oH="184" r="y"/>
+    <sprite n="coins_03" x="1" y="427" w="232" h="160" pX="0.5" pY="0.5" oX="5" oY="5" oW="243" oH="166"/>
+    <sprite n="coins_04" x="1" y="588" w="230" h="190" pX="0.5" pY="0.5" oX="2" oY="3" oW="235" oH="198"/>
+    <sprite n="coins_05" x="1" y="218" w="233" h="208" pX="0.5" pY="0.5" oX="8" oY="4" oW="245" oH="221"/>
+    <sprite n="coins_06" x="765" y="1" w="239" h="195" pX="0.5" pY="0.5" oX="2" oY="1" oW="241" oH="198"/>
+    <sprite n="coins_07" x="720" y="768" w="193" h="214" pX="0.5" pY="0.5" oX="20" oY="10" oW="224" oH="228"/>
+    <sprite n="currency_arrow" x="468" y="392" w="94" h="82" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="85"/>
+    <sprite n="currency_coins" x="914" y="741" w="107" h="97" pX="0.5" pY="0.5" oX="1" oY="1" oW="99" oH="109" r="y"/>
+    <sprite n="currency_diamonds" x="765" y="453" w="107" h="110" pX="0.5" pY="0.5" oX="1" oY="1" oW="112" oH="110" r="y"/>
+    <sprite n="currency_glow" x="401" y="589" w="58" h="57" pX="0.5" pY="0.5" oX="10" oY="10" oW="80" oH="76"/>
+    <sprite n="currency_glow_beam" x="843" y="400" w="179" h="52" pX="0.5" pY="0.5" oX="2" oY="10" oW="56" oH="191" r="y"/>
+    <sprite n="currency_glow_white" x="401" y="647" w="58" h="57" pX="0.5" pY="0.5" oX="10" oY="10" oW="80" oH="76"/>
+    <sprite n="currency_relics" x="914" y="645" w="109" h="95" pX="0.5" pY="0.5" oX="0" oY="2" oW="95" oH="111" r="y"/>
+    <sprite n="currency_shards" x="914" y="839" w="104" h="97" pX="0.5" pY="0.5" oX="1" oY="1" oW="106" oH="99"/>
+    <sprite n="diamonds_00" x="232" y="589" w="168" h="189" pX="0.5" pY="0.5" oX="0" oY="1" oW="168" oH="198"/>
+    <sprite n="diamonds_01" x="873" y="453" w="136" h="191" pX="0.5" pY="0.5" oX="3" oY="17" oW="197" oH="164" r="y"/>
+    <sprite n="diamonds_02" x="468" y="565" w="159" h="203" pX="0.5" pY="0.5" oX="10" oY="3" oW="218" oH="162" r="y"/>
+    <sprite n="diamonds_03" x="371" y="779" w="191" h="224" pX="0.5" pY="0.5" oX="2" oY="18" oW="228" oH="217" r="y"/>
+    <sprite n="diamonds_04" x="186" y="779" w="184" h="228" pX="0.5" pY="0.5" oX="3" oY="3" oW="234" oH="191" r="y"/>
+    <sprite n="diamonds_05" x="510" y="201" w="236" h="190" pX="0.5" pY="0.5" oX="6" oY="1" oW="247" oH="193"/>
+    <sprite n="diamonds_06" x="765" y="197" w="236" h="202" pX="0.5" pY="0.5" oX="3" oY="11" oW="243" oH="238"/>
+    <sprite n="foodpack_01" x="563" y="769" w="156" h="215" pX="0.5" pY="0.5" oX="0" oY="7" oW="215" oH="164" r="y"/>
+    <sprite n="foodpack_02" x="262" y="1" w="253" h="168" pX="0.5" pY="0.5" oX="0" oY="5" oW="253" oH="174"/>
+    <sprite n="foodpack_03" x="262" y="170" w="247" h="191" pX="0.5" pY="0.5"/>
+    <sprite n="foodpack_04" x="628" y="565" w="214" h="202" pX="0.5" pY="0.5" oX="0" oY="0" oW="216" oH="205"/>
+    <sprite n="foodpack_05" x="235" y="362" w="232" h="226" pX="0.5" pY="0.5" oX="0" oY="0" oW="232" oH="227"/>
+    <sprite n="foodpack_06" x="1" y="1" w="260" h="216" pX="0.5" pY="0.5" oX="6" oY="0" oW="267" oH="217"/>
+    <sprite n="foodpack_07" x="516" y="1" w="248" h="199" pX="0.5" pY="0.5" oX="9" oY="7" oW="266" oH="214"/>
+</TextureAtlas>

@@ -1,0 +1,53 @@
+<template name="template_mysterylike" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$hFlip" equals="0" />
+
+	<size w="105*game.menuScaleX()" h="128*game.menuScaleY()" />
+	
+	<spriteComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/mystery_item")
+			component("size"):SetFloat(0.5*game.menuScaleX())
+			component("layer"):SetString("Clipping")
+		</event>
+	</spriteComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchUp" params="component, element">
+		<![CDATA[
+			if(((element:absX() + element:absW()) >= element:parent():parent():absX()) and (element:absX() <= (element:parent():parent():absX() + element:parent():parent():absW()))) then
+				if(element("overrideText"):GetString() ~= "") then
+					game.displayNotification(element("overrideText"):GetString())
+				else
+					if(element("alternateText"):GetInt() == 0) then
+						game.displayNotification("SUPER_MYSTERY_LIKE")
+					else
+						game.displayNotification("MYSTERY_LIKE")
+					end
+				end
+			end
+		]]>
+		</event>
+	</touchComponent>
+	
+	<event name="hide" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="show" params="element">
+		element["Sprite"]("visible"):SetInt(1)
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	
+	<event name="onInit" params="element">
+		element("enabled"):SetInt(1)
+		element("overrideText"):SetString("")
+	</event>
+	
+</template>

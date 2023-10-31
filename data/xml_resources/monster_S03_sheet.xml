@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c83f7f71557962effaf1a4f36d58f7a1:ef2a36a095cd1e69e4d97ae54088faea:2a55da129c999501ade2f18342b2d970$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="V_arm_lower" x="180" y="127" w="71" h="32" pX="0.5" pY="0.5" oX="0" oY="2" oW="72" oH="36"/>
+    <sprite n="V_arm_lower_RARE" x="178" y="233" w="71" h="32" pX="0.5" pY="0.5" oX="0" oY="2" oW="72" oH="36"/>
+    <sprite n="V_arm_middle" x="180" y="2" w="72" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="V_arm_middle_RARE" x="180" y="36" w="72" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="V_arm_upper" x="178" y="161" w="75" h="34" pX="0.5" pY="0.5" oX="2" oY="1" oW="80" oH="36"/>
+    <sprite n="V_arm_upper_RARE" x="178" y="197" w="75" h="34" pX="0.5" pY="0.5" oX="2" oY="1" oW="80" oH="36"/>
+    <sprite n="V_body" x="2" y="2" w="176" h="136" pX="0.5" pY="0.5" oX="0" oY="2" oW="176" oH="140"/>
+    <sprite n="V_eyeback" x="129" y="450" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="V_eyelid_01" x="42" y="459" w="27" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="V_eyelid_02" x="71" y="459" w="27" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="V_eyelid_03" x="100" y="450" w="27" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="V_eyelid_04" x="100" y="481" w="27" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="V_foot" x="180" y="70" w="71" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="56"/>
+    <sprite n="V_hair" x="97" y="326" w="55" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="32"/>
+    <sprite n="V_hand" x="113" y="234" w="60" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="V_hand_RARE" x="113" y="280" w="60" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="V_heart_RARE" x="2" y="208" w="109" h="88" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="88"/>
+    <sprite n="V_left_head" x="175" y="267" w="66" h="104" pX="0.5" pY="0.5" oX="1" oY="2" oW="68" oH="108"/>
+    <sprite n="V_leg" x="97" y="357" w="53" h="91" pX="0.5" pY="0.5" oX="1" oY="2" oW="56" oH="96"/>
+    <sprite n="V_mohawk_RARE" x="2" y="390" w="90" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="V_mouth_01" x="243" y="267" w="9" h="39" pX="0.5" pY="0.5" oX="3" oY="4" oW="44" oH="28" r="y"/>
+    <sprite n="V_mouth_02" x="2" y="450" w="18" h="44" pX="0.5" pY="0.5" oX="0" oY="1" oW="44" oH="28" r="y"/>
+    <sprite n="V_mouth_03" x="22" y="450" w="18" h="38" pX="0.5" pY="0.5" oX="3" oY="4" oW="44" oH="28" r="y"/>
+    <sprite n="V_mouth_04" x="42" y="436" w="33" h="21" pX="0.5" pY="0.5" oX="7" oY="4" oW="44" oH="28"/>
+    <sprite n="V_mouth_05" x="154" y="326" w="19" h="23" pX="0.5" pY="0.5" oX="15" oY="5" oW="44" oH="28"/>
+    <sprite n="V_mouth_06" x="97" y="298" w="14" h="15" pX="0.5" pY="0.5" oX="18" oY="7" oW="44" oH="28" r="y"/>
+    <sprite n="V_mouth_07" x="243" y="308" w="7" h="22" pX="0.5" pY="0.5" oX="13" oY="6" oW="44" oH="28" r="y"/>
+    <sprite n="V_pupil" x="113" y="208" w="11" h="11" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="V_pupil_RARE" x="113" y="221" w="11" h="11" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="V_right_head" x="2" y="140" w="124" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="124" r="y"/>
+    <sprite n="V_shadow" x="128" y="140" w="48" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="V_spike_01_RARE" x="154" y="351" w="19" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="20"/>
+    <sprite n="V_wing" x="2" y="298" w="93" h="44" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="44"/>
+    <sprite n="V_wing_RARE" x="2" y="344" w="93" h="44" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="44"/>
+</TextureAtlas>

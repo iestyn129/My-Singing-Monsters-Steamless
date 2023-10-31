@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<event name="onInit" params="element">
+		element("transitionTimer"):SetFloat(0.0)
+		element("transitionState"):SetInt(0)
+
+		collectgarbage("stop")
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			
+			if(element["InfoContent"]("contentHeight"):GetInt() > element:GetElement("InfoFrame"):absH()) then
+				element["ScrollBar"]["Sprite"]("visible"):SetInt(1)
+				element["ScrollMarker"]["Marker"]("visible"):SetInt(1)
+			end
+
+			element("transitionState"):SetInt(1)
+			
+			if(element["InfoContent"]("contentHeight"):GetInt() <= element:GetElement("InfoFrame"):absH()) then
+				element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+				element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+			end
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+				
+				if(transitionState ~= 0) then
+					if(transitionState == 1) then
+						element("transitionTimer"):SetFloat(clamp(element("transitionTimer"):GetFloat() + dt, 0.0, 1.0))
+					elseif(transitionState == 2 or transitionState == 3) then
+						element("transitionTimer"):SetFloat(clamp(element("transitionTimer"):GetFloat() - dt, 0.0, 1.0))
+					end
+				
+					element:GetElement("FadedBG"):DoStoredScript("TickTransition")
+					element:GetElement("InfoFrame"):DoStoredScript("TickTransition")
+					
+					local topSprite = element:GetElement("FadeSprite")
+					local botSprite = element:GetElement("BotFadeSprite")
+					game.setClipping("FrontClipping", topSprite:absX()*lua_sys.deviceScaleX(), (topSprite:absY()*lua_sys.deviceScaleY())+1, topSprite:absW()*lua_sys.deviceScaleX(), (((botSprite:absY() + botSprite:absH()) - topSprite:absY())*lua_sys.deviceScaleY())-1)
+					
+					collectgarbage("step", 20)
+				end
+			end
+		]]>
+	</event>
+	
+	<element name="IslandSelectTouchstone">
+		<event name="onInit" params="element">
+			element("nextIsland"):SetInt(-1);
+		</event>
+	</element>
+	
+	<event name="queuePop" params="element">
+		manager:hideContextBar()
+		element:parent():parent()["MonsterList"]["Swiper"]("enabled"):SetInt(1)
+		element("transitionState"):SetInt(2)
+	</event>
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+		<event name="TickTransition" params="element">
+			local transitionTimer = element:parent()("transitionTimer"):GetFloat()
+			
+			if((transitionTimer &gt; 0) and (transitionTimer &lt; 1)) then
+				element["Sprite"]("alpha"):SetFloat(transitionTimer*0.65)
+			else
+				if(transitionTimer &lt;= 0) then
+					element["Sprite"]("alpha"):SetFloat(0.0)
+				else
+					element["Sprite"]("alpha"):SetFloat(0.65)
+				end
+			end
+			
+			if(element["Sprite"]("alpha"):GetFloat() == 0.0) then
+				if(element:parent()("transitionState"):GetInt() == 2) then					
+					element:root():popPopUp()
+				elseif(element:parent()("transitionState"):GetInt() == 3) then
+					--popoff monster_book_island_select
+					element:root():popPopUp()
+					--pop off book_o_monsters
+					element:root():popPopUp()
+
+					if(game.getPopUp() ~= "book_o_monsters") then
+						manager:setContext("BLANK")
+						game.setBookOfMonstersIslandType(element:parent()["IslandSelectTouchstone"]("nextIsland"):GetInt())
+
+						if(game.usePagination(game.getBookOfMonstersIslandType())) then
+							game.pushPopUp("book_o_monsters_paged");
+						else
+							game.pushPopUp("book_o_monsters");
+						end
+					end
+				end
+			end
+		</event>
+	</element>
+	
+	<element name="InfoFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-lua_sys.screenWidth()" yOffset="-25*game.menuScaleY()" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="225*lua_sys.screenWidth()/480" h="236*lua_sys.screenHeight()/320" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7*game.menuScaleX()" yOffset="9*game.menuScaleX()" priorityOffset="-4" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("hFlip"):SetInt(1)
+				else
+					component("vFlip"):SetInt(1)
+				end
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="7*game.menuScaleX()" yOffset="9*game.menuScaleX()" priorityOffset="-4" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute01">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="7*game.menuScaleX()" yOffset="59*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-0.6)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute01Leaves">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="59*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_leaves")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute02">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="2*game.menuScaleX()" yOffset="70*game.menuScaleX()" priorityOffset="2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-1.2)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute02Leaves">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="90*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_leaves")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("rotation"):SetFloat(-0.2);
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute03">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("hFlip"):SetInt(1)
+				else
+					component("vFlip"):SetInt(1)
+				end
+
+				component("rotation"):SetFloat(-2.55)
+				
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<element name="RightLeaves">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="InfoFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-15*game.menuScaleX()" yOffset="13*game.hudScale()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("menu_leaves")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					if(component("isSourceRotated"):GetInt() == 1) then
+						component("vFlip"):SetInt(1)
+					else
+						component("hFlip"):SetInt(1)
+					end
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<element name="LowerLeaves">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="-13*game.hudScale()" yOffset="20*game.menuScaleY()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("menu_leaves")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+					component("rotation"):SetFloat(-0.4*math.pi);
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<event name="onInit" params="element">
+			element("transitionStarted"):SetInt(0)
+		</event>
+		<event name="TickTransition" params="element">
+			local transitionTimer = element:parent()("transitionTimer"):GetFloat()
+
+			element("xOffset"):SetInt(lua_sys.Quintic_EaseInOut(transitionTimer, -lua_sys.screenWidth(), lua_sys.screenWidth(), 1))
+			
+			if((transitionTimer &gt; 0.6) and (transitionTimer &lt; 0.9)) then
+				if element("transitionStarted"):GetInt() == 0 then
+					lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+					element("transitionStarted"):SetInt(1)
+				end
+			end
+		</event>
+	</element>
+	
+	
+	
+	<element name="TitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15*lua_sys.screenHeight()/320" priorityOffset="-2" />
+		<ninesliceComponent name="BlackCover">
+			<size w="148*lua_sys.screenWidth()/480" h="20*lua_sys.screenWidth()/480"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(0)
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="148*lua_sys.screenWidth()/480" h="40*lua_sys.screenHeight()/320" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("ISLAND_SELECT")
+				component:setColor(0.43, 0.98, 0.02)
+				component("size"):SetFloat(1*lua_sys.screenHeight()/320)
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="FadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TitleText" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(10.0*lua_sys.screenWidth()/480, 0.5*lua_sys.screenHeight()/320))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="BotFadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="-15*lua_sys.screenWidth()/480" yOffset="9*(lua_sys.screenWidth()/480.0)" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite") 
+				component:setScale(Vector2(10.0*lua_sys.screenWidth()/480, 0.5*lua_sys.screenHeight()/320))
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="InfoContent">
+		<size w="225*lua_sys.screenWidth()/480" h="20*lua_sys.screenHeight()/320" />
+		<position relativeTo="FadeSprite" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				local islands = { 1, 2, 3, 4, 5, 13, 14, 18, 15, 16, 17, 8, 21, 7, 23, 19, 10, 12, 22, 6 }
+				
+				local previous = nil
+				local width = 0
+				local height = 0
+				local itemHeight = 0
+				for i, v in ipairs(islands) do
+					
+					local islandEntry = menu:addTemplateElement("template_mapentry2", "bookMapEntry"..i - 1, element)
+					
+					islandEntry("islandType"):SetInt(v);
+					islandEntry:setParent(element)
+					if(previous == nil) then
+						islandEntry:relativeTo(element)
+						islandEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.RIGHT, lua_sys.TOP))
+						islandEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						islandEntry:relativeTo(previous)
+						islandEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						islandEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					end
+					previous = islandEntry
+					islandEntry:init()
+					islandEntry:setPositionBroadcast(true)
+					height = height + islandEntry:GetComponent("Overlay"):absH()
+					itemHeight = islandEntry:GetComponent("Overlay"):absH()
+					width = islandEntry:GetComponent("Overlay"):absW()
+				end
+				
+				--buffer:
+				height = height + (itemHeight / 4) + (height/table.getn(islands))
+				element("contentHeight"):SetInt(height)
+				element:setSize(Vector2(width, height))
+				element:setPositionBroadcast(true)
+			]]>
+		</event>
+		
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				element:parent():setPositionBroadcast(true)
+				
+				component:DoStoredScript("refresh")
+			</event>
+			<function name="refresh" params="component, element">
+			
+				component("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+				
+				local itemHeight = element("contentHeight"):GetInt()
+				local containerHeight = element:parent():GetElement("InfoFrame"):absH()
+				print("itemHeight: "..itemHeight)
+				print("containerHeight: "..containerHeight)
+				if(itemHeight &gt; element:parent():GetElement("InfoFrame"):absH()) then
+					component:setScrollSize(itemHeight - containerHeight)
+				else
+					component:setScrollSize(0)
+				end
+				element("scrollSize"):SetFloat(component:scrollSize())
+			</function>
+			<event name="onTick" params="component, element, dt">
+				local swipeAnchor = element:GetElement("bookMapEntry0")
+				if(swipeAnchor) then
+					local scrollOffset = component:scrollOffset()
+					
+					if(swipeAnchor:getOrientationPosition().y ~= scrollOffset) then
+					
+						swipeAnchor:setOrientationPosition(Vector2(swipeAnchor("xOffset"):GetInt(), scrollOffset))
+						
+						local scrollMarker = element:parent():GetElement("ScrollMarker");
+						local markerBookend = scrollMarker("originalYOffset"):GetInt()
+						
+						--range without borders is [0, (scrollbarH-scrollMarkerH)]
+						local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH();
+
+						local scrollMarkerYOffset = -(scrollOffset/component:scrollSize()) * markerMovementHeight;
+						
+						scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+						
+						scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+					end
+				end
+			</event>
+			<event name="setScrollOffsetToMarker" params="component, element">
+				component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:parent():GetElement(&quot;InfoFrame&quot;)" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="InfoFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="20*game.hudScale()" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("scroll_bar_01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenHeight()/320)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*lua_sys.screenHeight()/320" priorityOffset="-1" />
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				component("useOffsets"):SetInt(1)
+				component("spriteName"):SetString("scroll_bar_dot")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenHeight()/320)
+				component("layer"):SetString("Tutorial")
+				element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y">
+			
+				local scrollBar = element:parent():GetElement("ScrollBar")
+				local fromTopOfMarkerRange = y - scrollBar:absY() - element("originalYOffset"):GetInt();
+				
+				local markerBookend = element("originalYOffset"):GetInt()
+				
+				local scrollSize = 0;
+				if(element:parent():GetElement("InfoContent")("scrollSize") ~= nil) then
+					scrollSize = element:parent():GetElement("InfoContent")("scrollSize"):GetFloat();
+				end
+				
+				local scrollOffset = (-(fromTopOfMarkerRange - markerBookend)/(scrollBar:absH() - 2*markerBookend - element:absH()))*scrollSize;
+				scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+				
+				element("scrollOffset"):SetFloat(scrollOffset);
+				element:parent():GetElement("InfoContent")["Swiper"]:DoStoredScript("setScrollOffsetToMarker");
+			</event>
+		</touchComponent>
+	</element>
+	
+	
+
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="5" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				
+				element:parent():DoStoredScript("queuePop")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_back")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+</menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d38cdeae056514f5e7a92ab72a58474f:173452781f2b13c09a8716d45dcf0a8c:0d59c0fd1d8cd3cc4dd9e5baa274a115$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_C_costume_07_sheet.png" width="128" height="512" hires="true">
+	<!-- original anchor = (44, 25) -> new anchor (95, 28) diff = (-51, -3)-->
+	<!-- add double it to texturepacker output offsets (0, 2) -> (-101, -4), because hires -->
+    <sprite n="monster_C_costume_flower.png" x="4" y="4" w="106" h="352" pX="0.5" pY="0.5" oX="-101" oY="-4" oW="352" oH="112" r="y"/>
+</TextureAtlas>

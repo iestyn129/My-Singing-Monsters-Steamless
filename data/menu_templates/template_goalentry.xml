@@ -1,0 +1,99 @@
+<template name="template_goalentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<script src="scripts/template_goalentry.lua"/>
+
+	<size w="0.88 * lua_sys.screenWidth() - 90 * game.menuScaleX()" h="72*game.menuScaleY()" />
+
+	<spriteSheetComponent name="GoalIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+	</spriteSheetComponent>	
+
+	<textComponent name="GoalDesc">
+		<size w="0.39*lua_sys.screenWidth()" h="45*game.menuScaleY()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="50*game.menuScaleX()" yOffset="-5" priorityOffset="0" />
+	</textComponent>
+
+	<spriteSheetComponent name="New">
+		<position relativeTo="element:name()" component="GoalIcon" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+	</spriteSheetComponent>
+
+	<element name="HelpArrow">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" component="GoalDesc" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="4 * game.menuScaleX()" yOffset="0" priorityOffset="0" />
+
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		</spriteSheetComponent>
+	</element>
+
+	<element name="Rewards">
+		<size w="60*game.menuScaleX()" h="72*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+	</element>
+
+	<template type="template_spritesheetbutton" name="CollectButton" properOrder="true">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$textYOffset" equals="-2*game.menuScaleY()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<templateVar name="$spriteScale" equals="0.4*game.menuScaleX()" />
+
+		<position relativeTo="Rewards" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
+
+		<spriteSheetComponent name="UpSprite">
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+		</spriteSheetComponent>
+
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="0" />
+		</textComponent>
+
+		<touchComponent name="Touch">
+		</touchComponent>
+	</template>
+	
+	<element name="Progress">
+		<size dependentOnElement="CollectButton"/>
+		<position relativeTo="CollectButton" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.menuScaleY()" priorityOffset="0" />
+
+		<spriteSheetComponent name="ProgressBarBacking">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</spriteSheetComponent>
+
+		<spriteSheetComponent name="ProgressBar">
+			<position relativeTo="element[&quot;ProgressBarBacking&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		</spriteSheetComponent>
+
+		<textComponent name="Label">
+			<position relativeTo="element[&quot;ProgressBarBacking&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleY()" priorityOffset="0" />
+		</textComponent>
+	</element>
+
+	<spriteSheetComponent name="LeftDivider">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="RightDivider">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+	</spriteSheetComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()"/>
+	</touchComponent>
+
+</template>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:38a2f6c938c5a74c54e1960b6cc786b1:209cdc131270fdffaac772fe80e551a4:c38395d63ab95eb0005222623e2d22b6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_W_RARE_sheet.png" width="2048" height="1024" hires="true">
+    <sprite n="W_body" x="440" y="947" w="108" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress" x="568" y="2" w="217" h="305" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_01" x="802" y="303" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_02" x="890" y="2" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_03" x="878" y="610" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_04" x="937" y="303" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_05" x="1025" y="2" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_A_06" x="929" y="885" w="273" h="133" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_A_07" x="1013" y="578" w="133" h="273" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_01" x="206" y="329" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_02" x="308" y="2" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_03" x="206" y="644" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_04" x="336" y="317" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_05" x="438" y="2" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_06" x="336" y="632" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_B_07" x="466" y="317" w="128" h="313" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_01" x="2" y="2" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_02" x="2" y="329" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_03" x="2" y="656" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_04" x="104" y="2" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_05" x="104" y="329" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_06" x="104" y="656" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_C_07" x="206" y="2" w="100" h="325" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_01" x="466" y="632" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_02" x="569" y="632" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_03" x="596" y="309" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_04" x="672" y="610" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_05" x="699" y="309" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_06" x="787" y="2" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_D_07" x="775" y="610" w="101" h="299" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_01" x="678" y="911" w="249" h="103" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_E_02" x="1072" y="300" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_03" x="1160" y="2" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_04" x="1148" y="551" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_05" x="1177" y="300" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_06" x="1253" y="551" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_E_07" x="1265" y="2" w="103" h="249" pX="0.5" pY="0.5"/>
+    <sprite n="W_dress_F_01" x="1362" y="893" w="54" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_F_02" x="1362" y="953" w="54" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_F_03" x="1418" y="893" w="54" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_F_04" x="1418" y="953" w="54" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_dress_teeth" x="1282" y="298" w="103" h="213" pX="0.5" pY="0.5" oX="0" oY="6" oW="220" oH="120" r="y"/>
+    <sprite n="W_hat_back" x="1160" y="253" w="53" h="45" pX="0.5" pY="0.5" oX="9" oY="9" oW="72" oH="64"/>
+    <sprite n="W_hat_back_glow" x="1427" y="671" w="64" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_hat_left" x="1148" y="802" w="97" h="49" pX="0.5" pY="0.5" oX="9" oY="9" oW="67" oH="115" r="y"/>
+    <sprite n="W_hat_left_back" x="596" y="610" w="32" h="19" pX="0.5" pY="0.5" oX="10" oY="10" oW="51" oH="39"/>
+    <sprite n="W_hat_left_back_glow" x="2" y="983" w="51" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="W_hat_left_glow" x="1358" y="671" w="67" h="115" pX="0.5" pY="0.5"/>
+    <sprite n="W_hat_right" x="1362" y="788" w="101" h="103" pX="0.5" pY="0.5" oX="10" oY="10" oW="123" oH="121" r="y"/>
+    <sprite n="W_hat_right_back" x="550" y="933" w="41" h="86" pX="0.5" pY="0.5" oX="9" oY="9" oW="105" oH="60" r="y"/>
+    <sprite n="W_hat_right_back_glow" x="333" y="959" w="105" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="W_hat_right_glow" x="1358" y="546" w="121" h="123" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_head" x="593" y="933" w="83" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="W_head_teeth_back" x="890" y="277" w="36" h="24" pX="0.5" pY="0.5" oX="42" oY="8" oW="160" oH="120" r="y"/>
+    <sprite n="W_head_teeth_back_right" x="1251" y="253" w="32" h="43" pX="0.5" pY="0.5" oX="107" oY="11" oW="160" oH="120"/>
+    <sprite n="W_head_teeth_front" x="280" y="959" w="51" h="61" pX="0.5" pY="0.5" oX="100" oY="51" oW="160" oH="120"/>
+    <sprite n="W_head_teeth_front_left" x="1204" y="945" w="33" h="48" pX="0.5" pY="0.5" oX="9" oY="60" oW="160" oH="120"/>
+    <sprite n="W_left_arm_01_SPIKED" x="802" y="578" w="41" h="30" pX="0.5" pY="0.5" oX="11" oY="7" oW="50" oH="50" r="y"/>
+    <sprite n="W_left_arm_02" x="1122" y="853" w="41" h="25" pX="0.5" pY="0.5"/>
+    <sprite n="W_left_arm_03" x="55" y="983" w="28" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="W_left_arm_04" x="957" y="277" w="42" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_left_arm_05" x="1282" y="513" w="31" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="W_left_arm_06" x="132" y="983" w="20" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_left_arm_07" x="1043" y="853" w="33" h="27" pX="0.5" pY="0.5"/>
+    <sprite n="W_left_arm_08" x="845" y="578" w="36" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_mouth_01" x="952" y="578" w="25" h="29" pX="0.5" pY="0.5" oX="2" oY="3" oW="32" oH="32" r="y"/>
+    <sprite n="W_mouth_02" x="1013" y="853" w="28" h="28" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="W_mouth_03" x="920" y="578" w="30" h="30" pX="0.5" pY="0.5" oX="2" oY="1" oW="32" oH="32"/>
+    <sprite n="W_mouth_04" x="1348" y="513" w="31" h="31" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="32"/>
+    <sprite n="W_mouth_05" x="1315" y="513" w="31" h="32" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="32"/>
+    <sprite n="W_right_arm_01_SPIKED" x="177" y="983" w="40" h="36" pX="0.5" pY="0.5" oX="1" oY="10" oW="50" oH="50"/>
+    <sprite n="W_right_arm_02" x="1078" y="853" w="42" h="25" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_03" x="108" y="983" w="22" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_04" x="85" y="983" w="21" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_05" x="154" y="983" w="21" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_06" x="1072" y="551" w="34" h="25" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_07" x="883" y="578" w="35" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_08" x="1030" y="277" w="46" h="21" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_right_arm_09" x="219" y="983" w="57" h="27" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_right_arm_10" x="1215" y="253" w="34" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="W_right_arm_11" x="1285" y="253" w="51" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_right_leaf_01" x="979" y="578" w="32" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_right_leaf_02" x="630" y="610" w="32" h="15" pX="0.5" pY="0.5"/>
+    <sprite n="W_shadow" x="1247" y="802" w="113" h="218" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="W_shoulder_tooth_left" x="928" y="277" w="27" h="24" pX="0.5" pY="0.5" oX="2" oY="2" oW="30" oH="30" r="y"/>
+    <sprite n="W_shoulder_tooth_right" x="1001" y="277" w="27" h="22" pX="0.5" pY="0.5" oX="4" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="W_stem" x="206" y="959" w="72" h="22" pX="0.5" pY="0.5" oX="9" oY="9" oW="41" oH="90" r="y"/>
+    <sprite n="W_stem_glow" x="1204" y="853" w="41" h="90" pX="0.5" pY="0.5"/>
+</TextureAtlas>

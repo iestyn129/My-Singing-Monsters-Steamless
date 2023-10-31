@@ -1,0 +1,107 @@
+<template name="template_tribalislandentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="bg" dependentOnComponent="GreySprite" />
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="GreySprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="GreySprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.58*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/breeding/"..game.getPortraitName(element:parent()("MonsterID"):GetInt()))
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="monsterType">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.monsterType(element:parent()("MonsterID"):GetInt()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(component("dragging"):GetInt() < 10) then
+					local monsterId = element("MonsterID"):GetInt()
+					game.placeTribalMonster(monsterId)
+				end
+				
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element:GetElement("bg"):absW()*1.25, element:GetElement("bg"):absH() * 1.5))
+			component("yOffset"):SetInt(element:GetElement("bg"):absH()*(-0.25))
+		</event>
+	</touchComponent>
+	
+	<event name="onInit" params="element">
+		local monsterId = element("MonsterID"):GetInt()
+		local numGenes = game.numGenes(monsterId)
+		local previous = nil
+		
+		for i=0,numGenes-1 do
+			local geneItem = menu:addTemplateElement("template_elementicon", "geneItem"..i, element)
+			geneItem("SpriteName"):SetString(game.geneType(monsterId, i))
+			geneItem("SheetName"):SetString("xml_resources/hud02.xml")
+			geneItem("Size"):SetFloat(0.25*game.hudScale())
+			geneItem("Layer"):SetString("Clipping")
+			
+			if(previous == nil) then
+				geneItem:setParent(element)
+				geneItem:setOrientation(lua_sys.MenuOrientation(8, 0, -1, lua_sys.RIGHT, lua_sys.VCENTER))
+				geneItem:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.VCENTER)
+			else
+				geneItem:setParent(previous)
+				geneItem:setOrientation(lua_sys.MenuOrientation(-2, 0, 0, lua_sys.RIGHT, lua_sys.VCENTER))
+				geneItem:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.VCENTER)
+			end
+			
+			previous = geneItem
+			
+			geneItem:init()
+			geneItem:setPositionBroadcast(true)
+		end
+	</event>
+	
+</template>

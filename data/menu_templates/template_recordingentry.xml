@@ -1,0 +1,108 @@
+<template name="template_recordingentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="NameFrame">
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="150*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+			
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.3*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				
+				local itemTitle = game.getLocalizedText(element:parent()("ItemTitle"):GetString())
+				if((string.match(itemTitle, "%s") == nil)) then
+					component("multiline"):SetInt(0)
+				else
+					component("multiline"):SetInt(1)
+				end
+				
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(itemTitle)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()-10" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+					
+					if(element:parent()("IsBoxMonster"):GetInt() == 1) then
+						component("animation"):SetString("Idle")
+						
+						-- [[ unify the position and scaling on Amber Island box monsters ]]--
+						if(game.isAmberIsland()) then
+							component:setScale(Vector2(0.45*game.menuScaleY(),0.45*game.menuScaleY()))
+							element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleY()), component:size().y / 2.0 + (60*game.menuScaleY())))
+						else
+							--[[ Box monsters vary greatly in height, scale and position differently based on that height ]]--
+							if(component:size().y < 500) then
+								component:setScale(Vector2(0.5*game.menuScaleY(),0.5*game.menuScaleY()))
+								element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleY()), component:size().y / 2.0 + (60*game.menuScaleY())))
+							elseif(component:size().y < 900) then
+								component:setScale(Vector2(0.42*game.menuScaleY(),0.42*game.menuScaleY()))
+								element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleY()), component:size().y / 2.0 + (60*game.menuScaleY())))
+							else
+								component:setScale(Vector2(0.35*game.menuScaleY(),0.35*game.menuScaleY()))
+								element:setOrientationPosition(Vector2((component:size().x / 2.0) - (3*game.menuScaleY()), component:size().y / 2.0 + (85*game.menuScaleY())))
+							end
+						end
+					else
+						component("animation"):SetString(element:parent()("AnimationName"):GetString())
+						component:setScale(Vector2(0.85*game.menuScaleY(),0.85*game.menuScaleY()))
+						element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleY()), component:size().y / 2.0 + (25*game.menuScaleY())))
+					end
+					
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+		
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			element("deltaX"):SetFloat(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+			element("deltaX"):SetFloat(element("deltaX"):GetFloat()+math.abs(dx))
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(element("deltaX"):GetFloat() < 10 ) then
+					game.SelectRecordingMonster(element("ID"):GetInt())
+					element:parent():parent():DoStoredScript("select")
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+</template>

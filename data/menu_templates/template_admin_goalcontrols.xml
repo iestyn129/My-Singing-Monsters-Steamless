@@ -1,0 +1,56 @@
+<template name="template_admin_goalcontrols" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<event name="onInit" params="element">
+		element("Id"):SetString("-1")
+	</event>	
+	
+	<template type="template_spritesheetbutton" name="AdminRefreshButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$textYOffset" equals="-2*game.menuScaleY()" />
+		<templateVar name="$spriteScale" equals="0.4*game.menuScaleX()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="UpSprite">
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				element["UpSprite"]("size"):SetFloat(0.4*game.menuScaleX())
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("textPadding"):SetInt(6*game.menuScaleX())
+				component("text"):SetString("AdminComplete")
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Label"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+				game.adminCompleteQuest(game.getQuestId(element:parent()("Id"):GetString()))
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</template>	
+	
+</template>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f18fc6ce4d2139aa549a76cf93940635:e43deb9ebd821648a93c2cb1fda1295f:01b5872cfc4986185609bf2ae82ce5cd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T07_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T07_body.png" x="172" y="417" w="146" h="132" pX="0.5" pY="0.5"/>
+    <sprite n="T07_body_glow.png" x="2" y="487" w="145" h="137" pX="0.5" pY="0.5" oX="1" oY="3" oW="148" oH="140"/>
+    <sprite n="T07_drum_glow.png" x="2" y="626" w="115" h="108" pX="0.5" pY="0.5" oX="1" oY="0" oW="116" oH="112"/>
+    <sprite n="T07_drum_rock_01.png" x="408" y="146" w="98" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_drum_rock_01_glow.png" x="408" y="226" w="98" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_drum_rock_02.png" x="171" y="757" w="84" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="T07_drum_rock_02_glow.png" x="257" y="791" w="84" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="T07_drum_rock_03.png" x="2" y="736" w="86" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="T07_drum_rock_03_glow.png" x="261" y="713" w="86" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="T07_drum_rock_04.png" x="321" y="310" w="84" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="T07_drum_rock_04_glow.png" x="171" y="671" w="88" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_extra_rock_01.png" x="463" y="620" w="46" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="T07_extra_rock_02.png" x="349" y="713" w="52" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="T07_extra_rock_03.png" x="261" y="671" w="36" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_extra_rock_04.png" x="459" y="916" w="42" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="T07_extra_rock_05.png" x="118" y="762" w="26" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="T07_extra_rock_06.png" x="428" y="607" w="33" h="23" pX="0.5" pY="0.5" oX="1" oY="0" oW="34" oH="24"/>
+    <sprite n="T07_eyes.png" x="343" y="827" w="58" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="T07_feet.png" x="2" y="417" w="168" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="T07_glow.png" x="320" y="465" w="141" h="140" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="142"/>
+    <sprite n="T07_glow_beam.png" x="314" y="607" w="112" h="30" pX="0.5" pY="0.5" oX="1" oY="4" oW="32" oH="116" r="y"/>
+    <sprite n="T07_glow_crack_01.png" x="2" y="960" w="40" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="62" oH="40" r="y"/>
+    <sprite n="T07_glow_crack_02.png" x="408" y="40" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_glow_crack_03.png" x="407" y="344" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_glow_crack_04.png" x="403" y="686" w="56" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="T07_head.png" x="171" y="551" w="126" h="118" pX="0.5" pY="0.5"/>
+    <sprite n="T07_left_brow.png" x="461" y="762" w="48" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_left_hand_01.png" x="403" y="776" w="54" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_02.png" x="343" y="863" w="54" h="72" pX="0.5" pY="0.5" oX="0" oY="15" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_03.png" x="119" y="648" w="50" h="56" pX="0.5" pY="0.5" oX="3" oY="31" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_04.png" x="459" y="876" w="44" h="38" pX="0.5" pY="0.5" oX="11" oY="51" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_05.png" x="463" y="559" w="47" h="59" pX="0.5" pY="0.5" oX="9" oY="59" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_06.png" x="44" y="960" w="30" h="59" pX="0.5" pY="0.5" oX="26" oY="59" oW="56" oH="128"/>
+    <sprite n="T07_left_hand_07.png" x="107" y="944" w="30" h="69" pX="0.5" pY="0.5" oX="26" oY="59" oW="56" oH="128"/>
+    <sprite n="T07_left_lower_arm.png" x="149" y="487" w="20" h="45" pX="0.5" pY="0.5" oX="1" oY="0" oW="46" oH="20" r="y"/>
+    <sprite n="T07_left_pupil.png" x="501" y="344" w="8" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T07_left_upper_arm.png" x="149" y="534" w="20" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_lids_01.png" x="76" y="960" w="29" h="54" pX="0.5" pY="0.5" oX="1" oY="0" oW="58" oH="30" r="y"/>
+    <sprite n="T07_lids_02.png" x="107" y="820" w="53" h="30" pX="0.5" pY="0.5" oX="2" oY="0" oW="58" oH="30"/>
+    <sprite n="T07_lids_03.png" x="139" y="960" w="30" h="53" pX="0.5" pY="0.5" oX="2" oY="0" oW="58" oH="30" r="y"/>
+    <sprite n="T07_lids_04.png" x="171" y="960" w="30" h="52" pX="0.5" pY="0.5" oX="3" oY="0" oW="58" oH="30" r="y"/>
+    <sprite n="T07_mouth_01.png" x="149" y="619" w="11" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_02.png" x="299" y="667" w="10" h="26" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_03.png" x="149" y="578" w="12" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_04.png" x="299" y="580" w="13" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_05.png" x="299" y="551" w="14" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_06.png" x="119" y="626" w="27" h="11" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14"/>
+    <sprite n="T07_mouth_07.png" x="299" y="609" w="11" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_mouth_08.png" x="299" y="638" w="11" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="30" oH="14" r="y"/>
+    <sprite n="T07_neck_bottom.png" x="403" y="862" w="54" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_neck_mid.png" x="349" y="771" w="52" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="T07_neck_top.png" x="2" y="865" w="40" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="T07_nose.png" x="311" y="685" w="90" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_right_brow.png" x="119" y="706" w="50" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_right_hand_01.png" x="463" y="465" w="47" h="92" pX="0.5" pY="0.5" oX="12" oY="1" oW="104" oH="66" r="y"/>
+    <sprite n="T07_right_hand_02.png" x="408" y="306" w="95" h="36" pX="0.5" pY="0.5" oX="9" oY="12" oW="104" oH="66"/>
+    <sprite n="T07_right_hand_03.png" x="408" y="112" w="100" h="32" pX="0.5" pY="0.5" oX="3" oY="19" oW="104" oH="66"/>
+    <sprite n="T07_right_hand_04.png" x="408" y="2" w="102" h="36" pX="0.5" pY="0.5" oX="2" oY="19" oW="104" oH="66"/>
+    <sprite n="T07_right_hand_05.png" x="312" y="639" w="90" h="44" pX="0.5" pY="0.5" oX="11" oY="1" oW="104" oH="66"/>
+    <sprite n="T07_right_lower_arm.png" x="462" y="682" w="48" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_right_lower_arm_02.png" x="461" y="722" w="48" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_right_pupil.png" x="149" y="607" w="12" h="10" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_right_upper_arm.png" x="90" y="736" w="26" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="T07_right_upper_arm_02.png" x="107" y="792" w="54" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_shadow.png" x="321" y="400" w="184" h="63" pX="0.5" pY="0.5" oX="7" oY="1" oW="194" oH="64"/>
+    <sprite n="T07_shadow_drums.png" x="2" y="310" w="317" h="105" pX="0.5" pY="0.5" oX="1" oY="1" oW="318" oH="106"/>
+    <sprite n="T07_shoulder.png" x="459" y="796" w="50" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="T07_shoulder_detail_left.png" x="459" y="848" w="46" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="T07_shoulder_detail_right.png" x="428" y="632" w="32" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_shoulder_ring_left.png" x="2" y="933" w="26" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_shoulder_ring_right.png" x="2" y="814" w="30" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T07_statue.png" x="2" y="2" w="404" h="306" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

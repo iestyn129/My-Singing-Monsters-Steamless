@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c55df23c2a4f03e329f7293050af4279:44924ddd87700335c1feb492e6f0c214:2bce090bdf7da63693c998317a6cf274$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_E_costume_09_sheet.png" width="512" height="512" hires="true">
+    <!-- original anchor = (16, 8) -> new anchor (26, -11) diff = (-10, 19)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-20, 38), because hires-->
+    <sprite n="E_beak_costume_09.png" x="465" y="166" w="46" h="57" pX="0.5" pY="0.5" oX="-20" oY="38" r="y"/>
+
+    <!-- original anchor = (29, 97) -> new anchor (34, 152) diff = (-5, -55)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, -110), because hires-->
+    <sprite n="E_body_costume_09.png" x="1" y="1" w="149" h="340" pX="0.5" pY="0.5" oX="-10" oY="-110"/>
+
+    <!-- original anchor = (16, 8) -> new anchor (25, 8) diff = (-9, 0)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-18, 0), because hires-->
+    <sprite n="E_eyeback_costume_09.png" x="467" y="1" w="43" h="81" pX="0.5" pY="0.5" oX="-18" oY="0" r="y"/>
+    <sprite n="E_leftarmlower_costume_09.png" x="277" y="1" w="94" h="56" pX="0.5" pY="0.5" r="y"/>
+
+    <!-- original anchor = (10, 10) -> new anchor (15, 8) diff = (-5, 2)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, 4), because hires-->
+    <sprite n="E_lefteye_1_costume_09.png" x="431" y="122" w="32" h="38" pX="0.5" pY="0.5" oX="-10" oY="4" />
+    <!-- original anchor = (10, 10) -> new anchor (15, 8) diff = (-5, 2)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, 4), because hires-->
+    <sprite n="E_lefteye_2_costume_09.png" x="431" y="162" w="32" h="38" pX="0.5" pY="0.5" oX="-10" oY="4" />
+    <!-- original anchor = (10, 10) -> new anchor (15, 8) diff = (-5, 2)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, 4), because hires-->
+    <sprite n="E_lefteye_3_costume_09.png" x="234" y="321" w="38" h="32" pX="0.5" pY="0.5" oX="-10" oY="4" r="y"/>
+    <!-- original anchor = (10, 10) -> new anchor (15, 8) diff = (-5, 2)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, 4), because hires-->
+    <sprite n="E_lefteye_4_costume_09.png" x="192" y="328" w="38" h="32" pX="0.5" pY="0.5" oX="-10" oY="4" r="y"/>
+
+    <sprite n="E_leftfingers_1_costume_09.png" x="180" y="164" w="73" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="E_leftfingers_2_costume_09.png" x="403" y="202" w="56" h="55" pX="0.5" pY="0.5" oX="10" oY="0" oW="73" oH="55"/>
+    <sprite n="E_leftfingers_3_costume_09.png" x="152" y="240" w="39" h="51" pX="0.5" pY="0.5" oX="18" oY="0" oW="73" oH="55"/>
+
+    <!-- original anchor = (36, 18) -> new anchor (-8, 13) diff = (44, 5)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (88, 10), because hires-->
+    <sprite n="E_leftfoot_1_costume_09.png" x="354" y="122" w="75" h="64" pX="0.5" pY="0.5" oX="88" oY="10" r="y"/>
+    <sprite n="E_leftfoot_2_costume_09.png" x="258" y="125" w="75" h="62" pX="0.5" pY="0.5" oX="89" oY="10" oW="64" oH="75" r="y"/>
+
+    <!-- original anchor = (12, 5) -> new anchor (11, 9) diff = (1, -4)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (2, -8), because hires-->
+    <sprite n="E_leftleg_costume_09.png" x="391" y="259" w="62" h="55" pX="0.5" pY="0.5" oX="2" oY="-8" r="y"/>
+
+    <!-- original anchor = (16, 8) -> new anchor (49, 46) diff = (-33, -38)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-66, -74), because hires-->
+    <sprite n="E_leftshoulder_costume_09.png" x="1" y="343" w="86" h="160" pX="0.5" pY="0.5" oX="-66" oY="-74" />
+
+    <!-- original anchor = (13, 10) -> new anchor (16, 10) diff = (-3, 0)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-6, 0), because hires-->
+    <sprite n="E_leftupperarm_costume_09.png" x="180" y="1" w="95" h="51" pX="0.5" pY="0.5" oX="-6" oY="0" r="y"/>
+
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 18) -> (0, 40), because hires-->
+    <sprite n="E_mouth_10_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="40" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 3) -> (0, 24), because hires-->
+    <sprite n="E_mouth_1_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="24" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 9) -> (0, 31), because hires-->
+    <sprite n="E_mouth_2_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="31" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 17) -> (0, 39), because hires-->
+    <sprite n="E_mouth_3_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="39" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 25) -> (0, 47), because hires-->
+    <sprite n="E_mouth_4_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="47" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 34) -> (0, 56), because hires-->
+    <sprite n="E_mouth_5_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="56" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 40) -> (0, 62), because hires-->
+    <sprite n="E_mouth_6_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="62" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (0, 22), because hires-->
+    <sprite n="E_mouth_7_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="22" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 60) -> (0, 82), because hires-->
+    <sprite n="E_mouth_8_costume_09.png" x="250" y="241" w="52" h="38" pX="0.5" pY="0.5" oX="0" oY="82" oW="52" oH="98"/>
+    <!-- original anchor = (20, 22) -> new anchor (20, 11) diff = (0, 11)-->
+	<!-- add double it to texturepacker output offsets (0, 33) -> (0, 55), because hires-->
+    <sprite n="E_mouth_9_costume_09.png" x="455" y="293" w="52" h="39" pX="0.5" pY="0.5" oX="0" oY="55" oW="52" oH="98"/>
+
+    <!-- original anchor = (4, 4) -> new anchor (14, 5) diff = (-10, -1)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-20, -2), because hires-->
+    <sprite n="E_pupil_1_costume_09.png" x="152" y="1" w="19" h="19" pX="0.5" pY="0.5" oX="-20" oY="-2"/>
+    <!-- original anchor = (4, 4) -> new anchor (9, 5) diff = (-5, -1)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-10, -2), because hires-->
+    <sprite n="E_pupil_2_costume_09.png" x="152" y="1" w="19" h="19" pX="0.5" pY="0.5" oX="-10" oY="-2"/>
+
+    <!-- original anchor = (11, 11) -> new anchor (15, 10) diff = (-4, 0)-->
+	<!-- add double it to texturepacker output offsets (5, 0) -> (-3, 0), because hires-->
+    <sprite n="E_righteye_1_costume_09.png" x="152" y="293" w="38" h="40" pX="0.5" pY="0.5" oX="-3" oY="0" oW="47" oH="42"/>
+    <!-- original anchor = (11, 11) -> new anchor (15, 10) diff = (-4, 0)-->
+	<!-- add double it to texturepacker output offsets (5, 0) -> (-3, 0), because hires-->
+    <sprite n="E_righteye_2_costume_09.png" x="250" y="281" w="39" h="38" pX="0.5" pY="0.5" oX="-3" oY="0" oW="47" oH="42"/>
+    <!-- original anchor = (11, 11) -> new anchor (15, 10) diff = (-4, 0)-->
+	<!-- add double it to texturepacker output offsets (5, 0) -> (-3, 0), because hires-->
+    <sprite n="E_righteye_3_costume_09.png" x="291" y="292" w="38" h="38" pX="0.5" pY="0.5" oX="-3" oY="0" oW="47" oH="42"/>
+    <!-- original anchor = (11, 11) -> new anchor (15, 10) diff = (-4, 0)-->
+	<!-- add double it to texturepacker output offsets (5, 0) -> (-3, 0), because hires-->
+    <sprite n="E_righteye_4_costume_09.png" x="193" y="288" w="39" h="38" pX="0.5" pY="0.5" oX="-3" oY="0" oW="47" oH="42"/>
+
+    <!-- original anchor = (18, 5) -> new anchor (24, 1) diff = (-6, 4)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-12, 8), because hires-->
+    <sprite n="E_rightfingers_costume_09.png" x="373" y="53" w="91" h="67" pX="0.5" pY="0.5" oX="-12" oY="8"/>
+
+    <!-- original anchor = (36, 22) -> new anchor (37, 19) diff = (-1, 3)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-2, 6), because hires-->
+    <sprite n="E_rightfoot_1_costume_09.png" x="276" y="59" w="76" h="64" pX="0.5" pY="0.5" oX="-2" oY="6" r="y"/>
+    <sprite n="E_rightfoot_2_costume_09.png" x="180" y="100" w="76" h="62" pX="0.5" pY="0.5" oX="-1" oY="6" oW="64" oH="76" r="y"/>
+    <sprite n="E_rightleg_costume_09.png" x="193" y="221" w="55" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="E_rightlowerarm_costume_09.png" x="373" y="1" w="92" h="50" pX="0.5" pY="0.5" r="y"/>
+
+    <!-- original anchor = (11, 11) -> new anchor (13, 67) diff = (-2, -56)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-4, -112), because hires-->
+    <sprite n="E_rightshoulder_costume_09.png" x="89" y="343" w="89" h="157" pX="0.5" pY="0.5" oX="-4" oY="-112"/>
+    <sprite n="E_rightupperarm_costume_09.png" x="180" y="54" w="94" h="44" pX="0.5" pY="0.5" r="y"/>
+
+    <!-- original anchor = (16, 8) -> new anchor (22, -62) diff = (-6, 70)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-12, 140), because hires-->
+    <sprite n="E_screen_01_costume_09.png" x="335" y="188" w="66" h="50" pX="0.5" pY="0.5" oX="12" oY="155"/>
+    <sprite n="E_screen_02_costume_09.png" x="461" y="225" w="50" h="66" pX="0.5" pY="0.5" oX="8" oY="155" r="y"/>
+    <sprite n="E_screen_03_costume_09.png" x="255" y="189" w="66" h="50" pX="0.5" pY="0.5" oX="8" oY="155"/>
+    <sprite n="E_screen_04_costume_09.png" x="323" y="240" w="66" h="50" pX="0.5" pY="0.5" oX="8" oY="155"/>
+
+    <!-- original anchor = (33, 33) -> new anchor (-33, -66) diff = (66, 99)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (132, 198), because hires-->
+    <sprite n="E_shadow_costume_09.png" x="466" y="84" w="40" h="80" pX="0.5" pY="0.5" oX="29" oY="33" r="y"/>
+</TextureAtlas>

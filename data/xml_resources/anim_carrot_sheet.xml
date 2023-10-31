@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:290a723dce29a5311f3dac222a44c910:7a39dbcce1f0bcb85b69c182ed8518ab:0c027fa20bb0a4073173be42b4b0832f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_carrot_sheet.png" width="512" height="512" hires="true">
+    <sprite n="carrot base.png" x="2" y="2" w="246" h="242" pX="0.5" pY="0.5"/>
+    <sprite n="eyes1.png" x="250" y="2" w="218" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="eyes2.png" x="250" y="60" w="218" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="eyes3.png" x="250" y="118" w="218" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="leaf1.png" x="470" y="84" w="19" h="82" pX="0.5" pY="0.5" oX="1" oY="2" oW="20" oH="84"/>
+    <sprite n="leaf2.png" x="444" y="176" w="66" h="133" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="136"/>
+    <sprite n="leaf3.png" x="150" y="346" w="96" h="117" pX="0.5" pY="0.5" oX="0" oY="0" oW="118" oH="96" r="y"/>
+    <sprite n="leaf21.png" x="470" y="2" w="23" h="80" pX="0.5" pY="0.5" oX="0" oY="1" oW="24" oH="82"/>
+    <sprite n="leaf22.png" x="68" y="346" w="80" h="139" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="144"/>
+    <sprite n="leaf23.png" x="68" y="246" w="146" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mouth1.png" x="250" y="176" w="192" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="mouth2.png" x="250" y="242" w="192" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="mouth3.png" x="2" y="311" w="64" h="192" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

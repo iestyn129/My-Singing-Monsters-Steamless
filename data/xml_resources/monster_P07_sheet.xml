@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3f8b1a953e6aefda5ebb94878061fd3e:4ebab7a0dff3fb03ac1cb87a631e87db:d8f8a252cd76c37740af8c68a929994d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_P07_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="P07_abdomen.png" x="4" y="127" w="195" h="174" pX="0.5" pY="0.5" oX="7" oY="7" oW="208" oH="188"/>
+    <sprite n="P07_antenna.png" x="479" y="34" w="25" h="140" pX="0.5" pY="0.5" oX="2" oY="2" oW="28" oH="144"/>
+    <sprite n="P07_bellyglow.png" x="278" y="4" w="197" h="154" pX="0.5" pY="0.5" oX="11" oY="13" oW="220" oH="180"/>
+    <sprite n="P07_bowclaw.png" x="4" y="384" w="140" h="47" pX="0.5" pY="0.5" oX="0" oY="3" oW="140" oH="52"/>
+    <sprite n="P07_celloclaw.png" x="4" y="4" w="270" h="119" pX="0.5" pY="0.5" oX="2" oY="2" oW="124" oH="280" r="y"/>
+    <sprite n="P07_celloclaw_soundhole.png" x="199" y="405" w="66" h="23" pX="0.5" pY="0.5" oX="3" oY="3" oW="28" oH="72" r="y"/>
+    <sprite n="P07_celloclaw_thumb.png" x="405" y="499" w="99" h="49" pX="0.5" pY="0.5" oX="0" oY="2" oW="52" oH="104" r="y"/>
+    <sprite n="P07_eyeball.png" x="347" y="513" w="50" h="50" pX="0.5" pY="0.5" oX="3" oY="3" oW="56" oH="56"/>
+    <sprite n="P07_eyepupil.png" x="479" y="4" w="26" h="26" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32"/>
+    <sprite n="P07_eyestalk_L.png" x="258" y="513" w="85" h="54" pX="0.5" pY="0.5" oX="0" oY="2" oW="88" oH="56"/>
+    <sprite n="P07_eyestalk_R.png" x="428" y="404" w="77" h="55" pX="0.5" pY="0.5" oX="6" oY="0" oW="88" oH="56"/>
+    <sprite n="P07_head.png" x="4" y="500" w="87" h="81" pX="0.5" pY="0.5" oX="2" oY="3" oW="92" oH="88"/>
+    <sprite n="P07_left_foot.png" x="203" y="282" w="68" h="44" pX="0.5" pY="0.5" oX="2" oY="6" oW="72" oH="56"/>
+    <sprite n="P07_left_lowerarm.png" x="146" y="440" w="108" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="112" r="y"/>
+    <sprite n="P07_left_upperarm.png" x="199" y="376" w="67" h="25" pX="0.5" pY="0.5" oX="2" oY="3" oW="28" oH="72" r="y"/>
+    <sprite n="P07_left_wing.png" x="203" y="127" w="71" h="151" pX="0.5" pY="0.5" oX="5" oY="4" oW="160" oH="80" r="y"/>
+    <sprite n="P07_lowerleg.png" x="4" y="305" w="145" h="75" pX="0.5" pY="0.5" oX="2" oY="7" oW="80" oH="160" r="y"/>
+    <sprite n="P07_mouth_1.png" x="472" y="178" w="36" h="57" pX="0.5" pY="0.5" oX="11" oY="10" oW="76" oH="48" r="y"/>
+    <sprite n="P07_mouth_2.png" x="153" y="375" w="42" h="61" pX="0.5" pY="0.5" oX="9" oY="5" oW="76" oH="48" r="y"/>
+    <sprite n="P07_mouth_3.png" x="153" y="305" w="44" h="66" pX="0.5" pY="0.5" oX="5" oY="3" oW="76" oH="48" r="y"/>
+    <sprite n="P07_right_foot.png" x="201" y="330" w="67" h="42" pX="0.5" pY="0.5" oX="2" oY="7" oW="72" oH="56"/>
+    <sprite n="P07_right_lowerarm.png" x="428" y="288" w="77" h="112" pX="0.5" pY="0.5" oX="3" oY="4" oW="80" oH="120"/>
+    <sprite n="P07_right_upperarm.png" x="95" y="500" w="24" h="76" pX="0.5" pY="0.5" oX="2" oY="2" oW="28" oH="80"/>
+    <sprite n="P07_right_wing.png" x="4" y="435" w="138" h="61" pX="0.5" pY="0.5" oX="5" oY="4" oW="148" oH="72"/>
+    <sprite n="P07_shadow.png" x="278" y="162" w="190" h="100" pX="0.5" pY="0.5" oX="9" oY="2" oW="208" oH="104"/>
+    <sprite n="P07_shoulder.png" x="472" y="239" w="34" h="45" pX="0.5" pY="0.5" oX="8" oY="3" oW="50" oH="50"/>
+    <sprite n="P07_torso.png" x="269" y="416" w="132" h="93" pX="0.5" pY="0.5" oX="6" oY="3" oW="144" oH="100"/>
+    <sprite n="P07_upperbody.png" x="278" y="266" w="146" h="146" pX="0.5" pY="0.5" oX="8" oY="5" oW="160" oH="160"/>
+    <sprite n="P07_upperleg.png" x="405" y="463" w="103" h="32" pX="0.5" pY="0.5" oX="4" oY="8" oW="40" oH="120" r="y"/>
+</TextureAtlas>

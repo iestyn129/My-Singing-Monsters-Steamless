@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1c1fbee0732d0297378128a4b1a0937f:c15f2daef876962b84b3d315aa352f0b:a735373cca01a3d4ba8d38437a466b1b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/island03_specific_deco.png" width="512" height="512" hires="true">
+    <sprite n="deco_fence_W3_01" x="171" y="185" w="154" h="123" pX="0.5" pY="0.5" oX="33" oY="35" oW="200" oH="160"/>
+    <sprite n="deco_grnd_W3_01" x="171" y="99" w="156" h="84" pX="0.5" pY="0.5" oX="27" oY="9" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W3_02" x="2" y="99" w="167" h="96" pX="0.5" pY="0.5" oX="16" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W3_03" x="180" y="2" w="169" h="95" pX="0.5" pY="0.5" oX="14" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W3_04" x="329" y="100" w="155" h="92" pX="0.5" pY="0.5" oX="21" oY="5" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W3_05" x="351" y="2" w="157" h="96" pX="0.5" pY="0.5" oX="21" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W3_06" x="2" y="2" w="176" h="95" pX="0.5" pY="0.5" oX="10" oY="1" oW="200" oH="100"/>
+</TextureAtlas>

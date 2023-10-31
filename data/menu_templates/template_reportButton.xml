@@ -1,0 +1,30 @@
+<template name="template_reportButton" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size dependentOnElement="element:name()" dependentOnComponent="BoundsButton" />
+
+	<event name="onPostInit" params="element">
+		element["BoundsButton"]["Text"]("text"):SetString(game.getLocalizedText(element("label"):GetString()))
+	</event>
+	
+	<template type="template_nineslicebutton" name="BoundsButton">
+		<templateVar name="$upSpriteName" equals="'gfx/menu/button_purple_gem'"/>
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.27*game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$topHeight" equals="16.0" />
+		<templateVar name="$bottomHeight" equals="16.0" />
+		<templateVar name="$leftWidth" equals="23.0" />
+		<templateVar name="$rightWidth" equals="23.0" />
+		<templateVar name="$width" equals="lua_sys.screenWidth() * 0.3" />
+		<templateVar name="$height" equals="lua_sys.screenHeight() * 0.08" />
+		<templateVar name="$includeBorder" equals="1" />
+
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.displayConfirmation(element:parent()("id"):GetString(), element:parent()("desc"):GetString(), "", "");
+			</event>
+		</touchComponent>
+	</template>
+</template>

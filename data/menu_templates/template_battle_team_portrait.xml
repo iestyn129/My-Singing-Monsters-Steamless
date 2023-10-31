@@ -1,0 +1,222 @@
+<template name="template_battle_team_portrait" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$Scale" equals="0.4"/>
+	<defaultTemplateVar name="$TeamId" equals="0"/>
+	<defaultTemplateVar name="$SlotId" equals="0"/>
+	<defaultTemplateVar name="$ShowHealth" equals="1"/>
+	<defaultTemplateVar name="$Layer" equals="HUD"/>
+	
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+					element["Sprite"]("hFlip"):SetInt(0)
+					component("size"):SetFloat($Scale*game.menuScaleX())
+					component("layer"):SetString("$Layer")
+				]]>
+			</event>
+		</spriteComponent>
+		
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("MonsterID"):SetInt(-1)
+			]]>
+		</event>
+		
+		<event name="reveal" params="element">
+			<![CDATA[
+				local monsterId = element("MonsterID"):GetInt()
+				local MonsterPortraits = include("MonsterPortraits")
+				local img = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+				element["Sprite"]("spriteName"):SetString(img)
+				element["Sprite"]("hFlip"):SetInt($TeamId)
+			]]>
+		</event>
+		
+		<event name="conceal" params="element">
+			<![CDATA[
+				element["Sprite"]("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+				element["Sprite"]("hFlip"):SetInt(0)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				element["Sprite"]("visible"):SetInt(0)
+			]]>
+		</event>
+
+	</element>
+
+	<template type="template_level_number" name="CharacterLevel">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			<![CDATA[
+					element("layer"):SetString("$Layer")
+					element("level"):SetInt(0)
+					element:DoStoredScript("refresh")
+				]]>
+		</event>
+		<event name="onPostInit" params="element">
+			<![CDATA[
+					local sprite = element:GetComponent("Sprite")
+					sprite("size"):SetFloat($Scale*game.menuScaleX())
+
+					if $TeamId == 0 then 
+						element:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.TOP)
+						element:setOrientation(lua_sys.MenuOrientation(-0.25*sprite:absW(), 0*sprite:absH(), -1, lua_sys.RIGHT, lua_sys.TOP))
+					else
+						element:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+						element:setOrientation(lua_sys.MenuOrientation(-0.25*sprite:absW(), 0*sprite:absH(), -1, lua_sys.LEFT, lua_sys.TOP))
+					end
+				]]>
+		</event>
+	</template>
+
+	<element name="HealthBar" >
+		
+		<size dependentOnElement="element:name()" dependentOnComponent="BG_OUTLINE" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleY()" priorityOffset="3" />
+		
+		<ninesliceComponent name="BG_OUTLINE">
+			<size w="32*game.menuScaleX()" h="4*game.menuScaleY()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(1.0)
+					component("bottomHeight"):SetFloat(1.0)
+					component("leftWidth"):SetFloat(1.0)
+					component("rightWidth"):SetFloat(1.0)
+					component("size"):SetFloat(1.0*game.menuScaleX())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setColor(0.0, 0.0, 0.0)
+					component("layer"):SetString("$Layer")
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<ninesliceComponent name="BG">
+			<size w="30*game.menuScaleX()" h="2*game.menuScaleY()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="1" yOffset="1" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(1.0)
+					component("bottomHeight"):SetFloat(1.0)
+					component("leftWidth"):SetFloat(1.0)
+					component("rightWidth"):SetFloat(1.0)
+					component("size"):SetFloat(1.0*game.menuScaleX())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setColor(0.4, 0.4, 0.4)
+					component("layer"):SetString("$Layer")
+				]]>
+			</event>
+		</ninesliceComponent>
+		
+		<ninesliceComponent name="Fill">
+			<size w="30*game.menuScaleX()" h="2*game.menuScaleY()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<!-- why is the offset 0,0 instead of 1,1?? it doesnt make any sense -->
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-3" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(1.0)
+					component("bottomHeight"):SetFloat(1.0)
+					component("leftWidth"):SetFloat(1.0)
+					component("rightWidth"):SetFloat(1.0)
+					component("size"):SetFloat(1.0*game.menuScaleX())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setColor(0.78, 0.92, 0.16) 
+					component("layer"):SetString("$Layer")
+				]]>
+			</event>
+		</ninesliceComponent>
+		<event name="show" params="element">
+			<![CDATA[
+				element["BG_OUTLINE"]("visible"):SetInt(1)
+				element["BG"]("visible"):SetInt(1)
+				element["Fill"]("visible"):SetInt(1)
+			]]>
+		</event>
+		<event name="hide" params="element">
+			<![CDATA[
+				element["BG_OUTLINE"]("visible"):SetInt(0)
+				element["BG"]("visible"):SetInt(0)
+				element["Fill"]("visible"):SetInt(0)
+			]]>
+		</event>
+	</element>
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("ScaleFactor"):SetFloat(1.0)
+			if $ShowHealth == 0 then
+				element["HealthBar"]:DoStoredScript("hide")
+			end
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			element["CharacterImage"]:DoStoredScript("show")
+			element["CharacterLevel"]:DoStoredScript("show")
+			if $ShowHealth == 1 then
+				element["HealthBar"]:DoStoredScript("show")
+			end
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["CharacterImage"]:DoStoredScript("hide")
+			element["CharacterLevel"]:DoStoredScript("hide")
+			element["HealthBar"]:DoStoredScript("hide")
+		]]>
+	</event>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+			local player = game.battleSystem():getBattleTeam($TeamId):getPlayerBySlotId($SlotId)
+			
+			if player == nil then
+			
+				element:DoStoredScript("hide")
+				
+			else
+			
+				if player:isDead() then
+					element["CharacterImage"]:DoStoredScript("conceal")
+					element["CharacterLevel"]:DoStoredScript("hide")
+					element["HealthBar"]:DoStoredScript("hide")
+				else
+					element["CharacterImage"]("MonsterID"):SetInt(player:data().monsterId)
+					element["CharacterImage"]:DoStoredScript("reveal")
+					
+					element["CharacterLevel"]("level"):SetInt(player:level())
+					element["CharacterLevel"]:DoStoredScript("refresh")
+				
+					if $ShowHealth == 1 then
+						local fill = element["HealthBar"]["Fill"]
+						local width = 30*game.menuScaleX()
+						fill("width"):SetFloat(width * player:healthPercentage())
+					end
+				
+				end
+				
+			end
+		]]>
+	</event>
+	
+</template>

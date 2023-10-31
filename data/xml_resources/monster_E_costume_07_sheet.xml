@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:555161728ba9782a3df00ec13271fc8f:fef129104348b583910e5a8ee9f7d550:35c7d253d4f5ed612b518cad852211d0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_E_costume_07_sheet.png" width="512" height="512" hires="true">
+    <sprite n="E_body" x="2" y="2" w="114" h="230" pX="0.5" pY="0.5"/>
+    <sprite n="E_eyeback" x="147" y="476" w="62" h="34" pX="0.5" pY="0.5"/>
+	<sprite n="E_eyeback_RARE"/>
+	<sprite n="E_foot1_topper_RARE"/>
+	<sprite n="E_foot2_topper_RARE"/>
+	<sprite n="E_horn_RARE" />
+    <sprite n="E_lefteye_1" x="399" y="110" w="39" h="38" pX="0.5" pY="0.5" oX="1" oY="4" oW="42" oH="42"/>
+    <sprite n="E_lefteye_2" x="440" y="110" w="39" h="36" pX="0.5" pY="0.5" oX="1" oY="4" oW="42" oH="42"/>
+	<sprite n="E_lefteye_2_RARE" />
+    <sprite n="E_lefteye_3" x="440" y="148" w="39" h="35" pX="0.5" pY="0.5" oX="1" oY="4" oW="42" oH="42"/>
+	<sprite n="E_lefteye_3_RARE" />
+    <sprite n="E_lefteye_4" x="388" y="150" w="37" h="36" pX="0.5" pY="0.5" oX="2" oY="4" oW="42" oH="42"/>
+	<sprite n="E_lefteye_4_RARE" />
+    <sprite n="E_leftfingers_1" x="257" y="314" w="64" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="E_leftfingers_2" x="211" y="468" w="48" h="42" pX="0.5" pY="0.5" oX="9" oY="0" oW="64" oH="46"/>
+    <sprite n="E_leftfingers_3" x="351" y="468" w="35" h="41" pX="0.5" pY="0.5" oX="12" oY="0" oW="64" oH="46" r="y"/>
+    <sprite n="E_leftfoot_1" x="2" y="234" w="80" h="145" pX="0.5" pY="0.5" oX="1" oY="9" oW="146" oH="90" r="y"/>
+    <sprite n="E_leftfoot_2" x="118" y="2" w="89" h="142" pX="0.5" pY="0.5" oX="1" oY="0" oW="146" oH="90" r="y"/>
+    <sprite n="E_leftleg" x="269" y="92" w="56" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="E_leftlowerarm" x="147" y="381" w="52" h="93" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="94"/>
+    <sprite n="E_leftupperarm" x="103" y="381" w="42" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="E_mouth_1" x="411" y="80" w="76" h="28" pX="0.5" pY="0.5" oX="0" oY="3" oW="78" oH="88"/>
+	<sprite n="E_mouth_10" x="356" y="2" w="53" h="78" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88" r="y"/>
+    <sprite n="E_mouth_2" x="411" y="47" w="76" h="31" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="88"/>
+    <sprite n="E_mouth_3" x="411" y="2" w="78" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88"/>
+    <sprite n="E_mouth_4" x="278" y="144" w="63" h="78" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88" r="y"/>
+    <sprite n="E_mouth_5" x="118" y="146" w="78" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88"/>
+    <sprite n="E_mouth_6" x="209" y="2" w="78" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="E_mouth_7" x="267" y="362" w="32" h="71" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88" r="y"/>
+    <sprite n="E_mouth_8" x="289" y="2" w="65" h="82" pX="0.5" pY="0.5" oX="0" oY="3" oW="78" oH="88"/>
+    <sprite n="E_mouth_9" x="198" y="146" w="78" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="88"/>
+    <sprite n="E_pupil" x="51" y="490" w="14" h="15" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16"/>
+	<sprite n="E_pupil_RARE" />
+    <sprite n="E_righteye_1" x="309" y="468" w="40" h="41" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="44"/>
+    <sprite n="E_righteye_2" x="301" y="428" w="40" h="38" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="44"/>
+	<sprite n="E_righteye_2_RARE" />
+    <sprite n="E_righteye_3" x="343" y="428" w="40" h="38" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="44"/>
+	<sprite n="E_righteye_3_RARE" />
+    <sprite n="E_righteye_4" x="344" y="142" w="39" h="37" pX="0.5" pY="0.5" oX="4" oY="3" oW="44" oH="44" r="y"/>
+	<sprite n="E_righteye_4_RARE" />
+    <sprite n="E_rightfingers_1" x="257" y="230" w="64" h="82" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="E_rightfingers_2" x="327" y="86" w="70" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="64"/>
+    <sprite n="E_rightfingers_3" x="301" y="362" w="41" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="64" r="y"/>
+    <sprite n="E_rightfoot_1" x="84" y="234" w="80" h="145" pX="0.5" pY="0.5" oX="0" oY="9" oW="146" oH="90" r="y"/>
+    <sprite n="E_rightfoot_2" x="166" y="232" w="89" h="142" pX="0.5" pY="0.5" oX="3" oY="0" oW="146" oH="90" r="y"/>
+    <sprite n="E_rightleg" x="209" y="92" w="58" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="E_rightlowerarm" x="201" y="376" w="64" h="90" pX="0.5" pY="0.5"/>
+    <sprite n="E_rightshoulder" x="261" y="468" w="46" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="E_rightupperarm" x="51" y="381" w="50" h="107" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="110"/>
+    <sprite n="E_shadow" x="2" y="381" w="47" h="124" pX="0.5" pY="0.5" oX="3" oY="26" oW="130" oH="78" r="y"/>
+	<sprite n="E_stripes_01_RARE" />
+	<sprite n="E_stripes_02_RARE" />
+	<sprite n="E_stripes_head_RARE" />
+</TextureAtlas>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:50ef6c954023bfbe1449344b86e93601:0c7cd1372564766520cbdcf02a7f2a25:3de6ecae8385f292540242387adddcdc$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ACN_costume_01_sheet.png" width="128" height="256" hires="true">
+    <!-- original anchor = (22, 71) -> new anchor (26, 74) diff = (-4, -3)-->
+	<!-- add double it to texturepacker output offsets (4, 5) -> (-4, -1), because hires-->
+    <sprite n="ACN_costume_01_apron.png" x="2" y="2" w="106" h="152" pX="0.5" pY="0.5" oX="-4" oY="-1" oW="110" oH="160"/>
+
+    <!-- original anchor = (42, 34) -> new anchor (-11, 40) diff = (53, -6)-->
+	<!-- add double it to texturepacker output offsets (4, 1) -> (110, -11), because hires-->
+    <sprite n="ACN_costume_01_flowers.png" x="2" y="156" w="55" h="95" pX="0.5" pY="0.5" oX="110" oY="-11" oW="60" oH="100"/>
+
+    <!-- original anchor = (11, 32) -> new anchor (14, 23) diff = (-3, 9)-->
+	<!-- add double it to texturepacker output offsets (7, 4) -> (1, 22), because hires-->
+    <sprite n="ACN_costume_01_legwarmer.png" x="59" y="156" w="52" h="46" pX="0.5" pY="0.5" oX="1" oY="22" oW="60" oH="60" r="y"/>
+</TextureAtlas>

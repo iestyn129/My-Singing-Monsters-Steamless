@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9062a143c410b999ca2749b2753659f2:b9ec4f98bada606d095cc2b9f3a0e42a:06acc8e4665beb666453ef1d7e7188d5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AB_costume_04_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AB_costume_04_body.png" x="2" y="421" w="90" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="AB_costume_04_headpiece_01.png" x="268" y="78" w="126" h="86" pX="0.5" pY="0.5" oX="27" oY="16" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_02.png" x="401" y="74" w="108" h="119" pX="0.5" pY="0.5" oX="23" oY="16" oW="151" oH="157"/>
+    <sprite n="AB_costume_04_headpiece_03.png" x="374" y="195" w="112" h="112" pX="0.5" pY="0.5" oX="24" oY="15" oW="151" oH="157"/>
+    <sprite n="AB_costume_04_headpiece_04.png" x="125" y="248" w="115" h="112" pX="0.5" pY="0.5" oX="20" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_05.png" x="129" y="153" w="124" h="93" pX="0.5" pY="0.5" oX="28" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_06.png" x="271" y="2" w="128" h="74" pX="0.5" pY="0.5" oX="32" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_07.png" x="2" y="118" w="125" h="89" pX="0.5" pY="0.5" oX="33" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_08.png" x="255" y="166" w="117" h="106" pX="0.5" pY="0.5" oX="28" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_09.png" x="242" y="274" w="112" h="112" pX="0.5" pY="0.5" oX="24" oY="15" oW="151" oH="157"/>
+    <sprite n="AB_costume_04_headpiece_10.png" x="2" y="311" w="115" h="108" pX="0.5" pY="0.5" oX="28" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_11.png" x="2" y="209" w="121" h="100" pX="0.5" pY="0.5" oX="29" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_12.png" x="139" y="64" w="127" h="87" pX="0.5" pY="0.5" oX="27" oY="15" oW="151" oH="157" r="y"/>
+    <sprite n="AB_costume_04_headpiece_bg.png" x="401" y="2" w="109" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="AB_costume_04_headpiece_fg.png" x="2" y="2" w="135" h="114" pX="0.5" pY="0.5"/>
+    <sprite n="AB_costume_04_neck.png" x="139" y="2" w="130" h="60" pX="0.5" pY="0.5" r="y"/>
+	
+	<!-- original anchor = (28, 43) -> new anchor (9, 16) diff = (19, 27)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (38, 54), because hires -->
+    <sprite n="AB_costume_04_tail_cover.png" x="94" y="421" w="47" h="50" pX="0.5" pY="0.5" oX="38" oY="54" />
+</TextureAtlas>

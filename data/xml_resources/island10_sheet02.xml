@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2604c452952d727443a24083b95b17ad:a673cce00b219cb5233cbd7f026d62ab:a993268ec3d87c75f200af9fd6a101fe$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island10_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="firefly_01" x="1964" y="280" w="48" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="island10_lights_001" x="2" y="885" w="568" h="550" pX="0.5" pY="0.5" oX="1" oY="1" oW="572" oH="560"/>
+    <sprite n="island10_lights_002" x="222" y="1437" w="486" h="498" pX="0.5" pY="0.5" oX="3" oY="3" oW="504" oH="496" r="y"/>
+    <sprite n="island10_lights_003" x="710" y="1381" w="322" h="304" pX="0.5" pY="0.5" oX="1" oY="1" oW="308" oH="328" r="y"/>
+    <sprite n="island10_lights_004" x="710" y="1687" w="279" h="236" pX="0.5" pY="0.5" oX="1" oY="0" oW="240" oH="280" r="y"/>
+    <sprite n="island10_lights_005" x="1592" y="2" w="424" h="276" pX="0.5" pY="0.5" oX="1" oY="1" oW="428" oH="280"/>
+    <sprite n="island10_lights_006" x="1290" y="1772" w="279" h="250" pX="0.5" pY="0.5" oX="1" oY="5" oW="256" oH="284" r="y"/>
+    <sprite n="island10_lights_007" x="1546" y="1174" w="462" h="458" pX="0.5" pY="0.5" oX="87" oY="23" oW="672" oH="632"/>
+    <sprite n="island10_lights_008" x="1290" y="1480" w="252" h="290" pX="0.5" pY="0.5" oX="3" oY="19" oW="296" oH="276" r="y"/>
+    <sprite n="island10_lights_009" x="572" y="1012" w="472" h="367" pX="0.5" pY="0.5" oX="0" oY="0" oW="472" oH="368"/>
+    <sprite n="island10_lights_010" x="1434" y="668" w="144" h="202" pX="0.5" pY="0.5" oX="3" oY="7" oW="208" oH="156" r="y"/>
+    <sprite n="island10_lights_011" x="1571" y="1634" w="208" h="242" pX="0.5" pY="0.5" oX="1" oY="3" oW="244" oH="216" r="y"/>
+    <sprite n="island10_lights_012" x="1781" y="1634" w="224" h="222" pX="0.5" pY="0.5" oX="1" oY="0" oW="224" oH="224" r="y"/>
+    <sprite n="island10_lights_013" x="1046" y="998" w="498" h="480" pX="0.5" pY="0.5" oX="3" oY="3" oW="508" oH="492"/>
+    <sprite n="island10_lights_014" x="2" y="716" w="587" h="167" pX="0.5" pY="0.5" oX="0" oY="0" oW="588" oH="168"/>
+    <sprite n="island10_lights_015" x="1546" y="1012" w="468" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="island10_lights_016" x="2" y="1437" w="218" h="536" pX="0.5" pY="0.5" oX="0" oY="2" oW="536" oH="228" r="y"/>
+    <sprite n="zap01" x="1034" y="1634" w="254" h="364" pX="0.5" pY="0.5" oX="53" oY="21" oW="832" oH="404"/>
+    <sprite n="zap02" x="2" y="2" w="808" h="380" pX="0.5" pY="0.5" oX="23" oY="13" oW="832" oH="404"/>
+    <sprite n="zap03" x="1592" y="280" w="370" h="730" pX="0.5" pY="0.5" oX="63" oY="15" oW="832" oH="404" r="y"/>
+    <sprite n="zap04" x="812" y="2" w="778" h="312" pX="0.5" pY="0.5" oX="5" oY="11" oW="832" oH="404"/>
+    <sprite n="zap05" x="812" y="316" w="720" h="350" pX="0.5" pY="0.5" oX="81" oY="7" oW="832" oH="404"/>
+    <sprite n="zap06" x="2" y="384" w="714" h="330" pX="0.5" pY="0.5" oX="87" oY="19" oW="832" oH="404"/>
+    <sprite n="zap07" x="718" y="668" w="714" h="328" pX="0.5" pY="0.5" oX="87" oY="21" oW="832" oH="404"/>
+</TextureAtlas>

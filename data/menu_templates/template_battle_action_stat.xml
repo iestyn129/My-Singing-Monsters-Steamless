@@ -1,0 +1,250 @@
+<template name="template_battle_action_stat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="228*game.menuScaleX()" h="32*game.menuScaleX()" />
+
+	<ninesliceComponent name="BG">
+		<size w="226*game.menuScaleX()" h="30*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				--component("alpha"):SetFloat(0.15)
+				component("layer"):SetString("PopUps")
+				component:setColor(1.0, 0, 0)
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</ninesliceComponent>
+	
+	<spriteSheetComponent name="Icon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_feed")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="ActionName">
+		<size w="120*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="36*game.menuScaleX()" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ATTACK")
+				component("size"):SetFloat(0.30*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="ActionTypeName">
+		<size w="60*game.menuScaleX()" h="12*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="38*game.menuScaleX()" yOffset="18*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("Action Type")
+				component("size"):SetFloat(0.16*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
+		</event>
+	</textComponent>
+
+	<spriteSheetComponent name="PowerIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="42*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("power_icon")
+				component("sheetName"):SetString("xml_resources/collect_stickers.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="PowerValue">
+		<size w="50*game.menuScaleX()" h="18*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0*game.menuScaleX()" yOffset="0*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("500")
+				component("size"):SetFloat(0.30*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			]]>
+		</event>
+	</textComponent>
+
+	<spriteSheetComponent name="LockedIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("monster_portrait_locked")
+				component("sheetName"):SetString("xml_resources/element_buttons.xml")
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="LockedText">
+		<size w="180*game.menuScaleX()" h="18*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="36*game.menuScaleX()" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("LOCKED")
+				component("size"):SetFloat(0.24*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+				component:setColor(0.5, 0.5, 0.5)
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="LockedInfo">
+		<size w="180*game.menuScaleX()" h="12*game.menuScaleX()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="38*game.menuScaleX()" yOffset="18*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("size"):SetFloat(0.16*game.menuScaleX())
+				component("layer"):SetString("PopUps")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
+		</event>
+	</textComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("locked"):SetInt(0)
+			element("visible"):SetInt(1)
+		]]>
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			if element("IsLocked"):GetInt() == 1 then
+				local unlockInfoText = game.getLocalizedText("BATTLE_ACTION_UNLOCK_INFO")
+				unlockInfoText = unlockInfoText:gsub("%${LEVEL}", element("UnlockLevel"):GetInt())
+				element["LockedInfo"]("text"):SetString(unlockInfoText)
+				element:DoStoredScript("setLocked")
+			else
+				element["Icon"]("spriteName"):SetString(element("IconSprite"):GetString())
+				element["Icon"]("sheetName"):SetString(element("IconSpriteSheet"):GetString())
+				element["ActionName"]("text"):SetString(element("ActionName"):GetString())
+				element["ActionTypeName"]("text"):SetString(element("ActionTypeName"):GetString())
+				element["PowerValue"]("text"):SetString(element("PowerValue"):GetString())
+			end
+		]]>
+	</event>
+	
+	<event name="setVisible" params="element">
+		<![CDATA[
+			element("visible"):SetInt(1)
+			local locked = element("locked"):GetInt() == 1
+			if locked then
+				element["Icon"]("visible"):SetInt(0)
+				element["ActionName"]("visible"):SetInt(0)
+				element["ActionTypeName"]("visible"):SetInt(0)
+				element["PowerIcon"]("visible"):SetInt(0)
+				element["PowerValue"]("visible"):SetInt(0)
+				element["LockedIcon"]("visible"):SetInt(1)
+				element["LockedText"]("visible"):SetInt(1)
+				element["LockedInfo"]("visible"):SetInt(1)
+				--element["BG"]("visible"):SetInt(1)
+			else
+				element["Icon"]("visible"):SetInt(1)
+				element["ActionName"]("visible"):SetInt(1)
+				element["ActionTypeName"]("visible"):SetInt(1)
+				element["PowerIcon"]("visible"):SetInt(1)
+				element["PowerValue"]("visible"):SetInt(1)
+				element["LockedIcon"]("visible"):SetInt(0)
+				element["LockedText"]("visible"):SetInt(0)
+				element["LockedInfo"]("visible"):SetInt(0)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element("visible"):SetInt(0)
+			element["Icon"]("visible"):SetInt(0)
+			element["ActionName"]("visible"):SetInt(0)
+			element["ActionTypeName"]("visible"):SetInt(0)
+			element["PowerIcon"]("visible"):SetInt(0)
+			element["PowerValue"]("visible"):SetInt(0)
+			element["LockedIcon"]("visible"):SetInt(0)
+			element["LockedText"]("visible"):SetInt(0)
+			element["LockedInfo"]("visible"):SetInt(0)
+			--element["BG"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="setLocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(1)
+			local isVisible = element("visible") == 1
+			if isVisible then			
+				element["Icon"]("visible"):SetInt(0)
+				element["ActionName"]("visible"):SetInt(0)
+				element["ActionTypeName"]("visible"):SetInt(0)
+				element["PowerIcon"]("visible"):SetInt(0)
+				element["PowerValue"]("visible"):SetInt(0)
+				element["LockedIcon"]("visible"):SetInt(1)
+				element["LockedText"]("visible"):SetInt(1)
+				element["LockedInfo"]("visible"):SetInt(1)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="setUnlocked" params="element">
+		<![CDATA[
+			element("locked"):SetInt(0)
+			local isVisible = element("visible") == 1
+			if isVisible then		
+				element["Icon"]("visible"):SetInt(1)
+				element["ActionName"]("visible"):SetInt(1)
+				element["ActionTypeName"]("visible"):SetInt(1)
+				element["PowerIcon"]("visible"):SetInt(1)
+				element["PowerValue"]("visible"):SetInt(1)
+				element["LockedIcon"]("visible"):SetInt(0)
+				element["LockedText"]("visible"):SetInt(0)
+				element["LockedInfo"]("visible"):SetInt(0)
+				--element["BG"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+
+</template>

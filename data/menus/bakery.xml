@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="15" priorityOffset="10" />
+		<ninesliceComponent name="Sprite">
+			<size w="290*game.menuScaleX()" h="236*game.menuScaleY()" />
+			<event name="onInit" params="component, element">			
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="BlackCover">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="13" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="270*game.menuScaleX()" h="42*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)				
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-3" />
+		<ninesliceComponent name="Sprite">
+			<size w="150*game.menuScaleX()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="LeftEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("bookend_structures")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="RightEnd">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("bookend_structures")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("hFlip"):SetInt(1)
+				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.37*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED);
+				component("text"):SetString("TREATS")
+				component("autoScaleFactor"):SetFloat(0.05)
+				component("autoScale"):SetInt(1)
+				component:setColor(0.43, 0.98, 0.02)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="FadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(30.0*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<touchComponent name="TouchBlockerTop">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="component, element">
+		
+			--call this because otherwise positions don't get updated properly until the onTicks
+			element:setPositionBroadcast(true)
+			
+			local topSprite = element:GetElement("FadeSprite");
+
+			component:setOrientation(lua_sys.MenuOrientation(0, -topSprite:absY(), 0, lua_sys.LEFT, lua_sys.BOTTOM))
+			component:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+		</event>
+	</touchComponent>
+
+	<touchComponent name="TouchBlockerBot">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="6" />
+		<event name="onPostInit" params="component, element">
+		
+			--call this because otherwise positions don't get updated properly until the onTicks
+			element:setPositionBroadcast(true)
+			
+			local botSprite = element:GetElement("bg");
+			
+			component:setOrientation(lua_sys.MenuOrientation(0, (botSprite:absY() + botSprite:absH() - 10), 6, lua_sys.LEFT, lua_sys.TOP))
+			component:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+		</event>
+	</touchComponent>
+	
+	<element name="BakeryItems">
+		<size w="150*game.menuScaleX()" h="170*game.menuScaleY()" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="60*game.hudScale()" priorityOffset="0" />
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component:GetVar("tSteps"):SetFloat(25.0)
+				component:listenToTouches(element)
+				
+				local totalHeight = game.numBakeryItems() * element:parent():GetElement("bakeryItem0"):GetElement("bg"):absH()
+				if(totalHeight &gt; element:parent():GetElement("bg"):absH()) then
+					component:setScrollSize(totalHeight - element:absH())
+				else
+					component:setScrollSize(0)
+				end
+				
+				element("scrollSize"):SetFloat(component:scrollSize())
+			</event>
+			<event name="onTick" params="component, element, dt">			
+				local first = element:GetElement("bakeryItem0")
+				
+				if first then
+					local scrollOffset = component:scrollOffset()
+					if(first:getOrientationPosition().y ~= scrollOffset) then
+					
+						first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), scrollOffset))
+						local scrollMarker = element:parent():GetElement("ScrollMarker");
+						local markerBookend = scrollMarker("originalYOffset"):GetInt()
+						
+						--range without borders is [0, (scrollbarH-scrollMarkerH)]
+						local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH();
+
+						local scrollMarkerYOffset = -(scrollOffset/component:scrollSize()) * markerMovementHeight;
+						
+						scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+						
+						scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+					end
+				end
+			</event>
+			<event name="setScrollOffsetToMarker" params="component, element">
+				component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="bg" dependentOnComponent="Sprite" />				
+			<event name="onInit" params="component, element">
+				component("singleTouch"):SetInt(1)
+			</event>
+		</touchComponent>
+		<event name="onInit" params="element">
+			local numItems = game.numBakeryItems()
+			local previous = nil
+			
+			for i=0, numItems-1 do
+				local bakeryItem = menu:addTemplateElement("template_bakeryitem", "bakeryItem"..i, element)
+
+				bakeryItem("itemNum"):SetInt(i)
+				
+				if(previous == nil) then
+					bakeryItem:relativeTo(element)
+					bakeryItem:setOrientation(lua_sys.MenuOrientation(0,0,-1, lua_sys.HCENTER, lua_sys.TOP))
+					bakeryItem:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+				else
+					bakeryItem:relativeTo(previous)
+					bakeryItem:setOrientation(lua_sys.MenuOrientation(0,0,0, lua_sys.HCENTER, lua_sys.TOP))
+					bakeryItem:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+				end
+				
+				previous = bakeryItem
+				
+				bakeryItem:init()
+				bakeryItem:setPositionBroadcast(true)				
+			end
+		</event>
+	</element>
+	
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.menuScaleX()" yOffset="20*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("scroll_bar_01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			element("scrollOffset"):SetFloat(0.0);
+		</event>
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				component("useOffsets"):SetInt(1)
+				component("spriteName"):SetString("scroll_bar_dot")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("layer"):SetString("MidPopUps")
+				element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y">
+			
+				local scrollBar = element:parent():GetElement("ScrollBar")
+				local fromTopOfMarkerRange = y - scrollBar:absY() - element("originalYOffset"):GetInt();
+				
+				local markerBookend = element("originalYOffset"):GetInt()
+				
+				local scrollSize = 0;
+				if(element:parent():GetElement("BakeryItems")("scrollSize") ~= nil) then
+					scrollSize = element:parent():GetElement("BakeryItems")("scrollSize"):GetFloat();
+				end
+				
+				local scrollOffset = (-(fromTopOfMarkerRange - markerBookend)/(scrollBar:absH() - 2*markerBookend - element:absH()))*scrollSize;
+				scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+				
+				element("scrollOffset"):SetFloat(scrollOffset);
+				element:parent():GetElement("BakeryItems")["Swiper"]:DoStoredScript("setScrollOffsetToMarker");
+			</event>
+		</touchComponent>
+	</element>
+	
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			local numItems = game.numBakeryItems()
+			
+			if(numItems > 0) then
+				local itemHeight = element:GetElement("BakeryItems"):GetElement("bakeryItem0"):absH()
+				
+				if((numItems*itemHeight) <= element:GetElement("BakeryItems"):absH()) then
+					element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+					element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		local transitionState = element("transitionState"):GetInt()		
+		
+		if(transitionState ~= 0) then
+			local transitionTime = element("transitionTime"):GetFloat()
+			element:DoStoredScript("TickTransition")
+			
+			if(transitionState == 1) then
+				transitionTime = (transitionTime + dt*3)
+			elseif(transitionState == 2) then
+				transitionTime = (transitionTime - dt*3)
+			end
+			
+			element("transitionTime"):SetFloat(transitionTime)
+			
+			if(transitionTime &gt; 1.0) then
+				element("transitionState"):SetInt(0)
+				element("transitionTime"):SetFloat(1.0)
+				element:DoStoredScript("TickTransition")
+			elseif(transitionTime &lt; 0.0) then
+				element:root():popPopUp()
+			end
+		end
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		local frame = element:GetElement("bg")
+		
+		frame("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+		game.setClipping("Clipping", (frame:absX() + 10)*lua_sys.deviceScaleX(), (frame:absY() + 50*game.hudScale()) * lua_sys.deviceScaleY(), (frame:absW() - 20) * lua_sys.deviceScaleX(), (frame:absH() - 50*game.hudScale() - 10) * lua_sys.deviceScaleY())
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+</menu>

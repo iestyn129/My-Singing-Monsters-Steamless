@@ -1,0 +1,27 @@
+<template name="template_instancelabel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<hudScale scale="lua_sys.screenWidth()/960.0" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+	
+	<textComponent name="Text">
+		
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTextFont())
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("multiline"):SetInt(0)
+			component("size"):SetFloat(element("sizeVar"):GetFloat())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			if(game.selectedObjIsMonster() and not game.isNewSelectedObject()) then
+				component("noTranslate"):SetInt(1)
+			end
+
+			component("text"):SetString(element("textVar"):GetString())
+			component("layer"):SetString(element("layerVar"):GetString())
+		</event>
+	</textComponent>
+	
+</template>

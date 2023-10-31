@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<size dependentOnElement="Fade" dependentOnComponent="Sprite" />
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$priority" equals="6" />
+	</template>
+
+	<element name="Bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="lua_sys.screenHeight() * 2.0" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*game.menuScaleX()" h="225*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("topHeight"):SetFloat(50.0)
+						component("bottomHeight"):SetFloat(50.0)
+						component("leftWidth"):SetFloat(50.0)
+						component("rightWidth"):SetFloat(50.0)
+						component("size"):SetFloat(0.5)
+						component("includeBorder"):SetInt(1)
+						component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+						component("layer"):SetString("FrontPopUps")
+					]]>
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_swirl_01")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_swirl_02")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("rotation"):SetFloat(-0.5*math.pi)
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="Title">
+		<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+		<position relativeTo="Bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+
+		<textComponent name="Text">
+			<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.6*game.menuScaleY())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component:setColor(0.938, 0.602, 0.113)
+				component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RewardsText">
+		<size w="360*game.menuScaleX()" h="64*game.menuScaleY()" />
+		<position relativeTo="Bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="48*game.menuScaleY()" priorityOffset="-1" />
+
+		<textComponent name="Text">
+			<size w="360*game.menuScaleX()" h="64*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.35*game.menuScaleY())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString("FrontPopUps")
+					]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="ContinueButton">
+		<templateVar name="$upSpriteName" equals="button_continue_green" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$text" equals="CONTINUE" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="Bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+				onTouchUp(component, element)
+				element:parent():DoStoredScript("hide")
+				]]>
+			</event>
+		</touchComponent>
+		<event name="onPostInit" params="element">
+			element["Text"]("size"):SetFloat(0.25*game.hudScale())
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</template>
+
+	<element name="Rewards">
+		<size w="386*game.menuScaleX()" h="160*game.menuScaleY()" />
+		<position relativeTo="Bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0*game.menuScaleY()" priorityOffset="0" />
+
+		<swipeComponent name="Swiper">
+			<event name="refresh" params="component, element">
+				<![CDATA[
+						include("ScrollingListHelper").SwiperRefresh(component, element)
+					]]>
+			</event>
+			<event name="onTick" params="component, element, dt">
+				<![CDATA[
+						include("ScrollingListHelper").SwiperTick(component, element, dt)
+					]]>
+			</event>
+		</swipeComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("singleTouch"):SetInt(1)
+					]]>
+			</event>
+		</touchComponent>
+
+	</element>
+
+	<script src="scripts/CostumeTeleportUnlockUI.lua" />
+	
+</menu>

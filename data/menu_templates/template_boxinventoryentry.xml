@@ -1,0 +1,153 @@
+<template name="template_boxinventoryentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<!-- used in box_inventory.xml (via box monster inventory on non-wublin island), shows monsters  -->
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+
+	<event name="onInit" params="element">
+		element.selected = 1
+	</event>
+	
+	<event name="onPostInit" params="element">
+		if(game.inAdminViewMode() and element:parent()("isUnderling"):GetInt() == 1) then
+			element["upArrow"]["Sprite"]("visible"):SetInt(1)
+			element["downArrow"]["Sprite"]("visible"):SetInt(1)
+		else
+			element["upArrow"]["Sprite"]("visible"):SetInt(0)
+			element["downArrow"]["Sprite"]("visible"):SetInt(0)
+		end
+
+	</event>
+	
+	<event name="select" params="element">
+		element.selected = 1
+		element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	<event name="deselect" params="element">
+		element.selected = 0
+		element["CharacterImage"]["Sprite"]:setColor(0.0, 0.0, 0.0)
+	</event>
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..element:parent().flexEggDef:getBoxedMonsterAnimName())
+				component("animation"):SetString("Store")
+				component:setScale(Vector2(0.5*game.menuScaleY(),0.5*game.menuScaleY()))
+				component("layer"):SetString("Clipping")
+			</event>
+		</aeComponent>
+	</element>
+	
+	<element name="MonsterName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:GetComponent("Text"):setSize(Vector2(element:parent()("actualWidth"):GetInt()*0.8, 100));
+			element("xOffset"):SetInt(-element:parent()("actualWidth"):GetInt()/2*0.8)
+		</event>
+		<textComponent name="Text">
+			<size w="1265*lua_sys.screenWidth() / 480.0"/>
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(element:parent().flexEggDef:strTitle())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)	
+		</event>
+		<event name="onPostInit" params="component, element">
+			component:setSize(Vector2(element("actualWidth"):GetInt(), element("actualHeight"):GetInt()));
+		</event>
+		<event name="onTouchUp" params="component, element, x, y">
+			<![CDATA[
+				if(component("dragging"):GetInt() < 2) then
+					if(game.inAdminViewMode()) then
+						if(element:parent()("isUnderling"):GetInt() == 1) then
+						
+							local upPosX = element:GetElement("upArrow"):absX();
+							local upPosY = element:GetElement("upArrow"):absY();
+							
+							local downPosX = element:GetElement("downArrow"):absX();
+							local downPosY = element:GetElement("downArrow"):absY();
+							
+							if(upPosX < x and x < ( upPosX + element:GetElement("upArrow"):absW() ) and
+								upPosY < y and y < ( upPosY + element:GetElement("upArrow"):absH() )) then
+								
+								game.adminBoxMonsterToggleOn(element.flexEggDef)
+								
+							elseif(downPosX < x and x < (downPosX + element:GetElement("downArrow"):absW() ) and 
+								downPosY < y and y < (downPosY + element:GetElement("downArrow"):absH())) then
+								
+								game.adminBoxMonsterToggleOff(element.flexEggDef)
+							end
+						else
+							if(element.selected == 1) then
+								game.adminBoxMonsterToggleOff(element.flexEggDef)
+							else
+								game.adminBoxMonsterToggleOn(element.flexEggDef)
+							end
+						end
+					end
+				end
+				
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+	</touchComponent>
+	
+	<element name="upArrow" params="element">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.65 * game.menuScaleX())
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+		
+	</element>
+	<element name="downArrow" params="element">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.65 * game.menuScaleX())
+				component("hFlip"):SetInt(1)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+		
+	</element>
+
+</template>

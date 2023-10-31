@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d2e5ebf664a3906b882d0e5d24495787:457313d1465d15d5f7bdb6a3dbe1876f:7c5a8e6e0ba3ed78ecf992c2615d9178$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_EW_sheet.png" width="512" height="512" hires="true">
+    <sprite n="EW_back_hand_01" x="43" y="462" w="38" h="46" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="40" r="y"/>
+    <sprite n="EW_back_hand_02" x="2" y="462" w="39" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="40" r="y"/>
+    <sprite n="EW_back_hand_03" x="2" y="370" w="52" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="40"/>
+    <sprite n="EW_back_hand_04" x="253" y="283" w="54" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="40"/>
+    <sprite n="EW_back_hand_05" x="98" y="407" w="38" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="55" oH="40" r="y"/>
+    <sprite n="EW_body" x="215" y="206" w="98" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="EW_bulb" x="109" y="123" w="104" h="103" pX="0.5" pY="0.5"/>
+    <sprite n="EW_bulb_glow" x="234" y="2" w="202" h="202" pX="0.5" pY="0.5"/>
+    <sprite n="EW_eye" x="183" y="442" w="25" h="25" pX="0.5" pY="0.5"/>
+    <sprite n="EW_eyelid_01" x="143" y="359" w="28" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="EW_eyelid_02" x="153" y="443" w="28" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="EW_eyelid_03" x="153" y="474" w="28" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="EW_eyelid_04" x="160" y="390" w="28" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="EW_filament_01" x="438" y="82" w="63" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_filament_02" x="438" y="146" w="63" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_front_hand_01" x="2" y="410" w="48" h="50" pX="0.5" pY="0.5" oX="2" oY="0" oW="53" oH="56" r="y"/>
+    <sprite n="EW_front_hand_02" x="2" y="318" w="52" h="50" pX="0.5" pY="0.5" oX="1" oY="0" oW="53" oH="56"/>
+    <sprite n="EW_front_hand_03" x="93" y="305" w="53" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="53" oH="56" r="y"/>
+    <sprite n="EW_front_hand_04" x="438" y="293" w="56" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="53" oH="56" r="y"/>
+    <sprite n="EW_front_hand_05" x="148" y="305" w="46" h="49" pX="0.5" pY="0.5" oX="3" oY="0" oW="53" oH="56" r="y"/>
+    <sprite n="EW_front_hand_06" x="52" y="410" w="44" h="49" pX="0.5" pY="0.5" oX="3" oY="0" oW="53" oH="56" r="y"/>
+    <sprite n="EW_head" x="2" y="177" w="101" h="97" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_left_back_lowerleg" x="438" y="264" w="57" h="27" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_left_back_upperleg" x="196" y="283" w="55" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_left_front_lowerleg" x="315" y="264" w="76" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="EW_left_front_upperleg" x="105" y="262" w="89" h="41" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_left_middle_hand_01" x="83" y="461" w="19" h="45" pX="0.5" pY="0.5" oX="3" oY="0" oW="22" oH="45"/>
+    <sprite n="EW_left_middle_hand_02" x="104" y="453" w="19" h="42" pX="0.5" pY="0.5" oX="3" oY="0" oW="22" oH="45"/>
+    <sprite n="EW_left_middle_hand_03" x="138" y="403" w="20" h="38" pX="0.5" pY="0.5" oX="2" oY="0" oW="22" oH="45"/>
+    <sprite n="EW_left_middle_hand_04" x="56" y="349" w="35" h="20" pX="0.5" pY="0.5" oX="2" oY="0" oW="22" oH="45" r="y"/>
+    <sprite n="EW_left_middle_hand_05" x="56" y="371" w="31" h="20" pX="0.5" pY="0.5" oX="2" oY="0" oW="22" oH="45" r="y"/>
+    <sprite n="EW_left_middle_lowerleg" x="403" y="206" w="33" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="EW_left_middle_upperleg" x="315" y="206" w="86" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="EW_left_tooth" x="160" y="421" w="25" h="19" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_pupil" x="215" y="123" w="11" h="11" pX="0.5" pY="0.5"/>
+    <sprite n="EW_right_back_lowerleg" x="438" y="44" w="65" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_right_back_upperleg" x="438" y="210" w="61" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="EW_right_front_lowerleg" x="438" y="2" w="70" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_right_front_upperleg" x="105" y="228" w="93" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_right_middle_hand_01" x="93" y="359" w="23" h="46" pX="0.5" pY="0.5" oX="1" oY="0" oW="32" oH="46"/>
+    <sprite n="EW_right_middle_hand_02" x="393" y="294" w="43" h="22" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="46" r="y"/>
+    <sprite n="EW_right_middle_hand_03" x="118" y="359" w="23" h="42" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="46"/>
+    <sprite n="EW_right_middle_hand_04" x="125" y="453" w="26" h="38" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="46"/>
+    <sprite n="EW_right_middle_hand_05" x="56" y="318" w="35" h="29" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="46" r="y"/>
+    <sprite n="EW_right_middle_lowerleg" x="2" y="123" w="105" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="EW_right_middle_upperleg" x="2" y="276" w="89" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="EW_right_tooth" x="173" y="356" w="18" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="EW_shadow" x="2" y="2" w="230" h="119" pX="0.5" pY="0.5"/>
+</TextureAtlas>

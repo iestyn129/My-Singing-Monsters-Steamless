@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:abce2fe5a3ec816453892570ce15ae29:a4bfa659ff94e843c9b6035822ab06d5:10e897643d86ef8aa088d215b9bb4822$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U14_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="Back" x="175" y="372" w="111" h="151" pX="0.5" pY="0.5" oX="1" oY="2" oW="112" oH="154"/>
+    <sprite n="Head" x="302" y="220" w="196" h="167" pX="0.5" pY="0.5" oX="4" oY="7" oW="202" oH="176"/>
+    <sprite n="Left Cymbal" x="288" y="389" w="162" h="58" pX="0.5" pY="0.5" oX="15" oY="11" oW="84" oH="186" r="y"/>
+    <sprite n="Left Eye Arm" x="269" y="546" w="140" h="44" pX="0.5" pY="0.5" oX="9" oY="11" oW="64" oH="160" r="y"/>
+    <sprite n="Left Eye Base" x="166" y="562" w="96" h="35" pX="0.5" pY="0.5" oX="11" oY="0" oW="54" oH="104" r="y"/>
+    <sprite n="Left Eye Shine" x="411" y="546" w="18" h="28" pX="0.5" pY="0.5" oX="21" oY="28" oW="72" oH="100"/>
+    <sprite n="Left Eyeball" x="452" y="389" w="58" h="44" pX="0.5" pY="0.5" oX="12" oY="19" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 1" x="2" y="752" w="78" h="52" pX="0.5" pY="0.5" oX="11" oY="10" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 2" x="2" y="806" w="77" h="55" pX="0.5" pY="0.5" oX="8" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 3" x="433" y="515" w="77" h="56" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 4" x="162" y="770" w="77" h="56" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 5" x="82" y="789" w="77" h="56" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid Base" x="326" y="783" w="61" h="45" pX="0.5" pY="0.5" oX="19" oY="31" oW="72" oH="100" r="y"/>
+    <sprite n="Left FTip 1" x="392" y="647" w="36" h="35" pX="0.5" pY="0.5" oX="7" oY="26" oW="52" oH="68" r="y"/>
+    <sprite n="Left FTip 2" x="326" y="753" w="62" h="28" pX="0.5" pY="0.5" oX="11" oY="9" oW="46" oH="84" r="y"/>
+    <sprite n="Left FTip 3" x="143" y="551" w="21" h="45" pX="0.5" pY="0.5" oX="31" oY="13" oW="60" oH="64"/>
+    <sprite n="Left Finger 1" x="424" y="762" w="41" h="27" pX="0.5" pY="0.5" oX="19" oY="9" oW="52" oH="68" r="y"/>
+    <sprite n="Left Finger 2" x="389" y="788" w="29" h="39" pX="0.5" pY="0.5" oX="11" oY="9" oW="46" oH="84"/>
+    <sprite n="Left Finger 3" x="51" y="863" w="28" h="44" pX="0.5" pY="0.5" oX="8" oY="6" oW="60" oH="64" r="y"/>
+    <sprite n="Left Hand" x="89" y="679" w="48" h="38" pX="0.5" pY="0.5" oX="6" oY="7" oW="60" oH="52"/>
+    <sprite n="Left Lower Arm" x="2" y="679" w="85" h="71" pX="0.5" pY="0.5" oX="5" oY="7" oW="80" oH="96" r="y"/>
+    <sprite n="Left Pupil" x="139" y="681" w="25" h="32" pX="0.5" pY="0.5" oX="15" oY="31" oW="72" oH="100"/>
+    <sprite n="Left Upper Arm" x="166" y="665" w="87" h="45" pX="0.5" pY="0.5" oX="7" oY="7" oW="100" oH="58"/>
+    <sprite n="Mouth 1" x="175" y="276" w="122" h="94" pX="0.5" pY="0.5" oX="21" oY="15" oW="158" oH="118"/>
+    <sprite n="Mouth 2" x="431" y="573" w="79" h="129" pX="0.5" pY="0.5" oX="13" oY="15" oW="158" oH="118" r="y"/>
+    <sprite n="Mouth 3" x="2" y="602" w="135" h="75" pX="0.5" pY="0.5" oX="13" oY="14" oW="158" oH="118"/>
+    <sprite n="Mouth 4" x="2" y="551" w="139" h="49" pX="0.5" pY="0.5" oX="10" oY="12" oW="158" oH="118"/>
+    <sprite n="Mouth 5" x="288" y="490" w="143" h="54" pX="0.5" pY="0.5" oX="8" oY="10" oW="158" oH="118"/>
+    <sprite n="Right Cymbal" x="2" y="493" w="165" h="56" pX="0.5" pY="0.5" oX="10" oY="12" oW="78" oH="188" r="y"/>
+    <sprite n="Right Eye Arm" x="288" y="449" w="154" h="39" pX="0.5" pY="0.5" oX="13" oY="3" oW="64" oH="166" r="y"/>
+    <sprite n="Right Eye Base" x="169" y="525" w="98" h="35" pX="0.5" pY="0.5" oX="10" oY="6" oW="60" oH="112" r="y"/>
+    <sprite n="Right Eye Shine" x="411" y="576" w="18" h="27" pX="0.5" pY="0.5" oX="36" oY="30" oW="72" oH="100"/>
+    <sprite n="Right Eyeball" x="81" y="847" w="59" h="44" pX="0.5" pY="0.5" oX="15" oY="18" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 1" x="246" y="748" w="78" h="52" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 2" x="336" y="673" w="54" h="78" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100"/>
+    <sprite n="Right Eyelid 3" x="452" y="435" w="56" h="78" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100"/>
+    <sprite n="Right Eyelid 4" x="428" y="704" w="78" h="56" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 5" x="166" y="712" w="78" h="56" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid Base" x="161" y="828" w="60" h="43" pX="0.5" pY="0.5" oX="8" oY="33" oW="72" oH="100" r="y"/>
+    <sprite n="Right FTip 1" x="2" y="891" w="46" h="27" pX="0.5" pY="0.5" oX="11" oY="6" oW="72" oH="70" r="y"/>
+    <sprite n="Right FTip 2" x="143" y="598" w="21" h="44" pX="0.5" pY="0.5" oX="9" oY="21" oW="56" oH="72"/>
+    <sprite n="Right FTip 3" x="392" y="720" w="32" h="38" pX="0.5" pY="0.5" oX="7" oY="21" oW="46" oH="66"/>
+    <sprite n="Right Finger 1" x="2" y="863" w="47" h="26" pX="0.5" pY="0.5" oX="17" oY="6" oW="72" oH="70"/>
+    <sprite n="Right Finger 2" x="392" y="605" w="37" h="40" pX="0.5" pY="0.5" oX="9" oY="6" oW="56" oH="72" r="y"/>
+    <sprite n="Right Finger 3" x="139" y="644" w="25" h="35" pX="0.5" pY="0.5" oX="6" oY="6" oW="46" oH="66"/>
+    <sprite n="Right Hand" x="241" y="802" w="65" h="38" pX="0.5" pY="0.5" oX="9" oY="7" oW="86" oH="52"/>
+    <sprite n="Right Lower Arm" x="166" y="599" w="95" h="64" pX="0.5" pY="0.5" oX="7" oY="6" oW="110" oH="78"/>
+    <sprite n="Right Pupil" x="390" y="760" w="32" h="26" pX="0.5" pY="0.5" oX="31" oY="31" oW="72" oH="100" r="y"/>
+    <sprite n="Right Upper Arm" x="255" y="673" w="79" h="73" pX="0.5" pY="0.5" oX="5" oY="6" oW="86" oH="92" r="y"/>
+    <sprite n="Shell Back" x="264" y="592" w="126" h="79" pX="0.5" pY="0.5" oX="8" oY="8" oW="96" oH="144" r="y"/>
+    <sprite n="Shell" x="2" y="276" w="171" h="129" pX="0.5" pY="0.5" oX="7" oY="9" oW="144" oH="186" r="y"/>
+    <sprite n="Statue" x="2" y="2" w="298" h="272" pX="0.5" pY="0.5" oX="17" oY="27" oW="352" oH="312"/>
+    <sprite n="Tail Tip" x="392" y="684" w="34" h="34" pX="0.5" pY="0.5" oX="51" oY="9" oW="98" oH="90"/>
+    <sprite n="Tail" x="89" y="719" w="71" h="68" pX="0.5" pY="0.5" oX="7" oY="15" oW="98" oH="90"/>
+    <sprite n="Torso" x="302" y="2" w="207" h="216" pX="0.5" pY="0.5" oX="8" oY="23" oW="232" oH="238" r="y"/>
+    <sprite n="shadow50percent" x="2" y="407" w="166" h="84" pX="0.5" pY="0.5" oX="15" oY="6" oW="197" oH="90"/>
+</TextureAtlas>

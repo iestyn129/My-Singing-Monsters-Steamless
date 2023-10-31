@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0458988c67743ef7e1e5d05de17a3e31:afb3b67b03ba5ac4f2b1a02ea63d66ac:7b800a33f82c73a201b93a95eee06406$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island17_sheet01_bh.png" width="2048" height="2048" hires="true">
+    <sprite n="000" x="1142" y="940" w="11" h="24" pX="0.5" pY="0.5" oX="21" oY="122" oW="200" oH="191" r="y"/>
+    <sprite n="001" x="293" y="2021" w="34" h="23" pX="0.5" pY="0.5" oX="24" oY="109" oW="200" oH="191"/>
+    <sprite n="002" x="1260" y="1958" w="88" h="73" pX="0.5" pY="0.5" oX="26" oY="42" oW="200" oH="191" r="y"/>
+    <sprite n="003" x="1843" y="1015" w="105" h="125" pX="0.5" pY="0.5" oX="17" oY="25" oW="200" oH="191" r="y"/>
+    <sprite n="004" x="1863" y="610" w="134" h="117" pX="0.5" pY="0.5" oX="31" oY="0" oW="200" oH="191" r="y"/>
+    <sprite n="005" x="1596" y="804" w="114" h="129" pX="0.5" pY="0.5" oX="32" oY="12" oW="200" oH="191"/>
+    <sprite n="006" x="1751" y="757" w="139" h="128" pX="0.5" pY="0.5" oX="22" oY="34" oW="200" oH="191" r="y"/>
+    <sprite n="007" x="1596" y="378" w="100" h="153" pX="0.5" pY="0.5" oX="27" oY="68" oW="200" oH="191" r="y"/>
+    <sprite n="008" x="1700" y="378" w="151" h="112" pX="0.5" pY="0.5" oX="32" oY="54" oW="200" oH="191"/>
+    <sprite n="009" x="1596" y="535" w="123" h="149" pX="0.5" pY="0.5" oX="37" oY="43" oW="200" oH="191" r="y"/>
+    <sprite n="010" x="1596" y="688" w="151" h="112" pX="0.5" pY="0.5" oX="35" oY="54" oW="200" oH="191"/>
+    <sprite n="011" x="1723" y="494" w="151" h="112" pX="0.5" pY="0.5" oX="35" oY="54" oW="200" oH="191"/>
+    <sprite n="012" x="395" y="1895" w="169" h="106" pX="0.5" pY="0.5" oX="17" oY="60" oW="200" oH="191"/>
+    <sprite n="013" x="604" y="1954" w="185" h="84" pX="0.5" pY="0.5" oX="1" oY="82" oW="200" oH="191"/>
+    <sprite n="014" x="306" y="1831" w="85" h="186" pX="0.5" pY="0.5" oX="0" oY="81" oW="200" oH="191" r="y"/>
+    <sprite n="015" x="1198" y="1853" w="164" h="101" pX="0.5" pY="0.5" oX="22" oY="65" oW="200" oH="191"/>
+    <sprite n="016" x="1023" y="1690" w="172" h="71" pX="0.5" pY="0.5" oX="14" oY="108" oW="200" oH="191"/>
+    <sprite n="017" x="1855" y="378" w="151" h="103" pX="0.5" pY="0.5" oX="22" oY="77" oW="200" oH="191"/>
+    <sprite n="018" x="1023" y="1765" w="103" h="166" pX="0.5" pY="0.5" oX="13" oY="62" oW="200" oH="191" r="y"/>
+    <sprite n="019" x="1366" y="1823" w="116" h="159" pX="0.5" pY="0.5" oX="16" oY="48" oW="200" oH="191" r="y"/>
+    <sprite n="020" x="1320" y="1690" w="154" h="129" pX="0.5" pY="0.5" oX="23" oY="30" oW="200" oH="191"/>
+    <sprite n="021" x="1751" y="610" w="108" h="143" pX="0.5" pY="0.5" oX="40" oY="38" oW="200" oH="191" r="y"/>
+    <sprite n="022" x="1714" y="889" w="126" h="122" pX="0.5" pY="0.5" oX="49" oY="45" oW="200" oH="191"/>
+    <sprite n="023" x="1199" y="1690" w="117" h="159" pX="0.5" pY="0.5" oX="52" oY="22" oW="200" oH="191"/>
+    <sprite n="024" x="1878" y="485" w="130" h="94" pX="0.5" pY="0.5" oX="67" oY="89" oW="200" oH="191"/>
+    <sprite n="025" x="906" y="1923" w="84" h="102" pX="0.5" pY="0.5" oX="93" oY="80" oW="200" oH="191"/>
+    <sprite n="026" x="1596" y="937" w="83" h="76" pX="0.5" pY="0.5" oX="93" oY="106" oW="200" oH="191"/>
+    <sprite n="027" x="1130" y="1765" w="64" h="93" pX="0.5" pY="0.5" oX="87" oY="119" oW="200" oH="191" r="y"/>
+    <sprite n="028" x="563" y="1806" w="49" h="79" pX="0.5" pY="0.5" oX="95" oY="133" oW="200" oH="191" r="y"/>
+    <sprite n="029" x="260" y="1945" w="29" h="80" pX="0.5" pY="0.5" oX="91" oY="155" oW="200" oH="191" r="y"/>
+    <sprite n="030" x="1142" y="841" w="13" h="51" pX="0.5" pY="0.5" oX="107" oY="168" oW="200" oH="191" r="y"/>
+    <sprite n="031" x="1142" y="784" w="15" h="53" pX="0.5" pY="0.5" oX="99" oY="167" oW="200" oH="191" r="y"/>
+    <sprite n="batch_01" x="1044" y="976" w="114" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="batch_02" x="369" y="2021" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="batch_03" x="1154" y="1958" w="102" h="76" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="batch_04" x="1486" y="1981" w="86" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="central_platform_mstr" x="1044" y="1024" w="466" h="662" pX="0.5" pY="0.5" oX="63" oY="0" oW="750" oH="466" r="y"/>
+    <sprite n="cheek_right" x="632" y="784" w="408" h="719" pX="0.5" pY="0.5" oX="0" oY="2" oW="408" oH="724"/>
+    <sprite n="crack_01" x="994" y="1935" w="156" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="crystal_patch_01" x="830" y="1904" w="72" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ear" x="1162" y="4" w="430" h="1016" pX="0.5" pY="0.5"/>
+    <sprite n="eye" x="4" y="4" w="1154" h="776" pX="0.5" pY="0.5"/>
+    <sprite n="firefly" x="604" y="1889" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="flame" x="1352" y="1986" w="44" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44" r="y"/>
+    <sprite n="glow" x="1130" y="1862" w="42" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="54"/>
+    <sprite n="head_bg_01" x="4" y="1565" w="400" h="262" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="head_bg_02" x="4" y="784" w="624" h="777" pX="0.5" pY="0.5" oX="1" oY="0" oW="778" oH="624" r="y"/>
+    <sprite n="head_bg_03" x="1596" y="4" w="364" h="370" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hplant_01" x="926" y="1507" w="93" h="412" pX="0.5" pY="0.5" oX="1" oY="2" oW="94" oH="414"/>
+    <sprite n="hplant_02" x="497" y="1565" w="62" h="317" pX="0.5" pY="0.5" oX="0" oY="0" oW="62" oH="318"/>
+    <sprite n="hplant_03" x="563" y="1565" w="56" h="237" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="238"/>
+    <sprite n="hplant_04" x="408" y="1565" w="85" h="326" pX="0.5" pY="0.5" oX="0" oY="0" oW="326" oH="86" r="y"/>
+    <sprite n="hplant_05" x="604" y="1904" w="222" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="hplant_06" x="4" y="1945" w="252" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="nose" x="1514" y="1024" w="325" h="654" pX="0.5" pY="0.5" oX="1" oY="0" oW="326" oH="654"/>
+    <sprite n="purple_side_grass" x="4" y="1831" w="298" h="110" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ref_rectangle_01" x="793" y="1954" w="28" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ref_romb" x="46" y="2007" w="32" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="ref_shape04" x="1142" y="896" w="16" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="ref_shape05" x="793" y="2012" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="ref_shape06" x="82" y="2007" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ref_side_shape_01" x="331" y="2021" w="34" h="12" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ref_side_shape_02" x="557" y="2032" w="34" h="12" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ref_square" x="616" y="1806" w="12" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ref_triangle" x="4" y="2007" w="38" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="side_pl_det" x="1044" y="784" w="94" h="188" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="skulls_sl" x="1514" y="1682" w="352" h="295" pX="0.5" pY="0.5" oX="0" oY="28" oW="354" oH="374"/>
+    <sprite n="skulls_sr" x="632" y="1507" w="290" h="393" pX="0.5" pY="0.5" oX="25" oY="14" oW="418" oH="356" r="y"/>
+    <sprite n="sm_hplant_01" x="568" y="1889" w="32" h="139" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="140"/>
+    <sprite n="sm_hplant_02" x="395" y="2005" w="158" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="34" oH="160" r="y"/>
+</TextureAtlas>

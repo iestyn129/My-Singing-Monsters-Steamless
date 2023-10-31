@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9aee7e19ab9497a22bce0dc6327e9078:75ca75135cef45e2cb6921acda226491:183e1b09f4c8fca2b56e780207f81b48$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U09_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="Back Mushroom 01" x="746" y="207" w="30" h="38" pX="0.5" pY="0.5" oX="10" oY="11" oW="56" oH="48" r="y"/>
+    <sprite n="Back Mushroom 02" x="519" y="481" w="48" h="78" pX="0.5" pY="0.5" oX="9" oY="9" oW="68" oH="102"/>
+    <sprite n="Back Mushroom 03" x="746" y="158" w="42" h="47" pX="0.5" pY="0.5" oX="8" oY="5" oW="52" oH="58"/>
+    <sprite n="Head" x="554" y="72" w="190" h="174" pX="0.5" pY="0.5" oX="9" oY="5" oW="212" oH="186"/>
+    <sprite n="Left Eyelid 01" x="500" y="2" w="52" h="82" pX="0.5" pY="0.5" oX="0" oY="6" oW="86" oH="64" r="y"/>
+    <sprite n="Left Eyelid 02" x="500" y="186" w="52" h="82" pX="0.5" pY="0.5" oX="0" oY="6" oW="86" oH="64" r="y"/>
+    <sprite n="Left Eyelid 03" x="613" y="783" w="82" h="52" pX="0.5" pY="0.5" oX="0" oY="6" oW="86" oH="64"/>
+    <sprite n="Left Eyelid 04" x="697" y="783" w="82" h="52" pX="0.5" pY="0.5" oX="0" oY="6" oW="86" oH="64"/>
+    <sprite n="Left Fin" x="379" y="880" w="173" h="142" pX="0.5" pY="0.5" oX="27" oY="8" oW="184" oH="194" r="y"/>
+    <sprite n="Left Finger 01" x="761" y="412" w="58" h="60" pX="0.5" pY="0.5" oX="5" oY="10" oW="66" oH="74" r="y"/>
+    <sprite n="Left Finger 02" x="495" y="270" w="56" h="66" pX="0.5" pY="0.5" oX="4" oY="9" oW="72" oH="68" r="y"/>
+    <sprite n="Left Hand" x="426" y="72" w="71" h="67" pX="0.5" pY="0.5" oX="8" oY="10" oW="84" oH="84"/>
+    <sprite n="Left Lower Arm Mushrooms" x="554" y="248" w="56" h="106" pX="0.5" pY="0.5" oX="9" oY="4" oW="68" oH="124"/>
+    <sprite n="Left Lower Arm" x="410" y="721" w="107" h="151" pX="0.5" pY="0.5" oX="10" oY="7" oW="124" oH="158"/>
+    <sprite n="Left Lower Leg" x="2" y="886" w="86" h="132" pX="0.5" pY="0.5" oX="7" oY="4" oW="98" oH="144"/>
+    <sprite n="Left Shoulder" x="570" y="356" w="189" h="125" pX="0.5" pY="0.5" oX="14" oY="3" oW="158" oH="198" r="y"/>
+    <sprite n="Left Thumb" x="982" y="247" w="29" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="70" oH="40" r="y"/>
+    <sprite n="Left Toes" x="426" y="244" w="67" h="110" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="68" r="y"/>
+    <sprite n="Left Upper Arm" x="793" y="2" w="216" h="190" pX="0.5" pY="0.5" oX="0" oY="18" oW="238" oH="234" r="y"/>
+    <sprite n="Left Upper Leg" x="569" y="483" w="100" h="60" pX="0.5" pY="0.5" oX="3" oY="11" oW="70" oH="120" r="y"/>
+    <sprite n="Mouth 01" x="199" y="886" w="178" h="126" pX="0.5" pY="0.5" oX="13" oY="4" oW="206" oH="130"/>
+    <sprite n="Mouth 02" x="612" y="248" w="176" h="92" pX="0.5" pY="0.5" oX="17" oY="9" oW="206" oH="130"/>
+    <sprite n="Mouth 03" x="790" y="313" w="190" h="97" pX="0.5" pY="0.5" oX="10" oY="9" oW="206" oH="130"/>
+    <sprite n="Mouth 04" x="790" y="194" w="190" h="117" pX="0.5" pY="0.5" oX="8" oY="10" oW="206" oH="130"/>
+    <sprite n="Mouth 05" x="554" y="840" w="92" h="117" pX="0.5" pY="0.5" oX="69" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 06" x="648" y="837" w="92" h="109" pX="0.5" pY="0.5" oX="77" oY="11" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 07" x="700" y="545" w="92" h="113" pX="0.5" pY="0.5" oX="73" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 08" x="90" y="886" w="107" h="131" pX="0.5" pY="0.5" oX="55" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 09" x="597" y="545" w="101" h="119" pX="0.5" pY="0.5" oX="67" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 10" x="613" y="666" w="92" h="115" pX="0.5" pY="0.5" oX="71" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Mouth 11" x="519" y="701" w="92" h="137" pX="0.5" pY="0.5" oX="49" oY="10" oW="206" oH="130" r="y"/>
+    <sprite n="Pupil" x="982" y="227" w="31" h="18" pX="0.5" pY="0.5" oX="2" oY="3" oW="24" oH="38" r="y"/>
+    <sprite n="Right Arm Mushroom 01" x="746" y="72" w="44" h="84" pX="0.5" pY="0.5" oX="5" oY="5" oW="58" oH="96"/>
+    <sprite n="Right Arm Mushrooms 02" x="982" y="194" w="40" h="31" pX="0.5" pY="0.5" oX="4" oY="6" oW="38" oH="52" r="y"/>
+    <sprite n="Right Eyelid 01" x="499" y="86" w="53" h="48" pX="0.5" pY="0.5" oX="3" oY="4" oW="58" oH="56"/>
+    <sprite n="Right Eyelid 02" x="499" y="136" w="53" h="48" pX="0.5" pY="0.5" oX="3" oY="4" oW="58" oH="56"/>
+    <sprite n="Right Eyelid 03" x="554" y="959" w="48" h="53" pX="0.5" pY="0.5" oX="3" oY="4" oW="58" oH="56" r="y"/>
+    <sprite n="Right Eyelid 04" x="604" y="959" w="48" h="53" pX="0.5" pY="0.5" oX="3" oY="4" oW="58" oH="56" r="y"/>
+    <sprite n="Right Fin" x="293" y="721" w="115" h="157" pX="0.5" pY="0.5" oX="28" oY="10" oW="152" oH="172"/>
+    <sprite n="Right Hand" x="426" y="2" w="72" h="68" pX="0.5" pY="0.5" oX="5" oY="9" oW="80" oH="80"/>
+    <sprite n="Right Lower Arm" x="426" y="356" w="142" h="123" pX="0.5" pY="0.5" oX="9" oY="6" oW="140" oH="148" r="y"/>
+    <sprite n="Right Lower Leg" x="500" y="561" w="95" h="138" pX="0.5" pY="0.5" oX="9" oY="2" oW="104" oH="144"/>
+    <sprite n="Right Toes" x="671" y="483" w="99" h="60" pX="0.5" pY="0.5" oX="7" oY="4" oW="110" oH="68"/>
+    <sprite n="Right Upper Arm" x="293" y="482" w="205" h="237" pX="0.5" pY="0.5" oX="12" oY="15" oW="258" oH="234" r="y"/>
+    <sprite n="Right Upper Leg" x="426" y="141" w="69" h="101" pX="0.5" pY="0.5" oX="7" oY="6" oW="84" oH="114"/>
+    <sprite n="Shadow 50-Percent" x="554" y="2" w="237" h="68" pX="0.5" pY="0.5" oX="9" oY="0" oW="248" oH="68"/>
+    <sprite n="Torso" x="2" y="482" w="289" h="402" pX="0.5" pY="0.5" oX="13" oY="8" oW="334" oH="416"/>
+    <sprite n="statue" x="2" y="2" w="422" h="478" pX="0.5" pY="0.5" oX="23" oY="17" oW="456" oH="512"/>
+</TextureAtlas>

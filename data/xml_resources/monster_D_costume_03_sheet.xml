@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:915274aac28736520cd01eb3c9ece8c1:279278e87c2b424cfff25ba83086f125:7420369fda88331a407a6bc1406e1076$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+
+
+
+
+<TextureAtlas imagePath="gfx/costumes/monster_D_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="D_shadow_tube.png" x="2" y="414" w="142" h="81" pX="0.5" pY="0.5" oX="0" oY="0" oW="148" oH="84"/>
+	<!-- original anchor = (53, 80) -> new anchor (80, 49) diff = (-27, 31)-->
+	<!-- add double it to texturepacker output offsets (51, 4) -> (-3, 66), because hires-->
+    <sprite n="D_tube_back.png" x="2" y="2" w="218" h="105" pX="0.5" pY="0.5" oX="-3" oY="66" oW="320" oH="200"/>
+	<!-- original anchor = (53, 80) -> new anchor (80, 49) diff = (-27, 31)-->
+	<!-- add double it to texturepacker output offsets (7, 15) -> (-47, 77), because hires-->
+    <sprite n="D_tube_front.png" x="2" y="109" w="181" h="303" pX="0.5" pY="0.5" oX="-47" oY="77" oW="320" oH="200" r="y"/>
+		<sprite n="D_empty.png" x ="200" y="450" w="32" h="32"/>
+</TextureAtlas>

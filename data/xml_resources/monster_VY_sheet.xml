@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:aec5693e9283d0c4f64603f05b70d2bf:12be9664665721b16439ff68646ca94e:8483a8c28db9f725b6fee39a55b4dfe2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_VY_sheet" width="512" height="1024" hires="true">
+    <sprite n="vy_shadow" x="178" y="323" w="168" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="vy_tier01_base" x="348" y="338" w="156" h="101" pX="0.5" pY="0.5" oX="6" oY="5" oW="168" oH="112"/>
+    <sprite n="vy_tier01_eye" x="472" y="516" w="26" h="25" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32" r="y"/>
+    <sprite n="vy_tier01_head" x="356" y="179" w="146" h="157" pX="0.5" pY="0.5" oX="9" oY="5" oW="164" oH="168"/>
+    <sprite n="vy_tier01_head_cover" x="2" y="807" w="112" h="117" pX="0.5" pY="0.5" oX="6" oY="3" oW="124" oH="124"/>
+    <sprite n="vy_tier01_teeth" x="371" y="917" w="106" h="78" pX="0.5" pY="0.5" oX="5" oY="5" oW="116" oH="88"/>
+    <sprite n="vy_tier02_base_01" x="257" y="523" w="85" h="112" pX="0.5" pY="0.5" oX="0" oY="3" oW="116" oH="92" r="y"/>
+    <sprite n="vy_tier02_base_02" x="254" y="637" w="85" h="108" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="92" r="y"/>
+    <sprite n="vy_tier02_base_03" x="116" y="807" w="85" h="108" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="92" r="y"/>
+    <sprite n="vy_tier02_base_04" x="200" y="917" w="108" h="85" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="92"/>
+    <sprite n="vy_tier02_base_05" x="203" y="807" w="85" h="108" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="92" r="y"/>
+    <sprite n="vy_tier02_base_06" x="290" y="807" w="85" h="108" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="92" r="y"/>
+    <sprite n="vy_tier02_bg" x="310" y="917" w="59" h="80" pX="0.5" pY="0.5" oX="16" oY="48" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_eye" x="130" y="442" w="25" h="25" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32"/>
+    <sprite n="vy_tier02_head_01" x="129" y="607" w="123" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_02" x="130" y="510" w="125" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_03" x="178" y="413" w="126" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_04" x="344" y="441" w="126" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_05" x="344" y="538" w="125" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_06" x="2" y="512" w="125" h="95" pX="0.5" pY="0.5" oX="8" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_cover_03" x="2" y="417" w="126" h="93" pX="0.5" pY="0.5" oX="10" oY="8" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_cover_04" x="2" y="609" w="121" h="93" pX="0.5" pY="0.5" oX="10" oY="13" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_cover_05" x="344" y="635" w="119" h="78" pX="0.5" pY="0.5" oX="25" oY="14" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier02_head_cover_06" x="341" y="715" w="118" h="90" pX="0.5" pY="0.5" oX="13" oY="15" oW="112" oH="140" r="y"/>
+    <sprite n="vy_tier03_base_01" x="133" y="704" w="62" h="92" pX="0.5" pY="0.5" oX="10" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_base_02" x="68" y="704" w="63" h="92" pX="0.5" pY="0.5" oX="10" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_base_03" x="68" y="926" w="64" h="92" pX="0.5" pY="0.5" oX="10" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_base_04" x="2" y="926" w="64" h="93" pX="0.5" pY="0.5" oX="9" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_base_05" x="2" y="704" w="64" h="99" pX="0.5" pY="0.5" oX="3" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_base_06" x="134" y="917" w="64" h="102" pX="0.5" pY="0.5" oX="0" oY="5" oW="112" oH="72" r="y"/>
+    <sprite n="vy_tier03_eye" x="130" y="469" w="25" h="25" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32"/>
+    <sprite n="vy_tier03_head_01" x="2" y="2" w="175" h="163" pX="0.5" pY="0.5" oX="14" oY="8" oW="192" oH="192" r="y"/>
+    <sprite n="vy_tier03_head_02" x="179" y="2" w="175" h="160" pX="0.5" pY="0.5" oX="16" oY="8" oW="192" oH="192" r="y"/>
+    <sprite n="vy_tier03_head_03" x="179" y="164" w="175" h="157" pX="0.5" pY="0.5" oX="18" oY="8" oW="192" oH="192" r="y"/>
+    <sprite n="vy_tier03_head_04" x="356" y="2" w="147" h="175" pX="0.5" pY="0.5" oX="22" oY="8" oW="192" oH="192"/>
+    <sprite n="vy_tier03_head_05" x="2" y="288" w="174" h="127" pX="0.5" pY="0.5" oX="32" oY="8" oW="192" oH="192" r="y"/>
+    <sprite n="vy_tier03_head_06" x="2" y="167" w="175" h="119" pX="0.5" pY="0.5" oX="36" oY="8" oW="192" oH="192" r="y"/>
+    <sprite n="vy_tier03_head_under_01" x="306" y="462" w="33" h="59" pX="0.5" pY="0.5" oX="22" oY="10" oW="60" oH="80"/>
+    <sprite n="vy_tier03_head_under_02" x="472" y="441" w="29" h="26" pX="0.5" pY="0.5" oX="20" oY="40" oW="60" oH="80" r="y"/>
+    <sprite n="vy_tier03_head_under_03" x="130" y="417" w="26" h="23" pX="0.5" pY="0.5" oX="20" oY="41" oW="60" oH="80" r="y"/>
+    <sprite n="vy_tier03_head_under_04" x="158" y="417" w="16" h="23" pX="0.5" pY="0.5" oX="20" oY="43" oW="60" oH="80"/>
+    <sprite n="vy_tier03_head_under_05" x="306" y="413" w="36" h="47" pX="0.5" pY="0.5" oX="1" oY="28" oW="60" oH="80"/>
+    <sprite n="vy_tier03_head_under_06" x="472" y="469" w="26" h="45" pX="0.5" pY="0.5" oX="5" oY="28" oW="60" oH="80"/>
+</TextureAtlas>

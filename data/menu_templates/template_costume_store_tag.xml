@@ -1,0 +1,185 @@
+<template name="template_costume_store_tag" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+		
+	<size dependentOnElement="Tag" />
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("SaleNormal"):SetInt(0)
+			
+			local StoreEntityHelper = include("StoreEntityHelper")
+			
+			local costumeId = element("CostumeId"):GetInt()
+			local costumeStoreInfo = StoreEntityHelper.GetCostumeStoreInfo(costumeId)
+			
+			StoreEntityHelper.UpdatePriceUIComponents(
+				element:GetElement("CurrencySprite"):GetComponent("Sprite"), 
+				element:GetElement("SaleAmount"):GetComponent("Text"), 
+				costumeStoreInfo.salePrice
+			)
+				
+			StoreEntityHelper.UpdatePriceUIComponents(
+				element:GetElement("OriginalCurrencySprite"):GetComponent("Sprite"), 
+				element:GetElement("OriginalAmount"):GetComponent("Text"), 
+				costumeStoreInfo.basePrice
+			)
+		]]>
+	</event>
+	
+	<event name="hide" params="element">
+		<![CDATA[
+			element["Tag"]("visible"):SetInt(0)
+			element["SaleAmount"]["Text"]("visible"):SetInt(0)
+			element["CurrencySprite"]["Sprite"]("visible"):SetInt(0)
+			element["OriginalAmount"]["Text"]("visible"):SetInt(0)
+			element["OriginalCurrencySprite"]["Sprite"]("visible"):SetInt(0)
+			element["RedStrip"]["Sprite"]("visible"):SetInt(0)
+		]]>
+	</event>
+	
+	<event name="show" params="element">
+		<![CDATA[
+			element["Tag"]("visible"):SetInt(1)
+			element["SaleAmount"]["Text"]("visible"):SetInt(1)
+			element["CurrencySprite"]["Sprite"]("visible"):SetInt(1)
+			element["OriginalAmount"]["Text"]("visible"):SetInt(1)
+			element["OriginalCurrencySprite"]["Sprite"]("visible"):SetInt(1)
+			element["RedStrip"]["Sprite"]("visible"):SetInt(1)
+		]]>
+	</event>
+	
+	<event name="showDisabled" params="element">
+		<![CDATA[
+			element["Tag"]("visible"):SetInt(1)
+			element["Tag"]:setColor(0.5, 0.5, 0.5)
+		
+			local saleText = element["SaleAmount"]["Text"];
+			saleText("visible"):SetInt(1)
+			saleText:setColor(saleText("red"):GetFloat()*0.5, saleText("green"):GetFloat()*0.5, saleText("blue"):GetFloat()*0.5)
+		
+			element["CurrencySprite"]["Sprite"]("visible"):SetInt(1)
+			element["CurrencySprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				
+			local originalAmt = element["OriginalAmount"]["Text"];
+			originalAmt("visible"):SetInt(1)
+			originalAmt:setColor(originalAmt("red"):GetFloat()*0.5, originalAmt("green"):GetFloat()*0.5, originalAmt("blue"):GetFloat()*0.5)
+		
+			element["OriginalCurrencySprite"]["Sprite"]("visible"):SetInt(1)
+			element["OriginalCurrencySprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		
+			element["RedStrip"]["Sprite"]("visible"):SetInt(1)
+			element["RedStrip"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		]]>
+	</event>
+	
+	<spriteSheetComponent name="Tag">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("saletag_battle")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("HUD")
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="SaleAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="10*game.menuScaleX()" yOffset="-4*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="96*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.27*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="CurrencySprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SaleAmount" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="OriginalAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SaleAmount" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-10*game.menuScaleX()" yOffset="10*game.menuScaleX()" priorityOffset="-0.25" />
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.16*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("HUD")
+					component("alpha"):SetFloat(0.5)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="OriginalCurrencySprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:parent()[&quot;OriginalAmount&quot;]" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("size"):SetFloat(0.15*game.menuScaleX())
+					component("layer"):SetString("HUD")
+					component("alpha"):SetFloat(0.5)
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="RedStrip">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="OriginalAmount" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0*game.menuScaleX()" priorityOffset="-0.25" />
+		<ninesliceComponent name="Sprite">
+			<size w="4" h="4" />
+			<position relativeTo="PARENT" vAnchor="VCENTER " hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(1.0)
+					component("bottomHeight"):SetFloat(1.0)
+					component("leftWidth"):SetFloat(1.0)
+					component("rightWidth"):SetFloat(1.0)
+					component("alpha"):SetFloat(0.6)
+					component("spriteName"):SetString("gfx/menu/redstrip")
+					component("layer"):SetString("HUD")
+					component:setSize(Vector2(element:parent():GetElement("OriginalAmount"):absW(), component:absH()))
+				]]>
+			</event>
+		</ninesliceComponent>
+	</element>
+
+</template>

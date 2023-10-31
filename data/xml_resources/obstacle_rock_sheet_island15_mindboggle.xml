@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:34a0058dfcf6616367beacd3f06bf386:c879c74e14b00d20dd714120c7064f41:fc9da8cea1077d7768f74a0daf8c9e94$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/obstacle_rock_sheet_island15_mindboggle.png" width="1024" height="1024" hires="true">
+    <sprite n="obstacle_rock01_island15_mindboggle" x="2" y="776" w="156" h="170" pX="0.5" pY="0.5" oX="4" oY="2" oW="176" oH="160" r="y"/>
+    <sprite n="obstacle_rock02_island15_mindboggle" x="2" y="469" w="270" h="305" pX="0.5" pY="0.5" oX="2" oY="15" oW="320" oH="288" r="y"/>
+    <sprite n="obstacle_rock03_island15_mindboggle" x="2" y="2" w="410" h="465" pX="0.5" pY="0.5" oX="3" oY="2" oW="428" oH="472"/>
+</TextureAtlas>

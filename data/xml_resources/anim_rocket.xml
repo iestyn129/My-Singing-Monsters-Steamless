@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:89fd30bf128512a2e60641d63563d8f3:b9dc5346af6de5c9d0755184bc65a4a8:1132cf322dfd5491b94c6d7ebed138b6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_rocket.png" width="512" height="512" hires="true">
+    <sprite n="deco_base" x="244" y="2" w="196" h="283" pX="0.5" pY="0.5" oX="0" oY="0" oW="284" oH="196" r="y"/>
+    <sprite n="deco_glow" x="442" y="2" w="59" h="58" pX="0.5" pY="0.5" oX="0" oY="1" oW="60" oH="60"/>
+    <sprite n="deco_puff" x="93" y="344" w="106" h="108" pX="0.5" pY="0.5" oX="1" oY="0" oW="108" oH="108"/>
+    <sprite n="deco_rocket" x="2" y="2" w="240" h="340" pX="0.5" pY="0.5"/>
+    <sprite n="deco_shadow" x="2" y="344" w="89" h="152" pX="0.5" pY="0.5" oX="0" oY="1" oW="152" oH="92" r="y"/>
+</TextureAtlas>

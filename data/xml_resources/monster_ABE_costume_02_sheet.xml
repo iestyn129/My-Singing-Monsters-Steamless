@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:28f8160fa1b0f938cd7db4eead12d257:b22d6f6c803946c80fe0642112f56ae6:dcb07795c81c4400bff98f9cbd51ab5d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABE_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="ABE_left_mushroom_top_android.png" x="2" y="76" w="128" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_right_mushroom_top_android.png" x="2" y="2" w="132" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_thumpie_fur_android.png" x="136" y="2" w="112" h="112" pX="0.5" pY="0.5"/>
+	
+	<!-- original anchor = (28, 28) -> new anchor (34, 35) diff = (-6, -7)-->
+	<!-- add double it to texturepacker output offsets (12, 59) -> (0, 45), because hires-->
+    <sprite n="ABE_thumpie_fur_android_JAW.png" x="132" y="116" w="120" h="71" pX="0.5" pY="0.5" oX="0" oY="45" oW="140" oH="140"/>
+    <sprite n="ABE_thumpie_pink_android.png" x="124" y="189" w="112" h="112" pX="0.5" pY="0.5"/>
+	
+	<!-- original anchor = (28, 28) -> new anchor (35, 35) diff = (-7, -7)-->
+	<!-- add double it to texturepacker output offsets (5, 61) -> (-9, 47), because hires-->
+    <sprite n="ABE_thumpie_pink_android_JAW.png" x="2" y="144" w="120" h="71" pX="0.5" pY="0.5" oX="-9" oY="47" oW="140" oH="140"/>
+</TextureAtlas>

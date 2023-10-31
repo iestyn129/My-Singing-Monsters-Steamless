@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:145dba568b0967609ebac12c85b992c9:e31b7b73d398be3432d64393f3252bdf:63ffd4e13c3b8030c3c8807dd39cf98a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island20_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="bay" x="2" y="2" w="774" h="1386" pX="0.5" pY="0.5"/>
+    <sprite n="cloud plain" x="2" y="1390" w="678" h="644" pX="0.5" pY="0.5" oX="0" oY="0" oW="648" oH="678" r="y"/>
+    <sprite n="ground_el" x="1234" y="2" w="796" h="1340" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island20_critter_01" x="987" y="1942" w="57" h="66" pX="0.5" pY="0.5" oX="1" oY="5" oW="68" oH="73" r="y"/>
+    <sprite n="island20_critter_02" x="1107" y="1942" w="55" h="64" pX="0.5" pY="0.5" oX="3" oY="7" oW="68" oH="73" r="y"/>
+    <sprite n="island20_critter_03" x="927" y="1942" w="58" h="66" pX="0.5" pY="0.5" oX="6" oY="0" oW="68" oH="73"/>
+    <sprite n="island20_critter_04" x="778" y="2" w="53" h="67" pX="0.5" pY="0.5" oX="7" oY="3" oW="68" oH="73"/>
+    <sprite n="island20_critter_05" x="1164" y="1942" w="55" h="54" pX="0.5" pY="0.5" oX="9" oY="8" oW="68" oH="73" r="y"/>
+    <sprite n="island20_critter_06" x="778" y="71" w="49" h="49" pX="0.5" pY="0.5" oX="10" oY="10" oW="68" oH="73"/>
+    <sprite n="island20_critter_07" x="778" y="122" w="49" h="48" pX="0.5" pY="0.5" oX="10" oY="8" oW="68" oH="73"/>
+    <sprite n="island20_critter_08" x="1164" y="1998" w="49" h="48" pX="0.5" pY="0.5" oX="10" oY="8" oW="68" oH="73"/>
+    <sprite n="island20_critter_09" x="1046" y="1942" w="59" h="64" pX="0.5" pY="0.5" oX="8" oY="1" oW="68" oH="73"/>
+    <sprite n="island20_critter_10" x="866" y="1942" w="59" h="73" pX="0.5" pY="0.5" oX="8" oY="0" oW="68" oH="73"/>
+    <sprite n="island20_critter_shadow" x="778" y="1344" w="53" h="32" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="32"/>
+    <sprite n="plant_sticker_01" x="833" y="2" w="382" h="166" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="plant_sticker_02" x="682" y="1390" w="550" h="550" pX="0.5" pY="0.5"/>
+    <sprite n="tree_sl_bottom" x="1722" y="1344" w="268" h="496" pX="0.5" pY="0.5"/>
+    <sprite n="tree_sr_bottom" x="1234" y="1344" w="486" h="688" pX="0.5" pY="0.5"/>
+    <sprite n="tree_sr_top_02" x="682" y="1942" w="182" h="84" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:805936a6ed86474d4a955319aefd59ab:882ffd252192f87953625858515429ff:a330f3490cc9763c6d1c559d3b87a512$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_sheet03_easter.png" width="2048" height="2048" hires="true">
+    <sprite n="eye_glow.png" x="1164" y="2" w="820" h="812" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_shadow.png" x="804" y="1382" w="596" h="596" pX="0.5" pY="0.5"/>
+    <sprite n="eyelid_bottom.png" x="1252" y="816" w="210" h="529" pX="0.5" pY="0.5" oX="0" oY="0" oW="530" oH="210" r="y"/>
+    <sprite n="eyelid_bottom_edge.png" x="1464" y="970" w="503" h="156" pX="0.5" pY="0.5" oX="1" oY="0" oW="504" oH="156"/>
+    <sprite n="eyelid_bottom_edge_highlight.png" x="1464" y="1128" w="502" h="137" pX="0.5" pY="0.5" oX="0" oY="0" oW="502" oH="138"/>
+    <sprite n="eyelid_top.png" x="2" y="1608" w="539" h="378" pX="0.5" pY="0.5" oX="0" oY="0" oW="562" oH="378"/>
+    <sprite n="eyelid_top_edge.png" x="1050" y="816" w="200" h="530" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eyelid_top_edge_highlight.png" x="1464" y="816" w="516" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="eyelid_yellow_solid.png" x="804" y="808" w="244" h="572" pX="0.5" pY="0.5" oX="1" oY="1" oW="576" oH="248" r="y"/>
+    <sprite n="island04_goggle.png" x="2" y="2" w="1160" h="804" pX="0.5" pY="0.5" oX="0" oY="0" oW="1160" oH="810"/>
+    <sprite n="pupil.png" x="2" y="808" w="800" h="798" pX="0.5" pY="0.5" oX="0" oY="1" oW="800" oH="800"/>
+</TextureAtlas>

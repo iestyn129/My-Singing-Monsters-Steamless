@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b5209e9a47af9fb9114b204d16ab80d3:1d83ed8e7d6ef1b04e9f83f8d864151b:59423192422ae4f7947457aaf26bf548$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_J_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="J_Back_Hair.png" x="202" y="2" w="140" h="155" pX="0.5" pY="0.5" oX="64" oY="-14" oW="160" oH="160"/>
+    <sprite n="J_Front_Hair.png" x="2" y="2" w="198" h="210" pX="0.5" pY="0.5" oX="-26" oY="-63" oW="220" oH="240"/>
+    <sprite n="J_Left_Wristband.png" x="59" y="381" w="48" h="58" pX="0.5" pY="0.5" oX="-2" oY="12" oW="60" oH="80"/>
+    <sprite n="J_Right_Armband.png" x="2" y="474" w="40" h="25" pX="0.5" pY="0.5" oX="12" oY="28" oW="50" oH="40"/>
+    <sprite n="J_Right_Wristband.png" x="2" y="381" w="55" h="91" pX="0.5" pY="0.5" oX="-2" oY="8" oW="60" oH="100"/>
+    <sprite n="J_Wing_01.png" x="2" y="214" w="135" h="165" pX="0.5" pY="0.5" oX="1" oY="1" oW="168" oH="136" r="y"/>
+    <sprite n="J_Wing_02.png" x="139" y="214" w="135" h="165" pX="0.5" pY="0.5" oX="1" oY="1" oW="168" oH="136" r="y"/>
+</TextureAtlas>

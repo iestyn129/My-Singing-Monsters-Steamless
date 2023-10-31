@@ -1,0 +1,32 @@
+<template name="template_monsterhappiness" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.hudScale()" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			if(game.selectedObjType() == game.SpecificEntityType_MONSTER) then
+				if(((game.monsterHappiness(game.selectedMonsterId())/25)+1) &gt; 4) then
+					component("spriteName"):SetString("emote04")
+				else
+					component("spriteName"):SetString("emote0"..((game.monsterHappiness(game.selectedMonsterId())/25)+1))
+				end
+			else
+				component("spriteName"):SetString("emote01")
+			end
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.28*game.menuScaleX())
+			component("layer"):SetString("ContextBar")
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="setVisible" params="element">
+		element["Sprite"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+	</event>
+	
+</template>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6953caa0edbab1acce5b84618853de16:ddd666ba57b5ca4c45f776f6cd773fe9:a568077f4a5a3d76fd8da177898bc8c5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_oddmobile.png" width="512" height="512" hires="true">
+    <sprite n="arm_base" x="1" y="1" w="172" h="167" pX="0.5" pY="0.5"/>
+    <sprite n="arm_mid" x="1" y="170" w="137" h="183" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="arm_top" x="175" y="1" w="137" h="137" pX="0.5" pY="0.5"/>
+    <sprite n="bone" x="408" y="369" w="78" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bone_glow" x="321" y="174" w="97" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="butterfly" x="327" y="366" w="79" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="butterfly_glow" x="140" y="205" w="113" h="109" pX="0.5" pY="0.5"/>
+    <sprite n="eye" x="463" y="89" w="48" h="61" pX="0.5" pY="0.5"/>
+    <sprite n="eyeglow" x="423" y="282" w="85" h="85" pX="0.5" pY="0.5"/>
+    <sprite n="index_lower" x="314" y="89" w="147" h="83" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="index_tip" x="420" y="174" w="80" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="middle_lower" x="314" y="1" w="148" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="middle_tip" x="137" y="384" w="92" h="87" pX="0.5" pY="0.5"/>
+    <sprite n="palm" x="140" y="316" w="94" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="pinky_lower" x="175" y="140" w="137" h="63" pX="0.5" pY="0.5"/>
+    <sprite n="pinky_tip" x="236" y="327" w="83" h="71" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="rainbow" x="231" y="400" w="94" h="65" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="rainbow_glow" x="1" y="355" w="134" h="156" pX="0.5" pY="0.5"/>
+    <sprite n="rope" x="502" y="152" w="7" h="121" pX="0.5" pY="0.5"/>
+    <sprite n="star" x="327" y="438" w="78" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_glow" x="321" y="284" w="100" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="thumb_base" x="255" y="205" w="64" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="thumb_tip" x="464" y="1" w="46" h="80" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

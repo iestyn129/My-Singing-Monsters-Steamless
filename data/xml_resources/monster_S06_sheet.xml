@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f9bb03e4c08db90d50e6f9be5a301f41:15e968a7372ecdd1cee16f9ee098a4fe:c999af760e5df2d5707581dae2f4b7a6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S06_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="monster_S06_gobbler_back_gourd" x="628" y="381" w="242" h="197" pX="0.5" pY="0.5" oX="2" oY="0" oW="246" oH="200"/>
+    <sprite n="monster_S06_gobbler_back_gourd_RARE" x="631" y="2" w="296" h="243" pX="0.5" pY="0.5" oX="2" oY="1" oW="246" oH="300" r="y"/>
+    <sprite n="monster_S06_gobbler_chest" x="240" y="1213" w="110" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_chest_RARE" x="398" y="1249" w="110" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_ear_leaf_01" x="190" y="1254" w="44" h="57" pX="0.5" pY="0.5" oX="0" oY="1" oW="44" oH="58"/>
+    <sprite n="monster_S06_gobbler_ear_leaf_02" x="830" y="580" w="32" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_gourd_yellow" x="926" y="382" w="96" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_gourd_yellow_RARE" x="926" y="474" w="96" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_head_bg" x="829" y="927" w="169" h="95" pX="0.5" pY="0.5" oX="7" oY="77" oW="182" oH="178"/>
+    <sprite n="monster_S06_gobbler_head_bg_RARE" x="829" y="1024" w="169" h="95" pX="0.5" pY="0.5" oX="7" oY="77" oW="182" oH="178"/>
+    <sprite n="monster_S06_gobbler_head_fg" x="513" y="404" w="112" h="167" pX="0.5" pY="0.5" oX="8" oY="6" oW="182" oH="178" r="y"/>
+    <sprite n="monster_S06_gobbler_head_fg_RARE" x="250" y="902" w="184" h="145" pX="0.5" pY="0.5" oX="16" oY="0" oW="200" oH="150"/>
+    <sprite n="monster_S06_gobbler_horn_side_RARE" x="120" y="1131" w="72" h="54" pX="0.5" pY="0.5" oX="2" oY="3" oW="80" oH="60"/>
+    <sprite n="monster_S06_gobbler_horn_top_RARE" x="982" y="1278" w="36" h="73" pX="0.5" pY="0.5" oX="9" oY="6" oW="50" oH="80"/>
+    <sprite n="monster_S06_gobbler_leg" x="524" y="146" w="103" h="36" pX="0.5" pY="0.5" oX="4" oY="0" oW="40" oH="104" r="y"/>
+    <sprite n="monster_S06_gobbler_low_neck_leaf_01" x="784" y="1051" w="42" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_low_neck_leaf_01_RARE" x="784" y="1101" w="42" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_low_neck_leaf_02" x="352" y="1277" w="42" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_low_neck_leaf_02_RARE" x="184" y="1313" w="42" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_lower_beak_bg" x="524" y="184" w="102" h="218" pX="0.5" pY="0.5" oX="2" oY="6" oW="104" oH="224"/>
+    <sprite n="monster_S06_gobbler_lower_beak_fg" x="436" y="940" w="182" h="65" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="182" r="y"/>
+    <sprite n="monster_S06_gobbler_mid_neck_leaf_01" x="118" y="1305" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_mid_neck_leaf_01_RARE" x="118" y="1371" w="64" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_mid_neck_leaf_02" x="872" y="506" w="36" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_mid_neck_leaf_02_RARE" x="765" y="1283" w="58" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_neck" x="2" y="1203" w="114" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_neck_fg" x="317" y="2" w="312" h="142" pX="0.5" pY="0.5" oX="0" oY="2" oW="142" oH="314" r="y"/>
+    <sprite n="monster_S06_gobbler_neck_fg_RARE" x="2" y="2" w="313" h="142" pX="0.5" pY="0.5" oX="0" oY="1" oW="142" oH="314" r="y"/>
+    <sprite n="monster_S06_gobbler_neck_RARE" x="2" y="1299" w="114" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_shoulders" x="263" y="291" w="248" h="196" pX="0.5" pY="0.5" oX="1" oY="0" oW="250" oH="196"/>
+    <sprite n="monster_S06_gobbler_shoulders_RARE" x="2" y="292" w="248" h="196" pX="0.5" pY="0.5" oX="1" oY="0" oW="250" oH="196"/>
+    <sprite n="monster_S06_gobbler_sl_eyeball" x="204" y="655" w="46" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sl_eyeball_RARE" x="204" y="707" w="46" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sl_feather_01" x="624" y="732" w="187" h="54" pX="0.5" pY="0.5" oX="0" oY="2" oW="190" oH="58"/>
+    <sprite n="monster_S06_gobbler_sl_feather_01_RARE" x="198" y="759" w="50" h="186" pX="0.5" pY="0.5" oX="2" oY="7" oW="190" oH="58" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_feather_02" x="614" y="1050" w="168" h="82" pX="0.5" pY="0.5" oX="2" oY="1" oW="172" oH="84"/>
+    <sprite n="monster_S06_gobbler_sl_feather_02_RARE" x="828" y="1121" w="168" h="82" pX="0.5" pY="0.5" oX="2" oY="2" oW="172" oH="84"/>
+    <sprite n="monster_S06_gobbler_sl_foot" x="263" y="146" w="259" h="143" pX="0.5" pY="0.5" oX="3" oY="9" oW="262" oH="154"/>
+    <sprite n="monster_S06_gobbler_sl_low_eyelid" x="745" y="1220" w="18" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_low_eyelid_RARE" x="745" y="1254" w="18" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_p_vine" x="775" y="1151" w="48" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_pumpkin" x="830" y="638" w="192" h="194" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_pumpkin_RARE" x="252" y="615" w="194" h="192" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sl_pupil_01" x="1000" y="986" w="21" h="25" pX="0.5" pY="0.5" oX="2" oY="1" oW="26" oH="26"/>
+    <sprite n="monster_S06_gobbler_sl_pupil_01_RARE" x="1000" y="1013" w="21" h="25" pX="0.5" pY="0.5" oX="2" oY="1" oW="26" oH="26"/>
+    <sprite n="monster_S06_gobbler_sl_pupil_02" x="998" y="1154" w="24" h="24" pX="0.5" pY="0.5" oX="2" oY="2" oW="26" oH="26"/>
+    <sprite n="monster_S06_gobbler_sl_pupil_02_RARE" x="998" y="1180" w="24" h="24" pX="0.5" pY="0.5" oX="2" oY="2" oW="26" oH="26"/>
+    <sprite n="monster_S06_gobbler_sl_up_eyelid_01" x="495" y="512" w="15" h="21" pX="0.5" pY="0.5" oX="18" oY="2" oW="42" oH="38" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_up_eyelid_02" x="563" y="1188" w="19" h="24" pX="0.5" pY="0.5" oX="16" oY="3" oW="42" oH="38" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_up_eyelid_03" x="400" y="1173" w="25" h="30" pX="0.5" pY="0.5" oX="10" oY="2" oW="42" oH="38" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_up_eyelid_04" x="982" y="1242" w="37" h="34" pX="0.5" pY="0.5" oX="3" oY="2" oW="42" oH="38"/>
+    <sprite n="monster_S06_gobbler_sl_zuccini" x="250" y="1049" w="176" h="90" pX="0.5" pY="0.5" oX="0" oY="2" oW="92" oH="180" r="y"/>
+    <sprite n="monster_S06_gobbler_sl_zuccini_RARE" x="436" y="1007" w="176" h="91" pX="0.5" pY="0.5" oX="0" oY="2" oW="92" oH="180" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_01" x="2" y="1131" w="116" h="70" pX="0.5" pY="0.5" oX="20" oY="7" oW="126" oH="128" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_02" x="821" y="1350" w="120" h="64" pX="0.5" pY="0.5" oX="26" oY="5" oW="126" oH="128" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_03" x="825" y="1289" w="122" h="59" pX="0.5" pY="0.5" oX="31" oY="4" oW="126" oH="128" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_04" x="610" y="1281" w="123" h="62" pX="0.5" pY="0.5" oX="38" oY="3" oW="126" oH="128" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_05" x="821" y="1416" w="116" h="72" pX="0.5" pY="0.5" oX="37" oY="6" oW="126" oH="128" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_base" x="495" y="573" w="128" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_snood_top" x="803" y="969" w="24" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_eyeball" x="943" y="1354" w="78" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sr_eyeball_RARE" x="939" y="1432" w="78" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sr_feather_01" x="625" y="676" w="190" h="54" pX="0.5" pY="0.5" oX="0" oY="2" oW="54" oH="194" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_feather_01_RARE" x="874" y="315" w="50" h="189" pX="0.5" pY="0.5" oX="0" oY="1" oW="54" oH="194"/>
+    <sprite n="monster_S06_gobbler_sr_feather_02" x="198" y="947" w="50" h="163" pX="0.5" pY="0.5" oX="0" oY="2" oW="50" oH="166"/>
+    <sprite n="monster_S06_gobbler_sr_feather_02_RARE" x="204" y="490" w="46" h="163" pX="0.5" pY="0.5" oX="0" oY="2" oW="50" oH="166"/>
+    <sprite n="monster_S06_gobbler_sr_feather_03" x="929" y="207" w="92" h="173" pX="0.5" pY="0.5" oX="1" oY="1" oW="94" oH="174"/>
+    <sprite n="monster_S06_gobbler_sr_feather_03_RARE" x="448" y="759" w="170" h="92" pX="0.5" pY="0.5" oX="1" oY="0" oW="94" oH="174" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_foot" x="2" y="146" w="259" h="144" pX="0.5" pY="0.5" oX="3" oY="7" oW="262" oH="152"/>
+    <sprite n="monster_S06_gobbler_sr_low_eyelid_01" x="591" y="1100" w="19" h="55" pX="0.5" pY="0.5" oX="8" oY="14" oW="72" oH="36" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_low_eyelid_02" x="591" y="1157" w="19" h="55" pX="0.5" pY="0.5" oX="8" oY="14" oW="72" oH="36" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_low_eyelid_03" x="344" y="1311" w="30" h="63" pX="0.5" pY="0.5" oX="4" oY="3" oW="72" oH="36" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_p_vine" x="120" y="1187" w="68" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_pumpkin" x="2" y="745" w="194" h="191" pX="0.5" pY="0.5" oX="0" oY="1" oW="194" oH="192"/>
+    <sprite n="monster_S06_gobbler_sr_pumpkin_RARE" x="2" y="938" w="194" h="191" pX="0.5" pY="0.5" oX="0" oY="1" oW="194" oH="192"/>
+    <sprite n="monster_S06_gobbler_sr_pupil" x="510" y="1249" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="monster_S06_gobbler_sr_up_eyelid_01" x="1000" y="927" w="21" h="57" pX="0.5" pY="0.5" oX="5" oY="2" oW="74" oH="52" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_up_eyelid_02" x="807" y="849" w="21" h="59" pX="0.5" pY="0.5" oX="5" oY="2" oW="74" oH="52" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_up_eyelid_03" x="510" y="1313" w="63" h="30" pX="0.5" pY="0.5" oX="4" oY="3" oW="74" oH="52"/>
+    <sprite n="monster_S06_gobbler_sr_up_eyelid_04" x="563" y="1214" w="45" h="66" pX="0.5" pY="0.5" oX="4" oY="3" oW="74" oH="52" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_zuccini" x="2" y="618" w="200" h="125" pX="0.5" pY="0.5" oX="0" oY="0" oW="126" oH="200" r="y"/>
+    <sprite n="monster_S06_gobbler_sr_zuccini_RARE" x="2" y="490" w="200" h="126" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_01" x="610" y="1220" w="133" h="59" pX="0.5" pY="0.5" oX="2" oY="1" oW="64" oH="136" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_01_RARE" x="427" y="1188" w="134" h="59" pX="0.5" pY="0.5" oX="2" oY="0" oW="64" oH="136" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_02" x="448" y="619" w="175" h="68" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="176" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_02_RARE" x="448" y="689" w="174" h="68" pX="0.5" pY="0.5" oX="0" oY="2" oW="70" oH="176" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_03" x="625" y="580" w="203" h="94" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="204" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_03_RARE" x="929" y="2" w="93" h="203" pX="0.5" pY="0.5" oX="2" oY="0" oW="96" oH="204"/>
+    <sprite n="monster_S06_gobbler_tail_f_04" x="620" y="876" w="184" h="86" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="188" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_04_RARE" x="620" y="788" w="185" h="86" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="188" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_05" x="428" y="1100" w="161" h="86" pX="0.5" pY="0.5" oX="1" oY="0" oW="88" oH="162" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_05_RARE" x="612" y="1134" w="161" h="84" pX="0.5" pY="0.5" oX="0" oY="1" oW="88" oH="162" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_06" x="872" y="566" w="149" h="70" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="150" r="y"/>
+    <sprite n="monster_S06_gobbler_tail_f_06_RARE" x="249" y="1141" w="149" h="70" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="150" r="y"/>
+    <sprite n="monster_S06_gobbler_tongue_00" x="874" y="247" w="51" h="66" pX="0.5" pY="0.5" oX="21" oY="42" oW="74" oH="108"/>
+    <sprite n="monster_S06_gobbler_tongue_01" x="198" y="1112" w="49" h="66" pX="0.5" pY="0.5" oX="8" oY="42" oW="74" oH="108" r="y"/>
+    <sprite n="monster_S06_gobbler_tongue_02" x="194" y="1180" w="44" h="72" pX="0.5" pY="0.5" oX="2" oY="28" oW="74" oH="108" r="y"/>
+    <sprite n="monster_S06_gobbler_tongue_03" x="352" y="1213" w="44" h="62" pX="0.5" pY="0.5" oX="23" oY="3" oW="74" oH="108"/>
+    <sprite n="monster_S06_gobbler_tongue_base" x="510" y="1282" w="78" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="30"/>
+    <sprite n="monster_S06_gobbler_upper_beak" x="628" y="247" w="244" h="132" pX="0.5" pY="0.5" oX="0" oY="2" oW="244" oH="134"/>
+    <sprite n="monster_S06_gobbler_upper_beak_RARE" x="252" y="489" w="241" h="124" pX="0.5" pY="0.5" oX="3" oY="10" oW="244" oH="134"/>
+    <sprite n="monster_S06_gobbler_wing_elbow" x="735" y="1321" w="84" h="106" pX="0.5" pY="0.5" oX="1" oY="0" oW="86" oH="106"/>
+    <sprite n="monster_S06_gobbler_wing_elbow_RARE" x="236" y="1309" w="106" h="84" pX="0.5" pY="0.5" oX="1" oY="0" oW="86" oH="106" r="y"/>
+    <sprite n="monster_S06_gobbler_wing_mid_feather" x="250" y="809" w="185" h="91" pX="0.5" pY="0.5" oX="1" oY="1" oW="92" oH="186" r="y"/>
+    <sprite n="monster_S06_gobbler_wing_mid_feather_RARE" x="830" y="834" w="184" h="91" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="186" r="y"/>
+    <sprite n="monster_S06_gobbler_wing_top_feather" x="620" y="964" w="181" h="84" pX="0.5" pY="0.5" oX="3" oY="2" oW="184" oH="86"/>
+    <sprite n="monster_S06_gobbler_wing_top_feather_RARE" x="437" y="853" w="181" h="85" pX="0.5" pY="0.5" oX="3" oY="1" oW="184" oH="86"/>
+    <sprite n="RARE_monster_S06_gobbler_sl_up_eyelid_01" x="495" y="489" w="15" h="21" pX="0.5" pY="0.5" oX="18" oY="2" oW="42" oH="38" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sl_up_eyelid_02" x="400" y="1205" w="24" h="19" pX="0.5" pY="0.5" oX="16" oY="3" oW="42" oH="38"/>
+    <sprite n="RARE_monster_S06_gobbler_sl_up_eyelid_03" x="400" y="1141" w="25" h="30" pX="0.5" pY="0.5" oX="10" oY="2" oW="42" oH="38" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sl_up_eyelid_04" x="982" y="1206" w="37" h="34" pX="0.5" pY="0.5" oX="3" oY="2" oW="42" oH="38"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_low_eyelid_01" x="1000" y="1040" w="19" h="55" pX="0.5" pY="0.5" oX="8" oY="14" oW="72" oH="36" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_low_eyelid_02" x="1000" y="1097" w="19" h="55" pX="0.5" pY="0.5" oX="8" oY="14" oW="72" oH="36" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_low_eyelid_03" x="949" y="1289" w="30" h="63" pX="0.5" pY="0.5" oX="4" oY="3" oW="72" oH="36" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_up_eyelid_01" x="806" y="910" w="21" h="57" pX="0.5" pY="0.5" oX="5" oY="2" oW="74" oH="52" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_up_eyelid_02" x="807" y="788" w="21" h="59" pX="0.5" pY="0.5" oX="5" oY="2" oW="74" oH="52" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_up_eyelid_03" x="184" y="1347" w="30" h="63" pX="0.5" pY="0.5" oX="4" oY="3" oW="74" oH="52" r="y"/>
+    <sprite n="RARE_monster_S06_gobbler_sr_up_eyelid_04" x="775" y="1215" w="45" h="66" pX="0.5" pY="0.5" oX="4" oY="3" oW="74" oH="52" r="y"/>
+    <sprite n="shadow" x="825" y="1205" w="155" h="82" pX="0.5" pY="0.5" oX="1" oY="1" oW="156" oH="84"/>
+</TextureAtlas>

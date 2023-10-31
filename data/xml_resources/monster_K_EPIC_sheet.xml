@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2963f6713da5dffc190d201f04f89768:8b85e95298988e6aa22272884c37938a:6c159326b55fa85a8e3470edee777afe$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_K_EPIC_sheet.png" width="1024" height="512" hires="true">
+    <sprite n="K_air_puff_01" x="444" y="117" w="39" h="51" pX="0.5" pY="0.5" oX="2" oY="34" oW="148" oH="108" r="y"/>
+    <sprite n="K_air_puff_02" x="472" y="2" w="58" h="91" pX="0.5" pY="0.5" oX="5" oY="25" oW="148" oH="108" r="y"/>
+    <sprite n="K_air_puff_03" x="122" y="424" w="107" h="71" pX="0.5" pY="0.5" oX="5" oY="15" oW="148" oH="108"/>
+    <sprite n="K_air_puff_04" x="2" y="424" w="118" h="85" pX="0.5" pY="0.5" oX="8" oY="8" oW="148" oH="108"/>
+    <sprite n="K_air_puff_05" x="366" y="415" w="133" h="94" pX="0.5" pY="0.5" oX="7" oY="4" oW="148" oH="108"/>
+    <sprite n="K_air_puff_06" x="244" y="171" w="105" h="144" pX="0.5" pY="0.5" oX="2" oY="1" oW="148" oH="108" r="y"/>
+    <sprite n="K_brain_EPIC" x="244" y="2" w="136" h="167" pX="0.5" pY="0.5" oX="41" oY="61" oW="256" oH="200" r="y"/>
+    <sprite n="K_exhaust_EPIC" x="231" y="424" w="133" h="63" pX="0.5" pY="0.5" oX="19" oY="10" oW="90" oH="150" r="y"/>
+    <sprite n="K_eyeball" x="481" y="276" w="29" h="29" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="32"/>
+    <sprite n="K_foot_RARE" x="382" y="2" w="88" h="113" pX="0.5" pY="0.5" oX="0" oY="1" oW="88" oH="114"/>
+    <sprite n="K_footlight" x="481" y="170" w="35" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="36"/>
+    <sprite n="K_jars_00_EPIC" x="2" y="2" w="119" h="209" pX="0.5" pY="0.5" oX="22" oY="37" oW="256" oH="200" r="y"/>
+    <sprite n="K_jars_01_EPIC" x="2" y="213" w="119" h="209" pX="0.5" pY="0.5" oX="22" oY="37" oW="256" oH="200" r="y"/>
+    <sprite n="K_jars_02_EPIC" x="123" y="2" w="119" h="209" pX="0.5" pY="0.5" oX="22" oY="37" oW="256" oH="200" r="y"/>
+    <sprite n="K_jars_03_EPIC" x="123" y="213" w="119" h="209" pX="0.5" pY="0.5" oX="22" oY="37" oW="256" oH="200" r="y"/>
+    <sprite n="K_left_eyelid_01" x="231" y="489" w="30" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32"/>
+    <sprite n="K_left_eyelid_02" x="489" y="341" w="31" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32" r="y"/>
+    <sprite n="K_left_eyelid_03" x="515" y="208" w="31" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32"/>
+    <sprite n="K_left_eyelid_04" x="481" y="208" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="K_leg_segment" x="485" y="95" w="32" h="33" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="36"/>
+    <sprite n="K_leg_segment_RARE" x="485" y="130" w="32" h="33" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="36"/>
+    <sprite n="K_mech_body" x="351" y="171" w="128" h="135" pX="0.5" pY="0.5" oX="0" oY="1" oW="128" oH="136"/>
+    <sprite n="K_pupil_RARE" x="295" y="489" w="17" h="17" pX="0.5" pY="0.5" oX="0" oY="1" oW="18" oH="18"/>
+    <sprite n="K_right_eyelid_01" x="263" y="489" w="30" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32"/>
+    <sprite n="K_right_eyelid_02" x="481" y="242" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="K_right_eyelid_03" x="489" y="307" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="K_right_eyelid_04" x="489" y="375" w="31" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="32" r="y"/>
+    <sprite n="K_shadow" x="244" y="317" w="52" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="K_tankpack" x="382" y="117" w="60" h="51" pX="0.5" pY="0.5" oX="0" oY="2" oW="60" oH="56"/>
+    <sprite n="RARE_K_mouth_01" x="442" y="308" w="45" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="48" r="y"/>
+    <sprite n="RARE_K_mouth_02" x="298" y="317" w="46" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="48" r="y"/>
+    <sprite n="RARE_K_mouth_03" x="346" y="317" w="46" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="48" r="y"/>
+    <sprite n="RARE_K_mouth_04" x="394" y="308" w="46" h="96" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="48" r="y"/>
+</TextureAtlas>

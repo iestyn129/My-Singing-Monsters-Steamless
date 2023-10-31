@@ -1,0 +1,16 @@
+<template name="template_gene" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString(element("SpriteName"):GetString())
+				component("sheetName"):SetString(element("SheetName"):GetString())
+				component("size"):SetFloat(element("Size"):GetFloat())
+				component("layer"):SetString(element("Layer"):GetString())
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+</template>

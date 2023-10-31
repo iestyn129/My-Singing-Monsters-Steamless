@@ -1,0 +1,289 @@
+<template name="template_battle_progress" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$PopulateScript" equals="BattleCampaignProgressUI" />
+
+	<size dependentOnElement="ProgressInfoPanel"/>
+
+	<!-- Progress Info Panel -->
+	<element name="ProgressInfoPanel">
+
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+
+		<!--Frame-->
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-11"/>
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_frame_transparent")
+					component("sheetName"):SetString("xml_resources/battle_elements.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("visible"):SetInt(0)
+			]]>
+			</event>
+		</spriteSheetComponent>
+
+		<spriteComponent name="BG">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+						local frameComponent = element:GetComponent("Sprite")
+						component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+						local scaleX = (frameComponent:absW()-32*game.hudScale()) / 4.0
+						local scaleY = (frameComponent:absH()-40*game.hudScale())/ 4.0
+						component:setScale(Vector2(scaleX, scaleY))
+						component("yOffset"):SetFloat(-4/scaleY)
+						component:setColor(0.0, 0.0, 0.0)
+						--component:setColor(41/255, 28/255, 56/255)
+						component("layer"):SetString("MidPopUps")
+						component("visible"):SetInt(0)
+					]]>
+			</event>
+		</spriteComponent>
+
+
+
+		<!-- another scrolling list! -->
+		<element name="PIP_LIST">
+			<size w="120*game.menuScaleX()" h="150*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-6*game.menuScaleX()" yOffset="-4*game.menuScaleY()" priorityOffset="-1" />
+
+			<swipeComponent name="Swiper">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("smoothMode"):SetInt(1)
+					]]>
+				</event>
+				<event name="refresh" params="component, element">
+					<![CDATA[
+							include("ScrollingListHelper").SwiperRefresh(component, element)
+						]]>
+				</event>
+				<event name="onTick" params="component, element, dt">
+					<![CDATA[
+							include("ScrollingListHelper").SwiperTick(component, element, dt)
+
+							--update scroll bar
+							local scrollOffset = element("scrollOffset"):GetFloat()
+							local scrollMarker = element:parent():GetElement("PIP_SCROLLMARKER")
+							local markerBookend = scrollMarker("originalYOffset"):GetInt()
+							local markerMovementHeight = element:parent():GetElement("PIP_SCROLLBAR"):absH() - (2*markerBookend) - scrollMarker:absH()
+
+							local scrollMarkerYOffset = -(scrollOffset/component:scrollSize()) * markerMovementHeight
+							scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+
+							scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+
+						]]>
+				</event>
+				<event name="setScrollOffsetToMarker" params="component, element">
+					<![CDATA[
+							local scrollmarker = element:parent():GetElement("PIP_SCROLLMARKER")
+							component:setScrollOffset(scrollmarker("scrollOffset"):GetFloat())
+						]]>
+				</event>
+			</swipeComponent>
+
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<event name="onInit" params="component, element">
+					component("singleTouch"):SetInt(1)
+					component("enabled"):SetInt(0)
+				</event>
+			</touchComponent>
+
+			<event name="onInit" params="element">
+				<![CDATA[
+						include("BattleProgressUI").ListOnInit(element)
+					]]>
+			</event>
+
+			<event name="onTick" params="element, dt">
+				<![CDATA[
+					include("BattleProgressUI").ListOnTick(element, dt)
+				]]>
+			</event>
+
+			<event name="clear" params="element">
+				<![CDATA[
+					include("BattleProgressUI").ListClear(element)
+				]]>
+			</event>
+
+			<event name="populate" params="element">
+				<![CDATA[
+					include("$PopulateScript").Populate(element)
+				]]>
+			</event>
+
+		</element>
+
+		<element name="PIP_SCROLLBAR">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="20*game.menuScaleX()" yOffset="0*game.menuScaleY()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+							component("spriteName"):SetString("scroll_bar_01")
+							component("sheetName"):SetString("xml_resources/buttons01.xml")
+							component("size"):SetFloat(0.5*(game.menuScaleY()))
+							component("layer"):SetString("MidPopUps")
+							component("visible"):SetInt(0)
+						]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+
+		<element name="PIP_SCROLLMARKER">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="PIP_SCROLLBAR" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="element">
+				element("scrollOffset"):SetFloat(0.0);
+			</event>
+			<spriteSheetComponent name="Marker">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+							component("useOffsets"):SetInt(1)
+							component("spriteName"):SetString("scroll_bar_dot")
+							component("sheetName"):SetString("xml_resources/buttons01.xml")
+							component("size"):SetFloat(0.5*game.menuScaleY())
+							component("layer"):SetString("MidPopUps")
+							element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+							component("visible"):SetInt(0)
+						]]>
+				</event>
+			</spriteSheetComponent>
+
+
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+				<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDrag" params="component, element, x, y">
+					<![CDATA[
+							local listElement = element:parent():GetElement("PIP_LIST");
+							local scrollBarElement = element:parent():GetElement("PIP_SCROLLBAR")
+							local originalYOffset = element("originalYOffset"):GetInt()
+							local fromTopOfMarkerRange = y - scrollBarElement:absY() - originalYOffset
+
+							local scrollSize = listElement("totalSize"):GetFloat() - (listElement:absH() - listElement("padding"):GetFloat())
+
+							local scrollOffset = scrollSize * (-(fromTopOfMarkerRange - originalYOffset)/(scrollBarElement:absH() - 2*originalYOffset - element:absH()))
+							scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+
+							element("scrollOffset"):SetFloat(scrollOffset)
+							listElement["Swiper"]:DoStoredScript("setScrollOffsetToMarker")
+						]]>
+				</event>
+			</touchComponent>
+
+		</element>
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				include("BattleProgressUI").PanelOnInit(element)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleProgressUI").PanelShow(element)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleProgressUI").PanelHide(element)
+			]]>
+		</event>
+
+	</element>
+
+	<!-- Progress Info Button -->
+	<template type="template_spritesheetbutton" name="ProgressInfoButton">
+		<templateVar name="$upSpriteName" equals="'button_info_small'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.45*game.menuScaleX()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$lockEnabled" equals="'1'" />
+		<position relativeTo="ProgressInfoPanel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="14*game.menuScaleY()" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					local pip = element:parent():GetElement("ProgressInfoPanel")
+					if pip("IsShowing"):GetInt() == 0 then
+						pip:DoStoredScript("show")
+					else
+						pip:DoStoredScript("hide")
+					end
+				]]>
+			</event>
+		</touchComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+
+				local FadeTransition = include("FadeTransition")
+				element.FadeTransition = FadeTransition:new({
+					duration = 0.66,
+					onDoneShow = function()
+						element:DoStoredScript("enable")
+					end,
+					onUpdate = function(alpha)
+						element("alpha"):SetFloat(alpha)
+						element:DoStoredScript("updateComponents")
+					end
+				})
+				element.FadeTransition:SetAlpha(0.0)
+
+				element["Touch"]("enabled"):SetInt(0)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				onTick(element, dt)
+				element.FadeTransition:Tick(dt)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				element["Touch"]("enabled"):SetInt(1)
+				element.FadeTransition:Show()
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				element["Touch"]("enabled"):SetInt(0)
+				element.FadeTransition:Hide()
+			]]>
+		</event>
+
+	</template>
+
+	<event name="show" params="element">
+		<![CDATA[
+			element["ProgressInfoButton"]:DoStoredScript("show")
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["ProgressInfoButton"]:DoStoredScript("hide")
+			element["ProgressInfoPanel"]:DoStoredScript("hide")
+		]]>
+	</event>
+
+
+</template>

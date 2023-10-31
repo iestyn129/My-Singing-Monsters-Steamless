@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a9a46c188908ad3afeb0ba9fdec26e56:ff14cc662edea9310bc8523387433ce4:71e1f2df0ffff8c642a8d3009fb975e8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCDE_EPIC_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="BCDE_body.png" x="514" y="2" w="296" h="280" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eye_back.png" x="986" y="84" w="36" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_1.png" x="584" y="623" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_2.png" x="584" y="725" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_eyelids_3.png" x="736" y="679" w="100" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_eyelids_4.png" x="838" y="679" w="42" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_head.png" x="1006" y="19" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="394" oH="272"/>
+    <sprite n="BCDE_horns_EPIC.png" x="2" y="2" w="510" h="329" pX="0.5" pY="0.5" oX="1" oY="0" oW="512" oH="330"/>
+    <sprite n="BCDE_leaves_back_lower_left_EPIC.png" x="882" y="731" w="60" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_leaves_back_lower_right_EPIC.png" x="986" y="182" w="36" h="75" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="40" r="y"/>
+    <sprite n="BCDE_leaves_back_upper_left_EPIC.png" x="776" y="284" w="33" h="19" pX="0.5" pY="0.5" oX="4" oY="1" oW="40" oH="20"/>
+    <sprite n="BCDE_leaves_floor_EPIC.png" x="514" y="284" w="260" h="127" pX="0.5" pY="0.5" oX="0" oY="1" oW="260" oH="130"/>
+    <sprite n="BCDE_leaves_orange_right_EPIC.png" x="986" y="259" w="35" h="50" pX="0.5" pY="0.5" oX="5" oY="2" oW="60" oH="40" r="y"/>
+    <sprite n="BCDE_leaves_red_right_EPIC.png" x="986" y="311" w="33" h="50" pX="0.5" pY="0.5" oX="3" oY="5" oW="40" oH="60"/>
+    <sprite n="BCDE_leaves_yellow_right_EPIC.png" x="776" y="305" w="31" h="54" pX="0.5" pY="0.5" oX="3" oY="4" oW="60" oH="40" r="y"/>
+    <sprite n="BCDE_left_foot.png" x="173" y="439" w="162" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_left_hand_1.png" x="937" y="461" w="78" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_left_hand_2.png" x="937" y="563" w="78" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="100"/>
+    <sprite n="BCDE_left_hand_3.png" x="628" y="739" w="87" h="77" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="100" r="y"/>
+    <sprite n="BCDE_left_leg.png" x="462" y="623" w="120" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_left_lower_arm.png" x="736" y="723" w="98" h="61" pX="0.5" pY="0.5" oX="8" oY="3" oW="88" oH="128" r="y"/>
+    <sprite n="BCDE_left_upper_arm.png" x="323" y="548" w="137" h="87" pX="0.5" pY="0.5" oX="15" oY="0" oW="102" oH="142" r="y"/>
+    <sprite n="BCDE_mouth_01.png" x="337" y="480" w="159" h="66" pX="0.5" pY="0.5" oX="10" oY="5" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_02.png" x="344" y="406" w="164" h="72" pX="0.5" pY="0.5" oX="7" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_03.png" x="2" y="442" w="160" h="87" pX="0.5" pY="0.5" oX="9" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_04.png" x="2" y="333" w="169" h="107" pX="0.5" pY="0.5" oX="3" oY="1" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_05.png" x="812" y="84" w="172" h="125" pX="0.5" pY="0.5" oX="0" oY="0" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_06.png" x="498" y="502" w="140" h="119" pX="0.5" pY="0.5" oX="11" oY="8" oW="172" oH="127"/>
+    <sprite n="BCDE_mouth_07.png" x="628" y="634" w="106" h="103" pX="0.5" pY="0.5" oX="29" oY="14" oW="172" oH="128" r="y"/>
+    <sprite n="BCDE_mouth_08.png" x="323" y="637" w="110" h="60" pX="0.5" pY="0.5" oX="26" oY="15" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_09.png" x="344" y="333" w="165" h="71" pX="0.5" pY="0.5" oX="7" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_10.png" x="510" y="413" w="160" h="87" pX="0.5" pY="0.5" oX="9" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_11.png" x="173" y="333" w="169" h="104" pX="0.5" pY="0.5" oX="3" oY="2" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_12.png" x="809" y="337" w="172" h="122" pX="0.5" pY="0.5" oX="0" oY="1" oW="172" oH="128"/>
+    <sprite n="BCDE_mouth_13.png" x="812" y="211" w="172" h="124" pX="0.5" pY="0.5" oX="0" oY="0" oW="172" oH="128"/>
+    <sprite n="BCDE_pupil.png" x="1006" y="2" w="15" h="15" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="16"/>
+    <sprite n="BCDE_right_foot.png" x="672" y="413" w="134" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_right_hand_1.png" x="808" y="461" w="127" h="120" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="120"/>
+    <sprite n="BCDE_right_hand_2.png" x="640" y="521" w="127" h="111" pX="0.5" pY="0.5" oX="1" oY="0" oW="128" oH="120"/>
+    <sprite n="BCDE_right_hand_3.png" x="769" y="583" w="125" h="94" pX="0.5" pY="0.5" oX="2" oY="0" oW="128" oH="120"/>
+    <sprite n="BCDE_right_leg.png" x="2" y="531" w="156" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCDE_right_lower_arm.png" x="896" y="659" w="121" h="70" pX="0.5" pY="0.5" oX="24" oY="0" oW="118" oH="158" r="y"/>
+    <sprite n="BCDE_right_upper_arm.png" x="164" y="529" w="157" h="126" pX="0.5" pY="0.5" oX="2" oY="0" oW="152" oH="184" r="y"/>
+    <sprite n="BCDE_shadow.png" x="812" y="2" w="192" h="80" pX="0.5" pY="0.5"/>
+</TextureAtlas>

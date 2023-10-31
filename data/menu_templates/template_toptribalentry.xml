@@ -1,0 +1,117 @@
+<template name="template_toptribalentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="0.75*lua_sys.screenWidth()" h="35*game.menuScaleY()" />
+	
+	<event name="onInit" params="element">
+		element:setPositionBroadcast(true)
+	</event>
+
+	<element name="BackgroundElement">
+		<size dependentOnElement="element:name()" dependentOnComponent="SpriteySprite" />
+		<event name="onInit" params="element">
+			element:setPositionBroadcast(true)
+		</event>
+		<ninesliceComponent name="SpriteySprite">
+			<size w="0.7525*lua_sys.screenWidth()" h="38*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(0.0)
+				component("bottomHeight"):SetFloat(0.0)
+				component("leftWidth"):SetFloat(0.0)
+				component("rightWidth"):SetFloat(0.0)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/friendGrey"..element:parent()("greyColor"):GetInt())
+				component("layer"):SetString("MidPopUps")
+				element:setPositionBroadcast(true)
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="TribePic">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="3*game.menuScaleY()" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.getTribeMonsterPic(element:parent()("MonsterType"):GetInt()))
+				component("size"):SetFloat(game.menuScaleY()*0.5*64/component:absW())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="TribeName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TribePic" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="5*game.menuScaleX()" yOffset="7*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(element:parent()("entryNum"):GetInt()..". "..element:parent()("DisplayName"):GetString())
+				include("MenuHelpers").ShrinkTextToWidth(element:parent()("DisplayName"):GetString(),component, 200*game.menuScaleX())
+				component:setColor(0.94, 0.6, 0.11)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="hack">
+		<template type="template_spritesheetbutton" name="VisitButton">
+			<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="0.38*game.menuScaleX()" />
+			<templateVar name="$layer" equals="MidPopUps" />		
+			<position relativeTo="element:parent():parent()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-2" />
+			<textComponent name="Label">
+				<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(game.localizedUpper("LABEL_VISIT"))
+					component("textPadding"):SetInt(4)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</textComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.visitTribalIsland(element:parent():parent()("Key"):GetInt(), true)
+					element:root():popPopUp()
+				</event>
+			</touchComponent>
+		</template>
+	</element>
+	
+	<element name="TribeLevel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="element:parent()[&quot;hack&quot;][&quot;VisitButton&quot;]" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="4*game.menuScaleX()" yOffset="-1" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="75*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("FRIEND_LEVEL_ABBREV_TAG").." "..element:parent()("Level"):GetInt())
+				component:setColor(0.94, 0.6, 0.11)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+</template>

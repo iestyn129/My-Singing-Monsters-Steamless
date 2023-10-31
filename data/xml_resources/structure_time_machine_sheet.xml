@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9d9f17a2d4fea2255c1f728fe829cf83:0f73e2bb2c702bb5980db085c26827e9:48176b7c146e8798ec0f60f1dd190e11$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_time_machine.png" width="512" height="1024" hires="true">
+    <sprite n="metronome_antenna_left" x="339" y="606" w="148" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="metronome_antenna_right" x="339" y="746" w="148" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="metronome_arm" x="452" y="204" w="31" h="164" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="164"/>
+    <sprite n="metronome_base" x="2" y="2" w="448" h="362" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="metronome_blackbg" x="452" y="14" w="36" h="102" pX="0.5" pY="0.5"/>
+    <sprite n="metronome_clock_hub" x="490" y="14" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="metronome_clockface" x="280" y="366" w="168" h="238" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="metronome_clockhand" x="452" y="2" w="52" h="10" pX="0.5" pY="0.5" oX="1" oY="0" oW="12" oH="52" r="y"/>
+    <sprite n="metronome_lightning_01" x="2" y="530" w="275" h="68" pX="0.5" pY="0.5" oX="1" oY="7" oW="276" oH="134"/>
+    <sprite n="metronome_lightning_02" x="2" y="693" w="86" h="272" pX="0.5" pY="0.5" oX="4" oY="0" oW="276" oH="134" r="y"/>
+    <sprite n="metronome_lightning_03" x="2" y="366" w="276" h="80" pX="0.5" pY="0.5" oX="0" oY="0" oW="276" oH="134"/>
+    <sprite n="metronome_lightning_04" x="2" y="448" w="276" h="80" pX="0.5" pY="0.5" oX="0" oY="23" oW="276" oH="134"/>
+    <sprite n="metronome_lightning_05" x="174" y="693" w="84" h="270" pX="0.5" pY="0.5" oX="5" oY="45" oW="276" oH="134" r="y"/>
+    <sprite n="metronome_lightning_06" x="2" y="600" w="273" h="91" pX="0.5" pY="0.5" oX="2" oY="43" oW="276" oH="134"/>
+    <sprite n="metronome_lightning_07" x="260" y="693" w="77" h="270" pX="0.5" pY="0.5" oX="3" oY="52" oW="276" oH="134" r="y"/>
+    <sprite n="metronome_lightning_08" x="90" y="693" w="82" h="271" pX="0.5" pY="0.5" oX="0" oY="20" oW="276" oH="134" r="y"/>
+    <sprite n="metronome_redbar" x="452" y="118" w="32" h="84" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f8d1c1264c66b5c7eff1925f48989532:53aff345d2a45fa0192960e2d8610854:f2ac6631b5f5ed8b3ab4ee5757274653$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_statue_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="fossil01A" x="646" y="408" w="322" h="177" pX="0.5" pY="0.5" oX="3" oY="0" oW="328" oH="178"/>
+    <sprite n="fossil01B" x="260" y="569" w="232" h="188" pX="0.5" pY="0.5" oX="3" oY="0" oW="238" oH="188"/>
+    <sprite n="fountain" x="2" y="2" w="642" h="565" pX="0.5" pY="0.5" oX="1" oY="2" oW="648" oH="568"/>
+    <sprite n="ruins01" x="646" y="2" w="328" h="404" pX="0.5" pY="0.5"/>
+    <sprite n="statue" x="2" y="569" w="256" h="447" pX="0.5" pY="0.5" oX="0" oY="0" oW="256" oH="448"/>
+    <sprite n="statue02" x="494" y="587" w="480" h="199" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="480" r="y"/>
+    <sprite n="statue03" x="260" y="788" w="530" h="180" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

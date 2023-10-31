@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5561e05583dd6bb589cbf5fbac5dc81f:35fd85a6a3b33622a15969d270b9c90b:440c5162c9af8419cd1aefcb3d93629f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island16_sheet01_clover.png" width="2048" height="2048" hires="true">
+    <sprite n="bottom_head" x="1239" y="1629" w="732" h="228" pX="0.5" pY="0.5"/>
+    <sprite n="centre_platform" x="417" y="1367" w="484" h="643" pX="0.5" pY="0.5" oX="0" oY="3" oW="644" oH="488" r="y"/>
+    <sprite n="coin_shine" x="417" y="2014" w="18" h="18" pX="0.5" pY="0.5" oX="1" oY="1" oW="20" oH="20"/>
+    <sprite n="ear" x="509" y="4" w="299" h="1194" pX="0.5" pY="0.5" oX="7" oY="3" oW="308" oH="1200"/>
+    <sprite n="extra_lump" x="1239" y="1861" w="210" h="169" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="feathers_01" x="812" y="641" w="750" h="693" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="feathers_02" x="1673" y="4" w="359" h="485" pX="0.5" pY="0.5" oX="7" oY="2" oW="492" oH="364" r="y"/>
+    <sprite n="feathers_03" x="1566" y="1162" w="458" h="341" pX="0.5" pY="0.5" oX="270" oY="0" oW="728" oH="344"/>
+    <sprite n="feathers_04" x="905" y="1507" w="330" h="395" pX="0.5" pY="0.5" oX="2" oY="3" oW="400" oH="336" r="y"/>
+    <sprite n="feathers_05" x="905" y="4" w="764" h="633" pX="0.5" pY="0.5" oX="2" oY="3" oW="768" oH="640"/>
+    <sprite n="glow_orange" x="1239" y="1338" w="290" h="287" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_blue" x="586" y="1295" w="56" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_blue_glow" x="591" y="1202" w="70" h="73" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_red" x="646" y="1279" w="47" h="69" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_red_glow" x="509" y="1202" w="78" h="89" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_yellow" x="665" y="1202" w="37" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_yellow_glow" x="509" y="1295" w="73" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="side_head" x="4" y="4" w="501" h="1359" pX="0.5" pY="0.5"/>
+    <sprite n="side_lumps" x="1566" y="641" w="472" h="517" pX="0.5" pY="0.5" oX="2" oY="3" oW="476" oH="524"/>
+    <sprite n="side_platform" x="4" y="1367" w="409" h="666" pX="0.5" pY="0.5" oX="3" oY="1" oW="672" oH="412" r="y"/>
+</TextureAtlas>

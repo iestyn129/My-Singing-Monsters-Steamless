@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:82b98b8c9d7d1bf6647cb5d0c6917e73:4591a515a3357f1111420de2fd3e4b46:d113d8e9ab2e14c570e31f0c905d4810$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABCN_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="ABCN_body_lower.png" x="190" y="206" w="150" h="174" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_body_lower_RARE.png" x="190" y="382" w="150" h="174" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_body_upper.png" x="794" y="266" w="202" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_body_upper_RARE.png" x="584" y="274" w="202" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_crystal_new_butt_RARE.png" x="530" y="584" w="50" h="49" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="50" r="y"/>
+    <sprite n="ABCN_crystal_orange_RARE.png" x="530" y="635" w="49" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="50" r="y"/>
+    <sprite n="ABCN_crystal_pink_RARE.png" x="920" y="650" w="60" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_crystal_small_RARE.png" x="128" y="1020" w="80" h="57" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="80" r="y"/>
+    <sprite n="ABCN_crystals_arm_right.png" x="788" y="462" w="192" h="186" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_crystals_back.png" x="356" y="2" w="226" h="190" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_crystals_top.png" x="584" y="2" w="214" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_eyelid_01.png" x="732" y="668" w="44" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48" r="y"/>
+    <sprite n="ABCN_eyelid_02.png" x="720" y="743" w="44" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48" r="y"/>
+    <sprite n="ABCN_eyelid_03.png" x="720" y="818" w="44" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48" r="y"/>
+    <sprite n="ABCN_eyelid_04.png" x="210" y="1020" w="73" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48"/>
+    <sprite n="ABCN_foot_left.png" x="530" y="452" w="50" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_foot_left_RARE.png" x="530" y="518" w="50" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_foot_right.png" x="530" y="312" w="50" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_foot_right_RARE.png" x="530" y="382" w="50" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_glow.png" x="2" y="206" w="186" h="185" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="186" r="y"/>
+    <sprite n="ABCN_glow_blue.png" x="342" y="312" w="186" h="185" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="186" r="y"/>
+    <sprite n="ABCN_glow_green.png" x="2" y="393" w="186" h="185" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="186" r="y"/>
+    <sprite n="ABCN_glow_red.png" x="342" y="499" w="186" h="185" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="186" r="y"/>
+    <sprite n="ABCN_hand_left_01.png" x="285" y="928" w="106" h="92" pX="0.5" pY="0.5" oX="4" oY="44" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_02.png" x="764" y="1019" w="108" h="95" pX="0.5" pY="0.5" oX="4" oY="41" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_03.png" x="2" y="918" w="131" h="98" pX="0.5" pY="0.5" oX="4" oY="18" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_04.png" x="2" y="714" w="145" h="100" pX="0.5" pY="0.5" oX="2" oY="4" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_05.png" x="2" y="816" w="144" h="100" pX="0.5" pY="0.5" oX="3" oY="5" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_right_01.png" x="766" y="790" w="138" h="114" pX="0.5" pY="0.5" oX="1" oY="8" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_02.png" x="435" y="827" w="135" h="120" pX="0.5" pY="0.5" oX="1" oY="2" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_03.png" x="2" y="1018" w="124" h="120" pX="0.5" pY="0.5" oX="1" oY="2" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_04.png" x="764" y="906" w="118" h="111" pX="0.5" pY="0.5" oX="1" oY="4" oW="140" oH="122" r="y"/>
+    <sprite n="ABCN_head.png" x="2" y="580" w="182" h="132" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_head_RARE.png" x="582" y="470" w="172" h="137" pX="0.5" pY="0.5" oX="1" oY="10" oW="140" oH="182" r="y"/>
+    <sprite n="ABCN_lower_arm_left.png" x="190" y="558" w="148" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_lower_arm_left_RARE.png" x="340" y="686" w="148" h="124" pX="0.5" pY="0.5" oX="0" oY="6" oW="148" oH="130"/>
+    <sprite n="ABCN_lower_arm_right.png" x="778" y="650" w="140" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_lower_arm_right_RARE.png" x="578" y="740" w="140" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_lower_leg.png" x="490" y="707" w="86" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_lower_leg_RARE.png" x="490" y="767" w="86" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_mouth_1.png" x="998" y="398" w="20" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_2.png" x="998" y="266" w="24" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_3.png" x="756" y="470" w="28" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_4.png" x="996" y="532" w="20" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_5.png" x="566" y="194" w="16" h="41" pX="0.5" pY="0.5" oX="6" oY="7" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_6.png" x="982" y="498" w="12" h="27" pX="0.5" pY="0.5" oX="11" oY="9" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_7.png" x="982" y="556" w="12" h="18" pX="0.5" pY="0.5" oX="14" oY="11" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_8.png" x="566" y="280" w="16" h="14" pX="0.5" pY="0.5" oX="14" oY="9" oW="66" oH="28"/>
+    <sprite n="ABCN_nose.png" x="982" y="598" w="34" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_nose_RARE.png" x="982" y="628" w="34" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_pupil.png" x="566" y="296" w="16" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_pupil_RARE.png" x="982" y="462" w="14" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_shadow.png" x="2" y="2" w="352" h="202" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_triangle_01.png" x="393" y="949" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_02.png" x="464" y="949" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_03.png" x="535" y="1002" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_04.png" x="606" y="1002" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_05.png" x="393" y="1008" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_06.png" x="464" y="1008" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_07.png" x="285" y="1022" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_08.png" x="210" y="1066" w="69" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_upper_arm_left.png" x="584" y="156" w="208" h="116" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_arm_left_RARE.png" x="356" y="194" w="208" h="116" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_arm_right.png" x="800" y="2" w="210" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_arm_right_RARE.png" x="800" y="134" w="210" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_leg.png" x="698" y="893" w="64" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_leg_RARE.png" x="698" y="1001" w="64" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_ABCN_hand_left_01.png" x="874" y="1068" w="106" h="95" pX="0.5" pY="0.5" oX="4" oY="44" oW="106" oH="154" r="y"/>
+    <sprite n="RARE_ABCN_hand_left_02.png" x="884" y="969" w="108" h="97" pX="0.5" pY="0.5" oX="4" oY="41" oW="106" oH="154" r="y"/>
+    <sprite n="RARE_ABCN_hand_left_03.png" x="920" y="716" w="99" h="131" pX="0.5" pY="0.5" oX="4" oY="18" oW="106" oH="154"/>
+    <sprite n="RARE_ABCN_hand_left_04.png" x="186" y="690" w="145" h="102" pX="0.5" pY="0.5" oX="2" oY="4" oW="106" oH="154" r="y"/>
+    <sprite n="RARE_ABCN_hand_left_05.png" x="149" y="794" w="144" h="102" pX="0.5" pY="0.5" oX="3" oY="5" oW="106" oH="154" r="y"/>
+    <sprite n="RARE_ABCN_hand_right_01.png" x="295" y="812" w="138" h="114" pX="0.5" pY="0.5" oX="1" oY="8" oW="140" oH="122"/>
+    <sprite n="RARE_ABCN_hand_right_02.png" x="148" y="898" w="135" h="120" pX="0.5" pY="0.5" oX="1" oY="2" oW="140" oH="122"/>
+    <sprite n="RARE_ABCN_hand_right_03.png" x="572" y="880" w="124" h="120" pX="0.5" pY="0.5" oX="1" oY="2" oW="140" oH="122"/>
+    <sprite n="RARE_ABCN_hand_right_04.png" x="906" y="849" w="116" h="118" pX="0.5" pY="0.5" oX="1" oY="4" oW="140" oH="122"/>
+    <sprite n="RARE_ABCN_mouth_1.png" x="998" y="465" w="20" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_2.png" x="998" y="332" w="24" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_3.png" x="756" y="536" w="28" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_4.png" x="756" y="602" w="20" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_5.png" x="566" y="237" w="16" h="41" pX="0.5" pY="0.5" oX="6" oY="7" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_6.png" x="982" y="527" w="12" h="27" pX="0.5" pY="0.5" oX="11" oY="9" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_7.png" x="982" y="576" w="12" h="18" pX="0.5" pY="0.5" oX="14" oY="11" oW="66" oH="28" r="y"/>
+    <sprite n="RARE_ABCN_mouth_8.png" x="982" y="480" w="14" h="16" pX="0.5" pY="0.5" oX="14" oY="9" oW="66" oH="28" r="y"/>
+    <sprite n="spore_ABCN.png" x="582" y="609" w="148" h="129" pX="0.5" pY="0.5" oX="13" oY="28" oW="172" oH="172"/>
+</TextureAtlas>

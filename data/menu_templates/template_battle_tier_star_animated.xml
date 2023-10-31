@@ -1,0 +1,78 @@
+<template name="template_battle_tier_star" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$scale" equals="1.0" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+
+	<aeComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+	
+				local layer = "$layer"
+
+				if element:HasVar("layer") then
+					layer = element("layer"):GetString()
+				end
+				
+				component("layer"):SetString(layer)
+
+				local scale = $scale
+				
+				if element:HasVar("scale") then
+					scale = element("scale"):GetFloat()
+				end
+			
+				component("animationName"):SetString("xml_bin/battle_tier_star.bin")
+				component("animation"):SetString("tier star idle")
+				component:setScale(Vector2(scale*0.25*game.menuScaleX(), scale*0.25*game.menuScaleX()))
+				component:calculatePosition()
+			]]>
+		</event>
+	</aeComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("blink_tt"):SetFloat(0.0)
+		]]>
+	</event>
+
+	<event name="enable" params="element">
+		<![CDATA[
+			element["Sprite"]("animation"):SetString("tier star idle")
+		]]>
+	</event>
+
+	<event name="disable" params="element">
+		<![CDATA[
+			element["Sprite"]("animation"):SetString("tier star off")
+		]]>
+	</event>
+		
+	<event name="blink" params="element">
+		<![CDATA[
+			element["Sprite"]("animation"):SetString("tier star impact")
+			element("blink_tt"):SetFloat(1.35)
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local blinkTotalTime = element("blink_tt"):GetFloat()
+			if blinkTotalTime > 0 then
+
+				blinkTotalTime = blinkTotalTime - dt
+				element("blink_tt"):SetFloat(blinkTotalTime)
+				
+				if blinkTotalTime <= 0 then
+					element["Sprite"]("animation"):SetString("tier star idle")
+				end
+			end
+		]]>
+	</event>
+
+	
+
+</template>

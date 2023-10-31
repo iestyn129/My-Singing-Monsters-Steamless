@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:060fef3ca78bf8877eb984ea63699fee:66e151a4b131e3aa3dd44b6c127938e5:c35e45ec4c6336ea224fca83b1d99977$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_pyrozite_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Pyrozite_base" x="4" y="4" w="821" h="957" pX="0.5" pY="0.5" oX="49" oY="25" oW="880" oH="992"/>
+    <sprite n="castle_Pyrozite_crystalA" x="829" y="625" w="154" h="146" pX="0.5" pY="0.5" oX="3" oY="3" oW="160" oH="160"/>
+    <sprite n="castle_Pyrozite_crystalB" x="829" y="4" w="184" h="192" pX="0.5" pY="0.5" oX="0" oY="3" oW="192" oH="192" r="y"/>
+    <sprite n="castle_Pyrozite_crystalC" x="829" y="200" w="183" h="194" pX="0.5" pY="0.5" oX="23" oY="28" oW="240" oH="240" r="y"/>
+    <sprite n="castle_Pyrozite_pyramid" x="829" y="398" w="156" h="223" pX="0.5" pY="0.5" oX="6" oY="6" oW="168" oH="240"/>
+</TextureAtlas>

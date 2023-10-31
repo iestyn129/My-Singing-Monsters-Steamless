@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6b36e7e8687c315a0c11176718fd451d:8b6b453409a3ceab75d68f6d508df640:653f6cdd0b2829808da313a7eae81e75$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S10_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="S10_bell_01" x="356" y="898" w="59" h="40" pX="0.5" pY="0.5" oX="5" oY="2" oW="48" oH="64" r="y"/>
+    <sprite n="S10_bell_02" x="482" y="294" w="34" h="115" pX="0.5" pY="0.5" oX="9" oY="2" oW="52" oH="120"/>
+    <sprite n="S10_bell_03" x="532" y="252" w="83" h="36" pX="0.5" pY="0.5" oX="8" oY="2" oW="52" oH="88" r="y"/>
+    <sprite n="S10_bell_04" x="520" y="294" w="30" h="109" pX="0.5" pY="0.5" oX="9" oY="2" oW="48" oH="112"/>
+    <sprite n="S10_bell_05" x="325" y="431" w="18" h="65" pX="0.5" pY="0.5" oX="7" oY="1" oW="32" oH="68"/>
+    <sprite n="S10_bell_06" x="398" y="272" w="91" h="18" pX="0.5" pY="0.5" oX="7" oY="2" oW="32" oH="96" r="y"/>
+    <sprite n="S10_bell_shine" x="347" y="431" w="46" h="64" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="48" r="y"/>
+    <sprite n="S10_body" x="4" y="752" w="169" h="187" pX="0.5" pY="0.5" oX="2" oY="3" oW="192" oH="172" r="y"/>
+    <sprite n="S10_head" x="135" y="504" w="128" h="183" pX="0.5" pY="0.5" oX="4" oY="12" oW="136" oH="200"/>
+    <sprite n="S10_hour_glass_back" x="562" y="391" w="47" h="94" pX="0.5" pY="0.5" oX="2" oY="6" oW="52" oH="106"/>
+    <sprite n="S10_hour_glass_front" x="525" y="4" w="48" h="105" pX="0.5" pY="0.5" oX="2" oY="0" oW="52" oH="106"/>
+    <sprite n="S10_jaw_01" x="215" y="152" w="101" h="143" pX="0.5" pY="0.5" oX="2" oY="5" oW="152" oH="124" r="y"/>
+    <sprite n="S10_jaw_02" x="177" y="752" w="98" h="144" pX="0.5" pY="0.5" oX="2" oY="9" oW="152" oH="124" r="y"/>
+    <sprite n="S10_jaw_03" x="312" y="4" w="97" h="143" pX="0.5" pY="0.5" oX="2" oY="15" oW="152" oH="124" r="y"/>
+    <sprite n="S10_jaw_04" x="215" y="4" w="93" h="144" pX="0.5" pY="0.5" oX="2" oY="23" oW="152" oH="124" r="y"/>
+    <sprite n="S10_jaw_05" x="279" y="750" w="94" h="144" pX="0.5" pY="0.5" oX="3" oY="26" oW="152" oH="124" r="y"/>
+    <sprite n="S10_left_eyelid_01" x="425" y="685" w="43" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="S10_left_eyelid_02" x="377" y="823" w="43" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="S10_left_eyelid_03" x="419" y="870" w="43" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="S10_left_eyelid_04" x="424" y="823" w="43" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="48"/>
+    <sprite n="S10_left_foot_01" x="320" y="151" w="97" h="117" pX="0.5" pY="0.5" oX="5" oY="1" oW="108" oH="120"/>
+    <sprite n="S10_left_foot_02" x="267" y="501" w="97" h="115" pX="0.5" pY="0.5" oX="5" oY="3" oW="108" oH="120"/>
+    <sprite n="S10_left_foot_03" x="368" y="499" w="97" h="115" pX="0.5" pY="0.5" oX="5" oY="3" oW="108" oH="120"/>
+    <sprite n="S10_left_foot_04" x="387" y="298" w="91" h="115" pX="0.5" pY="0.5" oX="11" oY="3" oW="108" oH="120"/>
+    <sprite n="S10_left_foot_05" x="469" y="499" w="90" h="115" pX="0.5" pY="0.5" oX="12" oY="3" oW="108" oH="120"/>
+    <sprite n="S10_left_hand" x="377" y="744" w="60" h="75" pX="0.5" pY="0.5" oX="2" oY="2" oW="64" oH="80"/>
+    <sprite n="S10_left_lower_arm" x="305" y="299" w="78" h="128" pX="0.5" pY="0.5" oX="6" oY="7" oW="140" oH="92" r="y"/>
+    <sprite n="S10_left_lower_leg" x="227" y="691" w="104" h="55" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="104" r="y"/>
+    <sprite n="S10_left_pupil" x="413" y="124" w="19" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="20" r="y"/>
+    <sprite n="S10_left_upper_arm" x="665" y="99" w="48" h="83" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="52" r="y"/>
+    <sprite n="S10_left_upper_leg" x="335" y="687" w="86" h="53" pX="0.5" pY="0.5" oX="1" oY="3" oW="56" oH="92" r="y"/>
+    <sprite n="S10_right_eyelid_01" x="320" y="272" w="35" h="23" pX="0.5" pY="0.5" oX="2" oY="5" oW="32" oH="44" r="y"/>
+    <sprite n="S10_right_eyelid_02" x="564" y="113" w="35" h="26" pX="0.5" pY="0.5" oX="2" oY="5" oW="32" oH="44" r="y"/>
+    <sprite n="S10_right_eyelid_03" x="493" y="262" w="35" h="28" pX="0.5" pY="0.5" oX="2" oY="5" oW="32" oH="44" r="y"/>
+    <sprite n="S10_right_eyelid_04" x="525" y="113" w="35" h="28" pX="0.5" pY="0.5" oX="2" oY="5" oW="32" oH="44" r="y"/>
+    <sprite n="S10_right_fingers" x="633" y="4" w="78" h="91" pX="0.5" pY="0.5" oX="5" oY="2" oW="88" oH="96"/>
+    <sprite n="S10_right_foot_01" x="4" y="943" w="115" h="77" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="120" r="y"/>
+    <sprite n="S10_right_foot_02" x="123" y="943" w="113" h="77" pX="0.5" pY="0.5" oX="7" oY="4" oW="92" oH="120" r="y"/>
+    <sprite n="S10_right_foot_03" x="397" y="417" w="108" h="78" pX="0.5" pY="0.5" oX="7" oY="9" oW="92" oH="120" r="y"/>
+    <sprite n="S10_right_foot_04" x="240" y="943" w="98" h="76" pX="0.5" pY="0.5" oX="7" oY="19" oW="92" oH="120" r="y"/>
+    <sprite n="S10_right_foot_05" x="342" y="943" w="96" h="75" pX="0.5" pY="0.5" oX="7" oY="21" oW="92" oH="120" r="y"/>
+    <sprite n="S10_right_hand" x="715" y="4" w="74" h="80" pX="0.5" pY="0.5" oX="3" oY="0" oW="80" oH="80"/>
+    <sprite n="S10_right_lower_arm" x="267" y="620" w="74" h="63" pX="0.5" pY="0.5" oX="1" oY="2" oW="76" oH="68"/>
+    <sprite n="S10_right_lower_leg" x="577" y="4" w="52" h="96" pX="0.5" pY="0.5" oX="2" oY="2" oW="56" oH="100"/>
+    <sprite n="S10_right_pupil" x="436" y="124" w="14" h="17" pX="0.5" pY="0.5" oX="3" oY="1" oW="20" oH="20"/>
+    <sprite n="S10_right_upper_arm" x="423" y="618" w="48" h="63" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="48" r="y"/>
+    <sprite n="S10_right_upper_leg" x="135" y="691" w="88" h="57" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="92" r="y"/>
+    <sprite n="S10_sand_bottom" x="245" y="900" w="30" h="38" pX="0.5" pY="0.5" oX="1" oY="1" oW="40" oH="32" r="y"/>
+    <sprite n="S10_sand_pour" x="454" y="136" w="28" h="8" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S10_sand_top" x="359" y="272" w="35" h="22" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="24"/>
+    <sprite n="S10_shadow" x="4" y="504" w="127" h="244" pX="0.5" pY="0.5" oX="0" oY="0" oW="244" oH="128" r="y"/>
+    <sprite n="S10_staff" x="4" y="4" w="207" h="496" pX="0.5" pY="0.5" oX="12" oY="2" oW="232" oH="500"/>
+    <sprite n="S10_strap" x="454" y="124" w="32" h="8" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S10_tail_01" x="215" y="299" w="86" h="129" pX="0.5" pY="0.5" oX="3" oY="3" oW="92" oH="136"/>
+    <sprite n="S10_tail_02" x="215" y="432" w="106" h="65" pX="0.5" pY="0.5" oX="11" oY="3" oW="88" oH="112" r="y"/>
+    <sprite n="S10_tail_03" x="530" y="145" w="79" h="103" pX="0.5" pY="0.5" oX="0" oY="2" oW="80" oH="108"/>
+    <sprite n="S10_tail_04" x="619" y="200" w="91" h="88" pX="0.5" pY="0.5" oX="0" oY="4" oW="88" oH="100" r="y"/>
+    <sprite n="S10_tail_05" x="509" y="413" w="49" h="82" pX="0.5" pY="0.5" oX="3" oY="1" oW="56" oH="84"/>
+    <sprite n="S10_tail_06" x="554" y="292" w="78" h="95" pX="0.5" pY="0.5" oX="3" oY="0" oW="84" oH="96"/>
+    <sprite n="S10_tail_07" x="177" y="900" w="64" h="39" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="64" r="y"/>
+    <sprite n="S10_tail_base" x="413" y="4" w="108" h="116" pX="0.5" pY="0.5" oX="4" oY="8" oW="124" oH="124" r="y"/>
+    <sprite n="S10_tail_hair_back" x="345" y="620" w="74" h="63" pX="0.5" pY="0.5" oX="3" oY="4" oW="80" oH="72"/>
+    <sprite n="S10_tail_hair_front" x="421" y="148" w="105" h="110" pX="0.5" pY="0.5" oX="3" oY="0" oW="112" oH="112"/>
+    <sprite n="S10_tail_tip" x="613" y="104" w="48" h="92" pX="0.5" pY="0.5" oX="0" oY="4" oW="48" oH="100"/>
+    <sprite n="S10_wisker_01" x="327" y="898" w="25" h="41" pX="0.5" pY="0.5" oX="4" oY="3" oW="50" oH="32" r="y"/>
+    <sprite n="S10_wisker_02" x="279" y="898" w="44" h="41" pX="0.5" pY="0.5" oX="4" oY="5" oW="52" oH="52"/>
+</TextureAtlas>

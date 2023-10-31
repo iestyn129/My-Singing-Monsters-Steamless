@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6fa9248a0bfb37aa4c22ae3b2f390dd9:9162a1d8f7b9c2609dad786eb4362ab1:749752c740c1679b5f3b8ecb8fb27419$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_D_RARE_costume_01_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="D_mallow01_P.png" x="31" y="974" w="37" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="38"/>
+    <sprite n="D_mallow01_Y.png" x="39" y="746" w="37" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="38"/>
+    <sprite n="D_mallow02_P.png" x="1" y="890" w="36" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow02_Y.png" x="1" y="932" w="36" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow03_P.png" x="477" y="704" w="28" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mallow03_Y.png" x="1" y="974" w="28" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb1_P.png" x="429" y="704" w="46" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb1_Y.png" x="1" y="746" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb2_P.png" x="429" y="608" w="56" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb2_Y.png" x="429" y="656" w="56" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb3_P.png" x="429" y="380" w="70" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb3_Y.png" x="429" y="446" w="70" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb4_P.png" x="429" y="140" w="74" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb4_Y.png" x="429" y="198" w="74" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb5_P.png" x="429" y="256" w="72" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb5_Y.png" x="429" y="318" w="72" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb6_P.png" x="429" y="512" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb6_Y.png" x="429" y="560" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb7_P.png" x="1" y="794" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb7_Y.png" x="1" y="842" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_D_costume_07_bodyP1.png" x="1" y="532" w="212" h="192" pX="0.5" pY="0.5" oX="0" oY="2" oW="212" oH="194"/>
+    <sprite n="monster_D_costume_07_bodyP2.png" x="1" y="140" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_07_bodyP3.png" x="215" y="140" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_07_bodyY1.png" x="215" y="532" w="212" h="192" pX="0.5" pY="0.5" oX="0" oY="2" oW="212" oH="194"/>
+    <sprite n="monster_D_costume_07_bodyY2.png" x="1" y="336" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_07_bodyY3.png" x="215" y="336" w="212" h="194" pX="0.5" pY="0.5"/>
+    <!-- original anchor = (53, 80) -> new anchor (60, 120) diff = (-7, -40)-->
+    <!-- add double it to texturepacker output offsets (3, 3) -> (-11, -77), because hires-->
+    <sprite n="monster_D_costume_07_earsP.png" x="1" y="1" w="242" h="137" pX="0.5" pY="0.5" oX="-11" oY="-77" oW="252" oH="140"/>
+    <!-- original anchor = (53, 80) -> new anchor (60, 120) diff = (-7, -40)-->
+    <!-- add double it to texturepacker output offsets (3, 3) -> (-11, -77), because hires-->
+    <sprite n="monster_D_costume_07_earsY.png" x="245" y="1" w="242" h="137" pX="0.5" pY="0.5" oX="-11" oY="-77" oW="252" oH="140"/>
+</TextureAtlas>

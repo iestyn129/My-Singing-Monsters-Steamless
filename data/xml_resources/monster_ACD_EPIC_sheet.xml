@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:596781dc3f4640956232b75145bbacb5:42fc40e96f88fd8c51d94a55d9397d7f:f9da1cad741adfbd35032c15398a07d0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ACD_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ACD_foot_1" x="388" y="125" w="111" h="70" pX="0.5" pY="0.5" oX="9" oY="8" oW="130" oH="82"/>
+    <sprite n="ACD_foot_2" x="2" y="774" w="127" h="70" pX="0.5" pY="0.5" oX="1" oY="11" oW="130" oH="82"/>
+    <sprite n="ACD_foot_3" x="272" y="805" w="123" h="69" pX="0.5" pY="0.5" oX="3" oY="11" oW="130" oH="82"/>
+    <sprite n="ACD_foot_4" x="388" y="197" w="111" h="70" pX="0.5" pY="0.5" oX="9" oY="8" oW="130" oH="82"/>
+    <sprite n="ACD_foot_5" x="397" y="863" w="109" h="72" pX="0.5" pY="0.5" oX="10" oY="5" oW="130" oH="82"/>
+    <sprite n="ACD_foot_6" x="430" y="763" w="74" h="98" pX="0.5" pY="0.5" oX="15" oY="0" oW="130" oH="82" r="y"/>
+    <sprite n="ACD_head" x="2" y="95" w="204" h="141" pX="0.5" pY="0.5" oX="0" oY="0" oW="204" oH="146"/>
+    <sprite n="ACD_left_eyeback" x="144" y="937" w="51" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="54" r="y"/>
+    <sprite n="ACD_left_eyelid_1" x="2" y="876" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_eyelid_2" x="65" y="876" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_eyelid_3" x="85" y="937" w="57" h="61" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60" r="y"/>
+    <sprite n="ACD_left_eyelid_4" x="128" y="876" w="61" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="60"/>
+    <sprite n="ACD_left_leg_1" x="208" y="125" w="178" h="90" pX="0.5" pY="0.5" oX="8" oY="0" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_2" x="208" y="217" w="174" h="85" pX="0.5" pY="0.5" oX="13" oY="4" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_3" x="2" y="238" w="172" h="84" pX="0.5" pY="0.5" oX="14" oY="6" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_4" x="176" y="304" w="166" h="87" pX="0.5" pY="0.5" oX="11" oY="12" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_5" x="2" y="324" w="162" h="88" pX="0.5" pY="0.5" oX="10" oY="16" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_6" x="328" y="452" w="154" h="90" pX="0.5" pY="0.5" oX="8" oY="24" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_7" x="2" y="492" w="151" h="93" pX="0.5" pY="0.5" oX="5" oY="27" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_8" x="2" y="587" w="146" h="96" pX="0.5" pY="0.5" oX="2" oY="32" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_left_leg_9" x="150" y="646" w="140" h="98" pX="0.5" pY="0.5" oX="0" oY="38" oW="98" oH="178" r="y"/>
+    <sprite n="ACD_mouth_EPIC" x="2" y="937" w="81" h="85" pX="0.5" pY="0.5" oX="9" oY="12" oW="100" oH="100" r="y"/>
+    <sprite n="ACD_pupil" x="474" y="2" w="22" h="22" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+    <sprite n="ACD_right_eyeback" x="302" y="876" w="47" h="47" pX="0.5" pY="0.5" oX="1" oY="1" oW="50" oH="50"/>
+    <sprite n="ACD_right_eyelid_1" x="197" y="937" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_2" x="247" y="876" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_3" x="191" y="838" w="54" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_eyelid_4" x="252" y="937" w="53" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="56"/>
+    <sprite n="ACD_right_leg_1" x="344" y="376" w="164" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_2" x="166" y="393" w="160" h="77" pX="0.5" pY="0.5" oX="0" oY="4" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_3" x="2" y="414" w="158" h="76" pX="0.5" pY="0.5" oX="0" oY="6" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_4" x="162" y="472" w="154" h="79" pX="0.5" pY="0.5" oX="0" oY="10" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_5" x="318" y="544" w="149" h="80" pX="0.5" pY="0.5" oX="0" oY="15" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_6" x="304" y="626" w="144" h="86" pX="0.5" pY="0.5" oX="0" oY="20" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_7" x="2" y="685" w="137" h="87" pX="0.5" pY="0.5" oX="0" oY="27" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_8" x="292" y="714" w="136" h="89" pX="0.5" pY="0.5" oX="0" oY="28" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_right_leg_9" x="141" y="746" w="129" h="90" pX="0.5" pY="0.5" oX="0" oY="35" oW="90" oH="164" r="y"/>
+    <sprite n="ACD_shadow" x="450" y="626" w="58" h="135" pX="0.5" pY="0.5" oX="0" oY="1" oW="136" oH="60" r="y"/>
+    <sprite n="ACD_wing_left_big" x="242" y="2" w="230" h="121" pX="0.5" pY="0.5" oX="12" oY="6" oW="148" oH="244" r="y"/>
+    <sprite n="ACD_wing_left_small" x="155" y="553" w="147" h="91" pX="0.5" pY="0.5" oX="6" oY="4" oW="160" oH="100"/>
+    <sprite n="ACD_wing_right_big" x="2" y="2" w="238" h="91" pX="0.5" pY="0.5" oX="10" oY="7" oW="110" oH="256" r="y"/>
+    <sprite n="ACD_wing_right_small" x="384" y="269" w="123" h="105" pX="0.5" pY="0.5" oX="5" oY="6" oW="130" oH="120"/>
+</TextureAtlas>

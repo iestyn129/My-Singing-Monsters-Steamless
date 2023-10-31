@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0844096f05d1879fe94c422997c7d866:18dcecec239b1f6415b4ccf78a5e399b:ad8c8f13cfd10396dea83735ca448b21$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_potluck.png" width="512" height="512" hires="true">
+    <sprite n="b_tentacle_01" x="396" y="244" w="54" h="77" pX="0.5" pY="0.5"/>
+    <sprite n="b_tentacle_02" x="241" y="406" w="56" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="b_tentacle_03" x="309" y="467" w="46" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="b_tentacle_04" x="396" y="323" w="48" h="57" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="candle_000" x="449" y="423" w="19" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="candle_001" x="376" y="344" w="18" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="candle_002" x="470" y="423" w="19" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="candle_003" x="2" y="493" w="45" h="17" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="candle_004" x="491" y="423" w="19" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="candle_005" x="490" y="257" w="20" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="candle_006" x="490" y="207" w="20" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="candle_007" x="423" y="382" w="21" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_cake_back" x="2" y="463" w="115" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_cake_tentacles" x="366" y="399" w="55" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_potluck_eye_highlights" x="490" y="304" w="20" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_eyeball" x="449" y="473" w="22" h="21" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_potluck_main" x="2" y="2" w="392" h="340" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_mid_candle" x="485" y="139" w="21" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_pupil" x="49" y="493" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_sl_candle_mstr" x="423" y="430" w="24" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="deco_potluck_sr_candle" x="446" y="391" w="58" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_potluck_top_cake_mstr" x="2" y="344" w="134" h="117" pX="0.5" pY="0.5"/>
+    <sprite n="lid_bg" x="138" y="406" w="101" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="lid_fg" x="273" y="344" w="101" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="salad_celery_sl" x="396" y="140" w="87" h="102" pX="0.5" pY="0.5"/>
+    <sprite n="salad_celery_sr" x="470" y="2" w="37" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="salad_corn" x="299" y="399" w="65" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="salad_fg_leaves" x="250" y="472" w="57" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="salad_lettuce_bg" x="138" y="344" w="133" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="salad_lettuce_fg" x="452" y="244" w="36" h="83" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="salad_lettuce_mg" x="396" y="2" w="72" h="136" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="salad_peppers" x="357" y="473" w="64" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="salad_tentacle_sl" x="138" y="461" w="68" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="salad_tentacle_sr" x="446" y="329" w="64" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="salad_turnip_bg" x="470" y="105" w="38" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="salad_turnip_fg" x="208" y="472" w="40" h="38" pX="0.5" pY="0.5"/>
+</TextureAtlas>

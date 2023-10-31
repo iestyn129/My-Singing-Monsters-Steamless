@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6ec34d8fd1bdcbf03d776fb2536ea9ec:64e2b52db569be94d33badff7517a298:4d7ec96fc5e84b8ca85885cf415bf280$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_candygargoyle_sheet.png" width="256" height="512">
+    <sprite n="basket front.png" x="180" y="49" w="60" h="52" pX="0.5" pY="0.5" oX="6" oY="6" oW="71" oH="64"/>
+    <sprite n="basket interior.png" x="180" y="103" w="60" h="35" pX="0.5" pY="0.5" oX="4" oY="0" oW="68" oH="35"/>
+    <sprite n="candy green.png" x="52" y="279" w="23" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="candy orange.png" x="2" y="279" w="23" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="candy pink.png" x="230" y="262" w="23" h="23" pX="0.5" pY="0.5"/>
+    <sprite n="candy purple.png" x="231" y="211" w="23" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="candy yellow.png" x="27" y="279" w="23" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="face front.png" x="180" y="2" w="61" h="45" pX="0.5" pY="0.5" oX="4" oY="3" oW="70" oH="52"/>
+    <sprite n="facecandy 1.png" x="230" y="237" w="24" h="23" pX="0.5" pY="0.5" oX="3" oY="0" oW="27" oH="23"/>
+    <sprite n="facecandy 2.png" x="231" y="184" w="23" h="25" pX="0.5" pY="0.5" oX="3" oY="0" oW="33" oH="23" r="y"/>
+    <sprite n="floor hearts front.png" x="180" y="140" w="58" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="handle back.png" x="218" y="287" w="27" h="16" pX="0.5" pY="0.5" oX="5" oY="0" oW="26" oH="27" r="y"/>
+    <sprite n="handle front.png" x="180" y="227" w="48" h="41" pX="0.5" pY="0.5" oX="7" oY="6" oW="63" oH="53"/>
+    <sprite n="statue.png" x="2" y="2" w="176" h="275" pX="0.5" pY="0.5" oX="0" oY="3" oW="176" oH="278"/>
+    <sprite n="tongue back.png" x="180" y="184" w="49" h="41" pX="0.5" pY="0.5" oX="3" oY="4" oW="56" oH="51"/>
+    <sprite n="tongue front.png" x="180" y="270" w="36" h="30" pX="0.5" pY="0.5" oX="4" oY="3" oW="43" oH="37"/>
+</TextureAtlas>

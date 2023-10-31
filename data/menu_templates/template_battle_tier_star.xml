@@ -1,0 +1,101 @@
+<template name="template_battle_tier_star" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$scale" equals="1.0" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			
+				local layer = "$layer"
+
+				if element:HasVar("layer") then
+					layer = element("layer"):GetString()
+				end
+				
+				component("layer"):SetString(layer)
+
+				local scale = $scale
+				
+				if element:HasVar("scale") then
+					scale = element("scale"):GetFloat()
+				end
+
+				component("size"):SetFloat(0.25*scale*game.menuScaleX())
+				
+				component("spriteName"):SetString("button_extras_big")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("visible"):SetInt(1)
+				
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<event name="enable" params="element">
+		<![CDATA[
+			element["Sprite"]("spriteName"):SetString("button_extras_big")
+		]]>
+	</event>
+
+	<event name="disable" params="element">
+		<![CDATA[
+			element["Sprite"]("spriteName"):SetString("button_extras_grey_big")
+		]]>
+	</event>
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("blink_tt"):SetFloat(0.0)
+		]]>
+	</event>
+		
+	<event name="blink" params="element">
+		<![CDATA[
+			element("blink_tt"):SetFloat(1.8)
+			element("blink_t"):SetFloat(0)
+			element("blink_i"):SetFloat(0)
+			element("blink"):SetInt(1)
+		]]>
+	</event>	
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local blinkTotalTime = element("blink_tt"):GetFloat()
+			if blinkTotalTime > 0 then
+				
+				local blinkTime = element("blink_t"):GetFloat()
+				if blinkTime <= 0 then
+
+					local blink = element("blink"):GetInt()
+					if blink == 1 then
+						element:DoStoredScript("enable")
+						element("blink"):SetInt(0)
+					else
+						element:DoStoredScript("disable")
+						element("blink"):SetInt(1)
+					end
+
+					local i = element("blink_i"):GetInt()
+					element("blink_i"):SetInt(i+1)
+					element("blink_t"):SetFloat(math.max(0.1, 0.16 - i * 0.02))
+				else
+					blinkTime = blinkTime - dt
+					element("blink_t"):SetFloat(blinkTime)
+				end
+
+				blinkTotalTime = blinkTotalTime - dt
+				element("blink_tt"):SetFloat(blinkTotalTime)
+				
+				if blinkTotalTime <= 0 then
+					element:DoStoredScript("enable")
+				end
+			end
+		]]>
+	</event>	
+
+	
+</template>

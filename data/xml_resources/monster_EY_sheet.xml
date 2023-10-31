@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cba8a0f4c718c89395609a336eceb6c2:409bc0373f4bf290ecc96b6c938e23a1:4e316906d042b16b2a55b696cb0799b9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_EY_sheet.png" width="512" height="512" hires="true">
+    <sprite n="body" x="2" y="2" w="294" h="186" pX="0.5" pY="0.5" oX="0" oY="0" oW="294" oH="188"/>
+    <sprite n="critter back leg 1" x="445" y="286" w="13" h="34" pX="0.5" pY="0.5" oX="1" oY="0" oW="14" oH="34"/>
+    <sprite n="critter back leg 2" x="445" y="248" w="13" h="36" pX="0.5" pY="0.5" oX="1" oY="0" oW="14" oH="36"/>
+    <sprite n="critter back leg 3" x="286" y="190" w="10" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="critter body" x="151" y="339" w="81" h="104" pX="0.5" pY="0.5" oX="1" oY="2" oW="106" oH="84" r="y"/>
+    <sprite n="critter eye 1" x="218" y="445" w="38" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="42" oH="40" r="y"/>
+    <sprite n="critter eye 2" x="205" y="260" w="26" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="critter eye 3" x="349" y="437" w="18" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="critter eyelid 1_1" x="38" y="470" w="32" h="40" pX="0.5" pY="0.5" oX="0" oY="4" oW="42" oH="40" r="y"/>
+    <sprite n="critter eyelid 1_2" x="72" y="470" w="32" h="40" pX="0.5" pY="0.5" oX="0" oY="4" oW="42" oH="40" r="y"/>
+    <sprite n="critter eyelid 1_3" x="325" y="403" w="40" h="32" pX="0.5" pY="0.5" oX="0" oY="4" oW="42" oH="40"/>
+    <sprite n="critter eyelid 1_4" x="313" y="438" w="34" h="41" pX="0.5" pY="0.5" oX="0" oY="2" oW="42" oH="40" r="y"/>
+    <sprite n="critter eyelid 1_5" x="2" y="470" w="34" h="40" pX="0.5" pY="0.5" oX="0" oY="2" oW="42" oH="40" r="y"/>
+    <sprite n="critter eyelid 2_1" x="218" y="489" w="26" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22"/>
+    <sprite n="critter eyelid 2_2" x="246" y="489" w="26" h="21" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22"/>
+    <sprite n="critter eyelid 2_3" x="313" y="481" w="21" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22" r="y"/>
+    <sprite n="critter eyelid 2_4" x="336" y="481" w="21" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22" r="y"/>
+    <sprite n="critter eyelid 2_5" x="325" y="367" w="21" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="22" r="y"/>
+    <sprite n="critter eyelid 3_1" x="151" y="190" w="17" h="18" pX="0.5" pY="0.5" oX="1" oY="0" oW="18" oH="20"/>
+    <sprite n="critter eyelid 3_2" x="151" y="210" w="17" h="18" pX="0.5" pY="0.5" oX="1" oY="0" oW="18" oH="20"/>
+    <sprite n="critter eyelid 3_3" x="151" y="230" w="17" h="18" pX="0.5" pY="0.5" oX="1" oY="0" oW="18" oH="20"/>
+    <sprite n="critter eyelid 3_4" x="348" y="367" w="17" h="18" pX="0.5" pY="0.5" oX="1" oY="0" oW="18" oH="20"/>
+    <sprite n="critter eyelid 3_5" x="367" y="415" w="17" h="18" pX="0.5" pY="0.5" oX="1" oY="0" oW="18" oH="20"/>
+    <sprite n="critter front leg 1" x="258" y="438" w="12" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="critter front leg 2" x="445" y="204" w="14" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="critter front leg 3" x="286" y="222" w="10" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="critter glow" x="234" y="346" w="89" h="90" pX="0.5" pY="0.5" oX="2" oY="1" oW="92" oH="90" r="y"/>
+    <sprite n="critter head" x="274" y="438" w="37" h="72" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="38" r="y"/>
+    <sprite n="critter pupil" x="91" y="445" w="8" h="16" pX="0.5" pY="0.5" oX="0" oY="1" oW="16" oH="10" r="y"/>
+    <sprite n="drum interior" x="298" y="263" w="106" h="73" pX="0.5" pY="0.5" oX="0" oY="1" oW="106" oH="74"/>
+    <sprite n="drum lid 1" x="407" y="339" w="36" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="drum lid 2" x="367" y="367" w="36" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="drum lid 3" x="367" y="391" w="36" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="drum pupil" x="234" y="242" w="8" h="8" pX="0.5" pY="0.5"/>
+    <sprite n="gills back" x="2" y="190" w="87" h="278" pX="0.5" pY="0.5" oX="0" oY="1" oW="278" oH="88" r="y"/>
+    <sprite n="gills front" x="91" y="190" w="58" h="253" pX="0.5" pY="0.5" oX="1" oY="0" oW="254" oH="58" r="y"/>
+    <sprite n="grass 1" x="298" y="98" w="146" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="148" r="y"/>
+    <sprite n="grass 2" x="461" y="244" w="49" h="70" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="70"/>
+    <sprite n="L finger 1_1" x="170" y="445" w="20" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="L finger 1_2" x="415" y="172" w="28" h="69" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="70"/>
+    <sprite n="L finger 2_1" x="179" y="260" w="24" h="76" pX="0.5" pY="0.5" oX="2" oY="0" oW="26" oH="76"/>
+    <sprite n="L finger 2_2" x="325" y="338" w="80" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="28" oH="80" r="y"/>
+    <sprite n="L finger 3_1 membrane" x="106" y="445" w="30" h="65" pX="0.5" pY="0.5" oX="2" oY="1" oW="34" oH="66"/>
+    <sprite n="L finger 3_1" x="179" y="242" w="53" h="16" pX="0.5" pY="0.5" oX="0" oY="1" oW="16" oH="54" r="y"/>
+    <sprite n="L finger 3_2 membrane" x="234" y="254" w="62" h="22" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="66" r="y"/>
+    <sprite n="L finger 3_2" x="138" y="445" w="30" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="L lower arm" x="409" y="243" w="34" h="94" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="94"/>
+    <sprite n="L palm" x="298" y="210" w="109" h="51" pX="0.5" pY="0.5" oX="1" oY="0" oW="52" oH="110" r="y"/>
+    <sprite n="L upper arm" x="170" y="190" w="114" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R finger 1_1" x="445" y="322" w="62" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R finger 1_2" x="407" y="363" w="86" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R finger 2_1" x="446" y="98" w="14" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="R finger 2_2" x="151" y="263" w="26" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="R finger 3_1" x="446" y="156" w="14" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="R finger 3_2" x="192" y="445" w="24" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="R lower arm" x="298" y="172" w="115" h="36" pX="0.5" pY="0.5" oX="1" oY="2" oW="38" oH="118" r="y"/>
+    <sprite n="R palm membrane" x="205" y="284" w="80" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R palm" x="462" y="146" w="46" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="R upper arm" x="462" y="2" w="46" h="142" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="298" y="2" w="162" h="94" pX="0.5" pY="0.5"/>
+</TextureAtlas>

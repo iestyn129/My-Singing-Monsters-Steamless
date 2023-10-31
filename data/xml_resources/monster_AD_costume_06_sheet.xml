@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5c54620dae23419fdf99f9c1a45ce634:bf6eba1a4eb339623aeefae2783def26:8d6c2fcf799ca23a950273cd631b86e7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AD_costume_06_sheet.png" width="512" height="1024" hires="true">
+	<!-- original anchor = (105, 53) -> new anchor (88, 52) diff = (12, 1)-->
+	<!-- add double it to texturepacker output offsets (11, 6) -> (35, 8), because hires -->
+    <sprite n="AD_costume_06_left_petals.png" x="361" y="52" w="93" h="51" pX="0.5" pY="0.5" oX="35" oY="8" oW="120" oH="60"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (-25, 52) diff = (130, 1)-->
+	<!-- add double it to texturepacker output offsets (11, 6) -> (271, 8), because hires -->
+    <sprite n="AD_costume_06_right_petals.png" x="361" y="2" w="99" h="48" pX="0.5" pY="0.5" oX="271" oY="8" oW="120" oH="60"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (134, 190) diff = (-29, -137)-->
+	<!-- add double it to texturepacker output offsets (12, 13) -> (-46, -261), because hires -->
+    <sprite n="AD_costume_06_sakura.png" x="2" y="2" w="357" h="524" pX="0.5" pY="0.5" oX="-46" oY="-261" oW="540" oH="380" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:aff75767e7077b669159856707c79f19:de39f114f97700034283b7b4249162f7:5c96a56f060e6c2e99a89dc0209b4e56$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_G_costume_01_sheet.png" width="128" height="256" hires="true">
+	
+	<!-- original anchor = (46, 57) -> new anchor (45, 53) -->
+	<!-- add double it to texturepacker output offsets (12, 24) -> (13, 32), because hires-->
+    <sprite n="G_Bandage.png" x="2" y="199" w="76" h="51" oX="13" oY="32" oW="100" oH="100"/>
+	
+	<!-- original anchor = (28, 9) -> new anchor (44, 11) -->
+	<!-- add double it to texturepacker output offsets (2, 4) -> (-30, -1), because hires-->
+    <sprite n="G_Left_Glove.png" x="2" y="105" w="95" h="92" oX="-30" oY="-1" oW="100" oH="100"/>
+
+	<!-- original anchor = (25, 9) -> new anchor (50, 8) -->
+	<!-- add double it to texturepacker output offsets (9, 9) -> (-40, 12), because hires-->
+    <sprite n="G_Right_Glove.png" x="2" y="2" w="102" h="101" oX="-40" oY="12" oW="120" oH="120"/>
+	
+</TextureAtlas>

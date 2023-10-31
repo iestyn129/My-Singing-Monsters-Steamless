@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:89adcc95fbe120e2cf4b86a46dbbecd6:0abd063da145878996fcd27d02c6a394:93c633718f81e660fadc41f99ce757a0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/store_elements.png" width="512" height="512">
+    <sprite n="bookend_bookofmonsters" x="335" y="333" w="121" h="89" pX="0.5" pY="0.5" oX="12" oY="5" oW="200" oH="100"/>
+    <sprite n="bookend_currency" x="329" y="173" w="173" h="74" pX="0.5" pY="0.5" oX="17" oY="18" oW="200" oH="100"/>
+    <sprite n="bookend_decorations" x="2" y="378" w="176" h="97" pX="0.5" pY="0.5" oX="7" oY="3" oW="200" oH="100"/>
+    <sprite n="bookend_islands" x="329" y="249" w="155" h="82" pX="0.5" pY="0.5" oX="7" oY="16" oW="200" oH="100"/>
+    <sprite n="bookend_market" x="329" y="2" w="165" h="85" pX="0.5" pY="0.5" oX="13" oY="7" oW="200" oH="100"/>
+    <sprite n="bookend_monsters" x="329" y="89" w="167" h="82" pX="0.5" pY="0.5" oX="1" oY="12" oW="200" oH="100"/>
+    <sprite n="bookend_starshop" x="335" y="424" w="111" h="74" pX="0.5" pY="0.5" oX="15" oY="10" oW="200" oH="100"/>
+    <sprite n="bookend_structures" x="180" y="378" w="153" h="92" pX="0.5" pY="0.5" oX="17" oY="6" oW="200" oH="100"/>
+    <sprite n="market_frame" x="2" y="2" w="325" h="374" pX="0.5" pY="0.5" oX="11" oY="1" oW="336" oH="381"/>
+</TextureAtlas>

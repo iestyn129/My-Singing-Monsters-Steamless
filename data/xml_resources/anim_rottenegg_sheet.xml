@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0cb302905335e52697134979e24839c4:df0db54006412529cfd833b9e9c1f7da:53d4fc349d652ab6b179349c88f45c56$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_rottenegg_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="egg front.png" x="2" y="2" w="277" h="248" pX="0.5" pY="0.5" oX="1" oY="1" oW="250" oH="278" r="y"/>
+    <sprite n="egg top.png" x="2" y="436" w="239" h="230" pX="0.5" pY="0.5" oX="0" oY="2" oW="240" oH="232"/>
+    <sprite n="stink 1.png" x="281" y="2" w="81" h="242" pX="0.5" pY="0.5" oX="0" oY="17" oW="82" oH="262"/>
+    <sprite n="stink 2.png" x="359" y="254" w="76" h="242" pX="0.5" pY="0.5" oX="3" oY="17" oW="82" oH="262"/>
+    <sprite n="stink 3.png" x="281" y="246" w="76" h="244" pX="0.5" pY="0.5" oX="3" oY="11" oW="82" oH="262"/>
+    <sprite n="stink 4.png" x="364" y="2" w="77" h="250" pX="0.5" pY="0.5" oX="5" oY="5" oW="82" oH="262"/>
+    <sprite n="stink 5.png" x="443" y="2" w="66" h="248" pX="0.5" pY="0.5" oX="7" oY="9" oW="82" oH="262"/>
+    <sprite n="stink 6.png" x="443" y="252" w="63" h="242" pX="0.5" pY="0.5" oX="9" oY="13" oW="82" oH="262"/>
+    <sprite n="stink 7.png" x="437" y="496" w="72" h="246" pX="0.5" pY="0.5" oX="7" oY="11" oW="82" oH="262"/>
+    <sprite n="stink 8.png" x="2" y="668" w="238" h="60" pX="0.5" pY="0.5" oX="11" oY="17" oW="82" oH="262" r="y"/>
+    <sprite n="stink 9.png" x="64" y="744" w="60" h="234" pX="0.5" pY="0.5" oX="11" oY="21" oW="82" oH="262"/>
+    <sprite n="stink 10.png" x="2" y="744" w="60" h="238" pX="0.5" pY="0.5" oX="11" oY="17" oW="82" oH="262"/>
+    <sprite n="stink 11.png" x="2" y="252" w="251" h="54" pX="0.5" pY="0.5" oX="13" oY="11" oW="82" oH="262" r="y"/>
+    <sprite n="stink 12.png" x="2" y="378" w="248" h="56" pX="0.5" pY="0.5" oX="15" oY="13" oW="82" oH="262" r="y"/>
+    <sprite n="stink 13.png" x="2" y="308" w="249" h="68" pX="0.5" pY="0.5" oX="7" oY="13" oW="82" oH="262" r="y"/>
+</TextureAtlas>

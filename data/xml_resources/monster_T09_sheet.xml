@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d3d0053258694eb34d0c4b9409affa14:88e573d9649abbef181aae04212a359b:ba77f9d9bfe5db616850ff2e0c76f2a9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T09_sheet.png" width="512" height="512" hires="true">
+    <sprite n="T09_back_knucle.png" x="78" y="483" w="22" h="26" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="26"/>
+    <sprite n="T09_body_back.png" x="284" y="439" w="73" h="68" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="74" r="y"/>
+    <sprite n="T09_body_front.png" x="282" y="362" w="74" h="75" pX="0.5" pY="0.5" oX="0" oY="2" oW="84" oH="76" r="y"/>
+    <sprite n="T09_eye_back.png" x="449" y="377" w="25" h="23" pX="0.5" pY="0.5" oX="0" oY="1" oW="24" oH="26" r="y"/>
+    <sprite n="T09_eye_leaf_back.png" x="138" y="457" w="31" h="51" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="52"/>
+    <sprite n="T09_eye_leaf_front.png" x="171" y="457" w="30" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="52"/>
+    <sprite n="T09_eye_lid_01.png" x="328" y="332" w="33" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="34" r="y"/>
+    <sprite n="T09_eye_lid_02.png" x="363" y="332" w="33" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="34" r="y"/>
+    <sprite n="T09_eye_lid_03.png" x="398" y="332" w="33" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="34" r="y"/>
+    <sprite n="T09_eye_lid_04.png" x="433" y="332" w="33" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="34" r="y"/>
+    <sprite n="T09_eyeball.png" x="394" y="362" w="26" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T09_flower_rim_back.png" x="332" y="224" w="134" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="T09_flower_rim_front.png" x="2" y="353" w="98" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T09_flower_toungue.png" x="230" y="456" w="28" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="T09_flower_tube.png" x="134" y="353" w="90" h="102" pX="0.5" pY="0.5"/>
+    <sprite n="T09_front_knucle_01.png" x="468" y="353" w="28" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="T09_front_knucle_02.png" x="422" y="362" w="25" h="24" pX="0.5" pY="0.5" oX="0" oY="1" oW="26" oH="26"/>
+    <sprite n="T09_glow.png" x="332" y="2" w="156" h="155" pX="0.5" pY="0.5" oX="0" oY="1" oW="160" oH="157"/>
+    <sprite n="T09_glow_beam.png" x="102" y="353" w="30" h="112" pX="0.5" pY="0.5" oX="1" oY="4" oW="32" oH="116"/>
+    <sprite n="T09_glow_crack_01.png" x="2" y="290" w="40" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="62" oH="40" r="y"/>
+    <sprite n="T09_glow_crack_02.png" x="226" y="290" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T09_glow_crack_03.png" x="226" y="362" w="54" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="T09_glow_crack_04.png" x="124" y="290" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T09_large_leaf.png" x="44" y="290" w="28" h="60" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="60"/>
+    <sprite n="T09_large_tube.png" x="468" y="234" w="42" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="42" oH="76"/>
+    <sprite n="T09_leg.png" x="2" y="483" w="44" h="27" pX="0.5" pY="0.5" oX="2" oY="3" oW="32" oH="48" r="y"/>
+    <sprite n="T09_medium_leaf_01.png" x="490" y="2" w="18" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="34" oH="18" r="y"/>
+    <sprite n="T09_medium_leaf_02.png" x="48" y="483" w="28" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="28" r="y"/>
+    <sprite n="T09_medium_tube.png" x="468" y="310" w="42" h="41" pX="0.5" pY="0.5" oX="0" oY="2" oW="42" oH="44" r="y"/>
+    <sprite n="T09_mouth_01.png" x="358" y="399" w="32" h="33" pX="0.5" pY="0.5" oX="3" oY="2" oW="40" oH="36" r="y"/>
+    <sprite n="T09_mouth_02.png" x="358" y="362" w="34" h="35" pX="0.5" pY="0.5" oX="3" oY="0" oW="40" oH="36"/>
+    <sprite n="T09_mouth_03.png" x="474" y="159" w="36" h="33" pX="0.5" pY="0.5" oX="1" oY="2" oW="40" oH="36"/>
+    <sprite n="T09_mouth_04.png" x="474" y="194" w="35" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="40" oH="36" r="y"/>
+    <sprite n="T09_mouth_05.png" x="102" y="467" w="34" h="40" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="36" r="y"/>
+    <sprite n="T09_neck_leaves_back.png" x="394" y="386" w="25" h="24" pX="0.5" pY="0.5" oX="0" oY="1" oW="28" oH="30"/>
+    <sprite n="T09_neck_leaves_front.png" x="74" y="290" w="48" h="57" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="58"/>
+    <sprite n="T09_pupil.png" x="490" y="63" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T09_shadow.png" x="332" y="159" w="140" h="63" pX="0.5" pY="0.5" oX="20" oY="22" oW="178" oH="106"/>
+    <sprite n="T09_small_leaf.png" x="490" y="36" w="18" h="25" pX="0.5" pY="0.5" oX="0" oY="1" oW="20" oH="26"/>
+    <sprite n="T09_small_tube.png" x="260" y="456" w="22" h="38" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="24" r="y"/>
+    <sprite n="T09_statue.png" x="2" y="2" w="328" h="286" pX="0.5" pY="0.5" oX="0" oY="0" oW="328" oH="288"/>
+    <sprite n="T09_toes.png" x="203" y="457" w="25" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="26" r="y"/>
+</TextureAtlas>

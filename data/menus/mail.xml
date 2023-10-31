@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<event name="onInit" params="element">
+		element("transitionTime"):SetFloat(0.0)
+		element("listVisible"):SetInt(1)
+		element("timeout"):SetFloat(15.0)
+		element("loadingState"):SetInt(1)
+		element("loadingAnimTime"):SetFloat(0.0)
+		
+		element("selectedIndex"):SetInt(-1)
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element("transitionState"):SetInt(1)
+			
+			lua_sys.playSoundFx("audio/sfx/quest_icon_open.wav")
+			
+			local entries = element:GetElement("MailEntries")
+			local numItems = entries("NumEntries"):GetInt()
+			local setInvis = true
+			
+			if(numItems > 0) then
+				local first = entries:GetElement(entries("FirstEntry"):GetString())
+				if(first) then
+					setInvis = (numItems*first:absH()) < entries:absH()
+				end
+			end
+			
+			if(setInvis) then
+				element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+				element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+				element["ScrollMarker"]["Touch"]("enabled"):SetInt(0)
+			end
+		]]>
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+			
+				local timeout = element("timeout"):GetFloat()
+				
+				if(timeout > 0) then
+					timeout = timeout - dt
+					element("timeout"):SetFloat(timeout)
+					
+					if(timeout <= 0) then
+						element["MailEntries"]:DoStoredScript("populate")
+						element["MailEntries"]["Swiper"]:DoStoredScript("refresh")
+					end
+				end
+			
+				local transitionState = element("transitionState"):GetInt()
+				local loadingState = element("loadingState"):GetInt()
+				
+				if(loadingState < 4) then
+					local loadingAnimTime = element("loadingAnimTime"):GetFloat() + (dt * 3)
+
+					if(loadingAnimTime >= 1.0 and loadingState == 1) then
+						element("loadingState"):SetInt(2)
+						element:GetElement("LoadingIndicator"):GetComponent("DotText")("text"):SetString("..")
+						element("loadingAnimTime"):SetFloat(0.0)
+					elseif (loadingAnimTime >= 1.0 and loadingState == 2)then
+						element("loadingState"):SetInt(3)
+						element:GetElement("LoadingIndicator"):GetComponent("DotText")("text"):SetString("...")
+						element("loadingAnimTime"):SetFloat(0.0)
+					elseif (loadingAnimTime >= 1.0 and loadingState == 3)then
+						element("loadingState"):SetInt(1)
+						element:GetElement("LoadingIndicator"):GetComponent("DotText")("text"):SetString(".")
+						element("loadingAnimTime"):SetFloat(0.0)
+					else
+						element("loadingAnimTime"):SetFloat(loadingAnimTime)
+					end
+				end
+				
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("TickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					transitionTime = clamp( transitionTime, 0.0, 1.0 )
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime >= 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime <= 0.0) then
+						element["MailEntries"]:DoStoredScript("dismissPlacement")
+						element:root():popPopUp()
+					end
+				end
+
+				if(element["AttachmentDetails"]["Expiry"]("visible"):GetInt() == 1) then
+					element["AttachmentDetails"]["Expiry"]("text"):SetString(game.getLocalizedText("AVAILABLE_UNTIL").." "..game.timeToString(game.timeLeft(element("selectedExpiry"):GetInt())))
+					if(element("selectedExpiry"):GetInt() < 86400000) then
+						element["AttachmentDetails"]["Expiry"]:setColor(0.95, 0.25, 0.25)
+					else
+						element["AttachmentDetails"]["Expiry"]:setColor(0.45, 0.96, 0.1)
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		local frame = element:GetElement("bg")
+		local topFade = element:GetElement("FadeSprite")
+		local botFade = element:GetElement("FadeSpriteBot")
+		frame("xOffset"):SetFloat(lua_sys.screenWidth()*0.5 + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+		game.setClipping("Clipping", (frame:absX()+(0.02*lua_sys.screenWidth()))*lua_sys.deviceScaleX(), topFade:absY()*lua_sys.deviceScaleY(), (frame:absW()-(0.04*lua_sys.screenWidth()))*lua_sys.deviceScaleX(), ((botFade:absY()+botFade:absH())-topFade:absY()-1)*lua_sys.deviceScaleY())
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="0.025*lua_sys.screenHeight()" priorityOffset="6" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.8*lua_sys.screenWidth()" h="0.85*lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat((0.08*lua_sys.screenWidth())/component:absW())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="5" yOffset="10" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat((0.08*lua_sys.screenWidth())/component:absW())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="LoadingIndicator">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MAILBOX_LOADING")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="DotText">
+			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-3" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.35*lua_sys.screenWidth()" h="0.05*lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="MailTitle">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="0.375*lua_sys.screenWidth()" h="0.1*lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.5)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component:setColor(0.45, 0.95, 0.1)
+				component("text"):SetString("MAIL_TITLE_LABEL")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="FadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="22" priorityOffset="-2" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(lua_sys.screenWidth()/component:absW(), 0.5))
+				component("layer"):SetString("Clipping")
+				component("maskY"):SetFloat(0.5)
+				component("maskH"):SetFloat(31)
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="BlackCover">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="FadeSprite" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+				component:setScale(Vector2(((0.77*lua_sys.screenWidth())/component:absW()), (0.03*lua_sys.screenHeight())/component:absH()))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="FadeSpriteBot">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0.15*lua_sys.screenHeight()" priorityOffset="-5" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				element("originalWidth"):SetFloat(component:absW())
+				component:setScale(Vector2(lua_sys.screenWidth()/component:absW(), 0.5*lua_sys.screenHeight()/320))
+				component("layer"):SetString("Clipping")
+				component("maskY"):SetFloat(0.5)
+				component("maskH"):SetFloat(31)
+				component("vFlip"):SetInt(1)
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="BlackCoverBot">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="FadeSpriteBot" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*lua_sys.screenHeight()/320" priorityOffset="4" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+				element("originalWidth"):SetFloat(component:absW())
+				element("originalHeight"):SetFloat(component:absH())
+				component:setScale(Vector2(((0.77*lua_sys.screenWidth())/component:absW()), (0.11*lua_sys.screenHeight())/component:absH()))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<!-- element name="TwitchButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="BlackCoverBot" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_twitch")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("https://www.twitch.tv/bigbluebubbletv")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element -->	
+	
+	<element name="TiktokButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="BlackCoverBot" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_tiktok")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("https://www.tiktok.com/@mysingingmonsters")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>	
+	
+	<element name="InstagramButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="TiktokButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_instagram")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("https://www.instagram.com/mysingingmonsters")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+
+	<element name="YoutubeButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="InstagramButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_youtube")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("http://youtube.com/mysingingmonsters")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TwitterButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="YoutubeButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_twitter")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("http://twitter.com/SingingMonsters")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="FacebookButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Icon" />
+		<position relativeTo="TwitterButton" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="45*0.7*game.composerScale()" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/mailbox_facebook")
+				component("size"):SetFloat(0.5*game.composerScale())
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size w="55*0.7*game.composerScale()" h="55*0.7*game.composerScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("enabled"):SetInt(0)
+				end
+			</event>
+			<event name="onTouchDown" params="component, element">
+				element["Icon"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.ShowWebView("http://facebook.com/mysingingmonsters")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Icon"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>	
+	
+	<element name="FollowLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="BlackCoverBot" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="40*0.7*game.composerScale()" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="(0.15*lua_sys.screenWidth())+(40*0.7*game.composerScale())" h="(0.05*lua_sys.screenHeight())+(40*0.7*game.composerScale())" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.composerScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("FOLLOW_US_LABEL")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.1)
+				component("layer"):SetString("MidPopUps")
+				
+				if(lua_sys.getSubPlatformName() == "aftb") then
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MailEntries">
+		<size w="0.75*lua_sys.screenWidth()" h="(0.675*lua_sys.screenHeight())-52" />
+		<position relativeTo="FadeSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="-10*game.menuScaleX()" yOffset="0" priorityOffset="5" />
+		<event name="onInit" params="element">
+			element("NumEntries"):SetInt(0)
+			element("FirstEntry"):SetString("")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgPlacementInfo", "gotMsgPlacementInfo")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgPlacementInfoFail", "gotMsgPlacementInfoFail")
+			element("loadFail"):SetInt(0)
+		</event>
+		<event name="gotMsgPlacementInfoFail" params="element, msg">
+			<![CDATA[
+				if(element:parent()("timeout"):GetFloat() > 0) then
+					element:parent()("timeout"):SetFloat(0.0)
+					element:DoStoredScript("populate")
+					element["Swiper"]:DoStoredScript("refresh")
+				end
+			]]>
+		</event>
+		<event name="gotMsgPlacementInfo" params="element, msg">
+			<![CDATA[
+				if((msg.index == -1) and (element:parent()("timeout"):GetFloat() > 0)) then
+					local numNewsEntries = nil
+					local placement =  game.nativePlacement("mailbox");
+					if (placement ~= nil) then
+						numNewsEntries = placement:numAds()
+						if (numNewsEntries == 0 and element("loadFail"):GetInt() == 0 ) then
+							element("loadFail"):SetInt(1)
+							element:parent()("timeout"):SetFloat(7.5)
+							game.loadNewsFlash(msg.name,false,0,0,"load_images=false")
+							return 0;
+						end
+					end
+					element:parent()("timeout"):SetFloat(0.0)
+					element:DoStoredScript("populate")
+					element["Swiper"]:DoStoredScript("refresh")
+				end
+			]]>
+		</event>
+		<event name="dismissPlacement" params="element">
+			<![CDATA[
+			local placement =  game.nativePlacement("mailbox")
+			if (placement ~= nil) then
+				placement:reportDismiss();
+			end
+			]]>
+		</event>
+		<event name="repopulate" params="element">
+			<![CDATA[
+				local prevNumItems = element("NumEntries"):GetInt()
+
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("mail_"..i))
+				end
+				element:DoStoredScript("populate")
+				element["Swiper"]:DoStoredScript("refresh")
+			]]>
+		</event>
+		<event name="populate" params="element">			
+			<![CDATA[
+				local first = nil
+				local previous = nil
+				local mailEntries = game.mailEntries()
+				local numMailEntries = mailEntries:size()
+				
+				local function makeMail(entry, index, greyIndex)
+				
+					local mailEntry = menu:addTemplateElement("template_mailentry", "mail_"..index, element)
+					
+					mailEntry("index"):SetInt(index)
+					mailEntry("title"):SetString(entry:getTitle())
+					mailEntry("shortTitle"):SetString(entry:getShortTitle())
+					mailEntry("message"):SetString(entry:getMessage())
+					mailEntry("sender"):SetString(entry:getSender())
+					mailEntry("icon"):SetString(entry:getIcon())
+					mailEntry("expiry"):SetInt(entry:getExpiry())
+					mailEntry("greyIndex"):SetInt((greyIndex % 2) * 2)
+					
+					if(entry:hasAttachment()) then
+						mailEntry("attachment"):SetInt(1)
+						mailEntry("attachmentName"):SetString(entry:getAttachmentName())
+						mailEntry("attachmentIcon"):SetString(entry:getAttachmentIcon())
+						mailEntry("attachmentSheet"):SetString(entry:getAttachmentSheet())
+						mailEntry("attachmentEntity"):SetInt(entry:getAttachmentEntity())
+						mailEntry("attachmentLevel"):SetInt(entry:getAttachmentLevel())
+						mailEntry("attachmentAnim"):SetString(entry:getAttachmentAnim())
+						local tint = entry:getAttachmentTint()
+						mailEntry("attachmentTintR"):SetFloat(tint.x)
+						mailEntry("attachmentTintY"):SetFloat(tint.y)
+						mailEntry("attachmentTintB"):SetFloat(tint.z)
+					else
+						mailEntry("attachment"):SetInt(0)
+						mailEntry("attachmentName"):SetString("")
+						mailEntry("attachmentIcon"):SetString("")
+						mailEntry("attachmentSheet"):SetString("")
+						mailEntry("attachmentEntity"):SetInt(0)
+						mailEntry("attachmentLevel"):SetInt(0)
+						mailEntry("attachmentAnim"):SetString("")
+						mailEntry("attachmentTintR"):SetFloat(0)
+						mailEntry("attachmentTintY"):SetFloat(0)
+						mailEntry("attachmentTintB"):SetFloat(0)
+					end
+					
+					if(previous == nil) then
+						mailEntry:relativeTo(element)
+						mailEntry:setOrientation(lua_sys.MenuOrientation(-5*game.menuScaleX(), 0, -1, lua_sys.HCENTER, lua_sys.TOP))
+						mailEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+						first = mailEntry
+						element("FirstEntry"):SetString(mailEntry:name())
+					else
+						mailEntry:relativeTo(previous)
+						mailEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						mailEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					end
+					
+					previous = mailEntry
+
+					mailEntry:init()
+					mailEntry:setPositionBroadcast(true)
+					element:parent():DoStoredScript("TickTransition")
+				end
+				
+				local greyIndex = 0;
+				for i=0,numMailEntries-1 do
+					makeMail(mailEntries[i], i, greyIndex)
+					greyIndex = greyIndex + 1;
+				end
+				
+				local function makeNews(entry, index, greyIndex, offset)
+				
+					local newsEntry = menu:addTemplateElement("template_newsentry", "mail_"..offset, element)
+					newsEntry("index"):SetInt(index)
+					newsEntry("placement"):SetString(entry:getPlacement())
+					newsEntry("id"):SetString(entry:getId())
+					newsEntry("description"):SetString(entry:getDescription())
+					newsEntry("title"):SetString(entry:getTitle())
+					newsEntry("viewed"):SetInt(1)
+					newsEntry("greyIndex"):SetInt((greyIndex % 2) * 2)
+					
+					if(previous == nil) then
+						newsEntry:relativeTo(element)
+						newsEntry:setOrientation(lua_sys.MenuOrientation(-5*game.menuScaleX(), 0, -1, lua_sys.HCENTER, lua_sys.TOP))
+						newsEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+						first = newsEntry
+						element("FirstEntry"):SetString(newsEntry:name())
+					else
+						newsEntry:relativeTo(previous)
+						newsEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						newsEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					end
+					
+					previous = newsEntry
+
+					newsEntry:init()
+					newsEntry:setPositionBroadcast(true)
+					element:parent():DoStoredScript("TickTransition")
+				end
+				
+				local numNewsEntries = 0
+				local placement =  game.nativePlacement("mailbox");
+				if (placement ~= nil) then
+					numNewsEntries = placement:numAds()
+					for i=0,numNewsEntries-1 do
+						local entry = placement:getAd(i);	
+						makeNews(entry, i, greyIndex, i + numMailEntries)
+						greyIndex = greyIndex + 1;
+					end
+				end
+				
+				element("NumEntries"):SetInt(numMailEntries + numNewsEntries)
+				element:parent():GetElement("LoadingIndicator"):GetComponent("DotText")("visible"):SetInt(0)
+				element:parent()("loadingState"):SetInt(4)
+
+				local setInvis = true
+				local numEntries = element("NumEntries"):GetInt()
+				if(numEntries > 0) then
+					if(first) then
+						setInvis = (numEntries*first:absH()) < element:absH()
+					end
+					element:parent():GetElement("LoadingIndicator"):GetComponent("Text")("visible"):SetInt(0)
+				else
+					element:parent():GetElement("LoadingIndicator"):GetComponent("Text")("text"):SetString("MAILBOX_EMPTY")
+				end
+				
+				if(setInvis == false) then
+					element:parent()["ScrollBar"]["Sprite"]("visible"):SetInt(1)
+					element:parent()["ScrollMarker"]["Marker"]("visible"):SetInt(1)
+					element:parent()["ScrollMarker"]["Touch"]("enabled"):SetInt(1)
+				end
+
+				if(first) then
+					first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), first("yOffset"):GetInt()+1))
+				end
+			]]>
+		</event>
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component:DoStoredScript("refresh")
+			</event>
+			<function name="refresh" params="component, element">
+				<![CDATA[
+					component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+					component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+					component:GetVar("tSteps"):SetFloat(25.0)
+					component:listenToTouches(element)
+					
+					local first = element:GetElement(element("FirstEntry"):GetString())
+					
+					if(first) then
+						local totalHeight = element("NumEntries"):GetInt() * first:absH()
+
+						if(totalHeight > element:absH()) then
+							component:setScrollSize(totalHeight - element:absH())
+						else
+							component:setScrollSize(0)
+						end
+					end
+					
+					element("scrollSize"):SetFloat(component:scrollSize())
+				]]>
+			</function>
+			<event name="onTick" params="component, element, dt">
+				local first = element:GetElement(element("FirstEntry"):GetString())
+				if(first) then
+					local offset = component:scrollOffset()
+					
+					if(first:getOrientationPosition().y ~= offset) then
+						first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), offset))
+						
+						local scrollMarker = element:parent():GetElement("ScrollMarker")
+						local markerBookend = scrollMarker("originalYOffset"):GetInt()
+						local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH()
+						local scrollMarkerYOffset = -(offset/component:scrollSize()) * markerMovementHeight
+						scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+						scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+					end
+				end
+			</event>
+			<event name="setScroll" params="component, element">
+				component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="10*game.menuScaleX()" yOffset="-10*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("scroll_bar_01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*(game.menuScaleY()))
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="onInit" params="element">
+			element("BookendSize"):SetInt(10*(game.menuScaleY()))
+		</event>
+	</element>
+	
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			element("scrollOffset"):SetFloat(0.0)
+		</event>
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				component("useOffsets"):SetInt(1)
+				component("spriteName"):SetString("scroll_bar_dot")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("layer"):SetString("MidPopUps")
+				element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y">
+				<![CDATA[
+					local scrollBar = element:parent():GetElement("ScrollBar")
+					local fromTopOfMarkerRange = y - scrollBar:absY() - element("originalYOffset"):GetInt()
+					local markerBookend = element("originalYOffset"):GetInt()
+					local entries = element:parent():GetElement("MailEntries")
+					
+					local scrollSize = 0;
+					if(entries("scrollSize") ~= nil) then
+						scrollSize = entries("scrollSize"):GetFloat();
+					end
+					
+					local scrollOffset = (-(fromTopOfMarkerRange - markerBookend)/(scrollBar:absH() - 2*markerBookend - element:absH()))*scrollSize
+					scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+					
+					element("scrollOffset"):SetFloat(scrollOffset)
+					entries["Swiper"]:DoStoredScript("setScroll")
+				]]>
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="CurrentIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+		<position relativeTo="FadeSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-180*lua_sys.screenWidth()/480" yOffset="0" priorityOffset="4" />
+		<spriteSheetComponent name="Frame">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("icon_frame")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.28*lua_sys.screenHeight()/320)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="CurrentSender">
+		<size w="290*lua_sys.screenWidth()/480" h="52*lua_sys.screenHeight()/320" />
+		<position relativeTo="CurrentIcon" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Title">
+			<size w="290*lua_sys.screenWidth()/480" h="26*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("FROM_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+				component:setColor(0.45, 0.96, 0.1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<textComponent name="Text">
+			<size w="290*lua_sys.screenWidth()/480" h="26*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="CurrentMessage">
+		<size w="330*lua_sys.screenWidth()/480" h="120*lua_sys.screenHeight()/320" />
+		<position relativeTo="FadeSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-175*lua_sys.screenWidth()/480" yOffset="50*lua_sys.screenHeight()/320" priorityOffset="4" />
+		<textComponent name="Title">
+			<size w="330*lua_sys.screenWidth()/480" h="26*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("MESSAGE_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+				component:setColor(0.45, 0.96, 0.1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<textComponent name="Text">
+			<size w="330*lua_sys.screenWidth()/480" h="75*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="20*lua_sys.screenHeight()/320" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(1)
+				component("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="DeleteButton">
+		<templateVar name="$upSpriteName" equals="'button_base_grey'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$text" equals="DELETE" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$spriteScale" equals="0.37*lua_sys.screenHeight()/320" />
+		<position relativeTo="BlackCoverBot" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="40*0.7*lua_sys.screenWidth()/480" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*lua_sys.screenHeight()/320" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_goal_collect")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenHeight()/320)
+				element("originalOverlayRatio"):SetFloat(component("size"):GetFloat()/element["UpSprite"]("size"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+				if(element:parent()("selectedAttachment"):GetInt() == 1) then
+					local id = game.collectMail(element:parent()("selectedIndex"):GetInt())
+					
+					if(id == 0) then
+						element:parent()["MailEntries"]:DoStoredScript("repopulate")
+						element:parent():DoStoredScript("showList")
+					else
+						game.requestEntityMailClaim(id, element:parent()("selectedIndex"):GetInt())
+					end
+				else
+					game.displayConfirmation("MAIL_DELETE", game.getLocalizedText("MAIL_DELETE_CONFIRMATION"))
+				end
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1, 1, 1)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BoundsSprite" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				component:GetVar("yOffset"):SetInt(-4*lua_sys.screenHeight()/320)
+				component:GetVar("size"):SetFloat(0.15*lua_sys.screenHeight()/320)
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			--make the Overlay shrink with the button when pushed:
+			element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat()*element("originalOverlayRatio"):GetFloat())
+		</event>
+		<event name="onInit" params="element">
+			onInit(element)
+			element:DoStoredScript("setInvisible")
+			element["Overlay"]("visible"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgConfirmationSubmission", "gotMsgConfirmationSubmission")
+		</event>
+		<event name="gotMsgConfirmationSubmission" params="element, msg">
+			if((msg.messageID == "MAIL_DELETE") and (msg.choice == true)) then
+				game.deleteMail(element:parent()("selectedIndex"):GetInt())
+				element:parent()["MailEntries"]:DoStoredScript("repopulate")
+				element:parent():DoStoredScript("showList")
+			end
+		</event>
+	</template>
+	
+	<element name="AttachmentIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Frame" />
+		<position relativeTo="BlackCoverBot" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-180*lua_sys.screenWidth()/480" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Frame">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("icon_frame")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.28*lua_sys.screenHeight()/320)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("")
+				component("size"):SetFloat(0.3*lua_sys.screenWidth()/480)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteComponent>
+		<spriteSheetComponent name="IconSheet">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenWidth()/480)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<aeComponent name="IconAnim">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">	
+				component("animationName"):SetString("xml_bin/currency.bin")
+				component("animation"):SetString("")
+				component:setScale(Vector2(0.2*lua_sys.screenWidth()/480, 0.2*lua_sys.screenWidth()/480))
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</aeComponent>
+	</element>
+	
+	<element name="AttachmentDetails">
+		<size w="290*lua_sys.screenWidth()/480" h="40*lua_sys.screenWidth()/480" />
+		<position relativeTo="AttachmentIcon" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*lua_sys.screenWidth()/480" yOffset="0" priorityOffset="0" />
+		<textComponent name="Name">
+			<size w="220*lua_sys.screenWidth()/480" h="20*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.2*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<textComponent name="Expiry">
+			<size w="220*lua_sys.screenWidth()/480" h="20*lua_sys.screenHeight()/320" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.2*lua_sys.screenHeight()/320)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("MidPopUps")
+				component:setColor(0.45, 0.96, 0.1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="AttachmentLevel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="AttachmentIcon" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("")
+				component("sheetName"):SetString("xml_resources/level_numbers.xml")
+				component("size"):SetFloat(0.25*lua_sys.screenHeight()/320)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<event name="hideList" params="element">
+		<![CDATA[
+			local entries = element["MailEntries"]
+			local numEntries = entries("NumEntries"):GetInt()
+			
+			for i=0,numEntries-1 do
+				local cur = entries:GetElement("mail_"..i)
+				
+				if(cur) then
+					cur:DoStoredScript("hide")
+				end
+			end
+			
+			entries["Swiper"]("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
+			entries["Touch"]("enabled"):SetInt(0)
+			
+			element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+			element["ScrollMarker"]["Touch"]("enabled"):SetInt(0)
+			element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+			
+			if(lua_sys.getSubPlatformName() ~= "aftb") then
+				element["InstagramButton"]["Icon"]("visible"):SetInt(0)
+				element["InstagramButton"]["Touch"]("enabled"):SetInt(0)
+				element["YoutubeButton"]["Icon"]("visible"):SetInt(0)
+				element["YoutubeButton"]["Touch"]("enabled"):SetInt(0)
+				element["TwitterButton"]["Icon"]("visible"):SetInt(0)
+				element["TwitterButton"]["Touch"]("enabled"):SetInt(0)
+				element["FacebookButton"]["Icon"]("visible"):SetInt(0)
+				element["FacebookButton"]["Touch"]("enabled"):SetInt(0)
+				element["TiktokButton"]["Icon"]("visible"):SetInt(0)
+				element["TiktokButton"]["Touch"]("enabled"):SetInt(0)
+				element["FollowLabel"]["Text"]("visible"):SetInt(0)
+			end
+			
+			element["MailTitle"]["Text"]("text"):SetString(element("selectedShortTitle"):GetString())
+			element["MailTitle"]["Text"]("size"):SetFloat(0.5)
+			element["CurrentIcon"]["Frame"]("visible"):SetInt(1)
+			element["CurrentIcon"]["Icon"]("visible"):SetInt(1)
+			element["CurrentIcon"]["Icon"]("spriteName"):SetString(element("selectedIcon"):GetString())
+			element["CurrentSender"]["Title"]("visible"):SetInt(1)
+			element["CurrentSender"]["Text"]("visible"):SetInt(1)
+			element["CurrentSender"]["Text"]("text"):SetString(element("selectedSender"):GetString())
+			element["CurrentSender"]["Text"]("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+			element["CurrentMessage"]["Title"]("visible"):SetInt(1)
+			element["CurrentMessage"]["Text"]("visible"):SetInt(1)
+			element["CurrentMessage"]["Text"]("text"):SetString(element("selectedMessage"):GetString())
+			element["CurrentMessage"]["Text"]("autoScale"):SetInt(0)
+			element["CurrentMessage"]["Text"]("size"):SetFloat(0.3*lua_sys.screenHeight()/320)
+			element["CurrentMessage"]["Text"]("autoScale"):SetInt(1)
+			element["DeleteButton"]:DoStoredScript("setVisible")
+			element["DeleteButton"]["Overlay"]("visible"):SetInt(1)
+			
+			element["FadeSpriteBot"]("yOffset"):SetFloat(1.5*0.15*lua_sys.screenHeight())
+			element["FadeSpriteBot"]:GetComponent("Sprite"):setScale(Vector2(lua_sys.screenWidth()/element["FadeSpriteBot"]("originalWidth"):GetFloat(), 0.5*lua_sys.screenHeight()/320))
+			element["BlackCoverBot"]:GetComponent("Sprite"):setScale(Vector2(((0.77*lua_sys.screenWidth())/element["BlackCoverBot"]("originalWidth"):GetFloat()), (1.5*0.11*lua_sys.screenHeight())/element["BlackCoverBot"]("originalHeight"):GetFloat()))
+			element:DoStoredScript("TickTransition")
+			
+			element("listVisible"):SetInt(0)
+			
+			if(element("selectedAttachment"):GetInt() == 1) then
+				element["AttachmentIcon"]["Frame"]("visible"):SetInt(1)
+				
+				local attachmentAnim = element("selectedAttachmentAnim"):GetString()
+				
+				if(attachmentAnim == "") then
+					local attachmentSheet = element("selectedAttachmentSheet"):GetString()
+					
+					if(attachmentSheet == "") then
+						element["AttachmentIcon"]["Icon"]("visible"):SetInt(1)
+						element["AttachmentIcon"]["Icon"]("spriteName"):SetString(element("selectedAttachmentIcon"):GetString())
+					else
+						element["AttachmentIcon"]["IconSheet"]("visible"):SetInt(1)
+						element["AttachmentIcon"]["IconSheet"]("sheetName"):SetString(attachmentSheet)
+						element["AttachmentIcon"]["IconSheet"]("spriteName"):SetString(element("selectedAttachmentIcon"):GetString())
+					end
+				else
+					element["AttachmentIcon"]["IconAnim"]("visible"):SetInt(1)
+					element["AttachmentIcon"]["IconAnim"]("animationName"):SetString(element("selectedAttachmentIcon"):GetString())
+					element["AttachmentIcon"]["IconAnim"]("animation"):SetString(attachmentAnim)
+					element["AttachmentIcon"]:GetComponent("IconAnim"):setScale(Vector2(0.2*lua_sys.screenHeight()/320, 0.2*lua_sys.screenHeight()/320))
+					game.tintAttachment(element)
+				end
+				
+				
+
+				element["AttachmentDetails"]["Name"]("visible"):SetInt(1)
+				element["AttachmentDetails"]["Name"]("text"):SetString(element("selectedAttachmentName"):GetString())
+				element["AttachmentDetails"]["Name"]("autoScale"):SetInt(0)
+				element["AttachmentDetails"]["Name"]("size"):SetFloat(0.2*lua_sys.screenHeight()/320)
+				element["AttachmentDetails"]["Name"]("autoScale"):SetInt(1)
+				element["AttachmentDetails"]["Expiry"]("visible"):SetInt(1)
+				element["AttachmentDetails"]["Expiry"]("text"):SetString(game.getLocalizedText("AVAILABLE_UNTIL").." "..game.timeToString(game.timeLeft(element("selectedExpiry"):GetInt())))
+				if(element("selectedExpiry"):GetInt() < 86400000) then
+					element["AttachmentDetails"]["Expiry"]:setColor(0.95, 0.25, 0.25)
+				else
+					element["AttachmentDetails"]["Expiry"]:setColor(0.45, 0.96, 0.1)
+				end
+				element["AttachmentDetails"]["Expiry"]("autoScale"):SetInt(0)
+				element["AttachmentDetails"]["Expiry"]("size"):SetFloat(0.2*lua_sys.screenHeight()/320)
+				element["AttachmentDetails"]["Expiry"]("autoScale"):SetInt(1)
+				
+				local attachmentLevel = element("selectedAttachmentLevel"):GetInt()
+				if(attachmentLevel > 0) then
+					local spriteString = "monster_level_numbers_"
+
+					if(attachmentLevel < 10) then
+						spriteString = (spriteString.."0")
+					end
+					
+					element["AttachmentLevel"]["Sprite"]("spriteName"):SetString(spriteString..attachmentLevel)
+					element["AttachmentLevel"]["Sprite"]("visible"):SetInt(1)
+				end
+				
+				element["DeleteButton"]["Text"]("text"):SetString("LABEL_COLLECT")
+				element["DeleteButton"]["Text"]("size"):SetFloat(0.15*lua_sys.screenHeight()/320)
+			else
+				element["DeleteButton"]["Text"]("text"):SetString("DELETE")
+				element["DeleteButton"]["Text"]("size"):SetFloat(0.15*lua_sys.screenHeight()/320)
+			end
+		]]>
+	</event>
+	
+	<event name="showList" params="element">
+		<![CDATA[
+		
+			element("selectedIndex"):SetInt(-1)
+			local entries = element:GetElement("MailEntries")
+			local numEntries = entries("NumEntries"):GetInt()
+			
+			for i=0,numEntries-1 do
+				local cur = entries:GetElement("mail_"..i)
+				
+				if(cur) then
+					cur:DoStoredScript("show")
+				end
+			end
+			
+			entries["Swiper"]("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+			entries["Touch"]("enabled"):SetInt(1)
+			
+			local setInvis = true
+				
+			if(numEntries > 0) then
+				local first = entries:GetElement(entries("FirstEntry"):GetString())
+				if(first) then
+					setInvis = (numEntries*first:absH()) < entries:absH()
+				end
+			end
+			
+			if(setInvis == false) then
+				element["ScrollBar"]["Sprite"]("visible"):SetInt(1)
+				element["ScrollMarker"]["Marker"]("visible"):SetInt(1)
+				element["ScrollMarker"]["Touch"]("enabled"):SetInt(1)
+			end
+			
+			if(lua_sys.getSubPlatformName() ~= "aftb") then
+				element["InstagramButton"]["Icon"]("visible"):SetInt(1)
+				element["InstagramButton"]["Touch"]("enabled"):SetInt(1)
+				element["YoutubeButton"]["Icon"]("visible"):SetInt(1)
+				element["YoutubeButton"]["Touch"]("enabled"):SetInt(1)
+				element["TwitterButton"]["Icon"]("visible"):SetInt(1)
+				element["TwitterButton"]["Touch"]("enabled"):SetInt(1)
+				element["FacebookButton"]["Icon"]("visible"):SetInt(1)
+				element["FacebookButton"]["Touch"]("enabled"):SetInt(1)
+				element["TiktokButton"]["Icon"]("visible"):SetInt(1)
+				element["TiktokButton"]["Touch"]("enabled"):SetInt(1)
+				element["FollowLabel"]["Text"]("visible"):SetInt(1)
+			end
+			
+			element["MailTitle"]["Text"]("text"):SetString("MAIL_TITLE_LABEL")
+			element["MailTitle"]["Text"]("size"):SetFloat(0.5)
+			element["CurrentIcon"]["Frame"]("visible"):SetInt(0)
+			element["CurrentIcon"]["Icon"]("visible"):SetInt(0)
+			element["CurrentSender"]["Title"]("visible"):SetInt(0)
+			element["CurrentSender"]["Text"]("visible"):SetInt(0)
+			element["CurrentMessage"]["Title"]("visible"):SetInt(0)
+			element["CurrentMessage"]["Text"]("visible"):SetInt(0)
+			element["DeleteButton"]:DoStoredScript("setInvisible")
+			element["DeleteButton"]["Overlay"]("visible"):SetInt(0)
+			
+			element("listVisible"):SetInt(1)
+			
+			element["AttachmentIcon"]["Frame"]("visible"):SetInt(0)
+			element["AttachmentIcon"]["Icon"]("visible"):SetInt(0)
+			element["AttachmentIcon"]["IconSheet"]("visible"):SetInt(0)
+			element["AttachmentIcon"]["IconAnim"]("visible"):SetInt(0)
+			element["AttachmentDetails"]["Name"]("visible"):SetInt(0)
+			element["AttachmentDetails"]["Expiry"]("visible"):SetInt(0)
+			element["AttachmentLevel"]["Sprite"]("visible"):SetInt(0)
+			
+			element["FadeSpriteBot"]("yOffset"):SetFloat(0.15*lua_sys.screenHeight())
+			element["FadeSpriteBot"]:GetComponent("Sprite"):setScale(Vector2(lua_sys.screenWidth()/element["FadeSpriteBot"]("originalWidth"):GetFloat(), 0.5*lua_sys.screenHeight()/320))
+			element["BlackCoverBot"]:GetComponent("Sprite"):setScale(Vector2(((0.77*lua_sys.screenWidth())/element["BlackCoverBot"]("originalWidth"):GetFloat()), (0.11*lua_sys.screenHeight())/element["BlackCoverBot"]("originalHeight"):GetFloat()))
+			element:DoStoredScript("TickTransition")
+		]]>
+	</event>
+	
+</menu>

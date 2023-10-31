@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:633e495009526d5194e45d7040d38d60:2c61e3ae4d9120d1811118c8e40eca1c:4abc42b325650041d48d7780a9ea4e87$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCE_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="BCE_body_A_RARE" x="420" y="2" w="88" h="113" pX="0.5" pY="0.5" oX="60" oY="35" oW="148" oH="148"/>
+    <sprite n="BCE_body_B_RARE" x="414" y="117" w="96" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_C_EPIC" x="2" y="2" w="146" h="145" pX="0.5" pY="0.5" oX="0" oY="0" oW="146" oH="146"/>
+    <sprite n="BCE_eyeback" x="229" y="239" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_foot_EPIC" x="2" y="149" w="104" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="80"/>
+    <sprite n="BCE_gong_EPIC" x="150" y="2" w="133" h="105" pX="0.5" pY="0.5" oX="3" oY="1" oW="110" oH="140" r="y"/>
+    <sprite n="BCE_head_bottom_EPIC" x="285" y="2" w="133" h="78" pX="0.5" pY="0.5" oX="2" oY="7" oW="140" oH="90"/>
+    <sprite n="BCE_head_sprout" x="255" y="244" w="56" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_head_top_EPIC" x="285" y="82" w="127" h="76" pX="0.5" pY="0.5" oX="6" oY="6" oW="140" oH="90"/>
+    <sprite n="BCE_left_foot" x="409" y="229" w="92" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_left_hand_RARE" x="146" y="175" w="85" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="48"/>
+    <sprite n="BCE_left_lowerarm" x="267" y="160" w="114" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_left_lowerleg" x="2" y="321" w="68" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_thumb_RARE" x="333" y="186" w="22" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_upperarm_RARE" x="150" y="109" w="115" h="31" pX="0.5" pY="0.5" oX="10" oY="9" oW="50" oH="124" r="y"/>
+    <sprite n="BCE_left_upperleg" x="233" y="175" w="32" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_neck_A" x="267" y="186" w="64" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_neck_B" x="86" y="277" w="20" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_pupil" x="267" y="109" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_foot" x="2" y="223" w="84" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_hand_RARE" x="142" y="225" w="85" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="48"/>
+    <sprite n="BCE_right_lowerarm" x="383" y="160" w="24" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_lowerleg" x="108" y="149" w="36" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_thumb_RARE" x="357" y="186" w="22" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_upperarm_RARE" x="150" y="142" w="115" h="31" pX="0.5" pY="0.5" oX="10" oY="9" oW="50" oH="124" r="y"/>
+    <sprite n="BCE_right_upperleg" x="108" y="219" w="32" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_shadow" x="2" y="277" w="82" h="42" pX="0.5" pY="0.5"/>
+</TextureAtlas>

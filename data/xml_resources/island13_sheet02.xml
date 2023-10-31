@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:24d15d2e352e32fec78377f827e18baf:e203a03a88bc847d873bb586d7b29f43:efe6fb92c5db320381840d61c0e8afeb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island13_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="CandleFence01" x="852" y="1376" w="570" h="345" pX="0.5" pY="0.5" oX="2" oY="0" oW="350" oH="570" r="y"/>
+    <sprite n="CandleFence02" x="644" y="1723" w="280" h="276" pX="0.5" pY="0.5" oX="0" oY="2" oW="280" oH="280"/>
+    <sprite n="CandleFence03" x="1686" y="1789" w="296" h="233" pX="0.5" pY="0.5" oX="3" oY="2" oW="240" oH="300" r="y"/>
+    <sprite n="CloudBig" x="1604" y="2" w="416" h="680" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CloudSmall" x="1424" y="1376" w="260" h="535" pX="0.5" pY="0.5" oX="0" oY="0" oW="536" oH="260" r="y"/>
+    <sprite n="Plane" x="2" y="2" w="1600" h="818" pX="0.5" pY="0.5"/>
+    <sprite n="WaxEdgeL" x="2" y="1514" w="640" h="517" pX="0.5" pY="0.5" oX="1" oY="0" oW="520" oH="640" r="y"/>
+    <sprite n="WaxFarSide" x="1692" y="684" w="342" h="709" pX="0.5" pY="0.5" oX="0" oY="0" oW="344" oH="710"/>
+    <sprite n="WaxFrame" x="1686" y="1395" w="332" h="392" pX="0.5" pY="0.5"/>
+    <sprite n="WaxMiddle" x="2" y="822" w="848" h="690" pX="0.5" pY="0.5"/>
+    <sprite n="WaxPool" x="644" y="1514" w="90" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="WaxSide" x="852" y="822" w="838" h="552" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="candleglowlarge" x="926" y="1723" w="216" h="127" pX="0.5" pY="0.5" oX="4" oY="2" oW="224" oH="130"/>
+</TextureAtlas>

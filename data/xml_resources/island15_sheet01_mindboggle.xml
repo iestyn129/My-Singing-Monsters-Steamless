@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:22387a2ae8872af1d7d28474899f7843:8c3bc10ab93a06fa6c05f6beacb81b88:57d93d7a1c3bdde6fee4da6f8cfeaa08$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island15_sheet01_mindboggle.png" width="2048" height="2048" hires="true">
+    <sprite n="arm" x="1580" y="1701" w="171" h="108" pX="0.5" pY="0.5" oX="4" oY="4" oW="116" oH="180" r="y"/>
+    <sprite n="book_seat" x="1662" y="2" w="365" h="396" pX="0.5" pY="0.5" oX="1" oY="4" oW="368" oH="404"/>
+    <sprite n="books_01" x="1893" y="985" w="118" h="380" pX="0.5" pY="0.5" oX="2" oY="5" oW="384" oH="128" r="y"/>
+    <sprite n="books_02" x="1580" y="1526" w="179" h="173" pX="0.5" pY="0.5" oX="2" oY="5" oW="184" oH="184"/>
+    <sprite n="books_03" x="1395" y="1321" w="196" h="149" pX="0.5" pY="0.5" oX="1" oY="4" oW="152" oH="204" r="y"/>
+    <sprite n="books_03_right_crest" x="2" y="1994" w="55" h="45" pX="0.5" pY="0.5" oX="1" oY="0" oW="48" oH="56" r="y"/>
+    <sprite n="books_04" x="1037" y="1457" w="60" h="132" pX="0.5" pY="0.5" oX="2" oY="2" oW="136" oH="64" r="y"/>
+    <sprite n="books_05" x="1122" y="1975" w="140" h="57" pX="0.5" pY="0.5" oX="2" oY="1" oW="144" oH="60"/>
+    <sprite n="books_06" x="1761" y="1544" w="70" h="122" pX="0.5" pY="0.5" oX="1" oY="1" oW="124" oH="72" r="y"/>
+    <sprite n="books_07" x="1264" y="1987" w="119" h="59" pX="0.5" pY="0.5" oX="2" oY="2" oW="124" oH="64"/>
+    <sprite n="books_08" x="1385" y="1987" w="110" h="55" pX="0.5" pY="0.5" oX="1" oY="2" oW="112" oH="60"/>
+    <sprite n="books_09" x="1512" y="637" w="90" h="57" pX="0.5" pY="0.5" oX="1" oY="1" oW="92" oH="60"/>
+    <sprite n="bookshelf_01" x="1859" y="637" w="182" h="346" pX="0.5" pY="0.5" oX="3" oY="3" oW="188" oH="352"/>
+    <sprite n="bookshelf_02" x="1049" y="746" w="352" h="436" pX="0.5" pY="0.5" oX="4" oY="4" oW="360" oH="444"/>
+    <sprite n="bookshelf_03" x="278" y="1271" w="439" h="407" pX="0.5" pY="0.5" oX="4" oY="2" oW="448" oH="412"/>
+    <sprite n="bookshelf_04" x="1004" y="1591" w="116" h="435" pX="0.5" pY="0.5" oX="6" oY="4" oW="128" oH="444"/>
+    <sprite n="BrainBig" x="1049" y="2" w="611" h="362" pX="0.5" pY="0.5" oX="2" oY="4" oW="615" oH="366"/>
+    <sprite n="BrainMedium" x="734" y="1591" w="268" h="452" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BrainSmall" x="1122" y="1829" w="228" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="bust" x="1593" y="1413" w="187" h="111" pX="0.5" pY="0.5" oX="2" oY="2" oW="116" oH="192" r="y"/>
+    <sprite n="candles" x="1782" y="1413" w="94" h="129" pX="0.5" pY="0.5" oX="5" oY="3" oW="104" oH="136"/>
+    <sprite n="claw1" x="1605" y="637" w="252" h="370" pX="0.5" pY="0.5"/>
+    <sprite n="claw2" x="1605" y="1009" w="286" h="323" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="claw3" x="1049" y="1184" w="344" h="271" pX="0.5" pY="0.5"/>
+    <sprite n="ClawBack" x="1049" y="366" w="461" h="378" pX="0.5" pY="0.5"/>
+    <sprite n="cryptix" x="1593" y="1334" w="273" h="77" pX="0.5" pY="0.5" oX="1" oY="3" oW="80" oH="280" r="y"/>
+    <sprite n="flame" x="1833" y="1544" w="43" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44"/>
+    <sprite n="lantern" x="1352" y="1871" w="193" h="114" pX="0.5" pY="0.5" oX="5" oY="3" oW="124" oH="200" r="y"/>
+    <sprite n="map" x="1357" y="1472" w="221" h="281" pX="0.5" pY="0.5" oX="1" oY="1" oW="224" oH="284"/>
+    <sprite n="SideEyeMandableClosed" x="2" y="2" w="1045" h="1267" pX="0.5" pY="0.5" oX="3" oY="2" oW="1052" oH="1272"/>
+    <sprite n="Tentacle01" x="1403" y="746" w="200" h="573" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="580"/>
+    <sprite n="Tentacle02" x="719" y="1271" w="316" h="318" pX="0.5" pY="0.5" oX="4" oY="3" oW="324" oH="324"/>
+    <sprite n="Tentacle03" x="1122" y="1457" w="233" h="370" pX="0.5" pY="0.5"/>
+    <sprite n="Tentacle04" x="278" y="1680" w="454" h="319" pX="0.5" pY="0.5" oX="4" oY="7" oW="328" oH="468" r="y"/>
+    <sprite n="Tentacle05" x="1357" y="1755" w="198" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="199" r="y"/>
+    <sprite n="Tentacle06" x="1512" y="400" w="527" h="235" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Tentacle07" x="2" y="1271" w="274" h="721" pX="0.5" pY="0.5"/>
+</TextureAtlas>

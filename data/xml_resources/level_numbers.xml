@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5a734accdafd8a3d51dbd0e447f1a347:18bc854e389c81ba1ae27f8bfec5ca8d:ed294f90d486de7b351d3446d39d5bb1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/level_numbers.png" width="256" height="256">
+    <sprite n="monster_level_numbers_00" x="1" y="1" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_01" x="52" y="1" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_02" x="103" y="1" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_03" x="154" y="1" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_04" x="205" y="1" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_05" x="1" y="51" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_06" x="1" y="102" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_07" x="1" y="153" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_08" x="1" y="204" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_09" x="51" y="51" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_10" x="102" y="51" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_11" x="153" y="51" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_12" x="204" y="51" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_13" x="51" y="101" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_14" x="51" y="152" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_15" x="51" y="203" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_16" x="101" y="101" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_17" x="152" y="101" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_18" x="203" y="101" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50"/>
+    <sprite n="monster_level_numbers_19" x="101" y="151" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="monster_level_numbers_20" x="101" y="202" w="48" h="49" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="50" r="y"/>
+</TextureAtlas>

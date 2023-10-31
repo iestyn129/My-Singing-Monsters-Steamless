@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:92811a01b4490f1c2d54fdfc2cbd0496:25bd63521ba406364fc4e5f8ed4a5e41:135b53de1ea4421499adeb51e168f49c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AD_costume_04_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AD_bubble3_01.png" x="496" y="41" w="11" h="7" pX="0.5" pY="0.5" oX="25" oY="35" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_02.png" x="255" y="67" w="10" h="11" pX="0.5" pY="0.5" oX="25" oY="32" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_03.png" x="496" y="23" w="13" h="16" pX="0.5" pY="0.5" oX="23" oY="29" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_04.png" x="496" y="2" w="14" h="19" pX="0.5" pY="0.5" oX="22" oY="28" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_05.png" x="495" y="97" w="15" h="21" pX="0.5" pY="0.5" oX="21" oY="27" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_06.png" x="445" y="162" w="24" h="27" pX="0.5" pY="0.5" oX="18" oY="18" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_07.png" x="273" y="303" w="29" h="28" pX="0.5" pY="0.5" oX="18" oY="13" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_08.png" x="319" y="300" w="31" h="29" pX="0.5" pY="0.5" oX="18" oY="12" oW="59" oH="54" r="y"/>
+    <sprite n="AD_bubble3_09.png" x="471" y="157" w="36" h="32" pX="0.5" pY="0.5" oX="14" oY="14" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_10.png" x="471" y="120" w="39" h="35" pX="0.5" pY="0.5" oX="12" oY="13" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_11.png" x="183" y="302" w="42" h="30" pX="0.5" pY="0.5" oX="11" oY="12" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_12.png" x="137" y="329" w="43" h="31" pX="0.5" pY="0.5" oX="10" oY="12" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_13.png" x="94" y="220" w="47" h="29" pX="0.5" pY="0.5" oX="8" oY="14" oW="59" oH="54"/>
+    <sprite n="AD_bubble3_14.png" x="496" y="50" w="6" h="45" pX="0.5" pY="0.5" oX="7" oY="33" oW="59" oH="54" r="y"/>
+    <sprite n="AD_costume_04_bubble1_01.png" x="273" y="272" w="44" h="29" pX="0.5" pY="0.5" oX="0" oY="82" oW="57" oH="113"/>
+    <sprite n="AD_costume_04_bubble1_02.png" x="103" y="86" w="40" h="44" pX="0.5" pY="0.5" oX="0" oY="71" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_03.png" x="385" y="254" w="53" h="44" pX="0.5" pY="0.5" oX="0" oY="58" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_04.png" x="445" y="191" w="65" h="44" pX="0.5" pY="0.5" oX="0" oY="46" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_05.png" x="91" y="297" w="44" h="73" pX="0.5" pY="0.5" oX="0" oY="38" oW="57" oH="113"/>
+    <sprite n="AD_costume_04_bubble1_06.png" x="235" y="226" w="82" h="44" pX="0.5" pY="0.5" oX="0" oY="29" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_07.png" x="2" y="178" w="90" h="44" pX="0.5" pY="0.5" oX="0" oY="21" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_08.png" x="144" y="210" w="89" h="44" pX="0.5" pY="0.5" oX="0" oY="22" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_09.png" x="2" y="270" w="87" h="44" pX="0.5" pY="0.5" oX="0" oY="24" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_10.png" x="245" y="130" w="98" h="48" pX="0.5" pY="0.5" oX="0" oY="13" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_11.png" x="388" y="61" w="105" h="53" pX="0.5" pY="0.5" oX="0" oY="6" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_12.png" x="145" y="67" w="108" h="57" pX="0.5" pY="0.5" oX="0" oY="3" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_13.png" x="388" y="2" w="106" h="57" pX="0.5" pY="0.5" oX="0" oY="5" oW="57" oH="113" r="y"/>
+    <sprite n="AD_costume_04_bubble1_14.png" x="137" y="302" w="44" h="25" pX="0.5" pY="0.5" oX="0" oY="86" oW="57" oH="113"/>
+    <sprite n="AD_costume_04_bubble2_01.png" x="440" y="283" w="56" h="44" pX="0.5" pY="0.5" oX="7" oY="46" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_02.png" x="440" y="237" w="68" h="44" pX="0.5" pY="0.5" oX="7" oY="34" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_03.png" x="144" y="256" w="81" h="44" pX="0.5" pY="0.5" oX="7" oY="21" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_04.png" x="2" y="224" w="89" h="44" pX="0.5" pY="0.5" oX="7" oY="13" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_05.png" x="2" y="132" w="93" h="44" pX="0.5" pY="0.5" oX="7" oY="9" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_06.png" x="343" y="208" w="95" h="44" pX="0.5" pY="0.5" oX="7" oY="7" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_07.png" x="370" y="116" w="99" h="44" pX="0.5" pY="0.5" oX="7" oY="3" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_08.png" x="245" y="180" w="96" h="44" pX="0.5" pY="0.5" oX="7" oY="6" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_09.png" x="2" y="86" w="99" h="44" pX="0.5" pY="0.5" oX="7" oY="3" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_10.png" x="345" y="162" w="98" h="44" pX="0.5" pY="0.5" oX="7" oY="4" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_11.png" x="97" y="132" w="45" h="86" pX="0.5" pY="0.5" oX="7" oY="16" oW="60" oH="105"/>
+    <sprite n="AD_costume_04_bubble2_12.png" x="319" y="254" w="64" h="44" pX="0.5" pY="0.5" oX="7" oY="38" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_13.png" x="93" y="251" w="49" h="44" pX="0.5" pY="0.5" oX="7" oY="53" oW="60" oH="105" r="y"/>
+    <sprite n="AD_costume_04_bubble2_14.png" x="227" y="272" w="44" h="44" pX="0.5" pY="0.5" oX="7" oY="58" oW="60" oH="105"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (95, 57) diff = (10, -4)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (20, -8), because hires -->
+    <sprite n="AD_costume_04_foam_bg_sl.png" x="2" y="2" w="141" h="82" pX="0.5" pY="0.5" oX="20" oY="-8"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (-28, 51) diff = (133, 2)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (266, 4), because hires -->
+    <sprite n="AD_costume_04_foam_bg_sr.png" x="145" y="2" w="120" h="63" pX="0.5" pY="0.5" oX="266" oY="4"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (77, 38) diff = (28, 15)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (56, 30), because hires -->
+    <sprite n="AD_costume_04_foam_fg_sl.png" x="267" y="74" w="101" h="54" pX="0.5" pY="0.5" oX="56" oY="30"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (-22, 44) diff = (127, 9)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (254, 18), because hires -->
+    <sprite n="AD_costume_04_foam_fg_sr.png" x="267" y="2" w="119" h="70" pX="0.5" pY="0.5" oX="254" oY="18"/>
+	
+	<!-- original anchor = (105, 53) -> new anchor (16, 35) diff = (-9, -27)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-18, -54), because hires -->
+    <sprite n="AD_costume_04_green_sl.png" x="2" y="316" w="74" h="72" pX="0.5" pY="0.5" r="y" oX="-18" oY="-54"/>
+    
+	<!-- original anchor = (105, 53) -> new anchor (26, 39) diff = (-18, -31)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-36, -62), because hires -->
+	<sprite n="AD_costume_04_pink_sr.png" x="145" y="126" w="98" h="82" pX="0.5" pY="0.5" r="y" oX="-36" oY="-62"/>
+</TextureAtlas>

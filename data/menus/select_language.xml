@@ -1,0 +1,197 @@
+<menu name="select_language" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$priority" equals="10" />
+		<templateVar name="$touchPriority" equals="-7" />
+		<templateVar name="$maxAlpha" equals="0.75" />
+	</template>
+
+	<template type="template_panel_decorated" name="BG">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<size w="360*game.menuScaleX()" h="256*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="screenHeight() * 2.0" priorityOffset="8" />
+
+		<template type="template_closebutton" name="CloseButton">
+			<templateVar name="$TouchPriority" equals="-5" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-16*game.hudScale()" yOffset="16*game.hudScale()" priorityOffset="-1" />
+			<event name="onClose" params="element">
+				<![CDATA[
+						local panel = element:parent()
+						panel:parent():DoStoredScript("Hide")
+					]]>
+			</event>
+		</template>
+
+		<element name="Title">
+			<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-22*game.menuScaleY()" priorityOffset="0" />
+
+			<ninesliceComponent name="Sprite">
+				<size w="260*game.menuScaleX()" h="50*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("topHeight"):SetFloat(45.0)
+						component("bottomHeight"):SetFloat(45.0)
+						component("leftWidth"):SetFloat(50.0)
+						component("rightWidth"):SetFloat(50.0)
+						component("size"):SetFloat(0.5*game.menuScaleX())
+						component("includeBorder"):SetInt(1)
+						component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+						component("layer"):SetString("FrontPopUps")
+					]]>
+				</event>
+			</ninesliceComponent>
+
+			<textComponent name="Text">
+				<size w="240*game.menuScaleX()" h="50*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.4*game.menuScaleY())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component:setColor(0.26, 0.96, 0.26)
+					component("layer"):SetString("FrontPopUps")
+					component("text"):SetString("LANGUAGES")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+		<element name="SMP_LIST">
+			<size w="275*game.menuScaleX()" h="200*game.menuScaleY()" />
+			<position relativeTo="BG" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.hudScale()" priorityOffset="0" />
+			<swipeComponent name="Swiper">
+				<event name="onInit" params="component, element">
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							include("SelectLanguageUI").SwiperOnInit(component, element)
+						]]>
+					</event>
+				</event>
+				<event name="refresh" params="component, element">
+					<![CDATA[
+						include("SelectLanguageUI").SwiperRefresh(component, element)
+					]]>
+				</event>
+				<event name="onTick" params="component, element, dt">	
+					<![CDATA[
+						include("SelectLanguageUI").SwiperOnTick(component, element, dt)
+					]]>
+				</event>
+				<event name="setScrollOffset" params="component, element">
+						<![CDATA[
+							include("SelectLanguageUI").SwiperSetScrollOffset(component, element)
+						]]>
+					</event>
+				<event name="setScrollOffsetToMarker" params="component, element">
+					<![CDATA[
+							include("SelectLanguageUI").SwiperSetScrollOffsetToMarker(component, element)
+						]]>
+				</event>
+			</swipeComponent>
+			
+			<touchComponent name="Touch">
+				<size dependentOnElement="bg" dependentOnComponent="Sprite" />				
+				<event name="onInit" params="component, element">
+					component("singleTouch"):SetInt(1)
+				</event>
+			</touchComponent>
+			
+			<event name="onInit" params="element">
+				<![CDATA[
+					include("SelectLanguageUI").ListOnInit(element)
+				]]>
+			</event>
+			
+			<event name="onTick" params="element, dt">
+				<![CDATA[
+					include("SelectLanguageUI").ListOnTick(element, dt)
+				]]>
+			</event>
+
+			<event name="populate" params="element">
+				<![CDATA[
+					include("SelectLanguageUI").ListPopulate(element)
+			]]>
+			</event>
+
+			<!-- called by list item -->
+			<event name="selectNewEntry" params="element">
+				<![CDATA[
+					include("SelectLanguageUI").ListSelectNewEntry(element)
+				]]>
+			</event>
+		</element>
+	
+		<element name="SMP_SCROLLBAR">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="BG" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.menuScaleX()" yOffset="0*game.menuScaleY()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("scroll_bar_01")
+						component("sheetName"):SetString("xml_resources/buttons01.xml")
+						component("size"):SetFloat(0.6*(game.menuScaleY()))
+						component("layer"):SetString("FrontPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+		</element>
+		
+		<element name="SMP_SCROLLMARKER">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="SMP_SCROLLBAR" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="element">
+				<![CDATA[
+					include("SelectLanguageUI").ScrollMarkerOnInit(element)
+				]]>
+			</event>
+			
+			<spriteSheetComponent name="Marker">
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("useOffsets"):SetInt(1)
+						component("spriteName"):SetString("scroll_bar_dot")
+						component("sheetName"):SetString("xml_resources/buttons01.xml")
+						component("size"):SetFloat(0.5*game.menuScaleY())
+						component("layer"):SetString("FrontPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+			
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+				<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-5" />
+				<event name="onTouchDrag" params="component, element, x, y">
+					<![CDATA[
+						include("SelectLanguageUI").ScrollMarkerOnTouchDrag(component, element, x, y)
+					]]>
+				</event>
+			</touchComponent>
+		</element>
+			
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				include("SelectLanguageUI").ContentInit(element)
+			]]>
+		</event>
+		
+	</template>
+
+	<script src="scripts/SelectLanguageUI.lua"/>
+
+</menu>

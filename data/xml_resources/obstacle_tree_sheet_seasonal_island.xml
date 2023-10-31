@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dd95c1b9ed74d0fea66b3dd3140d80c3:59ed60e9ef1a6c0d2f4b80fdb8c9ddc8:ef0fd09a4d3e7810096f4e64e9f7d0f6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/obstacle_tree_sheet_seasonal_island.png" width="1024" height="1024" hires="true">
+    <sprite n="obstacle_tree01_seasonal" x="1" y="661" w="244" h="360" pX="0.5" pY="0.5" oX="0" oY="51" oW="244" oH="416"/>
+    <sprite n="obstacle_tree02_seasonal" x="247" y="661" w="528" h="340" pX="0.5" pY="0.5" oX="44" oY="52" oW="428" oH="580" r="y"/>
+    <sprite n="obstacle_tree03_seasonal" x="1" y="1" w="501" h="658" pX="0.5" pY="0.5" oX="31" oY="62" oW="564" oH="728"/>
+</TextureAtlas>

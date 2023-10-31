@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:79f80c960a318fd64ef56a28b79a33d1:27cc770a1bb06f582311223209e0c9b9:386058237a485693a6c3cb9f6a5aac40$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_D.png" width="512" height="1024" hires="true">
+    <sprite n="D_body1" x="2" y="2" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body2" x="216" y="2" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_body3" x="2" y="198" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="D_bubble" x="476" y="650" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="D_left_eyeback" x="178" y="978" w="50" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="D_left_eyelid1" x="230" y="958" w="50" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_left_eyelid2" x="220" y="744" w="50" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_left_eyelid3" x="220" y="808" w="50" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_left_eyelid4" x="268" y="872" w="50" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mallow01_RARE" x="138" y="982" w="38" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow01_RARE2" x="388" y="638" w="38" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow02_RARE" x="2" y="982" w="36" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow02_RARE2" x="40" y="982" w="36" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="D_mallow03_RARE" x="78" y="982" w="28" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mallow03_RARE2" x="108" y="982" w="28" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth1" x="430" y="2" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth2" x="430" y="152" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth3" x="430" y="302" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth4" x="430" y="452" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth5" x="2" y="752" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_mouth6" x="2" y="902" w="148" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="D_mouth7" x="82" y="752" w="78" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_pupil" x="210" y="958" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="D_pupil_RARE_L" x="476" y="680" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="D_pupil_RARE_R" x="426" y="688" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="D_right_eyeback" x="274" y="590" w="46" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid1" x="162" y="748" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid2" x="216" y="674" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid3" x="162" y="818" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_right_eyelid4" x="210" y="888" w="56" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_shadow" x="2" y="602" w="84" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb1" x="392" y="590" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb1_RARE" x="274" y="648" w="46" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb2" x="430" y="602" w="56" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb2_RARE" x="330" y="638" w="56" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb3" x="150" y="676" w="64" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb3_RARE" x="208" y="602" w="64" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb4" x="152" y="902" w="56" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb4_RARE" x="88" y="602" w="56" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb5" x="88" y="678" w="60" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb5_RARE" x="146" y="602" w="60" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb6" x="282" y="936" w="46" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="D_thumb6_RARE" x="330" y="590" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb7" x="428" y="650" w="46" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="D_thumb7_RARE" x="388" y="678" w="36" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_D_body1" x="216" y="198" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_D_body2" x="2" y="394" w="212" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_D_body3" x="216" y="394" w="212" h="194" pX="0.5" pY="0.5"/>
+</TextureAtlas>

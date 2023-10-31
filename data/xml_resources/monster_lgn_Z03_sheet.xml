@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fdbb344511ddaa9e68cfa22b8b7805b9:5f4cc77d67d01d4bb758a8d89164d4ad:e6455811848843523a816af9fee0c1a1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_lgn_Z03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="Z03_beard" x="113" y="272" w="28" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Z03_eyeballs" x="2" y="496" w="54" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="16"/>
+    <sprite n="Z03_eyelids01" x="399" y="173" w="56" h="18" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20"/>
+    <sprite n="Z03_eyelids02" x="305" y="267" w="56" h="18" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20"/>
+    <sprite n="Z03_eyelids03" x="305" y="287" w="56" h="18" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20"/>
+    <sprite n="Z03_eyelids04" x="239" y="292" w="56" h="18" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20"/>
+    <sprite n="Z03_finger01" x="113" y="306" w="26" h="29" pX="0.5" pY="0.5" oX="2" oY="16" oW="32" oH="48"/>
+    <sprite n="Z03_finger02" x="239" y="220" w="22" h="37" pX="0.5" pY="0.5" oX="7" oY="8" oW="32" oH="48"/>
+    <sprite n="Z03_finger03" x="263" y="220" w="14" h="43" pX="0.5" pY="0.5" oX="15" oY="2" oW="32" oH="48"/>
+    <sprite n="Z03_guitar_acoustic" x="2" y="2" w="295" h="106" pX="0.5" pY="0.5" oX="0" oY="1" oW="296" oH="108"/>
+    <sprite n="Z03_hat_b" x="2" y="228" w="109" h="80" pX="0.5" pY="0.5" oX="5" oY="20" oW="120" oH="100"/>
+    <sprite n="Z03_head" x="399" y="193" w="96" h="98" pX="0.5" pY="0.5" oX="0" oY="1" oW="96" oH="100"/>
+    <sprite n="Z03_left_foot" x="293" y="116" w="104" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="108" oH="92"/>
+    <sprite n="Z03_left_hand" x="116" y="199" w="36" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="Z03_left_lowerarm" x="2" y="310" w="78" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="32"/>
+    <sprite n="Z03_left_upperarm" x="293" y="206" w="96" h="28" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="32"/>
+    <sprite n="Z03_lowerbody" x="164" y="110" w="127" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="108"/>
+    <sprite n="Z03_lowerleg" x="2" y="341" w="64" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="Z03_mouth01" x="399" y="116" w="60" h="21" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_mouth02" x="239" y="267" w="64" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_mouth03" x="2" y="463" w="64" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_mouth04" x="399" y="139" w="58" h="32" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_mouth05" x="459" y="146" w="51" h="32" pX="0.5" pY="0.5" oX="6" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_mouth06" x="461" y="25" w="41" h="29" pX="0.5" pY="0.5" oX="9" oY="2" oW="64" oH="32"/>
+    <sprite n="Z03_mouth07" x="461" y="2" w="48" h="21" pX="0.5" pY="0.5" oX="5" oY="0" oW="64" oH="32"/>
+    <sprite n="Z03_pupil" x="457" y="180" w="11" h="11" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="Z03_right_foot" x="154" y="220" w="83" h="87" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="88"/>
+    <sprite n="Z03_right_hand" x="113" y="233" w="35" h="37" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="40"/>
+    <sprite n="Z03_right_lowerarm" x="279" y="236" w="72" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="32"/>
+    <sprite n="Z03_right_upperarm" x="2" y="199" w="112" h="27" pX="0.5" pY="0.5" oX="0" oY="2" oW="112" oH="32"/>
+    <sprite n="Z03_shadow" x="2" y="110" w="160" h="87" pX="0.5" pY="0.5" oX="7" oY="1" oW="172" oH="88"/>
+    <sprite n="Z03_upperbody" x="299" y="2" w="160" h="112" pX="0.5" pY="0.5" oX="3" oY="0" oW="172" oH="112"/>
+    <sprite n="Z03_upperleg" x="461" y="56" w="37" h="88" pX="0.5" pY="0.5" oX="1" oY="2" oW="40" oH="92"/>
+</TextureAtlas>

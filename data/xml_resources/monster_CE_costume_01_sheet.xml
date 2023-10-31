@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:091d5c5f376bae914a2c425bf9b66811:0dec095cf6ee4495fe13c34973281aa1:01b71f0a8a26521fb2afdd5741154d1b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CE_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="CE_body_warrior.png" x="2" y="2" w="162" h="254" pX="0.5" pY="0.5" oX="0" oY="6" oW="162" oH="260"/>
+	
+	<!-- original anchor = (38, 105) -> new anchor (34, 100) diff = (4, 5)-->
+	<!-- add double it to texturepacker output offsets (13, 6) -> (21, 16), because hires-->
+	
+    <sprite n="CE_helm_warrior.png" x="2" y="258" w="132" h="101" pX="0.5" pY="0.5" oX="21" oY="16" oW="150" oH="110"/>
+</TextureAtlas>

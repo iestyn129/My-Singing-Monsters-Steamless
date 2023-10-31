@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="10" />		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.65)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="InfoFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-300*(lua_sys.screenWidth()/480.0)" yOffset="-25*game.menuScaleY()" priorityOffset="8" />
+		<event name="onInit" params="element">
+			element("scrollSize"):SetFloat(0)
+		</event>
+		<ninesliceComponent name="Sprite">
+			<size w="291*game.menuScaleX()" h="180*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<element name="RightLeaves">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="-15*game.menuScaleX()" yOffset="13*game.hudScale()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("menu_leaves")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					if(component("isSourceRotated"):GetInt() == 1) then
+						component("vFlip"):SetInt(1)
+					else
+						component("hFlip"):SetInt(1)
+					end
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<element name="LowerLeaves">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="20*game.hudScale()" yOffset="-15*game.menuScaleY()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("menu_leaves")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+					component("rotation"):SetFloat(-0.4*math.pi);
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				component("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+				component("tSteps"):SetFloat(25.0)
+				component:DoStoredScript("refresh")
+				
+				element:parent():setPositionBroadcast(true)
+				local topSprite = element:parent():GetElement("FadeSprite")
+				local botSprite = element:parent():GetElement("BotFadeSprite")
+				game.setClipping("FrontClipping", 
+					topSprite:absX()*lua_sys.deviceScaleX(), topSprite:absY()*lua_sys.deviceScaleY(), 
+					topSprite:absW()*lua_sys.deviceScaleX(), ((botSprite:absY() + botSprite:absH()) - topSprite:absY())*lua_sys.deviceScaleY())
+			</event>
+			<function name="refresh" params="component, element">
+				component:listenToTouches(element)
+				
+				local itemHeight = element:parent():GetElement("InfoContent"):GetComponent("Text"):absH()
+				local parentHeight = element:parent():GetElement("InfoContent"):absH();
+				
+				if(itemHeight &gt; parentHeight) then
+					component:setScrollSize(itemHeight - parentHeight)
+				else
+					component:setScrollSize(0)
+				end
+				element("scrollSize"):SetFloat(component:scrollSize())
+			</function>
+			<event name="onTick" params="component, element, dt">
+				if(element:parent()["BioButton"]["Touch"]("enabled"):GetInt() == 0 and
+					element:parent()["BioButton"]["UpSprite"]("visible"):GetInt() == 1) then
+					
+					component:DoStoredScript("correctScrollMarkerPos");
+				end
+			</event>
+			<event name="correctScrollMarkerPos" params="component, element">
+
+				--if Bio is enabled
+				if(element:parent()["BioButton"]["Touch"]("enabled"):GetInt() == 0 and
+					element:parent()["BioButton"]["UpSprite"]("visible"):GetInt() == 1) then
+					
+					local first = element:parent():GetElement("InfoContent"):GetComponent("Text")
+					
+					if(first) then
+						local scrollOffset = component:scrollOffset()
+						
+						if(first:getOrientationPosition().y ~= scrollOffset) then
+							first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), scrollOffset))
+						end
+						
+						local scrollMarker = element:parent():GetElement("ScrollMarker");
+						local markerBookend = scrollMarker("originalYOffset"):GetInt()
+						
+						--range without borders is [0, (scrollbarH-scrollMarkerH)]
+						local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH();
+
+						local scrollMarkerYOffset = 0;
+						if(component:scrollSize() ~= 0) then
+							scrollMarkerYOffset = -(scrollOffset/component:scrollSize()) * markerMovementHeight;
+						end
+						
+						scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+						
+						scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+					end
+				end
+			</event>
+			<event name="setScrollOffsetToMarker" params="component, element">
+				--if BioButton is enabled
+				if(element:parent()["BioButton"]["Touch"]("enabled"):GetInt() == 0 and
+					element:parent()["BioButton"]["UpSprite"]("visible"):GetInt() == 1) then
+					
+					component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+				end
+			</event>
+			<event name="resetScrollPos" params="component, element">
+				<![CDATA[
+					--if BioButton is enabled
+					if(element:parent()["BioButton"]["Touch"]("enabled"):GetInt() == 0 and
+						element:parent()["BioButton"]["UpSprite"]("visible"):GetInt() == 1) then
+
+						component:setScrollOffset(0);
+						component:DoStoredScript("correctScrollMarkerPos");
+					end
+				]]>
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="InfoContent">
+		<size w="225*game.menuScaleX()" h="104*game.menuScaleY()" />
+		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="225*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component:setColor(0.9, 0.9, 0.9)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				
+				component("text"):SetString(game.monsterTypeDescr(element:parent()("selectedMonster"):GetInt()))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="BlackCover">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="265*game.menuScaleX()" h="24*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	<element name="FadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BlackCover" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(17.0*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="BotFadeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="9*game.menuScaleY()" priorityOffset="-2" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(15.5*game.menuScaleX(), 0.5*game.menuScaleY()))
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="ImageFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-160*(lua_sys.screenWidth()/480.0)" yOffset="-25*game.menuScaleY()" priorityOffset="4" />
+		<ninesliceComponent name="Sprite">
+			<size w="140*game.menuScaleX()" h="180*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="LowerRightFlourish">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="7*game.menuScaleX()" yOffset="9*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute01">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="10*game.menuScaleX()" yOffset="59*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-0.6)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute02">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="10*game.menuScaleX()" yOffset="37*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-0.4)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute03">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-15*game.menuScaleX()" yOffset="35*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("hFlip"):SetInt(1)
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-2.80)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flute04">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-7*game.menuScaleX()" yOffset="42*game.menuScaleX()" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("hFlip"):SetInt(1)
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("rotation"):SetFloat(-2.55)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<event name="lock" params="element">
+			element["LeftChain"]("visible"):SetInt(1)
+			element["RightChain"]("visible"):SetInt(1)
+			element["Lock"]("visible"):SetInt(1)
+		</event>
+		<event name="unlock" params="element">
+			element["LeftChain"]("visible"):SetInt(0)
+			element["RightChain"]("visible"):SetInt(0)
+			element["Lock"]("visible"):SetInt(0)
+		</event>
+		<spriteSheetComponent name="LeftChain">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="10*game.menuScaleX()" yOffset="30*game.menuScaleX()" priorityOffset="-3" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("chain01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+				component("layer"):SetString("FrontPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="RightChain">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.menuScaleX()" yOffset="30*game.menuScaleX()" priorityOffset="-3" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("chain01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Lock">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-4" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_lock")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+				component("layer"):SetString("FrontPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Animation">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="ImageFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					local monsterType = element:parent()("selectedMonster"):GetInt()
+
+					local monsterData = game.getMonsterData(monsterType)
+
+					component("animationName"):SetString("xml_bin/"..game.monsterTypeGfxName(monsterType))
+					
+					if game.IsBoxMonsterFromType(monsterType) and game.hasOrHasEverHadMonsterOnBookOfMonstersIsland(monsterType) then
+						
+						local islandType = game.getBookOfMonstersIslandType()
+
+						if game.isAmberIsland(islandType) then
+
+							component("animation"):SetString("Store")
+							component:setScale(Vector2(0.75*game.menuScaleX(), 0.75*game.menuScaleX()))
+							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + 15*game.hudScale()))
+
+						elseif islandType == 6 and monsterData:isEpicMonster() and monsterData:isWubbox() then 
+
+							-- Special case for Gold Island Epic Wubbox (MON-19060)
+							-- set dancing idle anim
+
+							local entityId = monsterData:entityId()
+							if entityId == 1525 then
+								component("animation"):SetString( "01-F_EPIC_Dance_Plant_01" )
+							elseif entityId == 1526 then
+								component("animation"):SetString( "01-F_EPIC_Dance_Cold_01" )
+							elseif entityId == 1527 then
+								component("animation"):SetString( "01-F_EPIC_Dance_Air_01" )
+							elseif entityId == 1528 then
+								component("animation"):SetString( "01-F_EPIC_Dance_Water_01" )
+							elseif entityId == 1529 then
+								component("animation"):SetString( "01-F_EPIC_Dance_Earth_01" )
+							else
+								component("animation"):SetString( "01-F_EPIC_Dance_Default_01" )
+							end
+							
+							local scale = 270/component:size().y;
+							component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
+							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + component:size().y / 4.0))
+
+						else
+							
+							component("animation"):SetString("Activate")
+							component("pingpong"):SetInt(1)
+							local scale = 270/component:size().y;
+							component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
+							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + component:size().y / 4.0))
+
+						end
+
+					else
+					
+						component("animation"):SetString(game.objectStoreAnim())
+						local scale = 112.5/component:size().y;
+						component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
+						element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + 15*game.hudScale()))
+
+					end
+					
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+	
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="ImageFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="19*game.hudScale()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="90*game.hudScale()" h="1*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(40.0)
+					component("bottomHeight"):SetFloat(40.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("includeBorder"):SetInt(0)
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("FrontPopUps")
+					
+					--this is fuzzywuzzy gross
+					if(game.hudScale() > 1 and lua_sys.getPlatformName() ~= "pc") then
+						component("width"):SetInt(component("width"):GetInt() + 38*game.hudScale())
+						component("height"):SetInt(component("height"):GetInt() + 20*game.hudScale())
+					end
+				]]>
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="114*game.menuScaleX()" h="30*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("size"):SetFloat(0.35*game.hudScale())
+
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.monsterTypeName(element:parent()("selectedMonster"):GetInt()))
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="StatsList">
+		<size w="225*game.menuScaleX()" h="104*game.menuScaleY()" />
+		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			element("NumStats"):SetInt(0)
+
+			element:DoStoredScript("populateMonsterStats")
+			
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgMonsterUpdated", "gotMsgMonsterUpdated")
+		</event>
+		<event name="gotMsgMonsterUpdated" params="element, msg">
+			element:DoStoredScript("populateMonsterStats");
+		</event>
+		<event name="populateMonsterStats" params="element">
+			local previous = nil
+			
+			local statsArray;
+
+			if(game.getBookOfMonstersIslandType() == 10 or game.getBookOfMonstersIslandType() == 12) then
+				statsArray = { "template_stat_store_species", "template_stat_store_class", "template_stat_underlingrate"}
+			else
+				statsArray = { "template_stat_store_species", "template_stat_store_class", "template_stat_store_beds", "template_stat_store_coinrate", "template_stat_store_maxcoins" }
+			end
+			
+			for i=1, #statsArray do
+				local statEntry = element:GetElement("statEntry"..i)
+				if(statEntry == nil) then
+					statEntry = menu:addTemplateElement(statsArray[i], "statEntry"..i, element)
+					
+					if(previous == nil) then				
+						statEntry:relativeTo(element)
+						statEntry:setOrientation(lua_sys.MenuOrientation(0, 0, -2, lua_sys.HCENTER, lua_sys.TOP))
+						statEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						statEntry:relativeTo(previous)
+						statEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						statEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					end
+					
+					previous = statEntry
+					
+					statEntry:init()
+					statEntry("monsterID"):SetInt(element:parent()("selectedMonster"):GetInt())
+					statEntry:setPositionBroadcast(true)
+				else
+					statEntry:DoStoredScript("repopulate");
+				end
+			end
+			
+			element("NumStats"):SetInt(#statsArray)
+		</event>
+		<event name="showStats" params="element">
+			local numStats = element("NumStats"):GetInt()
+			
+			for i=1, numStats do
+				local stat = element:GetElement("statEntry"..i)
+				
+				if(stat ~= nil) then
+					stat:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="hideStats" params="element">
+			local numStats = element("NumStats"):GetInt()
+			
+			for i=1, numStats do
+				local stat = element:GetElement("statEntry"..i)
+				
+				if(stat ~= nil) then
+					stat:DoStoredScript("setInvisible")
+				end
+			end
+		</event>
+	</element>
+	
+	<element name="CostumesList" params="element">
+		<size w="225*game.menuScaleX()" h="104*game.menuScaleY()" />
+		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			local costumes = game.getCostumeIdsForMonsterType(element:parent()("selectedMonster"):GetInt(), true)
+			
+			local previous = nil;
+			
+			element("NewSelectedEntry"):SetString("");
+			element("NewSelectedEntryID"):SetInt(-1);
+			
+			local idx = 0;
+			for i=0, costumes:size()-1 do
+			
+				-- don't show NO_COSTUME
+				if(costumes[i] ~= 0) then
+					local costumeEntry = menu:addTemplateElement("template_bom_costume_entry", "costumeEntry"..idx, element)
+
+					local costumeData = game.getCostumeData(costumes[i])
+					costumeEntry("costumeId"):SetInt(costumes[i])
+					costumeEntry("costumeName"):SetString(LOC(costumeData.name))
+					costumeEntry("monsterType"):SetInt(element:parent()("selectedMonster"):GetInt())
+					costumeEntry("locked"):SetInt(0)
+					costumeEntry("timedAvail"):SetInt(0)
+					costumeEntry("timedSale"):SetInt(0)
+					
+					if(previous == nil) then
+						element("NewSelectedEntry"):SetString(costumeEntry:name());
+						element("NewSelectedEntryID"):SetInt(costumeEntry("costumeId"):GetInt());
+						costumeEntry("selected"):SetInt(1)
+						costumeEntry:relativeTo(element)
+						costumeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						costumeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						costumeEntry("selected"):SetInt(0)
+						costumeEntry:relativeTo(previous)
+						costumeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.HCENTER, lua_sys.TOP))
+						costumeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					end
+					
+					previous = costumeEntry
+					
+					costumeEntry:init()
+					costumeEntry:setPositionBroadcast(true)
+					idx = idx + 1 
+				end
+			end
+			
+			element("numCostumes"):SetInt(idx)
+			
+			if(element:parent():GetElement("costumeEntry0") ~= nil) then
+				element("contentHeight"):SetInt(element("numCostumes"):GetInt() * (element:parent():GetElement("costumeEntry0"):absH() + 0))
+			else
+				element("contentHeight"):SetInt(0)
+			end
+			
+			element("scrollSize"):SetFloat(0)
+
+		</event>
+		<event name="selectNewEntry" params="element">
+			local entrySelected = element("NewSelectedEntry"):GetString();
+			local costumeId = element("NewSelectedEntryID"):GetInt();
+			
+			if(entrySelected ~= "" and costumeId ~= -1) then
+			
+				--deselect whatever was selected before
+				local num = element("numCostumes"):GetInt()
+				for i=0, num-1 do
+					local costume = element:GetElement("costumeEntry"..i)
+					
+					if(costume ~= nil and costume:name() ~= entrySelected ) then
+						costume:DoStoredScript("deselect")
+					end
+				end
+				
+				game.applyCostumeToAnimComponent(element:parent()["Animation"]:GetComponent("Sprite"), costumeId)
+				if(game.hasOrHasEverHadCostumeOnIsland(costumeId) == false) then
+					element:parent()["ImageFrame"]:DoStoredScript("lock")
+					element:parent()["Animation"]:GetComponent("Sprite"):setColor(0,0,0);
+				else
+					element:parent()["ImageFrame"]:DoStoredScript("unlock")
+					element:parent()["Animation"]:GetComponent("Sprite"):setColor(1,1,1);
+				end
+			end
+		</event>
+		<event name="unequipCostume" params="element">
+			game.applyCostumeToAnimComponent(element:parent()["Animation"]:GetComponent("Sprite"), 0)
+			element:parent()["ImageFrame"]:DoStoredScript("unlock")
+			element:parent()["Animation"]:GetComponent("Sprite"):setColor(1,1,1);
+		</event>
+		<event name="setVisible" params="element">
+			local num = element("numCostumes"):GetInt()
+			for i=0, num-1 do
+				local costume = element:GetElement("costumeEntry"..i)
+				
+				if(costume ~= nil) then
+					costume:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="setInvisible" params="element">
+			
+			local num = element("numCostumes"):GetInt()
+			for i=0, num-1 do
+				local costume = element:GetElement("costumeEntry"..i)
+				
+				if(costume ~= nil) then
+					costume:DoStoredScript("setInvisible")
+				end
+			end
+		</event>
+		<swipeComponent name="Swiper">
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component:GetVar("direction"):SetInt(MenuSwipeComponent_SwipeDirectionVertical)
+					component:GetVar("mode"):SetInt(MenuSwipeComponent_SwipeModeFree)
+					component:GetVar("tSteps"):SetFloat(25.0)
+					component:listenToTouches(element)
+
+					component:DoStoredScript("refresh")
+				]]>
+			</event>
+			<function name="refresh" params="component, element">
+				<![CDATA[
+					--to resume prev position, don't setScrollOffset:
+					--component:setScrollOffset(0)
+
+					local itemHeight = element("contentHeight"):GetInt();
+					local parentHeight = element:parent():GetElement("InfoContent"):absH();
+
+					if(itemHeight > parentHeight) then
+						component:setScrollSize(itemHeight - parentHeight)
+					else
+						component:setScrollSize(0)
+					end
+					element("scrollSize"):SetFloat(component:scrollSize())
+				]]>
+			</function>
+			<event name="onTick" params="component, element, dt">
+				<![CDATA[
+					--if Costumes are enabled
+					if(element:parent()["CostumesButton"]["Touch"]("enabled"):GetInt() == 0 and
+						element:parent()["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+
+						component:DoStoredScript("correctScrollMarkerPos");
+					end
+				]]>
+			</event>
+			<event name="correctScrollMarkerPos" params="component, element">
+				<![CDATA[
+					--if Costumes are enabled
+
+					if(element:parent()["CostumesButton"]["Touch"]("enabled"):GetInt() == 0 and
+						element:parent()["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+
+						local first = element:GetElement("costumeEntry0")
+						if(first) then
+							local offset = component:scrollOffset()
+
+							if(first:getOrientationPosition().y ~= offset) then
+								first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), offset))
+							end
+
+							local scrollMarker = element:parent():GetElement("ScrollMarker");
+							local markerBookend = scrollMarker("originalYOffset"):GetInt()
+
+							--range without borders is [0, (scrollbarH-scrollMarkerH)]
+							local markerMovementHeight = element:parent():GetElement("ScrollBar"):absH() - (2*markerBookend) - scrollMarker:absH();
+
+							local scrollMarkerYOffset = 0
+							if(component:scrollSize() ~= 0) then
+								scrollMarkerYOffset = -(offset/component:scrollSize()) * markerMovementHeight;
+							end
+
+							scrollMarkerYOffset = clamp(scrollMarkerYOffset, 0, markerMovementHeight)
+
+							scrollMarker("yOffset"):SetInt(markerBookend + scrollMarkerYOffset)
+
+						end
+					end
+				]]>
+			</event>
+			<event name="setScrollOffsetToMarker" params="component, element">
+				<![CDATA[
+					--if Costumes are enabled
+					if(element:parent()["CostumesButton"]["Touch"]("enabled"):GetInt() == 0 and
+						element:parent()["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+
+						component:setScrollOffset(element:parent():GetElement("ScrollMarker")("scrollOffset"):GetFloat())
+					end
+				]]>
+			</event>
+			<event name="resetScrollPos" params="component, element">
+				<![CDATA[
+					--if Costumes are enabled
+					if(element:parent()["CostumesButton"]["Touch"]("enabled"):GetInt() == 0 and
+						element:parent()["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+
+						component:setScrollOffset(0);
+						component:DoStoredScript("correctScrollMarkerPos");
+					end
+				]]>
+			</event>
+		</swipeComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("enabled"):SetInt(0)
+				]]>
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TouchBlockerTop">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="7" />
+		
+		<touchComponent name="TouchBlockerTop">
+			<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+			
+				--call this because otherwise positions don't get updated properly until the onTicks
+				element:parent():setPositionBroadcast(true)
+				
+				local topSprite = element:parent():GetElement("FadeSprite");
+
+				element:setOrientation(lua_sys.MenuOrientation(0, -(topSprite:absY() + topSprite:absH()), 7, lua_sys.LEFT, lua_sys.BOTTOM))
+				element:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TouchBlockerBot">
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="7" />
+
+		<touchComponent name="TouchBlockerBot">
+			<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+			
+				--call this because otherwise positions don't get updated properly until the onTicks
+				element:parent():setPositionBroadcast(true)
+				
+				local botSprite = element:parent():GetElement("InfoFrame");
+				
+				element:setOrientation(lua_sys.MenuOrientation(0, (botSprite:absY() + botSprite:absH() - 10), 7, lua_sys.LEFT, lua_sys.TOP))
+				element:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+
+			</event>
+		</touchComponent>
+	</element>
+
+	<element name="ScrollBar">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="InfoContent" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.hudScale()" yOffset="-10*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("scroll_bar_01")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.menuScaleY())
+				component("layer"):SetString("Tutorial")
+			</event>
+		</spriteSheetComponent>
+		<event name="setVisible" params="element">
+			<![CDATA[
+				element["Sprite"]("visible"):SetInt(1)
+			]]>
+		</event>
+		<event name="setInvisible" params="element">
+			<![CDATA[
+				element["Sprite"]("visible"):SetInt(0)
+			]]>
+		</event>
+	</element>
+	
+	<element name="ScrollMarker">
+		<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+		<position relativeTo="ScrollBar" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Marker">
+			<event name="onInit" params="component, element">
+				component("useOffsets"):SetInt(1)
+				component("spriteName"):SetString("scroll_bar_dot")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.menuScaleY())
+				component("layer"):SetString("Tutorial")
+				element("originalYOffset"):SetInt(element("yOffset"):GetInt())
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Marker" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y">
+			
+				local scrollBar = element:parent():GetElement("ScrollBar")
+				local fromTopOfMarkerRange = y - scrollBar:absY() - element("originalYOffset"):GetInt();
+				
+				local markerBookend = element("originalYOffset"):GetInt()
+				
+				local scrollSize = element("scrollSize"):GetFloat();
+				
+				local scrollOffset = (-(fromTopOfMarkerRange - markerBookend)/(scrollBar:absH() - 2*markerBookend - element:absH()))*scrollSize;
+				scrollOffset = clamp(scrollOffset, -scrollSize, 0)
+				
+				element("scrollOffset"):SetFloat(scrollOffset);
+				
+				element:parent():GetElement("InfoFrame")["Swiper"]:DoStoredScript("setScrollOffsetToMarker");
+				element:parent():GetElement("CostumesList")["Swiper"]:DoStoredScript("setScrollOffsetToMarker");
+			</event>
+		</touchComponent>
+		<event name="onInit" params="element">
+			<![CDATA[
+				element("scrollSize"):SetFloat(0)
+			]]>
+		</event>
+		<event name="setVisible" params="element">
+			<![CDATA[
+				element["Marker"]("visible"):SetInt(1)
+				element["Touch"]("enabled"):SetInt(1)
+			]]>
+		</event>
+		<event name="setInvisible" params="element">
+			<![CDATA[
+				element["Marker"]("visible"):SetInt(0)
+				element["Touch"]("enabled"):SetInt(0)
+			]]>
+		</event>
+
+	</element>
+	
+	<template type="template_spritesheetbutton" name="BioButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-4" />
+		<textComponent name="Label">
+			<size w="67*game.menuScaleX()" h="18*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("BIO"))
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent():DoStoredScript("showBio")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element:parent():DoStoredScript("showBio")
+			</event>
+		</touchComponent>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Label"]("visible"):SetInt(0)
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="StatsButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-4" />
+		<textComponent name="Label">
+			<size w="60*game.menuScaleX()" h="30*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				local txt = game.getLocalizedText("STATS_LABEL")
+				local x, y = txt:find("%s")
+				if(x == nil) then
+					component("multiline"):SetInt(0)
+				else
+					component("multiline"):SetInt(1)
+				end
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(txt)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent():DoStoredScript("showStats")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element:parent():DoStoredScript("showStats")
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="CostumesButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<position relativeTo="InfoFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleX()" priorityOffset="-4" />
+		<textComponent name="Label">
+			<size w="60*game.menuScaleX()" h="30*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				local txt = game.getLocalizedText("COSTUMES_TITLE")
+				local x, y = txt:find("%s")
+				if(x == nil) then
+					component("multiline"):SetInt(0)
+				else
+					component("multiline"):SetInt(1)
+				end
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(txt)
+				component("layer"):SetString("FrontPopUps")
+				
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent():DoStoredScript("showCostumes")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element:parent():DoStoredScript("showCostumes")
+			</event>
+		</touchComponent>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Label"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Label"]("visible"):SetInt(0)
+		</event>
+	</template>
+	
+	<event name="onInit" params="element">
+	
+		element("selectedMonster"):SetInt(element:root():GetElement("SelectedMonsterView")("selectedMonst"):GetInt());
+	
+		local numGenes = game.monsterTypeNumGenes(element("selectedMonster"):GetInt())
+		element("numGenes"):SetInt(numGenes)
+		
+		if(numGenes ~= 0) then
+			if(game.monsterTypeGeneType(element("selectedMonster"):GetInt(), 0)~="") then
+				local parent = element:GetElement("ImageFrame")
+				for i=0,numGenes-1 do
+					local geneItem = menu:addTemplateElement("template_elementicon", "geneItem"..i, element)
+					geneItem("SpriteName"):SetString(game.monsterTypeGeneType(element("selectedMonster"):GetInt(), i))
+					geneItem("SheetName"):SetString("xml_resources/hud02.xml")
+					geneItem("Size"):SetFloat(0.5)
+					geneItem("Layer"):SetString("FrontPopUps")
+					geneItem:setParent(parent)
+					geneItem:setOrientation(lua_sys.MenuOrientation((i-(numGenes-1)/2)*(40), -4*game.menuScaleY(), -4, lua_sys.HCENTER, lua_sys.VCENTER))
+					geneItem:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+					geneItem:init()
+					geneItem:setPositionBroadcast(true)
+				end
+			end
+		else
+			
+			local seasonalSigil=game.seasonalSigil(element("selectedMonster"):GetInt())
+			if(seasonalSigil ~= "") then
+				element("numGenes"):SetInt(1)
+				local parent = element:GetElement("ImageFrame")
+				local geneItem = menu:addTemplateElement("template_elementicon", "geneItem0", element)
+				geneItem("SpriteName"):SetString(seasonalSigil)
+				geneItem("SheetName"):SetString("xml_resources/hud02.xml")
+				geneItem("Size"):SetFloat(0.5)
+				geneItem("Layer"):SetString("FrontPopUps")
+				geneItem:setParent(parent)
+				geneItem:setOrientation(lua_sys.MenuOrientation(0, -4*game.menuScaleY(), -4, lua_sys.HCENTER, lua_sys.VCENTER))
+				geneItem:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
+				geneItem:init()
+				geneItem:setPositionBroadcast(true)
+			end
+		end
+		
+		collectgarbage("stop")
+	</event>
+	
+	<event name="makeGenesInvis" params="element">
+		local numGenes = element("numGenes"):GetInt()
+
+		for i=0,numGenes-1 do
+			local geneElement = element:GetElement("geneItem"..i)
+			geneElement:DoStoredScript("setInvis")
+		end
+	</event>
+	<event name="makeGenesVis" params="element">
+		local numGenes = element("numGenes"):GetInt()
+
+		for i=0,numGenes-1 do
+			local geneElement = element:GetElement("geneItem"..i)
+			geneElement:DoStoredScript("setVis")
+		end
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+
+			if(element["InfoContent"]:GetComponent("Text"):absH() <= element:GetElement("InfoContent"):absH()) then
+				element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+				element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+			end
+			
+			local buttons = {}
+
+			local bioButton = element:GetElement("BioButton")
+			bioButton:DoStoredScript("setVisible")
+			table.insert(buttons, bioButton)
+
+			local statsButton = element:GetElement("StatsButton")
+			statsButton:DoStoredScript("setVisible")
+			table.insert(buttons, statsButton)
+
+			local costumesButton = element:GetElement("CostumesButton")
+			if(not game.battleTutActive() and game.getCostumeIdsForMonsterType(element("selectedMonster"):GetInt(), true):size() > 1) then
+				costumesButton:DoStoredScript("setVisible")
+				table.insert(buttons, costumesButton)
+			else
+				costumesButton:DoStoredScript("setInvisible")
+			end
+			
+			include("MenuHelpers").JustifyHorizontally(buttons, 225*game.menuScaleX())
+			
+			element:DoStoredScript("showBio")
+		]]>
+	</event>
+
+	<event name="queuePop" params="element">
+		manager:hideContextBar()
+		element:root():GetElement("SelectedMonsterView")("selectedMonst"):SetInt(-1);
+		element:root()["MonsterList"]["Swiper"]("enabled"):SetInt(1)
+		element:root()["MonsterList"]["Zoomer"]("enabled"):SetInt(1)
+		element:root():popPopUp()
+	</event>
+	
+	<event name="showBio" params="element">
+		element["InfoContent"]["Text"]("visible"):SetInt(1)
+		element["InfoFrame"]["Touch"]("enabled"):SetInt(1)
+		element["BioButton"]:DoStoredScript("disable")
+		element["BioButton"]["UpSprite"]:setColor(1.0, 1.0, 1.0)
+		element["StatsButton"]:DoStoredScript("enable")
+		element["StatsButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+		
+		if(element["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+			element["CostumesButton"]:DoStoredScript("enable")
+			element["CostumesButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+		end
+
+		element["InfoFrame"]["Swiper"]:DoStoredScript("refresh")
+		
+		element["ScrollMarker"]("scrollSize"):SetFloat(element:GetElement("InfoFrame")("scrollSize"):GetFloat())
+		
+		if(element["InfoContent"]:GetComponent("Text"):absH() > element:GetElement("InfoContent"):absH()) then
+			element["ScrollBar"]:DoStoredScript("setVisible")
+			element["ScrollMarker"]:DoStoredScript("setVisible")
+		else
+			element["ScrollBar"]:DoStoredScript("setInvisible")
+			element["ScrollMarker"]:DoStoredScript("setInvisible")
+		end
+		
+		element:DoStoredScript("makeGenesVis")
+		if(element["CostumesList"]("NewSelectedEntryID"):GetInt() ~= -1) then
+			element["CostumesList"]:DoStoredScript("unequipCostume")
+		end
+		
+		element["StatsList"]:DoStoredScript("hideStats")
+		element["CostumesList"]:DoStoredScript("setInvisible")
+
+	</event>
+	
+	<event name="showStats" params="element">
+		element["InfoContent"]["Text"]("visible"):SetInt(0)
+		element["InfoFrame"]["Touch"]("enabled"):SetInt(0)
+		
+		element["BioButton"]:DoStoredScript("enable")
+		element["BioButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+		element["ScrollBar"]:DoStoredScript("setInvisible")
+		element["ScrollMarker"]:DoStoredScript("setInvisible")
+		
+		element["StatsButton"]:DoStoredScript("disable")
+		element["StatsButton"]["UpSprite"]:setColor(1.0, 1.0, 1.0)
+
+		if(element["CostumesButton"]["UpSprite"]("visible"):GetInt() == 1) then
+			element["CostumesButton"]:DoStoredScript("enable")
+			element["CostumesButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+		end
+		
+		element:DoStoredScript("makeGenesVis")
+		if(element["CostumesList"]("NewSelectedEntryID"):GetInt() ~= -1) then
+			element["CostumesList"]:DoStoredScript("unequipCostume")
+		end
+
+		element["StatsList"]:DoStoredScript("showStats")
+		element["CostumesList"]:DoStoredScript("setInvisible")
+	</event>
+	
+	<event name="showCostumes" params="element">
+		element["InfoContent"]["Text"]("visible"):SetInt(0)
+		
+		element["InfoFrame"]["Touch"]("enabled"):SetInt(1)
+		
+		element["BioButton"]:DoStoredScript("enable")
+		element["BioButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+		element["ScrollBar"]["Sprite"]("visible"):SetInt(0)
+		element["ScrollMarker"]["Marker"]("visible"):SetInt(0)
+		
+		element["StatsButton"]:DoStoredScript("enable")
+		element["StatsButton"]["UpSprite"]:setColor(0.5, 0.5, 0.5)
+
+		element["CostumesButton"]:DoStoredScript("disable")
+		element["CostumesButton"]["UpSprite"]:setColor(1.0, 1.0, 1.0)
+		
+		element["StatsList"]:DoStoredScript("hideStats")
+		element["CostumesList"]:DoStoredScript("setVisible")
+
+		element["CostumesList"]["Swiper"]:DoStoredScript("refresh")
+		element["ScrollMarker"]("scrollSize"):SetFloat(element:GetElement("CostumesList")("scrollSize"):GetFloat())
+		
+		if(element["CostumesList"]("contentHeight"):GetInt() > element:GetElement("InfoContent"):absH()) then
+			element["ScrollBar"]:DoStoredScript("setVisible")
+			element["ScrollMarker"]:DoStoredScript("setVisible")
+		else
+			element["ScrollBar"]:DoStoredScript("setInvisible")
+			element["ScrollMarker"]:DoStoredScript("setInvisible")
+		end
+		
+		element:DoStoredScript("makeGenesInvis")
+	
+		element["CostumesList"]:DoStoredScript("selectNewEntry")
+	</event>
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="4" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				
+				element:parent():DoStoredScript("queuePop")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_back")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BACK")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+		</template>
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fff73e36f22245b36d537c12b1d5c652:e106943c6a1061badd5c9514a58edce5:b5ecaab76114989d71e81a7e5d4f9091$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/breeding01.png" width="512" height="512">
+    <sprite n="selectable_bar_grey" x="1" y="72" w="341" h="68" pX="0.5" pY="0.5" oX="2" oY="0" oW="346" oH="70"/>
+    <sprite n="selectable_bar_limited_teal" x="1" y="1" w="341" h="70" pX="0.5" pY="0.5" oX="2" oY="0" oW="346" oH="70"/>
+    <sprite n="selectable_bar_limited_yellow" x="343" y="1" w="70" h="341" pX="0.5" pY="0.5" oX="2" oY="0" oW="346" oH="70" r="y"/>
+    <sprite n="selectable_bar_yellow" x="1" y="141" w="341" h="68" pX="0.5" pY="0.5" oX="2" oY="0" oW="346" oH="70"/>
+</TextureAtlas>

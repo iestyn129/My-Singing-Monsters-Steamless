@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b61b80b1cbb3ddd19ecc08b38b37fbaa:dd973167c9f6fd2c9c589f5db0dc5a6b:17b11d70d34f3f0f71ae62a1c4aae42b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ADEN_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ADEN_body_back" x="4" y="361" w="157" h="153" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_body_back_RARE" x="606" y="163" w="157" h="153" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_body_front" x="227" y="139" w="174" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_body_front_RARE" x="227" y="287" w="174" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_bubble_01" x="1006" y="416" w="12" h="8" pX="0.5" pY="0.5" oX="17" oY="24" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_02" x="1006" y="386" w="12" h="11" pX="0.5" pY="0.5" oX="17" oY="21" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_03" x="1006" y="344" w="14" h="17" pX="0.5" pY="0.5" oX="15" oY="18" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_04" x="1005" y="460" w="15" h="20" pX="0.5" pY="0.5" oX="14" oY="17" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_05" x="1001" y="581" w="16" h="22" pX="0.5" pY="0.5" oX="13" oY="16" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_06" x="523" y="803" w="27" h="29" pX="0.5" pY="0.5" oX="9" oY="5" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_07" x="371" y="493" w="30" h="31" pX="0.5" pY="0.5" oX="9" oY="1" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_08" x="182" y="896" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_09" x="127" y="790" w="33" h="33" pX="0.5" pY="0.5" oX="8" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_10" x="127" y="708" w="33" h="37" pX="0.5" pY="0.5" oX="6" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_11" x="863" y="748" w="35" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_12" x="127" y="614" w="33" h="43" pX="0.5" pY="0.5" oX="3" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_13" x="127" y="518" w="33" h="44" pX="0.5" pY="0.5" oX="2" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_bubble_14" x="555" y="331" w="47" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="47" oH="35"/>
+    <sprite n="ADEN_bubble_15" x="902" y="584" w="7" h="45" pX="0.5" pY="0.5" oX="0" oY="22" oW="47" oH="35" r="y"/>
+    <sprite n="ADEN_cheek" x="961" y="714" w="54" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_cheek_RARE" x="961" y="770" w="54" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_cloud_black" x="767" y="163" w="146" h="132" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_cloud_red" x="767" y="299" w="146" h="132" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_cloud_white" x="405" y="331" w="146" h="132" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_ember" x="959" y="826" w="39" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_eye" x="844" y="689" w="54" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_eye_RARE" x="902" y="714" w="55" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_foot" x="902" y="772" w="53" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_foot_RARE" x="902" y="816" w="53" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_hand" x="345" y="783" w="68" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_hand_RARE" x="914" y="565" w="83" h="56" pX="0.5" pY="0.5" oX="5" oY="1" oW="88" oH="60"/>
+    <sprite n="ADEN_head" x="409" y="4" w="250" h="155" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_head_RARE" x="663" y="4" w="250" h="155" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_ice_frill" x="606" y="320" w="150" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_ice_frill_back" x="371" y="563" w="29" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_ice_frill_back_RARE" x="123" y="864" w="37" h="29" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_ice_frill_RARE" x="760" y="435" w="150" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_jaw" x="4" y="139" w="219" h="107" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_jaw_RARE" x="4" y="250" w="219" h="107" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_lava_blob_01" x="1001" y="528" w="17" h="15" pX="0.5" pY="0.5" oX="13" oY="0" oW="30" oH="16"/>
+    <sprite n="ADEN_lava_blob_02" x="1001" y="508" w="19" h="16" pX="0.5" pY="0.5" oX="11" oY="0" oW="30" oH="16"/>
+    <sprite n="ADEN_lava_blob_04" x="1005" y="428" w="15" h="28" pX="0.5" pY="0.5" oX="2" oY="1" oW="30" oH="16" r="y"/>
+    <sprite n="ADEN_lava_blob_05" x="1001" y="547" w="16" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_lava_left_01" x="602" y="714" w="40" h="22" pX="0.5" pY="0.5" oX="58" oY="31" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_left_02" x="500" y="964" w="55" h="56" pX="0.5" pY="0.5" oX="25" oY="23" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_left_03" x="297" y="851" w="71" h="75" pX="0.5" pY="0.5" oX="8" oY="11" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_left_04" x="917" y="424" w="84" h="76" pX="0.5" pY="0.5" oX="1" oY="11" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_left_05" x="4" y="932" w="77" h="81" pX="0.5" pY="0.5" oX="1" oY="15" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_left_06" x="160" y="932" w="70" h="78" pX="0.5" pY="0.5" oX="0" oY="30" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_left_07" x="234" y="932" w="67" h="78" pX="0.5" pY="0.5" oX="0" oY="33" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_left_08" x="305" y="930" w="67" h="78" pX="0.5" pY="0.5" oX="0" oY="33" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_01" x="498" y="803" w="21" h="31" pX="0.5" pY="0.5" oX="59" oY="30" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_right_02" x="555" y="405" w="47" h="33" pX="0.5" pY="0.5" oX="48" oY="18" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_03" x="394" y="726" w="67" h="53" pX="0.5" pY="0.5" oX="29" oY="5" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_04" x="465" y="726" w="69" h="73" pX="0.5" pY="0.5" oX="12" oY="0" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_right_05" x="85" y="932" w="71" h="81" pX="0.5" pY="0.5" oX="8" oY="2" oW="82" oH="100"/>
+    <sprite n="ADEN_lava_right_06" x="917" y="344" w="85" h="76" pX="0.5" pY="0.5" oX="2" oY="8" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_07" x="226" y="851" w="67" h="77" pX="0.5" pY="0.5" oX="1" oY="28" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_08" x="165" y="361" w="58" h="78" pX="0.5" pY="0.5" oX="0" oY="38" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_lava_right_09" x="164" y="567" w="59" h="77" pX="0.5" pY="0.5" oX="1" oY="38" oW="82" oH="100" r="y"/>
+    <sprite n="ADEN_left_lid_01" x="744" y="838" w="57" h="57" pX="0.5" pY="0.5" oX="5" oY="0" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_02" x="500" y="902" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_03" x="438" y="965" w="58" h="55" pX="0.5" pY="0.5" oX="4" oY="2" oW="67" oH="57"/>
+    <sprite n="ADEN_left_lid_04" x="558" y="836" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_05" x="561" y="898" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_06" x="621" y="960" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_07" x="600" y="741" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_left_lid_08" x="619" y="803" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="ADEN_lower_arm" x="917" y="238" w="102" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_lower_arm_RARE" x="917" y="291" w="102" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_lower_leg" x="349" y="725" w="41" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_lower_leg_RARE" x="417" y="783" w="41" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_nostril_base_left" x="404" y="594" w="132" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_base_left_RARE" x="602" y="574" w="132" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_base_right" x="604" y="453" w="145" h="117" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_base_right_RARE" x="753" y="568" w="145" h="117" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_glow" x="405" y="163" w="197" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_left_01" x="917" y="4" w="103" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_left_01_RARE" x="917" y="82" w="103" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_left_02" x="917" y="160" w="103" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_right_01" x="902" y="633" w="115" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_right_01_RARE" x="226" y="770" w="115" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_nostril_right_02" x="4" y="851" w="115" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_pupil_left" x="156" y="897" w="22" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_pupil_left_RARE" x="646" y="714" w="21" h="22" pX="0.5" pY="0.5" oX="0" oY="7" oW="22" oH="31" r="y"/>
+    <sprite n="ADEN_pupil_right" x="123" y="897" w="29" h="31" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_pupil_right_RARE" x="585" y="803" w="23" h="25" pX="0.5" pY="0.5" oX="6" oY="0" oW="31" oH="29" r="y"/>
+    <sprite n="ADEN_right_lid_01" x="661" y="740" w="57" h="58" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="60" r="y"/>
+    <sprite n="ADEN_right_lid_02" x="165" y="443" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_03" x="165" y="505" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_04" x="540" y="617" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_05" x="540" y="679" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_06" x="164" y="648" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_07" x="164" y="710" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_right_lid_08" x="164" y="772" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="ADEN_shadow" x="4" y="4" w="401" h="131" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_shadow_arm" x="371" y="435" w="30" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_tail" x="549" y="529" w="49" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_tail_RARE" x="549" y="573" w="49" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_teeth" x="350" y="682" w="45" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_teeth_RARE" x="350" y="604" w="48" h="74" pX="0.5" pY="0.5" oX="3" oY="0" oW="80" oH="50" r="y"/>
+    <sprite n="ADEN_tummy_glow" x="405" y="467" w="140" h="123" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_upper_arm" x="914" y="504" w="83" h="57" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_upper_arm_RARE" x="555" y="442" w="45" h="83" pX="0.5" pY="0.5" oX="0" oY="12" oW="83" oH="57" r="y"/>
+    <sprite n="ADEN_upper_leg" x="376" y="973" w="58" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADEN_upper_leg_RARE" x="743" y="926" w="40" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="ADEN_water_01" x="227" y="572" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="ADEN_water_02" x="227" y="638" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="ADEN_water_03" x="4" y="719" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="ADEN_water_04" x="226" y="704" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="RARE_ADEN_bubble_01" x="902" y="568" w="8" h="12" pX="0.5" pY="0.5" oX="17" oY="24" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_02" x="1006" y="401" w="12" h="11" pX="0.5" pY="0.5" oX="17" oY="21" oW="47" oH="35"/>
+    <sprite n="RARE_ADEN_bubble_03" x="1006" y="365" w="14" h="17" pX="0.5" pY="0.5" oX="15" oY="18" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_04" x="1005" y="484" w="15" h="20" pX="0.5" pY="0.5" oX="14" oY="17" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_05" x="1001" y="607" w="16" h="22" pX="0.5" pY="0.5" oX="13" oY="16" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_06" x="554" y="803" w="27" h="29" pX="0.5" pY="0.5" oX="9" oY="5" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_07" x="371" y="528" w="30" h="31" pX="0.5" pY="0.5" oX="9" oY="1" oW="47" oH="35"/>
+    <sprite n="RARE_ADEN_bubble_08" x="462" y="803" w="32" h="33" pX="0.5" pY="0.5" oX="9" oY="0" oW="47" oH="35"/>
+    <sprite n="RARE_ADEN_bubble_09" x="127" y="827" w="33" h="33" pX="0.5" pY="0.5" oX="8" oY="0" oW="47" oH="35"/>
+    <sprite n="RARE_ADEN_bubble_10" x="127" y="749" w="33" h="37" pX="0.5" pY="0.5" oX="6" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_11" x="863" y="792" w="35" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_12" x="127" y="661" w="33" h="43" pX="0.5" pY="0.5" oX="3" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_13" x="127" y="566" w="33" h="44" pX="0.5" pY="0.5" oX="2" oY="0" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_bubble_14" x="555" y="368" w="47" h="33" pX="0.5" pY="0.5" oX="0" oY="0" oW="47" oH="35"/>
+    <sprite n="RARE_ADEN_bubble_15" x="738" y="574" w="7" h="45" pX="0.5" pY="0.5" oX="0" oY="22" oW="47" oH="35" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_01" x="802" y="776" w="57" h="57" pX="0.5" pY="0.5" oX="5" oY="0" oW="67" oH="57"/>
+    <sprite n="RARE_ADEN_left_lid_02" x="622" y="865" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_03" x="559" y="964" w="58" h="55" pX="0.5" pY="0.5" oX="4" oY="2" oW="67" oH="57"/>
+    <sprite n="RARE_ADEN_left_lid_04" x="680" y="802" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_05" x="722" y="714" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_06" x="682" y="927" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_07" x="683" y="864" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_left_lid_08" x="741" y="776" w="57" h="58" pX="0.5" pY="0.5" oX="4" oY="0" oW="67" oH="57" r="y"/>
+    <sprite n="RARE_ADEN_right_lid_01" x="783" y="714" w="57" h="58" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="60" r="y"/>
+    <sprite n="RARE_ADEN_right_lid_02" x="164" y="834" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_03" x="372" y="849" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_04" x="376" y="911" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_05" x="434" y="841" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_06" x="438" y="903" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_07" x="496" y="840" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_right_lid_08" x="538" y="741" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="RARE_ADEN_water_01" x="4" y="785" w="119" h="62" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="63"/>
+    <sprite n="RARE_ADEN_water_02" x="4" y="518" w="119" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="63"/>
+    <sprite n="RARE_ADEN_water_03" x="4" y="585" w="119" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="63"/>
+    <sprite n="RARE_ADEN_water_04" x="4" y="652" w="119" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="63"/>
+    <sprite n="spore_ADEN" x="227" y="435" w="140" h="133" pX="0.5" pY="0.5" oX="14" oY="24" oW="172" oH="172"/>
+</TextureAtlas>

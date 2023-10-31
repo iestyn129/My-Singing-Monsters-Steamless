@@ -1,0 +1,56 @@
+<template name="template_topcompislandsentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size w="300*game.hudScale()" h="35*game.hudScale()" />
+	
+	<textComponent name="Username">
+		<size w="110*game.hudScale()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.2*game.hudScale())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString(element("DisplayName"):GetString())
+			component:setColor(1.0, 0.75, 0.067)
+			component("autoScale"):SetInt(0)
+			component("layer"):SetString("Clipping")
+		</event>
+	</textComponent>
+	
+	<template type="template_spritesheetbutton" name="VisitButton">
+		<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.38*game.hudScale()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("LABEL_VISIT"))
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+        <touchComponent name="Touch">
+            <size dependentOnElement="element:name()"/>
+            <position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+            <orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+            <event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.visitRankedComposerIsland(element:parent()("entryNum"):GetInt())
+                element:root():popPopUp()
+			</event>
+        </touchComponent>
+	</template>
+	
+</template>

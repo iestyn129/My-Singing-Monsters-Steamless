@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:836a19a850a822a2deb747ada9f3d217:8fd23ac18549661e57cf1cb4a524d370:6868b7024c5127be497fa7ef9d031889$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABDE_costume_04_sheet.png" width="512" height="512" hires="true">
+		<!-- original anchor = (21, 23) -> new anchor (2.5, 33) diff = (18.5, -10)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (37, -20), cause hires-->
+    <sprite n="ABDE_costume_04_big_speaker.png" x="195" y="449" w="67" h="61" r="y" oX="37" oY="-20"/>
+
+		<!-- original anchor = (21, 23) -> new anchor (40.5, 24) diff = (-19.5, -1)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (-39, -2), cause hires-->
+		<sprite n="ABDE_costume_04_big_speaker.png 2" x="195" y="449" w="67" h="61" r="y" oX="-39" oY="-2"/>
+
+		<!-- original anchor = (36, 52.5) -> new anchor (42.5, 119.5) diff = (-6.5, -67)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (-13, -134), cause hires-->
+    <sprite n="ABDE_costume_04_castle_sl.png" x="2" y="2" w="226" h="334" oX="-13" oY="-134"/>
+
+		<!-- original anchor = (36, 52.5) -> new anchor (67.5, 103) diff = (-31.5, -50.5)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (-63, -101), cause hires-->
+    <sprite n="ABDE_costume_04_castle_sr.png" x="230" y="2" w="202" h="304" oX="-63" oY="-101"/>
+	
+    <sprite n="ABDE_costume_04_flag_01.png" x="434" y="35" w="41" h="33" oX="8" oY="6" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_02.png" x="434" y="2" w="42" h="31" oX="8" oY="6" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_03.png" x="109" y="481" w="41" h="29" oX="8" oY="6" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_04.png" x="477" y="38" w="30" h="41" oX="8" oY="5" oW="59" oH="44" r="y"/>
+    <sprite n="ABDE_costume_04_flag_05.png" x="434" y="70" w="40" h="29" oX="8" oY="6" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_06.png" x="230" y="308" w="40" h="28" oX="8" oY="7" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_07.png" x="476" y="81" w="27" h="40" oX="8" oY="7" oW="59" oH="44" r="y"/>
+    <sprite n="ABDE_costume_04_flag_08.png" x="152" y="481" w="41" h="29" oX="8" oY="7" oW="59" oH="44"/>
+    <sprite n="ABDE_costume_04_flag_stand.png" x="2" y="504" w="24" h="2" r="y"/>
+
+		<!-- original anchor = (44, 90) -> new anchor (43.1, 63.6) diff = (0.9, 26.4)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (1.8, 52.8), cause hires-->
+    <sprite n="ABDE_costume_04_flamingo_body.png" x="109" y="338" w="62" h="141" r="y" oX="1.8" oY="52.8"/>
+    <sprite n="ABDE_costume_04_flamingo_head.png" x="173" y="338" w="86" h="109" r="y"/>
+
+		<!-- original anchor = (9, 10) -> new anchor (-2.4, 10.1) diff = (11.4, -0.1)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (22.8, -0.2), cause hires-->
+    <sprite n="ABDE_costume_04_small_speaker.png" x="478" y="2" w="31" h="34" oX="22.8" oY="-0.2"/>
+
+		<!-- original anchor = (9, 10) -> new anchor (26.6, 7.1) diff = (-17.6, 2.9)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (-35.2, 5.8), cause hires-->
+		<sprite n="ABDE_costume_04_small_speaker.png 2" x="478" y="2" w="31" h="34" oX="-35.2" oY="5.8"/>
+
+		<!-- original anchor = (44, 93) -> new anchor (44, 41.5) diff = (0, 51.5)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (0, 103), cause hires-->
+    <sprite n="ABDE_costume_04_swim_shorts.png" x="2" y="338" w="105" h="164" r="y" oX="0" oY="103"/>
+	
+</TextureAtlas>

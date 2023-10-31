@@ -1,0 +1,276 @@
+<template name="template_barbutton" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<hudScale scale="game.hudScale()" />
+
+	<defaultTemplateVar name="$layer" equals="ContextBar" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+
+	<!-- 
+	expected set values:
+		string UpSpriteName
+		string Sheetname
+		float ButtonScale
+		string ButtonImageName
+		string ButtonSheetName
+		int ButtonVFlip
+		int ButtonHFlip
+		float ButtonScale
+		float TextScale
+		string ButtonLabelText
+		int ReactToTouches
+		string AttachedTemplate
+		int ButtonMapping
+		int ButtonMappingAlternate
+		string FunctionName
+	-->
+	
+	<spriteSheetComponent name="UpSprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-0.4" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("UpSpriteName"):GetString())
+			component("sheetName"):SetString(element("SheetName"):GetString())
+			component("size"):SetFloat(0.5*element("ButtonScale"):GetFloat())
+			component("layer"):SetString("$layer")
+		</event>
+	</spriteSheetComponent>
+
+	<spriteSheetComponent name="ButtonImage">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("ButtonImageName"):GetString())
+			component("sheetName"):SetString(element("ButtonSheetName"):GetString())
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("hFlip"):SetInt(element("ButtonVFlip"):GetInt())
+				component("vFlip"):SetInt(element("ButtonHFlip"):GetInt())
+			else
+				component("hFlip"):SetInt(element("ButtonHFlip"):GetInt())
+				component("vFlip"):SetInt(element("ButtonVFlip"):GetInt())
+			end
+			component("size"):SetFloat(0.5*element("ButtonScale"):GetFloat())
+			component("layer"):SetString("$layer")
+		</event>
+	</spriteSheetComponent>
+	
+	<textComponent name="ButtonLabel">
+		<size w="60*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+
+		<event name="onInit" params="component, element">
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(0.5 * element("TextScale"):GetFloat())
+			component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("text"):SetString(element("ButtonLabelText"):GetString())
+			component("layer"):SetString("$layer")
+		</event>
+	</textComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+		<event name="onTouchDown" params="component, element">
+			if(element("ReactToTouches"):GetInt() == 1) then
+				element["UpSprite"]:setColor(0.75, 0.75, 0.75)
+				element["ButtonImage"]:setColor(0.75, 0.75, 0.75)
+			end
+			
+			element("ButtonState"):SetInt(game.BUTTON_PRESSED)
+			element("TickTimer"):SetFloat(0.0)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			if(element("ReactToTouches"):GetInt() == 1) then
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+				element["ButtonImage"]:setColor(1.0, 1.0, 1.0)
+			end
+			
+			lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+			
+			if(manager:isIdle() == true) then
+				element:parent():DoStoredScript(element("FunctionName"):GetString())
+			end
+			
+			element("ButtonState"):SetInt(game.BUTTON_RELEASED)
+			element("TickTimer"):SetFloat(0.0)
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			if(element("ReactToTouches"):GetInt() == 1) then
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+				element["ButtonImage"]:setColor(1.0, 1.0, 1.0)
+			end
+			
+			element("ButtonState"):SetInt(game.BUTTON_RELEASED)
+			element("TickTimer"):SetFloat(0.0)
+		</event>
+	</touchComponent>
+	
+	<event name="onInit" params="element">		
+		if(element("AttachedTemplate"):GetString() ~= "") then
+			local attachedTemplate = menu:addTemplateElement(element("AttachedTemplate"):GetString(), "attachedTemplate", element)
+			
+			attachedTemplate:setParent(element)
+			attachedTemplate:setOrientation(lua_sys.MenuOrientation(0, 2*game.hudScale(), -3, lua_sys.HCENTER, lua_sys.VCENTER))
+			attachedTemplate:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+			attachedTemplate:init()
+			attachedTemplate:setPositionBroadcast(true)
+		end
+		
+		if(element("ButtonMapping"):GetInt() ~= 0) then
+			element("buttonDown"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDown")
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUp")
+		end
+		
+		element("ButtonState"):SetInt(game.BUTTON_IDLE)
+		element("TickTimer"):SetFloat(0.0)
+		element("disabled"):SetInt(0)
+	</event>
+
+	<event name="DisableButton" params="element">
+		if(element("disabled"):GetInt() == 0) then
+			element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+			element["ButtonImage"]:setColor(0.5, 0.5, 0.5)
+			element["ButtonLabel"]:setColor(0.5, 0.5, 0.5)
+			element["Touch"]("enabled"):SetInt(0)
+			
+			local attachedTemplate = element:GetElement("attachedTemplate")
+			
+			if(attachedTemplate ~= nil) then
+				attachedTemplate:DoStoredScript("SetDisabled")
+			end
+			element("disabled"):SetInt(1)
+		end
+		
+	</event>
+	
+	<event name="EnableButton" params="element">
+		if(element("disabled"):GetInt() == 1) then
+			element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+			element["ButtonImage"]:setColor(1.0, 1.0, 1.0)
+			element["ButtonLabel"]:setColor(1.0, 1.0, 1.0)
+			element["Touch"]("enabled"):SetInt(1)
+			
+			local attachedTemplate = element:GetElement("attachedTemplate")
+			
+			if(attachedTemplate ~= nil) then
+				attachedTemplate:DoStoredScript("SetEnabled")
+			end
+			element("disabled"):SetInt(0)
+		end
+	</event>
+	
+	<event name="SetInvisible" params="element">
+		element["UpSprite"]("visible"):SetInt(0)
+		element["ButtonLabel"]("visible"):SetInt(0)
+		element["ButtonImage"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+		
+		local attachedTemplate = element:GetElement("attachedTemplate")
+		
+		if(attachedTemplate ~= nil) then
+			attachedTemplate:DoStoredScript("SetInvisible")
+		end
+	</event>
+	
+	<event name="SetVisible" params="element">
+		element["UpSprite"]("visible"):SetInt(1)
+		element["ButtonLabel"]("visible"):SetInt(1)
+		element["ButtonImage"]("visible"):SetInt(1)
+		element["Touch"]("enabled"):SetInt(1)
+		
+		local attachedTemplate = element:GetElement("attachedTemplate")
+		
+		if(attachedTemplate ~= nil) then
+			attachedTemplate:DoStoredScript("SetVisible")
+		end
+	</event>
+	
+	<event name="gotMsgKeyDown" params="element, msg">
+		if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == 0) then
+			element["Touch"]("checkOnTop"):SetInt(0)
+			if(element["Touch"]("onTop"):GetInt() == 1) then
+				element("buttonDown"):SetInt(msg.key.val)
+				element["Touch"]:DoStoredScript("onTouchDown")
+			end
+		end
+	</event>
+	
+	<event name="gotMsgKeyUp" params="element, msg">
+		if(element("ButtonMapping"):GetInt() == msg.key.val and element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == msg.key.val) then
+			element("buttonDown"):SetInt(0)
+			element["Touch"]:DoStoredScript("onTouchUp")
+		end
+	</event>
+	
+	<event name="addAlternateButtonMapping" params="element">
+		if(element("ButtonMapping"):GetInt() == 0) then
+			element("ButtonMapping"):SetInt(element("ButtonMappingAlternate"):GetInt())
+			element("buttonDown"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDown")
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUp")
+		else
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDownAlternate")
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUpAlternate")
+		end
+	</event>
+	
+	<event name="gotMsgKeyDownAlternate" params="element, msg">
+		if((element("ButtonMapping"):GetInt() == msg.key.val or element("ButtonMappingAlternate"):GetInt() == msg.key.val) and 
+			element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == 0) then
+			element["Touch"]("checkOnTop"):SetInt(0)
+			if(element["Touch"]("onTop"):GetInt() == 1) then
+				element("buttonDown"):SetInt(msg.key.val)
+				element["Touch"]:DoStoredScript("onTouchDown")
+			end
+		end
+	</event>
+	
+	<event name="gotMsgKeyUpAlternate" params="element, msg">
+		if((element("ButtonMapping"):GetInt() == msg.key.val or element("ButtonMappingAlternate"):GetInt() == msg.key.val) and 
+			element["Touch"]("enabled"):GetInt() ~= 0 and element("buttonDown"):GetInt() == msg.key.val) then
+			element("buttonDown"):SetInt(0)
+			element["Touch"]:DoStoredScript("onTouchUp")
+		end
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local buttonState = element("ButtonState"):GetInt()
+			if(buttonState ~= game.BUTTON_IDLE) then
+				local scale = element("ButtonScale"):GetFloat()
+				local time = element("TickTimer"):GetFloat()
+				if(buttonState == game.BUTTON_PRESSED) then
+					element("TickTimer"):SetFloat(time + dt)
+					
+					local size = lua_sys.smooth(0.5, 0.47, (time + dt) * 15)
+					element["UpSprite"]("size"):SetFloat(size * scale)
+					element["ButtonImage"]("size"):SetFloat(size * scale)
+					
+					if(size == 0.47) then
+						element("ButtonState"):SetInt(game.BUTTON_IDLE)
+					end
+				elseif(buttonState == game.BUTTON_RELEASED) then
+					if(time < 0.1) then
+						element("TickTimer"):SetFloat(time + dt)
+						local size = lua_sys.smooth(0.47, 0.55, (time + dt) * 20)
+						element["UpSprite"]("size"):SetFloat(size * scale)
+						element["ButtonImage"]("size"):SetFloat(size * scale)
+					elseif(time < 0.3) then
+						element("TickTimer"):SetFloat(time + dt)
+						local size = lua_sys.smooth(0.55, 0.5, ((time + dt) - 0.1) * 20)
+						element["UpSprite"]("size"):SetFloat(size * scale)
+						element["ButtonImage"]("size"):SetFloat(size * scale)
+						
+						if(size == 0.5) then
+							element("ButtonState"):SetInt(game.BUTTON_IDLE)
+						end
+					end
+				end
+			end
+		]]>
+	</event>
+</template>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:89ccbebcd95a7b996ea307c53e28894b:cd6da1e82c3a4a599289abc3b31e29b2:d9646c569a0104587a92b046dfc6e178$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<!-- original anchor = (61, 110) -> new anchor (22, 170) diff = (39, -60)-->
+<!-- add double it to texturepacker output offsets (5, 10) -> (83, -110), because hires-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_DE_costume_03_sheet.png" width="256" height="256" hires="true">
+    <sprite n="DE_antenna.png" x="2" y="2" w="170" h="160" pX="0.5" pY="0.5" oX="83" oY="-110" oW="180" oH="180"/>
+</TextureAtlas>

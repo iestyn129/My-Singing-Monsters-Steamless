@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:14416e47f20dbc80976c0d016706d6a4:8c00e80a16c720f0cbf01274828dd76b:810d1e52cc2ef0d9e7700dd51400ead1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="star_rock_air" x="533" y="2" w="467" h="220" pX="0.5" pY="0.5" oX="90" oY="16" oW="400" oH="600" r="y"/>
+    <sprite n="star_rock_earth" x="2" y="478" w="225" h="473" pX="0.5" pY="0.5" oX="87" oY="13" oW="400" oH="600"/>
+    <sprite n="star_rock_plant" x="2" y="2" w="224" h="474" pX="0.5" pY="0.5" oX="88" oY="14" oW="400" oH="600"/>
+    <sprite n="star_rock_shadow" x="533" y="224" w="173" h="85" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200"/>
+    <sprite n="star_rock_snow" x="229" y="477" w="224" h="471" pX="0.5" pY="0.5" oX="88" oY="14" oW="400" oH="600"/>
+    <sprite n="star_rock_stones_air_01" x="643" y="311" w="60" h="106" pX="0.5" pY="0.5" oX="5" oY="17" oW="70" oH="140"/>
+    <sprite n="star_rock_stones_air_02" x="708" y="296" w="137" h="70" pX="0.5" pY="0.5" oX="0" oY="2" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_air_03" x="334" y="950" w="55" h="72" pX="0.5" pY="0.5" oX="8" oY="34" oW="70" oH="140"/>
+    <sprite n="star_rock_stones_earth_01" x="2" y="953" w="109" h="62" pX="0.5" pY="0.5" oX="4" oY="16" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_earth_02" x="391" y="950" w="140" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_stones_earth_03" x="455" y="2" w="74" h="58" pX="0.5" pY="0.5" oX="6" oY="33" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_plant_01" x="224" y="953" w="108" h="62" pX="0.5" pY="0.5" oX="4" oY="16" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_plant_02" x="708" y="224" w="138" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_plant_03" x="455" y="122" w="74" h="56" pX="0.5" pY="0.5" oX="7" oY="33" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_snow_01" x="533" y="311" w="108" h="62" pX="0.5" pY="0.5" oX="4" oY="16" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_snow_02" x="848" y="224" w="138" h="70" pX="0.5" pY="0.5" oX="0" oY="1" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_snow_03" x="455" y="180" w="74" h="56" pX="0.5" pY="0.5" oX="7" oY="33" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_water_01" x="113" y="953" w="109" h="62" pX="0.5" pY="0.5" oX="4" oY="16" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_stones_water_02" x="455" y="238" w="70" h="140" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_water_03" x="455" y="62" w="74" h="58" pX="0.5" pY="0.5" oX="6" oY="33" oW="70" oH="140" r="y"/>
+    <sprite n="star_rock_water" x="228" y="2" w="225" h="473" pX="0.5" pY="0.5" oX="87" oY="13" oW="400" oH="600"/>
+</TextureAtlas>

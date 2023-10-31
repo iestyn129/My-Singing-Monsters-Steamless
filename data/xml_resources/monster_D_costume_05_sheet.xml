@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c1d0bc9d1103087a8a76c4c68769b620:835d70b9ce5d3f40803f6e9147d895d6:dab65ab57e8331a922b08eafba692445$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_D_costume_05_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (53, 80) -> new anchor (39, 106) diff = (14, -26)-->
+	<!-- add double it to texturepacker output offsets (1, 3) -> (29, -49), because hires -->
+    <sprite n="monster_D_costume_bow.png" x="4" y="4" w="225" h="216" pX="0.5" pY="0.5" oX="29" oY="-49" oW="228" oH="220"/>
+	
+    <sprite n="monster_D_costume_D_thumb1.png" x="78" y="288" w="46" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_D_thumb2.png" x="158" y="274" w="56" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_D_thumb3.png" x="4" y="284" w="70" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_D_costume_D_thumb4.png" x="4" y="224" w="74" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_D_costume_D_thumb5.png" x="82" y="224" w="72" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_D_thumb6.png" x="158" y="224" w="60" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="monster_D_costume_D_thumb7.png" x="128" y="324" w="46" h="36" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a1482d691683ac60876b69cebc85b1cd:ca2d47bd0e29ca108ba3bfa095acae60:56e07d02bccb45ddeb727d9a57240eab$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_K_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="K_back_left_foot" x="2" y="254" w="103" h="67" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="104" r="y"/>
+    <sprite n="K_back_right_foot" x="107" y="303" w="103" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="104" r="y"/>
+    <sprite n="K_front_left_foot" x="127" y="233" w="103" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="104" r="y"/>
+    <sprite n="K_front_right_foot" x="137" y="2" w="104" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="K_leg_segment_RARE" x="2" y="323" w="34" h="30" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="36" r="y"/>
+    <sprite n="K_mech_body" x="2" y="2" w="133" h="128" pX="0.5" pY="0.5" oX="0" oY="1" oW="128" oH="136" r="y"/>
+    <sprite n="K_pipe_left" x="127" y="133" w="103" h="98" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="104" r="y"/>
+    <sprite n="K_pipe_right" x="137" y="68" w="104" h="63" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="104" r="y"/>    
+	<!-- original anchor = (42, 52) -> new anchor (-2, 2) diff = (44, 50)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (88, 100), cause hires-->    
+	<sprite n="RARE_K_liprings" x="212" y="303" w="38" h="69" pX="0.5" pY="0.5" oX="88" oY="100" oW="70" oH="40" r="y"/>
+    <!-- original anchor = (42, 52) -> new anchor (35, 87) diff = (7, -35)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (14, -70), cause hires-->
+	<sprite n="RARE_K_mohawk" x="2" y="132" w="123" h="120" pX="0.5" pY="0.5" oX="14" oY="-70" oW="120" oH="124" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f37ca39d5163ef957550c7e00bd3a36c:466147f5c67a709fa6d4a9f53100938a:cce623ac21cada992b3ebaa87d733188$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_DE_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="DE_beard_RARE" x="392" y="903" w="106" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="DE_body03" x="2" y="2" w="244" h="236" pX="0.5" pY="0.5"/>
+    <sprite n="DE_body_FIX" x="392" y="843" w="118" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DE_eyeball_right_RARE" x="473" y="608" w="35" h="36" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="36"/>
+    <sprite n="DE_horn_big_left_RARE" x="155" y="834" w="97" h="137" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="98" r="y"/>
+    <sprite n="DE_horn_big_right_RARE" x="259" y="713" w="189" h="128" pX="0.5" pY="0.5" oX="1" oY="1" oW="190" oH="130"/>
+    <sprite n="DE_horn_small_right_RARE" x="254" y="941" w="90" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="DE_lid_left_02_RARE" x="478" y="40" w="31" h="36" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36" r="y"/>
+    <sprite n="DE_lid_left_03_RARE" x="465" y="208" w="34" h="30" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36"/>
+    <sprite n="DE_lid_left_04_RARE" x="478" y="2" w="32" h="36" pX="0.5" pY="0.5" oX="0" oY="2" oW="36" oH="36" r="y"/>
+    <sprite n="DE_lid_right_02_RARE" x="473" y="646" w="34" h="33" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="DE_lid_right_03_RARE" x="465" y="173" w="35" h="33" pX="0.5" pY="0.5" oX="1" oY="1" oW="36" oH="36"/>
+    <sprite n="DE_lid_right_04_RARE" x="346" y="989" w="36" h="33" pX="0.5" pY="0.5" oX="0" oY="1" oW="36" oH="36"/>
+    <sprite n="DE_mouth01" x="264" y="608" w="207" h="103" pX="0.5" pY="0.5" oX="11" oY="26" oW="232" oH="168"/>
+    <sprite n="DE_mouth02" x="248" y="2" w="228" h="121" pX="0.5" pY="0.5" oX="3" oY="24" oW="232" oH="168"/>
+    <sprite n="DE_mouth03" x="141" y="406" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth04" x="194" y="250" w="197" h="142" pX="0.5" pY="0.5" oX="7" oY="19" oW="232" oH="168"/>
+    <sprite n="DE_mouth05" x="2" y="240" w="190" h="164" pX="0.5" pY="0.5" oX="7" oY="4" oW="232" oH="168"/>
+    <sprite n="DE_mouth06" x="2" y="834" w="151" h="164" pX="0.5" pY="0.5" oX="13" oY="4" oW="232" oH="168"/>
+    <sprite n="DE_mouth07" x="254" y="843" w="136" h="96" pX="0.5" pY="0.5" oX="28" oY="15" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth10" x="136" y="620" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth11" x="2" y="406" w="137" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth12" x="2" y="620" w="132" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth13" x="248" y="125" w="215" h="123" pX="0.5" pY="0.5" oX="3" oY="25" oW="232" oH="168"/>
+    <sprite n="DE_mouth14" x="264" y="394" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_mouth15" x="387" y="394" w="121" h="212" pX="0.5" pY="0.5" oX="6" oY="25" oW="232" oH="168" r="y"/>
+    <sprite n="DE_pupil_RARE" x="450" y="713" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="DE_shadow" x="393" y="250" w="64" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="DE_socket_left_RARE" x="346" y="941" w="44" h="46" pX="0.5" pY="0.5" oX="0" oY="1" oW="46" oH="46" r="y"/>
+    <sprite n="DE_socket_right_RARE" x="465" y="125" w="45" h="46" pX="0.5" pY="0.5" oX="0" oY="0" oW="46" oH="46" r="y"/>
+</TextureAtlas>

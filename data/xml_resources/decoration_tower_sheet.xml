@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5f759aca01de1a3aadad95f7763af42d:7b50650b76daa4b6887190f25e325ab3:ada3e984b4c19414ad6047a7bf80dea8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_tower_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="digger" x="518" y="652" w="374" h="333" pX="0.5" pY="0.5" oX="0" oY="0" oW="374" oH="334"/>
+    <sprite n="fence01" x="2" y="716" w="285" h="304" pX="0.5" pY="0.5" oX="2" oY="2" oW="290" oH="308"/>
+    <sprite n="pumpkins" x="289" y="652" w="227" h="352" pX="0.5" pY="0.5" oX="0" oY="0" oW="352" oH="228" r="y"/>
+    <sprite n="watchtower" x="593" y="2" w="312" h="519" pX="0.5" pY="0.5" oX="0" oY="0" oW="312" oH="520"/>
+    <sprite n="watchtower02" x="271" y="2" w="320" h="648" pX="0.5" pY="0.5"/>
+    <sprite n="watchtower03" x="2" y="2" w="267" h="712" pX="0.5" pY="0.5" oX="0" oY="0" oW="268" oH="712"/>
+</TextureAtlas>

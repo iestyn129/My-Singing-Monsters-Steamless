@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:12c119eab26e6d23db6acb12eda6bb97:bba498e02106e90302092ddb74baaf93:a3dee4e412c741440b2df28de0e03540$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_eyetree_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="eye_tree_eye_001.png" x="2" y="620" w="135" h="124" pX="0.5" pY="0.5" oX="7" oY="37" oW="180" oH="166"/>
+    <sprite n="eye_tree_eye_002.png" x="2" y="762" w="133" h="129" pX="0.5" pY="0.5" oX="7" oY="32" oW="180" oH="166"/>
+    <sprite n="eye_tree_eye_003.png" x="142" y="548" w="135" h="130" pX="0.5" pY="0.5" oX="8" oY="26" oW="180" oH="166" r="y"/>
+    <sprite n="eye_tree_eye_004.png" x="157" y="414" w="142" h="132" pX="0.5" pY="0.5" oX="8" oY="19" oW="180" oH="166" r="y"/>
+    <sprite n="eye_tree_eye_005.png" x="326" y="389" w="154" h="130" pX="0.5" pY="0.5" oX="10" oY="7" oW="180" oH="166" r="y"/>
+    <sprite n="eye_tree_eye_006.png" x="332" y="2" w="161" h="128" pX="0.5" pY="0.5" oX="13" oY="0" oW="180" oH="166" r="y"/>
+    <sprite n="eye_tree_eye_007.png" x="2" y="376" w="153" h="130" pX="0.5" pY="0.5" oX="10" oY="8" oW="180" oH="166" r="y"/>
+    <sprite n="eye_tree_eye_008.png" x="301" y="521" w="137" h="121" pX="0.5" pY="0.5" oX="7" oY="41" oW="180" oH="166"/>
+    <sprite n="eye_tree_eye_009.png" x="279" y="644" w="135" h="116" pX="0.5" pY="0.5" oX="8" oY="44" oW="180" oH="166"/>
+    <sprite n="eye_tree_leaves_01.png" x="230" y="270" w="94" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_leaves_02.png" x="139" y="680" w="132" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_leaves_03.png" x="2" y="508" w="138" h="110" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_tree_leaves_04.png" x="416" y="758" w="90" h="134" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_leaves_05.png" x="416" y="644" w="92" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_leaves_06.png" x="2" y="894" w="130" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_tree_leaves_top.png" x="2" y="2" w="328" h="266" pX="0.5" pY="0.5" oX="0" oY="0" oW="328" oH="268"/>
+    <sprite n="eye_tree_leaves_top_cover.png" x="230" y="366" w="94" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_shadow.png" x="2" y="270" w="226" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="eye_tree_trunk.png" x="332" y="132" w="160" h="255" pX="0.5" pY="0.5" oX="0" oY="1" oW="160" oH="256"/>
+</TextureAtlas>

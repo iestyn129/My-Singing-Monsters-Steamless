@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:585bd14ff8b7e35056455d50a581f437:35aab32fd65e153176afce3020478237:101607cdee3128ae373b9d4c589656d0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCE_costume_01_sheet.png" width="128" height="256" hires="true">
+	
+	<!-- original anchor = (28,20) -> new anchor (32,23) diff = (-4,-3)-->
+	<!-- add double it to texturepacker output offsets (0, 3) -> (-8, -3), because hires-->	
+    <sprite n="BCE_head_bottom_BURGER.png" x="2" y="68" w="73" h="127" pX="0.5" pY="0.5" oX="-8" oY="-3" oW="128" oH="80" r="y"/>
+	
+	<!-- original anchor = (28,10) -> new anchor (30,13) diff = (-2,-3)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-4, -6), because hires-->
+    <sprite n="BCE_head_top_BURGER.png" x="2" y="2" w="119" h="64" pX="0.5" pY="0.5" oX="-4" oY="-6" oW="120" oH="64"/>
+
+		<sprite n="BLANK" x="0" y="200" w="8" h="8"/>
+</TextureAtlas>

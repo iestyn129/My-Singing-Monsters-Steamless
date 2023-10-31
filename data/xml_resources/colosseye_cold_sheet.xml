@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7ab5736f7ca237bc85e76e6f2959d57e:cec739586fc67cd136fb9263daffb1f4:1a62eed38b9e1655b56f8f25c1825c17$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/colosseye_cold_sheet.png" width="512" height="512" hires="true">
+    <sprite n="block_A_01.png" x="185" y="228" w="95" h="98" pX="0.5" pY="0.5" oX="8" oY="7" oW="112" oH="112"/>
+    <sprite n="block_B_01.png" x="408" y="94" w="93" h="96" pX="0.5" pY="0.5" oX="9" oY="8" oW="112" oH="112"/>
+    <sprite n="block_base.png" x="2" y="212" w="181" h="132" pX="0.5" pY="0.5" oX="3" oY="3" oW="188" oH="140"/>
+    <sprite n="block_bottom_glow.png" x="2" y="346" w="68" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="block_bottom_snow.png" x="212" y="2" w="176" h="100" pX="0.5" pY="0.5" oX="6" oY="6" oW="188" oH="112"/>
+    <sprite n="block_C_01.png" x="185" y="328" w="95" h="89" pX="0.5" pY="0.5" oX="11" oY="8" oW="112" oH="112" r="y"/>
+    <sprite n="block_D_01.png" x="336" y="230" w="85" h="99" pX="0.5" pY="0.5" oX="13" oY="6" oW="112" oH="112"/>
+    <sprite n="block_shadow.png" x="282" y="228" w="52" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="52" r="y"/>
+    <sprite n="block_top.png" x="423" y="280" w="75" h="97" pX="0.5" pY="0.5" oX="13" oY="18" oW="124" oH="112" r="y"/>
+    <sprite n="block_top_glow.png" x="346" y="104" w="60" h="124" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="block_top_snow.png" x="282" y="331" w="98" h="69" pX="0.5" pY="0.5" oX="1" oY="1" oW="100" oH="72"/>
+    <sprite n="coverage_01.png" x="212" y="104" w="132" h="122" pX="0.5" pY="0.5" oX="0" oY="17" oW="132" oH="156"/>
+    <sprite n="coverage_02.png" x="72" y="346" w="102" h="156" pX="0.5" pY="0.5" oX="15" oY="0" oW="132" oH="156"/>
+    <sprite n="coverage_03.png" x="390" y="2" w="107" h="90" pX="0.5" pY="0.5" oX="19" oY="24" oW="132" oH="156" r="y"/>
+    <sprite n="coverage_back_low_01.png" x="282" y="402" w="64" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="68" r="y"/>
+    <sprite n="coverage_back_low_02.png" x="382" y="379" w="88" h="23" pX="0.5" pY="0.5" oX="2" oY="2" oW="28" oH="92" r="y"/>
+    <sprite n="coverage_back_mid_01.png" x="324" y="472" w="51" h="20" pX="0.5" pY="0.5" oX="2" oY="0" oW="24" oH="52" r="y"/>
+    <sprite n="coverage_back_mid_02.png" x="266" y="478" w="54" h="21" pX="0.5" pY="0.5" oX="1" oY="3" oW="24" oH="60" r="y"/>
+    <sprite n="dust.png" x="266" y="420" w="56" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="eye_iris.png" x="324" y="420" w="49" h="50" pX="0.5" pY="0.5" oX="3" oY="3" oW="56" oH="56" r="y"/>
+    <sprite n="eye_iris_shape.png" x="472" y="379" w="38" h="33" pX="0.5" pY="0.5" oX="11" oY="9" oW="56" oH="56" r="y"/>
+    <sprite n="eye_orb.png" x="423" y="192" w="87" h="86" pX="0.5" pY="0.5" oX="0" oY="1" oW="88" oH="88" r="y"/>
+    <sprite n="eye_orb_white.png" x="176" y="419" w="88" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="eye_pupil.png" x="375" y="404" w="23" h="24" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="eye_shine.png" x="382" y="331" w="39" h="46" pX="0.5" pY="0.5" oX="3" oY="8" oW="56" oH="56"/>
+    <sprite n="glow_eye.png" x="2" y="2" w="208" h="208" pX="0.5" pY="0.5"/>
+</TextureAtlas>

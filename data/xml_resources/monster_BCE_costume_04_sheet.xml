@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1a8722bca964240dfc9297103b439d7d:57f5566bee5c00166fd8edff537c4c3f:100b8c0d366524c0cb598cf7d31617a0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCE_costume_04_sheet.png" width="333" height="255" hires="true">
+    <sprite n="BCE_c4_body_A.png" x="140" y="131" w="124" h="86" pX="0.5" pY="0.5" r="y" oX="0" oY="0"/>
+    <sprite n="BCE_c4_body_B.png" x="220" y="1" w="110" h="96" pX="0.5" pY="0.5" r="y" oX="2" oY="-2"/>
+    <sprite n="BCE_c4_body_C.png" x="1" y="1" w="128" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_c4_gong.png" x="131" y="1" w="87" h="128" pX="0.5" pY="0.5" oX="1" oY="0" oW="90" oH="130"/>
+    <sprite n="BCE_c4_left_upperarm.png" x="220" y="99" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_c4_neck_A.png" x="266" y="127" w="66" h="72" pX="0.5" pY="0.5" oX="0" oY="-0.2" oW="68" oH="74"/>
+    <sprite n="BCE_c4_neck_B.png" x="266" y="201" w="54" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_c4_right_upperarm.png" x="140" y="219" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_c4_visor.png" x="1" y="149" w="137" h="105" pX="0.5" pY="0.5" oX="-3" oY="-20.6" oW="142" oH="108"/>
+</TextureAtlas>

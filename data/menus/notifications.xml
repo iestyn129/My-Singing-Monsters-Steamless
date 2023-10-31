@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="5" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/menu_background_01")
+				component("layer"):SetString("FrontPopUps")
+				component:setScale(Vector2(game.bgScaleX(), game.bgScaleY()))
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="175*game.hudScale()" h="30*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="TitleText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="30*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("MENU_TITLE_NOTIFICATIONS"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="Description">
+		<hudScale scale="game.hudScale()" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.04 * lua_sys.screenHeight()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="0.9 * lua_sys.screenWidth()" h="0.3 * lua_sys.screenWidth()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.27*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("MENU_NOTIFICATIONS_DESC"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_switch" name="BreedingCompleteBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_INCUBATING'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('BREED_NOTIFICATION')  == false" />
+		<position relativeTo="Description" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0.1 * lua_sys.screenWidth()" yOffset="0.1 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("BREED_NOTIFICATION")
+			if(game.isLocalNotificationOff("BREED_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "breeding_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "breeding_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="HatchingCompleteBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_HATCHING'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('HATCH_NOTIFICATION') == false" />
+		<position relativeTo="BreedingCompleteBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("HATCH_NOTIFICATION")
+			if(game.isLocalNotificationOff("HATCH_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "hatching_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "hatching_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="CastleBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_CASTLE'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('CASTLE_NOTIFICATION') == false" />
+		<position relativeTo="HatchingCompleteBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("CASTLE_NOTIFICATION")
+			if(game.isLocalNotificationOff("CASTLE_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "castle_upgrade_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "castle_upgrade_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="DailyRewardBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_DAILYBONUS'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('DAILY_LOGIN_NOTIFICATION') == false" />
+		<position relativeTo="CastleBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("DAILY_LOGIN_NOTIFICATION")
+			if(game.isLocalNotificationOff("DAILY_LOGIN_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "daily_login_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "daily_login_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="BakingBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_BAKING'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('BAKERY_NOTIFICATION') == false" />
+		<position relativeTo="Description" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0.3 * lua_sys.screenWidth()" yOffset="0.1 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+
+			game.toggleLocalNotification("BAKERY_NOTIFICATION")
+			if(game.isLocalNotificationOff("BAKERY_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "bakery_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "bakery_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="MinesBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_MINES'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('MINES_NOTIFICATION') == false" />
+		<position relativeTo="BakingBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("MINES_NOTIFICATION")
+			if(game.isLocalNotificationOff("MINES_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "mines_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "mines_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="ScratchBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_SCRATCH'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('SCRATCH_NOTIFICATION') == false" />
+		<position relativeTo="MinesBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("SCRATCH_NOTIFICATION")
+			if(game.isLocalNotificationOff("SCRATCH_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "scratch_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "scratch_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="SaleBox">
+		<templateVar name="$label" equals="'PUSH_NOTIFICATIONS'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.arePushNotificationsOff() == false" />
+		<position relativeTo="ScratchBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="onInit" params="element">
+			if(game.canTurnPushNotificationsOff() == true) then
+				element:DoStoredScript("hide")
+			end
+		</event>
+
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.togglePushNotifications()
+			if(game.arePushNotificationsOff()) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "sale_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "sale_notification_on")
+			end
+		</event>
+	</template>
+	
+	<template type="template_switch" name="BattleTrainingBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_TRAINING'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('BATTLE_TRAINING_NOTIFICATION') == false" />
+		<position relativeTo="DailyRewardBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("BATTLE_TRAINING_NOTIFICATION")
+			if(game.isLocalNotificationOff("BATTLE_TRAINING_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "battle_training_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "battle_training_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.confirmButton()" />
+
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="4" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:root():popPopUp()
+				game.showContextBar()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_back")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BACK")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</textComponent>
+	</template>
+
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgNotificationsUpdated", "gotMsgNotificationsUpdated")
+	</event>
+
+	<event name="onPostInit" params="element">
+		game.hideContextBar()
+	</event>
+
+	<event name="gotMsgNotificationsUpdated" params="element, msg">
+
+		game.checkNotificationSettings()
+
+		if(game.isLocalNotificationOff("BREED_NOTIFICATION")) then
+			element["BreedingCompleteBox"]:DoStoredScript("turnOff")
+		else
+			element["BreedingCompleteBox"]:DoStoredScript("turnOn")
+		end
+
+		if(game.isLocalNotificationOff("HATCH_NOTIFICATION")) then
+			element["HatchingCompleteBox"]:DoStoredScript("turnOff")
+		else
+			element["HatchingCompleteBox"]:DoStoredScript("turnOn")
+		end
+
+		if(game.isLocalNotificationOff("BAKERY_NOTIFICATION")) then
+			element["BakingBox"]:DoStoredScript("turnOff")
+		else
+			element["BakingBox"]:DoStoredScript("turnOn")
+		end
+
+		if(game.isLocalNotificationOff("CASTLE_NOTIFICATION")) then
+			element["CastleBox"]:DoStoredScript("turnOff")
+		else
+			element["CastleBox"]:DoStoredScript("turnOn")
+		end
+
+		if(game.isLocalNotificationOff("MINES_NOTIFICATION")) then
+			element["MinesBox"]:DoStoredScript("turnOff");
+		else
+			element["MinesBox"]:DoStoredScript("turnOn");
+		end
+
+		if(game.isLocalNotificationOff("DAILY_LOGIN_NOTIFICATION")) then
+			element["DailyRewardBox"]:DoStoredScript("turnOff");
+		else
+			element["DailyRewardBox"]:DoStoredScript("turnOn");
+		end
+
+
+		if(game.isLocalNotificationOff("SCRATCH_NOTIFICATION")) then
+			element["ScratchBox"]:DoStoredScript("turnOff");
+		else
+			element["ScratchBox"]:DoStoredScript("turnOn");
+		end
+
+
+		if(game.isLocalNotificationOff("BATTLE_TRAINING_NOTIFICATION")) then
+			element["BattleTrainingBox"]:DoStoredScript("turnOff");
+		else
+			element["BattleTrainingBox"]:DoStoredScript("turnOn");
+		end
+
+
+		if(game.arePushNotificationsOff()) then
+			element["SaleBox"]:DoStoredScript("turnOff");
+		else
+			element["SaleBox"]:DoStoredScript("turnOn");
+		end
+	</event>
+
+</menu>

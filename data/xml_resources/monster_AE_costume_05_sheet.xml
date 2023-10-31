@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7bc6f36a93e97f4986fee482e82c39fd:802d1827675444b39efbf3be91d28445:19cc01c0be8e72f2589b891d2eb52aa2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AE_costume_05_sheet.png" width="512" height="512" hires="true">
+    <sprite n="AE_beak_01" x="2" y="396" w="104" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_beak_02" x="110" y="286" w="102" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_03" x="114" y="162" w="98" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_04" x="130" y="2" w="97" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_05" x="229" y="2" w="94" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="104" r="y"/>
+    <sprite n="AE_beak_06" x="108" y="396" w="104" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_body" x="2" y="2" w="126" h="158" pX="0.5" pY="0.5"/>
+	<sprite n="AE_body_RARE" />
+    <sprite n="AE_head" x="2" y="286" w="106" h="108" pX="0.5" pY="0.5"/>
+	<sprite n="AE_head_RARE" />
+    <sprite n="AE_left_eyeback" x="472" y="208" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AE_left_eyelid_01" x="270" y="172" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_eyelid_02" x="382" y="180" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_eyelid_03" x="412" y="180" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_eyelid_04" x="442" y="182" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_foot" x="130" y="112" w="78" h="46" pX="0.5" pY="0.5"/>
+	<sprite n="AE_left_foot_RARE" />
+    <sprite n="AE_left_leg" x="214" y="154" w="54" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_left_lowerarm" x="417" y="62" w="78" h="58" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="AE_left_lowerarm_RARE" />
+    <sprite n="AE_left_pupil" x="114" y="272" w="12" h="12" pX="0.5" pY="0.5"/>
+	<sprite n="AE_left_pupil_RARE" />
+    <sprite n="AE_left_upperarm" x="325" y="70" w="72" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyeback" x="472" y="182" w="26" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="AE_right_eyelid_01" x="292" y="112" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyelid_02" x="467" y="122" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyelid_03" x="467" y="152" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_eyelid_04" x="292" y="142" w="30" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_foot" x="399" y="122" w="66" h="56" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="AE_right_foot_RARE" />
+    <sprite n="AE_right_leg" x="324" y="134" w="56" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_right_lowerarm" x="417" y="2" w="86" h="58" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="AE_right_lowerarm_RARE" />
+    <sprite n="AE_right_upperarm" x="325" y="2" w="90" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_scarf" x="2" y="162" w="110" h="122" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="AE_shadow" x="210" y="112" w="80" h="40" pX="0.5" pY="0.5"/>
+	<sprite n="AE_spike_RARE" />
+</TextureAtlas>

@@ -1,0 +1,238 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onPostInit" params="element">
+		element:SetupGenericListener(game.simonReceiver(), "game::msg::MsgMemoryGameTopLeaderboardLevel", "gotTopLeaderboardLevel")
+		element:SetupGenericListener(game.simonReceiver(), "game::msg::MsgMemoryGamePrevBestLevel", "gotPrevBest")
+		element:SetupGenericListener(game.simonReceiver(), "game::msg::MsgMemoryGameLevel", "gotLevel")
+		element:SetupGenericListener(game.simonReceiver(), "game::msg::MsgMemoryGameSetHudVisibility", "gotVisibilityMsg")
+	    game.simonReceiver():Send(game.MsgMemoryGameHudReady())
+	</event>
+	
+	<event name="gotVisibilityMsg" params="element, msg">
+		if(msg.visible==1 and msg.testmode==1) then
+			element["BackButton"]:DoStoredScript("setVisible")
+		else
+			element["BackButton"]:DoStoredScript("setInvisible")
+		end
+	</event>
+	
+	<event name="gotTopLeaderboardLevel" params="element, msg">
+		element["TopLeaderboardFrame"]["TextNumber"]("text"):SetString(msg.topLeaderboardLevel)
+	</event>
+	
+	<event name="gotPrevBest" params="element, msg">
+		element["PrevBestScoreFrame"]["TextNumber"]("text"):SetString(msg.level)
+	</event>
+	
+	<event name="gotLevel" params="element, msg">
+		element["LevelFrame"]["TextNumber"]("text"):SetString(msg.level)
+	</event>
+	
+	<element name="TopLeaderboardFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="20*game.menuScaleX()" yOffset="20*game.menuScaleX()" priorityOffset="5" />
+		<ninesliceComponent name="BackingSprite">
+			<event name="onInit" params="component, element">
+				local scalex = lua_sys.screenWidth()/480.0
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4 * scalex)
+				component("width"):SetInt(109.1 * scalex)
+				component("height"):SetInt(3.33 * game.hudScale())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.hudScale())
+				component("text"):SetString("MEMORY_GAME_WORLD_BEST")
+				component:setColor(0.43, 0.98, 0.02)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<textComponent name="TextNumber">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component:setColor(0.43, 0.98, 0.02)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("size"):SetFloat(element["Text"]("size"):GetFloat()*2)
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="PrevBestScoreFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="10" />
+		<ninesliceComponent name="BackingSprite">
+			<event name="onInit" params="component, element">
+				local scalex = lua_sys.screenWidth()/480.0
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4 * scalex)
+				component("width"):SetInt(109.1 * scalex)
+				component("height"):SetInt(3.33 * game.hudScale())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_YOUR_BEST")
+				component("layer"):SetString("HUD")
+				component:setColor(1.0, 0.9, 0.09)
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("size"):SetFloat(element:parent()["TopLeaderboardFrame"]["Text"]("size"):GetFloat())
+			</event>
+		</textComponent>
+		<textComponent name="TextNumber">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				component:setColor(1.0, 0.9, 0.09)
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("size"):SetFloat(element:parent()["TopLeaderboardFrame"]["Text"]("size"):GetFloat()*2)
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="LevelFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="20*game.menuScaleX()" yOffset="20*game.menuScaleX()" priorityOffset="5" />
+		<ninesliceComponent name="BackingSprite">
+			<event name="onInit" params="component, element">
+				local scalex = lua_sys.screenWidth()/480.0
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4 * scalex)					
+				component("width"):SetInt(109.1 * scalex)
+				component("height"):SetInt(3.33 * game.hudScale())
+				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("MEMORY_GAME_CUR_LEVEL")
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("size"):SetFloat(element:parent()["TopLeaderboardFrame"]["Text"]("size"):GetFloat())
+			</event>
+		</textComponent>
+		<textComponent name="TextNumber">
+			<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element" >
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("text"):SetString("0")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="onPostInit" params="component, element">
+				component("size"):SetFloat(element:parent()["TopLeaderboardFrame"]["Text"]("size"):GetFloat()*2)
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="25" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("setInvisible")
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Overlay"]("visible"):SetInt(1)
+			element["Text"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Overlay"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.simonReceiver():Send(game.MsgMemoryGameBack())
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_replay")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_REPLAY_LABEL")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</template>	
+	
+</menu>

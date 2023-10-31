@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3cc63b194c3a9dd43b83e43b7a81da18:44c14b6e46d75252e7b45e41f49f3995:3a470631f9e4774129654fa3081d4dd2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_sheet02_easter.png" width="2048" height="2048" hires="true">
+    <sprite n="basket_eggs_left" x="1490" y="246" w="381" h="350" pX="0.5" pY="0.5" oX="1" oY="4" oW="384" oH="356"/>
+    <sprite n="basket_eggs_right" x="1062" y="290" w="381" h="338" pX="0.5" pY="0.5" oX="10" oY="5" oW="392" oH="344"/>
+    <sprite n="carrot_01" x="1873" y="419" w="165" h="350" pX="0.5" pY="0.5" oX="1" oY="1" oW="168" oH="352"/>
+    <sprite n="carrot_02" x="1860" y="771" w="86" h="218" pX="0.5" pY="0.5" oX="1" oY="3" oW="88" oH="224"/>
+    <sprite n="carrot_top_01" x="1062" y="2" w="426" h="286" pX="0.5" pY="0.5" oX="1" oY="1" oW="428" oH="288"/>
+    <sprite n="carrot_top_02" x="1882" y="189" w="136" h="228" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="carrot_top_03" x="1490" y="2" w="390" h="242" pX="0.5" pY="0.5" oX="1" oY="3" oW="392" oH="248"/>
+    <sprite n="carrot_top_04" x="842" y="422" w="188" h="234" pX="0.5" pY="0.5" oX="2" oY="1" oW="192" oH="236"/>
+    <sprite n="egg_01" x="528" y="422" w="312" h="226" pX="0.5" pY="0.5" oX="21" oY="6" oW="248" oH="320" r="y"/>
+    <sprite n="egg_02" x="1445" y="598" w="314" h="222" pX="0.5" pY="0.5" oX="0" oY="0" oW="248" oH="320" r="y"/>
+    <sprite n="egg_03" x="536" y="2" w="524" h="418" pX="0.5" pY="0.5" oX="0" oY="2" oW="420" oH="528" r="y"/>
+    <sprite n="egg_04" x="2" y="307" w="524" h="418" pX="0.5" pY="0.5" oX="1" oY="3" oW="420" oH="528" r="y"/>
+    <sprite n="gold_egg_right_front" x="1761" y="598" w="110" h="133" pX="0.5" pY="0.5" oX="5" oY="3" oW="120" oH="140"/>
+    <sprite n="gold_egg_right_side" x="1761" y="733" w="97" h="123" pX="0.5" pY="0.5" oX="0" oY="0" oW="112" oH="124"/>
+    <sprite n="nose_nest" x="2" y="2" w="532" h="303" pX="0.5" pY="0.5" oX="2" oY="2" oW="536" oH="308"/>
+    <sprite n="small_blabbit_egg" x="1882" y="2" w="157" h="185" pX="0.5" pY="0.5" oX="4" oY="4" oW="164" oH="192"/>
+</TextureAtlas>

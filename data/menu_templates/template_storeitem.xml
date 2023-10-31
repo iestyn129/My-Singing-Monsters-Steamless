@@ -1,0 +1,256 @@
+<template name="template_storeitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+      <![CDATA[
+			  component("spriteName"):SetString("market_frame")
+			  component("sheetName"):SetString("xml_resources/store_elements.xml")
+			  component("layer"):SetString("HUD")
+			  component("size"):SetFloat(0.5*game.menuScaleX())
+      ]]>
+		</event>
+	</spriteSheetComponent>
+
+	<element name="TitleFrame" >
+		<size w="130*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-2" />
+		</textComponent>
+	</element>
+
+	<element name="MonsterAnim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="36" priorityOffset="0" />
+		</aeComponent>
+	</element>
+
+	<element name="NewLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="-30*game.hudScale()" priorityOffset="-3" />
+		<ninesliceComponent name="Sprite">
+			<size w="52*game.hudScale()" h="52*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="0*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(49.0)
+					component("bottomHeight"):SetFloat(49.0)
+					component("leftWidth"):SetFloat(49.0)
+					component("rightWidth"):SetFloat(49.0)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.3*game.hudScale())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component:setColor(0.31, 0.94, 0.26)
+						component("rotation"):SetFloat(-0.25)
+						component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="CurrencyAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		</spriteSheetComponent>
+	</element>
+
+	<element name="IAPCost">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="15*game.menuScaleX()" yOffset="50*game.menuScaleX()" priorityOffset="-2" />
+		<textComponent name="Text"/>
+	</element>
+
+	<!-- 
+		This element is the non-IAP cost, shown in the upper-left 
+		corner of the store item window, which is usually diamonds, coins or whatever, 
+		and sits next to a currency sprite; also contains OWNED text in some situations 
+		in the Island category menu
+	-->
+	<element name="AnyCost">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="32*game.menuScaleX()" yOffset="50*game.menuScaleX()" priorityOffset="-3" />
+		
+		<textComponent name="Text">
+			<size w="95*game.hudScale()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+        		<![CDATA[
+				  component("multiline"):SetInt(0)
+				  component("font"):Set(game.getTextFont())
+				  component("size"):SetFloat(0.4*game.hudScale())
+				  component("alignment"):SetInt(MenuTextComponent_TEXT_LEFT_ALIGNED)
+				  component("text"):SetString(element:parent()("Cost"):GetString())
+				  component("autoScale"):SetInt(1)
+				  component("layer"):SetString("HUD")
+        		]]>
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<textComponent name="LevelReq">
+		<size w="135*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="22*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("textPadding"):SetInt(30*game.menuScaleX())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="maxAmount">
+		<size w="150*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="-40*game.menuScaleX()" yOffset="10*game.menuScaleY()" priorityOffset="-2" />
+	</textComponent>
+
+	<textComponent name="monsterCount">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="25*game.menuScaleX()" yOffset="50*game.menuScaleX()" priorityOffset="-2" />
+	</textComponent>
+
+	<element name="TempAvailText">
+		<size w="120*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleY()" priorityOffset="-3" />
+		<textComponent name="AvailableUntil">
+			<size dependentOnElement="element:name()"/>
+		</textComponent>
+		<textComponent name="TimerText">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.3*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component:setColor(0.588, 0.925, 0.192)
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="ExchangeRateResetText">
+		<size w="120*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleY()" priorityOffset="-2" />
+		<textComponent name="TitleText">
+			<size dependentOnElement="element:name()"/>
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("EXCHANGE_RESET")
+					component("layer"):SetString("HUD")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</textComponent>
+		<textComponent name="TimerText">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.2*game.menuScaleY())
+					--component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component:setColor(0.588, 0.925, 0.192)
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(""..game.timeToString(0))
+					component("layer"):SetString("HUD")
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+				component("realStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(x - component("touchStart"):GetInt()) )
+				component("touchStart"):SetInt(x)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(x)
+				component("realStart"):SetInt(x)
+			]]>
+		</event>
+	</touchComponent>
+
+	<script src="scripts/StoreItem.lua"/>
+	
+</template>

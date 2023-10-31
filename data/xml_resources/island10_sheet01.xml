@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:62c40802ac8b422920e5d8f81c61b5e0:b65df90dd1246523532b150500f6fe40:75b5abd6c72767febcc034488f0535de$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island10_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island10_ear_001" x="2" y="974" w="704" h="802" pX="0.5" pY="0.5"/>
+    <sprite n="island10_eye_001" x="1122" y="2" w="822" h="970" pX="0.5" pY="0.5" oX="0" oY="0" oW="972" oH="822" r="y"/>
+    <sprite n="island10_hair_001" x="2" y="1778" w="118" h="225" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="228"/>
+    <sprite n="island10_hair_002" x="1114" y="974" w="423" h="151" pX="0.5" pY="0.5" oX="1" oY="0" oW="156" oH="424" r="y"/>
+    <sprite n="island10_horn_001" x="708" y="1139" w="561" h="636" pX="0.5" pY="0.5" oX="0" oY="0" oW="562" oH="636"/>
+    <sprite n="island10_horn_002" x="465" y="1778" w="561" h="181" pX="0.5" pY="0.5" oX="1" oY="1" oW="184" oH="564" r="y"/>
+    <sprite n="island10_light_001" x="178" y="789" w="107" h="156" pX="0.5" pY="0.5" oX="2" oY="1" oW="160" oH="108" r="y"/>
+    <sprite n="island10_light_002" x="2" y="590" w="174" h="346" pX="0.5" pY="0.5" oX="0" oY="0" oW="346" oH="176" r="y"/>
+    <sprite n="island10_light_006" x="1539" y="974" w="487" h="150" pX="0.5" pY="0.5" oX="0" oY="0" oW="150" oH="488" r="y"/>
+    <sprite n="island10_light_007" x="287" y="789" w="200" h="144" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island10_nose_001" x="708" y="590" w="404" h="547" pX="0.5" pY="0.5" oX="0" oY="0" oW="404" oH="548"/>
+    <sprite n="island10_platform_002" x="1271" y="1484" w="683" h="532" pX="0.5" pY="0.5" oX="25" oY="12" oW="734" oH="544"/>
+    <sprite n="island10_post_003" x="1946" y="2" w="81" h="51" pX="0.5" pY="0.5" oX="1" oY="0" oW="84" oH="52"/>
+    <sprite n="island10_post_010" x="2" y="2" w="1118" h="586" pX="0.5" pY="0.5"/>
+    <sprite n="island10_vent_001" x="122" y="1778" w="341" h="223" pX="0.5" pY="0.5" oX="0" oY="0" oW="344" oH="224"/>
+    <sprite n="island10_vine_001" x="178" y="590" w="506" h="197" pX="0.5" pY="0.5" oX="1" oY="4" oW="508" oH="208"/>
+    <sprite n="island10_vine_001_A" x="1946" y="55" w="79" h="326" pX="0.5" pY="0.5" oX="0" oY="0" oW="328" oH="80" r="y"/>
+    <sprite n="island10_vine_001_B" x="1946" y="383" w="62" h="278" pX="0.5" pY="0.5" oX="2" oY="2" oW="280" oH="68" r="y"/>
+    <sprite n="w8_cloud" x="1271" y="1127" w="760" h="355" pX="0.5" pY="0.5" oX="0" oY="0" oW="760" oH="356"/>
+</TextureAtlas>

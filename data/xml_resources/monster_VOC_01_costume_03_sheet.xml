@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bfb39fc51a53998656ab46f17c49e73f:ff177b050483d9789b2744dc3c95b6ce:f9e5a0166b9afddda237b5eacf98b4d4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_01_costume_03_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (41, 79) -> new anchor (41, 31) diff = (0, 48)-->
+	<!-- add it to texturepacker output offsets (0, 2) -> (0, 98)-->    
+    <sprite n="VOC_01_costume_03_bag.png" x="1" y="244" w="91" h="47" pX="0.5" pY="0.5" oX="0" oY="98" oW="50" oH="100" r="y"/>
+    <!-- original anchor = (41, 79) -> new anchor (28, 24) diff = (13, 55)-->
+	<!-- add it to texturepacker output offsets (2, 1) -> (28, 111)-->
+    <sprite n="VOC_01_costume_03_belt.png" x="132" y="201" w="118" h="85" pX="0.5" pY="0.5" oX="28" oY="111" oW="124" oH="90"/>
+    <!-- original anchor = (43, 80) -> new anchor (40, 33) diff = (3, 47)-->
+	<!-- add it to texturepacker output offsets (1, 2) -> (7, 96)-->
+    <sprite n="VOC_01_costume_03_glasses.png" x="132" y="137" w="123" h="62" pX="0.5" pY="0.5" oX="7" oY="96" oW="124" oH="64"/>
+    <!-- original anchor = (43, 80) -> new anchor (36, 89) diff = (7, -9)-->
+	<!-- add it to texturepacker output offsets (3, 0) -> (17, -18)-->
+    <sprite n="VOC_01_costume_03_hat.png" x="1" y="129" w="129" h="113" pX="0.5" pY="0.5" oX="17" oY="-18" oW="132" oH="114"/>
+    <sprite n="VOC_01_costume_03_horn_left.png" x="144" y="1" w="106" h="134" pX="0.5" pY="0.5" oX="6" oY="13" oW="152" oH="132" r="y"/>
+    <sprite n="VOC_01_costume_03_horn_right.png" x="1" y="1" w="141" h="126" pX="0.5" pY="0.5" oX="12" oY="10" oW="164" oH="136"/>
+    <!-- original anchor = (41, 79) -> new anchor (-3, 27) diff = (44, 52)-->
+	<!-- add it to texturepacker output offsets (0, 0) -> (88, 104)-->
+    <sprite n="VOC_01_costume_03_tail.png" x="94" y="288" w="80" h="75" pX="0.5" pY="0.5" oX="88" oY="104" oW="77" oH="80" r="y"/>
+</TextureAtlas>

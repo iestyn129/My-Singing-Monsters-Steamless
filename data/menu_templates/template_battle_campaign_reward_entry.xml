@@ -1,0 +1,193 @@
+<template name="template_battle_campaign_reward_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("market_frame")
+					component("sheetName"):SetString("xml_resources/store_elements.xml")
+					component("layer"):SetString("FrontPopUps")
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+	<element name="NameFrame">
+			<size w="120*game.menuScaleX()" h="20*game.menuScaleX()" />
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.menuScaleX()" priorityOffset="-1" />
+
+			<textComponent name="Text">
+				<size w="120*game.menuScaleX()" h="20*game.menuScaleX()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.menuScaleX()" priorityOffset="-1" />
+
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						local text = game.getLocalizedText(element:parent()("ItemTitle"):GetString())
+
+						component("textPadding"):SetInt(3*game.menuScaleX())
+						component("size"):SetFloat(0.25*game.menuScaleY())
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+
+						if((string.match(text, "%s") == nil)) then
+							component("multiline"):SetInt(0)
+						else
+							component("multiline"):SetInt(1)
+						end
+
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString(text)
+						component("layer"):SetString("FrontPopUps")
+
+						local tintR = element:parent()("TintR"):GetFloat()
+						local tintG = element:parent()("TintG"):GetFloat()
+						local tintB = element:parent()("TintB"):GetFloat()
+						component:setColor(tintR, tintG, tintB)
+
+						]]>
+				</event>
+			</textComponent>
+
+			<textComponent name="Text2">
+					<size w="120*game.menuScaleX()" h="18*game.menuScaleX()" />
+					<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+					<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+
+					<event name="onInit" params="component, element">
+						<![CDATA[
+						local text = game.getLocalizedText(element:parent()("ItemTitle2"):GetString())
+
+						component("textPadding"):SetInt(3*game.menuScaleX())
+						component("size"):SetFloat(0.2*game.menuScaleY())
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+
+						if((string.match(text, "%s") == nil)) then
+							component("multiline"):SetInt(0)
+						else
+							component("multiline"):SetInt(1)
+						end
+
+						component("font"):Set(game.getTextFont())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString(text)
+						component("layer"):SetString("FrontPopUps")
+
+						local tintR = element:parent()("TintR"):GetFloat()
+						local tintG = element:parent()("TintG"):GetFloat()
+						local tintB = element:parent()("TintB"):GetFloat()
+						component:setColor(tintR, tintG, tintB)
+
+						]]>
+					</event>
+				</textComponent>
+		</element>
+
+	<element name="Anim">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<aeComponent name="SpriteBG">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+							local bgAnimFile = element:parent()("BgAnimationFile"):GetString()
+							local bgAnimName = element:parent()("BgAnimationName"):GetString()
+							if string.len(bgAnimFile) > 0 then
+								component("animationName"):SetString("xml_bin/"..bgAnimFile)
+								component("animation"):SetString(bgAnimName)
+								component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
+								component("layer"):SetString("FrontPopUps")
+							else
+								component("visible"):SetInt(0)
+							end
+						]]>
+				</event>
+			</aeComponent>
+			<aeComponent name="Sprite">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+						component("animation"):SetString( element:parent()("AnimationName"):GetString() )
+						local costumeId = element:parent()("CostumeId"):GetInt()
+						if costumeId > 0 then
+							game.applyCostumeToAnimComponent(component, costumeId)
+						end
+						component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
+						component("layer"):SetString("FrontPopUps")
+
+						local xOffset = component:size().x * 0.5 + ( 0 * game.menuScaleX() )
+						local yOffset = component:size().y * 0.5 + ( 0 * game.menuScaleX() )
+						element:setOrientationPosition(Vector2(xOffset, yOffset))
+					]]>
+				</event>
+			</aeComponent>
+		</element>
+
+	<element name="BattleQuestIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0*game.menuScaleX()" yOffset="16*game.menuScaleY()" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_battle_complete")
+					component("sheetName"):SetString("xml_resources/hud03.xml")
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt((element:parent()("CostumeId"):GetInt() == 0) and 0 or 1)
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+
+	<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					--play a sound?
+				]]>
+			</event>
+		</touchComponent>
+
+	<event name="updateClipping" params="element">
+		<![CDATA[
+			local MenuHelpers = include("MenuHelpers")
+			MenuHelpers.SetClipFrom(element:GetComponent("Touch"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("Anim"):GetComponent("Sprite"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("Anim"):GetComponent("SpriteBG"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("BattleQuestIcon"):GetComponent("Sprite"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("NameFrame"):GetComponent("Text"), element)
+			MenuHelpers.SetClipFrom(element:GetElement("NameFrame"):GetComponent("Text2"), element)
+		]]>
+	</event>
+
+	<event name="updateAlpha" params="element">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+
+			element["Anim"]["Sprite"]("alpha"):SetFloat(alpha)
+			element["Anim"]["Sprite"]:setColor(alpha, alpha, alpha)
+
+			element["Anim"]["SpriteBG"]("alpha"):SetFloat(alpha)
+			element["Anim"]["SpriteBG"]:setColor(alpha, alpha, alpha)
+
+			element["NameFrame"]["Text"]("alpha"):SetFloat(alpha)
+		]]>
+	</event>
+
+</template>

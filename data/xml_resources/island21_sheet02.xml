@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4c3e7bf3802534cd10fe2e409b502c94:7d683455045990cf59a2d6c1b951b19f:c29bca7b98a5f1a702df0a5ee36c27d7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island21_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="bottom_floor" x="1" y="739" w="405" h="852" pX="0.5" pY="0.5" oX="0" oY="3" oW="852" oH="412" r="y"/>
+    <sprite n="candy_hearts" x="1206" y="1448" w="38" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="40" r="y"/>
+    <sprite n="centre_platform" x="1298" y="1" w="604" h="351" pX="0.5" pY="0.5" oX="2" oY="2" oW="608" oH="356"/>
+    <sprite n="deco_extra_axe" x="1955" y="1775" w="71" h="118" pX="0.5" pY="0.5" oX="1" oY="0" oW="120" oH="72" r="y"/>
+    <sprite n="deco_extra_birdhouse" x="1363" y="1516" w="61" h="185" pX="0.5" pY="0.5" oX="5" oY="3" oW="72" oH="192"/>
+    <sprite n="deco_extra_blueredtree" x="1115" y="394" w="231" h="427" pX="0.5" pY="0.5" oX="11" oY="6" oW="252" oH="440"/>
+    <sprite n="deco_extra_entbrat" x="1000" y="1448" w="204" h="120" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_epic_hoola" x="1209" y="1516" w="152" h="159" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="160"/>
+    <sprite n="deco_extra_form_boodoo" x="1932" y="1703" w="94" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_form_grumpyre" x="1798" y="1526" w="145" h="151" pX="0.5" pY="0.5" oX="1" oY="0" oW="148" oH="152"/>
+    <sprite n="deco_extra_form_nebulob" x="835" y="1469" w="163" h="164" pX="0.5" pY="0.5" oX="0" oY="0" oW="164" oH="164" r="y"/>
+    <sprite n="deco_extra_form_whisp" x="1904" y="1" w="127" h="307" pX="0.5" pY="0.5" oX="2" oY="0" oW="132" oH="308"/>
+    <sprite n="deco_extra_furcorn" x="1209" y="1677" w="152" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_green_ball" x="1548" y="1938" w="85" h="79" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="88" r="y"/>
+    <sprite n="deco_extra_hay_01" x="1118" y="1904" w="108" h="139" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_hay_02" x="1373" y="1788" w="89" h="101" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_holly" x="1685" y="1714" w="111" h="116" pX="0.5" pY="0.5" oX="2" oY="0" oW="116" oH="116"/>
+    <sprite n="deco_extra_hoolas" x="978" y="1904" w="138" h="143" pX="0.5" pY="0.5" oX="0" oY="1" oW="144" oH="140" r="y"/>
+    <sprite n="deco_extra_icicles" x="596" y="1800" w="213" h="61" pX="0.5" pY="0.5" oX="1" oY="1" oW="216" oH="64"/>
+    <sprite n="deco_extra_mind_book_set" x="798" y="1635" w="178" h="160" pX="0.5" pY="0.5" oX="2" oY="3" oW="164" oH="184" r="y"/>
+    <sprite n="deco_extra_mind_books_01" x="1000" y="1570" w="207" h="112" pX="0.5" pY="0.5" oX="0" oY="2" oW="112" oH="212" r="y"/>
+    <sprite n="deco_extra_mind_books_02" x="811" y="1797" w="179" h="94" pX="0.5" pY="0.5" oX="5" oY="2" oW="104" oH="184" r="y"/>
+    <sprite n="deco_extra_mind_books_03" x="1576" y="1541" w="107" h="187" pX="0.5" pY="0.5" oX="2" oY="2" oW="112" oH="192"/>
+    <sprite n="deco_extra_mind_bookshelf" x="1945" y="1513" w="90" h="188" pX="0.5" pY="0.5" oX="0" oY="1" oW="90" oH="191"/>
+    <sprite n="deco_extra_mind_bust" x="1685" y="1526" w="111" h="186" pX="0.5" pY="0.5" oX="0" oY="3" oW="112" oH="192"/>
+    <sprite n="deco_extra_moon_blubs_01" x="579" y="1863" w="119" h="184" pX="0.5" pY="0.5" oX="0" oY="0" oW="184" oH="120" r="y"/>
+    <sprite n="deco_extra_moon_blubs_02" x="581" y="1469" w="252" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_moon_feathers" x="1692" y="710" w="312" h="284" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_moon_flower" x="596" y="1635" w="200" h="163" pX="0.5" pY="0.5" oX="0" oY="9" oW="200" oH="172"/>
+    <sprite n="deco_extra_moon_flowers" x="408" y="1403" w="171" h="230" pX="0.5" pY="0.5" oX="3" oY="9" oW="244" oH="180" r="y"/>
+    <sprite n="deco_extra_moon_lanturn" x="397" y="1635" w="197" h="209" pX="0.5" pY="0.5" oX="1" oY="1" oW="200" oH="212"/>
+    <sprite n="deco_extra_poinsettia" x="992" y="1795" w="192" h="107" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="192" r="y"/>
+    <sprite n="deco_extra_pumpkin_lights" x="1426" y="1699" w="148" h="87" pX="0.5" pY="0.5" oX="0" oY="0" oW="148" oH="88"/>
+    <sprite n="deco_extra_red_ball" x="1464" y="1788" w="79" h="86" pX="0.5" pY="0.5" oX="4" oY="1" oW="88" oH="88"/>
+    <sprite n="deco_extra_rope" x="1282" y="1783" w="89" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_seedling_box" x="397" y="1846" w="180" h="154" pX="0.5" pY="0.5" oX="5" oY="4" oW="164" oH="188" r="y"/>
+    <sprite n="deco_extra_seedlings" x="1186" y="1811" w="94" h="79" pX="0.5" pY="0.5" oX="3" oY="4" oW="100" oH="88"/>
+    <sprite n="deco_extra_sky_burst" x="1426" y="1541" w="148" h="156" pX="0.5" pY="0.5" oX="4" oY="0" oW="156" oH="156"/>
+    <sprite n="deco_extra_sky_green_light" x="1284" y="1891" w="130" h="131" pX="0.5" pY="0.5" oX="0" oY="1" oW="132" oH="132" r="y"/>
+    <sprite n="deco_extra_sky_orange_glowbe" x="1673" y="1832" w="120" h="127" pX="0.5" pY="0.5" oX="2" oY="2" oW="132" oH="124" r="y"/>
+    <sprite n="deco_extra_sky_teal_light" x="1416" y="1891" w="130" h="131" pX="0.5" pY="0.5" oX="0" oY="1" oW="132" oH="132" r="y"/>
+    <sprite n="deco_extra_small_tree" x="1798" y="1777" w="155" h="113" pX="0.5" pY="0.5" oX="1" oY="0" oW="116" oH="156" r="y"/>
+    <sprite n="deco_extra_surf_01" x="1246" y="1443" w="195" h="71" pX="0.5" pY="0.5" oX="0" oY="2" oW="72" oH="200" r="y"/>
+    <sprite n="deco_extra_surf_02" x="1443" y="1443" w="189" h="96" pX="0.5" pY="0.5" oX="2" oY="5" oW="100" oH="200" r="y"/>
+    <sprite n="deco_extra_telescope" x="1926" y="1255" w="116" h="256" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="deco_extra_tiki_lights" x="978" y="1684" w="213" h="109" pX="0.5" pY="0.5" oX="1" oY="1" oW="216" oH="112"/>
+    <sprite n="deco_extra_tiki_mask" x="700" y="1863" w="108" h="179" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="180"/>
+    <sprite n="deco_extra_torch" x="1228" y="1892" w="54" h="155" pX="0.5" pY="0.5" oX="5" oY="4" oW="64" oH="164"/>
+    <sprite n="deco_extra_tropical" x="810" y="1893" w="166" h="145" pX="0.5" pY="0.5"/>
+    <sprite n="deco_extra_veggies" x="1798" y="1679" w="132" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="decos_01" x="589" y="1152" w="370" h="315" pX="0.5" pY="0.5"/>
+    <sprite n="decos_02" x="719" y="394" w="394" h="386" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_03" x="1348" y="354" w="323" h="358" pX="0.5" pY="0.5"/>
+    <sprite n="decos_04" x="1" y="1593" w="394" h="408" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_05" x="1246" y="1138" w="311" h="303" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_06" x="944" y="823" w="350" h="283" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_07" x="589" y="782" w="353" h="368" pX="0.5" pY="0.5"/>
+    <sprite n="decos_08" x="1348" y="714" w="342" h="278" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_09" x="1673" y="354" w="320" h="354" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_10" x="961" y="1108" w="283" h="338" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="decos_11" x="1687" y="996" w="324" h="257" pX="0.5" pY="0.5"/>
+    <sprite n="front_decos" x="408" y="739" w="179" h="662" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="hanging_lights_01" x="1559" y="1138" w="79" h="303" pX="0.5" pY="0.5"/>
+    <sprite n="hanging_lights_02" x="1296" y="994" w="389" h="142" pX="0.5" pY="0.5"/>
+    <sprite n="lights_glow" x="1548" y="1811" w="123" h="125" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform" x="719" y="1" w="577" h="391" pX="0.5" pY="0.5" oX="1" oY="2" oW="580" oH="396"/>
+    <sprite n="side_wall" x="1" y="1" w="716" h="736" pX="0.5" pY="0.5" oX="4" oY="2" oW="724" oH="741"/>
+    <sprite n="side_wall_support_02" x="1640" y="1255" w="284" h="269" pX="0.5" pY="0.5" oX="0" oY="172" oW="408" oH="472" r="y"/>
+    <sprite n="tombstone" x="1795" y="1892" w="72" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tweedle_egg" x="1576" y="1730" w="107" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="108" r="y"/>
+</TextureAtlas>

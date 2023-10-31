@@ -1,0 +1,142 @@
+<!-- A reward that is displayed when collecting daily cumulative login rewards -->
+<template name="template_daily_cumulative_login_reward_evo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$layer" equals="Tutorial" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("market_frame")
+				component("sheetName"):SetString("xml_resources/store_elements.xml")
+				component("layer"):SetString("$layer")
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<element name="NameFrame">
+		<size w="120*game.hudScale()" h="32*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-3" />
+
+		<textComponent name="Text">
+			<size w="120*game.hudScale()" h="32*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.hudScale()" priorityOffset="-1" />
+
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					local parent = element:parent()
+					component("textPadding"):SetInt(3*game.hudScale())
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(parent.ItemTitle)
+					component("layer"):SetString("$layer")
+
+					local tintR = parent.TintR
+					local tintG = parent.TintG
+					local tintB = parent.TintB
+					component:setColor(tintR, tintG, tintB)
+
+					]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="AnimPre">
+		<size dependentOnElement="PARENT" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-3" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("offsetCenter"):SetInt(1)
+
+					local parent = element:parent()
+					local animFile = parent.AnimationFile
+					local animName = parent.PreAnimationName
+					if string.len(animFile) > 0 then
+						component("animationName"):SetString("xml_bin/"..animFile)
+						component("animation"):SetString( animName )
+						component:setScale(Vector2(0.6*game.hudScale(), 0.6*game.hudScale()))
+						component("layer"):SetString("$layer")
+					else
+						component("visible"):SetInt(0)
+					end
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<element name="AnimPost">
+		<size dependentOnElement="PARENT" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<aeComponent name="SpriteBG">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("offsetCenter"):SetInt(1)
+
+						local parent = element:parent()
+						local bgAnimFile = parent.BgAnimationFile
+						local bgAnimName = parent.BgAnimationName
+						if string.len(bgAnimFile) > 0 then
+							component("animationName"):SetString("xml_bin/"..bgAnimFile)
+							component("animation"):SetString(bgAnimName)
+							component:setScale(Vector2(0.75*game.hudScale(), 0.75*game.hudScale()))
+							component("layer"):SetString("$layer")
+						else
+							component("visible"):SetInt(0)
+						end
+					]]>
+			</event>
+		</aeComponent>
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("offsetCenter"):SetInt(1)
+
+					local parent = element:parent()
+					local animFile = parent.AnimationFile
+					local animName = parent.PostAnimationName
+					if string.len(animFile) > 0 then
+						component("animationName"):SetString("xml_bin/"..animFile)
+						component("animation"):SetString( animName )
+						component:setScale(Vector2(0.6*game.hudScale(), 0.6*game.hudScale()))
+						component("layer"):SetString("$layer")
+					else
+						component("visible"):SetInt(0)
+					end
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				--play a sound?
+			]]>
+		</event>
+	</touchComponent>
+
+	<script src="scripts/DailyCumulativeLogin/DCLRewardEvo.lua"/>
+
+</template>

@@ -1,0 +1,146 @@
+<template name="template_tribalgoalentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size w="360*game.menuScaleX()" h="52*game.menuScaleY()" />
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			local previous = nil
+			local rewardIds = { "RewardCoins", "RewardDiamonds", "RewardXp", "RewardFood", "RewardShards", "RewardEntity" }
+			
+			local numRewards = 0
+			for i = 1, #rewardIds do
+				if(element(rewardIds[i]):GetInt() > 0) then
+					numRewards = numRewards + 1
+				end
+			end
+			
+			for i = 1, #rewardIds do
+				local rewardId = rewardIds[i]
+
+				if(element(rewardId):GetInt() > 0) then
+					local rewardEntry = menu:addTemplateElement("template_rewardentry", "rewardEntry" .. rewardId, element)
+					rewardEntry("RewardId"):SetString(rewardId)
+					rewardEntry("RewardAmount"):SetString(element(rewardId):GetInt())
+					
+					if(previous == nil) then
+						rewardEntry:setParent(element)
+						rewardEntry:setOrientation(lua_sys.MenuOrientation(0,0,0, lua_sys.RIGHT, lua_sys.VCENTER))
+						rewardEntry:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.VCENTER)
+					else
+						rewardEntry:setParent(previous)
+						rewardEntry:setOrientation(lua_sys.MenuOrientation(0,0,0, lua_sys.RIGHT, lua_sys.TOP))
+						rewardEntry:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.BOTTOM)
+					end
+					
+					rewardEntry:init()
+					rewardEntry:setPositionBroadcast(true)
+					
+					if(previous == nil) then
+						rewardEntry("yOffset"):SetInt((-1)*((rewardEntry:absH()/2)*(numRewards-1)))
+					end
+					
+					previous = rewardEntry
+				end
+			end
+		]]>
+	</event>
+	
+	<spriteSheetComponent name="GoalIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString(element("GoalIcon"):GetString())
+			component("sheetName"):SetString("xml_resources/" .. element("GoalSheet"):GetString() .. ".xml")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("layer"):SetString("Clipping")
+		</event>
+	</spriteSheetComponent>
+	
+	<textComponent name="GoalDesc">
+		<size w="190*game.menuScaleX()" h="45*game.menuScaleY()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="50*game.menuScaleX()" yOffset="-5" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.225*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString(element("GoalDesc"):GetString())
+			component("autoScale"):SetInt(1)
+			component("layer"):SetString("Clipping")
+		</event>
+	</textComponent>
+	
+	<template type="template_spritesheetbutton" name="CollectButton">
+		<templateVar name="$upSpriteName" equals="'button_long_green@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$textYOffset" equals="-2*game.menuScaleY()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<templateVar name="$spriteScale" equals="0.4*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="60*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="UpSprite">
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+			<event name="onInit" params="component, element">
+				onInit(component, element)
+				element["UpSprite"]("size"):SetFloat(0.4*game.menuScaleX())
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("textPadding"):SetInt(6*game.menuScaleX())
+				component("text"):SetString("CONTEXTBAR_COMPLETE_LABEL")
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+				game.displayNotification("TRIBAL_REWARDS_COLLECTED_LATER_NOTIFICATION")
+			</event>
+		</touchComponent>
+		<event name="onInit" params="element">
+				onInit(element)
+				if(element:parent()("Complete"):GetInt() ~= 1) then
+					element:DoStoredScript("setInvisible")
+					element["Label"]("visible"):SetInt(0)
+				else
+					element:DoStoredScript("disable")
+					element["Touch"]("enabled"):SetInt(1)
+				end
+		</event>
+	</template>
+	
+	<spriteSheetComponent name="LeftDivider">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_swirl")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.35*game.menuScaleX())
+			component("layer"):SetString("Clipping")
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="RightDivider">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_swirl")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.35*game.menuScaleX())
+			component("vFlip"):SetInt(1)
+			component("layer"):SetString("Clipping")
+		</event>
+	</spriteSheetComponent>
+	
+</template>

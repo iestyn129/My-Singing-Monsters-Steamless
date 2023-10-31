@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:203651e8933766bb7de9f6a928bdf3f4:ab34d3ddca85fa1163ee0bc616bf6633:2a1801425ea0206a0e7485c8745f178a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_RARE_costume_01_sheet.png" width="128" height="256">
+		<!-- orig w=96 h=136 -->
+	<!-- original anchor = (68, 118) -> new anchor (57, 118) diff = (11, 0)-->
+	<!-- add it to texturepacker output offsets (1, 3) -> (12, 3)-->
+    <sprite n="BDE_body.png" x="2" y="2" w="85" h="134" pX="0.5" pY="0.5" oX="12" oY="3" oW="88" oH="138"/>
+	<!-- original anchor = (68, 118) -> new anchor (-7, 81) diff = (75, 37)-->
+	<!-- add it to texturepacker output offsets (2, 2) -> (77, 39)-->
+    <sprite n="BDE_boltback.png" x="89" y="30" w="15" h="14" pX="0.5" pY="0.5" oX="77" oY="39" oW="20" oH="19"/>
+	<!-- original anchor = (25, 110) -> new anchor (21, -77) diff = (4, 187)-->
+	<!-- add it to texturepacker output offsets (0, 0) -> (4, 187)-->
+    <sprite n="BDE_pumpkin.png" x="89" y="2" w="28" h="26" pX="0.5" pY="0.5" oX="4" oY="187" oW="27" oH="29" r="y"/>
+</TextureAtlas>

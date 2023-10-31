@@ -1,0 +1,89 @@
+<template name="template_bonusoffer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<!-- THIS IS ONLY USED FOR CURRENCY SALES, see template_itemsaletag.xml for store item sales -->
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="hide" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+		element["Text"]("visible"):SetInt(0)
+		element["ExclaimMenu"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="show" params="element">
+		element["Sprite"]("visible"):SetInt(1)
+		element["Text"]("visible"):SetInt(1)
+		element["ExclaimMenu"]("visible"):SetInt(1)
+	</event>
+	
+	<spriteSheetComponent name="ExclaimMenu">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-20*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_exclaim")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.6*game.menuScaleX())
+			component("layer"):SetString("FrontPopUps")
+			component("visible"):SetInt(1)
+			
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("vFlip"):SetInt(0)
+			else
+				component("hFlip"):SetInt(0)
+			end
+		</event>
+	</spriteSheetComponent>
+
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("sale_tag_updated_taller")
+			component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+			component("size"):SetFloat(0.5*game.menuScaleX())
+			component("layer"):SetString("HUD")
+		</event>
+	</spriteSheetComponent>
+	
+	<textComponent name="Text">
+		<size w="70*game.menuScaleX()" h="70*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(1.5*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component:setColor(74/255, 235/255, 232/255)
+			component("layer"):SetString("HUD")
+			component("text"):SetString("OFFERWALL_PLUS_BONUS_TEXT")
+		</event>
+	</textComponent>
+	
+	<event name="onInit" params="element">
+		element("transitionTime"):SetFloat(1.0)
+		element("transitionState"):SetInt(1)
+	</event>
+	<event name="onTick" params="element, dt">				
+		local transitionState = element("transitionState"):GetInt()
+		
+		if(transitionState ~= 0 and dt &lt;= 0.5) then
+			local transitionTime = element("transitionTime"):GetFloat()
+			
+			element["ExclaimMenu"]("size"):SetFloat(0.6*game.menuScaleX()*transitionTime)
+			
+			if(transitionTime &lt;= 1.0 ) then
+				element("transitionState"):SetInt(1)
+			elseif(transitionTime &gt;= 1.25) then
+				element("transitionState"):SetInt(2)
+			end	
+
+			if(transitionState == 1) then
+				element("transitionTime"):SetFloat(transitionTime + dt)
+			else
+				element("transitionTime"):SetFloat(transitionTime - dt)
+			end
+		end
+	</event>
+
+</template>

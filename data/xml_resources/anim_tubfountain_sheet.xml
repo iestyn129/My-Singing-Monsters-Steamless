@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:62dcf408d65ae10d883f4f6d9c433bc9:8d7ff041aab3d46d341c55ea74552ba5:877d90661e8760e51046857673d8fc9e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_tubfountain_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="tub_base" x="2" y="2" w="554" h="568" pX="0.5" pY="0.5"/>
+    <sprite n="waterfall_1" x="223" y="572" w="223" h="250" pX="0.5" pY="0.5" oX="137" oY="7" oW="500" oH="360" r="y"/>
+    <sprite n="waterfall_2" x="2" y="572" w="219" h="274" pX="0.5" pY="0.5" oX="121" oY="7" oW="500" oH="360" r="y"/>
+    <sprite n="waterfall_3" x="448" y="809" w="222" h="213" pX="0.5" pY="0.5" oX="174" oY="7" oW="500" oH="360" r="y"/>
+    <sprite n="waterfall_4" x="775" y="233" w="220" h="212" pX="0.5" pY="0.5" oX="175" oY="7" oW="500" oH="360" r="y"/>
+    <sprite n="waterfall_5" x="672" y="809" w="226" h="212" pX="0.5" pY="0.5" oX="175" oY="7" oW="500" oH="360" r="y"/>
+    <sprite n="waterfall_6" x="558" y="233" w="215" h="226" pX="0.5" pY="0.5" oX="172" oY="7" oW="500" oH="360"/>
+    <sprite n="waterfall_7" x="678" y="2" w="234" h="229" pX="0.5" pY="0.5" oX="161" oY="7" oW="500" oH="360"/>
+    <sprite n="waterfall_8" x="448" y="572" w="228" h="235" pX="0.5" pY="0.5" oX="152" oY="7" oW="500" oH="360" r="y"/>
+</TextureAtlas>

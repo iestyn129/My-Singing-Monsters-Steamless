@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5f57a60b0b07d2071b1c71db0c84e6f9:776e38fbd7b1a8c29df465c10591ba87:6cd0036e98993aaf76a7fd0129a83c59$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_jarhead_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="jarhead_base" x="2" y="2" w="424" h="360" pX="0.5" pY="0.5"/>
+    <sprite n="jarhead_bubble" x="479" y="93" w="23" h="23" pX="0.5" pY="0.5" oX="1" oY="1" oW="24" oH="24"/>
+    <sprite n="jarhead_eyeback" x="479" y="2" w="30" h="89" pX="0.5" pY="0.5" oX="2" oY="3" oW="92" oH="36" r="y"/>
+    <sprite n="jarhead_eyelid_1" x="428" y="2" w="49" h="92" pX="0.5" pY="0.5" oX="2" oY="2" oW="96" oH="52" r="y"/>
+    <sprite n="jarhead_eyelid_2" x="428" y="96" w="43" h="96" pX="0.5" pY="0.5" oX="0" oY="9" oW="96" oH="52" r="y"/>
+    <sprite n="jarhead_glass" x="2" y="364" w="295" h="196" pX="0.5" pY="0.5" oX="0" oY="1" oW="196" oH="296" r="y"/>
+    <sprite n="jarhead_leaves" x="299" y="364" w="136" h="111" pX="0.5" pY="0.5" oX="0" oY="1" oW="136" oH="112"/>
+    <sprite n="jarhead_pupil" x="473" y="118" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="jarhead_skull" x="299" y="477" w="112" h="215" pX="0.5" pY="0.5" oX="0" oY="1" oW="112" oH="216"/>
+</TextureAtlas>

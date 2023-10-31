@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:91fc88872d63963693d7d18a49772c45:67cc92eca74acd70b906197674650f92:a5f9ae2493c9e14a337f3608ed78f779$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_DE_costume_04_sheet.png" width="128" height="128">
+	<!-- original anchor = (61, 110) -> new anchor (47, 110) diff = (14, 0)-->
+	<!-- add it to texturepacker output offsets (1, 1) -> (15, 1)-->
+    <sprite n="DE_glasses_back.png" x="2" y="69" w="45" h="45" pX="0.5" pY="0.5" oX="15" oY="1" oW="48" oH="48"/>
+
+	<!-- original anchor = (61, 110) -> new anchor (36, 111) diff = (25, -1)-->
+	<!-- add it to texturepacker output offsets (0, 0) -> (25, -1)-->
+    <sprite n="DE_glasses_front.png" x="2" y="2" w="88" h="65" pX="0.5" pY="0.5" oX="25" oY="-1" oW="90" oH="68"/>
+</TextureAtlas>

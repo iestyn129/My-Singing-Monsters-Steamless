@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b126cf8d25608b14dae36ddee1b3b887:507c0393333ced4b82070791dc68310d:109e6b6fbac4223e1ba755c6f29f6d72$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island07_sheet01_lifeformula.png" width="2048" height="2048" hires="true">
+    <sprite n="island07_bubble01" x="1909" y="1191" w="138" h="138" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="140"/>
+    <sprite n="island07_bubbler01" x="1670" y="1191" w="237" h="314" pX="0.5" pY="0.5" oX="7" oY="25" oW="328" oH="290" r="y"/>
+    <sprite n="island07_burns" x="1" y="1445" w="787" h="489" pX="0.5" pY="0.5" oX="3" oY="0" oW="492" oH="793" r="y"/>
+    <sprite n="island07_burns_hand" x="420" y="1936" w="218" h="110" pX="0.5" pY="0.5" oX="3" oY="3" oW="116" oH="224" r="y"/>
+    <sprite n="island07_burns_statue" x="1651" y="877" w="308" h="312" pX="0.5" pY="0.5" oX="6" oY="2" oW="320" oH="320"/>
+    <sprite n="island07_dragonfly_01" x="1922" y="1611" w="94" h="84" pX="0.5" pY="0.5" oX="38" oY="12" oW="140" oH="100"/>
+    <sprite n="island07_dragonfly_02" x="640" y="1936" w="118" h="90" pX="0.5" pY="0.5" oX="14" oY="7" oW="140" oH="100"/>
+    <sprite n="island07_dragonfly_03" x="678" y="1269" w="84" h="127" pX="0.5" pY="0.5" oX="5" oY="13" oW="140" oH="100" r="y"/>
+    <sprite n="island07_dragonfly_04" x="1325" y="1691" w="119" h="91" pX="0.5" pY="0.5" oX="13" oY="6" oW="140" oH="100"/>
+    <sprite n="island07_ear" x="1" y="633" w="675" h="810" pX="0.5" pY="0.5" oX="3" oY="0" oW="680" oH="810"/>
+    <sprite n="island07_edge" x="1655" y="1" w="313" h="874" pX="0.5" pY="0.5" oX="7" oY="4" oW="324" oH="888"/>
+    <sprite n="island07_edge_jeeode" x="1452" y="1244" w="216" h="329" pX="0.5" pY="0.5" oX="4" oY="3" oW="224" oH="336"/>
+    <sprite n="island07_eyeclosed" x="678" y="635" w="708" h="632" pX="0.5" pY="0.5"/>
+    <sprite n="island07_glow" x="1452" y="1575" w="259" h="260" pX="0.5" pY="0.5" oX="1" oY="0" oW="260" oH="260"/>
+    <sprite n="island07_hair01" x="1195" y="1269" w="128" h="578" pX="0.5" pY="0.5" oX="4" oY="0" oW="132" oH="578"/>
+    <sprite n="island07_hair02" x="1970" y="1" w="72" h="410" pX="0.5" pY="0.5" oX="2" oY="0" oW="74" oH="410"/>
+    <sprite n="island07_hair03" x="1" y="1936" w="417" h="109" pX="0.5" pY="0.5" oX="0" oY="4" oW="110" oH="424" r="y"/>
+    <sprite n="island07_hair04" x="790" y="1771" w="402" h="112" pX="0.5" pY="0.5" oX="0" oY="3" oW="114" oH="408" r="y"/>
+    <sprite n="island07_nose" x="790" y="1269" w="403" h="500" pX="0.5" pY="0.5" oX="2" oY="2" oW="418" oH="502"/>
+    <sprite n="island07_reeds" x="1325" y="1837" w="339" h="178" pX="0.5" pY="0.5" oX="3" oY="13" oW="184" oH="352" r="y"/>
+    <sprite n="island07_small_horn01" x="1713" y="1507" w="207" h="323" pX="0.5" pY="0.5" oX="1" oY="1" oW="326" oH="208" r="y"/>
+    <sprite n="island07_small_horns" x="1388" y="635" w="261" h="607" pX="0.5" pY="0.5" oX="3" oY="1" oW="272" oH="608"/>
+    <sprite n="island07_stone_arackulele" x="1666" y="1837" w="183" h="195" pX="0.5" pY="0.5" oX="8" oY="6" oW="200" oH="208"/>
+    <sprite n="island07_stone_fungpray" x="1909" y="1425" w="95" h="76" pX="0.5" pY="0.5" oX="8" oY="4" oW="92" oH="104" r="y"/>
+    <sprite n="island07_stone_grumpyre" x="1851" y="1832" w="143" h="149" pX="0.5" pY="0.5" oX="6" oY="3" oW="156" oH="156"/>
+    <sprite n="island07_stone_humbug" x="1922" y="1503" w="99" h="106" pX="0.5" pY="0.5" oX="2" oY="4" oW="110" oH="108" r="y"/>
+    <sprite n="island07_stone_jellbilly" x="1909" y="1331" w="138" h="92" pX="0.5" pY="0.5" oX="7" oY="8" oW="152" oH="108"/>
+    <sprite n="island07_stumpcenter" x="1" y="1" w="900" h="630" pX="0.5" pY="0.5" oX="99" oY="0" oW="1002" oH="630"/>
+    <sprite n="island07_stumpside" x="903" y="1" w="750" h="632" pX="0.5" pY="0.5" oX="5" oY="5" oW="762" oH="640"/>
+    <sprite n="island07_stumpside_whisp_01" x="1325" y="1269" w="125" h="420" pX="0.5" pY="0.5" oX="5" oY="8" oW="136" oH="436"/>
+</TextureAtlas>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b67a1d358bd831f24feae74114de6e18:0b87ecf21a3713d6192e6462a6d3b1c5:da9e8af89c9a1e25360bb865208803ec$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T02_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T02_back_lower_leg.png" x="492" y="681" w="16" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T02_back_upper_leg.png" x="471" y="723" w="38" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="T02_body.png" x="414" y="567" w="88" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="T02_braces.png" x="2" y="662" w="175" h="120" pX="0.5" pY="0.5" oX="0" oY="0" oW="176" oH="120"/>
+    <sprite n="T02_elbow_fingers.png" x="306" y="554" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="T02_eye_01.png" x="471" y="697" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T02_eye_02.png" x="388" y="698" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T02_eye_03.png" x="388" y="712" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T02_feathers.png" x="426" y="350" w="71" h="98" pX="0.5" pY="0.5" oX="0" oY="1" oW="98" oH="72" r="y"/>
+    <sprite n="T02_foot.png" x="492" y="639" w="18" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T02_front_lower_leg.png" x="297" y="712" w="16" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T02_front_upper_leg.png" x="452" y="771" w="52" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="T02_glow.png" x="179" y="666" w="116" h="116" pX="0.5" pY="0.5" oX="0" oY="0" oW="118" oH="116"/>
+    <sprite n="T02_glow_crack_01.png" x="68" y="825" w="62" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T02_glow_crack_02.png" x="342" y="404" w="70" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="T02_glow_crack_03.png" x="414" y="511" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_glow_crack_04.png" x="402" y="639" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_hand_01.png" x="433" y="819" w="65" h="46" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="48"/>
+    <sprite n="T02_hand_02.png" x="402" y="697" w="67" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="68" oH="48"/>
+    <sprite n="T02_hand_03.png" x="319" y="698" w="67" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_04.png" x="315" y="740" w="67" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_05.png" x="384" y="741" w="66" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_06.png" x="2" y="867" w="44" h="65" pX="0.5" pY="0.5" oX="0" oY="2" oW="68" oH="48" r="y"/>
+    <sprite n="T02_hand_07.png" x="48" y="867" w="45" h="63" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="48" r="y"/>
+    <sprite n="T02_hand_08.png" x="48" y="932" w="47" h="61" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="48" r="y"/>
+    <sprite n="T02_hand_09.png" x="2" y="934" w="44" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="68" oH="48" r="y"/>
+    <sprite n="T02_hand_10.png" x="2" y="825" w="64" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_11.png" x="297" y="782" w="66" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_12.png" x="365" y="783" w="66" h="40" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48"/>
+    <sprite n="T02_hand_13.png" x="95" y="867" w="43" h="61" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48" r="y"/>
+    <sprite n="T02_hand_14.png" x="132" y="784" w="43" h="61" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="48" r="y"/>
+    <sprite n="T02_head.png" x="182" y="554" w="122" h="110" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_key_a.png" x="330" y="608" w="70" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="T02_key_b.png" x="342" y="506" w="70" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="T02_key_c.png" x="426" y="254" w="72" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="T02_key_d.png" x="426" y="148" w="74" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="T02_key_e.png" x="426" y="50" w="76" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="T02_key_f.png" x="414" y="450" w="94" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="94" r="y"/>
+    <sprite n="T02_lower_arm.png" x="306" y="598" w="22" h="66" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_mouth_01.png" x="502" y="148" w="8" h="24" pX="0.5" pY="0.5" oX="0" oY="2" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_02.png" x="500" y="254" w="9" h="24" pX="0.5" pY="0.5" oX="0" oY="1" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_03.png" x="499" y="350" w="11" h="24" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_04.png" x="499" y="376" w="11" h="22" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_05.png" x="306" y="584" w="24" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T02_mouth_06.png" x="499" y="400" w="11" h="19" pX="0.5" pY="0.5" oX="5" oY="1" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_07.png" x="502" y="196" w="8" h="12" pX="0.5" pY="0.5" oX="4" oY="2" oW="24" oH="12" r="y"/>
+    <sprite n="T02_mouth_08.png" x="502" y="174" w="8" h="20" pX="0.5" pY="0.5" oX="1" oY="2" oW="24" oH="12" r="y"/>
+    <sprite n="T02_neck.png" x="426" y="2" w="82" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_shadow.png" x="2" y="404" w="338" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="T02_shadow_small.png" x="2" y="554" w="178" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="T02_statue.png" x="2" y="2" w="422" h="400" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T02_upper_arm.png" x="297" y="666" w="20" h="44" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

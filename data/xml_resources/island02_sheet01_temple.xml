@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d9d3c230c26e56cedcb8ae1dfceaf98c:98bd2565252517a9d79b59c2d8995d90:6fd8bbb99699c23d8cb5ab67e596b915$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island02_sheet01_temple.png" width="2048" height="2048" hires="true">
+    <sprite n="island02_centre_cover" x="691" y="628" w="159" h="110" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="160" r="y"/>
+    <sprite n="island02_centre_platform" x="328" y="1340" w="624" h="695" pX="0.5" pY="0.5" oX="0" oY="0" oW="624" oH="696"/>
+    <sprite n="island02_eye_glow" x="691" y="2" w="258" h="254" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_face_01" x="954" y="2" w="984" h="830" pX="0.5" pY="0.5"/>
+    <sprite n="island02_face_02" x="2" y="2" w="687" h="1336" pX="0.5" pY="0.5"/>
+    <sprite n="island02_glow" x="691" y="258" w="258" h="254" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_monk_01" x="1940" y="177" w="63" h="48" pX="0.5" pY="0.5" oX="2" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_02" x="1940" y="227" w="63" h="48" pX="0.5" pY="0.5" oX="2" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_03" x="1940" y="126" w="63" h="49" pX="0.5" pY="0.5" oX="1" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_04" x="1940" y="277" w="63" h="48" pX="0.5" pY="0.5" oX="2" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_05" x="1940" y="327" w="63" h="48" pX="0.5" pY="0.5" oX="2" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_06" x="1940" y="74" w="63" h="50" pX="0.5" pY="0.5" oX="2" oY="4" oW="53" oH="71" r="y"/>
+    <sprite n="island02_monk_shadow" x="927" y="514" w="24" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_monk_shadow_wall" x="1940" y="2" w="84" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_nose" x="2" y="1340" w="324" h="700" pX="0.5" pY="0.5"/>
+    <sprite n="island02_side_cover_01" x="691" y="514" w="234" h="112" pX="0.5" pY="0.5" oX="14" oY="8" oW="180" oH="252" r="y"/>
+    <sprite n="island02_side_platform_02" x="954" y="834" w="412" h="1141" pX="0.5" pY="0.5" oX="3" oY="0" oW="415" oH="1141"/>
+    <sprite n="w2_cloud" x="1368" y="834" w="412" h="900" pX="0.5" pY="0.5" oX="0" oY="3" oW="900" oH="420" r="y"/>
+</TextureAtlas>

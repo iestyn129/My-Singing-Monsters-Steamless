@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2d7c00cb921c61611d5ca5f8a4dd84c7:dbdf1cf7a4ef4c9e7dd3b19b57a49df7:0eb974475a8ab93ceda9026e84abe6d2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U13_RARE_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="beam" x="944" y="129" w="70" h="226" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228"/>
+    <sprite n="Eyeballs" x="870" y="194" w="64" h="59" pX="0.5" pY="0.5" oX="43" oY="54" oW="146" oH="160" r="y"/>
+    <sprite n="Eyelids 1" x="712" y="1302" w="118" h="118" pX="0.5" pY="0.5" oX="14" oY="21" oW="146" oH="160"/>
+    <sprite n="Eyelids 2" x="832" y="1302" w="117" h="110" pX="0.5" pY="0.5" oX="14" oY="21" oW="146" oH="160" r="y"/>
+    <sprite n="Eyelids 3" x="832" y="1414" w="116" h="106" pX="0.5" pY="0.5" oX="14" oY="20" oW="146" oH="160" r="y"/>
+    <sprite n="Eyelids 4" x="839" y="381" w="93" h="110" pX="0.5" pY="0.5" oX="14" oY="21" oW="146" oH="160"/>
+    <sprite n="Eyelids 5" x="934" y="357" w="85" h="119" pX="0.5" pY="0.5" oX="13" oY="17" oW="146" oH="160"/>
+    <sprite n="Eyelids 6" x="712" y="1422" w="116" h="90" pX="0.5" pY="0.5" oX="8" oY="19" oW="146" oH="160" r="y"/>
+    <sprite n="Finger 1 Base" x="870" y="255" w="62" h="124" pX="0.5" pY="0.5" oX="17" oY="22" oW="136" oH="154"/>
+    <sprite n="Finger 1" x="508" y="1458" w="111" h="92" pX="0.5" pY="0.5" oX="10" oY="11" oW="136" oH="154"/>
+    <sprite n="Finger 2 Base" x="704" y="1514" w="100" h="90" pX="0.5" pY="0.5" oX="21" oY="24" oW="156" oH="138" r="y"/>
+    <sprite n="Finger 2" x="755" y="910" w="60" h="128" pX="0.5" pY="0.5" oX="14" oY="14" oW="156" oH="138" r="y"/>
+    <sprite n="Finger 3 Base" x="934" y="478" w="85" h="101" pX="0.5" pY="0.5" oX="38" oY="30" oW="138" oH="136"/>
+    <sprite n="Finger 3" x="944" y="2" w="75" h="125" pX="0.5" pY="0.5" oX="6" oY="14" oW="138" oH="136" r="y"/>
+    <sprite n="Finger 4 Base" x="164" y="1432" w="146" h="57" pX="0.5" pY="0.5" oX="12" oY="15" oW="170" oH="112"/>
+    <sprite n="Finger 4" x="621" y="1458" w="81" h="79" pX="0.5" pY="0.5" oX="77" oY="16" oW="170" oH="112" r="y"/>
+    <sprite n="Glow_01" x="2" y="612" w="591" h="539" pX="0.5" pY="0.5" oX="56" oY="84" oW="700" oH="700"/>
+    <sprite n="Glow_02" x="2" y="2" w="619" h="608" pX="0.5" pY="0.5" oX="55" oY="47" oW="700" oH="700" r="y"/>
+    <sprite n="glow_spot" x="933" y="581" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="Hair 1" x="2" y="1153" w="189" h="101" pX="0.5" pY="0.5" oX="14" oY="75" oW="232" oH="224"/>
+    <sprite n="Hair 2" x="2" y="1256" w="179" h="128" pX="0.5" pY="0.5" oX="25" oY="41" oW="232" oH="224"/>
+    <sprite n="Hair 3" x="349" y="1388" w="157" h="143" pX="0.5" pY="0.5" oX="47" oY="26" oW="232" oH="224"/>
+    <sprite n="Hair 4" x="553" y="1302" w="157" h="154" pX="0.5" pY="0.5" oX="52" oY="15" oW="232" oH="224"/>
+    <sprite n="Hair 5" x="829" y="493" w="102" h="202" pX="0.5" pY="0.5" oX="6" oY="76" oW="232" oH="224" r="y"/>
+    <sprite n="Hair 6" x="377" y="1153" w="177" h="113" pX="0.5" pY="0.5" oX="29" oY="76" oW="232" oH="224"/>
+    <sprite n="Hair 7" x="377" y="1268" w="174" h="118" pX="0.5" pY="0.5" oX="28" oY="76" oW="232" oH="224"/>
+    <sprite n="Hair Base" x="164" y="1491" w="135" h="96" pX="0.5" pY="0.5" oX="125" oY="68" oW="232" oH="224" r="y"/>
+    <sprite n="Head Shadow" x="623" y="2" w="319" h="190" pX="0.5" pY="0.5" oX="18" oY="95" oW="400" oH="290"/>
+    <sprite n="Head" x="2" y="1386" w="160" h="129" pX="0.5" pY="0.5" oX="0" oY="8" oW="160" oH="146"/>
+    <sprite n="Left Pupil" x="755" y="1040" w="38" h="39" pX="0.5" pY="0.5" oX="53" oY="61" oW="146" oH="160"/>
+    <sprite n="Lower Jaw" x="595" y="910" w="158" h="199" pX="0.5" pY="0.5" oX="5" oY="13" oW="168" oH="224"/>
+    <sprite n="Neck 1" x="623" y="328" w="214" h="163" pX="0.5" pY="0.5" oX="13" oY="19" oW="188" oH="238" r="y"/>
+    <sprite n="Neck 2" x="193" y="1153" w="182" h="130" pX="0.5" pY="0.5" oX="21" oY="13" oW="156" oH="210" r="y"/>
+    <sprite n="Neck 3" x="2" y="1517" w="119" h="115" pX="0.5" pY="0.5" oX="15" oY="19" oW="146" oH="156" r="y"/>
+    <sprite n="Neck 4" x="183" y="1285" w="164" h="145" pX="0.5" pY="0.5" oX="3" oY="13" oW="150" oH="190" r="y"/>
+    <sprite n="Plate" x="829" y="697" w="190" h="415" pX="0.5" pY="0.5" oX="5" oY="3" oW="422" oH="204" r="y"/>
+    <sprite n="Shadow50percent" x="623" y="194" w="245" h="132" pX="0.5" pY="0.5" oX="10" oY="9" oW="266" oH="144"/>
+    <sprite n="Torso Back" x="595" y="1114" w="419" h="186" pX="0.5" pY="0.5" oX="13" oY="18" oW="444" oH="204"/>
+    <sprite n="Torso Front" x="623" y="493" w="204" h="415" pX="0.5" pY="0.5" oX="8" oY="4" oW="432" oH="213" r="y"/>
+</TextureAtlas>

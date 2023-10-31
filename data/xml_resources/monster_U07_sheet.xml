@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:56d9aa878a65e03284293af3f776c45c:f8fa01bca25e510d5b10d66ddb329c67:98503fad78275ea66a9710818a19d766$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U07_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U06_body_base" x="335" y="446" w="66" h="139" pX="0.5" pY="0.5" oX="10" oY="11" oW="160" oH="88" r="y"/>
+    <sprite n="U06_branch01" x="2" y="541" w="139" h="72" pX="0.5" pY="0.5" oX="8" oY="10" oW="156" oH="92"/>
+    <sprite n="U06_branch02" x="204" y="297" w="197" h="147" pX="0.5" pY="0.5" oX="0" oY="10" oW="156" oH="216" r="y"/>
+    <sprite n="U06_branch03" x="401" y="718" w="101" h="53" pX="0.5" pY="0.5" oX="9" oY="11" oW="120" oH="68"/>
+    <sprite n="U06_branch04" x="2" y="297" w="200" h="90" pX="0.5" pY="0.5" oX="11" oY="9" oW="112" oH="220" r="y"/>
+    <sprite n="U06_eyelids_01" x="143" y="541" w="42" h="71" pX="0.5" pY="0.5" oX="10" oY="11" oW="92" oH="64" r="y"/>
+    <sprite n="U06_eyelids_02" x="143" y="614" w="42" h="71" pX="0.5" pY="0.5" oX="10" oY="11" oW="92" oH="64" r="y"/>
+    <sprite n="U06_eyelids_03" x="2" y="951" w="42" h="71" pX="0.5" pY="0.5" oX="10" oY="11" oW="92" oH="64" r="y"/>
+    <sprite n="U06_eyelids_04" x="46" y="951" w="42" h="71" pX="0.5" pY="0.5" oX="10" oY="11" oW="92" oH="64" r="y"/>
+    <sprite n="U06_foot_1" x="403" y="520" w="105" h="112" pX="0.5" pY="0.5" oX="9" oY="9" oW="124" oH="132"/>
+    <sprite n="U06_foot_2" x="465" y="2" w="45" h="117" pX="0.5" pY="0.5" oX="10" oY="11" oW="136" oH="68" r="y"/>
+    <sprite n="U06_foot_3" x="187" y="585" w="139" h="68" pX="0.5" pY="0.5" oX="11" oY="10" oW="160" oH="88"/>
+    <sprite n="U06_head" x="2" y="389" w="168" h="150" pX="0.5" pY="0.5" oX="12" oY="12" oW="164" oH="192" r="y"/>
+    <sprite n="U06_left_hand_01" x="100" y="811" w="82" h="89" pX="0.5" pY="0.5" oX="11" oY="10" oW="112" oH="108" r="y"/>
+    <sprite n="U06_left_hand_02" x="184" y="833" w="90" h="78" pX="0.5" pY="0.5" oX="11" oY="11" oW="112" oH="108"/>
+    <sprite n="U06_left_hand_03" x="282" y="807" w="90" h="79" pX="0.5" pY="0.5" oX="11" oY="10" oW="112" oH="108"/>
+    <sprite n="U06_left_hand_04" x="2" y="863" w="90" h="86" pX="0.5" pY="0.5" oX="11" oY="10" oW="112" oH="108"/>
+    <sprite n="U06_left_lowerarm" x="187" y="725" w="93" h="52" pX="0.5" pY="0.5" oX="11" oY="10" oW="116" oH="72"/>
+    <sprite n="U06_left_upperarm" x="401" y="634" w="109" h="41" pX="0.5" pY="0.5" oX="11" oY="9" oW="132" oH="60"/>
+    <sprite n="U06_lowerbody" x="192" y="446" w="141" h="137" pX="0.5" pY="0.5" oX="15" oY="11" oW="172" oH="164" r="y"/>
+    <sprite n="U06_mouth_01" x="282" y="725" w="34" h="68" pX="0.5" pY="0.5" oX="37" oY="19" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_02" x="465" y="121" w="45" h="93" pX="0.5" pY="0.5" oX="25" oY="16" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_03" x="465" y="216" w="45" h="93" pX="0.5" pY="0.5" oX="25" oY="16" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_04" x="2" y="658" w="122" h="59" pX="0.5" pY="0.5" oX="9" oY="10" oW="140" oH="88"/>
+    <sprite n="U06_mouth_05" x="126" y="687" w="59" h="122" pX="0.5" pY="0.5" oX="9" oY="10" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_06" x="401" y="773" w="96" h="59" pX="0.5" pY="0.5" oX="22" oY="14" oW="140" oH="88"/>
+    <sprite n="U06_mouth_07" x="2" y="802" w="96" h="59" pX="0.5" pY="0.5" oX="22" oY="14" oW="140" oH="88"/>
+    <sprite n="U06_mouth_08" x="403" y="297" w="60" h="73" pX="0.5" pY="0.5" oX="33" oY="18" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_09" x="403" y="372" w="60" h="73" pX="0.5" pY="0.5" oX="33" oY="18" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_10" x="219" y="913" w="50" h="54" pX="0.5" pY="0.5" oX="46" oY="20" oW="140" oH="88"/>
+    <sprite n="U06_mouth_11" x="219" y="969" w="54" h="50" pX="0.5" pY="0.5" oX="46" oY="20" oW="140" oH="88" r="y"/>
+    <sprite n="U06_mouth_12" x="465" y="430" w="43" h="40" pX="0.5" pY="0.5" oX="53" oY="23" oW="140" oH="88"/>
+    <sprite n="U06_neck01" x="465" y="311" w="44" h="117" pX="0.5" pY="0.5" oX="11" oY="10" oW="140" oH="64" r="y"/>
+    <sprite n="U06_neck02" x="2" y="615" w="124" h="41" pX="0.5" pY="0.5" oX="10" oY="9" oW="144" oH="60"/>
+    <sprite n="U06_pupil" x="172" y="470" w="14" h="14" pX="0.5" pY="0.5" oX="9" oY="9" oW="32" oH="32"/>
+    <sprite n="U06_ribbon" x="172" y="389" w="18" h="79" pX="0.5" pY="0.5" oX="11" oY="10" oW="40" oH="100"/>
+    <sprite n="U06_right_fingers_01" x="403" y="447" w="60" h="71" pX="0.5" pY="0.5" oX="12" oY="10" oW="84" oH="92"/>
+    <sprite n="U06_right_fingers_02" x="90" y="951" w="62" h="70" pX="0.5" pY="0.5" oX="10" oY="11" oW="84" oH="92"/>
+    <sprite n="U06_right_fingers_03" x="328" y="587" w="71" h="60" pX="0.5" pY="0.5" oX="12" oY="10" oW="84" oH="92" r="y"/>
+    <sprite n="U06_right_fingers_04" x="328" y="649" w="71" h="57" pX="0.5" pY="0.5" oX="15" oY="10" oW="84" oH="92" r="y"/>
+    <sprite n="U06_right_hand_01" x="154" y="913" w="63" h="63" pX="0.5" pY="0.5" oX="10" oY="12" oW="116" oH="100"/>
+    <sprite n="U06_right_hand_02" x="321" y="708" w="78" h="97" pX="0.5" pY="0.5" oX="9" oY="11" oW="116" oH="100" r="y"/>
+    <sprite n="U06_right_lowerarm" x="187" y="779" w="93" h="52" pX="0.5" pY="0.5" oX="11" oY="10" oW="116" oH="72"/>
+    <sprite n="U06_right_upperarm" x="401" y="677" w="109" h="39" pX="0.5" pY="0.5" oX="11" oY="10" oW="132" oH="60"/>
+    <sprite n="U06_shadow" x="187" y="655" w="132" h="68" pX="0.5" pY="0.5" oX="10" oY="10" oW="152" oH="88"/>
+    <sprite n="U06_upperbody" x="2" y="719" w="112" h="81" pX="0.5" pY="0.5" oX="13" oY="12" oW="104" oH="136" r="y"/>
+    <sprite n="U07_statue" x="2" y="2" w="461" h="293" pX="0.5" pY="0.5" oX="12" oY="14" oW="316" oH="488" r="y"/>
+</TextureAtlas>

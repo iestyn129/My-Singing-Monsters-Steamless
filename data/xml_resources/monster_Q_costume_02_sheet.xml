@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:965f03a4132ed4db08cc054e9d3a01e6:865515bb42febd8972f3e8e6520c260d:49be381cdecf80af0ac4eba5652a966d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_Q_costume_02_sheet.png" width="256" height="512" hires="true">
+
+		<!-- original anchor = (39, 54) -> new anchor (39, 57) diff = (0, -3)-->
+		<!-- add double it to texturepacker output offsets (22, 0) -> (22, -6), cause hires-->
+    <sprite n="Q01_headtop_02.png" x="2" y="355" w="124" h="112" oX="22" oY="-6" oW="156" oH="128" r="y"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (39, 56) diff = (0, -2)-->
+		<!-- add double it to texturepacker output offsets (22, 14) -> (22, 10), cause hires-->	
+    <sprite n="Q02_headtop_02.png" x="2" y="128" w="133" h="114" oX="22" oY="10" oW="156" oH="128"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (39, 56) diff = (0, -2)-->
+		<!-- add double it to texturepacker output offsets (14, 0) -> (14, -4), cause hires-->
+    <sprite n="Q03_headtop_02.png" x="2" y="244" w="128" h="109" oX="14" oY="-4" oW="156" oH="128" r="y"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (37, 55) diff = (2, -1)-->
+		<!-- add double it to texturepacker output offsets (30, 0) -> (34, -2), cause hires-->
+    <sprite n="Q04_headtop_02.png" x="151" y="119" w="96" h="126" oX="34" oY="-2" oW="156" oH="128"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (38, 53) diff = (1, 1)-->
+		<!-- add double it to texturepacker output offsets (16, 3) -> (18, 5), cause hires-->
+    <sprite n="Q05_headtop_02.png" x="132" y="247" w="121" h="117" oX="18" oY="5" oW="156" oH="128"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (39, 57) diff = (0, -3)-->
+		<!-- add double it to texturepacker output offsets (5, 1) -> (5, -5), cause hires-->
+    <sprite n="Q06_headtop_02.png" x="2" y="2" w="147" h="124" oX="5" oY="-5" oW="156" oH="128"/>
+
+		<!-- original anchor = (39, 54) -> new anchor (37, 54) diff = (2, 0)-->
+		<!-- add double it to texturepacker output offsets (26, 10) -> (30, 10), cause hires-->
+    <sprite n="Q07_headtop_02.png" x="151" y="2" w="103" h="115" oX="30" oY="10" oW="156" oH="128"/>
+		
+    <sprite n="Q_eyeball.png" x="81" y="469" w="26" h="27" oX="11" oY="12" oW="48" oH="48"/>
+    <sprite n="Q_mouth_01.png" x="109" y="469" w="80" h="24" oX="11" oY="15" oW="104" oH="80"/>
+    <sprite n="Q_mouth_02.png" x="2" y="469" w="77" h="35" oX="13" oY="14" oW="104" oH="80"/>
+    <sprite n="Q_mouth_03.png" x="128" y="366" w="44" h="78" oX="13" oY="14" oW="104" oH="80" r="y"/>
+    <sprite n="Q_mouth_04.png" x="191" y="366" w="54" h="78" oX="13" oY="14" oW="104" oH="80" r="y"/>
+</TextureAtlas>

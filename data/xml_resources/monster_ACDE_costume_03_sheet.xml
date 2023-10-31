@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:12721a985d12cee58bcc17ca0f336ff7:4aafd2560da2a334132f309c36006136:42330ab1693b12b4bd665ec3ea0f047e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ACDE_costume_03_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (20, 10) -> new anchor (30, 10) diff = (-10, 0)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (-19, 2), because hires-->
+    <sprite n="ACDE_left_foot_wrapped.png" x="2" y="95" w="156" h="126" pX="0.5" pY="0.5" oX="-19" oY="2" oW="160" oH="130"/>
+    <sprite n="ACDE_left_leg_wrapped.png" x="2" y="2" w="175" h="91" pX="0.5" pY="0.5" oX="1" oY="0" oW="92" oH="178" r="y"/>
+	<!-- original anchor = (18, 9) -> new anchor (18, 12) diff = (0, -3)-->
+	<!-- add double it to texturepacker output offsets (2, 9) -> (0, 3), because hires-->
+    <sprite n="ACDE_right_foot_wrapped.png" x="2" y="223" w="148" h="108" pX="0.5" pY="0.5" oX="2" oY="3" oW="150" oH="120"/>
+    <sprite n="ACDE_right_leg_wrapped.png" x="160" y="95" w="86" h="129" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="136"/>
+</TextureAtlas>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:87c580a6bed0074002356d0187a9312a:7016ec95a30cb08a9063abf9b8ffca2b:440c5162c9af8419cd1aefcb3d93629f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island16_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="bottom_head" x="1313" y="445" w="732" h="228" pX="0.5" pY="0.5"/>
+    <sprite n="centre_platform" x="942" y="509" w="369" h="775" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ear" x="1715" y="675" w="298" h="1192" pX="0.5" pY="0.5" oX="5" oY="0" oW="303" oH="1192"/>
+    <sprite n="extra_lump" x="1715" y="1869" w="210" h="169" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye" x="505" y="370" w="435" h="352" pX="0.5" pY="0.5"/>
+    <sprite n="feathers_01" x="1020" y="1286" w="693" h="750" pX="0.5" pY="0.5"/>
+    <sprite n="feathers_02" x="505" y="724" w="261" h="526" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="feathers_03" x="2" y="1363" w="262" h="669" pX="0.5" pY="0.5" oX="0" oY="0" oW="670" oH="262" r="y"/>
+    <sprite n="feathers_04" x="1313" y="675" w="389" h="288" pX="0.5" pY="0.5"/>
+    <sprite n="feathers_05" x="266" y="1363" w="752" h="630" pX="0.5" pY="0.5"/>
+    <sprite n="glow_orange" x="1313" y="965" w="287" h="290" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_blue" x="1017" y="445" w="65" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_blue_glow" x="942" y="370" w="73" h="70" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_red" x="266" y="1995" w="69" h="47" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_red_glow" x="1602" y="965" w="89" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_yellow" x="337" y="1995" w="54" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_yellow_glow" x="942" y="442" w="73" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="side_head" x="2" y="2" w="501" h="1359" pX="0.5" pY="0.5"/>
+    <sprite n="side_lumps" x="505" y="2" w="458" h="366" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform" x="1020" y="2" w="973" h="441" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0234ce4dc3cd3bc4b18d0e7c057d0f50:4b7a5f1c5d61915c1777766d0aa1fbeb:0cf2dfcb0c0e1f6ec1c4e05e339287f7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/colossal_calendar_plant_sheet.png" width="1024" height="1024">
+    <sprite n="BG_glow" x="2" y="791" w="200" h="200" pX="0.5" pY="0.5"/>
+    <sprite n="calendar_ring_01" x="609" y="546" w="54" h="55" pX="0.5" pY="0.5" oX="49" oY="48" oW="152" oH="152"/>
+    <sprite n="calendar_ring_02" x="819" y="466" w="83" h="82" pX="0.5" pY="0.5" oX="35" oY="34" oW="152" oH="152" r="y"/>
+    <sprite n="calendar_ring_03" x="694" y="407" w="123" h="123" pX="0.5" pY="0.5" oX="15" oY="14" oW="152" oH="152"/>
+    <sprite n="calendar_ring_04" x="508" y="612" w="138" h="139" pX="0.5" pY="0.5" oX="7" oY="6" oW="152" oH="152"/>
+    <sprite n="calendar_ring_05" x="123" y="301" w="145" h="146" pX="0.5" pY="0.5" oX="3" oY="3" oW="152" oH="152" r="y"/>
+    <sprite n="calendar_soft_glow" x="2" y="449" w="320" h="340" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="calendar_soft_puzzle_glow" x="819" y="253" w="93" h="93" pX="0.5" pY="0.5" oX="5" oY="4" oW="100" oH="100"/>
+    <sprite n="plant_BG_deco_lower_left" x="123" y="2" w="92" h="297" pX="0.5" pY="0.5" oX="0" oY="3" oW="164" oH="300"/>
+    <sprite n="plant_BG_deco_upper_left" x="609" y="414" w="83" h="130" pX="0.5" pY="0.5" oX="0" oY="0" oW="164" oH="300"/>
+    <sprite n="plant_BG_deco_upper_right" x="2" y="2" w="119" h="445" pX="0.5" pY="0.5" oX="45" oY="0" oW="164" oH="456"/>
+    <sprite n="puzzle_01" x="916" y="209" w="102" h="98" pX="0.5" pY="0.5" oX="5" oY="9" oW="108" oH="120" r="y"/>
+    <sprite n="puzzle_02" x="910" y="421" w="110" h="88" pX="0.5" pY="0.5" oX="3" oY="3" oW="96" oH="116" r="y"/>
+    <sprite n="puzzle_03" x="914" y="309" w="92" h="110" pX="0.5" pY="0.5" oX="6" oY="3" oW="104" oH="116"/>
+    <sprite n="puzzle_04" x="840" y="122" w="74" h="109" pX="0.5" pY="0.5" oX="0" oY="7" oW="112" oH="88" r="y"/>
+    <sprite n="puzzle_05" x="624" y="276" w="80" h="129" pX="0.5" pY="0.5" oX="6" oY="6" oW="144" oH="92" r="y"/>
+    <sprite n="puzzle_06" x="760" y="131" w="78" h="120" pX="0.5" pY="0.5" oX="5" oY="1" oW="132" oH="80" r="y"/>
+    <sprite n="puzzle_07" x="917" y="96" w="103" h="111" pX="0.5" pY="0.5" oX="4" oY="5" oW="124" oH="112" r="y"/>
+    <sprite n="puzzle_08" x="809" y="2" w="106" h="118" pX="0.5" pY="0.5" oX="2" oY="1" oW="112" oH="120"/>
+    <sprite n="puzzle_09" x="456" y="2" w="120" h="137" pX="0.5" pY="0.5" oX="0" oY="1" oW="120" oH="140"/>
+    <sprite n="puzzle_10" x="324" y="621" w="68" h="160" pX="0.5" pY="0.5" oX="1" oY="4" oW="72" oH="168"/>
+    <sprite n="puzzle_11" x="438" y="289" w="93" h="148" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="156"/>
+    <sprite n="puzzle_12" x="633" y="136" w="125" h="128" pX="0.5" pY="0.5" oX="2" oY="4" oW="132" oH="136"/>
+    <sprite n="puzzle_13" x="456" y="141" w="79" h="135" pX="0.5" pY="0.5" oX="1" oY="6" oW="84" oH="144"/>
+    <sprite n="puzzle_14" x="917" y="2" w="105" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="108" oH="100"/>
+    <sprite n="puzzle_15" x="648" y="603" w="106" h="125" pX="0.5" pY="0.5" oX="4" oY="2" oW="112" oH="128"/>
+    <sprite n="puzzle_16" x="465" y="905" w="107" h="117" pX="0.5" pY="0.5" oX="2" oY="2" oW="120" oH="112" r="y"/>
+    <sprite n="puzzle_17" x="537" y="141" w="94" h="133" pX="0.5" pY="0.5" oX="0" oY="1" oW="96" oH="136"/>
+    <sprite n="puzzle_18" x="339" y="783" w="91" h="174" pX="0.5" pY="0.5" oX="6" oY="1" oW="184" oH="96" r="y"/>
+    <sprite n="puzzle_19" x="706" y="266" w="97" h="121" pX="0.5" pY="0.5" oX="2" oY="3" oW="124" oH="104" r="y"/>
+    <sprite n="puzzle_20" x="538" y="753" w="129" h="137" pX="0.5" pY="0.5" oX="2" oY="2" oW="144" oH="136" r="y"/>
+    <sprite n="puzzle_21" x="339" y="959" w="124" h="61" pX="0.5" pY="0.5" oX="5" oY="4" oW="136" oH="72"/>
+    <sprite n="puzzle_22" x="533" y="278" w="89" h="134" pX="0.5" pY="0.5" oX="6" oY="4" oW="144" oH="100" r="y"/>
+    <sprite n="puzzle_23" x="695" y="2" w="112" h="127" pX="0.5" pY="0.5" oX="5" oY="4" oW="120" oH="136"/>
+    <sprite n="puzzle_24" x="394" y="621" w="112" h="140" pX="0.5" pY="0.5" oX="5" oY="2" oW="120" oH="148"/>
+    <sprite n="puzzle_25" x="574" y="892" w="116" h="130" pX="0.5" pY="0.5" oX="3" oY="2" oW="136" oH="120" r="y"/>
+    <sprite n="puzzle_26" x="578" y="2" w="115" h="132" pX="0.5" pY="0.5" oX="4" oY="4" oW="124" oH="140"/>
+    <sprite n="puzzle_27" x="819" y="348" w="89" h="116" pX="0.5" pY="0.5" oX="3" oY="3" oW="96" oH="124"/>
+    <sprite n="puzzle_28" x="432" y="763" w="104" h="140" pX="0.5" pY="0.5" oX="5" oY="2" oW="112" oH="148"/>
+    <sprite n="puzzle_BG" x="473" y="439" w="134" h="171" pX="0.5" pY="0.5" oX="0" oY="1" oW="172" oH="136" r="y"/>
+    <sprite n="puzzle_dot" x="665" y="546" w="47" h="47" pX="0.5" pY="0.5" oX="2" oY="2" oW="52" oH="52"/>
+    <sprite n="puzzle_final_01" x="217" y="2" w="237" h="285" pX="0.5" pY="0.5" oX="4" oY="1" oW="292" oH="240" r="y"/>
+    <sprite n="puzzle_special_01" x="324" y="445" w="147" h="174" pX="0.5" pY="0.5" oX="5" oY="3" oW="184" oH="152" r="y"/>
+    <sprite n="puzzle_special_02" x="270" y="289" w="166" h="154" pX="0.5" pY="0.5" oX="3" oY="3" oW="160" oH="172" r="y"/>
+    <sprite n="puzzle_special_03" x="204" y="791" w="133" h="187" pX="0.5" pY="0.5" oX="2" oY="4" oW="136" oH="196"/>
+    <sprite n="puzzle_star" x="904" y="511" w="83" h="79" pX="0.5" pY="0.5" oX="2" oY="4" oW="88" oH="88"/>
+</TextureAtlas>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:eef959de439d021ad17475bd4904cca1:2a5c8bbfef9266aa68dac6ee63681b60:808a47e13153ea7f367c49d1c749331c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U08_sheet.png" width="512" height="512" hires="true">
+    <sprite n="U08_body" x="238" y="160" w="190" h="132" pX="0.5" pY="0.5" oX="10" oY="10" oW="152" oH="212" r="y"/>
+    <sprite n="U08_drumhead" x="430" y="250" w="69" h="93" pX="0.5" pY="0.5" oX="11" oY="11" oW="92" oH="116"/>
+    <sprite n="U08_eyelid_01" x="271" y="467" w="45" h="40" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68" r="y"/>
+    <sprite n="U08_eyelid_02" x="318" y="467" w="45" h="40" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68" r="y"/>
+    <sprite n="U08_eyelid_03" x="365" y="467" w="45" h="40" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68" r="y"/>
+    <sprite n="U08_eyelid_04" x="271" y="398" w="40" h="45" pX="0.5" pY="0.5" oX="12" oY="11" oW="64" oH="68"/>
+    <sprite n="U08_face_backhorn" x="430" y="160" w="80" h="49" pX="0.5" pY="0.5" oX="9" oY="12" oW="68" oH="104" r="y"/>
+    <sprite n="U08_face_front" x="271" y="2" w="209" h="156" pX="0.5" pY="0.5" oX="10" oY="12" oW="176" oH="232" r="y"/>
+    <sprite n="U08_face_fronthorn" x="2" y="298" w="88" h="211" pX="0.5" pY="0.5" oX="12" oY="12" oW="236" oH="112" r="y"/>
+    <sprite n="U08_foot" x="313" y="398" w="36" h="45" pX="0.5" pY="0.5" oX="10" oY="12" oW="64" oH="60" r="y"/>
+    <sprite n="U08_head" x="92" y="298" w="177" h="210" pX="0.5" pY="0.5" oX="9" oY="10" oW="196" oH="232"/>
+    <sprite n="U08_left_claw" x="271" y="294" w="143" h="50" pX="0.5" pY="0.5" oX="9" oY="8" oW="164" oH="68"/>
+    <sprite n="U08_lowerarm" x="430" y="211" w="77" h="37" pX="0.5" pY="0.5" oX="10" oY="4" oW="96" oH="52"/>
+    <sprite n="U08_lowerleg" x="482" y="2" w="25" h="57" pX="0.5" pY="0.5" oX="9" oY="9" oW="44" oH="76"/>
+    <sprite n="U08_pupil" x="482" y="61" w="18" h="16" pX="0.5" pY="0.5" oX="12" oY="11" oW="40" oH="40" r="y"/>
+    <sprite n="U08_right_claw" x="271" y="346" w="125" h="50" pX="0.5" pY="0.5" oX="10" oY="8" oW="148" oH="68"/>
+    <sprite n="U08_shadow" x="416" y="345" w="62" h="120" pX="0.5" pY="0.5" oX="9" oY="9" oW="140" oH="80" r="y"/>
+    <sprite n="U08_statue" x="2" y="2" w="234" h="294" pX="0.5" pY="0.5" oX="31" oY="21" oW="288" oH="316"/>
+    <sprite n="U08_upperarm" x="412" y="467" w="97" h="35" pX="0.5" pY="0.5" oX="9" oY="11" oW="116" oH="56"/>
+    <sprite n="U08_upperleg" x="238" y="2" w="31" h="65" pX="0.5" pY="0.5" oX="10" oY="9" oW="52" oH="84"/>
+</TextureAtlas>

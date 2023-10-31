@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:950ee008af97964eacb9fb3825d489ef:94b7ab4ceba04c8ad1b333cdb8e5bc95:45ddd3226644657a02d8c6b52c25fe57$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_ABCE_costume_05_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABCE_costume_05_body.png" x="1" y="1" w="274" h="170" pX="0.5" pY="0.5"/>
+    <!-- original anchor = (32, 45) -> new anchor (35, 49) diff = (-3, -4)-->
+    <!-- add double it to texturepacker output offsets (7, 0) -> (1, -8), cause hires-->
+    <sprite n="ABCE_costume_05_head_a.png" x="1" y="589" w="137" h="119" pX="0.5" pY="0.5" oX="1" oY="-8" oW="132" oH="140" r="y"/>
+    <!-- original anchor = (40, 68) -> new anchor (43, 64) diff = (-3, 4)-->
+    <!-- add double it to texturepacker output offsets (3, 0) -> (-3, 8), cause hires-->
+    <sprite n="ABCE_costume_05_head_b.png" x="1" y="300" w="177" h="159" pX="0.5" pY="0.5" oX="-3" oY="8" oW="164" oH="180" r="y"/>
+    <!-- original anchor = (37, 58) -> new anchor (43, 63) diff = (-6, -5)-->
+    <!-- add double it to texturepacker output offsets (10, 4) -> (-2, -6), cause hires-->
+    <sprite n="ABCE_costume_05_head_c.png" x="262" y="316" w="169" h="168" pX="0.5" pY="0.5" oX="-2" oY="-6" oW="184" oH="184" r="y"/>
+    <!-- original anchor = (23, 41) -> new anchor (31, 52) diff = (-8, -11)-->
+    <!-- add double it to texturepacker output offsets (5, 2) -> (-11, -20), cause hires-->
+    <sprite n="ABCE_costume_05_head_d.png" x="262" y="486" w="135" h="116" pX="0.5" pY="0.5" oX="-11" oY="-20" oW="124" oH="140" r="y"/>
+    <!-- original anchor = (38, 62) -> new anchor (44, 68) diff = (-6, -6)-->
+    <!-- add double it to texturepacker output offsets (5, 3) -> (-7, -9), cause hires-->
+    <sprite n="ABCE_costume_05_head_e.png" x="277" y="1" w="194" h="169" pX="0.5" pY="0.5" oX="-7" oY="-9" oW="180" oH="200" r="y"/>
+    <!-- original anchor = (30, 56) -> new anchor (38, 54) diff = (-8, 2)-->
+    <!-- add double it to texturepacker output offsets (14, 4) -> (-2, 6), cause hires-->
+    <sprite n="ABCE_costume_05_head_f.png" x="1" y="461" w="153" h="126" pX="0.5" pY="0.5" oX="-2" oY="6" oW="148" oH="164" r="y"/>
+    <sprite n="ABCE_costume_05_left_knee.png" x="433" y="372" w="55" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="58" r="y"/>
+    <sprite n="ABCE_costume_05_left_lowerarm.png" x="186" y="173" w="86" h="113" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="114"/>
+    <sprite n="ABCE_costume_05_left_lowerleg.png" x="399" y="592" w="111" h="108" pX="0.5" pY="0.5" oX="1" oY="0" oW="114" oH="110"/>
+    <sprite n="ABCE_costume_05_left_upperarm.png" x="1" y="173" w="183" h="125" pX="0.5" pY="0.5" oX="0" oY="1" oW="126" oH="186" r="y"/>
+    <sprite n="ABCE_costume_05_left_upperleg.png" x="140" y="593" w="114" h="129" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="130"/>
+    <sprite n="ABCE_costume_05_right_knee.png" x="433" y="316" w="58" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="60" r="y"/>
+    <sprite n="ABCE_costume_05_right_lowerarm.png" x="186" y="288" w="74" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="ABCE_costume_05_right_lowerleg.png" x="399" y="486" w="112" h="104" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="114" r="y"/>
+    <sprite n="ABCE_costume_05_right_upperarm.png" x="277" y="172" w="194" h="142" pX="0.5" pY="0.5" oX="1" oY="0" oW="144" oH="194" r="y"/>
+    <sprite n="ABCE_costume_05_right_upperleg.png" x="156" y="461" w="104" h="130" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:46901f4b7980de2368a93a5d247e2bd2:3d68674fc783f6e8bd34a005c6740f5f:4070b35b49382510fcb81927df6afd2b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCDN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BCDN_arm_segment" x="488" y="281" w="18" h="47" pX="0.5" pY="0.5" oX="17" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_arm_segment_01_RARE" x="488" y="330" w="18" h="47" pX="0.5" pY="0.5" oX="17" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_arm_segment_02_RARE" x="488" y="379" w="18" h="47" pX="0.5" pY="0.5" oX="17" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_armbean" x="283" y="564" w="43" h="37" pX="0.5" pY="0.5" oX="22" oY="7" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_armbean_RARE" x="283" y="603" w="43" h="37" pX="0.5" pY="0.5" oX="22" oY="7" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_cuff_RARE" x="356" y="110" w="153" h="69" pX="0.5" pY="0.5" oX="153" oY="38" oW="230" oH="220" r="y"/>
+    <sprite n="BCDN_foot_01" x="448" y="709" w="60" h="75" pX="0.5" pY="0.5" oX="21" oY="9" oW="120" oH="100"/>
+    <sprite n="BCDN_foot_01_RARE" x="180" y="618" w="97" h="94" pX="0.5" pY="0.5" oX="6" oY="2" oW="120" oH="100" r="y"/>
+    <sprite n="BCDN_hand_01" x="2" y="651" w="84" h="56" pX="0.5" pY="0.5" oX="29" oY="35" oW="120" oH="120"/>
+    <sprite n="BCDN_hand_01_RARE" x="2" y="543" w="106" h="106" pX="0.5" pY="0.5" oX="60" oY="67" oW="230" oH="220"/>
+    <sprite n="BCDN_hand_02" x="2" y="709" w="82" h="57" pX="0.5" pY="0.5" oX="31" oY="35" oW="120" oH="120"/>
+    <sprite n="BCDN_hand_02_RARE" x="182" y="466" w="130" h="96" pX="0.5" pY="0.5" oX="70" oY="54" oW="230" oH="220" r="y"/>
+    <sprite n="BCDN_hand_03" x="328" y="619" w="78" h="75" pX="0.5" pY="0.5" oX="35" oY="24" oW="120" oH="120"/>
+    <sprite n="BCDN_hand_03_RARE" x="190" y="97" w="164" h="74" pX="0.5" pY="0.5" oX="93" oY="34" oW="230" oH="220" r="y"/>
+    <sprite n="BCDN_hand_04" x="110" y="602" w="68" h="81" pX="0.5" pY="0.5" oX="45" oY="21" oW="120" oH="120"/>
+    <sprite n="BCDN_hand_04_RARE" x="2" y="94" w="186" h="72" pX="0.5" pY="0.5" oX="107" oY="20" oW="230" oH="220" r="y"/>
+    <sprite n="BCDN_hand_05" x="88" y="685" w="83" h="58" pX="0.5" pY="0.5" oX="55" oY="19" oW="120" oH="120" r="y"/>
+    <sprite n="BCDN_hand_05_RARE" x="2" y="2" w="192" h="90" pX="0.5" pY="0.5" oX="111" oY="14" oW="230" oH="220" r="y"/>
+    <sprite n="BCDN_head" x="384" y="2" w="124" h="106" pX="0.5" pY="0.5" oX="35" oY="32" oW="200" oH="180"/>
+    <sprite n="BCDN_head_RARE" x="343" y="436" w="124" h="106" pX="0.5" pY="0.5" oX="35" oY="32" oW="200" oH="180"/>
+    <sprite n="BCDN_headbean" x="159" y="245" w="27" h="25" pX="0.5" pY="0.5" oX="12" oY="12" oW="50" oH="50" r="y"/>
+    <sprite n="BCDN_headbean_RARE" x="314" y="478" w="27" h="25" pX="0.5" pY="0.5" oX="12" oY="12" oW="50" oH="50" r="y"/>
+    <sprite n="BCDN_left_eyelid_01" x="144" y="272" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_01_RARE" x="144" y="321" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_02" x="144" y="370" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_02_RARE" x="142" y="419" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_03" x="469" y="447" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_03_RARE" x="469" y="496" w="38" h="47" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70" r="y"/>
+    <sprite n="BCDN_left_eyelid_04" x="279" y="642" w="47" h="38" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70"/>
+    <sprite n="BCDN_left_eyelid_04_RARE" x="279" y="682" w="47" h="38" pX="0.5" pY="0.5" oX="11" oY="14" oW="70" oH="70"/>
+    <sprite n="BCDN_left_shoulder" x="456" y="671" w="48" h="36" pX="0.5" pY="0.5" oX="30" oY="19" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_left_shoulder_RARE" x="173" y="714" w="48" h="36" pX="0.5" pY="0.5" oX="30" oY="19" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_leg" x="488" y="181" w="22" h="98" pX="0.5" pY="0.5" oX="19" oY="11" oW="60" oH="120"/>
+    <sprite n="BCDN_leg_RARE" x="182" y="564" w="99" h="52" pX="0.5" pY="0.5" oX="4" oY="11" oW="60" oH="120" r="y"/>
+    <sprite n="BCDN_lowerbody_01" x="184" y="387" w="138" h="77" pX="0.5" pY="0.5" oX="20" oY="11" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_01_RARE" x="2" y="388" w="138" h="78" pX="0.5" pY="0.5" oX="20" oY="11" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_02" x="347" y="373" w="139" h="61" pX="0.5" pY="0.5" oX="53" oY="28" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_02_RARE" x="184" y="324" w="139" h="61" pX="0.5" pY="0.5" oX="53" oY="28" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_03" x="347" y="181" w="139" h="62" pX="0.5" pY="0.5" oX="73" oY="18" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_03_RARE" x="347" y="245" w="139" h="62" pX="0.5" pY="0.5" oX="73" oY="18" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_04" x="188" y="260" w="139" h="62" pX="0.5" pY="0.5" oX="92" oY="16" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_lowerbody_04_RARE" x="347" y="309" w="139" h="62" pX="0.5" pY="0.5" oX="92" oY="16" oW="180" oH="180" r="y"/>
+    <sprite n="BCDN_mouth_01" x="314" y="505" w="14" h="57" pX="0.5" pY="0.5" oX="12" oY="12" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_mouth_01_RARE" x="110" y="543" w="14" h="57" pX="0.5" pY="0.5" oX="12" oY="12" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_mouth_02" x="329" y="260" w="16" h="55" pX="0.5" pY="0.5" oX="13" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_mouth_02_RARE" x="329" y="317" w="16" h="55" pX="0.5" pY="0.5" oX="13" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_mouth_03" x="325" y="374" w="17" h="50" pX="0.5" pY="0.5" oX="15" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_mouth_03_RARE" x="324" y="426" w="17" h="50" pX="0.5" pY="0.5" oX="15" oY="11" oW="80" oH="40" r="y"/>
+    <sprite n="BCDN_neck" x="159" y="168" w="29" h="75" pX="0.5" pY="0.5" oX="14" oY="7" oW="60" oH="90"/>
+    <sprite n="BCDN_neck_RARE" x="328" y="696" w="77" h="31" pX="0.5" pY="0.5" oX="13" oY="6" oW="60" oH="90" r="y"/>
+    <sprite n="BCDN_pupil" x="488" y="428" w="17" h="17" pX="0.5" pY="0.5" oX="2" oY="3" oW="22" oH="22"/>
+    <sprite n="BCDN_pupil_RARE" x="488" y="428" w="17" h="17" pX="0.5" pY="0.5" oX="2" oY="3" oW="22" oH="22"/>
+    <sprite n="BCDN_right_eyelid_01" x="408" y="689" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_01_RARE" x="407" y="727" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_02" x="223" y="714" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_02_RARE" x="263" y="722" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_03" x="86" y="745" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_03_RARE" x="126" y="745" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_04" x="2" y="768" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_eyelid_04_RARE" x="42" y="768" w="38" h="36" pX="0.5" pY="0.5" oX="20" oY="16" oW="70" oH="70"/>
+    <sprite n="BCDN_right_shoulder" x="408" y="619" w="46" h="33" pX="0.5" pY="0.5" oX="15" oY="24" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_right_shoulder_RARE" x="408" y="654" w="46" h="33" pX="0.5" pY="0.5" oX="15" oY="24" oW="80" oH="80" r="y"/>
+    <sprite n="BCDN_shadow" x="196" y="2" w="186" h="93" pX="0.5" pY="0.5" oX="7" oY="13" oW="200" oH="120"/>
+    <sprite n="BCDN_stalk_01" x="456" y="545" w="52" h="124" pX="0.5" pY="0.5" oX="19" oY="38" oW="175" oH="175"/>
+    <sprite n="BCDN_stalk_01_RARE" x="128" y="468" w="52" h="124" pX="0.5" pY="0.5" oX="19" oY="38" oW="175" oH="175"/>
+    <sprite n="BCDN_stalk_02" x="330" y="544" w="124" h="73" pX="0.5" pY="0.5" oX="19" oY="24" oW="175" oH="175"/>
+    <sprite n="BCDN_stalk_02_RARE" x="2" y="468" w="124" h="73" pX="0.5" pY="0.5" oX="19" oY="24" oW="175" oH="175"/>
+    <sprite n="BCDN_upperbody" x="2" y="168" w="155" h="85" pX="0.5" pY="0.5" oX="37" oY="17" oW="160" oH="210" r="y"/>
+    <sprite n="BCDN_upperbody_RARE" x="190" y="173" w="155" h="85" pX="0.5" pY="0.5" oX="37" oY="17" oW="160" oH="210" r="y"/>
+    <sprite n="spore_BCDN" x="2" y="255" w="140" h="131" pX="0.5" pY="0.5" oX="16" oY="22" oW="172" oH="172"/>
+</TextureAtlas>

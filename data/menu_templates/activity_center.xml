@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template name="activity_center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+    <script src="scripts/ActivityCenter.lua" />
+
+    <element name="Panel" inline="true"
+        w="200" h="300"
+        relativeTo="PARENT" positionHAnchor="LEFT" positionVAnchor="TOP"
+        hAnchor="LEFT" vAnchor="TOP"
+        priorityOffset="-31">
+
+        <ninesliceComponent name="BG" inline="true"
+            relativeTo="PARENT" positionHAnchor="LEFT" positionVAnchor="TOP"
+            hAnchor="LEFT" vAnchor="TOP" 
+            spriteName="'gfx/menu/Black9SFrame50'"
+            topHeight="50" bottomHeight="50" leftWidth="50" rightWidth="50" includeBorder="1" size="0.25*game.menuScaleX()"
+            layer="PopUps"
+            
+            dependentOnElement="element:name()"/>
+
+        <touchComponent name="PanelBlock" >
+            <size dependentOnElement="element:name()"/>
+            <position relativeTo="PARENT"/>
+            <orientation priorityOffset="-1" />
+        </touchComponent>
+    </element>
+
+    <touchComponent name="Block">
+        <size w="screenWidth()" h="screenHeight()" />
+        <position relativeTo="SCREEN" hAnchor="HCENTER" vAnchor="VCENTER"/>
+        <orientation priorityOffset="4" />
+    </touchComponent>
+</template>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8fce0418b3abae45e0f85bee06c0b6af:0d46f686610e38cc0705e036f3ed35ee:4abc42b325650041d48d7780a9ea4e87$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCE_sheet.png" width="512" height="512" hires="true">
+    <sprite n="BCE_body_A" x="132" y="204" w="86" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_A_RARE" x="2" y="2" w="148" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_B" x="414" y="110" w="96" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_B_RARE" x="414" y="222" w="96" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_C" x="2" y="152" w="128" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_body_C_RARE" x="2" y="300" w="128" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_eyeback" x="380" y="251" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_foot_RARE" x="288" y="251" w="90" h="57" pX="0.5" pY="0.5" oX="0" oY="1" oW="90" oH="58"/>
+    <sprite n="BCE_gong" x="230" y="2" w="128" h="87" pX="0.5" pY="0.5" oX="1" oY="0" oW="90" oH="130" r="y"/>
+    <sprite n="BCE_gong_RARE" x="360" y="2" w="128" h="87" pX="0.5" pY="0.5" oX="1" oY="0" oW="90" oH="130" r="y"/>
+    <sprite n="BCE_head_bottom" x="2" y="448" w="112" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_head_bottom_RARE" x="116" y="448" w="112" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_head_sprout" x="288" y="433" w="52" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_head_top" x="184" y="330" w="56" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_head_top_RARE" x="242" y="319" w="56" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_foot" x="152" y="90" w="66" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_hand" x="242" y="175" w="42" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_hand_RARE" x="404" y="388" w="84" h="45" pX="0.5" pY="0.5" oX="0" oY="3" oW="86" oH="48"/>
+    <sprite n="BCE_left_lowerarm" x="132" y="330" w="24" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_lowerleg" x="152" y="2" w="68" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_thumb" x="132" y="152" w="16" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_thumb_RARE" x="380" y="277" w="22" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_upperarm" x="300" y="195" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_upperarm_RARE" x="288" y="91" w="124" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_left_upperleg" x="220" y="255" w="32" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_neck_A" x="230" y="444" w="56" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_neck_B" x="490" y="2" w="20" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_pupil" x="150" y="184" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_foot" x="404" y="334" w="84" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_hand" x="300" y="310" w="78" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_right_hand_RARE" x="342" y="389" w="45" h="84" pX="0.5" pY="0.5" oX="0" oY="3" oW="86" oH="48" r="y"/>
+    <sprite n="BCE_right_lowerarm" x="158" y="330" w="24" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_lowerleg" x="152" y="52" w="68" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_thumb" x="490" y="58" w="16" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_thumb_RARE" x="380" y="333" w="22" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_upperarm" x="300" y="223" w="112" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_upperarm_RARE" x="288" y="143" w="124" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCE_right_upperleg" x="254" y="255" w="32" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="BCE_shadow" x="242" y="91" w="42" h="82" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

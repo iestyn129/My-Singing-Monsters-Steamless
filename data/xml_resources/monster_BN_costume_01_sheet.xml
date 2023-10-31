@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:26b169e9dd93989c873675b6f70e05c2:bb9026e58b5fd960f732e09710085852:fb95dc0785f5e2170df891ac1b74233c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BN_costume_01_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (36, 40) -> new anchor (55, 84) diff = (-19, -44)-->
+	<!-- add it to texturepacker output offsets (9, 4) -> (-29, -84)-->
+    <sprite n="monster_BN_goggley_mask.png" x="2" y="2" w="201" h="212" pX="0.5" pY="0.5" oX="-29" oY="-84" oW="220" oH="220"/>
+</TextureAtlas>

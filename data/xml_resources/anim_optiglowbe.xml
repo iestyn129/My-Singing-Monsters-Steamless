@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8a866b64f36303580859ea3cbe295fe8:2be4727a9bf6274fb44438c900894d70:c21e9e60edeb72a101dad7ee429e9570$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_optiglowbe.png" width="1024" height="2048" hires="true">
+    <sprite n="antenna_left" x="858" y="435" w="137" h="70" pX="0.5" pY="0.5" oX="25" oY="11" oW="120" oH="160" r="y"/>
+    <sprite n="antenna_right" x="858" y="509" w="119" h="81" pX="0.5" pY="0.5" oX="18" oY="22" oW="120" oH="160" r="y"/>
+    <sprite n="bg_eye_glow" x="69" y="1722" w="175" h="180" pX="0.5" pY="0.5" oX="2" oY="0" oW="180" oH="180"/>
+    <sprite n="bg_eye_pupil" x="980" y="595" w="34" h="31" pX="0.5" pY="0.5" oX="5" oY="2" oW="40" oH="40" r="y"/>
+    <sprite n="bg_eyeball" x="4" y="1942" w="101" h="101" pX="0.5" pY="0.5" oX="10" oY="9" oW="120" oH="120"/>
+    <sprite n="bg_eyelid_01" x="326" y="1722" w="61" h="99" pX="0.5" pY="0.5" oX="35" oY="16" oW="140" oH="140"/>
+    <sprite n="bg_eyelid_02" x="220" y="1906" w="66" h="100" pX="0.5" pY="0.5" oX="30" oY="15" oW="140" oH="140"/>
+    <sprite n="bg_eyelid_03" x="248" y="1722" w="74" h="99" pX="0.5" pY="0.5" oX="23" oY="16" oW="140" oH="140"/>
+    <sprite n="bg_eyelid_04" x="109" y="1906" w="107" h="107" pX="0.5" pY="0.5" oX="21" oY="16" oW="140" oH="140"/>
+    <sprite n="eyeball_blue" x="4" y="698" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_green" x="344" y="698" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_orange" x="684" y="740" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_purple" x="4" y="961" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_red" x="344" y="961" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_white" x="684" y="1003" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyeball_yellow" x="4" y="1224" w="336" h="259" pX="0.5" pY="0.5" oX="32" oY="93" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_horizontal_01" x="4" y="4" w="423" h="343" pX="0.5" pY="0.5" oX="26" oY="16" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_horizontal_02" x="431" y="4" w="423" h="343" pX="0.5" pY="0.5" oX="26" oY="16" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_horizontal_03" x="4" y="351" w="423" h="343" pX="0.5" pY="0.5" oX="26" oY="16" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_horizontal_04" x="431" y="351" w="423" h="343" pX="0.5" pY="0.5" oX="26" oY="16" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_vertical_01" x="344" y="1224" w="323" h="231" pX="0.5" pY="0.5" oX="44" oY="100" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_vertical_02" x="671" y="1266" w="323" h="231" pX="0.5" pY="0.5" oX="44" oY="100" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_vertical_03" x="344" y="1459" w="323" h="231" pX="0.5" pY="0.5" oX="44" oY="100" oW="400" oH="460" r="y"/>
+    <sprite n="eyelid_vertical_04" x="4" y="1487" w="323" h="231" pX="0.5" pY="0.5" oX="44" oY="100" oW="400" oH="460" r="y"/>
+    <sprite n="fg_eyeball" x="745" y="1600" w="81" h="84" pX="0.5" pY="0.5" oX="8" oY="7" oW="100" oH="100"/>
+    <sprite n="fg_eyelid_01" x="699" y="1793" w="91" h="94" pX="0.5" pY="0.5" oX="13" oY="14" oW="120" oH="120"/>
+    <sprite n="fg_eyelid_02" x="801" y="1501" w="91" h="94" pX="0.5" pY="0.5" oX="13" oY="14" oW="120" oH="120"/>
+    <sprite n="fg_eyelid_03" x="752" y="1688" w="91" h="94" pX="0.5" pY="0.5" oX="13" oY="14" oW="120" oH="120"/>
+    <sprite n="fg_eyelid_04" x="896" y="1501" w="91" h="94" pX="0.5" pY="0.5" oX="13" oY="14" oW="120" oH="120"/>
+    <sprite n="fg_tentacle_01" x="445" y="1902" w="70" h="98" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_02" x="485" y="1796" w="70" h="98" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_03" x="290" y="1906" w="74" h="99" pX="0.5" pY="0.5" oX="15" oY="11" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_04" x="368" y="1904" w="73" h="98" pX="0.5" pY="0.5" oX="16" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_05" x="383" y="1825" w="98" h="73" pX="0.5" pY="0.5" oX="18" oY="12" oW="100" oH="120" r="y"/>
+    <sprite n="fg_tentacle_06" x="391" y="1694" w="73" h="98" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_07" x="468" y="1694" w="72" h="98" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_08" x="671" y="1600" w="70" h="90" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_09" x="519" y="1898" w="70" h="96" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="fg_tentacle_10" x="544" y="1694" w="70" h="97" pX="0.5" pY="0.5" oX="19" oY="12" oW="100" oH="120"/>
+    <sprite n="iris" x="858" y="288" w="143" h="143" pX="0.5" pY="0.5" oX="29" oY="26" oW="200" oH="200"/>
+    <sprite n="left arm" x="858" y="672" w="114" h="64" pX="0.5" pY="0.5" oX="14" oY="10" oW="100" oH="140" r="y"/>
+    <sprite n="left_tentacle_01" x="662" y="1892" w="61" h="95" pX="0.5" pY="0.5" oX="11" oY="14" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_02" x="671" y="1501" w="61" h="95" pX="0.5" pY="0.5" oX="11" oY="14" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_03" x="688" y="1694" w="60" h="95" pX="0.5" pY="0.5" oX="11" oY="14" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_04" x="898" y="1599" w="94" h="55" pX="0.5" pY="0.5" oX="12" oY="14" oW="120" oH="80"/>
+    <sprite n="left_tentacle_05" x="898" y="1658" w="92" h="59" pX="0.5" pY="0.5" oX="14" oY="14" oW="120" oH="80"/>
+    <sprite n="left_tentacle_06" x="736" y="1501" w="61" h="95" pX="0.5" pY="0.5" oX="11" oY="14" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_07" x="593" y="1894" w="65" h="95" pX="0.5" pY="0.5" oX="11" oY="10" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_08" x="559" y="1795" w="69" h="95" pX="0.5" pY="0.5" oX="11" oY="6" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_09" x="618" y="1694" w="66" h="95" pX="0.5" pY="0.5" oX="11" oY="9" oW="120" oH="80" r="y"/>
+    <sprite n="left_tentacle_10" x="632" y="1793" w="63" h="95" pX="0.5" pY="0.5" oX="11" oY="12" oW="120" oH="80" r="y"/>
+    <sprite n="pupil" x="981" y="509" w="38" h="82" pX="0.5" pY="0.5" oX="54" oY="78" oW="200" oH="200" r="y"/>
+    <sprite n="pupil_fg_eye" x="976" y="672" w="44" h="44" pX="0.5" pY="0.5" oX="8" oY="8" oW="60" oH="60"/>
+    <sprite n="right_arm" x="858" y="594" w="118" h="74" pX="0.5" pY="0.5" oX="14" oY="10" oW="100" oH="140" r="y"/>
+    <sprite n="right_tentacle_01" x="727" y="1974" w="79" h="59" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80"/>
+    <sprite n="right_tentacle_02" x="792" y="1891" w="59" h="79" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_03" x="810" y="1974" w="79" h="59" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80"/>
+    <sprite n="right_tentacle_04" x="794" y="1786" w="59" h="79" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_05" x="727" y="1891" w="61" h="79" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_06" x="830" y="1599" w="64" h="79" pX="0.5" pY="0.5" oX="0" oY="5" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_07" x="248" y="1825" w="63" h="77" pX="0.5" pY="0.5" oX="0" oY="6" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_08" x="315" y="1825" w="64" h="75" pX="0.5" pY="0.5" oX="0" oY="5" oW="80" oH="80" r="y"/>
+    <sprite n="right_tentacle_09" x="847" y="1721" w="79" h="59" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80"/>
+    <sprite n="right_tentacle_10" x="930" y="1721" w="79" h="59" pX="0.5" pY="0.5" oX="0" oY="10" oW="80" oH="80"/>
+    <sprite n="shadow" x="858" y="4" w="151" h="280" pX="0.5" pY="0.5" oX="0" oY="5" oW="280" oH="160" r="y"/>
+    <sprite n="torso" x="4" y="1722" w="61" h="216" pX="0.5" pY="0.5" oX="10" oY="2" oW="80" oH="220"/>
+</TextureAtlas>

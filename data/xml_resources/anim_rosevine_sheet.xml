@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7c7974762c118881a2ea75dc1cb91d23:cd7c061c856cc0263535508ce9d52cb9:6b1ef9b8103f944b44109290fe2232b4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_rosevine_sheet.png" width="512" height="512">
+    <sprite n="fence back.png" x="2" y="2" w="230" h="192" pX="0.5" pY="0.5" oX="0" oY="2" oW="230" oH="194"/>
+    <sprite n="fence front.png" x="234" y="2" w="230" h="135" pX="0.5" pY="0.5" oX="0" oY="2" oW="230" oH="137"/>
+    <sprite n="leaf.png" x="466" y="52" w="24" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="petal centre.png" x="76" y="248" w="53" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="petals 1.png" x="466" y="2" w="44" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="petals 2.png" x="395" y="139" w="91" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="64"/>
+    <sprite n="petals 3.png" x="133" y="196" w="62" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="petals 4.png" x="395" y="205" w="80" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="petals 5.png" x="59" y="411" w="72" h="77" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="petals 6.png" x="76" y="196" w="55" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="vine 1.png" x="234" y="139" w="159" h="87" pX="0.5" pY="0.5" oX="0" oY="1" oW="159" oH="88"/>
+    <sprite n="vine 2.png" x="2" y="282" w="68" h="127" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="vine 3.png" x="2" y="411" w="55" h="78" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="vine 4.png" x="2" y="228" w="72" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="vine 5.png" x="72" y="302" w="48" h="56" pX="0.5" pY="0.5"/>
+</TextureAtlas>

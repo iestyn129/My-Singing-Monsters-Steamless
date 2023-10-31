@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:481320c0f075c8af97ca5f39902b12cd:19c7079285e425e4caffee4c14639cfe:caa2d4d5b0ad6a5d76f1ea1eaa4bbc00$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_G_costume_02_sheet.png" width="512" height="512" hires="true">
+	<sprite n="G_Apron.png" x="2" y="2" w="138" h="221" pX="0.5" pY="0.5" oX="-7" oY="56" oW="140" oH="240"/>
+    <sprite n="G_Back_Piece.png" x="2" y="384" w="44" h="100" pX="0.5" pY="0.5" oX="116" oY="24" oW="60" oH="100"/>
+    <sprite n="G_Head_Piece.png" x="2" y="225" w="87" h="157" pX="0.5" pY="0.5" oX="10" oY="-3" oW="200" oH="100" r="y"/>
+    <sprite n="G_left_eye_1" x="48" y="483" w="38" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="G_left_eye_2" x="207" y="476" w="25" h="30" pX="0.5" pY="0.5" oX="0" oY="3" oW="26" oH="38"/>
+    <sprite n="G_left_eye_3" x="129" y="483" w="35" h="25" pX="0.5" pY="0.5" oX="0" oY="1" oW="26" oH="38" r="y"/>
+    <sprite n="G_left_eye_4" x="234" y="476" w="35" h="25" pX="0.5" pY="0.5" oX="0" oY="1" oW="26" oH="38" r="y"/>
+    <sprite n="G_Left_Glove.png" x="244" y="373" w="60" h="64" pX="0.5" pY="0.5" oX="1" oY="3" oW="80" oH="80" r="y"/>
+    <sprite n="G_Left_Wristband.png" x="238" y="2" w="64" h="64" pX="0.5" pY="0.5" oX="-3" oY="8" oW="80" oH="80"/>
+    <sprite n="G_right_eye_1" x="159" y="323" w="43" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="G_right_eye_2" x="189" y="263" w="37" h="40" pX="0.5" pY="0.5" oX="3" oY="3" oW="43" oH="43" r="y"/>
+    <sprite n="G_right_eye_3" x="166" y="476" w="39" h="33" pX="0.5" pY="0.5" oX="3" oY="6" oW="43" oH="43"/>
+    <sprite n="G_right_eye_4" x="88" y="483" w="39" h="25" pX="0.5" pY="0.5" oX="3" oY="12" oW="43" oH="43"/>
+    <sprite n="G_Right_Glove.png" x="204" y="305" w="61" h="66" pX="0.5" pY="0.5" oX="-5" oY="2" oW="80" oH="80" r="y"/>
+    <sprite n="G_Right_Wristband.png" x="234" y="98" w="62" h="65" pX="0.5" pY="0.5" oX="-9" oY="20" oW="80" oH="80" r="y"/>
+    <sprite n="G_sphere_01" x="189" y="192" w="69" h="69" pX="0.5" pY="0.5" oX="17" oY="17" oW="104" oH="104"/>
+    <sprite n="G_sphere_02" x="271" y="439" w="61" h="63" pX="0.5" pY="0.5" oX="21" oY="19" oW="104" oH="104"/>
+    <sprite n="G_sphere_03" x="48" y="384" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="3" oW="104" oH="104"/>
+    <sprite n="G_sphere_04" x="147" y="379" w="95" h="95" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_05" x="142" y="98" w="90" h="92" pX="0.5" pY="0.5" oX="4" oY="6" oW="104" oH="104" r="y"/>
+    <sprite n="G_sphere_06" x="142" y="2" w="94" h="94" pX="0.5" pY="0.5" oX="4" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_07" x="91" y="225" w="96" h="96" pX="0.5" pY="0.5" oX="3" oY="3" oW="104" oH="104"/>
+    <sprite n="G_Tail_Piece.png" x="91" y="323" w="66" h="54" pX="0.5" pY="0.5" r="y" oX="-3" oY="9"/>
+</TextureAtlas>

@@ -1,0 +1,128 @@
+<template name="template_fancywindow_scaled" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$layer" equals="Tutorial" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<ninesliceComponent name="Sprite">
+		<size w="400*game.menuScaleX()" h="230*game.menuScaleY()" />
+		<event name="onInit" params="component, element">
+			component("topHeight"):SetFloat(50.0)
+			component("bottomHeight"):SetFloat(50.0)
+			component("leftWidth"):SetFloat(50.0)
+			component("rightWidth"):SetFloat(50.0)
+			component("size"):SetFloat(0.5)
+			component("includeBorder"):SetInt(1)
+			component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+			component("layer"):SetString("$layer")
+		</event>
+	</ninesliceComponent>
+	
+	<element name="LeftSwirl">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7*game.hudScale()" yOffset="7*game.hudScale()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="RightSwirl">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="7*game.hudScale()" yOffset="7*game.hudScale()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="LeftLeaves">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-13*game.hudScale()" yOffset="-5*game.hudScale()" priorityOffset="1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_leaves")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="FluteTopLeft">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-10*game.hudScale()" yOffset="0" priorityOffset="1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("rotation"):SetFloat(235)
+				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="FluteBottomLeft">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-5*game.hudScale()" yOffset="28*game.hudScale()" priorityOffset="1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("rotation"):SetFloat(225.3)
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="FluteTopRight">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="-7*game.hudScale()" yOffset="18*game.hudScale()" priorityOffset="1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("vFlip"):SetInt(0)
+				component("hFlip"):SetInt(1)
+				component("rotation"):SetFloat(35.2)
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="FluteBottomRight">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="5*game.hudScale()" yOffset="-16*game.hudScale()" priorityOffset="1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_flute")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("vFlip"):SetInt(1)
+				component("rotation"):SetFloat(45)
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+</template>

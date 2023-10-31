@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:853848664a484f0b2850f67cb4c1fc57:10fac6edc68da227b73a0a6e869c7527:42ac56a213969dd49578c2f6f6a505a0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island16_sheet02.png" width="1024" height="2048" hires="true">
+    <sprite n="cloud" x="586" y="2" w="432" h="452" pX="0.5" pY="0.5"/>
+    <sprite n="critter_01" x="978" y="801" w="28" h="58" pX="0.5" pY="0.5" oX="3" oY="8" oW="33" oH="66"/>
+    <sprite n="critter_02" x="995" y="704" w="27" h="59" pX="0.5" pY="0.5" oX="3" oY="7" oW="33" oH="66"/>
+    <sprite n="critter_03" x="996" y="584" w="26" h="59" pX="0.5" pY="0.5" oX="3" oY="7" oW="33" oH="66"/>
+    <sprite n="critter_04" x="996" y="521" w="26" h="61" pX="0.5" pY="0.5" oX="3" oY="5" oW="33" oH="66"/>
+    <sprite n="critter_05" x="996" y="456" w="26" h="63" pX="0.5" pY="0.5" oX="3" oY="3" oW="33" oH="66"/>
+    <sprite n="critter_06" x="512" y="451" w="65" h="26" pX="0.5" pY="0.5" oX="3" oY="1" oW="33" oH="66" r="y"/>
+    <sprite n="critter_07" x="996" y="645" w="26" h="57" pX="0.5" pY="0.5" oX="3" oY="9" oW="33" oH="66"/>
+    <sprite n="critter_08" x="978" y="861" w="28" h="57" pX="0.5" pY="0.5" oX="3" oY="9" oW="33" oH="66"/>
+    <sprite n="critter_glow" x="720" y="1275" w="103" h="151" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_glow_01" x="512" y="801" w="464" h="320" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mushroom_glow_02" x="512" y="479" w="482" h="216" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_glow_03" x="2" y="804" w="368" h="270" pX="0.5" pY="0.5"/>
+    <sprite n="mushroom_glow_04" x="512" y="697" w="481" h="102" pX="0.5" pY="0.5"/>
+    <sprite n="vines_01" x="2" y="2" w="582" h="447" pX="0.5" pY="0.5"/>
+    <sprite n="vines_02" x="2" y="451" w="508" h="351" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="vines_03" x="478" y="1275" w="240" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="vines_04" x="372" y="804" w="126" h="241" pX="0.5" pY="0.5" oX="0" oY="0" oW="242" oH="126" r="y"/>
+    <sprite n="vines_05" x="2" y="1076" w="367" h="264" pX="0.5" pY="0.5" oX="0" oY="0" oW="369" oH="264"/>
+    <sprite n="vines_06" x="488" y="1123" w="343" h="150" pX="0.5" pY="0.5" oX="0" oY="0" oW="344" oH="150"/>
+    <sprite n="vines_07" x="825" y="1279" w="168" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="169" oH="89"/>
+    <sprite n="vines_08" x="833" y="1123" w="184" h="154" pX="0.5" pY="0.5" oX="0" oY="0" oW="185" oH="154"/>
+    <sprite n="vines_09" x="372" y="1047" w="114" h="159" pX="0.5" pY="0.5"/>
+    <sprite n="vines_10" x="371" y="1208" w="105" h="145" pX="0.5" pY="0.5"/>
+</TextureAtlas>

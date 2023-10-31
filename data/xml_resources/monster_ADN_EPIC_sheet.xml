@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f83ccff4a14db7333eeef65ab4a50f82:84392839647ee7e302457920b2aa6a7c:dbf9e341c37bb2ad556e500bd7548ee4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ADN_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ADN_adult_head_RARE" x="123" y="184" w="133" h="103" pX="0.5" pY="0.5" oX="0" oY="31" oW="114" oH="164" r="y"/>
+    <sprite n="ADN_adult_left_ear_RARE" x="67" y="110" w="54" h="172" pX="0.5" pY="0.5" oX="0" oY="2" oW="54" oH="174"/>
+    <sprite n="ADN_adult_left_foot_RARE" x="2" y="292" w="61" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADN_adult_left_lowerleg_RARE" x="389" y="2" w="70" h="34" pX="0.5" pY="0.5" oX="1" oY="0" oW="35" oH="70" r="y"/>
+    <sprite n="ADN_adult_left_upperleg_RARE" x="337" y="122" w="67" h="41" pX="0.5" pY="0.5" oX="0" oY="0" oW="41" oH="74" r="y"/>
+    <sprite n="ADN_adult_lowerbody_RARE" x="100" y="289" w="88" h="109" pX="0.5" pY="0.5" oX="2" oY="0" oW="91" oH="109"/>
+    <sprite n="ADN_adult_pupil_RARE" x="181" y="110" w="12" h="13" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADN_adult_right_ear_RARE" x="201" y="2" w="63" h="180" pX="0.5" pY="0.5" oX="6" oY="2" oW="70" oH="182"/>
+    <sprite n="ADN_adult_right_ear_RARE02" x="2" y="110" w="63" h="180" pX="0.5" pY="0.5" oX="6" oY="2" oW="70" oH="182"/>
+    <sprite n="ADN_adult_right_foot_RARE" x="2" y="395" w="86" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="89" oH="89" r="y"/>
+    <sprite n="ADN_adult_right_lowerleg_RARE" x="266" y="2" w="78" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ADN_adult_right_upperleg_RARE" x="346" y="2" w="41" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="79"/>
+    <sprite n="ADN_adult_shadow" x="2" y="2" w="197" h="106" pX="0.5" pY="0.5"/>
+    <sprite n="ADN_adult_upperbody_RARE" x="258" y="184" w="94" h="111" pX="0.5" pY="0.5"/>
+    <sprite n="ADN_antenna_base" x="67" y="284" w="31" h="99" pX="0.5" pY="0.5"/>
+    <sprite n="ADN_antenna_tip" x="190" y="289" w="62" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_ADN_adult_eyelids_01" x="319" y="297" w="38" h="60" pX="0.5" pY="0.5" oX="2" oY="1" oW="65" oH="41" r="y"/>
+    <sprite n="RARE_ADN_adult_eyelids_02" x="354" y="165" w="61" h="37" pX="0.5" pY="0.5" oX="1" oY="2" oW="65" oH="41"/>
+    <sprite n="RARE_ADN_adult_eyelids_03" x="254" y="297" w="63" h="37" pX="0.5" pY="0.5" oX="0" oY="2" oW="65" oH="41"/>
+    <sprite n="RARE_ADN_adult_eyelids_04" x="389" y="38" w="65" h="38" pX="0.5" pY="0.5" oX="0" oY="2" oW="65" oH="41"/>
+    <sprite n="RARE_ADN_adult_mouth_01" x="302" y="44" w="33" h="77" pX="0.5" pY="0.5" oX="0" oY="2" oW="78" oH="48" r="y"/>
+    <sprite n="RARE_ADN_adult_mouth_02" x="266" y="44" w="34" h="78" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="48" r="y"/>
+    <sprite n="RARE_ADN_adult_mouth_03" x="337" y="80" w="73" h="40" pX="0.5" pY="0.5" oX="2" oY="1" oW="78" oH="48"/>
+    <sprite n="RARE_ADN_adult_mouth_04" x="123" y="110" w="56" h="46" pX="0.5" pY="0.5" oX="10" oY="0" oW="78" oH="48"/>
+    <sprite n="RARE_ADN_adult_mouth_05" x="266" y="124" w="34" h="42" pX="0.5" pY="0.5" oX="17" oY="1" oW="78" oH="48" r="y"/>
+    <sprite n="RARE_ADN_adult_mouth_06" x="302" y="123" w="33" h="51" pX="0.5" pY="0.5" oX="10" oY="3" oW="78" oH="48" r="y"/>
+    <sprite n="RARE_ADN_adult_mouth_07" x="412" y="78" w="56" h="40" pX="0.5" pY="0.5" oX="9" oY="1" oW="78" oH="48"/>
+</TextureAtlas>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7f3b800d4736a13b423a3c05b7b62735:9d22c6679e3c796a7fe36db15e41a355:309587980cc9aa95053663eb66ca4c5c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island03_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island03_balloon_blue" x="1500" y="414" w="449" h="236" pX="0.5" pY="0.5" oX="10" oY="5" oW="260" oH="460" r="y"/>
+    <sprite n="island03_balloon_purple" x="1500" y="652" w="449" h="236" pX="0.5" pY="0.5" oX="10" oY="5" oW="260" oH="460" r="y"/>
+    <sprite n="island03_burns" x="2" y="2" w="638" h="1166" pX="0.5" pY="0.5"/>
+    <sprite n="island03_ear" x="725" y="1148" w="456" h="801" pX="0.5" pY="0.5" oX="0" oY="3" oW="456" oH="804"/>
+    <sprite n="island03_edge" x="1500" y="1137" w="407" h="332" pX="0.5" pY="0.5" oX="3" oY="2" oW="414" oH="334"/>
+    <sprite n="island03_eyeclosed" x="2" y="1170" w="721" h="870" pX="0.5" pY="0.5" oX="0" oY="95" oW="870" oH="816" r="y"/>
+    <sprite n="island03_nose" x="1183" y="1471" w="675" h="564" pX="0.5" pY="0.5" oX="3" oY="5" oW="580" oH="680" r="y"/>
+    <sprite n="island03_stumpcenter" x="642" y="2" w="427" h="970" pX="0.5" pY="0.5" oX="20" oY="0" oW="990" oH="460" r="y"/>
+    <sprite n="island03_stumpside" x="1071" y="414" w="427" h="725" pX="0.5" pY="0.5" oX="2" oY="203" oW="728" oH="672" r="y"/>
+    <sprite n="w3_beetle_01" x="1973" y="210" w="51" h="50" pX="0.5" pY="0.5" oX="3" oY="0" oW="54" oH="50"/>
+    <sprite n="w3_beetle_02" x="1973" y="106" w="53" h="50" pX="0.5" pY="0.5" oX="1" oY="0" oW="54" oH="50"/>
+    <sprite n="w3_beetle_03" x="1973" y="158" w="52" h="50" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="50"/>
+    <sprite n="w3_beetle_04" x="1973" y="2" w="54" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="w3_beetle_05" x="1973" y="54" w="54" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="w3_bubble" x="1973" y="262" w="45" h="44" pX="0.5" pY="0.5" oX="3" oY="0" oW="48" oH="48" r="y"/>
+    <sprite n="w3_cloud" x="1071" y="2" w="900" h="410" pX="0.5" pY="0.5" oX="0" oY="5" oW="900" oH="420"/>
+    <sprite n="w3_floatrock_1" x="1500" y="890" w="435" h="245" pX="0.5" pY="0.5" oX="3" oY="0" oW="440" oH="248"/>
+    <sprite n="w3_floatrock_2" x="642" y="974" w="127" h="172" pX="0.5" pY="0.5" oX="2" oY="1" oW="176" oH="128" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,220 @@
+<template name="template_flip_reward_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="CharacterImage" dependentOnComponent="Sprite" />
+	
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		
+		<event name="onInit" params="element">
+			element("flipTimerBack"):SetFloat(0)
+			element("wasClicked"):SetInt(0)
+			element("showFinished"):SetInt(0)
+			
+			element("FLY_EASING_DURATION"):SetFloat(0.4)
+			element("BOUNCE_EASING_DURATION"):SetFloat(1.2)
+			
+			element("flyUpEase"):SetInt(0)
+			element("bounceDownEase"):SetInt(0)
+			element("curEaseTime"):SetFloat(0.0)
+			
+			element("NORMAL_SCALE"):SetFloat(1.0)
+			element("LOWER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+			element("UPPER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat() + 0.10)
+			element("ARROW_SCALE_DIFF"):SetFloat(0.0)
+
+		</event>
+		
+		<event name="onPostInit" params="element">
+			element("NORMAL_SCALE"):SetFloat(element["Sprite"]("size"):GetFloat())
+			element("LOWER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+			element("UPPER_BOUND"):SetFloat(element("NORMAL_SCALE"):GetFloat() + 0.10)
+			element("ARROW_SCALE_DIFF"):SetFloat(element["Sprite"]("size"):GetFloat())
+			
+			--start the bouncing
+			element("flyUpEase"):SetInt(1)
+		</event>
+		
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/breeding/monster_portrait_prize")
+				component("size"):SetFloat(0.4*(lua_sys.screenWidth() / 480.0)*element:parent()("ScaleFactor"):GetFloat())
+				component("layer"):SetString("gridLayer")
+			</event>
+		</spriteComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.50*game.menuScaleX()*element:parent()("ScaleFactor"):GetFloat())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("gridLayer")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="8*game.menuScaleX()" h="8*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("0")
+				component("size"):SetFloat(0.2*game.menuScaleX()*element:parent()("ScaleFactor"):GetFloat())
+				component("layer"):SetString("gridLayer")
+				component("autoScale"):SetInt(1)
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<event name="onInit" params="component, element">
+				--for dragging across multiple elements
+				component:setGroupedTouch(true);
+			</event>
+			<event name="onPostInit" params="component, element">
+				component:setSize(Vector2(element:GetElement("CharacterImage"):absW(), element:GetElement("CharacterImage"):absH()))
+			</event>
+			<event name="onTouchDown" params="component, element">
+				game.revealFlipPrize(element:parent()("cardID"):GetInt())
+				element("wasClicked"):SetInt(1)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				game.revealFlipPrize(element:parent()("cardID"):GetInt())
+				element("wasClicked"):SetInt(1)
+			</event>
+			<event name="onTouchDrag" params="component, element">
+				game.revealFlipPrize(element:parent()("cardID"):GetInt())
+				element("wasClicked"):SetInt(1)
+			</event>
+		</touchComponent>
+		
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+			
+				--bouncing snazzle
+				if(element("flyUpEase"):GetInt()==1) then
+			
+					local FLY_EASING_DURATION = element("FLY_EASING_DURATION"):GetFloat();
+					
+					if(element("curEaseTime"):GetFloat() < FLY_EASING_DURATION) then
+					
+						local beginScale = element("LOWER_BOUND"):GetFloat();
+						local delta = (element("UPPER_BOUND"):GetFloat()) - beginScale;
+						
+						local ease=lua_sys.Exponential_EaseOut(element("curEaseTime"):GetFloat(), beginScale, delta, FLY_EASING_DURATION);
+						element["Sprite"]("size"):SetFloat(ease)
+						element("curEaseTime"):SetFloat(element("curEaseTime"):GetFloat()+dt)
+					else
+						element("flyUpEase"):SetInt(0)
+						element("bounceDownEase"):SetInt(1)
+
+						element("curEaseTime"):SetFloat(0.0)
+					end
+
+				elseif(element("bounceDownEase"):GetInt()==1) then
+				
+					local BOUNCE_EASING_DURATION = element("BOUNCE_EASING_DURATION"):GetFloat();
+					
+					if(element("curEaseTime"):GetFloat() < BOUNCE_EASING_DURATION) then
+					
+						local beginScale = element("UPPER_BOUND"):GetFloat();
+						local delta = (element("LOWER_BOUND"):GetFloat()) - beginScale;
+						
+						local ease=lua_sys.Bounce_EaseOut(element("curEaseTime"):GetFloat(), beginScale, delta, BOUNCE_EASING_DURATION);
+						element["Sprite"]("size"):SetFloat(ease)
+						element("curEaseTime"):SetFloat(element("curEaseTime"):GetFloat()+dt)
+					else
+						element("bounceDownEase"):SetInt(0)
+						element("flyUpEase"):SetInt(1)
+
+						element("curEaseTime"):SetFloat(0.0)
+					end	
+				end
+			
+				local timer = element("flipTimerBack"):GetFloat()
+				local scaleFactor = 1;
+				
+				if(timer > 0) then
+					timer = timer - dt
+					
+					if(timer <= 0) then
+						timer = 0
+						
+						if(element("wasClicked"):GetInt() ~= 0) then
+						
+							--end the bouncing/easing
+							element("flyUpEase"):SetInt(0)
+							element("bounceDownEase"):SetInt(0)
+							element("curEaseTime"):SetFloat(0.0)
+							element["Sprite"]("size"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+							element["Sprite"]("size"):SetFloat(element("NORMAL_SCALE"):GetFloat())
+						
+							game.showFlipPrize(element:parent()("cardID"):GetInt())
+						end
+					end
+					
+					element:setScale(Vector2(scaleFactor * (timer / 0.1), scaleFactor))
+				end
+				
+				element("flipTimerBack"):SetFloat(timer)
+				
+				if(element("showFinished"):GetInt() ~= 0) then
+					
+					element:setScale(Vector2(scaleFactor, scaleFactor))
+					
+					--[[local image = element
+	
+					local midX = image:absX() + image:absW()/2
+					local midY = image:absY() + image:absH()/2
+					
+					local psi = "";
+					local particleImage = ""
+					
+					if(element["Text"]("text"):GetString() ~= "0") then
+					
+						if(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_COINS) then
+							psi = "particle_gold_get";
+							particleImage = "particle_gold"
+							lua_sys.playSoundFx("audio/sfx/collect_coins.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_DIAMOND) then
+							psi = "particle_diamond_get";
+							particleImage = "particle_diamond"
+							lua_sys.playSoundFx("audio/sfx/collect_diamonds.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_FOOD) then
+							psi = "particle_food_get";
+							particleImage = "particle_food"
+							lua_sys.playSoundFx("audio/sfx/collect_food.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_ETH_CURRENCY) then
+							psi = "particle_food_get";
+							particleImage = "particle_shard"
+							lua_sys.playSoundFx("audio/sfx/collect_coins.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_STARPOWER) then
+							psi = "particle_food_get";
+							particleImage = "particle_starpower"
+							lua_sys.playSoundFx("audio/sfx/collect_starpower.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_KEY) then
+							psi = "";
+							particleImage = ""
+							lua_sys.playSoundFx("audio/sfx/collect_key.wav")
+						elseif(element["Icon"]("spriteName"):GetString() == game.StoreContext_SPRITE_RELIC) then
+							psi = "";
+							particleImage = ""
+							lua_sys.playSoundFx("audio/sfx/collect_relic.wav")
+						end
+					
+						if(psi ~= "" and particleImage ~= "") then
+							game.playParticle("particles/"..psi..".psi", "gfx/particles/"..particleImage,  midX, midY, "Tutorial", 0.001, 1, 1);
+						end
+						
+					end]]
+					
+					element("showFinished"):SetInt(0)
+				end
+			]]>
+		</event>
+	</element>
+</template>

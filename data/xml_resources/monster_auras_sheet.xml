@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:95bcae37fb92ccf35c5d4ad4b88b407c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/monster_auras_sheet.png" width="256" height="256">
+    <sprite n="music_notes_1" x="2" y="211" w="18" h="20" oX="0" oY="0" oW="20" oH="20" r="y"/>
+    <sprite n="music_notes_2" x="2" y="233" w="10" h="16" oX="5" oY="2" oW="20" oH="20"/>
+    <sprite n="music_notes_3" x="14" y="233" w="8" h="8" oX="6" oY="8" oW="20" oH="20"/>
+    <sprite n="music_ring" x="2" y="2" w="207" h="207" oX="9" oY="9" oW="225" oH="225"/>
+</TextureAtlas>

@@ -1,0 +1,333 @@
+<template name="template_underlingentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<!-- used in zap monster list (underling_list.xml) via breeding menu, and shows zap-monsters that can have eggs zapped to them -->
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="highlight" params="element">
+		element["Anim"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["NameFrame"]["Text"]:setColor(1.0, 1.0, 1.0)
+		
+		element["TimeRemainingFrame"]["Text"]:setColor(1.0, 1.0, 1.0)
+		
+		element["InventoryButton"]:DoStoredScript("enable")
+	</event>
+	
+	<event name="disable" params="element">
+		element["Anim"]["Sprite"]:setColor(0.33, 0.33, 0.33)
+		element["NameFrame"]["Text"]:setColor(0.33, 0.33, 0.33)
+		
+		element["TimeRemainingFrame"]["Text"]:setColor(1.0, 0.33, 0.33)
+		
+		element["InventoryButton"]:DoStoredScript("disable")
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	
+	<event name="unlock" params="element">
+		element("locked"):SetInt(0)
+		
+		element["Anim"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["NameFrame"]["Text"]:setColor(1.0, 1.0, 1.0)
+		element["Lock"]["Sprite"]("visible"):SetInt(0)
+		
+		element["InventoryButton"]:enable()
+		element["ZapItButton"]:enable()
+		element["Touch"]("enabled"):SetInt(1)
+
+	</event>
+	
+	<event name="onInit" params="element">
+		element("expired"):SetInt(0)
+		element("locked"):SetInt(0)
+		element("infTime"):SetInt(0)
+	</event>
+	<event name="onPostInit" params="element">
+		if(game.isUnderlingExpired(element("ID"):GetInt())) then
+			element("expired"):SetInt(1)
+			element:DoStoredScript("disable")
+		elseif(game.isUnderlingLocked(element("ID"):GetInt())) then
+			element("locked"):SetInt(1)
+			element["Lock"]["Sprite"]("visible"):SetInt(1)
+			element:DoStoredScript("disable")
+			element["ZapItButton"]:disable()
+			
+		else
+			local timeLeft = game.underlingTime(element("ID"):GetInt())
+			if(timeLeft == 0 and element("expired"):GetInt()==0) then
+				element("infTime"):SetInt(1)
+				element["TimeRemainingFrame"]["Text"]("visible"):SetInt(0)
+			elseif(timeLeft > 0) then
+				element["TimeRemainingFrame"]["Text"]("visible"):SetInt(1)
+				element["TimeRemainingFrame"]["Text"]("text"):SetString(game.timeToString(timeLeft))
+			end
+		end
+	</event>
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("market_frame")
+			component("sheetName"):SetString("xml_resources/store_elements.xml")
+			component("layer"):SetString("Clipping")
+			component("size"):SetFloat(0.45*game.menuScaleX())
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<element name="NameFrame">
+		<size w="130*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="30*game.menuScaleX()" priorityOffset="-7" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.3*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("noTranslate"):SetInt(1)
+				component("text"):SetString(element:parent()("ItemTitle"):GetString())
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TimeRemainingFrame">
+		<size w="130*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-7" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.25*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("00:00:00")
+				component("layer"):SetString("Clipping")
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+			</event>
+		</touchComponent>
+	</element>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+		
+			if(element("infTime"):GetInt()==0) then
+				local timeLeft = game.underlingTime(element("ID"):GetInt())
+				if(timeLeft < 0) then
+					timeLeft=0
+				end
+				
+				if(timeLeft == 0 and element("expired"):GetInt()==0) then
+					element["TimeRemainingFrame"]["Text"]("visible"):SetInt(0)
+				else
+					
+					local timeString = game.timeToString(timeLeft)
+					if(timeString ~= element["TimeRemainingFrame"]["Text"]("text"):GetString()) then
+					
+						element["TimeRemainingFrame"]["Text"]("text"):SetString(timeString)
+						element["TimeRemainingFrame"]["Text"]("visible"):SetInt(1)
+						if(timeLeft <= 0 and element("expired"):GetInt() == 0 ) then
+							element("expired"):SetInt(1)
+							element:DoStoredScript("disable")
+						end
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+				if(element:parent()("IsBoxMonster"):GetInt() == 1) then
+					component("animation"):SetString("Idle")
+					component:setScale(Vector2(0.4*game.menuScaleY(),0.4*game.menuScaleY()))
+				else
+					component("animation"):SetString(element:parent()("AnimationName"):GetString())
+					component:setScale(Vector2(0.75*game.menuScaleY(),0.75*game.menuScaleY()))
+				end
+				component("layer"):SetString("Clipping")
+				
+				if(component("animation"):GetString() == "Idle") then
+					element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleX()), component:size().y / 2.0 + 50*game.menuScaleX()))
+				else
+					element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleX()), component:size().y / 2.0 ))
+				end
+			</event>
+		</aeComponent>
+	</element>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			element("deltaX"):SetFloat(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+			element("deltaX"):SetFloat(element("deltaX"):GetFloat()+math.abs(dx))
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(element("deltaX"):GetFloat() < 10 ) then
+					if(element("expired"):GetInt() == 1) then
+						game.displayNotification(game.zapExpiredStr(element("Island"):GetInt(), element("ID"):GetInt()))
+					elseif(element("locked"):GetInt() == 1) then
+						game.confEvolveUnlockWublin(element("ID"):GetInt())
+					else
+						game.boxEggToUnderlingIsland(element("ID"):GetString())
+					end
+				end
+			]]>
+		</event>
+	</touchComponent>
+	
+	
+	<template type="template_spritesheetbutton" name="ZapItButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.35*game.menuScaleX()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="NameFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-5" />		
+		<function name="enable" params="element">
+			enable(element)
+			element["Label"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		
+		<function name="disable" params="element">
+			disable(element)
+			element["Label"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<textComponent name="Label">
+			<size w="120*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.15*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.zapSendToStr(element:parent()("Island"):GetInt()))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element:parent()("deltaX"):SetFloat(0)
+			</event>
+			<event name="onTouchDrag" params="component, element, x, y, relX, relY, dx, dy">
+				element:parent()("deltaX"):SetFloat(element:parent()("deltaX"):GetFloat()+math.abs(dx))
+			</event>
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+				onTouchUp(component, element)
+				if(element:parent()("deltaX"):GetFloat() < 10 ) then
+					if(element:parent()("expired"):GetInt() == 1) then
+						game.displayNotification(game.zapExpiredStr(element:parent()("Island"):GetInt(),element:parent()("ID"):GetInt()))
+					elseif(element:parent()("locked"):GetInt() == 1) then
+						game.confEvolveUnlockWublin(element:parent()("ID"):GetInt())
+					else 
+						game.boxEggToUnderlingIsland(element:parent()("ID"):GetString())
+					end
+				end
+				]]>
+			</event>
+		</touchComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="InventoryButton">
+		<templateVar name="$upSpriteName" equals="'button_purple_big'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.35*game.menuScaleX()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="ZapItButton" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<function name="enable" params="element">
+			enable(element)
+			element["Label"]:setColor(1.0, 1.0, 1.0)
+		</function>
+		
+		<function name="disable" params="element">
+			disable(element)
+			element["Label"]:setColor(0.5, 0.5, 0.5)
+		</function>
+		<textComponent name="Label">
+			<size w="90*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.15*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_INVENTORY_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				if(element:parent()("expired"):GetInt() == 0) then
+					if(game.getPopUp() ~= "underling_inventory") then
+						element:root():popPopUp()
+						manager:setContext("UNDERLING_INVENTORY_MENU")
+					
+						game.selectUnderling(element:parent()("ID"):GetInt())
+						game.pushPopUp("underling_inventory")
+					end
+				else
+					game.displayNotification(game.zapExpiredStr(element:parent()("Island"):GetInt(),element:parent()("ID"):GetInt()))
+				end
+			</event>
+		</touchComponent>
+	</template>
+
+	<element name="Lock">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="NameFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_lock")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("layer"):SetString("Clipping")
+				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+</template>

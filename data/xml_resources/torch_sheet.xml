@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:d37448903c10fdcb6ba3a0cb4f4b01b8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/structures/torch_sheet.png" width="256" height="256">
+    <sprite n="fire_sprite_1_simpleB" x="3" y="3" w="86" h="94" oX="7" oY="3" oW="100" oH="100"/>
+    <sprite n="fire_sprite_2_simpleB" x="3" y="100" w="66" h="94" oX="17" oY="3" oW="100" oH="100"/>
+    <sprite n="glow_sprite_resized" x="167" y="3" w="82" h="82" oX="2" oY="2" oW="88" oH="88"/>
+    <sprite n="smoke_sprite" x="72" y="100" w="92" h="92" oX="4" oY="4" oW="100" oH="100"/>
+    <sprite n="spark_sprite" x="3" y="197" w="36" h="36" oX="2" oY="0" oW="40" oH="40"/>
+</TextureAtlas>

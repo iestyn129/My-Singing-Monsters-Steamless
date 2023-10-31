@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4cfaeff9fe5ac813d4da3ceb751a8cf6:1bf038fd9d7eda54505cd79966d26586:2b64aa36877f24ee56a52337a7749bb3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_P01_costume_01_sheet.png" width="256" height="256" hires="true">
+    <sprite n="monster_P01_costume_hair.png" x="4" y="4" w="143" h="84" pX="0.5" pY="0.5" oX="0" oY="2" oW="144" oH="88"/>
+    <sprite n="monster_P01_costume_suit.png" x="151" y="4" w="88" h="127" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="88" r="y"/>
+</TextureAtlas>

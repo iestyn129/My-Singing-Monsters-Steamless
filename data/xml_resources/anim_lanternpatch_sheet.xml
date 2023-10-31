@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:512ea1bca66a908fca151fc1448d3cbf:38f97e314171c7dfa3cb06d546dbb5a8:7e87f2fce527dcab3419f4dbf7a7f447$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_lanternpatch_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="laturnpatch_base.png" x="2" y="2" w="480" h="630" pX="0.5" pY="0.5"/>
+    <sprite n="laturnpatch_glow.png" x="360" y="634" w="104" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="laturnpatch_glow_pumpkin_01.png" x="186" y="830" w="172" h="176" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="laturnpatch_glow_pumpkin_02.png" x="2" y="634" w="192" h="194" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="laturnpatch_glow_pumpkin_03.png" x="2" y="830" w="182" h="182" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="gfx/empty.png" width="4" height="4">
+	<sprite n="empty" x="0" y="0" w="4" h="4"/>
+</TextureAtlas>

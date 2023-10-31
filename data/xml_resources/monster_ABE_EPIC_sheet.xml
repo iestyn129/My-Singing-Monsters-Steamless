@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3fbdb3d21afcb61287555d1e0ebe9893:41d662d16f1c69d7d43c9ca279186b83:13bc230a2b3ad323e5875111bf2b5e46$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABE_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ABE_izit_eyeback_EPIC.png" x="406" y="64" w="84" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_izit_lids01_EPIC.png" x="145" y="315" w="39" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="40" r="y"/>
+    <sprite n="ABE_izit_lids02_EPIC.png" x="164" y="391" w="39" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="40" r="y"/>
+    <sprite n="ABE_izit_lids03_EPIC.png" x="186" y="315" w="39" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="40" r="y"/>
+    <sprite n="ABE_izit_lids04_EPIC.png" x="122" y="424" w="40" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABE_izit_mouth_1_EPIC.png" x="52" y="364" w="48" h="74" pX="0.5" pY="0.5" oX="3" oY="1" oW="80" oH="50" r="y"/>
+    <sprite n="ABE_izit_mouth_2_EPIC.png" x="102" y="348" w="41" h="74" pX="0.5" pY="0.5" oX="3" oY="3" oW="80" oH="50" r="y"/>
+    <sprite n="ABE_izit_mouth_3_EPIC.png" x="205" y="391" w="41" h="73" pX="0.5" pY="0.5" oX="4" oY="0" oW="80" oH="50" r="y"/>
+    <sprite n="ABE_izit_mouth_4_EPIC.png" x="78" y="311" w="53" h="35" pX="0.5" pY="0.5" oX="4" oY="1" oW="80" oH="50"/>
+    <sprite n="ABE_izit_nose.png" x="492" y="98" w="16" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_left_mushroom_stalk.png" x="2" y="364" w="48" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_left_mushroom_top_EPIC.png" x="136" y="185" w="66" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABE_pupil_izit_large_EPIC.png" x="492" y="64" w="16" h="16" pX="0.5" pY="0.5" oX="1" oY="1" oW="18" oH="18"/>
+    <sprite n="ABE_pupil_izit_small_EPIC.png" x="502" y="2" w="8" h="10" pX="0.5" pY="0.5" oX="0" oY="1" oW="10" oH="10" r="y"/>
+    <sprite n="ABE_pupil_rhootz_EPIC.png" x="492" y="82" w="16" h="14" pX="0.5" pY="0.5" oX="1" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="ABE_rhootz_eyeback_EPIC.png" x="406" y="2" w="94" h="60" pX="0.5" pY="0.5" oX="3" oY="0" oW="100" oH="60"/>
+    <sprite n="ABE_rhootz_lids01_EPIC.png" x="136" y="145" w="67" h="38" pX="0.5" pY="0.5" oX="2" oY="1" oW="70" oH="44"/>
+    <sprite n="ABE_rhootz_lids02_EPIC.png" x="2" y="440" w="38" h="68" pX="0.5" pY="0.5" oX="1" oY="1" oW="70" oH="44" r="y"/>
+    <sprite n="ABE_rhootz_lids03_EPIC.png" x="42" y="440" w="38" h="68" pX="0.5" pY="0.5" oX="1" oY="1" oW="70" oH="44" r="y"/>
+    <sprite n="ABE_rhootz_lids04_EPIC.png" x="82" y="440" w="38" h="68" pX="0.5" pY="0.5" oX="1" oY="1" oW="70" oH="44" r="y"/>
+    <sprite n="ABE_rhootz_mouth_1_EPIC.png" x="2" y="260" w="75" h="48" pX="0.5" pY="0.5" oX="2" oY="1" oW="80" oH="50"/>
+    <sprite n="ABE_rhootz_mouth_2_EPIC.png" x="399" y="112" w="77" h="44" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="50"/>
+    <sprite n="ABE_rhootz_mouth_3_EPIC.png" x="2" y="219" w="76" h="39" pX="0.5" pY="0.5" oX="1" oY="3" oW="80" oH="50"/>
+    <sprite n="ABE_right_mushroom_stalk.png" x="2" y="310" w="74" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABE_right_mushroom_top_EPIC.png" x="2" y="145" w="132" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_shadow.png" x="478" y="112" w="24" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABE_shadow_ground.png" x="205" y="100" w="192" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="ABE_thumpie_izit.png" x="2" y="2" w="201" h="141" pX="0.5" pY="0.5" oX="4" oY="0" oW="210" oH="160"/>
+    <sprite n="ABE_thumpie_rhootz.png" x="366" y="162" w="142" h="141" pX="0.5" pY="0.5" oX="5" oY="18" oW="160" oH="160" r="y"/>
+    <sprite n="ABE_treestump.png" x="205" y="2" w="199" h="96" pX="0.5" pY="0.5" oX="7" oY="0" oW="206" oH="96"/>
+    <sprite n="ABE_treestump_top.png" x="205" y="142" w="159" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="66"/>
+    <sprite n="butterfly01.png" x="80" y="219" w="54" h="44" pX="0.5" pY="0.5" oX="0" oY="4" oW="54" oH="48"/>
+    <sprite n="butterfly01_EPIC.png" x="79" y="265" w="54" h="44" pX="0.5" pY="0.5" oX="0" oY="4" oW="54" oH="48"/>
+    <sprite n="butterfly02.png" x="227" y="305" w="45" h="48" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="48" r="y"/>
+    <sprite n="butterfly02_EPIC.png" x="274" y="209" w="48" h="45" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="48"/>
+    <sprite n="butterfly03.png" x="164" y="467" w="48" h="42" pX="0.5" pY="0.5" oX="5" oY="0" oW="54" oH="48" r="y"/>
+    <sprite n="butterfly03_EPIC.png" x="214" y="466" w="48" h="42" pX="0.5" pY="0.5" oX="5" oY="0" oW="54" oH="48" r="y"/>
+</TextureAtlas>

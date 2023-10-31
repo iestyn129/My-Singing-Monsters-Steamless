@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1555fa3a8d8706fc160bd977f981fd72:f02bc21aa5e79aaf479625f77e0e2dfb:cf88eb9bdd9cd4401e92dc506d25bc1f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U02_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="U02_backbody" x="348" y="421" w="152" h="173" pX="0.5" pY="0.5" oX="12" oY="9" oW="176" oH="192"/>
+    <sprite n="U02_body_glow" x="2" y="474" w="183" h="163" pX="0.5" pY="0.5" oX="8" oY="10" oW="180" oH="204" r="y"/>
+    <sprite n="U02_frontbody" x="364" y="253" w="123" h="166" pX="0.5" pY="0.5" oX="10" oY="12" oW="188" oH="148" r="y"/>
+    <sprite n="U02_head" x="249" y="292" w="112" h="110" pX="0.5" pY="0.5" oX="10" oY="12" oW="132" oH="136" r="y"/>
+    <sprite n="U02_jaw" x="187" y="638" w="37" h="77" pX="0.5" pY="0.5" oX="11" oY="11" oW="100" oH="60" r="y"/>
+    <sprite n="U02_left_foot" x="63" y="639" w="58" h="49" pX="0.5" pY="0.5" oX="8" oY="12" oW="76" oH="72"/>
+    <sprite n="U02_left_wing" x="230" y="509" w="93" h="166" pX="0.5" pY="0.5" oX="8" oY="10" oW="112" oH="184"/>
+    <sprite n="U02_left_wingplate" x="2" y="376" w="231" h="96" pX="0.5" pY="0.5" oX="9" oY="11" oW="116" oH="252" r="y"/>
+    <sprite n="U02_leg_segment_1" x="364" y="209" w="133" h="42" pX="0.5" pY="0.5" oX="11" oY="9" oW="64" oH="152" r="y"/>
+    <sprite n="U02_leg_segment_2" x="364" y="2" w="146" h="39" pX="0.5" pY="0.5" oX="10" oY="11" oW="60" oH="168" r="y"/>
+    <sprite n="U02_leg_segment_3" x="235" y="463" w="106" h="44" pX="0.5" pY="0.5" oX="10" oY="9" oW="64" oH="124" r="y"/>
+    <sprite n="U02_lower_eyelid1" x="187" y="474" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid2" x="187" y="515" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid3" x="187" y="556" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_lower_eyelid4" x="187" y="597" w="41" h="39" pX="0.5" pY="0.5" oX="9" oY="10" oW="60" oH="60"/>
+    <sprite n="U02_pupil" x="489" y="253" w="13" h="13" pX="0.5" pY="0.5" oX="11" oY="11" oW="36" oH="36"/>
+    <sprite n="U02_right_foot" x="2" y="639" w="59" h="47" pX="0.5" pY="0.5" oX="10" oY="10" oW="80" oH="68"/>
+    <sprite n="U02_right_wing" x="364" y="43" w="137" h="164" pX="0.5" pY="0.5" oX="9" oY="10" oW="156" oH="184"/>
+    <sprite n="U02_right_wingplate" x="2" y="292" w="245" h="82" pX="0.5" pY="0.5" oX="8" oY="12" oW="104" oH="268" r="y"/>
+    <sprite n="U02_shadow" x="235" y="404" w="111" h="57" pX="0.5" pY="0.5" oX="8" oY="9" oW="128" oH="76"/>
+    <sprite n="U02_spark" x="37" y="688" w="24" h="24" pX="0.5" pY="0.5" oX="12" oY="12" oW="48" oH="48"/>
+    <sprite n="U02_statue" x="2" y="2" w="360" h="288" pX="0.5" pY="0.5" oX="11" oY="12" oW="312" oH="384" r="y"/>
+    <sprite n="U02_upper_eyelid1" x="2" y="688" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56"/>
+    <sprite n="U02_upper_eyelid2" x="123" y="639" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56"/>
+    <sprite n="U02_upper_eyelid3" x="123" y="673" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56"/>
+    <sprite n="U02_upper_eyelid4" x="63" y="690" w="33" h="32" pX="0.5" pY="0.5" oX="9" oY="12" oW="52" oH="56"/>
+</TextureAtlas>

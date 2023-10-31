@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8c4fe52e55183987a532f50876940baa:935e2b5ae6a6aafacb190a9b3022bd85:309587980cc9aa95053663eb66ca4c5c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island03_bird_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island03_backbeak_feathers" x="1434" y="2" w="537" h="296" pX="0.5" pY="0.5"/>
+    <sprite n="island03_beak" x="1278" y="1580" w="474" h="462" pX="0.5" pY="0.5"/>
+    <sprite n="island03_bell" x="1754" y="1797" w="213" h="213" pX="0.5" pY="0.5"/>
+    <sprite n="island03_chick_01" x="815" y="1966" w="90" h="72" pX="0.5" pY="0.5" oX="35" oY="31" oW="144" oH="146" r="y"/>
+    <sprite n="island03_chick_02" x="981" y="1952" w="72" h="88" pX="0.5" pY="0.5" oX="35" oY="33" oW="144" oH="146"/>
+    <sprite n="island03_chick_03" x="815" y="1878" w="76" h="86" pX="0.5" pY="0.5" oX="31" oY="35" oW="144" oH="146"/>
+    <sprite n="island03_chick_04" x="1055" y="1942" w="72" h="84" pX="0.5" pY="0.5" oX="35" oY="37" oW="144" oH="146"/>
+    <sprite n="island03_chick_05" x="893" y="1878" w="90" h="72" pX="0.5" pY="0.5" oX="35" oY="31" oW="144" oH="146" r="y"/>
+    <sprite n="island03_chick_06" x="747" y="1921" w="66" h="101" pX="0.5" pY="0.5" oX="35" oY="17" oW="144" oH="146"/>
+    <sprite n="island03_chick_07" x="619" y="1921" w="62" h="108" pX="0.5" pY="0.5" oX="35" oY="13" oW="144" oH="146"/>
+    <sprite n="island03_chick_08" x="683" y="1921" w="62" h="108" pX="0.5" pY="0.5" oX="35" oY="7" oW="144" oH="146"/>
+    <sprite n="island03_chick_09" x="549" y="1921" w="68" h="108" pX="0.5" pY="0.5" oX="29" oY="7" oW="144" oH="146"/>
+    <sprite n="island03_chick_10" x="985" y="1878" w="101" h="62" pX="0.5" pY="0.5" oX="35" oY="19" oW="144" oH="146" r="y"/>
+    <sprite n="island03_chick_11" x="907" y="1952" w="72" h="90" pX="0.5" pY="0.5" oX="35" oY="35" oW="144" oH="146"/>
+    <sprite n="island03_chick_shadow" x="2" y="1987" w="100" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="island03_edge" x="755" y="937" w="521" h="939" pX="0.5" pY="0.5"/>
+    <sprite n="island03_eye" x="2" y="937" w="751" h="982" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_feather_large01" x="1725" y="300" w="290" h="752" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_feather_large02" x="1278" y="735" w="445" h="843" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_feathers_centre_small" x="854" y="2" w="578" h="731" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_frontbeak_feathers" x="378" y="1921" w="169" h="109" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_horn" x="1434" y="300" w="250" h="224" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_rope_back" x="2" y="1921" w="374" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_rope_front" x="1754" y="1054" w="246" h="741" pX="0.5" pY="0.5"/>
+    <sprite n="island03_side_feathers" x="2" y="2" w="850" h="933" pX="0.5" pY="0.5"/>
+</TextureAtlas>

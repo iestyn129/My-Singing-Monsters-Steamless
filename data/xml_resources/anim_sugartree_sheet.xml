@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4829778ac5088b0e6491a6f63bafa0e5:d2b6c98755be58a203a4ebf373039446:5c11bef9655b4cc3fb321cde28076bad$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_sugartree_sheet.png" width="512" height="512" hires="true">
+    <sprite n="sugartree_button.png" x="201" y="460" w="74" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="46"/>
+    <sprite n="sugartree_dot.png" x="277" y="460" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_leaf_01.png" x="2" y="266" w="197" h="226" pX="0.5" pY="0.5" oX="1" oY="0" oW="198" oH="226"/>
+    <sprite n="sugartree_leaf_02.png" x="240" y="2" w="116" h="192" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_leaf_03.png" x="361" y="190" w="116" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_leaf_04.png" x="361" y="2" w="134" h="186" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_leaf_05.png" x="201" y="266" w="146" h="192" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_star.png" x="319" y="460" w="40" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="sugartree_trunk.png" x="2" y="2" w="236" h="262" pX="0.5" pY="0.5"/>
+</TextureAtlas>

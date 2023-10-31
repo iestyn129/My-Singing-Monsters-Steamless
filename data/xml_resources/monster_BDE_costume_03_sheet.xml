@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bd11b6336d15788ca5fe752411c50182:ab9882dda6e3b6449beb8c450b759b39:565368cc54f54de4793e3cb3e5658c89$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_costume_03_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (25, 110) -> new anchor (33, 125) diff = (-8, -15)-->
+	<!-- add double it to texturepacker output offsets (9, 7) -> (-7, -23), because hires-->
+    <sprite n="BDE_cello_BONE.png" x="2" y="32" w="119" h="467" pX="0.5" pY="0.5" oX="-7" oY="-23" oW="140" oH="480"/>
+    <sprite n="BDE_cello_bow_BONE.png" x="2" y="2" w="220" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="222" oH="28"/>
+</TextureAtlas>

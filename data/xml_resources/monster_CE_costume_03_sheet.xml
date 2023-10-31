@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8a5579ead1fdd7748e86af68b1bef3f8:670b7caccf0fe5160f3a9e754d06387b:2d6f1fa2b76730794ee35cf5c621c407$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CE_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="CE_belly_robo.png" x="2" y="264" w="132" h="146" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_body_robo.png" x="2" y="2" w="162" h="260" pX="0.5" pY="0.5"/>
+    <sprite n="CE_left_foot_robo.png" x="166" y="128" w="69" h="68" pX="0.5" pY="0.5" oX="2" oY="1" oW="70" oH="70" r="y"/>
+    <sprite n="CE_left_leg_robo.png" x="166" y="198" w="68" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_right_foot_robo.png" x="166" y="62" w="76" h="64" pX="0.5" pY="0.5" oX="6" oY="0" oW="70" oH="76" r="y"/>
+    <sprite n="CE_right_leg_robo.png" x="166" y="2" w="86" h="58" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

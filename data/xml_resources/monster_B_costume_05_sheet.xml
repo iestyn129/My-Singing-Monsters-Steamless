@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7455c79cf8fcd1e9851198669b4be00b:bc60f64befa9bd5653abdb9b2fbd4f21:6754d77b0d46b415a36408330fa87832$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_B_costume_05_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (8, 9) -> new anchor (4, 25) diff = (4, -16)-->
+	<!-- add double it to texturepacker output offsets (12, 9) -> (20, -23)-->
+    <sprite n="B_costume_05_hat.png" x="44" y="118" w="61" h="91" pX="0.5" pY="0.5" oX="20" oY="-23" oW="112" oH="80" r="y"/>
+	<!-- original anchor = (26, 7) -> new anchor (35, 14) diff = (-9, -7)-->
+	<!-- add double it to texturepacker output offsets (3, 6) -> (-15, -8)-->
+    <sprite n="B_costume_05_hat_small.png" x="2" y="214" w="64" h="39" pX="0.5" pY="0.5" oX="-15" oY="-8" oW="72" oH="52"/>
+    <sprite n="B_costume_05_leaf.png" x="107" y="118" w="62" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="B_costume_05_pot.png" x="2" y="2" w="112" h="114" pX="0.5" pY="0.5"/>
+    <sprite n="B_costume_05_pot_behind.png" x="2" y="118" w="40" h="94" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

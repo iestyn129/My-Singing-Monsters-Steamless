@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b8d4122318bfc8c40d0b388fd9db3f25:e296c621a3ec23a0ce8601b6d35b1596:ccf204bf4d84b7ca97458961ee5078a3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_Aurorium_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Aurorium_base" x="2" y="187" w="957" h="820" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992" r="y"/>
+    <sprite n="castle_Aurorium_crystalA" x="2" y="2" w="133" h="119" pX="0.5" pY="0.5" oX="7" oY="21" oW="160" oH="160"/>
+    <sprite n="castle_Aurorium_crystalB" x="361" y="2" w="191" h="179" pX="0.5" pY="0.5" oX="1" oY="8" oW="192" oH="192"/>
+    <sprite n="castle_Aurorium_crystalC" x="554" y="2" w="195" h="183" pX="0.5" pY="0.5" oX="22" oY="30" oW="240" oH="240"/>
+    <sprite n="castle_Aurorium_pyramid" x="137" y="2" w="222" h="156" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240" r="y"/>
+</TextureAtlas>

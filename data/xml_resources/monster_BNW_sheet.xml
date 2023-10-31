@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:01f3adb80505767d402fc3c0b1e506cc:3b9b3789e0aacaab3ef4328b8a07bb89:7c49ef681ada632eb94d035388e79966$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BNW_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="BNW_body" x="180" y="225" w="175" h="79" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_body_RARE" x="713" y="274" w="288" h="81" pX="0.5" pY="0.5" oX="9" oY="8" oW="100" oH="300" r="y"/>
+    <sprite n="BNW_dress_back_01" x="159" y="162" w="147" h="59" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="BNW_dress_back_02" x="800" y="123" w="155" h="57" pX="0.5" pY="0.5" oX="1" oY="2" oW="162" oH="61"/>
+    <sprite n="BNW_dress_back_03" x="168" y="111" w="162" h="49" pX="0.5" pY="0.5" oX="0" oY="11" oW="162" oH="61"/>
+    <sprite n="BNW_dress_back_04" x="496" y="119" w="150" h="53" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="BNW_dress_back_05" x="266" y="64" w="152" h="45" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="BNW_dress_front_01" x="850" y="189" w="170" h="83" pX="0.5" pY="0.5" oX="4" oY="4" oW="186" oH="94"/>
+    <sprite n="BNW_dress_front_02" x="174" y="306" w="177" h="82" pX="0.5" pY="0.5" oX="2" oY="10" oW="186" oH="94"/>
+    <sprite n="BNW_dress_front_03" x="532" y="357" w="185" h="83" pX="0.5" pY="0.5" oX="0" oY="11" oW="186" oH="94"/>
+    <sprite n="BNW_dress_front_04" x="357" y="254" w="176" h="79" pX="0.5" pY="0.5" oX="2" oY="3" oW="186" oH="94"/>
+    <sprite n="BNW_dress_front_05" x="523" y="176" w="176" h="76" pX="0.5" pY="0.5" oX="2" oY="1" oW="186" oH="94"/>
+    <sprite n="BNW_eyelid_01" x="434" y="27" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_eyelid_02" x="473" y="27" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_eyelid_03" x="512" y="27" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_eyelid_04" x="551" y="27" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_finger" x="34" y="2" w="24" h="17" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_finger_RARE" x="60" y="2" w="24" h="17" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_foot_left" x="574" y="71" w="64" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_foot_left_RARE" x="640" y="71" w="64" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_foot_right" x="706" y="72" w="64" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_foot_right_RARE" x="772" y="73" w="64" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_horn_left" x="620" y="2" w="73" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_horn_right" x="695" y="2" w="73" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_lowerarm_left" x="2" y="55" w="64" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_lowerarm_left_RARE" x="68" y="60" w="64" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_lowerarm_right" x="134" y="60" w="64" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_lowerarm_right_RARE" x="200" y="61" w="64" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_lowerleg_left" x="838" y="75" w="81" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_lowerleg_left_RARE" x="921" y="75" w="81" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_lowerleg_right" x="2" y="106" w="81" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_lowerleg_right_RARE" x="85" y="106" w="81" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_mouth_01" x="81" y="26" w="59" h="32" pX="0.5" pY="0.5" oX="2" oY="2" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_02" x="310" y="27" w="60" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_03" x="590" y="32" w="61" h="37" pX="0.5" pY="0.5" oX="1" oY="2" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_04" x="872" y="34" w="63" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_mouth_05" x="866" y="2" w="56" h="30" pX="0.5" pY="0.5" oX="3" oY="4" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_06" x="770" y="2" w="46" h="29" pX="0.5" pY="0.5" oX="7" oY="5" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_07" x="924" y="2" w="40" h="30" pX="0.5" pY="0.5" oX="9" oY="5" oW="63" oH="39"/>
+    <sprite n="BNW_mouth_08" x="44" y="21" w="35" h="32" pX="0.5" pY="0.5" oX="11" oY="4" oW="63" oH="39"/>
+    <sprite n="BNW_pupil" x="2" y="2" w="14" h="13" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_pupil_RARE" x="18" y="2" w="14" h="13" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_ring_01" x="957" y="123" w="64" h="64" pX="0.5" pY="0.5" oX="50" oY="50" oW="163" oH="163"/>
+    <sprite n="BNW_ring_02" x="906" y="357" w="107" h="107" pX="0.5" pY="0.5" oX="28" oY="28" oW="163" oH="163"/>
+    <sprite n="BNW_ring_03" x="111" y="390" w="130" h="130" pX="0.5" pY="0.5" oX="17" oY="17" oW="163" oH="163"/>
+    <sprite n="BNW_ring_04" x="375" y="419" w="136" h="136" pX="0.5" pY="0.5" oX="14" oY="14" oW="163" oH="163"/>
+    <sprite n="BNW_ring_05" x="651" y="442" w="138" h="138" pX="0.5" pY="0.5" oX="13" oY="13" oW="163" oH="163"/>
+    <sprite n="BNW_shadow" x="701" y="182" w="147" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_thumb" x="86" y="2" w="23" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_thumb_RARE" x="111" y="2" w="23" h="22" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_upperarm_left" x="136" y="2" w="56" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_upperarm_left_RARE" x="194" y="2" w="56" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_upperarm_right" x="252" y="2" w="56" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_upperarm_right_RARE" x="310" y="2" w="56" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BNW_upperleg_left" x="368" y="2" w="61" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_upperleg_left_RARE" x="431" y="2" w="61" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_upperleg_right" x="494" y="2" w="61" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BNW_upperleg_right_RARE" x="557" y="2" w="61" h="23" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eyeball" x="240" y="26" w="33" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="eyeball_RARE" x="275" y="26" w="33" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_dress_back_01" x="308" y="164" w="147" h="59" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="RARE_BNW_dress_back_02" x="2" y="154" w="155" h="57" pX="0.5" pY="0.5" oX="1" oY="2" oW="162" oH="61"/>
+    <sprite n="RARE_BNW_dress_back_03" x="332" y="113" w="162" h="49" pX="0.5" pY="0.5" oX="0" oY="11" oW="162" oH="61"/>
+    <sprite n="RARE_BNW_dress_back_04" x="648" y="121" w="150" h="53" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="RARE_BNW_dress_back_05" x="420" y="66" w="152" h="45" pX="0.5" pY="0.5" oX="3" oY="0" oW="162" oH="61"/>
+    <sprite n="RARE_BNW_dress_front_01" x="2" y="301" w="170" h="83" pX="0.5" pY="0.5" oX="4" oY="4" oW="186" oH="94"/>
+    <sprite n="RARE_BNW_dress_front_02" x="353" y="335" w="177" h="82" pX="0.5" pY="0.5" oX="2" oY="10" oW="186" oH="94"/>
+    <sprite n="RARE_BNW_dress_front_03" x="719" y="357" w="185" h="83" pX="0.5" pY="0.5" oX="0" oY="11" oW="186" oH="94"/>
+    <sprite n="RARE_BNW_dress_front_04" x="535" y="260" w="176" h="79" pX="0.5" pY="0.5" oX="2" oY="3" oW="186" oH="94"/>
+    <sprite n="RARE_BNW_dress_front_05" x="2" y="223" w="176" h="76" pX="0.5" pY="0.5" oX="2" oY="1" oW="186" oH="94"/>
+    <sprite n="RARE_BNW_eyelid_01" x="653" y="32" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_eyelid_02" x="692" y="32" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_eyelid_03" x="731" y="32" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_eyelid_04" x="770" y="33" w="37" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_mouth_01" x="142" y="26" w="59" h="32" pX="0.5" pY="0.5" oX="2" oY="2" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_02" x="372" y="27" w="60" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_03" x="809" y="34" w="61" h="37" pX="0.5" pY="0.5" oX="1" oY="2" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_04" x="937" y="34" w="63" h="39" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_BNW_mouth_05" x="966" y="2" w="56" h="30" pX="0.5" pY="0.5" oX="3" oY="4" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_06" x="818" y="2" w="46" h="29" pX="0.5" pY="0.5" oX="7" oY="5" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_07" x="2" y="21" w="40" h="30" pX="0.5" pY="0.5" oX="9" oY="5" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_mouth_08" x="203" y="26" w="35" h="32" pX="0.5" pY="0.5" oX="11" oY="4" oW="63" oH="39"/>
+    <sprite n="RARE_BNW_ring_01" x="457" y="174" w="64" h="64" pX="0.5" pY="0.5" oX="50" oY="50" oW="163" oH="163"/>
+    <sprite n="RARE_BNW_ring_02" x="2" y="386" w="107" h="107" pX="0.5" pY="0.5" oX="28" oY="28" oW="163" oH="163"/>
+    <sprite n="RARE_BNW_ring_03" x="243" y="419" w="130" h="130" pX="0.5" pY="0.5" oX="17" oY="17" oW="163" oH="163"/>
+    <sprite n="RARE_BNW_ring_04" x="513" y="442" w="136" h="136" pX="0.5" pY="0.5" oX="14" oY="14" oW="163" oH="163"/>
+    <sprite n="RARE_BNW_ring_05" x="791" y="466" w="138" h="138" pX="0.5" pY="0.5" oX="13" oY="13" oW="163" oH="163"/>
+</TextureAtlas>

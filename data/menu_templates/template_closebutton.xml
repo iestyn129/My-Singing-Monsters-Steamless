@@ -1,0 +1,98 @@
+<template name="template_closebutton" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$Layer" equals="FrontPopUps"/>
+	<defaultTemplateVar name="$TouchPriority" equals="0"/>
+	
+
+	<size dependentOnElement="element:name()" dependentOnComponent="CloseImage" />
+
+	<spriteSheetComponent name="CloseImage">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_bamboo_close")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("$Layer")
+			]]>
+		</event>
+	</spriteSheetComponent>
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchDown" params="component, element">
+			<![CDATA[
+				element["CloseImage"]:setColor(0.5, 0.5, 0.5)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+				element:DoStoredScript("onClose")
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
+			]]>
+		</event>
+	</touchComponent>
+	
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("ButtonMapping"):SetInt(game.cancelButton())
+			element("buttonDown"):SetInt(0)
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyDown", "gotMsgKeyDown")
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyUp", "gotMsgKeyUp")
+			
+			local touchComponent = element:GetComponent("Touch")
+			touchComponent:setOrientation(MenuOrientation(0, 0, $TouchPriority, HCENTER, VCENTER))
+			
+		]]>
+	</event>
+	
+	<event name="gotMsgKeyDown" params="element, msg">
+		<![CDATA[
+			if element("ButtonMapping"):GetInt() == msg.key.val
+				and element["Touch"]("enabled"):GetInt() ~= 0
+				and element("buttonDown"):GetInt() == 0
+			then
+				element["Touch"]("checkOnTop"):SetInt(0)
+				if(element["Touch"]("onTop"):GetInt() == 1) then
+					element("buttonDown"):SetInt(msg.key.val)
+					element["Touch"]:DoStoredScript("onTouchDown")
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="gotMsgKeyUp" params="element, msg">
+		<![CDATA[
+		if element("ButtonMapping"):GetInt() == msg.key.val
+				and element["Touch"]("enabled"):GetInt() ~= 0
+				and element("buttonDown"):GetInt() == msg.key.val
+		then
+			element("buttonDown"):SetInt(0)
+			element["Touch"]:DoStoredScript("onTouchUp")
+		end
+		]]>
+	</event>
+
+	<function name="setVisible" params="element">
+		element.isVisible = true
+		element.CloseImage:GetVar("visible"):SetInt(1)
+		element.Touch:GetVar("enabled"):SetInt(1)
+	</function>
+	
+	<function name="setInvisible" params="element">
+		element.isVisible = false
+		element.CloseImage:GetVar("visible"):SetInt(0)
+		element.Touch:GetVar("enabled"):SetInt(0)
+	</function>
+	
+
+
+</template>

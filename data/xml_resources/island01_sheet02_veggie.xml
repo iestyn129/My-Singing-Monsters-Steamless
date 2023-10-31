@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7a50b526ef5b4087c087c6431354141f:940413a258ab25b36acca47d9c53b657:a993268ec3d87c75f200af9fd6a101fe$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island01_sheet02_veggie.png" width="1024" height="2048" hires="true">
+    <sprite n="island01_asparagus_01.png" x="2" y="1222" w="284" h="672" pX="0.5" pY="0.5"/>
+    <sprite n="island01_asparagus_02.png" x="288" y="1208" w="596" h="156" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_asparagus_03.png" x="288" y="1366" w="204" h="436" pX="0.5" pY="0.5"/>
+    <sprite n="island01_asparagus_04.png" x="907" y="498" w="94" h="392" pX="0.5" pY="0.5"/>
+    <sprite n="island01_asparagus_05.png" x="550" y="1707" w="292" h="302" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_ear_leaf.png" x="745" y="1366" w="264" h="196" pX="0.5" pY="0.5"/>
+    <sprite n="island01_grape_leaf.png" x="494" y="1366" w="249" h="339" pX="0.5" pY="0.5" oX="0" oY="0" oW="342" oH="256" r="y"/>
+    <sprite n="island01_grape_vine_01.png" x="907" y="318" w="100" h="178" pX="0.5" pY="0.5"/>
+    <sprite n="island01_grape_vine_02.png" x="288" y="1804" w="260" h="218" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_grape_vine_03.png" x="907" y="72" w="108" h="244" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_side_front.png" x="2" y="2" w="903" h="1204" pX="0.5" pY="0.5" oX="1" oY="0" oW="904" oH="1204"/>
+    <sprite n="island01_side_grapes.png" x="2" y="1896" w="222" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_snail01_01.png" x="961" y="1091" w="52" h="40" pX="0.5" pY="0.5" oX="8" oY="1" oW="68" oH="44"/>
+    <sprite n="island01_snail01_02.png" x="967" y="1001" w="54" h="39" pX="0.5" pY="0.5" oX="7" oY="2" oW="68" oH="44"/>
+    <sprite n="island01_snail01_03.png" x="907" y="969" w="58" h="38" pX="0.5" pY="0.5" oX="5" oY="3" oW="68" oH="44"/>
+    <sprite n="island01_snail01_04.png" x="907" y="930" w="64" h="37" pX="0.5" pY="0.5" oX="2" oY="4" oW="68" oH="44"/>
+    <sprite n="island01_snail01_05.png" x="907" y="892" w="66" h="36" pX="0.5" pY="0.5" oX="1" oY="5" oW="68" oH="44"/>
+    <sprite n="island01_snail01_06.png" x="907" y="1058" w="52" h="43" pX="0.5" pY="0.5" oX="10" oY="1" oW="68" oH="44"/>
+    <sprite n="island01_snail01_07.png" x="953" y="1181" w="44" h="39" pX="0.5" pY="0.5" oX="14" oY="0" oW="68" oH="44" r="y"/>
+    <sprite n="island01_snail01_08.png" x="907" y="1145" w="44" h="42" pX="0.5" pY="0.5" oX="14" oY="0" oW="68" oH="44" r="y"/>
+    <sprite n="island01_snail01_09.png" x="907" y="1103" w="52" h="40" pX="0.5" pY="0.5" oX="9" oY="0" oW="68" oH="44"/>
+    <sprite n="island01_snail02_01.png" x="961" y="1133" w="47" h="46" pX="0.5" pY="0.5" oX="6" oY="2" oW="60" oH="54"/>
+    <sprite n="island01_snail02_02.png" x="973" y="953" w="49" h="46" pX="0.5" pY="0.5" oX="5" oY="3" oW="60" oH="54"/>
+    <sprite n="island01_snail02_03.png" x="966" y="1042" w="53" h="47" pX="0.5" pY="0.5" oX="3" oY="4" oW="60" oH="54"/>
+    <sprite n="island01_snail02_04.png" x="907" y="1009" w="57" h="47" pX="0.5" pY="0.5" oX="1" oY="5" oW="60" oH="54"/>
+    <sprite n="island01_snail02_05.png" x="975" y="892" w="47" h="59" pX="0.5" pY="0.5" oX="0" oY="6" oW="60" oH="54" r="y"/>
+    <sprite n="island01_squash_stem.png" x="907" y="2" w="110" h="68" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

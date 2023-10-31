@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7d4db7bb2eca92df74303c0a93b4f60d:63767946f4ba18db61471bfd1f041847:c1caf32cab7a135a3befc8018d2af319$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_04_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="VOC_04_costume_01_chest.png" x="349" y="2" w="151" h="141" pX="0.5" pY="0.5" oX="16" oY="20" oW="190" oH="176"/>
+    <sprite n="VOC_04_costume_01_head.png" x="2" y="253" w="227" h="252" pX="0.5" pY="0.5" oX="4" oY="13" oW="270" oH="240" r="y"/>
+	<!-- original anchor = (55, 99) -> new anchor (18.5, 174) diff = (36.5, -75)-->
+	<!-- add double it to texturepacker output offsets (1, 0) -> (74, -150)-->
+    <sprite n="VOC_04_costume_01_hook.png" x="2" y="2" w="345" h="249" pX="0.5" pY="0.5" oX="74" oY="-150" oW="350" oH="250"/>
+    <sprite n="VOC_04_costume_01_stomach.png" x="349" y="145" w="142" h="113" pX="0.5" pY="0.5" oX="16" oY="10" oW="180" oH="140"/>
+    <sprite n="VOC_04_costume_01_upperarm.png" x="231" y="253" w="115" h="59" pX="0.5" pY="0.5" oX="28" oY="15" oW="110" oH="140" r="y"/>
+    <sprite n="VOC_04_costume_01_upperleg_01.png" x="231" y="337" w="71" h="140" pX="0.5" pY="0.5" oX="14" oY="8" oW="100" oH="160"/>
+    <sprite n="VOC_04_costume_01_upperleg_02.png" x="348" y="260" w="140" h="75" pX="0.5" pY="0.5" oX="14" oY="8" oW="100" oH="160" r="y"/>
+</TextureAtlas>

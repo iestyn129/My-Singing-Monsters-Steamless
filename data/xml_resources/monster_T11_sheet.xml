@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:72b3f2e9b4249648e564e415496e240c:e43811c48b9eb354f3d7dcdccea1db26:89dccfbb30f87055978ee447cd67d0ec$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T11_sheet.png" width="512" height="512" hires="true">
+    <sprite n="T11_body_back.png" x="94" y="331" w="57" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_body_front.png" x="2" y="331" w="90" h="164" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_bolt_01.png" x="397" y="91" w="73" h="47" pX="0.5" pY="0.5" oX="0" oY="1" oW="74" oH="50"/>
+    <sprite n="T11_bolt_02.png" x="397" y="140" w="71" h="49" pX="0.5" pY="0.5" oX="1" oY="0" oW="74" oH="50"/>
+    <sprite n="T11_bolt_03.png" x="295" y="245" w="65" h="50" pX="0.5" pY="0.5" oX="4" oY="0" oW="74" oH="50"/>
+    <sprite n="T11_bolt_04.png" x="389" y="191" w="71" h="49" pX="0.5" pY="0.5" oX="1" oY="0" oW="74" oH="50"/>
+    <sprite n="T11_dome.png" x="206" y="274" w="35" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_foot.png" x="243" y="208" w="26" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="T11_glow.png" x="153" y="331" w="116" h="116" pX="0.5" pY="0.5" oX="0" oY="0" oW="118" oH="116"/>
+    <sprite n="T11_glow_crack_01.png" x="206" y="100" w="62" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="T11_glow_crack_02.png" x="295" y="91" w="100" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_glow_crack_03.png" x="295" y="163" w="92" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_glow_crack_04.png" x="179" y="449" w="88" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_head.png" x="206" y="2" w="62" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="T11_hip_joint.png" x="270" y="141" w="23" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="T11_key_01.png" x="362" y="277" w="52" h="25" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_key_02.png" x="433" y="242" w="27" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="T11_key_03.png" x="153" y="449" w="24" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="T11_key_04.png" x="365" y="242" w="66" h="33" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_key_05.png" x="243" y="274" w="31" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="T11_key_06.png" x="206" y="142" w="62" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_key_07.png" x="295" y="219" w="68" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_key_08.png" x="271" y="2" w="22" h="74" pX="0.5" pY="0.5"/>
+    <sprite n="T11_leg.png" x="56" y="497" w="25" h="11" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_lids_01.png" x="462" y="200" w="45" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="T11_lids_02.png" x="462" y="237" w="45" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="T11_lids_03.png" x="206" y="208" w="35" h="45" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_lids_04.png" x="462" y="274" w="45" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="T11_mouth_01.png" x="481" y="47" w="28" h="41" pX="0.5" pY="0.5" oX="1" oY="1" oW="43" oH="33" r="y"/>
+    <sprite n="T11_mouth_02.png" x="461" y="311" w="42" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="43" oH="33"/>
+    <sprite n="T11_mouth_03.png" x="243" y="240" w="43" h="32" pX="0.5" pY="0.5" oX="0" oY="0" oW="43" oH="33"/>
+    <sprite n="T11_mouth_04.png" x="416" y="294" w="43" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="T11_mouth_05.png" x="470" y="146" w="38" h="25" pX="0.5" pY="0.5" oX="2" oY="3" oW="43" oH="33"/>
+    <sprite n="T11_mouth_06.png" x="472" y="117" w="38" h="27" pX="0.5" pY="0.5" oX="2" oY="3" oW="43" oH="33"/>
+    <sprite n="T11_mouth_07.png" x="470" y="173" w="38" h="25" pX="0.5" pY="0.5" oX="2" oY="3" oW="43" oH="33"/>
+    <sprite n="T11_neck_shadow.png" x="206" y="170" w="55" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pipe_languid_01.png" x="2" y="497" w="19" h="13" pX="0.5" pY="0.5" oX="7" oY="6" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_02.png" x="271" y="186" w="18" h="15" pX="0.5" pY="0.5" oX="10" oY="6" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_03.png" x="271" y="203" w="18" h="14" pX="0.5" pY="0.5" oX="13" oY="5" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_04.png" x="23" y="497" w="18" h="12" pX="0.5" pY="0.5" oX="16" oY="5" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_05.png" x="83" y="497" w="19" h="9" pX="0.5" pY="0.5" oX="19" oY="3" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_06.png" x="104" y="497" w="18" h="7" pX="0.5" pY="0.5" oX="21" oY="3" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_languid_07.png" x="124" y="497" w="18" h="5" pX="0.5" pY="0.5" oX="23" oY="3" oW="28" oH="25" r="y"/>
+    <sprite n="T11_pipe_med.png" x="481" y="2" w="28" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pipe_med_top.png" x="295" y="297" w="34" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pipe_short.png" x="271" y="78" w="22" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pipe_short_top.png" x="270" y="113" w="23" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="T11_pipe_tall.png" x="269" y="449" w="24" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pipe_tall_top.png" x="481" y="90" w="28" h="25" pX="0.5" pY="0.5"/>
+    <sprite n="T11_plunger_ball.png" x="271" y="165" w="19" h="19" pX="0.5" pY="0.5"/>
+    <sprite n="T11_pupil.png" x="43" y="497" w="11" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="T11_shadow.png" x="295" y="2" w="184" h="87" pX="0.5" pY="0.5" oX="2" oY="1" oW="188" oH="88"/>
+    <sprite n="T11_statue.png" x="2" y="2" w="202" h="327" pX="0.5" pY="0.5" oX="4" oY="1" oW="218" oH="328"/>
+</TextureAtlas>

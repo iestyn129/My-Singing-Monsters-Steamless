@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ba2e59aab98c08107adb8efb4a06ba04:8ecf64b70122a26d0e3110809e550d0e:2dfcbbbe8e33336fff6c2f7994e2e4a2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_P05_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="P05_bell_A" x="320" y="309" w="28" h="28" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="32"/>
+    <sprite n="P05_bell_B" x="320" y="238" w="29" h="31" pX="0.5" pY="0.5" oX="0" oY="2" oW="32" oH="32" r="y"/>
+    <sprite n="P05_bell_C" x="320" y="273" w="28" h="32" pX="0.5" pY="0.5" oX="0" oY="2" oW="32" oH="32" r="y"/>
+    <sprite n="P05_eyeball" x="759" y="352" w="20" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="20" r="y"/>
+    <sprite n="P05_eyelid_left_01" x="319" y="341" w="27" h="33" pX="0.5" pY="0.5" oX="1" oY="4" oW="36" oH="36" r="y"/>
+    <sprite n="P05_eyelid_left_02" x="319" y="378" w="27" h="33" pX="0.5" pY="0.5" oX="1" oY="4" oW="36" oH="36" r="y"/>
+    <sprite n="P05_eyelid_left_03" x="319" y="415" w="27" h="33" pX="0.5" pY="0.5" oX="1" oY="4" oW="36" oH="36" r="y"/>
+    <sprite n="P05_eyelid_left_04" x="551" y="407" w="27" h="33" pX="0.5" pY="0.5" oX="1" oY="4" oW="36" oH="36" r="y"/>
+    <sprite n="P05_eyelid_right_01" x="582" y="430" w="36" h="33" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36"/>
+    <sprite n="P05_eyelid_right_02" x="622" y="430" w="36" h="33" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36"/>
+    <sprite n="P05_eyelid_right_03" x="465" y="444" w="36" h="33" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36"/>
+    <sprite n="P05_eyelid_right_04" x="505" y="444" w="36" h="33" pX="0.5" pY="0.5" oX="0" oY="3" oW="36" oH="36"/>
+    <sprite n="P05_final_front_ear" x="472" y="215" w="113" h="92" pX="0.5" pY="0.5" oX="3" oY="4" oW="98" oH="120" r="y"/>
+    <sprite n="P05_final_front_ear_01" x="203" y="238" w="113" h="92" pX="0.5" pY="0.5" oX="3" oY="4" oW="98" oH="120" r="y"/>
+    <sprite n="P05_final_front_ear_02" x="352" y="294" w="113" h="92" pX="0.5" pY="0.5" oX="3" oY="4" oW="98" oH="120" r="y"/>
+    <sprite n="P05_final_front_ear_03" x="202" y="334" w="113" h="92" pX="0.5" pY="0.5" oX="3" oY="4" oW="98" oH="120" r="y"/>
+    <sprite n="P05_final_front_ear_04" x="469" y="311" w="113" h="92" pX="0.5" pY="0.5" oX="3" oY="4" oW="98" oH="120" r="y"/>
+    <sprite n="P05_headtop_01" x="783" y="275" w="115" h="84" pX="0.5" pY="0.5" oX="7" oY="1" oW="128" oH="88"/>
+    <sprite n="P05_headtop_02" x="902" y="320" w="115" h="81" pX="0.5" pY="0.5" oX="7" oY="1" oW="128" oH="88"/>
+    <sprite n="P05_headtop_03" x="353" y="215" w="115" h="75" pX="0.5" pY="0.5" oX="7" oY="1" oW="128" oH="88"/>
+    <sprite n="P05_jaw_01" x="911" y="248" w="101" h="68" pX="0.5" pY="0.5" oX="3" oY="4" oW="112" oH="92"/>
+    <sprite n="P05_jaw_02" x="4" y="425" w="91" h="75" pX="0.5" pY="0.5" oX="13" oY="4" oW="112" oH="92"/>
+    <sprite n="P05_jaw_03" x="674" y="352" w="81" h="78" pX="0.5" pY="0.5" oX="23" oY="3" oW="112" oH="92"/>
+    <sprite n="P05_jaw_04" x="4" y="567" w="84" h="76" pX="0.5" pY="0.5" oX="28" oY="1" oW="112" oH="92" r="y"/>
+    <sprite n="P05_jaw_05" x="586" y="352" w="84" h="74" pX="0.5" pY="0.5" oX="31" oY="3" oW="112" oH="92" r="y"/>
+    <sprite n="P05_left_ankle" x="789" y="231" w="118" h="40" pX="0.5" pY="0.5" oX="2" oY="2" oW="44" oH="124" r="y"/>
+    <sprite n="P05_left_ear" x="809" y="45" w="122" h="89" pX="0.5" pY="0.5" oX="3" oY="2" oW="128" oH="92"/>
+    <sprite n="P05_left_ear_01" x="664" y="90" w="122" h="89" pX="0.5" pY="0.5" oX="3" oY="2" oW="128" oH="92"/>
+    <sprite n="P05_left_ear_02" x="790" y="138" w="122" h="89" pX="0.5" pY="0.5" oX="3" oY="2" oW="128" oH="92"/>
+    <sprite n="P05_left_ear_03" x="353" y="122" w="122" h="89" pX="0.5" pY="0.5" oX="3" oY="2" oW="128" oH="92"/>
+    <sprite n="P05_left_ear_04" x="479" y="122" w="122" h="89" pX="0.5" pY="0.5" oX="3" oY="2" oW="128" oH="92"/>
+    <sprite n="P05_left_finger_01" x="935" y="98" w="85" h="19" pX="0.5" pY="0.5" oX="4" oY="5" oW="52" oH="92" r="y"/>
+    <sprite n="P05_left_finger_02" x="99" y="471" w="39" h="60" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="92"/>
+    <sprite n="P05_left_finger_03" x="153" y="410" w="44" h="42" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="92" r="y"/>
+    <sprite n="P05_left_finger_04" x="465" y="407" w="39" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="92" r="y"/>
+    <sprite n="P05_left_foot" x="4" y="504" w="88" h="59" pX="0.5" pY="0.5" oX="1" oY="3" oW="92" oH="64"/>
+    <sprite n="P05_left_hand" x="783" y="363" w="52" h="37" pX="0.5" pY="0.5" oX="1" oY="1" oW="40" oH="56" r="y"/>
+    <sprite n="P05_left_lowerarm" x="664" y="4" w="143" h="36" pX="0.5" pY="0.5" oX="2" oY="3" oW="40" oH="148" r="y"/>
+    <sprite n="P05_left_lowerleg" x="147" y="456" w="43" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="92"/>
+    <sprite n="P05_left_toe" x="589" y="298" w="64" h="50" pX="0.5" pY="0.5" oX="1" oY="4" oW="52" oH="72" r="y"/>
+    <sprite n="P05_left_upperarm" x="201" y="430" w="110" h="50" pX="0.5" pY="0.5" oX="2" oY="3" oW="52" oH="116" r="y"/>
+    <sprite n="P05_left_upperleg" x="153" y="189" w="46" h="121" pX="0.5" pY="0.5" oX="6" oY="4" oW="58" oH="128"/>
+    <sprite n="P05_lowerbody" x="916" y="144" w="104" h="100" pX="0.5" pY="0.5" oX="4" oY="4" oW="108" oH="116" r="y"/>
+    <sprite n="P05_pupil" x="791" y="44" w="14" h="14" pX="0.5" pY="0.5" oX="1" oY="1" oW="16" oH="16"/>
+    <sprite n="P05_right_ankle" x="664" y="44" w="123" h="42" pX="0.5" pY="0.5" oX="3" oY="3" oW="48" oH="128" r="y"/>
+    <sprite n="P05_right_ear" x="366" y="4" w="145" h="114" pX="0.5" pY="0.5" oX="3" oY="4" oW="152" oH="120"/>
+    <sprite n="P05_right_ear_01" x="204" y="120" w="145" h="114" pX="0.5" pY="0.5" oX="3" oY="4" oW="152" oH="120"/>
+    <sprite n="P05_right_ear_02" x="4" y="189" w="145" h="114" pX="0.5" pY="0.5" oX="3" oY="4" oW="152" oH="120"/>
+    <sprite n="P05_right_ear_03" x="4" y="307" w="145" h="114" pX="0.5" pY="0.5" oX="3" oY="4" oW="152" oH="120"/>
+    <sprite n="P05_right_ear_04" x="515" y="4" w="145" h="114" pX="0.5" pY="0.5" oX="3" oY="4" oW="152" oH="120"/>
+    <sprite n="P05_right_finger_01" x="935" y="121" w="85" h="19" pX="0.5" pY="0.5" oX="4" oY="5" oW="52" oH="92" r="y"/>
+    <sprite n="P05_right_finger_02" x="96" y="535" w="39" h="60" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="92"/>
+    <sprite n="P05_right_finger_03" x="99" y="425" w="44" h="42" pX="0.5" pY="0.5" oX="6" oY="5" oW="52" oH="92" r="y"/>
+    <sprite n="P05_right_finger_04" x="508" y="407" w="39" h="33" pX="0.5" pY="0.5" oX="6" oY="1" oW="52" oH="92" r="y"/>
+    <sprite n="P05_right_foot" x="957" y="4" w="63" h="90" pX="0.5" pY="0.5" oX="1" oY="2" oW="92" oH="68" r="y"/>
+    <sprite n="P05_right_hand" x="839" y="363" w="52" h="37" pX="0.5" pY="0.5" oX="1" oY="1" oW="40" oH="56" r="y"/>
+    <sprite n="P05_right_lowerarm" x="811" y="4" w="142" h="37" pX="0.5" pY="0.5" oX="1" oY="4" oW="40" oH="148" r="y"/>
+    <sprite n="P05_right_lowerleg" x="153" y="314" w="45" h="92" pX="0.5" pY="0.5" oX="1" oY="0" oW="48" oH="92"/>
+    <sprite n="P05_right_toe" x="605" y="122" w="54" h="66" pX="0.5" pY="0.5" oX="1" oY="3" oW="56" oH="72"/>
+    <sprite n="P05_right_upperarm" x="350" y="390" w="111" h="51" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="116" r="y"/>
+    <sprite n="P05_right_upperleg" x="663" y="183" w="122" h="49" pX="0.5" pY="0.5" oX="2" oY="3" oW="52" oH="128" r="y"/>
+    <sprite n="P05_shadow" x="605" y="192" w="53" h="102" pX="0.5" pY="0.5" oX="3" oY="0" oW="108" oH="54" r="y"/>
+    <sprite n="P05_shoulder" x="4" y="4" w="196" h="181" pX="0.5" pY="0.5" oX="9" oY="8" oW="212" oH="200"/>
+    <sprite n="P05_shoulder_top" x="662" y="236" w="117" h="112" pX="0.5" pY="0.5" oX="3" oY="4" oW="124" oH="120"/>
+    <sprite n="P05_upperbody" x="204" y="4" w="158" h="112" pX="0.5" pY="0.5" oX="3" oY="4" oW="164" oH="120"/>
+</TextureAtlas>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fe98b80c9d3f572e2695a99407baaea1:360b421f4eb361fc18d5b7d065693dc1:95dbe21bf04fb954dce0707ce8cfbaad$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_racetrack.png" width="512" height="512" hires="true">
+    <sprite n="deco_red_car_01" x="282" y="236" w="29" h="29" pX="0.5" pY="0.5" oX="5" oY="4" oW="40" oH="40"/>
+    <sprite n="deco_red_car_02" x="461" y="187" w="37" h="31" pX="0.5" pY="0.5" oX="1" oY="3" oW="40" oH="40"/>
+    <sprite n="deco_red_car_03" x="224" y="236" w="24" h="36" pX="0.5" pY="0.5" oX="1" oY="7" oW="40" oH="40" r="y"/>
+    <sprite n="deco_red_car_04" x="196" y="236" w="26" h="36" pX="0.5" pY="0.5" oX="2" oY="5" oW="40" oH="40" r="y"/>
+    <sprite n="deco_red_car_05" x="461" y="319" w="37" h="26" pX="0.5" pY="0.5" oX="2" oY="8" oW="40" oH="40"/>
+    <sprite n="deco_red_car_06" x="313" y="236" w="28" h="26" pX="0.5" pY="0.5" oX="6" oY="8" oW="40" oH="40"/>
+    <sprite n="deco_red_car_07" x="281" y="267" w="27" h="26" pX="0.5" pY="0.5" oX="6" oY="7" oW="40" oH="40"/>
+    <sprite n="deco_red_car_08" x="461" y="127" w="38" h="28" pX="0.5" pY="0.5" oX="1" oY="6" oW="40" oH="40"/>
+    <sprite n="deco_red_car_09" x="2" y="317" w="37" h="26" pX="0.5" pY="0.5" oX="1" oY="5" oW="40" oH="40"/>
+    <sprite n="deco_red_car_10" x="41" y="317" w="37" h="26" pX="0.5" pY="0.5" oX="1" oY="5" oW="40" oH="40"/>
+    <sprite n="deco_red_car_11" x="461" y="220" w="37" h="31" pX="0.5" pY="0.5" oX="0" oY="3" oW="40" oH="40"/>
+    <sprite n="deco_red_car_12" x="197" y="312" w="27" h="30" pX="0.5" pY="0.5" oX="6" oY="3" oW="40" oH="40"/>
+    <sprite n="deco_tires" x="364" y="2" w="124" h="123" pX="0.5" pY="0.5" oX="0" oY="0" oW="124" oH="124" r="y"/>
+    <sprite n="deco_track" x="2" y="2" w="360" h="232" pX="0.5" pY="0.5"/>
+    <sprite n="deco_wall_01" x="364" y="127" w="95" h="216" pX="0.5" pY="0.5" oX="2" oY="0" oW="220" oH="96" r="y"/>
+    <sprite n="deco_wall_02" x="2" y="345" w="216" h="164" pX="0.5" pY="0.5"/>
+    <sprite n="deco_wall_03" x="2" y="236" w="192" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="192" oH="80"/>
+    <sprite n="deco_yellow_car_01" x="250" y="265" w="29" h="29" pX="0.5" pY="0.5" oX="5" oY="4" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_02" x="461" y="253" w="37" h="31" pX="0.5" pY="0.5" oX="1" oY="3" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_03" x="224" y="274" w="24" h="36" pX="0.5" pY="0.5" oX="1" oY="7" oW="40" oH="40" r="y"/>
+    <sprite n="deco_yellow_car_04" x="196" y="274" w="26" h="36" pX="0.5" pY="0.5" oX="2" oY="5" oW="40" oH="40" r="y"/>
+    <sprite n="deco_yellow_car_05" x="80" y="317" w="37" h="26" pX="0.5" pY="0.5" oX="2" oY="8" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_06" x="313" y="264" w="28" h="26" pX="0.5" pY="0.5" oX="6" oY="8" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_07" x="310" y="292" w="27" h="26" pX="0.5" pY="0.5" oX="6" oY="7" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_08" x="461" y="157" w="38" h="28" pX="0.5" pY="0.5" oX="1" oY="6" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_09" x="119" y="317" w="37" h="26" pX="0.5" pY="0.5" oX="1" oY="5" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_10" x="158" y="317" w="37" h="26" pX="0.5" pY="0.5" oX="1" oY="5" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_11" x="461" y="286" w="37" h="31" pX="0.5" pY="0.5" oX="0" oY="3" oW="40" oH="40"/>
+    <sprite n="deco_yellow_car_12" x="250" y="236" w="30" h="27" pX="0.5" pY="0.5" oX="6" oY="3" oW="40" oH="40" r="y"/>
+</TextureAtlas>

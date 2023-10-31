@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fb6859d1899f71b53e3bdfc2c51db0b2:b10b1d91152fc7d49d64c017c134eb1e:0d6ad23430b10d680f2f29cc4e122c0b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_RW_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="RW_blue_nebula" x="724" y="785" w="180" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="RW_body" x="257" y="183" w="249" h="88" pX="0.5" pY="0.5" oX="0" oY="0" oW="88" oH="256" r="y"/>
+    <sprite n="RW_eyelids_01" x="463" y="1027" w="141" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="152" oH="72"/>
+    <sprite n="RW_eyelids_02" x="463" y="1088" w="141" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="152" oH="72"/>
+    <sprite n="RW_eyelids_03" x="2" y="912" w="141" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="152" oH="72"/>
+    <sprite n="RW_eyelids_04" x="2" y="973" w="141" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="152" oH="72"/>
+    <sprite n="RW_eyelids_05" x="2" y="1034" w="141" h="59" pX="0.5" pY="0.5" oX="6" oY="5" oW="152" oH="72"/>
+    <sprite n="RW_gill_01" x="1005" y="2" w="17" h="56" pX="0.5" pY="0.5" oX="0" oY="13" oW="56" oH="32" r="y"/>
+    <sprite n="RW_gill_02" x="666" y="780" w="56" h="19" pX="0.5" pY="0.5" oX="0" oY="11" oW="56" oH="32"/>
+    <sprite n="RW_gill_03" x="666" y="732" w="56" h="22" pX="0.5" pY="0.5" oX="0" oY="9" oW="56" oH="32"/>
+    <sprite n="RW_gill_04" x="666" y="756" w="56" h="22" pX="0.5" pY="0.5" oX="0" oY="7" oW="56" oH="32"/>
+    <sprite n="RW_gill_05" x="665" y="945" w="53" h="23" pX="0.5" pY="0.5" oX="2" oY="5" oW="56" oH="32"/>
+    <sprite n="RW_gill_06" x="627" y="957" w="24" h="50" pX="0.5" pY="0.5" oX="4" oY="5" oW="56" oH="32" r="y"/>
+    <sprite n="RW_gill_07" x="975" y="484" w="46" h="20" pX="0.5" pY="0.5" oX="6" oY="8" oW="56" oH="32"/>
+    <sprite n="RW_gill_08" x="975" y="542" w="40" h="18" pX="0.5" pY="0.5" oX="9" oY="10" oW="56" oH="32"/>
+    <sprite n="RW_gill_09" x="1005" y="108" w="16" h="37" pX="0.5" pY="0.5" oX="10" oY="10" oW="56" oH="32" r="y"/>
+    <sprite n="RW_gill_10" x="1005" y="60" w="16" h="46" pX="0.5" pY="0.5" oX="6" oY="10" oW="56" oH="32" r="y"/>
+    <sprite n="RW_glow" x="627" y="1009" w="88" h="86" pX="0.5" pY="0.5" oX="1" oY="0" oW="88" oH="88" r="y"/>
+    <sprite n="RW_head" x="484" y="732" w="180" h="117" pX="0.5" pY="0.5" oX="12" oY="11" oW="204" oH="140"/>
+    <sprite n="RW_inner_wing" x="725" y="664" w="191" h="119" pX="0.5" pY="0.5" oX="8" oY="6" oW="136" oH="204" r="y"/>
+    <sprite n="RW_mouth_01" x="653" y="970" w="60" h="23" pX="0.5" pY="0.5" oX="2" oY="7" oW="64" oH="48"/>
+    <sprite n="RW_mouth_02" x="990" y="346" w="30" h="62" pX="0.5" pY="0.5" oX="1" oY="7" oW="64" oH="48" r="y"/>
+    <sprite n="RW_mouth_03" x="990" y="245" w="31" h="63" pX="0.5" pY="0.5" oX="1" oY="7" oW="64" oH="48" r="y"/>
+    <sprite n="RW_mouth_04" x="359" y="985" w="38" h="58" pX="0.5" pY="0.5" oX="4" oY="7" oW="64" oH="48" r="y"/>
+    <sprite n="RW_mouth_05" x="975" y="410" w="47" h="42" pX="0.5" pY="0.5" oX="9" oY="6" oW="64" oH="48"/>
+    <sprite n="RW_mouth_06" x="975" y="506" w="41" h="34" pX="0.5" pY="0.5" oX="16" oY="5" oW="64" oH="48" r="y"/>
+    <sprite n="RW_mouth_07" x="990" y="310" w="31" h="34" pX="0.5" pY="0.5" oX="18" oY="4" oW="64" oH="48"/>
+    <sprite n="RW_mouth_08" x="636" y="851" w="27" h="29" pX="0.5" pY="0.5" oX="19" oY="5" oW="64" oH="48" r="y"/>
+    <sprite n="RW_mouth_09" x="975" y="454" w="47" h="28" pX="0.5" pY="0.5" oX="17" oY="4" oW="64" oH="48"/>
+    <sprite n="RW_mouth_10" x="1005" y="147" w="15" h="37" pX="0.5" pY="0.5" oX="15" oY="7" oW="64" oH="48" r="y"/>
+    <sprite n="RW_pink_nebula_01" x="864" y="1028" w="141" h="127" pX="0.5" pY="0.5" oX="12" oY="20" oW="164" oH="164"/>
+    <sprite n="RW_pink_nebula_02" x="717" y="1095" w="141" h="127" pX="0.5" pY="0.5" oX="12" oY="20" oW="164" oH="164"/>
+    <sprite n="RW_pink_nebula_03" x="860" y="1157" w="141" h="115" pX="0.5" pY="0.5" oX="12" oY="32" oW="164" oH="164"/>
+    <sprite n="RW_shadow" x="725" y="562" w="194" h="100" pX="0.5" pY="0.5" oX="4" oY="0" oW="200" oH="100"/>
+    <sprite n="RW_star_01" x="627" y="920" w="36" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="RW_star_02" x="359" y="1045" w="24" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="RW_tail_01" x="145" y="1042" w="62" h="39" pX="0.5" pY="0.5" oX="4" oY="5" oW="48" oH="72" r="y"/>
+    <sprite n="RW_tail_02" x="990" y="196" w="32" h="47" pX="0.5" pY="0.5" oX="4" oY="4" oW="40" oH="56"/>
+    <sprite n="RW_tail_03" x="636" y="882" w="25" h="36" pX="0.5" pY="0.5" oX="3" oY="2" oW="32" oH="40"/>
+    <sprite n="RW_wing_bottom_01" x="243" y="465" w="239" h="183" pX="0.5" pY="0.5" oX="12" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_02" x="2" y="563" w="239" h="181" pX="0.5" pY="0.5" oX="14" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_03" x="512" y="2" w="250" h="180" pX="0.5" pY="0.5" oX="15" oY="14" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_04" x="257" y="2" w="253" h="179" pX="0.5" pY="0.5" oX="16" oY="11" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_05" x="2" y="2" w="253" h="183" pX="0.5" pY="0.5" oX="12" oY="11" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_06" x="2" y="187" w="248" h="184" pX="0.5" pY="0.5" oX="11" oY="21" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_A_07" x="749" y="196" w="239" h="184" pX="0.5" pY="0.5" oX="11" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_A_08" x="2" y="373" w="239" h="188" pX="0.5" pY="0.5" oX="7" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_A_09" x="764" y="2" w="239" h="192" pX="0.5" pY="0.5" oX="3" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_A_10" x="508" y="184" w="239" h="190" pX="0.5" pY="0.5" oX="5" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_A_11" x="252" y="273" w="239" h="190" pX="0.5" pY="0.5" oX="5" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_B_07" x="493" y="376" w="239" h="184" pX="0.5" pY="0.5" oX="11" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_B_08" x="484" y="562" w="239" h="168" pX="0.5" pY="0.5" oX="27" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_B_09" x="243" y="650" w="239" h="163" pX="0.5" pY="0.5" oX="32" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_B_10" x="2" y="746" w="238" h="164" pX="0.5" pY="0.5" oX="31" oY="26" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_bottom_B_11" x="734" y="382" w="239" h="178" pX="0.5" pY="0.5" oX="17" oY="25" oW="196" oH="272" r="y"/>
+    <sprite n="RW_wing_top_01" x="479" y="851" w="155" h="66" pX="0.5" pY="0.5" oX="13" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_02" x="666" y="801" w="54" h="142" pX="0.5" pY="0.5" oX="19" oY="30" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_03" x="399" y="972" w="62" h="132" pX="0.5" pY="0.5" oX="29" oY="14" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_04" x="145" y="912" w="81" h="128" pX="0.5" pY="0.5" oX="40" oY="11" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_05" x="606" y="1097" w="87" h="112" pX="0.5" pY="0.5" oX="50" oY="10" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_06" x="918" y="686" w="94" h="112" pX="0.5" pY="0.5" oX="49" oY="21" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_A_07" x="906" y="800" w="116" h="89" pX="0.5" pY="0.5" oX="52" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_A_08" x="242" y="899" w="155" h="84" pX="0.5" pY="0.5" oX="13" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_A_09" x="722" y="879" w="164" h="83" pX="0.5" pY="0.5" oX="4" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_A_10" x="242" y="815" w="158" h="82" pX="0.5" pY="0.5" oX="7" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_A_11" x="402" y="815" w="75" h="155" pX="0.5" pY="0.5" oX="6" oY="30" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_B_07" x="921" y="562" w="99" h="122" pX="0.5" pY="0.5" oX="38" oY="30" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_B_08" x="888" y="891" w="132" h="135" pX="0.5" pY="0.5" oX="28" oY="30" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_B_09" x="720" y="964" w="142" h="129" pX="0.5" pY="0.5" oX="32" oY="32" oW="172" oH="192" r="y"/>
+    <sprite n="RW_wing_top_B_10" x="228" y="985" w="129" h="128" pX="0.5" pY="0.5" oX="32" oY="32" oW="172" oH="192"/>
+    <sprite n="RW_wing_top_B_11" x="479" y="919" w="146" h="106" pX="0.5" pY="0.5" oX="17" oY="31" oW="172" oH="192"/>
+</TextureAtlas>

@@ -1,0 +1,905 @@
+<template name="template_storecurrencyitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="Sprite" dependentOnComponent="Sprite" />
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("isLocked"):SetInt(0)
+
+			element:DoStoredScript("disableAllCosts");
+			element:DoStoredScript("enableAndPopulateCosts")
+
+			local i = element("ID"):GetInt()
+			local maxAmount = store:maxAmount(i)
+
+			element("maxAmount"):SetInt(maxAmount)
+			element("currentAmount"):SetInt(store:currentAmount(i))
+
+			if((i >= (store:NumCategoryItems() - store:NumLockedItems())) or (store:canBuyAnotherRightNow(i) == false) or (maxAmount > 0 and store:currentAmount(i) >= maxAmount)) then
+
+				element:DoStoredScript("setLocked")
+			end
+
+			if((store:SaleAmount(i) ~= 0) and (element("Cost"):GetString() ~= "OWNED")) then
+
+				local saleTag = menu:addTemplateElement("template_saletag", "saleTag", element)
+				saleTag:setSize(element:size())
+				saleTag:makeSizeDependent(element)
+				saleTag:setOrientation(MenuOrientation(0, 0, -3, HCENTER, VCENTER))
+				if(element("TimedAvailabilityOn"):GetInt() ~= 0) then
+					element["IAPCost"]["Text"]("alpha"):SetFloat(0.5)
+				end
+
+				saleTag:setParent(element)
+				saleTag:setRelativeObjectAnchors(HCENTER, VCENTER)
+				saleTag("SaleDesc"):SetString(element("SaleDesc"):GetString())
+				saleTag("SaleAmount"):SetInt(element("SaleAmount"):GetInt())
+				saleTag("CurrencyType"):SetString(element("Type"):GetString())
+				saleTag:init()
+				saleTag:setPositionBroadcast(true)
+
+				element:DoStoredScript("disableAllCosts")
+			end
+
+			element("displayTempAvailText"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="enableAndPopulateCosts" params="element">
+		local purchaseType = element("Type"):GetString()
+
+		element["AnyCost"]("currencyType"):SetString(purchaseType);
+		if(purchaseType == "none") then
+			element["AnyCost"]["Text"]("visible"):SetInt(1)
+		else
+			element["AnyCost"]:DoStoredScript("setCurrency")
+		end
+	</event>
+
+	<event name="disableAllCosts" params="element">
+		element["AnyCost"]["Text"]("visible"):SetInt(0)
+		element["AnyCost"]["Sprite"]("visible"):SetInt(0)
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+		if(element("SaleDesc"):GetString() ~= "") then
+			element:DoStoredScript("showSale")
+		else
+			element:DoStoredScript("hideSale")
+		end
+
+		if((element("Premium"):GetInt() == 1) and (not game.premiumPlayer())) then
+			element:DoStoredScript("setDisabled")
+			local premiumLock = menu:addTemplateElement("template_premiumlock", "PremiumLock", element)
+			premiumLock:relativeTo(element)
+			premiumLock:setOrientation(MenuOrientation(0, 15*game.menuScaleX(), -2, HCENTER, VCENTER))
+			premiumLock:setRelativeObjectAnchors(HCENTER, VCENTER)
+			premiumLock:init()
+			premiumLock:setPositionBroadcast(true)
+			premiumLock:postInit()
+		end
+
+		local displayTempAvailText = 0;
+		if((((element("TimedAvailabilityOn"):GetInt() == 1)
+			or (element("TimedSaleOn"):GetInt() == 1))
+			or (element("1LeftIAP"):GetInt() == 1)
+			or (element("IsPromoItem"):GetInt() == 1))
+			and element("Cost"):GetString() ~= "OWNED") then
+			displayTempAvailText = 1;
+		end
+
+		element["TempAvailText"]["TimerText"]("visible"):SetInt(displayTempAvailText)
+		element("displayTempAvailText"):SetInt(displayTempAvailText);
+
+		]]>
+
+	</event>
+
+	<event name="setLocked" params="element">
+		element("isLocked"):SetInt(1)
+
+		local showLevelReqText = false
+		if(game.playerLevel() &lt; element("RequiresLevel"):GetInt()) then
+			showLevelReqText = true
+		end
+
+		if(showLevelReqText == true) then
+
+			element["LevelReq"]("visible"):SetInt(1)
+			element["AnyCost"]["Text"]("text"):SetString("?")
+
+			local remixButton = element:GetElement("RemixButton")
+
+			if(remixButton ~= nil) then
+				remixButton["button"]:DoStoredScript("setInvisible")
+			end
+		end
+
+		element["TempAvailText"]["TimerText"]("visible"):SetInt(0)
+		element:DoStoredScript("setDisabled")
+	</event>
+
+	<event name="setDisabled" params="element">
+		if(element["Touch"]("enabled"):GetInt() == 1) then
+			element["Sprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["MonsterAnim"]["Sprite"]:setColor(0.2, 0.2, 0.2)
+
+			local anyCost = element["AnyCost"]
+			anyCost["Text"]:setColor(anyCost["Text"]("red"):GetFloat()*0.5, anyCost["Text"]("green"):GetFloat()*0.5, anyCost["Text"]("blue"):GetFloat()*0.5)
+			anyCost["Sprite"]:setColor(0.5, 0.5, 0.5)
+
+			local newLabel = element["NewLabel"]
+			newLabel["Sprite"]:setColor(0.5, 0.5, 0.5)
+			newLabel["Text"]:setColor(newLabel["Text"]("red"):GetFloat()*0.5, newLabel["Text"]("green"):GetFloat()*0.5, newLabel["Text"]("blue"):GetFloat()*0.5)
+
+			element["Touch"]("enabled"):SetInt(0)
+		end
+	</event>
+
+	<event name="hideItem" params="element">
+
+		element["Sprite"]["Sprite"]("visible"):SetInt(0)
+		element["MonsterAnim"]["Sprite"]("visible"):SetInt(0)
+
+		element["ExchangeRateResetText"]["TitleText"]("visible"):SetInt(0)
+		element["ExchangeRateResetText"]["TimerText"]("visible"):SetInt(0)
+
+		element["AnyCost"]["Text"]("alpha"):SetFloat(0.0)
+		element["AnyCost"]["Sprite"]("alpha"):SetFloat(0.0)
+		element["CurrencyAmount"]["Sprite"]("alpha"):SetFloat(0.0)
+		element["CurrencyAmount"]["Text"]("alpha"):SetFloat(0.0)
+		element["IAPCost"]["Text"]("alpha"):SetFloat(0.0)
+
+		element["NewLabel"]["Sprite"]("alpha"):SetFloat(0.0)
+		element["NewLabel"]["Text"]("alpha"):SetFloat(0.0)
+		element["LevelReq"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+
+		if(element("SaleDesc"):GetString() ~= "") then
+			element:DoStoredScript("hideSale")
+		end
+
+		element["TempAvailText"]["TimerText"]("visible"):SetInt(0)
+	</event>
+
+	<event name="showItem" params="element">
+		element["Sprite"]["Sprite"]("visible"):SetInt(1)
+		element["MonsterAnim"]["Sprite"]("visible"):SetInt(1)
+
+		--this is stupid
+		if(	element:name() == "currencyExchange" or
+			element:name() == "diamondsToEthCurrencyExchange" or
+			element:name() == "diamondsToRelicsCurrencyExchange"
+			) then
+
+			element["AnyCost"]["Text"]("alpha"):SetFloat(1.0)
+			element["AnyCost"]["Sprite"]("alpha"):SetFloat(1.0)
+		else
+			element["IAPCost"]["Text"]("alpha"):SetFloat(1.0)
+		end
+
+		element["CurrencyAmount"]["Sprite"]("alpha"):SetFloat(1.0)
+		element["CurrencyAmount"]["Text"]("alpha"):SetFloat(1.0)
+
+		element["NewLabel"]["Sprite"]("alpha"):SetFloat(1.0)
+		element["NewLabel"]["Text"]("alpha"):SetFloat(1.0)
+		element["Touch"]("enabled"):SetInt(1)
+
+		if(element("SaleDesc"):GetString() ~= "") then
+			element:DoStoredScript("showSale")
+		end
+
+		if(element("TimedAvailabilityOn"):GetInt() == 1 or element("1LeftIAP"):GetInt()==1 or element("IsPromoItem"):GetInt()==1) then
+			element["TempAvailText"]["TimerText"]("visible"):SetInt(1)
+		end
+
+		if(element("isLocked"):GetInt() == 1) then
+			element:DoStoredScript("setLocked")
+		end
+	</event>
+
+	<event name="hideSale" params="element">
+		if(element("isLocked"):GetInt()==0) then
+			if(store:SaleAmount(element("ID"):GetInt()) ~= 0 or (element("TimedSaleOn"):GetInt()==1)) then
+				if(element:GetElement("saleTag") ~= nil) then
+					element["saleTag"]:DoStoredScript("hide")
+				end
+				element["TempAvailText"]["TimerText"]("visible"):SetInt(0)
+			end
+		end
+	</event>
+
+	<event name="showSale" params="element">
+		if(store:SaleAmount(element("ID"):GetInt()) ~= 0 or (element("TimedSaleOn"):GetInt()==1) or (element("1LeftIAP"):GetInt()==1)) then
+			if(element("isLocked"):GetInt()==0) then
+
+				if(element:GetElement("saleTag") ~= nil) then
+					element["saleTag"]:DoStoredScript("show")
+				end
+
+				element["TempAvailText"]["TimerText"]("visible"):SetInt(element("displayTempAvailText"):GetInt())
+			else
+				if(element:GetElement("saleTag") ~= nil) then
+					element["saleTag"]:DoStoredScript("showDisabled")
+				end
+
+				local timerText = element["TempAvailText"]["TimerText"]
+				timerText("visible"):SetInt(element("displayTempAvailText"):GetInt())
+				timerText:setColor(timerText("red"):GetFloat()*0.5, timerText("green"):GetFloat()*0.5, timerText("blue"):GetFloat()*0.5)
+			end
+		end
+	</event>
+
+	<!-- Frame Sprite -->
+	<element name="Sprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				if(element:parent()("1LeftIAP"):GetInt() == 1 or element:parent()("IsPromoItem"):GetInt() == 1 or element:parent()("CurrencyType"):GetString() == game.StoreContext_TYPE_DAILY_CURRENCY) then
+					component("spriteName"):SetString("menu_market_frame_gold")
+				else
+					component("spriteName"):SetString("menu_market_frame")
+				end
+				component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+				component("layer"):SetString("HUD")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="MonsterAnim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+				if(element:parent()("1LeftIAP"):GetInt() == 0 and element:parent()("IsPromoItem"):GetInt() == 0) then
+					component("animation"):SetString(element:parent()("AnimationName"):GetString())
+				else
+					local altAnim = store:AltAnimForPromoItem(element:parent()("ID"):GetInt())
+					if(altAnim ~= "") then
+						component("animation"):SetString(altAnim)
+					else
+						component("animation"):SetString(element:parent()("AnimationName"):GetString())
+					end
+				end
+				component:setScale(Vector2(0.7*game.menuScaleX(),0.7*game.menuScaleX()))
+				component("layer"):SetString("HUD")
+
+				if(store:IsTorch(element:parent()("ID"):GetInt()) == 1) then
+					component:AddRemap("gfx/structures/tiki_plant01.png", "gfx/structures/"..store:torchGfxForThisIsland());
+				end
+
+				if(element:parent():name() == "freeDiamonds") then
+					component:setScale(Vector2(1.4*game.menuScaleX(),1.4*game.menuScaleX()))
+					component("yOffset"):SetFloat(30)
+					component("xOffset"):SetFloat(-6)
+				end
+			</event>
+		</aeComponent>
+	</element>
+
+	<element name="NewLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="-30*game.hudScale()" yOffset="-30/game.hudScale()" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_value_sticker")
+				component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+				component("layer"):SetString("HUD")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("visible"):SetInt(0)
+				element["Text"]("visible"):SetInt(0)
+
+				if(element:parent()("1LeftIAP"):GetInt() == 1) then
+					component("visible"):SetInt(1)
+					element["Text"]("visible"):SetInt(1)
+				end
+
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				if(element:parent()("1LeftIAP"):GetInt() == 1) then
+					component("text"):SetString(store:StickerTextForPromoItem(element:parent()("ID"):GetInt()))
+				end
+				component("yOffset"):SetFloat(-3.0*game.hudScale())
+
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="CurrencyAmount">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="18*game.menuScaleX()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			if(element:parent():name() == "freeDiamonds") then
+				element["Text"]("visible"):SetInt(0)
+				element["Sprite"]("visible"):SetInt(0)
+			end
+		</event>
+		<event name="setVisible" params="element">
+			element["Text"]("visible"):SetInt(1)
+			element["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["Text"]("visible"):SetInt(0)
+			element["Sprite"]("visible"):SetInt(0)
+		</event>
+		<textComponent name="Text">
+			<size w="120*game.menuScaleX()" h="50*game.menuScaleX()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(element:parent()("CurrencyGained"):GetString())
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				game.StoreContext_setCurrencyTypeColour(element:parent()("CurrencyType"):GetString(), component)
+			</event>
+			<!-- the old snazzledazzle -->
+			<event name="setDiamondTextColour" params="component, element">
+				game.StoreContext_setDiamondTextColour(component);
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				local type = element:parent()("CurrencyType"):GetString()
+
+				if(type == game.StoreContext_TYPE_COINS) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				elseif(type == game.StoreContext_TYPE_ETH_CURRENCY) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
+				elseif(type == game.StoreContext_TYPE_DIAMOND) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				elseif(type == game.StoreContext_TYPE_FOOD) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
+				elseif(type == game.StoreContext_TYPE_STARPOWER) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_STARPOWER)
+				elseif(type == game.StoreContext_TYPE_KEYS) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_KEY)
+				elseif(type == game.StoreContext_TYPE_RELICS) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_RELIC)
+				elseif(type == game.StoreContext_TYPE_DAILY_CURRENCY) then
+					component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+				end
+
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+
+				local currencyScale = 1.0
+				if(component("spriteName"):GetString() ~= "") then
+					currencyScale = game.StoreContext_currencySpriteHeightNormalize(component("spriteName"):GetString());
+				end
+				component("size"):SetFloat(0.5*game.hudScale()*currencyScale)
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="onPostInit" params="component, element">
+				if(element:parent()("CurrencyType"):GetString() == game.StoreContext_TYPE_DAILY_CURRENCY or element:parent()("IsPromoItem"):GetInt() == 1) then
+					element["Text"]("multiline"):SetInt(1)
+					element["Text"]("text"):SetString(element:parent()("ItemTitle"):GetString())
+
+					if(element:parent()("CurrencyType"):GetString() == game.StoreContext_TYPE_DAILY_CURRENCY) then
+						element["Text"]:DoStoredScript("setDiamondTextColour")
+					else
+						element["Text"]("size"):SetFloat(0.31*game.menuScaleX())
+						element["Text"]("yOffset"):SetFloat(-7*game.menuScaleX())						
+					end
+
+					element["Sprite"]("visible"):SetInt(0)
+				else
+					local currencyScale = 1.0
+					if(component("spriteName"):GetString() ~= "") then
+						currencyScale = game.StoreContext_currencySpriteHeightNormalize(component("spriteName"):GetString());
+					end
+					component("size"):SetFloat(element:GetComponent("Text")("size"):GetFloat()*currencyScale)
+
+					local textWidth = element:GetComponent("Text"):absW();
+					local totalWidth = textWidth + component:absW();
+
+					element["Text"]("xOffset"):SetFloat(-textWidth/2+totalWidth/2)
+					component("xOffset"):SetFloat(-element["Text"]("xOffset"):GetFloat())
+				end
+
+			</event>
+		</spriteSheetComponent>
+
+	</element>
+
+	<element name="TempAvailText">
+		<size dependentOnElement="element:name()" dependentOnComponent="TimerText"/>
+		<position relativeTo="CurrencyAmount" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="TimerText">
+			<size w="120*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.25*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component:setColor(0.588, 0.925, 0.192)
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local index = element:parent()("ID"):GetInt();
+					if(element:parent()("1LeftIAP"):GetInt() == 1) then
+          
+          	local text = game.getLocalizedText("LIMITED_REMAINING_TEXT")
+            
+            local storeItemName = element:parent()("ItemName"):GetString()
+						local promo = game.getPromoByName(storeItemName)
+						if promo then            
+					    text = text:gsub("%${REMAINING}", promo:getMaxActivations() - promo:getActivationCount())
+            else
+              text = text:gsub("%${REMAINING}", 1)
+            end
+            
+            component("text"):SetString(text)
+            
+					else
+
+						local secondsRemaining = 0;
+						if(element:parent()("TimedAvailabilityOn"):GetInt() == 1) then
+							secondsRemaining = store:RemainingAvailTime(index)
+						elseif(element:parent()("TimedSaleOn"):GetInt() == 1) then
+							secondsRemaining = store:RemainingSaleTime(index)
+						end
+
+						--[[if (secondsRemaining > 4*24*60*60) then
+							component("text"):SetString("LIMITED_TIME")
+						else]]
+							component("text"):SetString(""..game.timeToString(secondsRemaining))
+						--end
+
+					end
+
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				local secondsRemaining = 0;
+				local parent = element:parent()
+
+				if(element:parent()("1LeftIAP"):GetInt() == 0) then
+					local availabilityEvent = parent("TimedAvailabilityOn"):GetInt()
+					if(availabilityEvent == 1) then
+						secondsRemaining = store:RemainingAvailTime(parent("ID"):GetInt());
+					elseif(parent("TimedSaleOn"):GetInt() == 1) then
+						secondsRemaining = store:RemainingSaleTime(parent("ID"):GetInt())
+					end
+
+					if(secondsRemaining > 0) then
+
+						--[[if(secondsRemaining > 4*24*60*60) then
+							element["TimerText"]("text"):SetString("LIMITED_TIME")
+						else]]
+							element["TimerText"]("text"):SetString(game.timeToString(secondsRemaining))
+						--end
+
+						if(parent:GetElement("saleTag") ~= nil) then
+							local newSale = store:SaleAmount(parent("ID"):GetInt());
+							if(newSale ~= parent("SaleAmount"):GetInt()) then
+
+
+								--this is in case one sale expires and another starts right away: make sure to update the sale amount to the new value
+
+								if(parent("TimedAvailabilityOn"):GetInt() == 1) then
+									parent:GetElement("saleTag")["SaleIAPAmount"]["Text"]("text"):SetString(game.commaizeNumber(newSale))
+									parent:GetElement("saleTag")["SaleIAPAmount"]["Text"]("visible"):SetInt(1)
+									parent:GetElement("saleTag")["SaleCurrencyAmount"]:DoStoredScript("setInvisible")
+
+								else
+									parent:GetElement("saleTag")["SaleCurrencyAmount"]["Text"]("text"):SetString(game.commaizeNumber(newSale))
+									parent:GetElement("saleTag")["SaleCurrencyAmount"]:DoStoredScript("setVisible")
+									parent:GetElement("saleTag")["SaleIAPAmount"]["Text"]("visible"):SetInt(0)
+								end
+								parent:GetElement("saleTag")["Text"]("text"):SetString("+"..store:SaleDesc(parent("ID"):GetInt()).."%")
+							end
+						end
+					else
+						if(availabilityEvent == 1) then
+							if(parent["Touch"]("enabled"):GetInt()==1) then
+								store:AnAvailabilityExpiryOccurred(parent:name());
+								element["TimerText"]("text"):SetString("TIMED_EVENT_EXPIRED")
+								parent:DoStoredScript("setDisabled")
+							end
+						else
+							if(element["TimerText"]("visible"):GetInt() == 1 and element:parent()("1LeftIAP"):GetInt() ~= 1) then
+								if(parent:GetElement("saleTag") ~= nil) then
+									parent["saleTag"]:DoStoredScript("hide")
+								end
+								element["TimerText"]("visible"):SetInt(0)
+							end
+						end
+					end
+				end
+			]]>
+		</event>
+	</element>
+
+	<element name="CostBackground">
+		<size w="(35+35+100)*game.menuScaleX()" h="(30+30+2)*game.menuScaleX()" />
+		<position relativeTo="element:parent()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="100*game.menuScaleX()" h="2*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(0)
+				component("topHeight"):SetFloat(30.0)
+				component("bottomHeight"):SetFloat(30.0)
+				component("leftWidth"):SetFloat(35.0)
+				component("rightWidth"):SetFloat(35.0)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/button_green_gem")
+				component("layer"):SetString("HUD")
+			</event>
+		</ninesliceComponent>
+		<event name="onPostInit" params="element">
+			element("yOffset"):SetFloat(-element["Sprite"]("bottomHeight"):GetFloat()/2*game.menuScaleX())
+		</event>
+	</element>
+
+	<element name="IAPCost">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CostBackground" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			if ( ( (element:parent():name() == "currencyExchange")
+					or (element:parent():name() == "coinsToEthCurrencyExchange")
+					or (element:parent():name() == "diamondsToEthCurrencyExchange")
+					or (element:parent():name() == "ethToDiamondsCurrencyExchange")
+					or (element:parent():name() == "diamondsToRelicsCurrencyExchange")
+				)) then
+
+				element["Text"]("visible"):SetInt(0)
+			end
+		</event>
+		<textComponent name="Text">
+			<size w="100*game.menuScaleX()" h="62*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.35*game.menuScaleX())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local itemPriceText = element:parent()("ItemPriceAsStr"):GetString()
+					if element:parent()("IsPromoItem"):GetInt() == 1 then
+						local storeItemName = element:parent()("ItemName"):GetString()
+						local promo = game.getPromoByName(storeItemName)
+						if promo then
+							if promo:promoType() == game.PromotionType_ComboPack
+								or promo:promoType() == game.PromotionType_ColdIslandComboPack
+							then
+								itemPriceText = promo:fullPriceText()
+							end
+						end
+					end
+
+					component("text"):SetString(itemPriceText)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<!-- this is used for currency exchanges, as the cost of the exchange -->
+	<element name="AnyCost">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="IAPCost" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="element">
+			element("currencyType"):SetString("none")
+
+		</event>
+		<event name="setCurrency" params="element">
+
+			element["Text"]("visible"):SetInt(0)
+			element["Sprite"]("visible"):SetInt(0)
+
+			local currencyType = element("currencyType"):GetString();
+
+			if (element:parent()("IsPromoItem"):GetInt() ~= 1) then
+				element["Text"]("text"):SetString(element:parent()("Cost"):GetString())
+				element["Sprite"]("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyType))
+				element["Sprite"]("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+			end
+
+			if(currencyType == game.StoreContext_TYPE_DIAMOND) then
+
+				--this is stupid
+				if((store:Category() ~= game.StoreCategories_TYPE_CURRENCY) or
+					element:parent():name() == "currencyExchange" or
+					element:parent():name() == "diamondsToEthCurrencyExchange" or
+					element:parent():name() == "diamondsToRelicsCurrencyExchange" 
+					) then
+
+					element["Text"]:DoStoredScript("setDiamondTextColour");
+
+					element["Text"]("visible"):SetInt(1)
+					element["Sprite"]("visible"):SetInt(1)
+				end
+
+			elseif(currencyType == game.StoreContext_TYPE_COINS or currencyType == game.StoreContext_TYPE_ETH_CURRENCY) then
+
+				--this is stupid
+				if((store:Category() ~= game.StoreCategories_TYPE_CURRENCY) or
+					element:parent():name() == "coinsToEthCurrencyExchange" or
+					element:parent():name() == "ethToDiamondsCurrencyExchange") then
+
+					if(game.isEtherealIsland() and
+						((store:Category() ~= game.StoreCategories_TYPE_CURRENCY) and store:Category() ~= game.StoreCategories_TYPE_ISLAND)
+						or element:parent():name() == "ethToDiamondsCurrencyExchange") then
+						element["Text"]:DoStoredScript("setEtherealTextColour");
+					else
+						element["Text"]:DoStoredScript("setCoinTextColour");
+					end
+
+					if(element:parent():name() == "ethToDiamondsCurrencyExchange") then
+						element["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
+					else
+						if(store:Category() == game.StoreCategories_TYPE_CURRENCY or store:Category() == game.StoreCategories_TYPE_ISLAND) then
+							element["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+						else
+							element["Sprite"]("spriteName"):SetString(store:coinsSpriteImgForThisIsland())
+						end
+					end
+					element["Sprite"]("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+
+					element["Text"]("visible"):SetInt(1)
+					element["Sprite"]("visible"):SetInt(1)
+				end
+			elseif(currencyType == game.StoreContext_TYPE_STARPOWER) then
+
+				--there are no currency exchanges that cost starpower
+				if(store:Category() ~= game.StoreCategories_TYPE_CURRENCY) then
+
+					element["Text"]("visible"):SetInt(1)
+					element["Sprite"]("visible"):SetInt(1)
+
+					element["Text"]:DoStoredScript("setStarpowerTextColour")
+
+
+				end
+			elseif(currencyType == game.StoreContext_TYPE_KEYS) then
+
+				--there are no currency exchanges that cost keys
+				if(store:Category() ~= game.StoreCategories_TYPE_CURRENCY) then
+
+					element["Text"]("visible"):SetInt(1)
+					element["Sprite"]("visible"):SetInt(1)
+
+					element["Text"]:DoStoredScript("setKeyTextColour")
+					element["Text"]("text"):SetString(element:parent()("Cost"):GetString())
+
+				end
+			elseif(currencyType == game.StoreContext_TYPE_RELICS) then
+
+				--there are no currency exchanges that cost relics
+				if(store:Category() ~= game.StoreCategories_TYPE_CURRENCY) then
+
+					element["Text"]:DoStoredScript("setRelicTextColour");
+
+					element["Text"]("visible"):SetInt(1)
+					element["Sprite"]("visible"):SetInt(1)
+				end
+			end
+
+			if(element:parent()("isLocked"):GetInt()==1) then
+				local anycostText = element["Text"];
+				anycostText:setColor(anycostText("red"):GetFloat()*0.5, anycostText("green"):GetFloat()*0.5, anycostText("blue"):GetFloat()*0.5)
+			end
+
+		</event>
+
+		<textComponent name="Text">
+			<size w="100*game.menuScaleX()" h="62*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(element:parent()("Cost"):GetString())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+			<!-- this snazzledazzle is used because otherwise calls from outside the component will pass a MenuComponent into the function instead of a MenuTextComponent and crash -->
+			<event name="setDiamondTextColour" params="component, element">
+				game.StoreContext_setDiamondTextColour(component);
+			</event>
+			<event name="setCoinTextColour" params="component, element">
+				game.StoreContext_setCoinTextColour(component);
+			</event>
+			<event name="setEtherealTextColour" params="component, element">
+				game.StoreContext_setEtherealTextColour(component);
+			</event>
+			<event name="setStarpowerTextColour" params="component, element">
+				game.StoreContext_setStarpowerTextColour(component);
+			</event>
+			<event name="setKeyTextColour" params="component, element">
+				game.StoreContext_setKeyTextColour(component);
+			</event>
+			<event name="setRelicTextColour" params="component, element">
+				game.StoreContext_setRelicTextColour(component);
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				--[[component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)]]
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("HUD")
+			</event>
+			<event name="onPostInit" params="component, element">
+
+				local currencyScale = 1.0
+				if(component("spriteName"):GetString() ~= "" and element:parent()("IsPromoItem"):GetInt() ~= 1) then
+					currencyScale = game.StoreContext_currencySpriteHeightNormalize(component("spriteName"):GetString());
+				end
+				component("size"):SetFloat(element:GetComponent("Text")("size"):GetFloat()*currencyScale)
+
+				local textWidth = element:GetComponent("Text"):absW();
+				local totalWidth = textWidth + component:absW();
+
+				element["Text"]("xOffset"):SetFloat(-textWidth/2+totalWidth/2)
+				component("xOffset"):SetFloat(-element["Text"]("xOffset"):GetFloat())
+
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+
+	<textComponent name="LevelReq">
+		<size w="135*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			local txt = game.getLocalizedText("NOTIFICATION_REQUIRES_LEVEL")
+			txt = select(1, txt:gsub("XXX", element("RequiresLevel"):GetInt()))
+			component("multiline"):SetInt(1)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.35*game.hudScale())
+			component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("textPadding"):SetInt(30*game.menuScaleX())
+			component("text"):SetString(txt)
+			component("autoScale"):SetInt(1)
+			component("layer"):SetString("HUD")
+			component("visible"):SetInt(0)
+		</event>
+	</textComponent>
+
+	<element name="ExchangeRateResetText">
+		<size w="120*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			element("relicExchangeItem"):SetInt(0)
+		</event>
+		<textComponent name="TitleText">
+			<size dependentOnElement="element:name()"/>
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("EXCHANGE_RESET")
+					component("layer"):SetString("HUD")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</textComponent>
+		<textComponent name="TimerText">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.2*game.menuScaleY())
+					--component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component:setColor(0.588, 0.925, 0.192)
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					component("text"):SetString(""..game.timeToString(0))
+					component("visible"):SetInt(0)
+
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+
+				if(element("relicExchangeItem"):GetInt() == 1 and element["TitleText"]("visible"):GetInt() == 1) then
+					local secondsRemaining = store:timeRemainingOnRelicRateReset()
+					if(secondsRemaining > 0) then
+						element["TimerText"]("text"):SetString(game.timeToString(secondsRemaining))
+						element["TitleText"]("visible"):SetInt(1)
+						element["TimerText"]("visible"):SetInt(1)
+					else
+						if(element["TimerText"]("visible"):GetInt() == 1) then
+							element["TitleText"]("visible"):SetInt(0)
+							element["TimerText"]("visible"):SetInt(0)
+						end
+					end
+
+				end
+			]]>
+		</event>
+	</element>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+			component("realStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(x - component("touchStart"):GetInt()) )
+			component("touchStart"):SetInt(x)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(x)
+			component("realStart"):SetInt(x)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+
+				if(math.abs(component("touchStart"):GetInt() - component("realStart"):GetInt()) < 10.0) then
+
+					if(element:name() == "freeDiamonds") then
+						game.displayNotification("NO_ADS_STOREITEM_DESC")
+					else
+						store:SelectItem(element:name())
+					end
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+					component("realStart"):SetInt(0)
+				end
+			]]>
+		</event>
+	</touchComponent>
+
+</template>

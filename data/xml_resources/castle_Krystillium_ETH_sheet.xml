@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0d1191fbba1b0b614632bf3492fa0895:8b3bc4ce4d770850c48adc357fbdcfd9:31ba5ec6c98bcd5f347cde90e9df83bf$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_Krystillium_ETH_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Krystillium_base" x="2" y="187" w="957" h="820" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992" r="y"/>
+    <sprite n="castle_Krystillium_crystalA" x="2" y="2" w="149" h="125" pX="0.5" pY="0.5" oX="5" oY="25" oW="160" oH="160"/>
+    <sprite n="castle_Krystillium_crystalB" x="377" y="2" w="191" h="178" pX="0.5" pY="0.5" oX="1" oY="9" oW="192" oH="192"/>
+    <sprite n="castle_Krystillium_crystalC" x="570" y="2" w="195" h="183" pX="0.5" pY="0.5" oX="22" oY="30" oW="240" oH="240"/>
+    <sprite n="castle_Krystillium_pyramid" x="153" y="2" w="222" h="156" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240" r="y"/>
+</TextureAtlas>

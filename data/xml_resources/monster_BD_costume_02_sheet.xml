@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0fb08b72d63964cfa3cdced3c5ab3016:25ccd8967c08d0c16457f3a6897ec231:d97318c6c902fcef25c5391ea349a67b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BD_costume_02_sheet.png" width="256" height="512" hires="true">
+	<!-- original anchor = (54, 49) -> new anchor (56, 56) diff = (-2, -7)-->
+	<!-- add double it to texturepacker output offsets (2, 1) -> (-2, -13), because hires-->
+    <sprite n="squidtree_leaves1_rollers.png" x="2" y="2" w="147" h="145" pX="0.5" pY="0.5" oX="-2" oY="-13" oW="150" oH="150" r="y"/>
+	<!-- original anchor = (24, 49) -> new anchor (29, 65) diff = (-5, -16)-->
+	<!-- add double it to texturepacker output offsets (7, 15) -> (-3, -17), because hires-->
+    <sprite n="squidtree_leaves2_rollers.png" x="2" y="149" w="136" h="119" pX="0.5" pY="0.5" oX="-3" oY="-17" oW="150" oH="150"/>
+</TextureAtlas>

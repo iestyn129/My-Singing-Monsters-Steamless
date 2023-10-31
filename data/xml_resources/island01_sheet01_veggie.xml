@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ccde143dfc7a00f0d4efaec4648fb0ef:337311a89b9be608c21bae2dcadd71cd:75b5abd6c72767febcc034488f0535de$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island01_sheet01_veggie.png" width="2048" height="2048" hires="true">
+    <sprite n="island01_asparagus.png" x="1033" y="502" w="652" h="564" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_carrots.png" x="1687" y="774" w="356" h="495" pX="0.5" pY="0.5" oX="0" oY="0" oW="356" oH="496"/>
+    <sprite n="island01_centre_platform.png" x="1022" y="1068" w="649" h="536" pX="0.5" pY="0.5" oX="0" oY="0" oW="650" oH="536"/>
+    <sprite n="island01_ear.png" x="2" y="2" w="616" h="1048" pX="0.5" pY="0.5"/>
+    <sprite n="island01_eye.png" x="2" y="1052" w="832" h="916" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_leaf_dark.png" x="836" y="904" w="184" h="404" pX="0.5" pY="0.5"/>
+    <sprite n="island01_leaf_light.png" x="1697" y="272" w="218" h="500" pX="0.5" pY="0.5" oX="1" oY="0" oW="220" oH="500"/>
+    <sprite n="island01_nose.png" x="1033" y="2" w="662" h="498" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island01_side_platform.png" x="836" y="1606" w="628" h="424" pX="0.5" pY="0.5"/>
+    <sprite n="island01_squash.png" x="1697" y="2" w="287" h="268" pX="0.5" pY="0.5" oX="0" oY="0" oW="296" oH="268"/>
+    <sprite n="w1_cloud.png" x="620" y="2" w="411" h="900" pX="0.5" pY="0.5" oX="0" oY="4" oW="900" oH="420" r="y"/>
+</TextureAtlas>

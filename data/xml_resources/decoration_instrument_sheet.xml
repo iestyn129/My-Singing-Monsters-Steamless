@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4fcd6d71063356ad246b1b668c906302:273fa03b305b48b08eae61ada08c565f:77f54f6ce4a64aa34adda0b6caa0fc02$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_instrument_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="lamppost01" x="2" y="791" w="450" h="207" pX="0.5" pY="0.5" oX="0" oY="0" oW="208" oH="450" r="y"/>
+    <sprite n="lamppost02" x="798" y="442" w="199" h="417" pX="0.5" pY="0.5" oX="0" oY="1" oW="200" oH="420"/>
+    <sprite n="musical_pipes" x="611" y="2" w="295" h="438" pX="0.5" pY="0.5" oX="2" oY="35" oW="440" oH="330" r="y"/>
+    <sprite n="musictree01" x="2" y="360" w="440" h="429" pX="0.5" pY="0.5" oX="0" oY="0" oW="430" oH="440" r="y"/>
+    <sprite n="musictree02" x="2" y="2" w="607" h="356" pX="0.5" pY="0.5" oX="0" oY="2" oW="608" oH="360"/>
+    <sprite n="spikey_plant" x="454" y="739" w="300" h="244" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="stretchedskin" x="444" y="442" w="352" h="295" pX="0.5" pY="0.5" oX="0" oY="0" oW="296" oH="352" r="y"/>
+</TextureAtlas>

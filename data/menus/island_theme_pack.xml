@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		playSoundFx("audio/sfx/menu_slide.wav")
+		manager:setContext("MAP")
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+
+					element:DoStoredScript("TickTransition")
+
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+
+					element("transitionTime"):SetFloat(clamp( transitionTime, 0.0, 1.0 ))
+
+					if(transitionTime == 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime <= 0.0) then
+						element:root():popPopUp()
+					end
+				end
+			end
+		]]>
+	</event>
+
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		element["Frame"]("xOffset"):SetFloat(screenWidth()*(0.5) + (-0.5)*screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+	</event>
+
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="11" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(screenWidth()*0.25, screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0-screenWidth()" yOffset="-7" priorityOffset="10" />
+		<ninesliceComponent name="Sprite">
+			<size w="450*(screenWidth()/480)" h="200*(screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*(screenWidth()/480)" h="40*(screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*(screenHeight()/320))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="TitleText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="380*(screenWidth()/480)" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component:setColor(0.44, 0.98, 0.71)
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+					component("text"):SetString(game.localizedUpper(game.getComboTitle(promo:storeItemName(),"combo")))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="DescriptionText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="380*(screenWidth()/480)" h="100*(screenHeight()/320)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+					component("text"):SetString(game.localizedUpper(game.getComboDesc(promo:storeItemName(),"combo")))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="ColdIslandThemeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="DiamondSprite" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="60*game.menuScaleX()" yOffset="" priorityOffset="0" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-12*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/islands.bin")
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					local themeId = game.storeValue(game.storeItem(promo:storeItemName(),"island_theme", 1))
+					component("animation"):SetString("island"..game.islandIdForIslandTheme(themeId).."_theme"..themeId)
+
+					component:setScale(Vector2(0.4*game.menuScaleX(),0.4*game.menuScaleX()))
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</aeComponent>
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+					local themeId = game.storeValue(game.storeItem(promo:storeItemName(),"island_theme", 1))
+					component("text"):SetString(game.islandThemeName(themeId))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="EarthIslandThemeSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="DiamondSprite" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="60*game.menuScaleX()" yOffset="" priorityOffset="0" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-12*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("animationName"):SetString("xml_bin/islands.bin")
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					local themeId = game.storeValue(game.storeItem(promo:storeItemName(),"island_theme", 2))
+					component("animation"):SetString("island"..game.islandIdForIslandTheme(themeId).."_theme"..themeId)
+
+					component:setScale(Vector2(0.4*game.menuScaleX(),0.4*game.menuScaleX()))
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</aeComponent>
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					local themeId = game.storeValue(game.storeItem(promo:storeItemName(), "island_theme", 2))
+					component("text"):SetString(game.islandThemeName(themeId))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="DiamondSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="" yOffset="-35*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("diamonds_01_icon")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="DiamondValue">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="DiamondSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					game.StoreContext_setDiamondTextColour(component)
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					component("text"):SetString(game.commaizeNumber(game.storeValue(game.storeItem(promo:storeItemName(), "diamond"))))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" component="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("diamond")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="FooterFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-55*game.menuScaleY()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*(screenWidth()/480)" h="50*(screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*(screenHeight()/320))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="OfferTime">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="FooterFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="-3" />
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+				local secsRemaining = promo:timeRemainingSec()
+				element["Text"]("text"):SetString(game.getLocalizedText("WARM_UP_PACK_TIME")..game.timeToString(secsRemaining))
+			]]>
+		</event>
+		<textComponent name="Text">
+			<size w="380*(screenWidth()/480)" h="100*(screenHeight()/320)" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("WARM_UP_PACK_TIME"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="TagSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="FooterFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="-1*game.menuScaleY()" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("sale_tag_updated_taller")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.95*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="TagValue">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="TagSprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.4*game.menuScaleX())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					component("text"):SetString(game.priceStr(game.storeItem(promo:storeItemName(),"combo")))
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="OldValue">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="FooterFrame" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="35*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="160*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.4*game.menuScaleX())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("alpha"):SetFloat(0.6)
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					component("text"):SetString(promo:fullPriceText())
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RedStrip">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="OldValue" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="2*game.menuScaleX()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="10" h="10" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("alpha"):SetFloat(0.6)
+				component("spriteName"):SetString("gfx/menu/redstrip")
+				component("layer"):SetString("MidPopUps")
+				component:setSize(Vector2(element:parent():GetElement("OldValue"):absW() + (10*game.menuScaleX()), component:absH()))
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="PercentageLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="FooterFrame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-7*game.menuScaleX()" yOffset="0" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="75*game.menuScaleX()" h="75*game.menuScaleX()" />
+			<event name="onInit" params="component, element">
+				component("includeBorder"):SetInt(1)
+				component("topHeight"):SetFloat(49.0)
+				component("bottomHeight"):SetFloat(49.0)
+				component("leftWidth"):SetFloat(49.0)
+				component("rightWidth"):SetFloat(49.0)
+				component("size"):SetFloat(0.75*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(1)
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3.5*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.4*game.menuScaleX())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					component("text"):SetString(promo:discountText() .. game.getLocalizedText("WARM_UP_PACK_PERCENTAGE_SUFFIX"))
+					component("rotation"):SetFloat(0.15)
+					component("visible"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="BuyButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.6*game.hudScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Label">
+			<size w="120*game.hudScale()" h="30*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BUY_BUTTON")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					manager:setContext(manager:reserveState())
+					--do this before buyItem, and don't use game.popPopUp(), because otherwise it will prematurely pop popup_thanks_IAP when there's an immediate reply from gsProcessUnclaimedPurchases
+					element:root():popPopUp()
+
+					local promo = game.getFirstPromoWithType(game.PromotionType_IslandThemePromoPack)
+
+					game.buyItem(game.storeItem(promo:storeItemName(),"combo"))
+					manager:setContext(manager:reserveState())
+				]]>
+			</event>
+		</touchComponent>
+	</template>
+
+</menu>

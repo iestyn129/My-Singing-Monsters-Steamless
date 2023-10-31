@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fb151a1bbda4db4802340371e308c5a7:aa11ed419e44855fc806d671f391a1e4:7efcf8dea3681acc1a567ee9e4543fa7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/sig_sheet.png" width="512" height="256">
+    <sprite n="none.png" x="266" y="75" w="64" h="66" pX="0.5" pY="0.5" oX="0" oY="31" oW="64" oH="128"/>
+    <sprite n="f1.png" x="287" y="143" w="64" h="66" pX="0.5" pY="0.5" oX="0" oY="31" oW="64" oH="128"/>
+    <sprite n="f2.png" x="134" y="81" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="f3.png" x="155" y="154" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="f4.png" x="200" y="2" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="f5.png" x="200" y="75" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="f6.png" x="221" y="148" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="f7.png" x="266" y="2" w="64" h="71" pX="0.5" pY="0.5" oX="0" oY="26" oW="64" oH="128"/>
+    <sprite n="s1.png" x="89" y="176" w="64" h="77" pX="0.5" pY="0.5" oX="0" oY="20" oW="64" oH="128"/>
+    <sprite n="s2.png" x="134" y="2" w="64" h="77" pX="0.5" pY="0.5" oX="0" oY="20" oW="64" oH="128"/>
+    <sprite n="s3.png" x="2" y="2" w="64" h="85" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128"/>
+    <sprite n="s4.png" x="2" y="89" w="64" h="85" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128"/>
+    <sprite n="s5.png" x="2" y="176" w="85" h="64" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128" r="y"/>
+    <sprite n="s6.png" x="68" y="2" w="64" h="85" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128"/>
+    <sprite n="s7.png" x="68" y="89" w="64" h="85" pX="0.5" pY="0.5" oX="0" oY="12" oW="64" oH="128"/>
+</TextureAtlas>

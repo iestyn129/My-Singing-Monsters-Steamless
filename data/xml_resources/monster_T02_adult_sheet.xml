@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4022abebd9f5116dc465b5b986417389:8215b74a64204b94367e6c09df0ea4ee:63935508f87b2d03f9b78d13f05f19a8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T02_adult_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="Group 11.png" x="1" y="183" w="45" h="143" pX="0.5" pY="0.5" oX="2" oY="0" oW="50" oH="144"/>
+    <sprite n="T02_arm_large_lower.png" x="278" y="105" w="15" h="69" pX="0.5" pY="0.5" oX="8" oY="11" oW="88" oH="32" r="y"/>
+    <sprite n="T02_arm_large_upper.png" x="203" y="622" w="27" h="53" pX="0.5" pY="0.5" oX="14" oY="2" oW="88" oH="32" r="y"/>
+    <sprite n="T02_arm_small.png" x="261" y="105" w="16" h="75" pX="0.5" pY="0.5" oX="7" oY="7" oW="88" oH="32" r="y"/>
+    <sprite n="T02_bangs.png" x="135" y="297" w="63" h="28" pX="0.5" pY="0.5" oX="3" oY="2" oW="70" oH="32"/>
+    <sprite n="T02_body.png" x="1" y="327" w="81" h="131" pX="0.5" pY="0.5" oX="2" oY="2" oW="136" oH="86" r="y"/>
+    <sprite n="T02_eye.png" x="189" y="768" w="14" h="12" pX="0.5" pY="0.5" oX="0" oY="1" oW="14" oH="14"/>
+    <sprite n="T02_feathers.png" x="262" y="734" w="28" h="37" pX="0.5" pY="0.5" oX="1" oY="1" oW="30" oH="40"/>
+    <sprite n="T02_frill.png" x="1" y="1" w="167" h="181" pX="0.5" pY="0.5" oX="5" oY="2" oW="174" oH="188"/>
+    <sprite n="T02_Glow.png" x="224" y="956" w="38" h="62" pX="0.5" pY="0.5" oX="1" oY="2" oW="40" oH="66"/>
+    <sprite n="T02_hair_large_L.png" x="52" y="459" w="104" h="107" pX="0.5" pY="0.5" oX="7" oY="3" oW="120" oH="110" r="y"/>
+    <sprite n="T02_hair_large_R.png" x="165" y="326" w="104" h="106" pX="0.5" pY="0.5" oX="6" oY="3" oW="120" oH="110" r="y"/>
+    <sprite n="T02_hair_small_L.png" x="134" y="967" w="44" h="54" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="50" r="y"/>
+    <sprite n="T02_hair_small_R.png" x="179" y="967" w="44" h="54" pX="0.5" pY="0.5" oX="3" oY="3" oW="60" oH="50" r="y"/>
+    <sprite n="T02_hand_large_0.png" x="294" y="105" w="98" h="65" pX="0.5" pY="0.5" oX="0" oY="20" oW="120" oH="100"/>
+    <sprite n="T02_hand_large_1.png" x="61" y="884" w="58" h="96" pX="0.5" pY="0.5" oX="0" oY="28" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_2.png" x="334" y="171" w="51" h="100" pX="0.5" pY="0.5" oX="0" oY="30" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_3.png" x="62" y="786" w="55" h="96" pX="0.5" pY="0.5" oX="0" oY="28" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_4.png" x="90" y="686" w="64" h="94" pX="0.5" pY="0.5" oX="0" oY="25" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_5.png" x="169" y="108" w="91" h="73" pX="0.5" pY="0.5" oX="0" oY="15" oW="120" oH="100"/>
+    <sprite n="T02_hand_large_6.png" x="118" y="781" w="60" h="93" pX="0.5" pY="0.5" oX="0" oY="9" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_7.png" x="1" y="884" w="59" h="96" pX="0.5" pY="0.5" oX="0" oY="8" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_8.png" x="391" y="1" w="53" h="100" pX="0.5" pY="0.5" oX="0" oY="30" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_9.png" x="120" y="875" w="64" h="91" pX="0.5" pY="0.5" oX="0" oY="24" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_10.png" x="157" y="457" w="77" h="84" pX="0.5" pY="0.5" oX="0" oY="10" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_11.png" x="179" y="781" w="63" h="89" pX="0.5" pY="0.5" oX="0" oY="11" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_12.png" x="103" y="567" w="59" h="91" pX="0.5" pY="0.5" oX="0" oY="13" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_13.png" x="244" y="287" w="99" h="38" pX="0.5" pY="0.5" oX="2" oY="34" oW="120" oH="100"/>
+    <sprite n="T02_hand_large_14.png" x="334" y="1" w="56" h="102" pX="0.5" pY="0.5" oX="1" oY="8" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_15.png" x="210" y="1" w="50" h="104" pX="0.5" pY="0.5" oX="0" oY="11" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_large_16.png" x="229" y="182" w="42" h="104" pX="0.5" pY="0.5" oX="0" oY="18" oW="120" oH="100" r="y"/>
+    <sprite n="T02_hand_small_1.png" x="221" y="676" w="44" h="57" pX="0.5" pY="0.5" oX="5" oY="4" oW="70" oH="50" r="y"/>
+    <sprite n="T02_hand_small_2.png" x="1" y="981" w="47" h="42" pX="0.5" pY="0.5" oX="11" oY="6" oW="70" oH="50"/>
+    <sprite n="T02_hand_small_3.png" x="87" y="981" w="37" h="41" pX="0.5" pY="0.5" oX="18" oY="7" oW="70" oH="50"/>
+    <sprite n="T02_hand_small_4.png" x="199" y="290" w="44" h="35" pX="0.5" pY="0.5" oX="19" oY="6" oW="70" oH="50" r="y"/>
+    <sprite n="T02_hand_small_5.png" x="163" y="622" w="39" h="35" pX="0.5" pY="0.5" oX="18" oY="8" oW="70" oH="50" r="y"/>
+    <sprite n="T02_hand_small_6.png" x="221" y="734" w="40" h="45" pX="0.5" pY="0.5" oX="17" oY="5" oW="70" oH="50"/>
+    <sprite n="T02_hand_small_7.png" x="243" y="780" w="37" h="43" pX="0.5" pY="0.5" oX="18" oY="6" oW="70" oH="50"/>
+    <sprite n="T02_hand_small_8.png" x="49" y="981" w="37" h="42" pX="0.5" pY="0.5" oX="18" oY="7" oW="70" oH="50"/>
+    <sprite n="T02_hand_small_9.png" x="231" y="601" w="44" h="47" pX="0.5" pY="0.5" oX="16" oY="3" oW="70" oH="50"/>
+    <sprite n="T02_head.png" x="185" y="871" w="80" h="84" pX="0.5" pY="0.5" oX="3" oY="3" oW="90" oH="86" r="y"/>
+    <sprite n="T02_key_1.png" x="272" y="181" w="61" h="103" pX="0.5" pY="0.5" oX="19" oY="8" oW="100" oH="120"/>
+    <sprite n="T02_key_1b.png" x="263" y="956" w="84" h="61" pX="0.5" pY="0.5" oX="19" oY="27" oW="100" oH="120" r="y"/>
+    <sprite n="T02_key_a.png" x="163" y="542" w="52" h="79" pX="0.5" pY="0.5" oX="33" oY="28" oW="100" oH="120"/>
+    <sprite n="T02_key_b.png" x="261" y="1" w="72" h="103" pX="0.5" pY="0.5" oX="18" oY="9" oW="100" oH="120"/>
+    <sprite n="T02_key_c.png" x="141" y="183" w="87" h="106" pX="0.5" pY="0.5" oX="6" oY="7" oW="100" oH="120"/>
+    <sprite n="T02_key_cb.png" x="169" y="1" w="40" h="106" pX="0.5" pY="0.5" oX="6" oY="7" oW="100" oH="120"/>
+    <sprite n="T02_key_d.png" x="47" y="183" w="93" h="113" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="120"/>
+    <sprite n="T02_key_db.png" x="1" y="459" w="50" h="113" pX="0.5" pY="0.5" oX="3" oY="3" oW="100" oH="120"/>
+    <sprite n="T02_key_e.png" x="1" y="686" w="88" h="99" pX="0.5" pY="0.5" oX="6" oY="10" oW="100" oH="120"/>
+    <sprite n="T02_key_eb.png" x="1" y="786" w="60" h="97" pX="0.5" pY="0.5" oX="6" oY="12" oW="100" oH="120"/>
+    <sprite n="T02_key_F.png" x="83" y="327" w="81" h="107" pX="0.5" pY="0.5" oX="9" oY="6" oW="100" oH="120"/>
+    <sprite n="T02_key_Fb.png" x="155" y="678" w="65" h="89" pX="0.5" pY="0.5" oX="9" oY="24" oW="100" oH="120"/>
+    <sprite n="T02_leg_middle.png" x="98" y="435" w="69" h="21" pX="0.5" pY="0.5" oX="6" oY="3" oW="88" oH="32"/>
+    <sprite n="T02_leg_tip.png" x="103" y="659" w="82" h="18" pX="0.5" pY="0.5" oX="3" oY="5" oW="88" oH="32"/>
+    <sprite n="T02_leg_upper.png" x="47" y="297" w="87" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="88" oH="32"/>
+    <sprite n="T02_mouth_1.png" x="155" y="768" w="16" h="12" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="14"/>
+    <sprite n="T02_mouth_2.png" x="294" y="171" w="13" h="9" pX="0.5" pY="0.5" oX="1" oY="2" oW="16" oH="14"/>
+    <sprite n="T02_mouth_3.png" x="172" y="768" w="16" h="12" pX="0.5" pY="0.5" oX="0" oY="1" oW="16" oH="14"/>
+    <sprite n="T02_mouth_4.png" x="334" y="272" w="16" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="T02_mouth_5.png" x="308" y="171" w="9" h="9" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="14"/>
+    <sprite n="T02_mouth_6.png" x="120" y="967" w="13" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="16" oH="14"/>
+    <sprite n="T02_pupil.png" x="318" y="171" w="8" h="8" pX="0.5" pY="0.5" oX="1" oY="1" oW="10" oH="10"/>
+    <sprite n="T02_torso.png" x="1" y="573" w="101" h="112" pX="0.5" pY="0.5" oX="4" oY="4" oW="110" oH="120"/>
+    <sprite n="T02_wrist.png" x="216" y="542" w="45" h="58" pX="0.5" pY="0.5" oX="2" oY="1" oW="50" oH="60"/>
+    <sprite n="T02_wrist_ol.png" x="83" y="435" w="14" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="14" oH="24"/>
+</TextureAtlas>

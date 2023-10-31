@@ -1,0 +1,47 @@
+<template name="template_storeitemlock" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="Lock" />
+	
+	<element name="Lock">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleX()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_lock")
+				component("sheetName"):Set("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString(element:parent().layer or "HUD")
+			</event> 
+		</spriteSheetComponent>
+	</element>
+	
+	<spriteSheetComponent name="LeftChain">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="17*game.menuScaleX()" yOffset="10*game.menuScaleX()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("chain01")
+			component("sheetName"):SetString("xml_resources/buttons01.xml")
+			component("size"):SetFloat(0.5*game.menuScaleX())
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("vFlip"):SetInt(1)
+			else
+				component("hFlip"):SetInt(1)
+			end
+			component("layer"):SetString(element:parent().layer or "HUD")
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="RightChain">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="12*game.menuScaleX()" yOffset="10*game.menuScaleX()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("chain01")
+			component("sheetName"):SetString("xml_resources/buttons01.xml")
+			component("size"):SetFloat(0.5*game.menuScaleX())
+			component("layer"):SetString(element:parent().layer or "HUD")
+		</event>
+	</spriteSheetComponent>
+</template>

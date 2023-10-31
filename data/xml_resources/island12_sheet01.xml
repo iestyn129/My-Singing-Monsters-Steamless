@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:779df92dc9a234224ba4e56ec2d2d102:dd3677383dc443c38f4912b1754b17e9:392fe5170500ad55c5f41a31cd9bbacc$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island12_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island12_backcenter_001.png" x="828" y="236" w="287" h="572" pX="0.5" pY="0.5" oX="0" oY="4" oW="572" oH="292" r="y"/>
+    <sprite n="island12_backfiller_001.png" x="828" y="825" w="374" h="507" pX="0.5" pY="0.5" oX="0" oY="1" oW="508" oH="388" r="y"/>
+    <sprite n="island12_chunk_big_001.png" x="828" y="2" w="292" h="232" pX="0.5" pY="0.5" oX="3" oY="5" oW="300" oH="240"/>
+    <sprite n="island12_chunk_med_001.png" x="1871" y="825" w="151" h="105" pX="0.5" pY="0.5" oX="0" oY="1" oW="152" oH="108"/>
+    <sprite n="island12_chunk_small_001.png" x="1349" y="1963" w="94" h="76" pX="0.5" pY="0.5" oX="1" oY="0" oW="96" oH="76"/>
+    <sprite n="island12_chunk_tiny_001.png" x="516" y="2004" w="48" h="32" pX="0.5" pY="0.5" oX="3" oY="1" oW="52" oH="36"/>
+    <sprite n="island12_cork_001.png" x="1148" y="1334" w="326" h="381" pX="0.5" pY="0.5" oX="11" oY="3" oW="392" oH="332" r="y"/>
+    <sprite n="island12_crittereyesclosed_001.png" x="55" y="2031" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="52" oH="52"/>
+    <sprite n="island12_crittereyesopen_001.png" x="566" y="2004" w="51" h="26" pX="0.5" pY="0.5" oX="0" oY="13" oW="52" oH="52"/>
+    <sprite n="island12_crittereyesslits_001.png" x="2" y="2031" w="51" h="12" pX="0.5" pY="0.5" oX="0" oY="21" oW="52" oH="52"/>
+    <sprite n="island12_earburns_001.png" x="2" y="2" w="824" h="1347" pX="0.5" pY="0.5" oX="0" oY="0" oW="824" oH="1348"/>
+    <sprite n="island12_eye_001.png" x="1148" y="2" w="859" h="821" pX="0.5" pY="0.5" oX="10" oY="0" oW="840" oH="860" r="y"/>
+    <sprite n="island12_filler_001.png" x="516" y="1351" w="630" h="651" pX="0.5" pY="0.5" oX="1" oY="3" oW="652" oH="636" r="y"/>
+    <sprite n="island12_moon_001.png" x="1691" y="825" w="178" h="176" pX="0.5" pY="0.5" oX="1" oY="1" oW="180" oH="180" r="y"/>
+    <sprite n="island12_nose_001.png" x="2" y="1351" w="512" h="678" pX="0.5" pY="0.5" oX="0" oY="1" oW="512" oH="680"/>
+    <sprite n="island12_observe_base_001.png" x="1269" y="1717" w="219" h="244" pX="0.5" pY="0.5" oX="0" oY="1" oW="220" oH="248"/>
+    <sprite n="island12_observe_lenses_001.png" x="1204" y="825" w="222" h="228" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island12_plank_001.png" x="1148" y="1717" w="119" h="252" pX="0.5" pY="0.5" oX="1" oY="0" oW="256" oH="120" r="y"/>
+    <sprite n="island12_rubble_001.png" x="1402" y="1055" w="192" h="214" pX="0.5" pY="0.5" oX="15" oY="5" oW="220" oH="220"/>
+    <sprite n="island12_rubble_002.png" x="1204" y="1055" w="196" h="214" pX="0.5" pY="0.5" oX="11" oY="5" oW="220" oH="220"/>
+    <sprite n="island12_rubble_003.png" x="1428" y="825" w="154" h="190" pX="0.5" pY="0.5" oX="15" oY="33" oW="220" oH="220" r="y"/>
+    <sprite n="island12_rubble_004.png" x="1148" y="1971" w="83" h="74" pX="0.5" pY="0.5" oX="7" oY="13" oW="100" oH="100"/>
+    <sprite n="island12_rubble_005.png" x="1269" y="1963" w="78" h="82" pX="0.5" pY="0.5" oX="9" oY="11" oW="100" oH="100" r="y"/>
+    <sprite n="island12_sun_dial_001.png" x="1871" y="932" w="136" h="126" pX="0.5" pY="0.5"/>
+    <sprite n="island12_weed_001.png" x="1584" y="825" w="105" h="187" pX="0.5" pY="0.5" oX="9" oY="47" oW="200" oH="200" r="y"/>
+</TextureAtlas>

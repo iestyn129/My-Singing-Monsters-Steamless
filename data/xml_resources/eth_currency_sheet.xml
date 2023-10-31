@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d0453efb62300b2f543b55a207b8cc11:cbac6c028e0a9f5961a1b9e35c3b9852:3e29a8c277967b57502da320b9fa2b9d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/menu/eth_currency_sheet.png" width="512" height="512">
+    <sprite n="currency_coins_shards" x="255" y="1" w="222" h="174" pX="0.5" pY="0.5" oX="21" oY="13" oW="265" oH="197"/>
+    <sprite n="currency_diamonds_shards" x="255" y="176" w="214" h="172" pX="0.5" pY="0.5" oX="26" oY="14" oW="265" oH="197"/>
+    <sprite n="currency_free_diamonds" x="1" y="1" w="253" h="253" pX="0.5" pY="0.5" oX="13" oY="12" oW="268" oH="268"/>
+    <sprite n="currency_shards_diamonds" x="1" y="255" w="207" h="178" pX="0.5" pY="0.5" oX="28" oY="11" oW="265" oH="197"/>
+</TextureAtlas>

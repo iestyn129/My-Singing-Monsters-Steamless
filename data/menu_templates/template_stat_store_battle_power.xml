@@ -1,0 +1,90 @@
+<template name="template_stat_battle_power" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="228*game.menuScaleX()" h="20*game.menuScaleX()" />
+	
+	<textComponent name="Stat">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("BATTLE_STAT_POWER"))
+				component("layer"):SetString("FrontPopUps")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+			]]>
+		</event>
+	</textComponent>
+	
+	<element name="Value">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("power_icon")
+					component("sheetName"):SetString("xml_resources/collect_stickers.xml")
+					component("size"):SetFloat(0.35*game.menuScaleX())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" component="Icon" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.22*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+
+					local monsterId
+					if element:root():GetElement("SelectedMonsterView") == nil then
+						monsterId = store:MonsterTypeFromItemNum(element:parent()("ItemIndex"):GetInt())
+					else
+						monsterId = element:parent():parent():parent()("selectedMonster"):GetInt()
+					end
+
+					local power = game.getBattleMonsterStatData(monsterId).base_power
+
+					component("text"):SetString(game.commaizeNumber(power))
+					component("layer"):SetString("FrontPopUps")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="setVisible" params="element">
+		<![CDATA[
+			element["Stat"]("visible"):SetInt(1)
+			element["Value"]["Text"]("visible"):SetInt(1)
+			element["Value"]["Icon"]("visible"):SetInt(1)
+		]]>
+	</event>
+	
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element["Stat"]("visible"):SetInt(0)
+			element["Value"]["Text"]("visible"):SetInt(0)
+			element["Value"]["Icon"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<event name="updateComponents" params="element">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			element["Stat"]("alpha"):SetFloat(alpha)
+			element["Value"]["Text"]("alpha"):SetFloat(alpha)
+			element["Value"]["Icon"]("alpha"):SetFloat(alpha)
+		]]>
+	</event>
+	
+</template>

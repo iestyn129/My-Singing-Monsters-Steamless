@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1e4c307177bd0b2e16523c04a4bf0dd0:d9d16e71dfff9f74aaba6e840a893de1:cfc5a545786e5d9fd3c4568a25dcb51b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ACE_costume_05_sheet.png" width="512" height="512" hires="true">
+    <sprite n="ACE_body" x="4" y="4" w="108" h="156" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_body_RARE"/>
+		<sprite n="ACE_butterfly_RARE2"/>
+		<sprite n="ACE_butterfly_RARE3"/>
+    <sprite n="ACE_eyeback" x="230" y="148" w="27" h="57" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="32" r="y"/>
+    <sprite n="ACE_eyelids_1" x="116" y="90" w="36" h="64" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_eyelids_1_RARE"/>
+    <sprite n="ACE_eyelids_2" x="156" y="80" w="36" h="64" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_eyelids_2_RARE"/>
+    <sprite n="ACE_eyelids_3" x="166" y="164" w="36" h="64" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_eyelids_3_RARE"/>
+    <sprite n="ACE_eyelids_4" x="196" y="80" w="36" h="64" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_eyelids_4_RARE"/>
+    <sprite n="ACE_head" x="4" y="419" w="92" h="82" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_head_RARE"/>
+    <sprite n="ACE_left_foot" x="291" y="47" w="26" h="38" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_left_foot_RARE"/>
+    <sprite n="ACE_left_lowerarm" x="206" y="210" w="44" h="18" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_left_lowerarm_RARE"/>
+    <sprite n="ACE_left_lowerleg" x="206" y="408" w="60" h="96" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_left_lowerleg_RARE"/>
+    <sprite n="ACE_left_upperarm" x="166" y="232" w="20" h="50" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_left_upperarm_RARE"/>
+    <sprite n="ACE_left_upperleg" x="116" y="4" w="30" h="82" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_left_upperleg_RARE"/>
+    <sprite n="ACE_mouth_01" x="267" y="63" w="20" h="41" pX="0.5" pY="0.5" oX="6" oY="3" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_02" x="236" y="72" w="27" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_03" x="250" y="4" w="32" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_04" x="261" y="132" w="36" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_05" x="190" y="232" w="35" h="44" pX="0.5" pY="0.5" oX="4" oY="2" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_06" x="313" y="4" w="35" h="36" pX="0.5" pY="0.5" oX="6" oY="3" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_mouth_07" x="297" y="89" w="27" h="28" pX="0.5" pY="0.5" oX="10" oY="4" oW="56" oH="38"/>
+    <sprite n="ACE_mouth_08" x="267" y="108" w="26" h="18" pX="0.5" pY="0.5" oX="11" oY="5" oW="56" oH="38"/>
+    <sprite n="ACE_mouth_09" x="254" y="209" w="34" h="19" pX="0.5" pY="0.5" oX="8" oY="4" oW="56" oH="38"/>
+    <sprite n="ACE_mouth_10" x="286" y="4" w="23" h="39" pX="0.5" pY="0.5" oX="6" oY="4" oW="56" oH="38" r="y"/>
+    <sprite n="ACE_pom_1" x="122" y="287" w="114" h="117" pX="0.5" pY="0.5" oX="6" oY="0" oW="132" oH="114" r="y"/>
+		<sprite n="ACE_pom_1_RARE"/>
+    <sprite n="ACE_pom_2" x="4" y="294" w="114" h="121" pX="0.5" pY="0.5" oX="0" oY="0" oW="132" oH="114" r="y"/>
+		<sprite n="ACE_pom_2_RARE"/>
+    <sprite n="ACE_pom_3" x="48" y="164" w="114" h="119" pX="0.5" pY="0.5" oX="13" oY="0" oW="132" oH="114" r="y"/>
+		<sprite n="ACE_pom_3_RARE"/>
+    <sprite n="ACE_ponytail_left" x="200" y="4" w="22" h="64" pX="0.5" pY="0.5" oX="9" oY="0" oW="44" oH="64"/>
+    <sprite n="ACE_ponytail_right" x="150" y="4" w="46" h="72" pX="0.5" pY="0.5" oX="0" oY="6" oW="72" oH="52" r="y"/>
+    <sprite n="ACE_pupil" x="156" y="148" w="12" h="12" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_pupil_RARE"/>
+    <sprite n="ACE_right_foot" x="229" y="232" w="24" h="42" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_right_foot_RARE"/>
+    <sprite n="ACE_right_lowerarm" x="226" y="4" w="20" h="64" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_right_lowerarm_RARE"/>
+    <sprite n="ACE_right_lowerleg" x="136" y="408" w="66" h="96" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_right_lowerleg_RARE"/>
+    <sprite n="ACE_right_upperarm" x="206" y="148" w="20" h="58" pX="0.5" pY="0.5" r="y"/>
+		<sprite n="ACE_right_upperarm_RARE"/>
+    <sprite n="ACE_right_upperleg" x="100" y="419" w="32" h="82" pX="0.5" pY="0.5"/>
+		<sprite n="ACE_right_upperleg_RARE"/>
+    <sprite n="ACE_shadow" x="4" y="164" w="40" h="126" pX="0.5" pY="0.5" oX="1" oY="0" oW="128" oH="40" r="y"/>
+		<sprite n="ACE_shoulder_RARE"/>
+</TextureAtlas>

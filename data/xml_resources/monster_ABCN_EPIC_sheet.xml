@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c594143902359c82fbee593a4e680a4c:8efed69d0901c5957312a78affb615d2:d113d8e9ab2e14c570e31f0c905d4810$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABCN_EPIC_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ABCN_body_lower" x="2" y="206" w="174" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_body_upper" x="796" y="156" w="202" h="194" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_crystals_arm_right" x="580" y="277" w="190" h="178" pX="0.5" pY="0.5" oX="8" oY="2" oW="186" oH="192" r="y"/>
+    <sprite n="ABCN_crystals_back" x="356" y="2" w="226" h="190" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_crystals_top" x="806" y="2" w="214" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_eyelid_01" x="269" y="541" w="44" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48" r="y"/>
+    <sprite n="ABCN_eyelid_02" x="464" y="525" w="73" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48"/>
+    <sprite n="ABCN_eyelid_03" x="315" y="558" w="73" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48"/>
+    <sprite n="ABCN_eyelid_04" x="315" y="604" w="73" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="74" oH="48"/>
+    <sprite n="ABCN_foot_left_EPIC" x="960" y="352" w="62" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="64" r="y"/>
+    <sprite n="ABCN_foot_right_EPIC" x="960" y="418" w="61" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="68" r="y"/>
+    <sprite n="ABCN_glow" x="772" y="352" w="186" h="185" pX="0.5" pY="0.5" oX="0" oY="0" oW="186" oH="186" r="y"/>
+    <sprite n="ABCN_hand_left_01" x="472" y="424" w="106" h="99" pX="0.5" pY="0.5" oX="2" oY="45" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_02" x="472" y="312" w="106" h="110" pX="0.5" pY="0.5" oX="0" oY="41" oW="106" oH="154"/>
+    <sprite n="ABCN_hand_left_03" x="323" y="452" w="139" h="104" pX="0.5" pY="0.5" oX="0" oY="12" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_04" x="178" y="312" w="150" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_left_05" x="178" y="206" w="150" h="104" pX="0.5" pY="0.5" oX="0" oY="0" oW="106" oH="154" r="y"/>
+    <sprite n="ABCN_hand_right_01" x="152" y="417" w="139" h="122" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_02" x="2" y="490" w="135" h="122" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_03" x="139" y="541" w="128" h="122" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="122"/>
+    <sprite n="ABCN_hand_right_04" x="580" y="457" w="122" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="140" oH="122" r="y"/>
+    <sprite n="ABCN_head_EPIC" x="584" y="2" w="220" h="141" pX="0.5" pY="0.5" oX="87" oY="10" oW="320" oH="160"/>
+    <sprite n="ABCN_head_horn_EPIC" x="2" y="614" w="124" h="69" pX="0.5" pY="0.5" oX="7" oY="48" oW="320" oH="160"/>
+    <sprite n="ABCN_lower_arm_left" x="2" y="358" w="148" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_lower_arm_right" x="330" y="312" w="140" h="138" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCN_lower_leg" x="960" y="488" w="58" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_mouth_1" x="1000" y="156" w="20" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_2" x="330" y="206" w="24" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_3" x="293" y="447" w="28" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_4" x="1000" y="223" w="20" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_5" x="566" y="194" w="16" h="41" pX="0.5" pY="0.5" oX="6" oY="7" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_6" x="566" y="269" w="12" h="27" pX="0.5" pY="0.5" oX="11" oY="9" oW="66" oH="28" r="y"/>
+    <sprite n="ABCN_mouth_7" x="1000" y="289" w="18" h="12" pX="0.5" pY="0.5" oX="14" oY="11" oW="66" oH="28"/>
+    <sprite n="ABCN_mouth_8" x="566" y="237" w="16" h="14" pX="0.5" pY="0.5" oX="14" oY="9" oW="66" oH="28"/>
+    <sprite n="ABCN_nose" x="293" y="417" w="34" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_pupil" x="566" y="253" w="16" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_shadow" x="2" y="2" w="352" h="202" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_triangle_01" x="390" y="558" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_02" x="456" y="571" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_03" x="390" y="616" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_04" x="522" y="571" w="56" h="64" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70"/>
+    <sprite n="ABCN_triangle_05" x="456" y="629" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_06" x="269" y="650" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_07" x="335" y="674" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_triangle_08" x="128" y="665" w="64" h="56" pX="0.5" pY="0.5" oX="1" oY="1" oW="58" oH="70" r="y"/>
+    <sprite n="ABCN_upper_arm_left" x="356" y="194" w="208" h="116" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_arm_right" x="584" y="145" w="210" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="ABCN_upper_leg" x="704" y="457" w="64" h="106" pX="0.5" pY="0.5"/>
+</TextureAtlas>

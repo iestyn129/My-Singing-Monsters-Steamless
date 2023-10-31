@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:71d0cf1be0eac7d3d07dd3401f9188e5:d5259ce0370e277fdea9f326dce52088:4d9df2a64f8f900521ef324b5ad71a03$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BD_costume_01_sheet.png" width="128" height="256" hires="true">
+	<!-- original anchor = (54, 49) -> new anchor (51, 51) diff = (3, -2)-->
+	<!-- add double it to texturepacker output offsets (5, 3) -> (11, -1), because hires-->
+    <sprite n="BD_apples_left.png" x="2" y="107" w="104" h="99" pX="0.5" pY="0.5" oX="11" oY="-1" oW="110" oH="110" r="y"/>
+	<!-- original anchor = (24, 49) -> new anchor (19, 60) diff = (5, -11)-->
+	<!-- add double it to texturepacker output offsets (3, 1) -> (13, -21), because hires-->
+    <sprite n="BD_apples_right.png" x="2" y="2" w="108" h="103" pX="0.5" pY="0.5" oX="13" oY="-21" oW="110" oH="110" r="y"/>
+</TextureAtlas>

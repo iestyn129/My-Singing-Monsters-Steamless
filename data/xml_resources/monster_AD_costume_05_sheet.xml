@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:44e83e5e9c856f3d8f4c2d8072305ad4:b272413fc6dc2d929725e90379318482:fa9284f1033fcd171ca28181518f27d8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AD_costume_05_sheet.png" width="512" height="512" hires="true">
+    <sprite n="monster_AD_costume_keyboard_a.png" x="430" y="156" w="70" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_aflat.png" x="170" y="360" w="40" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_b.png" x="62" y="258" w="64" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_bflat.png" x="130" y="360" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_c1.png" x="4" y="258" w="54" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_c2.png" x="4" y="370" w="54" h="108" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_d.png" x="62" y="368" w="64" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_dflat.png" x="4" y="220" w="68" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="monster_AD_costume_keyboard_e.png" x="130" y="258" w="70" h="98" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_eflat.png" x="130" y="424" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_keyboard_f.png" x="430" y="4" w="78" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="monster_AD_costume_keyboard_g.png" x="430" y="80" w="78" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="monster_AD_costume_keyboard_gflat.png" x="170" y="416" w="44" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="monster_AD_costume_poolbase.png" x="4" y="4" w="422" h="212" pX="0.5" pY="0.5"/>
+</TextureAtlas>

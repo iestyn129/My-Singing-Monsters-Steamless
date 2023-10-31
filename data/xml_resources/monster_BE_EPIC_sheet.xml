@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:358fe82a03fe9212ad6bc6a3f08b7397:3cec8e880dfa04a39fbcc49ee94f3809:333d149f2ab2f76ead174a9315b32a3f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BE_EPIC_sheet.png" width="256" height="512" hires="true">
+    <sprite n="BE_body.png" x="2" y="153" w="140" h="109" pX="0.5" pY="0.5" oX="1" oY="0" oW="112" oH="140" r="y"/>
+    <sprite n="BE_body_EPIC.png" x="2" y="2" w="153" h="149" pX="0.5" pY="0.5" oX="8" oY="11" oW="180" oH="180"/>
+    <sprite n="BE_eyeballs.png" x="144" y="254" w="63" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="60"/>
+    <sprite n="BE_eyelids_almost_shut.png" x="2" y="264" w="63" h="51" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_closing.png" x="67" y="264" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_open.png" x="2" y="317" w="62" h="52" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_eyelids_shut.png" x="131" y="314" w="62" h="51" pX="0.5" pY="0.5" oX="3" oY="2" oW="68" oH="56"/>
+    <sprite n="BE_foot01.png" x="157" y="37" w="70" h="51" pX="0.5" pY="0.5" oX="8" oY="4" oW="80" oH="56"/>
+    <sprite n="BE_horn_left_EPIC.png" x="144" y="199" w="65" h="53" pX="0.5" pY="0.5" oX="3" oY="2" oW="60" oH="70" r="y"/>
+    <sprite n="BE_horn_right_EPIC.png" x="157" y="2" w="76" h="33" pX="0.5" pY="0.5" oX="3" oY="2" oW="40" oH="80" r="y"/>
+    <sprite n="BE_leg_bending.png" x="229" y="65" w="21" h="62" pX="0.5" pY="0.5" oX="2" oY="0" oW="32" oH="64"/>
+    <sprite n="BE_leg_bent.png" x="225" y="129" w="26" h="60" pX="0.5" pY="0.5" oX="3" oY="1" oW="32" oH="64"/>
+    <sprite n="BE_leg_straight.png" x="235" y="2" w="14" h="61" pX="0.5" pY="0.5" oX="3" oY="0" oW="32" oH="64"/>
+    <sprite n="BE_mouth_closing.png" x="64" y="379" w="59" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_eee.png" x="195" y="314" w="59" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60"/>
+    <sprite n="BE_mouth_mmm.png" x="2" y="371" w="60" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_ooo.png" x="2" y="430" w="49" h="46" pX="0.5" pY="0.5" oX="5" oY="7" oW="60" oH="60"/>
+    <sprite n="BE_mouth_open.png" x="66" y="318" w="60" h="59" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_mouth_shut.png" x="128" y="367" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="60" r="y"/>
+    <sprite n="BE_pupils.png" x="211" y="199" w="33" h="51" pX="0.5" pY="0.5" oX="2" oY="1" oW="56" oH="36" r="y"/>
+    <sprite n="BE_shadow.png" x="157" y="90" w="66" h="107" pX="0.5" pY="0.5" oX="8" oY="2" oW="124" oH="68" r="y"/>
+</TextureAtlas>

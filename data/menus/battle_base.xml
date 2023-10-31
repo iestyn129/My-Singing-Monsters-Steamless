@@ -1,0 +1,722 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_spritesheetbutton" name="QuitButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="10" />
+		<touchComponent name="Touch"/>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_no")
+					component("sheetName"):SetString("xml_resources/context_buttons.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("EXIT")
+					component("size"):SetFloat(0.15*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="HelpButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="QuitButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch"/>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_info")
+					component("sheetName"):SetString("xml_resources/context_buttons.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("CONTEXTBAR_HELP_LABEL")
+					component("size"):SetFloat(0.15*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="SwapButton">
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="HelpButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch"/>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("button_flip")
+					component("sheetName"):SetString("xml_resources/context_buttons.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="60*game.hudScale()" h="100" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("CONTEXTBAR_SWAP")
+					component("size"):SetFloat(0.15*game.hudScale())
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</textComponent>
+	</template>
+
+	<!-- health bars -->
+	<element name="PlayerHUD">
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="20" />
+		
+		<element name="PlayerFadeBG">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<ninesliceComponent name="Sprite">
+				<size w="240 * include('MenuHelpers').MagicScale(0)" h="(137*0.5) * game.menuScaleY()" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("topHeight"):SetFloat(0.0)
+						component("bottomHeight"):SetFloat(0.0)
+						component("leftWidth"):SetFloat(2.0)
+						component("rightWidth"):SetFloat(222.0)
+						component("includeBorder"):SetInt(1)
+						component("size"):SetFloat(0.5 * game.menuScaleY())
+						component("spriteName"):SetString("gfx/battle/battle_banner_blue")
+						component("layer"):SetString("HUD")
+					]]>
+				</event>
+			</ninesliceComponent>
+		</element>
+
+		<template type ="template_battle_team_portrait" name="ActivePlayerPortrait">
+			<templateVar name="$Scale" equals="0.6" />
+			<templateVar name="$TeamId" equals="0" />
+			<templateVar name="$SlotId" equals="0" />
+			<templateVar name="$ShowHealth" equals="0" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="2*game.menuScaleX()" yOffset="2*game.menuScaleY()" priorityOffset="-4" />
+		</template>
+		
+		<template type="template_battle_healthbar" name="PlayerHealthBar">
+			<templateVar name="$TeamId" equals="0" />
+			<position relativeTo="ActivePlayerPortrait" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		</template>
+
+		<element name="PlayerInfo">
+
+			<!--<size w="166*game.menuScaleX()" h="20*game.menuScaleY()"/>-->
+			
+			<size dependentOnElement="element:name()" dependentOnComponent="BG"/>
+			
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="64*game.menuScaleX()" yOffset="60*game.menuScaleY()" priorityOffset="0" />
+			
+			<spriteSheetComponent name="BG">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("button_name_plank")
+						component("sheetName"):SetString("xml_resources/element_buttons.xml")
+						component("size"):SetFloat(0.5*game.menuScaleX())
+						component("layer"):SetString("HUD")
+					]]>
+				</event>
+			</spriteSheetComponent>
+
+			<template type="template_player_avatar" name="PlayerProfileImg">
+				<templateVar name="$Layer" equals="HUD" />
+				<templateVar name="$Scale" equals="0.25*game.menuScaleX()" />
+				<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="LEFT" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0*game.menuScaleX()" yOffset="-6*game.menuScaleY()" priorityOffset="-1" />
+				<event name="onInit" params="element">
+					<![CDATA[
+						local avatar = game.getPlayerAvatar()
+						element("Type"):SetInt(avatar:getType())
+						element("Info"):SetString(avatar:getInfo())
+					]]>
+				</event>
+			</template>
+			
+			<textComponent name="Text">
+				<size w="120*game.menuScaleX()" h="14*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="42*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTitleFont())
+						component("size"):SetFloat(0.24*game.menuScaleY())
+						component("text"):SetString("V O I D C O R N wuz heer")
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("HUD")
+					]]>
+				</event>
+			</textComponent>
+
+			<event name="show" params="element">
+				<![CDATA[
+					element["BG"]("visible"):SetInt(1)
+					element["PlayerProfileImg"]["Sprite"]("visible"):SetInt(1)
+					element["Text"]("visible"):SetInt(1)
+				]]>
+			</event>
+
+			<event name="hide" params="element">
+				<![CDATA[
+					element["BG"]("visible"):SetInt(0)
+					element["PlayerProfileImg"]["Sprite"]("visible"):SetInt(0)
+					element["Text"]("visible"):SetInt(0)
+				]]>
+			</event>
+
+		</element>
+
+	</element>
+
+	<element name="OpponentHUD">
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="20" />
+		<ninesliceComponent name="OpponentFadeBG">
+			<size w="240 * include('MenuHelpers').MagicScale(0)" h="(137*0.5) * game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(0.0)
+					component("bottomHeight"):SetFloat(0.0)
+					component("leftWidth"):SetFloat(222.0)
+					component("rightWidth"):SetFloat(2.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5 * game.menuScaleY())
+					component("spriteName"):SetString("gfx/battle/battle_banner_red")
+					component("layer"):SetString("HUD")
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<template type ="template_battle_team_portrait" name="ActiveOpponentPortrait">
+			<templateVar name="$Scale" equals="0.6" />
+			<templateVar name="$TeamId" equals="1" />
+			<templateVar name="$SlotId" equals="0" />
+			<templateVar name="$ShowHealth" equals="0" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="2*game.menuScaleX()" yOffset="2*game.menuScaleY()" priorityOffset="-4" />
+		</template>
+
+		<template type="template_battle_healthbar" name="OpponentHealthBar">
+			<templateVar name="$TeamId" equals="1" />
+			<position relativeTo="ActiveOpponentPortrait" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="0" />
+		</template>
+
+		<element name="OpponentInfo">
+
+			<size dependentOnElement="element:name()" dependentOnComponent="BG"/>
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="64*game.menuScaleX()" yOffset="60*game.menuScaleY()" priorityOffset="0" />
+
+			<spriteSheetComponent name="BG">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("button_name_plank")
+						component("sheetName"):SetString("xml_resources/element_buttons.xml")
+						component("hFlip"):SetInt(1)
+						component("size"):SetFloat(0.5*game.menuScaleX())
+						component("layer"):SetString("HUD")
+					]]>
+				</event>
+			</spriteSheetComponent>
+
+			<template type="template_player_avatar" name="OpponentProfileImg">
+				<templateVar name="$Layer" equals="HUD" />
+				<templateVar name="$Scale" equals="0.25*game.menuScaleX()" />
+				<templateVar name="$Flip" equals="1" />
+				<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0*game.menuScaleX()" yOffset="-6*game.menuScaleY()" priorityOffset="-1" />
+				<event name="onInit" params="element">
+					<![CDATA[
+						local avatar = game.getBattleClientData():getBattleCreateSettings().opponentAvatar
+						element("Type"):SetInt(avatar:getType())
+						element("Info"):SetString(avatar:getInfo())
+					]]>
+				</event>
+			</template>
+
+			<textComponent name="Text">
+				<size w="120*game.menuScaleX()" h="14*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="42*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTitleFont())
+						component("size"):SetFloat(0.24*game.menuScaleY())
+						component("text"):SetString("V O I D C O R N wuz heer")
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("HUD")
+					]]>
+				</event>
+			</textComponent>
+
+			<event name="show" params="element">
+				<![CDATA[
+					element["BG"]("visible"):SetInt(1)
+					element["OpponentProfileImg"]["Sprite"]("visible"):SetInt(1)
+					element["Text"]("visible"):SetInt(1)
+				]]>
+			</event>
+
+			<event name="hide" params="element">
+				<![CDATA[
+					element["BG"]("visible"):SetInt(0)
+					element["OpponentProfileImg"]["Sprite"]("visible"):SetInt(0)
+					element["Text"]("visible"):SetInt(0)
+				]]>
+			</event>
+
+		</element>
+
+	</element>
+
+	<!-- avatars -->
+	<element name="PlayerTeamAvatarView">
+		<!-- active slot -->
+		<template type="template_battle_avatar" name="Slot0">
+			<templateVar name="$flip" equals="1" />
+
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-52*game.battleScale()" yOffset="65*game.battleScale()" priorityOffset="100" />
+
+			<aeComponent name="PlayerAura">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="384*0.5" yOffset="384*0.5" priorityOffset="1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("animationName"):SetString("xml_bin/monster_auras.bin")
+						component("animation"):SetString("aura_2x2")
+						component:setScale(Vector2(0.4*game.battleScale(),0.4*game.battleScale()))
+						component:calculatePosition()
+					]]>
+				</event>
+			</aeComponent>
+		</template>
+
+		<template type="template_battle_avatar" name="Slot1">
+			<templateVar name="$flip" equals="1" />
+
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-160*game.battleScale()" yOffset="55*game.battleScale()" priorityOffset="110" />
+
+			<touchComponent name="Touch">
+				<size w="100*game.battleScale()" h="100*game.battleScale()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(0.5, 0.5, 0.5)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(1.0, 1.0, 1.0)
+						local player = game.battleSystem():getBattleTeam(0):getPlayerBySlotId(1)
+						if player ~= nil and not player:isDead() then
+							local teamIdx = game.battleSystem():getBattleTeam(0):getTeamIdxBySlotId(1)
+							game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, teamIdx))
+						end
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(1.0, 1.0, 1.0)
+					]]>
+				</event>
+			</touchComponent>
+		</template>
+
+		<template type="template_battle_avatar" name="Slot2">
+			<templateVar name="$flip" equals="1" />
+
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-100*game.battleScale()" yOffset="15*game.battleScale()" priorityOffset="120" />
+
+			<touchComponent name="Touch">
+				<size w="100*game.battleScale()" h="100*game.battleScale()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(0.5, 0.5, 0.5)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(1.0, 1.0, 1.0)
+						local player = game.battleSystem():getBattleTeam(0):getPlayerBySlotId(2)
+						if player ~= nil and not player:isDead() then
+							local teamIdx = game.battleSystem():getBattleTeam(0):getTeamIdxBySlotId(2)
+							game.battleSystem():getViewReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, teamIdx))
+						end
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						element["MonsterAnim"]:setColor(1.0, 1.0, 1.0)
+					]]>
+				</event>
+			</touchComponent>
+
+		</template>
+	</element>
+
+	<element name="OpponentTeamAvatarView">
+		<template type="template_battle_avatar" name="Slot0">
+			<templateVar name="$flip" equals="0" />
+
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="52*game.battleScale()" yOffset="65*game.battleScale()" priorityOffset="100" />
+			<aeComponent name="PlayerAura">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="384*0.5" yOffset="384*0.5" priorityOffset="1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("animationName"):SetString("xml_bin/monster_auras.bin")
+						component("animation"):SetString("aura_2x2")
+						component:setScale(Vector2(0.4*game.battleScale(),0.4*game.battleScale()))
+						component:calculatePosition()
+					]]>
+				</event>
+			</aeComponent>
+		</template>
+
+		<template type="template_battle_avatar" name="Slot1">
+			<templateVar name="$flip" equals="0" />
+
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="160*game.battleScale()" yOffset="55*game.battleScale()" priorityOffset="110" />
+		</template>
+
+		<template type="template_battle_avatar" name="Slot2">
+			<templateVar name="$flip" equals="0" />
+			
+			<position relativeTo="SAFE_AREA" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="100*game.battleScale()" yOffset="15*game.battleScale()" priorityOffset="120" />
+		</template>
+	</element>
+	
+	<!-- Action Bar-->
+	<element name="ActionBar">
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="10*game.battleScale()" yOffset="10*game.battleScale()" priorityOffset="10" />
+
+		<template type="template_battle_action_button" name="ActionButton0">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="36*game.battleScale()" priorityOffset="2" />
+			<event name="onInit" params="element">
+				<![CDATA[
+					onInit(element)
+					element("buttonId"):SetInt(0)
+				]]>
+			</event>
+		</template>
+
+		<template type="template_battle_action_button" name="ActionButton1">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="140*game.battleScale()" yOffset="36*game.battleScale()" priorityOffset="2" />
+			<event name="onInit" params="element">
+				<![CDATA[
+					onInit(element)
+					element("buttonId"):SetInt(1)
+				]]>
+			</event>
+		</template>
+
+		<template type="template_battle_action_button" name="ActionButton2">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="2" />
+			<event name="onInit" params="element">
+				<![CDATA[
+					onInit(element)
+					element("buttonId"):SetInt(2)
+				]]>
+			</event>
+		</template>
+
+		<template type="template_battle_action_button" name="ActionButton3">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="140*game.battleScale()" yOffset="0" priorityOffset="2" />
+			<event name="onInit" params="element">
+				<![CDATA[
+					onInit(element)
+					element("buttonId"):SetInt(3)
+				]]>
+			</event>
+		</template>
+
+	</element>
+
+	<!--Status text-->
+	<element name="Status">
+		<size w="220*game.menuScaleY()" h="56*game.menuScaleY()" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="32*game.menuScaleY()" priorityOffset="1" />
+
+		<ninesliceComponent name="Sprite">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(44.0)
+					component("bottomHeight"):SetFloat(44.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.menuScaleY())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/scroll_frame")
+					component("layer"):SetString("MidPopUps")
+					component("alpha"):SetFloat(0)
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("layer"):SetString("MidPopUps")
+					component("alpha"):SetFloat(0)
+				]]>
+			</event>
+		</textComponent>
+	
+	</element>
+
+	<!-- Team Portrait Views-->
+	<element name="PlayerTeamPortraitView">
+		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="28*game.menuScaleX()" yOffset="68*game.menuScaleY()" priorityOffset="0" />
+
+		<template type ="template_battle_team_portrait" name="member1">
+			<templateVar name="$TeamId" equals="0" />
+			<templateVar name="$SlotId" equals="1" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+						local player = game.battleSystem():getBattleTeam(0):getPlayerBySlotId(1)
+						if player ~= nil and not player:isDead() then
+							local teamIdx = game.battleSystem():getBattleTeam(0):getTeamIdxBySlotId(1)
+							menu:GetReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, teamIdx))
+						end
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+					]]>
+				</event>
+			</touchComponent>
+			<event name="hide" params="element">
+				<![CDATA[
+					hide(element)
+					element["Touch"]("enabled"):SetInt(0)
+				]]>
+			</event>
+		</template>
+
+		<template type ="template_battle_team_portrait" name="member2">
+			<templateVar name="$TeamId" equals="0" />
+			<templateVar name="$SlotId" equals="2" />
+			<position relativeTo="member1" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleY()" priorityOffset="1" />
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+					]]>
+				</event>
+				<event name="onTouchUp" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+						local player = game.battleSystem():getBattleTeam(0):getPlayerBySlotId(2)
+						if player ~= nil and not player:isDead() then
+							local teamIdx = game.battleSystem():getBattleTeam(0):getTeamIdxBySlotId(2)
+							menu:GetReceiver():Send(game.MsgBattleAction(game.MsgBattleAction_Swap, teamIdx))
+						end
+					]]>
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					<![CDATA[
+						element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+					]]>
+				</event>
+			</touchComponent>
+			<event name="hide" params="element">
+				<![CDATA[
+					hide(element)
+					element["Touch"]("enabled"):SetInt(0)
+				]]>
+			</event>
+		</template>
+
+	</element>
+
+	<element name="OpponentTeamPortraitView">
+		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="28*game.menuScaleX()" yOffset="68*game.menuScaleY()" priorityOffset="0" />
+
+		<template type ="template_battle_team_portrait" name="member1">
+			<templateVar name="$TeamId" equals="1" />
+			<templateVar name="$SlotId" equals="1" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+		</template>
+
+		<template type ="template_battle_team_portrait" name="member2">
+			<templateVar name="$TeamId" equals="1" />
+			<templateVar name="$SlotId" equals="2" />
+			<position relativeTo="member1" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleY()" priorityOffset="1" />
+		</template>
+
+	</element>
+
+	<script src="scripts/BattleBase.lua"/>
+
+	<!--
+	<template type="template_spritesheetbutton" name="WinButton">
+		<templateVar name="$layer" equals="PopUps" />
+		<templateVar name="$spriteScale" equals="0.4*game.hudScale()" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="80*game.hudScale()" priorityOffset="1" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					game.battleAutoWin()
+				]]>
+			</event>
+		</touchComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTutorialFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("WIN")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("PopUps")
+				]]>
+			</event>
+		</textComponent>
+
+	</template>
+
+	<template type="template_spritesheetbutton" name="LoseButton">
+		<templateVar name="$layer" equals="PopUps" />
+		<templateVar name="$spriteScale" equals="0.4*game.hudScale()" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="128*game.hudScale()" priorityOffset="1" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					game.battleAutoLose()
+				]]>
+			</event>
+		</touchComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTutorialFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("LOSE")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("PopUps")
+				]]>
+			</event>
+		</textComponent>
+
+	</template>
+-->
+
+</menu>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:75d46b29bacc45c3aef8a15932d56454:f94b4369cb332e0b381d6e7d07dbccaa:c7df870317bbfa8a75d2e3c0f73f513a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BN_body" x="2" y="2" w="180" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="BN_eyelid_01" x="2" y="696" w="103" h="45" pX="0.5" pY="0.5" oX="4" oY="3" oW="110" oH="50"/>
+    <sprite n="BN_eyelid_02" x="107" y="737" w="103" h="45" pX="0.5" pY="0.5" oX="4" oY="3" oW="110" oH="50"/>
+    <sprite n="BN_eyelid_03" x="2" y="649" w="104" h="45" pX="0.5" pY="0.5" oX="3" oY="3" oW="110" oH="50"/>
+    <sprite n="BN_eyelid_04" x="266" y="615" w="104" h="45" pX="0.5" pY="0.5" oX="3" oY="3" oW="110" oH="50"/>
+    <sprite n="BN_head" x="330" y="198" w="144" h="118" pX="0.5" pY="0.5"/>
+    <sprite n="BN_head_RARE" x="2" y="142" w="144" h="118" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_foot" x="411" y="412" w="98" h="102" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_left_foot_RARE" x="149" y="469" w="115" h="113" pX="0.5" pY="0.5" oX="3" oY="0" oW="116" oH="116" r="y"/>
+    <sprite n="BN_left_hand" x="2" y="543" w="106" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_lowerarm" x="162" y="383" w="130" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_lowerarm_RARE" x="177" y="275" w="133" h="106" pX="0.5" pY="0.5" oX="4" oY="2" oW="140" oH="110"/>
+    <sprite n="BN_left_lowerleg" x="194" y="917" w="62" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_lowerleg_RARE" x="279" y="762" w="62" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_upperarm" x="2" y="262" w="134" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="BN_left_upperarm_RARE" x="184" y="137" w="144" h="136" pX="0.5" pY="0.5" oX="0" oY="2" oW="140" oH="150" r="y"/>
+    <sprite n="BN_left_upperleg" x="2" y="860" w="84" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_left_upperleg_RARE" x="2" y="924" w="62" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BN_lowerarm spikes_01" x="494" y="82" w="16" h="63" pX="0.5" pY="0.5" oX="7" oY="22" oW="84" oH="44" r="y"/>
+    <sprite n="BN_lowerarm spikes_02" x="148" y="142" w="29" h="68" pX="0.5" pY="0.5" oX="6" oY="11" oW="84" oH="44" r="y"/>
+    <sprite n="BN_lowerarm spikes_03" x="429" y="667" w="79" h="40" pX="0.5" pY="0.5" oX="4" oY="2" oW="84" oH="44"/>
+    <sprite n="BN_mouth_01" x="129" y="460" w="18" h="67" pX="0.5" pY="0.5" oX="6" oY="12" oW="80" oH="58" r="y"/>
+    <sprite n="BN_mouth_02" x="138" y="347" w="22" h="67" pX="0.5" pY="0.5" oX="7" oY="5" oW="80" oH="58" r="y"/>
+    <sprite n="BN_mouth_03" x="148" y="212" w="27" h="66" pX="0.5" pY="0.5" oX="7" oY="7" oW="80" oH="58" r="y"/>
+    <sprite n="BN_mouth_04" x="476" y="255" w="32" h="64" pX="0.5" pY="0.5" oX="8" oY="8" oW="80" oH="58" r="y"/>
+    <sprite n="BN_mouth_05" x="429" y="709" w="79" h="38" pX="0.5" pY="0.5" oX="1" oY="6" oW="80" oH="58"/>
+    <sprite n="BN_mouth_06" x="476" y="198" w="33" h="55" pX="0.5" pY="0.5" oX="13" oY="8" oW="80" oH="58" r="y"/>
+    <sprite n="BN_mouth_07" x="236" y="866" w="59" h="43" pX="0.5" pY="0.5" oX="11" oY="5" oW="80" oH="58"/>
+    <sprite n="BN_mouth_08" x="88" y="867" w="70" h="55" pX="0.5" pY="0.5" oX="8" oY="2" oW="80" oH="58"/>
+    <sprite n="BN_mouth_09" x="212" y="742" w="51" h="49" pX="0.5" pY="0.5" oX="16" oY="3" oW="80" oH="58"/>
+    <sprite n="BN_mouth_10" x="138" y="280" w="35" h="42" pX="0.5" pY="0.5" oX="23" oY="6" oW="80" oH="58"/>
+    <sprite n="BN_mouth_11" x="138" y="324" w="26" h="21" pX="0.5" pY="0.5" oX="28" oY="8" oW="80" oH="58"/>
+    <sprite n="BN_petal_a" x="160" y="867" w="74" h="48" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_petal_a_RARE" x="444" y="321" w="66" h="89" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="90"/>
+    <sprite n="BN_petal_b" x="218" y="584" w="46" h="50" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_petal_b_RARE" x="2" y="790" w="90" h="68" pX="0.5" pY="0.5" oX="0" oY="1" oW="90" oH="70"/>
+    <sprite n="BN_petal_c" x="407" y="749" w="76" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_petal_c_RARE" x="367" y="667" w="60" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BN_petal_topknot_RARE" x="265" y="662" w="100" h="98" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="100" r="y"/>
+    <sprite n="BN_pupil" x="135" y="416" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="BN_pupil_RARE" x="135" y="438" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="BN_right_foot" x="411" y="516" w="98" h="102" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BN_right_foot_RARE" x="294" y="408" w="115" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="116" r="y"/>
+    <sprite n="BN_right_hand" x="110" y="584" w="106" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="BN_right_lowerarm" x="2" y="457" w="125" h="84" pX="0.5" pY="0.5" oX="5" oY="0" oW="130" oH="84"/>
+    <sprite n="BN_right_lowerarm_RARE" x="2" y="352" w="131" h="103" pX="0.5" pY="0.5" oX="9" oY="2" oW="140" oH="110"/>
+    <sprite n="BN_right_lowerleg" x="258" y="911" w="62" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BN_right_lowerleg_RARE" x="343" y="762" w="62" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="BN_right_upperarm" x="312" y="318" w="130" h="88" pX="0.5" pY="0.5" oX="4" oY="0" oW="134" oH="88"/>
+    <sprite n="BN_right_upperarm_RARE" x="184" y="2" w="156" h="133" pX="0.5" pY="0.5" oX="7" oY="1" oW="140" oH="160" r="y"/>
+    <sprite n="BN_right_upperleg" x="66" y="924" w="62" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BN_right_upperleg_RARE" x="130" y="924" w="62" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BN_shadow" x="342" y="2" w="154" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="BN_upperarm_spike_01" x="297" y="844" w="80" h="62" pX="0.5" pY="0.5" oX="0" oY="55" oW="92" oH="118"/>
+    <sprite n="BN_upperarm_spike_02" x="207" y="793" w="70" h="71" pX="0.5" pY="0.5" oX="3" oY="46" oW="92" oH="118"/>
+    <sprite n="BN_upperarm_spike_03" x="107" y="784" w="98" h="81" pX="0.5" pY="0.5" oX="3" oY="20" oW="92" oH="118" r="y"/>
+    <sprite n="BN_upperarm_spike_04" x="266" y="524" w="113" h="89" pX="0.5" pY="0.5" oX="3" oY="5" oW="92" oH="118" r="y"/>
+    <sprite n="RARE_BN_eyelid_01" x="2" y="743" w="103" h="45" pX="0.5" pY="0.5" oX="4" oY="4" oW="110" oH="50"/>
+    <sprite n="RARE_BN_eyelid_02" x="372" y="620" w="103" h="45" pX="0.5" pY="0.5" oX="4" oY="4" oW="110" oH="50"/>
+    <sprite n="RARE_BN_eyelid_03" x="218" y="636" w="45" h="104" pX="0.5" pY="0.5" oX="3" oY="4" oW="110" oH="50" r="y"/>
+    <sprite n="RARE_BN_eyelid_04" x="108" y="690" w="104" h="45" pX="0.5" pY="0.5" oX="3" oY="4" oW="110" oH="50"/>
+    <sprite n="spore_BN" x="342" y="82" w="150" h="114" pX="0.5" pY="0.5" oX="11" oY="43" oW="172" oH="172"/>
+</TextureAtlas>

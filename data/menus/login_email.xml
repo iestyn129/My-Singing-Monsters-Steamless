@@ -1,0 +1,364 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="BgElement">
+		<hudScale scale="game.menuScaleX()" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="15" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/logging_in")
+				component:setScale(Vector2(lua_sys.screenHeight() / 768, lua_sys.screenHeight() / 768))
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="9" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*game.hudScale()" h="265*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="175*(lua_sys.screenWidth()/480)" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.24, 0.67, 0.9)
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("textPadding"):SetInt(10)
+				component("text"):SetString("BUTTON_LOGIN_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="EmailInput">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20.0*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.6*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				game.setSelectedInput(element:name())
+				lua_sys.showEmail(game.getLocalizedText("INPUT_EMAIL_LABEL"), element["Text"]("text"):GetString(), true, -1, 75, false)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("textPadding"):SetInt(10)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("font"):Set(game.getTextFont())				
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("MidPopUps")
+				component("text"):SetString(game.lastInputEmail())
+			</event>
+		</textComponent>
+		<event name="gotMsgKeyboardEntryResult" params="element, msg">
+			if((not msg.cancelled) and (game.selectedInput() == element:name())) then
+				game.setLastInputEmail(msg.text)
+				element:GetComponent("Text")("text"):SetString(msg.text)
+				element:GetComponent("Text")("size"):SetFloat(0.3*game.hudScale())
+				element:GetComponent("Text")("autoScale"):SetInt(1)
+			end
+		</event>
+	</element>
+
+	<element name="EmailInputLabel">
+		<hudScale scale="game.hudScale()" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="EmailInput" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="2.0*game.hudScale()" yOffset="0.5*game.menuScaleY()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="150*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("INPUT_EMAIL_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="PasswordInput">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="EmailInput" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20.0*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.6*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				game.setSelectedInput(element:name())
+				lua_sys.showPassword(game.getLocalizedText("INPUT_PASSWORD_LABEL"), "", true, -1, 75, false)
+			</event>
+		</touchComponent>
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("textPadding"):SetInt(10)
+				component("autoScale"):SetInt(1)
+				component("multiline"):SetInt(0)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("font"):Set(game.getTextFont())				
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("")
+				component("layer"):SetString("MidPopUps")
+				component("hideText"):SetInt(1)
+				component("text"):SetString(game.lastInputPassword())
+			</event>
+		</textComponent>
+		<event name="gotMsgKeyboardEntryResult" params="element, msg">
+			if((not msg.cancelled) and (game.selectedInput() == element:name())) then
+				game.setLastInputPassword(msg.text)
+				element:GetComponent("Text")("text"):SetString(msg.text)
+				element:GetComponent("Text")("size"):SetFloat(0.3*game.hudScale())
+				element:GetComponent("Text")("autoScale"):SetInt(1)
+				if(game.lastInputEmail() ~= "") then
+					game.authWithEmail(game.lastInputEmail(), game.lastInputPassword())
+					menu:popPopUp()
+				end
+			end
+		</event>
+	</element>
+
+	<element name="PasswordInputLabel">
+		<hudScale scale="game.hudScale()" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PasswordInput" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="2.0*game.hudScale()" yOffset="0.5*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="150*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("INPUT_PASSWORD_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="LoginButton">
+		<templateVar name="$upSpriteName" equals="'button_continue'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.6*game.hudScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="PasswordInput" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Label">
+			<size w="120*game.hudScale()" h="30*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BUTTON_LOGIN_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Label"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+				game.authWithEmail(game.lastInputEmail(), game.lastInputPassword())
+				menu:popPopUp()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="ForgotPasswordButton">
+		<templateVar name="$upSpriteName" equals="'button_continue'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="-5*game.hudScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="LoginButton" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="2.0*game.hudScale()" yOffset="3*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Label">
+			<size w="120*game.hudScale()" h="35*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BUTTON_FORGOT_PASSWORD_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Label"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+				game.resetPassword(game.lastInputEmail())
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Label"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="BackButton">
+		<templateVar name="$upSpriteName" equals="'button_back'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$textPadding" equals="4.0*game.hudScale()" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="13.0*game.hudScale()" yOffset="13.0*game.hudScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				menu:popPopUp()
+				menu:pushPopUp("login_start")
+			</event>
+		</touchComponent>	
+	</template>
+	
+	<event name="queuePop" params="element">
+		element:root():popPopUp()
+	</event>
+	
+</menu>

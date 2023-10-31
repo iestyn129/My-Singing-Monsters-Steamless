@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5970b9d093a64186a2cb996d81983105:f9e3d40f7b606b8fdf1bf62803ff6e84:57e5a26091ec8b4bce85218f9be66fc1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABCD_costume_04_sheet.png" width="474" height="440" hires="true">
+	<!-- original anchor = (43, 95) -> new anchor (25, 84) diff = (18, 11)-->
+	<!-- add double it to texturepacker output offsets (2, 4) -> (38, 26), because hires -->
+    <sprite n="ABCD_costume_04_tie.png" x="357" y="94" w="116" h="155" pX="0.5" pY="0.5" oX="38" oY="26" oW="124" oH="160"/>
+	
+	<!-- original anchor = (28, 53) -> new anchor (35, 66) diff = (-7, -13)-->
+	<!-- add double it to texturepacker output offsets (1, 1) -> (-13, -25), because hires -->
+    <sprite n="ABCD_costume_04_wig.png" x="228" y="94" w="127" h="146" pX="0.5" pY="0.5" oX="-13" oY="-25" oW="150" oH="130" r="y"/>
+	
+    <sprite n="ABCD_cymbal_lower_easter.png" x="297" y="328" w="131" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="ABCD_cymbal_upper_easter.png" x="297" y="383" w="130" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="ABCD_cymbal_vine_easter.png" x="268" y="328" w="27" h="63" pX="0.5" pY="0.5"/>
+    <sprite n="ABCD_hihat_stand_easter.png" x="228" y="1" w="233" h="91" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCD_snare_base_easter.png" x="117" y="248" w="149" h="166" pX="0.5" pY="0.5"/>
+    <sprite n="ABCD_snaredrum_easter.png" x="1" y="248" w="114" h="186" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCD_splash_base_easter.png" x="268" y="251" w="203" h="75" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABDC_costume_04_shell_easter.png" x="1" y="1" w="225" h="245" pX="0.5" pY="0.5" oX="0" oY="0" oW="226" oH="246"/>
+</TextureAtlas>

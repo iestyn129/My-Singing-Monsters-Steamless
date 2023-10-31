@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b139f47cc869e5f2171098dd03dcb4a2:093660111941b59e0a3be9da4cd37133:3a470631f9e4774129654fa3081d4dd2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="eye_glow" x="1164" y="2" w="0" h="812" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye_shadow" x="804" y="957" w="596" h="596" pX="0.5" pY="0.5"/>
+    <sprite n="eyelid_bottom" x="1117" y="1555" w="529" h="210" pX="0.5" pY="0.5" oX="0" oY="0" oW="530" oH="210"/>
+    <sprite n="eyelid_bottom_edge" x="657" y="1854" w="503" h="156" pX="0.5" pY="0.5" oX="1" oY="0" oW="504" oH="156"/>
+    <sprite n="eyelid_bottom_edge_highlight" x="1057" y="816" w="502" h="137" pX="0.5" pY="0.5" oX="0" oY="0" oW="502" oH="138"/>
+    <sprite n="eyelid_top" x="2" y="1608" w="539" h="378" pX="0.5" pY="0.5" oX="0" oY="0" oW="562" oH="378"/>
+    <sprite n="eyelid_top_edge" x="1402" y="955" w="200" h="530" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eyelid_top_edge_highlight" x="1162" y="1767" w="516" h="152" pX="0.5" pY="0.5"/>
+    <sprite n="eyelid_yellow_solid" x="543" y="1608" w="572" h="244" pX="0.5" pY="0.5" oX="1" oY="1" oW="576" oH="248"/>
+    <sprite n="island04_goggle" x="2" y="2" w="1160" h="804" pX="0.5" pY="0.5" oX="0" oY="0" oW="1160" oH="810"/>
+    <sprite n="pupil" x="2" y="808" w="800" h="798" pX="0.5" pY="0.5" oX="0" oY="1" oW="800" oH="800"/>
+    <sprite n="w4_jellybottom" x="804" y="808" w="251" h="147" pX="0.5" pY="0.5" oX="7" oY="1" oW="160" oH="264" r="y"/>
+    <sprite n="w4_jellytop" x="543" y="1854" w="112" h="176" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

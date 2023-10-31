@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:801e4aca13beb9b7f3118345f70c9474:1da4e47ba4fe5389684732151f782f8a:d524c77f94d8bbccbff0459aed002574$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_D_costume_06_sheet.png" width="274" height="198" hires="true">
+	<!-- original anchor = (53, 80) -> new anchor (64, 114) diff = (-11, -34)-->
+	<!-- add it to texturepacker output offsets (0, 0) -> (-22, -68)-->
+    <sprite n="D_costume_06_wreath.png" x="1" y="1" w="272" h="196" pX="0.5" pY="0.5" oX="-22" oY="-68"/>
+</TextureAtlas>

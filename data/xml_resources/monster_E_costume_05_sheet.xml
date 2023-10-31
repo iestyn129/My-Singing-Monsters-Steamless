@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1300d39dfee34c465b6c73556da12269:618bfd6c65670ca45b78d81d192aeb4b:b4f73a9f046992fb8193fccc5c940d50$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_E_costume_05_sheet.png" width="256" height="256" hires="true">
+    <sprite n="E_body_FSHIRT.png" x="2" y="2" w="114" h="230" pX="0.5" pY="0.5"/>
+    <sprite n="E_leftupperarm_FSHIRT.png" x="118" y="59" w="100" h="42" pX="0.5" pY="0.5" r="y"/>
+    <!-- original anchor = (13, 7) -> new anchor (15, 19.5) diff = (-2, -12.5)-->
+	<!-- add double it to texturepacker output offsets (2, 5) -> (-2, -20), because hires-->
+    <sprite n="E_rightupperarm_FSHIRT.png" x="118" y="2" w="126" h="55" pX="0.5" pY="0.5" oX="-2" oY="-20" oW="60" oH="160" r="y"/>
+</TextureAtlas>

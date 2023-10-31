@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:414a58267638fb62586cfc37265f244c:a2c76119719ea7e01c87477ef3871685:599cdb32cd93f2fcfa97dac48750762a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_hotel_lrgst_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="neon_all.png" x="562" y="2" w="458" h="425" pX="0.5" pY="0.5" oX="7" oY="11" oW="440" oH="480" r="y"/>
+    <sprite n="structure_hotel_lrgst.png" x="2" y="2" w="558" h="774" pX="0.5" pY="0.5" oX="2" oY="2" oW="572" oH="776"/>
+</TextureAtlas>

@@ -1,0 +1,506 @@
+<template name="template_dailybonus" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$baseLayer" equals="MidPopUps" />
+	<defaultTemplateVar name="$text" equals="'DAY 5'" />
+	
+	<size dependentOnElement="BonusFrame" />
+
+	<event name="onInit" params="element">
+		element("currencyType"):SetString("none");
+		element("currencyAmount"):SetString(0);
+		element("bonusEntity"):SetInt(-1);
+	</event>
+	
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			
+			local quantText = element("currencyAmount"):GetInt()
+			if(quantText == 0 or element("currencyType"):GetString() == "none") then
+			
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+				
+				element["QuantityText"]["Text"]("visible"):SetInt(0)
+				
+			elseif(element("currencyType"):GetString() == "coins") then
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+
+				element["CoinCluster"]("xOffset"):SetInt(0.0106*lua_sys.screenWidth())
+				element["CoinCluster"]("yOffset"):SetInt(-3200/lua_sys.screenHeight())
+				element("hudIconDest"):SetString("coin")
+				element("hudElementDest"):SetString("CoinCounter")
+
+			elseif(element("currencyType"):GetString() == "food") then
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+
+				element["FoodCluster"]("xOffset"):SetInt(0.0106*lua_sys.screenWidth())
+				element["FoodCluster"]("yOffset"):SetInt(-3200/lua_sys.screenHeight())
+				element("hudIconDest"):SetString("food")
+				element("hudElementDest"):SetString("FoodCounter")
+				
+			elseif(element("currencyType"):GetString() == "diamonds") then
+			
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+
+				element("hudIconDest"):SetString("diamond")
+				element("hudElementDest"):SetString("DiamondCounter")
+
+				if(element("currencyAmount"):GetInt() == 1) then
+					element["DiamondCluster"]("xOffset"):SetInt(0)
+					element["DiamondCluster"]("yOffset"):SetInt(-0.0264*lua_sys.screenWidth())
+					element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+					element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				elseif(element("currencyAmount"):GetInt() == 2) then
+					element["DiamondCluster"]("xOffset"):SetInt(0.0106*lua_sys.screenWidth())
+					element["DiamondCluster"]("yOffset"):SetInt(-2560/lua_sys.screenHeight())
+					element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				else
+					element["DiamondCluster"]("xOffset"):SetInt(0.00528*lua_sys.screenWidth())
+					element["DiamondCluster"]("yOffset"):SetInt(-1600/lua_sys.screenHeight())
+				end
+			elseif(element("currencyType"):GetString() == "relics") then
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(1)
+				element("hudIconDest"):SetString("relic")
+				element("hudElementDest"):SetString("RelicCounter")
+			elseif(element("currencyType"):GetString() == "keys") then
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(1)
+				element("hudIconDest"):SetString("keys")
+				element("hudElementDest"):SetString("KeyCounter")
+			else
+				element["DiamondCluster"]["Diamond1"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond2"]["Sprite"]("visible"):SetInt(0)
+				element["DiamondCluster"]["Diamond3"]["Sprite"]("visible"):SetInt(0)
+				element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+				element["FoodCluster"]["Food"]["Sprite"]("visible"):SetInt(0)
+				element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+				element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+
+				element["QuantityText"]["Text"]("visible"):SetInt(0)
+				
+				element("hudIconDest"):SetString("coin")
+				element("hudElementDest"):SetString("CoinCounter")
+
+			end
+			
+			element["QuantityText"]["Text"]("autoScale"):SetInt(0)
+			element["QuantityText"]["Text"]("text"):SetString("+"..quantText)
+			element["QuantityText"]["Text"]("autoScale"):SetInt(1)
+		]]>
+	</event>
+	
+	<!-- event name="setInvisible" params="element">
+		element["QuantityText"]["Text"]("visible"):SetInt(0)
+		element["Checkmark"]["Sprite"]("visible"):SetInt(0)
+		element["QuestionMark"]["Sprite"]("visible"):SetInt(0)
+		
+		element["BonusFrame"]["Sprite"]("visible"):SetInt(0)
+		element["CoinCluster"]["Coins"]["Sprite"]("visible"):SetInt(0)
+
+		element["RelicCluster"]["Relics"]["Sprite"]("visible"):SetInt(0)
+		element["KeyCluster"]["Keys"]["Sprite"]("visible"):SetInt(0)
+
+		local diamondCluster = element["DiamondCluster"]		
+		diamondCluster["Diamond1"]["Sprite"]("visible"):SetInt(0)
+		diamondCluster["Diamond2"]["Sprite"]("visible"):SetInt(0)
+		diamondCluster["Diamond3"]["Sprite"]("visible"):SetInt(0)
+	</event -->
+	
+	<event name="setAchieved" params="element">		
+		element["QuantityText"]["Text"]("visible"):SetInt(0)
+		element:DoStoredScript("fadeOut")
+		element["Checkmark"]["Sprite"]("visible"):SetInt(1)
+		element["QuestionMark"]["Sprite"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="setUnachieved" params="element">
+	
+		--unachieved isn't today, revert any scale up
+		local bonusFrame = element["BonusFrame"]
+		bonusFrame["Sprite"]("topHeight"):SetFloat(0.109*lua_sys.screenHeight())
+		bonusFrame["Sprite"]("bottomHeight"):SetFloat(0.109*lua_sys.screenHeight())
+		bonusFrame["Sprite"]("leftWidth"):SetFloat(0.109*lua_sys.screenHeight())
+		bonusFrame["Sprite"]("rightWidth"):SetFloat(0.109*lua_sys.screenHeight())
+		
+		element["DayText"]["Text"]("size"):SetFloat(0.000339*lua_sys.screenWidth())
+		element["DayText"]["Text"]("text"):SetString("$text")
+	
+		element["QuantityText"]["Text"]("visible"):SetInt(1)
+		element["QuantityText"]["Text"]:setColor(1.0, 1.0, 1.0)
+		element:DoStoredScript("fadeOut")
+		element["Checkmark"]["Sprite"]("visible"):SetInt(0)
+		element["QuestionMark"]["Sprite"]("visible"):SetInt(0)
+	</event>
+
+	<event name="setUnknown" params="element">
+		element["QuantityText"]["Text"]("visible"):SetInt(0)
+		element:DoStoredScript("fadeOut")
+		element["Checkmark"]["Sprite"]("visible"):SetInt(0)
+		element["QuestionMark"]["Sprite"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setToday" params="element">
+		local bonusFrame = element:E("BonusFrame")
+		bonusFrame["Sprite"]("topHeight"):SetFloat(0.0444*lua_sys.screenWidth())
+		bonusFrame["Sprite"]("bottomHeight"):SetFloat(0.0444*lua_sys.screenWidth())
+		bonusFrame["Sprite"]("leftWidth"):SetFloat(0.0444*lua_sys.screenWidth())
+		bonusFrame["Sprite"]("rightWidth"):SetFloat(0.0444*lua_sys.screenWidth())
+		
+		element["QuantityText"]["Text"]("visible"):SetInt(1)
+		element["QuantityText"]["Text"]:setColor(1.0, 1.0, 1.0)
+
+		element["DayText"]["Text"]("size"):SetFloat(0.000516*lua_sys.screenWidth())
+		element["DayText"]["Text"]("text"):SetString("TODAY")
+		
+		element:fadeIn()
+		
+		element["Checkmark"]["Sprite"]("visible"):SetInt(0)
+		element["QuestionMark"]["Sprite"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="setAchievedToday" params="element">
+		element:setToday()
+		element:setAchieved()
+		element["QuantityText"]["Text"]("visible"):SetInt(1)
+		element["QuantityText"]["Text"]:setColor(0.5, 0.5, 0.5)
+	</event>
+	<event name="setUnknownToday" params="element">
+		element:setToday()
+		element:setUnknown()
+		element["QuantityText"]["Text"]("visible"):SetInt(1)
+		element["QuantityText"]["Text"]:setColor(0.5, 0.5, 0.5)
+	</event>
+	
+	<event name="fadeOut" params="element">
+	
+		--fade out everything except quantity text and checkmark/questionmark
+	
+		element["BonusFrame"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["CoinCluster"]["Coins"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["RelicCluster"]["Relics"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["KeyCluster"]["Keys"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["FoodCluster"]["Food"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+
+		local diamondCluster = element["DiamondCluster"]
+		diamondCluster["Diamond1"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		diamondCluster["Diamond2"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		diamondCluster["Diamond3"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+	</event>
+
+	<event name="fadeIn" params="element">
+	
+		--fade in everything except quantity text and checkmark/questionmark
+	
+		element["BonusFrame"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["CoinCluster"]["Coins"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["RelicCluster"]["Relics"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["KeyCluster"]["Keys"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["FoodCluster"]["Food"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+
+		local diamondCluster = element["DiamondCluster"]
+		diamondCluster["Diamond1"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		diamondCluster["Diamond2"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		diamondCluster["Diamond3"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	
+	<element name="BonusFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.172*lua_sys.screenHeight()" h="0.172*lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				element["Sprite"]("topHeight"):SetFloat(0.109*lua_sys.screenHeight())
+				element["Sprite"]("bottomHeight"):SetFloat(0.109*lua_sys.screenHeight())
+				element["Sprite"]("leftWidth"):SetFloat(0.109*lua_sys.screenHeight())
+				element["Sprite"]("rightWidth"):SetFloat(0.109*lua_sys.screenHeight())
+				element["Sprite"]("includeBorder"):SetInt(1)
+				element["Sprite"]("size"):SetFloat(0.35*game.hudScale())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("$baseLayer")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<event name="playParticles" params="element">
+		local image = element:E("BonusFrame")
+	
+		local midX = image:absX() + image:absW()/2
+		local midY = image:absY() + image:absH()/2
+		
+		local psi = "";
+		local particleImage = ""
+		if(element("currencyType"):GetString() == "coins" and element("currencyAmount"):GetInt() ~= 0) then
+			psi = "particle_gold_get";
+			particleImage = "particle_gold"
+		elseif(element("currencyType"):GetString() == "diamonds" and element("currencyAmount"):GetInt() ~= 0) then
+			psi = "particle_diamond_get";
+			particleImage = "particle_diamond"
+		elseif(element("currencyType"):GetString() == "food" and element("currencyAmount"):GetInt() ~= 0) then
+			psi = "particle_food_get";
+			particleImage = "particle_food"
+		end
+		
+		if(psi ~= "" and particleImage ~= "") then
+			game.playParticle("particles/"..psi..".psi", "gfx/particles/"..particleImage,  midX, midY, "Tutorial", 0.001, 1, 1);
+		end
+	</event>
+	
+	<element name="QuantityText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BonusFrame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-4" />
+		<textComponent name="Text">
+			<size w="0.0704*lua_sys.screenWidth()" h="0.0264*lua_sys.screenWidth()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("000")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("$baseLayer")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="Checkmark">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.000704*lua_sys.screenWidth())
+				component("layer"):SetString("$baseLayer")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+	<element name="QuestionMark">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_info")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.000704*lua_sys.screenWidth())
+				component("layer"):SetString("$baseLayer")
+				component("visible"):SetInt(0)
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="CoinCluster">
+		<size dependentOnElement="element:parent()" dependentOnComponent="BonusFrame" />
+		<position relativeTo="BonusFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<element name="Coins">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="3200/lua_sys.screenHeight()" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("coins_01_icon")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.00088*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	</element>
+
+	<element name="FoodCluster">
+		<size dependentOnElement="element:parent()" dependentOnComponent="BonusFrame" />
+		<position relativeTo="BonusFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<element name="Food">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="3200/lua_sys.screenHeight()" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("foodpack_01_icon")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.00088*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	</element>
+
+	<element name="RelicCluster">
+		<size dependentOnElement="element:parent()" dependentOnComponent="BonusFrame" />
+		<position relativeTo="BonusFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<element name="Relics">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("relic_currency_sheet")
+					component("sheetName"):SetString("xml_resources/relic_currency_sheet.xml")
+					component("size"):SetFloat(0.000352*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	</element>
+	<element name="KeyCluster">
+		<size dependentOnElement="element:parent()" dependentOnComponent="BonusFrame" />
+		<position relativeTo="BonusFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<element name="Keys">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="320/lua_sys.screenHeight()" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("keys")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.00132*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	</element>
+	
+	<element name="DiamondCluster">
+		<size dependentOnElement="element:parent()" dependentOnComponent="BonusFrame" />
+		<position relativeTo="BonusFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-3" />
+		<element name="Diamond1">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="3200/lua_sys.screenHeight()" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("diamonds_01_icon")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.000704*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<element name="Diamond2">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="Diamond1" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-0.0176*lua_sys.screenWidth()" yOffset="-4800/lua_sys.screenHeight()" priorityOffset="1" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("diamonds_01_icon")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.000616*lua_sys.screenWidth())
+					component("rotation"):SetFloat(-0.25*math.pi)
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+		<element name="Diamond3">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="Diamond1" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0.00528*lua_sys.screenWidth()" yOffset="-5760/lua_sys.screenHeight()" priorityOffset="2" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("diamonds_01_icon")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.000704*lua_sys.screenWidth())
+					component("layer"):SetString("$baseLayer")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	</element>
+	
+	<element name="DayText">
+		<size dependentOnElement="Text"/>
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<textComponent name="Text">
+			<size w="0.211*lua_sys.screenWidth()" h="0.088*lua_sys.screenWidth()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.000339*lua_sys.screenWidth())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("$text")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("$baseLayer")
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="setBonusMonster" params="element">
+		element:GetElement("BonusMonster"):GetComponent("Sprite"):DoStoredScript("setBonusMonster")
+	</event>
+	
+	<element name="BonusMonster">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BonusFrame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="HCENTER" hAnchor="VCENTER" xOffset="0" yOffset="0" priorityOffset="-6" />
+		<aeComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				if(element:parent()("bonusEntity"):GetInt() ~= -1) then
+					component("animationName"):SetString("xml_bin/"..game.getEntityAnimationFileFromEntId(element:parent()("bonusEntity"):GetInt()))
+					component("animation"):SetString(game.getEntityAnimationNameFromEntId(element:parent()("bonusEntity"):GetInt()))
+				else
+					component("visible"):SetInt(0)
+				end
+				
+				component:setScale(Vector2(0.25*game.hudScale(),0.25*game.hudScale()))
+				element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 --[[+ 15*game.hudScale() ]]))
+				component("layer"):SetString("$baseLayer")
+				
+			</event>
+			<event name="setBonusMonster" params="component, element">
+				if(element:parent()("bonusEntity"):GetInt() ~= -1) then
+					component("animationName"):SetString("xml_bin/"..game.getEntityAnimationFileFromEntId(element:parent()("bonusEntity"):GetInt()))
+					component("animation"):SetString(game.getEntityAnimationNameFromEntId(element:parent()("bonusEntity"):GetInt()))
+					component:setScale(Vector2(0.25*game.hudScale(),0.25*game.hudScale()))
+					element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 --[[+ 15*game.hudScale() ]]))
+					component("visible"):SetInt(1)
+				else
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</aeComponent>
+	</element>
+	
+</template>

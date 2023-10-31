@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6bf138708814b6c623db638b7d044eb2:9e94dd7fa6657e78ad6a103932c18d89:7d5ce1f3b0b124cf4949d40bb7d47c4d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island17_sheet02_bh.png" width="2048" height="2048" hires="true">
+    <sprite n="bg_horns" x="4" y="1032" w="544" h="760" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cheek" x="4" y="4" w="746" h="1024" pX="0.5" pY="0.5"/>
+    <sprite n="cheek_flower" x="4" y="1964" w="60" h="76" pX="0.5" pY="0.5" oX="0" oY="2" oW="60" oH="80"/>
+    <sprite n="cheek_left" x="552" y="1032" w="465" h="720" pX="0.5" pY="0.5" oX="1" oY="2" oW="468" oH="724"/>
+    <sprite n="eye_flower" x="1021" y="4" w="600" h="564" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="metal_ball" x="68" y="1964" w="55" h="55" pX="0.5" pY="0.5" oX="2" oY="2" oW="60" oH="60"/>
+    <sprite n="pink_flower" x="128" y="1796" w="140" h="140" pX="0.5" pY="0.5"/>
+    <sprite n="purple_skull" x="4" y="1796" w="120" h="164" pX="0.5" pY="0.5"/>
+</TextureAtlas>

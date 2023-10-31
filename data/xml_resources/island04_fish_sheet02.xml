@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fdea589a36a479f5ef94e39284767803:beb1e2358bfdc89f4d5dd52b39faaf71:3a470631f9e4774129654fa3081d4dd2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_fish_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="island04_ground_full" x="2" y="2" w="1630" h="816" pX="0.5" pY="0.5" oX="1" oY="0" oW="1632" oH="816"/>
+    <sprite n="island04_lionfish_fin" x="2" y="820" w="1062" h="782" pX="0.5" pY="0.5" oX="9" oY="6" oW="1080" oH="796"/>
+    <sprite n="island04_lips" x="1066" y="1451" w="907" h="289" pX="0.5" pY="0.5" oX="5" oY="5" oW="920" oH="300"/>
+    <sprite n="island04_side_fin_back" x="1066" y="820" w="425" h="629" pX="0.5" pY="0.5" oX="4" oY="7" oW="440" oH="640"/>
+    <sprite n="island04_single_frill" x="1634" y="2" w="80" h="389" pX="0.5" pY="0.5" oX="0" oY="4" oW="80" oH="400"/>
+    <sprite n="jelly_fish" x="1913" y="2" w="110" h="115" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="116"/>
+    <sprite n="jelly_pupils" x="1913" y="119" w="88" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="jellyfish_back_01" x="2" y="1604" w="237" h="149" pX="0.5" pY="0.5" oX="58" oY="22" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_02" x="1839" y="1054" w="156" h="239" pX="0.5" pY="0.5" oX="54" oY="22" oW="269" oH="277"/>
+    <sprite n="jellyfish_back_03" x="714" y="1604" w="168" h="227" pX="0.5" pY="0.5" oX="48" oY="22" oW="269" oH="277"/>
+    <sprite n="jellyfish_back_04" x="1034" y="1742" w="222" h="175" pX="0.5" pY="0.5" oX="45" oY="22" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_05" x="1258" y="1742" w="211" h="184" pX="0.5" pY="0.5" oX="40" oY="23" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_06" x="1471" y="1742" w="207" h="202" pX="0.5" pY="0.5" oX="39" oY="24" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_07" x="698" y="1833" w="215" h="196" pX="0.5" pY="0.5" oX="50" oY="23" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_08" x="1680" y="1742" w="205" h="200" pX="0.5" pY="0.5" oX="57" oY="23" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_back_09" x="884" y="1604" w="148" h="226" pX="0.5" pY="0.5" oX="66" oY="24" oW="269" oH="277"/>
+    <sprite n="jellyfish_back_10" x="1716" y="245" w="238" h="141" pX="0.5" pY="0.5" oX="61" oY="23" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_front_01" x="1839" y="812" w="176" h="240" pX="0.5" pY="0.5" oX="44" oY="9" oW="269" oH="277"/>
+    <sprite n="jellyfish_front_02" x="1634" y="628" w="247" h="182" pX="0.5" pY="0.5" oX="41" oY="9" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_front_03" x="1716" y="2" w="195" h="241" pX="0.5" pY="0.5" oX="34" oY="9" oW="269" oH="277"/>
+    <sprite n="jellyfish_front_04" x="479" y="1604" w="233" h="201" pX="0.5" pY="0.5" oX="31" oY="9" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_front_05" x="241" y="1604" w="236" h="210" pX="0.5" pY="0.5" oX="27" oY="9" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_front_06" x="479" y="1807" w="217" h="226" pX="0.5" pY="0.5" oX="21" oY="10" oW="269" oH="277"/>
+    <sprite n="jellyfish_front_07" x="2" y="1755" w="210" h="236" pX="0.5" pY="0.5" oX="16" oY="9" oW="269" oH="277"/>
+    <sprite n="jellyfish_front_08" x="1634" y="393" w="219" h="233" pX="0.5" pY="0.5" oX="9" oY="9" oW="269" oH="277"/>
+    <sprite n="jellyfish_front_09" x="214" y="1816" w="219" h="215" pX="0.5" pY="0.5" oX="5" oY="10" oW="269" oH="277" r="y"/>
+    <sprite n="jellyfish_front_10" x="1855" y="388" w="181" h="225" pX="0.5" pY="0.5" oX="35" oY="9" oW="269" oH="277"/>
+    <sprite n="sunlight" x="1493" y="820" w="344" h="614" pX="0.5" pY="0.5" oX="0" oY="10" oW="344" oH="624"/>
+</TextureAtlas>

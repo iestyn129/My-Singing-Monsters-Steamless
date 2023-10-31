@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b41b19809ff011cf1db829ca798bea6d:476d5574bc5c0dad0916ee9ca0b956e5:843396c0b074cf763d37f60d9cb8c226$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_costume_04_sheet.png" width="512" height="512" hires="true">
+    <sprite n="BDE_costume_04_body.png" x="104" y="2" w="264" h="185" pX="0.5" pY="0.5" oX="7" oY="8" oW="192" oH="272" r="y"/>
+    <sprite n="BDE_costume_04_cello.png" x="2" y="2" w="100" h="439" pX="0.5" pY="0.5" oX="0" oY="1" oW="100" oH="440"/>
+</TextureAtlas>

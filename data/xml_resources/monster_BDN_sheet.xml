@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f2c3a83ad5579f8be7a149727e4531dd:4ed799a20509d79f8e38594f23994dcf:761ce0a759c855942b6063f57f5f44e5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BDN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="eyelids1" x="433" y="283" w="70" h="41" pX="0.5" pY="0.5" oX="4" oY="3" oW="78" oH="46"/>
+    <sprite n="eyelids2" x="435" y="455" w="70" h="39" pX="0.5" pY="0.5" oX="4" oY="4" oW="78" oH="46"/>
+    <sprite n="eyelids3" x="435" y="498" w="70" h="39" pX="0.5" pY="0.5" oX="4" oY="4" oW="78" oH="46"/>
+    <sprite n="eyelids4" x="433" y="207" w="39" h="72" pX="0.5" pY="0.5" oX="3" oY="4" oW="78" oH="46" r="y"/>
+    <sprite n="greens_big_RARE" x="171" y="394" w="100" h="93" pX="0.5" pY="0.5" oX="0" oY="0" oW="94" oH="100" r="y"/>
+    <sprite n="greens_small_RARE" x="88" y="475" w="78" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="80" r="y"/>
+    <sprite n="leaf" x="476" y="4" w="24" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="left foot" x="4" y="434" w="80" h="77" pX="0.5" pY="0.5" oX="5" oY="3" oW="86" oH="86" r="y"/>
+    <sprite n="left foot_RARE" x="4" y="515" w="77" h="76" pX="0.5" pY="0.5" oX="5" oY="3" oW="86" oH="86"/>
+    <sprite n="lower body" x="176" y="4" w="146" h="125" pX="0.5" pY="0.5" oX="3" oY="0" oW="128" oH="146" r="y"/>
+    <sprite n="lower body_RARE" x="4" y="98" w="146" h="125" pX="0.5" pY="0.5" oX="3" oY="0" oW="128" oH="146" r="y"/>
+    <sprite n="lower leg" x="275" y="485" w="66" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lower leg_RARE" x="345" y="507" w="66" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mouth1" x="4" y="299" w="110" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="72"/>
+    <sprite n="mouth2" x="286" y="295" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="mouth3" x="171" y="331" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="pipe A" x="415" y="541" w="47" h="40" pX="0.5" pY="0.5" oX="0" oY="2" oW="50" oH="44"/>
+    <sprite n="pipe B" x="315" y="207" w="114" h="40" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="114" r="y"/>
+    <sprite n="pipe B_RARE" x="315" y="251" w="114" h="40" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="114" r="y"/>
+    <sprite n="pipe C" x="400" y="328" w="107" h="53" pX="0.5" pY="0.5" oX="3" oY="3" oW="58" oH="110" r="y"/>
+    <sprite n="pipe C_RARE" x="285" y="358" w="107" h="53" pX="0.5" pY="0.5" oX="3" oY="3" oW="58" oH="110" r="y"/>
+    <sprite n="pipe D" x="118" y="311" w="49" h="80" pX="0.5" pY="0.5" oX="3" oY="4" oW="52" oH="84"/>
+    <sprite n="pipe D_RARE" x="118" y="227" w="50" h="80" pX="0.5" pY="0.5" oX="2" oY="4" oW="52" oH="84"/>
+    <sprite n="pipe E" x="476" y="107" w="21" h="49" pX="0.5" pY="0.5" oX="5" oY="0" oW="32" oH="52"/>
+    <sprite n="pipe E_RARE" x="476" y="54" w="22" h="49" pX="0.5" pY="0.5" oX="4" oY="0" oW="32" oH="52"/>
+    <sprite n="pipe end" x="154" y="98" w="16" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pipe end_RARE" x="154" y="128" w="16" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="16" r="y"/>
+    <sprite n="pupil" x="476" y="160" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="pupil_RARE" x="476" y="184" w="20" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_mouth1" x="4" y="227" w="110" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="72"/>
+    <sprite n="RARE_mouth2" x="172" y="268" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="RARE_mouth3" x="4" y="371" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="right foot" x="396" y="385" w="77" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="66"/>
+    <sprite n="right foot_RARE" x="275" y="415" w="76" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="66"/>
+    <sprite n="shadow" x="4" y="4" w="168" h="90" pX="0.5" pY="0.5" oX="1" oY="0" oW="170" oH="90"/>
+    <sprite n="spore_BDN" x="174" y="133" w="137" h="131" pX="0.5" pY="0.5" oX="21" oY="20" oW="172" oH="172" r="y"/>
+    <sprite n="upper body" x="326" y="106" w="146" h="97" pX="0.5" pY="0.5" oX="2" oY="3" oW="102" oH="152" r="y"/>
+    <sprite n="upper body_RARE" x="326" y="4" w="146" h="98" pX="0.5" pY="0.5" oX="2" oY="3" oW="102" oH="152" r="y"/>
+    <sprite n="upperleg" x="118" y="395" w="48" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="upperleg_RARE" x="355" y="455" w="76" h="48" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

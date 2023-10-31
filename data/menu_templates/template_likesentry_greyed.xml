@@ -1,0 +1,92 @@
+<template name="template_likesentry_greyed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<!-- should be same size as gfx/menu/mystery_item-->
+	<size w="105*game.menuScaleX()" h="128*game.menuScaleY()" />
+	
+	<spriteComponent name="Sprite">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			local monsterId = element("MonsterID"):GetInt()
+			local MonsterPortraits = include("MonsterPortraits")
+			local monsterImage = MonsterPortraits:getBookOfMonstersPortrait(monsterId)
+			component("spriteName"):SetString(monsterImage)
+			component:setScale(Vector2(0.3*game.menuScaleX(), 0.3*game.menuScaleX()))
+			component("layer"):SetString("Clipping")
+
+			local shader = include("ShaderDesaturate")
+
+			if shader then
+				shader:getUniform("blackIntensity"):setFloat(0.5)
+				component:setShader(shader)
+			end
+		</event>
+	</spriteComponent>
+
+	<spriteComponent name="Silhouette">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				local monsterId = element("MonsterID"):GetInt()
+				local MonsterPortraits = include("MonsterPortraits")
+				local spriteName = MonsterPortraits:getBookOfMonstersPortraitDark(monsterId)
+				component("spriteName"):SetString(spriteName)
+				component:setScale(Vector2(0.3*game.menuScaleX(), 0.3*game.menuScaleX()))
+				component("layer"):SetString("Clipping")
+				element:setSilhouetteColor()
+			</event>
+	</spriteComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+	</touchComponent>
+
+	<event name="buttonUp" params="element">
+		local shader = include("ShaderDesaturate")
+		if shader then
+			shader:getUniform("blackIntensity"):setFloat(0.5)
+		end
+		
+		element:setSilhouetteColor()
+	</event>
+
+	<event name="buttonDown" params="element">
+		local shader = include("ShaderDesaturate")
+		if shader then
+			shader:getUniform("blackIntensity"):setFloat(0.7)
+		end
+			
+		element["Silhouette"]:setColor(0.5, 0.5, 0.5)
+	</event>
+
+	<event name="setSilhouetteColor" params="element">
+		if(game.isSeasonal(element("MonsterID"):GetInt())) then
+			element["Silhouette"]:setColor(0.859, 0.529, 0.490)
+		elseif(game.isEpic(element("MonsterID"):GetInt())) then
+			element["Silhouette"]:setColor(0.984, 0.780, 0.373)
+		elseif(game.isRare(element("MonsterID"):GetInt())) then
+			element["Silhouette"]:setColor(0.529, 0.890, 0.757)
+		end
+	</event>
+	
+	<event name="hide" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+		element["Silhouette"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+	<event name="show" params="element">
+		element["Sprite"]("visible"):SetInt(1)
+		element["Silhouette"]("visible"):SetInt(1)
+		element["Touch"]("enabled"):SetInt(1)
+	</event>
+	
+	<event name="onInit" params="element">
+		element("enabled"):SetInt(1)
+	</event>
+
+	<script src="scripts/LikesEntry.lua"/>
+	
+</template>

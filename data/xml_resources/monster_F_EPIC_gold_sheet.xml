@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8b67f213dbd5b69b24dae8d95ea39131:af66bc77479b02443e53c1c6905e56c2:673bae233a8d36ed62cd03611c261001$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_F_EPIC_gold_sheet.png" width="2048" height="2048" hires="true">
+    <sprite n="F_EPIC_cold_cloud.png" x="258" y="1651" w="234" h="227" pX="0.5" pY="0.5" oX="11" oY="14" oW="256" oH="256"/>
+    <sprite n="F_EPIC_Gold_ankle.png" x="1290" y="1240" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_Gold_beam_1.png" x="1694" y="1210" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_Gold_beam_2.png" x="1710" y="1014" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_Gold_beam_3.png" x="1796" y="1587" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_Gold_beam_4.png" x="1388" y="1755" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_Gold_big_orb.png" x="1615" y="1037" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_Gold_castle.png" x="4" y="4" w="670" h="684" pX="0.5" pY="0.5" oX="25" oY="30" oW="720" oH="720"/>
+    <sprite n="F_EPIC_Gold_castleglow.png" x="4" y="692" w="348" h="351" pX="0.5" pY="0.5" oX="6" oY="9" oW="360" oH="360"/>
+    <sprite n="F_EPIC_Gold_chest.png" x="627" y="1346" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_Gold_chest_behind.png" x="1011" y="688" w="166" h="166" pX="0.5" pY="0.5" oX="42" oY="13" oW="256" oH="216"/>
+    <sprite n="F_EPIC_Gold_crown.png" x="364" y="1347" w="259" h="203" pX="0.5" pY="0.5" oX="3" oY="9" oW="264" oH="220"/>
+    <sprite n="F_EPIC_Gold_eyeball_1.png" x="1450" y="1149" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_Gold_eyeball_2.png" x="1916" y="640" w="88" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_Gold_eyelid_1.png" x="786" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_Gold_eyelid_2.png" x="1363" y="814" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_Gold_eyelid_3.png" x="1713" y="365" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_Gold_eyelid_4.png" x="1979" y="331" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_Gold_eyesockets.png" x="1212" y="299" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_Gold_fist_1.png" x="1374" y="1454" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_Gold_fist_2.png" x="1506" y="682" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_Gold_foot.png" x="1205" y="1537" w="165" h="189" pX="0.5" pY="0.5" oX="5" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_Gold_foot_pad.png" x="678" y="191" w="186" h="121" pX="0.5" pY="0.5" oX="16" oY="13" oW="216" oH="148"/>
+    <sprite n="F_EPIC_Gold_fxray.png" x="204" y="1047" w="70" h="226" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="228"/>
+    <sprite n="F_EPIC_Gold_knee.png" x="1552" y="1303" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_Gold_lightning_spark.png" x="1090" y="1036" w="196" h="159" pX="0.5" pY="0.5" oX="0" oY="19" oW="196" oH="196"/>
+    <sprite n="F_EPIC_Gold_lowerarm.png" x="1445" y="181" w="216" h="114" pX="0.5" pY="0.5" oX="2" oY="53" oW="280" oH="220"/>
+    <sprite n="F_EPIC_Gold_mouth_01.png" x="940" y="123" w="268" h="143" pX="0.5" pY="0.5" oX="22" oY="2" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_02.png" x="943" y="881" w="192" h="151" pX="0.5" pY="0.5" oX="60" oY="0" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_03.png" x="925" y="1043" w="161" h="196" pX="0.5" pY="0.5" oX="75" oY="5" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_04.png" x="193" y="1352" w="167" h="263" pX="0.5" pY="0.5" oX="72" oY="5" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_05.png" x="4" y="1352" w="185" h="301" pX="0.5" pY="0.5" oX="59" oY="2" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_06.png" x="4" y="1047" w="196" h="301" pX="0.5" pY="0.5" oX="54" oY="3" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_07.png" x="4" y="1657" w="250" h="285" pX="0.5" pY="0.5" oX="47" oY="1" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_08.png" x="278" y="1047" w="240" h="221" pX="0.5" pY="0.5" oX="36" oY="4" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_09.png" x="1445" y="4" w="309" h="173" pX="0.5" pY="0.5" oX="5" oY="3" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_mouth_10.png" x="585" y="1881" w="291" h="163" pX="0.5" pY="0.5" oX="9" oY="4" oW="316" oH="308"/>
+    <sprite n="F_EPIC_Gold_neck.png" x="1374" y="79" w="64" h="35" pX="0.5" pY="0.5" oX="1" oY="5" oW="68" oH="44"/>
+    <sprite n="F_EPIC_Gold_pupil.png" x="2003" y="247" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_Gold_shadow.png" x="1592" y="1680" w="187" h="83" pX="0.5" pY="0.5" oX="3" oY="3" oW="192" oH="88"/>
+    <sprite n="F_EPIC_Gold_shock.png" x="1189" y="1240" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_Gold_upperarm.png" x="1374" y="4" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_Gold_upperleg.png" x="1181" y="814" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="F_EPIC_GoldAir_ankle.png" x="868" y="191" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_GoldAir_beam_1.png" x="376" y="1554" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldAir_beam_2.png" x="884" y="1244" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldAir_beam_3.png" x="1578" y="1494" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldAir_beam_4.png" x="1374" y="1567" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldAir_big_orb.png" x="1788" y="724" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_GoldAir_chest.png" x="496" y="1650" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_GoldAir_eyeball_1.png" x="1878" y="732" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldAir_eyeball_2.png" x="1665" y="181" w="88" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldAir_eyelid_1.png" x="496" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldAir_eyelid_2.png" x="193" y="1619" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldAir_eyelid_3.png" x="1374" y="235" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldAir_eyelid_4.png" x="1374" y="297" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldAir_eyesockets.png" x="1212" y="4" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_GoldAir_fist_1.png" x="1634" y="552" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldAir_fist_2.png" x="1008" y="1738" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldAir_foot.png" x="1086" y="1853" w="180" h="189" pX="0.5" pY="0.5" oX="5" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_foot_pad.png" x="1181" y="686" w="189" h="124" pX="0.5" pY="0.5" oX="13" oY="13" oW="216" oH="148"/>
+    <sprite n="F_EPIC_GoldAir_knee.png" x="1541" y="947" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_GoldAir_lowerarm.png" x="678" y="4" w="258" h="183" pX="0.5" pY="0.5" oX="2" oY="0" oW="280" oH="220"/>
+    <sprite n="F_EPIC_GoldAir_pupil.png" x="258" y="1882" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_GoldAir_shock.png" x="4" y="1946" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_GoldAir_shoulder_left.png" x="1290" y="1036" w="131" h="124" pX="0.5" pY="0.5" oX="4" oY="8" oW="140" oH="140"/>
+    <sprite n="F_EPIC_GoldAir_shoulder_right.png" x="1212" y="358" w="155" h="133" pX="0.5" pY="0.5" oX="3" oY="4" oW="160" oH="140"/>
+    <sprite n="F_EPIC_GoldAir_steam_01.png" x="1374" y="118" w="61" h="113" pX="0.5" pY="0.5" oX="97" oY="47" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_02.png" x="836" y="546" w="124" h="142" pX="0.5" pY="0.5" oX="99" oY="34" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_03.png" x="1139" y="858" w="130" h="159" pX="0.5" pY="0.5" oX="98" oY="25" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_04.png" x="1160" y="517" w="137" h="165" pX="0.5" pY="0.5" oX="97" oY="18" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_05.png" x="943" y="270" w="140" h="172" pX="0.5" pY="0.5" oX="99" oY="13" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_06.png" x="868" y="692" w="139" h="185" pX="0.5" pY="0.5" oX="105" oY="8" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_07.png" x="778" y="1043" w="143" h="197" pX="0.5" pY="0.5" oX="102" oY="2" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_steam_08.png" x="883" y="1344" w="156" h="197" pX="0.5" pY="0.5" oX="92" oY="3" oW="280" oH="200"/>
+    <sprite n="F_EPIC_GoldAir_upperarm.png" x="204" y="1277" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_GoldAir_upperleg.png" x="868" y="494" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="F_EPIC_GoldAir_wing_left.png" x="678" y="546" w="154" h="142" pX="0.5" pY="0.5" oX="2" oY="4" oW="160" oH="152"/>
+    <sprite n="F_EPIC_GoldAir_wing_right.png" x="782" y="895" w="157" h="144" pX="0.5" pY="0.5" oX="0" oY="1" oW="160" oH="152"/>
+    <sprite n="F_EPIC_GoldCold_ankle.png" x="868" y="292" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_GoldCold_beam_1.png" x="580" y="1554" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldCold_beam_2.png" x="940" y="446" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldCold_beam_3.png" x="1782" y="1494" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldCold_beam_4.png" x="1564" y="1391" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldCold_big_orb.png" x="1696" y="757" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_GoldCold_chest.png" x="752" y="1650" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_GoldCold_eyeball_1.png" x="1938" y="732" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldCold_eyeball_2.png" x="1665" y="273" w="88" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldCold_eyelid_1.png" x="554" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldCold_eyelid_2.png" x="254" y="1619" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldCold_eyelid_3.png" x="1144" y="393" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldCold_eyelid_4.png" x="1144" y="455" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldCold_eyesockets.png" x="1212" y="63" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_GoldCold_fist_1.png" x="1738" y="427" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldCold_fist_2.png" x="1198" y="1738" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldCold_foot.png" x="1043" y="1344" w="165" h="189" pX="0.5" pY="0.5" oX="5" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_GoldCold_foot_pad.png" x="964" y="546" w="192" h="138" pX="0.5" pY="0.5" oX="12" oY="3" oW="216" oH="148"/>
+    <sprite n="F_EPIC_GoldCold_knee.png" x="1914" y="1094" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_GoldCold_lowerarm.png" x="1758" y="157" w="241" h="170" pX="0.5" pY="0.5" oX="2" oY="22" oW="280" oH="220"/>
+    <sprite n="F_EPIC_GoldCold_pupil.png" x="258" y="1912" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_GoldCold_shock.png" x="105" y="1946" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_GoldCold_shoulder_left.png" x="1090" y="270" w="113" h="119" pX="0.5" pY="0.5" oX="3" oY="5" oW="120" oH="128"/>
+    <sprite n="F_EPIC_GoldCold_shoulder_right.png" x="1425" y="575" w="133" h="103" pX="0.5" pY="0.5" oX="4" oY="4" oW="140" oH="112"/>
+    <sprite n="F_EPIC_GoldCold_upperarm.png" x="273" y="1277" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_GoldCold_upperleg.png" x="1090" y="1199" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="F_EPIC_GoldEarth_ankle.png" x="868" y="393" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_beam_1.png" x="680" y="1248" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_beam_2.png" x="1786" y="814" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_beam_3.png" x="1445" y="1849" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_beam_4.png" x="1768" y="1306" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_big_orb.png" x="1949" y="914" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_GoldEarth_chest.png" x="356" y="692" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_GoldEarth_eyeball_1.png" x="1330" y="1164" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldEarth_eyeball_2.png" x="1824" y="540" w="88" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldEarth_eyelid_1.png" x="612" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldEarth_eyelid_2.png" x="315" y="1619" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldEarth_eyelid_3.png" x="1273" y="974" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldEarth_eyelid_4.png" x="1335" y="974" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldEarth_eyesockets.png" x="1212" y="122" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_GoldEarth_fist_1.png" x="1212" y="1341" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldEarth_fist_2.png" x="678" y="316" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldEarth_foot.png" x="1008" y="1545" w="193" h="189" pX="0.5" pY="0.5" oX="5" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_GoldEarth_foot_pad.png" x="356" y="895" w="207" h="146" pX="0.5" pY="0.5" oX="6" oY="0" oW="216" oH="148"/>
+    <sprite n="F_EPIC_GoldEarth_knee.png" x="1615" y="1127" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_GoldEarth_lowerarm.png" x="943" y="4" w="265" h="115" pX="0.5" pY="0.5" oX="2" oY="53" oW="280" oH="220"/>
+    <sprite n="F_EPIC_GoldEarth_pupil.png" x="2003" y="157" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_GoldEarth_shock.png" x="206" y="1946" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_GoldEarth_shoulder_left.png" x="885" y="1545" w="119" h="101" pX="0.5" pY="0.5" oX="0" oY="3" oW="120" oH="108"/>
+    <sprite n="F_EPIC_GoldEarth_shoulder_right.png" x="549" y="1248" w="127" h="94" pX="0.5" pY="0.5" oX="4" oY="3" oW="132" oH="100"/>
+    <sprite n="F_EPIC_GoldEarth_upperarm.png" x="342" y="1272" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_GoldEarth_upperleg.png" x="1150" y="1199" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="F_EPIC_GoldPlant_ankle.png" x="1371" y="359" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_GoldPlant_beam_1.png" x="1775" y="331" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldPlant_beam_2.png" x="1541" y="847" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldPlant_beam_3.png" x="1445" y="1942" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldPlant_beam_4.png" x="1768" y="1400" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldPlant_big_orb.png" x="1949" y="1004" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_GoldPlant_chest.png" x="522" y="1045" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_GoldPlant_eyeball_1.png" x="1390" y="1164" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldPlant_eyeball_2.png" x="1824" y="632" w="88" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldPlant_eyelid_1.png" x="670" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldPlant_eyelid_2.png" x="1241" y="814" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldPlant_eyelid_3.png" x="1397" y="974" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldPlant_eyelid_4.png" x="1301" y="620" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldPlant_eyesockets.png" x="1212" y="181" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_GoldPlant_fist_1.png" x="1362" y="1224" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldPlant_fist_2.png" x="678" y="431" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldPlant_foot.png" x="1270" y="1853" w="171" h="189" pX="0.5" pY="0.5" oX="3" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_GoldPlant_foot_pad.png" x="567" y="895" w="211" h="144" pX="0.5" pY="0.5" oX="5" oY="0" oW="216" oH="148"/>
+    <sprite n="F_EPIC_GoldPlant_knee.png" x="1909" y="1182" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_GoldPlant_lowerarm.png" x="1758" y="4" w="271" h="149" pX="0.5" pY="0.5" oX="2" oY="30" oW="280" oH="220"/>
+    <sprite n="F_EPIC_GoldPlant_pupil.png" x="2003" y="187" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_GoldPlant_shock.png" x="784" y="1549" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_GoldPlant_shoulder_left.png" x="1614" y="437" w="120" h="111" pX="0.5" pY="0.5" oX="5" oY="2" oW="128" oH="116"/>
+    <sprite n="F_EPIC_GoldPlant_shoulder_right.png" x="1374" y="682" w="128" h="115" pX="0.5" pY="0.5" oX="5" oY="3" oW="136" oH="120"/>
+    <sprite n="F_EPIC_GoldPlant_upperarm.png" x="411" y="1272" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_GoldPlant_upperleg.png" x="1210" y="1199" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+    <sprite n="F_EPIC_GoldWater_ankle.png" x="1562" y="575" w="68" h="97" pX="0.5" pY="0.5" oX="3" oY="2" oW="72" oH="100"/>
+    <sprite n="F_EPIC_GoldWater_beam_1.png" x="1705" y="1114" w="200" h="92" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldWater_beam_2.png" x="1745" y="914" w="200" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldWater_beam_3.png" x="1592" y="1587" w="200" h="89" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldWater_beam_4.png" x="1388" y="1661" w="200" h="90" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100"/>
+    <sprite n="F_EPIC_GoldWater_big_orb.png" x="1620" y="947" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_GoldWater_bubblegroup_1.png" x="1273" y="846" w="138" h="124" pX="0.5" pY="0.5" oX="1" oY="8" oW="140" oH="140"/>
+    <sprite n="F_EPIC_GoldWater_bubblegroup_2.png" x="1415" y="846" w="122" h="123" pX="0.5" pY="0.5" oX="8" oY="9" oW="140" oH="140"/>
+    <sprite n="F_EPIC_GoldWater_bubblegroup_3.png" x="1301" y="495" w="119" h="121" pX="0.5" pY="0.5" oX="11" oY="9" oW="140" oH="140"/>
+    <sprite n="F_EPIC_GoldWater_chest.png" x="612" y="692" w="252" h="199" pX="0.5" pY="0.5" oX="3" oY="8" oW="256" oH="216"/>
+    <sprite n="F_EPIC_GoldWater_eyeball_1.png" x="1459" y="973" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldWater_eyeball_2.png" x="1696" y="665" w="88" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_GoldWater_eyelid_1.png" x="728" y="1853" w="54" h="24" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldWater_eyelid_2.png" x="1302" y="814" w="57" h="28" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldWater_eyelid_3.png" x="1363" y="620" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldWater_eyelid_4.png" x="1651" y="365" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_GoldWater_eyesockets.png" x="1212" y="240" w="158" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56"/>
+    <sprite n="F_EPIC_GoldWater_fist_1.png" x="1425" y="1036" w="186" h="109" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldWater_fist_2.png" x="1424" y="460" w="186" h="111" pX="0.5" pY="0.5" oX="10" oY="1" oW="196" oH="112"/>
+    <sprite n="F_EPIC_GoldWater_foot.png" x="880" y="1853" w="202" h="189" pX="0.5" pY="0.5" oX="5" oY="8" oW="208" oH="200"/>
+    <sprite n="F_EPIC_GoldWater_foot_pad.png" x="1445" y="299" w="202" h="134" pX="0.5" pY="0.5" oX="7" oY="10" oW="216" oH="148"/>
+    <sprite n="F_EPIC_GoldWater_knee.png" x="1552" y="1215" w="75" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_GoldWater_lowerarm.png" x="307" y="1882" w="274" h="162" pX="0.5" pY="0.5" oX="2" oY="29" oW="280" oH="220"/>
+    <sprite n="F_EPIC_GoldWater_pupil.png" x="2003" y="217" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_GoldWater_shock.png" x="1088" y="1243" w="97" h="97" pX="0.5" pY="0.5" oX="4" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_GoldWater_shoulder_left.png" x="1928" y="427" w="109" h="96" pX="0.5" pY="0.5" oX="4" oY="3" oW="120" oH="104"/>
+    <sprite n="F_EPIC_GoldWater_shoulder_right.png" x="1928" y="527" w="105" h="109" pX="0.5" pY="0.5" oX="3" oY="0" oW="112" oH="112"/>
+    <sprite n="F_EPIC_GoldWater_upperarm.png" x="480" y="1272" w="65" h="71" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="F_EPIC_GoldWater_upperleg.png" x="1270" y="1199" w="56" h="37" pX="0.5" pY="0.5" oX="4" oY="0" oW="64" oH="40"/>
+</TextureAtlas>

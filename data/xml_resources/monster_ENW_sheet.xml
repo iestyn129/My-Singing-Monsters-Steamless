@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a76cb23496e91e7a7bd87b43745c902e:6904ab406d3120ad9217724372fbb8fc:f925e0b55002567f3f48f1670c899165$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ENW_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ENW_bulb" x="222" y="167" w="103" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ENW_bulb_glow" x="2" y="384" w="166" h="163" pX="0.5" pY="0.5"/>
+    <sprite n="ENW_eyes_01" x="2" y="683" w="66" h="57" pX="0.5" pY="0.5" oX="3" oY="0" oW="63" oH="66" r="y"/>
+    <sprite n="ENW_eyes_02" x="70" y="683" w="65" h="57" pX="0.5" pY="0.5" oX="3" oY="1" oW="63" oH="66" r="y"/>
+    <sprite n="ENW_eyes_03" x="69" y="742" w="62" h="57" pX="0.5" pY="0.5" oX="3" oY="4" oW="63" oH="66" r="y"/>
+    <sprite n="ENW_eyes_04" x="303" y="741" w="60" h="57" pX="0.5" pY="0.5" oX="3" oY="6" oW="63" oH="66" r="y"/>
+    <sprite n="ENW_eyes_05" x="2" y="742" w="65" h="57" pX="0.5" pY="0.5" oX="3" oY="1" oW="63" oH="66" r="y"/>
+    <sprite n="ENW_fur" x="222" y="255" w="102" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="ENW_glow" x="2" y="167" w="218" h="215" pX="0.5" pY="0.5"/>
+    <sprite n="ENW_mouth_01" x="303" y="332" w="18" h="44" pX="0.5" pY="0.5" oX="1" oY="5" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_02" x="472" y="600" w="22" h="44" pX="0.5" pY="0.5" oX="1" oY="4" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_03" x="472" y="554" w="26" h="44" pX="0.5" pY="0.5" oX="1" oY="2" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_04" x="472" y="509" w="30" h="43" pX="0.5" pY="0.5" oX="2" oY="0" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_05" x="472" y="457" w="38" h="26" pX="0.5" pY="0.5" oX="4" oY="2" oW="46" oH="30"/>
+    <sprite n="ENW_mouth_06" x="472" y="485" w="34" h="22" pX="0.5" pY="0.5" oX="6" oY="4" oW="46" oH="30"/>
+    <sprite n="ENW_mouth_07" x="303" y="424" w="16" h="29" pX="0.5" pY="0.5" oX="7" oY="7" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_08" x="495" y="306" w="15" h="23" pX="0.5" pY="0.5" oX="11" oY="7" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_mouth_09" x="303" y="378" w="17" h="44" pX="0.5" pY="0.5" oX="1" oY="6" oW="46" oH="30" r="y"/>
+    <sprite n="ENW_shadow" x="222" y="332" w="79" h="151" pX="0.5" pY="0.5" oX="87" oY="42" oW="325" oH="163" r="y"/>
+    <sprite n="ENW_shadow_glow" x="2" y="2" w="325" h="163" pX="0.5" pY="0.5"/>
+    <sprite n="ENW_skirt_01" x="329" y="2" w="167" h="150" pX="0.5" pY="0.5" oX="7" oY="6" oW="178" oH="159"/>
+    <sprite n="ENW_skirt_02" x="329" y="154" w="167" h="150" pX="0.5" pY="0.5" oX="7" oY="5" oW="178" oH="159"/>
+    <sprite n="ENW_skirt_03" x="326" y="306" w="167" h="149" pX="0.5" pY="0.5" oX="7" oY="6" oW="178" oH="159"/>
+    <sprite n="ENW_skirt_04" x="303" y="457" w="167" h="149" pX="0.5" pY="0.5" oX="7" oY="6" oW="178" oH="159"/>
+    <sprite n="ENW_skirt_small_01" x="2" y="549" w="149" h="132" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="133"/>
+    <sprite n="ENW_skirt_small_02" x="153" y="636" w="148" h="131" pX="0.5" pY="0.5" oX="1" oY="0" oW="152" oH="133"/>
+    <sprite n="ENW_skirt_small_03" x="170" y="485" w="131" h="149" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="133" r="y"/>
+    <sprite n="ENW_skirt_small_04" x="303" y="608" w="149" h="131" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="133"/>
+</TextureAtlas>

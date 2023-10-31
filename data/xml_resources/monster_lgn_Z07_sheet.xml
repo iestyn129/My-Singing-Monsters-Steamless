@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4f8093d6e2790464d0d84a960ac58097:dca70025199c1fa50811e6062b39fad2:a5a3c08e9845edb038601221ee204bf8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_lgn_Z07_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="Z07_beard" x="506" y="58" w="3" h="3" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="32"/>
+    <sprite n="Z07_cymbal" x="245" y="331" w="134" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="136" oH="40"/>
+    <sprite n="Z07_cymbal_stand_left" x="2" y="2" w="247" h="76" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="248" r="y"/>
+    <sprite n="Z07_cymbal_stand_right" x="251" y="2" w="240" h="124" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Z07_drum_base" x="2" y="80" w="223" h="216" pX="0.5" pY="0.5" oX="0" oY="0" oW="224" oH="216"/>
+    <sprite n="Z07_drum_seat" x="2" y="298" w="151" h="135" pX="0.5" pY="0.5" oX="0" oY="0" oW="152" oH="136"/>
+    <sprite n="Z07_drum_tom" x="241" y="481" w="116" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="120" oH="56"/>
+    <sprite n="Z07_drumstick" x="493" y="71" w="10" h="119" pX="0.5" pY="0.5" oX="1" oY="0" oW="12" oH="120"/>
+    <sprite n="Z07_eyeballs" x="493" y="2" w="14" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="16" r="y"/>
+    <sprite n="Z07_eyelids01" x="227" y="192" w="18" h="56" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20" r="y"/>
+    <sprite n="Z07_eyelids02" x="227" y="250" w="18" h="56" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20" r="y"/>
+    <sprite n="Z07_eyelids03" x="407" y="429" w="56" h="18" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20"/>
+    <sprite n="Z07_eyelids04" x="221" y="432" w="18" h="56" pX="0.5" pY="0.5" oX="0" oY="2" oW="56" oH="20" r="y"/>
+    <sprite n="Z07_hat_f" x="359" y="521" w="105" h="49" pX="0.5" pY="0.5" oX="0" oY="34" oW="120" oH="100"/>
+    <sprite n="Z07_head" x="412" y="192" w="96" h="99" pX="0.5" pY="0.5" oX="0" oY="1" oW="96" oH="100"/>
+    <sprite n="Z07_left_foot" x="409" y="323" w="88" h="104" pX="0.5" pY="0.5" oX="2" oY="2" oW="108" oH="92" r="y"/>
+    <sprite n="Z07_left_hand_grip" x="55" y="435" w="47" h="45" pX="0.5" pY="0.5" oX="2" oY="3" oW="52" oH="52"/>
+    <sprite n="Z07_left_lowerarm" x="412" y="128" w="78" h="29" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="32"/>
+    <sprite n="Z07_left_upperarm" x="409" y="293" w="96" h="28" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="32"/>
+    <sprite n="Z07_lowerbody" x="244" y="371" w="127" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="128" oH="108"/>
+    <sprite n="Z07_lowerleg" x="373" y="457" w="120" h="62" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="120" r="y"/>
+    <sprite n="Z07_mouth01" x="227" y="80" w="21" h="60" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="32" r="y"/>
+    <sprite n="Z07_mouth02" x="381" y="331" w="23" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="32" r="y"/>
+    <sprite n="Z07_mouth03" x="155" y="432" w="64" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="32"/>
+    <sprite n="Z07_mouth04" x="373" y="397" w="32" h="58" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="32" r="y"/>
+    <sprite n="Z07_mouth05" x="2" y="435" w="51" h="32" pX="0.5" pY="0.5" oX="6" oY="0" oW="64" oH="32"/>
+    <sprite n="Z07_mouth06" x="104" y="435" w="41" h="29" pX="0.5" pY="0.5" oX="9" oY="2" oW="64" oH="32"/>
+    <sprite n="Z07_mouth07" x="227" y="142" w="21" h="48" pX="0.5" pY="0.5" oX="5" oY="0" oW="64" oH="32" r="y"/>
+    <sprite n="Z07_pupil" x="493" y="58" w="11" h="11" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="Z07_right_foot" x="155" y="347" w="87" h="83" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="88" r="y"/>
+    <sprite n="Z07_right_hand_grip" x="466" y="521" w="44" h="52" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="48" r="y"/>
+    <sprite n="Z07_right_lowerarm" x="412" y="159" w="78" h="29" pX="0.5" pY="0.5" oX="0" oY="2" oW="80" oH="32"/>
+    <sprite n="Z07_right_upperarm" x="409" y="293" w="96" h="28" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="32"/>
+    <sprite n="Z07_shadow" x="247" y="242" w="160" h="87" pX="0.5" pY="0.5" oX="7" oY="1" oW="172" oH="88"/>
+    <sprite n="Z07_upperbody" x="250" y="128" w="160" h="112" pX="0.5" pY="0.5" oX="3" oY="0" oW="172" oH="112"/>
+    <sprite n="Z07_upperleg" x="155" y="308" w="88" h="37" pX="0.5" pY="0.5" oX="1" oY="2" oW="40" oH="92" r="y"/>
+</TextureAtlas>

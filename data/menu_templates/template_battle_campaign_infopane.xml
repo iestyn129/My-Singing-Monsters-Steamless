@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<template name="template_battle_campaign_infopane" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="screenWidth()" h="screenHeight()"/>
+
+	<element name="BG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="80*game.menuScaleX()" yOffset="8*game.menuScaleY()" priorityOffset="11" />
+		<ninesliceComponent name="Sprite">
+			<size w="290*game.menuScaleX()" h="160*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("topHeight"):SetFloat(50.0)
+					component("bottomHeight"):SetFloat(50.0)
+					component("leftWidth"):SetFloat(50.0)
+					component("rightWidth"):SetFloat(50.0)
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("includeBorder"):SetInt(1)
+					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+					component("alpha"):SetFloat(0.0)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<!-- tabs -->
+
+	<template type="template_battle_menu_tab" name="TeamTab">
+		<position relativeTo="BG" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="24*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("tabId"):SetInt(0)
+				element("labelText"):SetString("BATTLE_CAMPAIGN_TEAM")
+				element("tabWidth"):SetFloat(124*game.menuScaleX())
+			]]>
+		</event>
+
+		<textComponent name="Required">
+			<size w="80*game.menuScaleX()" h="10*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleX()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.2*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					--component("text"):SetString("")
+					component("layer"):SetString("MidPopUps")
+			]]>
+			</event>
+		</textComponent>
+
+		<event name="update" params="element">
+			<![CDATA[
+				update(element)
+				local alpha = element("alpha"):GetFloat()
+				element["Required"]("alpha"):SetFloat(alpha)
+			]]>
+		</event>
+
+	</template>
+
+	<template type="template_battle_menu_tab" name="OpponentsTab">
+		<position relativeTo="BG" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="144*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("tabId"):SetInt(1)
+				element("labelText"):SetString("BATTLE_CAMPAIGN_OPPONENTS")
+				element("tabWidth"):SetFloat(124*game.menuScaleX())
+			]]>
+		</event>
+	</template>
+
+	<!-- next battle opponent view (default) -->
+	<!-- this is a list of template_battle_campaign_infopane_entry -->
+
+	<element name="OpponentView">
+		<size w="290*game.menuScaleX()" h="130*game.menuScaleY()" />
+		<position relativeTo="BG" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewOnInit(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="repopulate" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewRepopulate(element, dt)
+			]]>
+		</event>
+
+		<event name="populate" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewPopulate(element, dt)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewShow(element, dt)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").OpponentViewHide(element, dt)
+			]]>
+		</event>
+
+	</element>
+
+	<!-- player team select view-->
+	<element name="TeamView">
+		<size w="290*game.menuScaleX()" h="130*game.menuScaleY()" />
+		<position relativeTo="BG" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="12*game.menuScaleY()" priorityOffset="-1" />
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewOnInit(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="repopulate" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewRepopulate(element)
+			]]>
+		</event>
+
+		<event name="populate" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewPopulate(element)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewShow(element)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewHide(element)
+			]]>
+		</event>
+
+		<event name="onEntrySelected" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").TeamViewOnEntrySelected(element)
+			]]>
+		</event>
+
+	</element>
+
+	<!-- Start Button-->
+	<template type="template_spritesheetbutton" name="StartBattleButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.45*game.menuScaleX()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$lockEnabled" equals="'1'" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="26*game.hudScale()" priorityOffset="10" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					include("BattleCampaignInfoPaneUI").StartButtonOnTouchUp(component, element)
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					onTouchRelease(component, element)
+					include("BattleCampaignInfoPaneUI").StartButtonOnTouchRelease(component, element)
+				]]>
+			</event>
+		</touchComponent>
+
+		<textComponent name="Label">
+			<size w="90*game.menuScaleX()" h="30*game.menuScaleX()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("alpha"):SetFloat(0.0)
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("BUTTON_BATTLE_START")
+					component("layer"):SetString("MidPopUps")
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").StartButtonOnPostInit(element)
+			]]>
+		</event>
+
+		<event name="onTick" params="element, dt">
+			<![CDATA[
+				onTick(element, dt)
+				include("BattleCampaignInfoPaneUI").StartButtonOnTick(element, dt)
+			]]>
+		</event>
+
+		<event name="enable" params="element">
+			<![CDATA[
+				enable(element)
+				include("BattleCampaignInfoPaneUI").StartButtonEnable(element)
+			]]>
+		</event>
+
+		<event name="disable" params="element">
+			<![CDATA[
+				disable(element)
+				include("BattleCampaignInfoPaneUI").StartButtonDisable(element)
+			]]>
+		</event>
+
+		<event name="show" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").StartButtonShow(element)
+			]]>
+		</event>
+
+		<event name="hide" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").StartButtonHide(element)
+			]]>
+		</event>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").StartButtonRefresh(element)
+			]]>
+		</event>
+
+	</template>
+
+	<!-- events -->
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").onInit(element)
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").onPostInit(element)
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").onTick(element, dt)
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").show(element)
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").hide(element)
+		]]>
+	</event>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").refresh(element)
+		]]>
+	</event>
+
+	<event name="selectNewTab" params="element">
+		<![CDATA[
+			include("BattleCampaignInfoPaneUI").selectNewTab(element)
+		]]>
+	</event>
+
+	<!-- Select Monsters Popup -->
+	<template type="template_battle_campaign_monster_select" name="SelectMonstersPopup">
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="8" />
+	</template>
+
+	<!-- Progress Info -->
+	<template type="template_battle_progress" name="ProgressInfo">
+		<position relativeTo="BG" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="-8*game.menuScaleY()" priorityOffset="0" />
+
+		<event name="OnProgressPanelShow" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").onProgressPanelShow(element)
+			]]>
+		</event>
+
+		<event name="OnProgressPanelHide" params="element">
+			<![CDATA[
+				include("BattleCampaignInfoPaneUI").onProgressPanelHide(element)
+			]]>
+		</event>
+
+	</template>
+
+
+
+
+</template>

@@ -1,0 +1,37 @@
+<template name="template_monsterlevel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+	
+	<textComponent name="Text">
+		<size h="14*game.menuScaleY()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="VCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="VCENTER" xOffset="0" yOffset="-1*game.menuScaleY()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("autoScale"):SetInt(1)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component:setColor(0.95, 0.68, 0.3)
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(0.25*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_RIGHT_ALIGNED)
+			component("text"):SetString(game.getLocalizedText("LEVEL").." "..game.monsterLevel(game.selectedMonsterId()))
+			component("layer"):SetString("ContextBar")
+		</event>
+	</textComponent>
+	
+	<event name="onInit" params="element">
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgMonsterLevelUp", "gotMsgMonsterLevelUp")
+	</event>
+	
+	<event name="gotMsgMonsterLevelUp" params="element, msg">		
+		element["Text"]("text"):SetString(game.getLocalizedText("LEVEL").." "..game.monsterLevel(game.selectedMonsterId()))
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["Text"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["Text"]("visible"):SetInt(0)
+	</event>
+	
+</template>

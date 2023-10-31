@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8123714e57439eb21f1e85f4e5d5d2e0:0441b884c1fd8eb4e453a1d1d7ea36a2:f54b8f51961dfb1fe156d5e940e66534$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S04_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="S04_antler_left" x="298" y="2" w="209" h="254" pX="0.5" pY="0.5" oX="1" oY="0" oW="256" oH="210" r="y"/>
+    <sprite n="S04_antler_right" x="298" y="258" w="205" h="266" pX="0.5" pY="0.5" oX="2" oY="1" oW="270" oH="208" r="y"/>
+    <sprite n="S04_arm_left" x="437" y="526" w="72" h="71" pX="0.5" pY="0.5" oX="1" oY="0" oW="74" oH="72" r="y"/>
+    <sprite n="S04_arm_right" x="435" y="599" w="65" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="62" oH="70" r="y"/>
+    <sprite n="S04_body_EPIC" x="2" y="2" w="294" h="264" pX="0.5" pY="0.5" oX="10" oY="3" oW="280" oH="300" r="y"/>
+    <sprite n="S04_bubble01" x="431" y="659" w="79" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="80"/>
+    <sprite n="S04_ear_left" x="169" y="401" w="127" h="71" pX="0.5" pY="0.5" oX="2" oY="1" oW="74" oH="130" r="y"/>
+    <sprite n="S04_ear_right" x="2" y="341" w="165" h="68" pX="0.5" pY="0.5" oX="0" oY="3" oW="70" oH="170" r="y"/>
+    <sprite n="S04_ear_tip_left" x="269" y="742" w="113" h="87" pX="0.5" pY="0.5" oX="1" oY="2" oW="114" oH="90"/>
+    <sprite n="S04_ear_tip_right" x="2" y="722" w="117" h="89" pX="0.5" pY="0.5" oX="3" oY="1" oW="122" oH="90"/>
+    <sprite n="S04_foot_left" x="2" y="459" w="150" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="S04_foot_right" x="2" y="536" w="150" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="S04_hand_left" x="194" y="292" w="95" h="107" pX="0.5" pY="0.5" oX="2" oY="4" oW="110" oH="100" r="y"/>
+    <sprite n="S04_hand_right" x="384" y="812" w="95" h="93" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="94"/>
+    <sprite n="S04_hip_left" x="2" y="813" w="95" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="84"/>
+    <sprite n="S04_hip_right" x="2" y="907" w="84" h="95" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_lids_01" x="286" y="526" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_lids_02" x="284" y="582" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_lids_03" x="2" y="613" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_lids_04" x="280" y="638" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_mouth_01" x="2" y="314" w="178" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="178" oH="41"/>
+    <sprite n="S04_mouth_02" x="2" y="411" w="163" h="24" pX="0.5" pY="0.5" oX="10" oY="6" oW="178" oH="41"/>
+    <sprite n="S04_mouth_03" x="153" y="641" w="121" h="31" pX="0.5" pY="0.5" oX="36" oY="2" oW="178" oH="41"/>
+    <sprite n="S04_mouth_04" x="194" y="268" w="102" h="22" pX="0.5" pY="0.5" oX="49" oY="11" oW="178" oH="41"/>
+    <sprite n="S04_mouth_05" x="2" y="702" w="118" h="18" pX="0.5" pY="0.5" oX="41" oY="8" oW="178" oH="41"/>
+    <sprite n="S04_mouth_06" x="153" y="674" w="118" h="29" pX="0.5" pY="0.5" oX="43" oY="7" oW="178" oH="41"/>
+    <sprite n="S04_mouth_07" x="154" y="607" w="124" h="32" pX="0.5" pY="0.5" oX="40" oY="3" oW="178" oH="41"/>
+    <sprite n="S04_mouth_08" x="391" y="694" w="38" h="116" pX="0.5" pY="0.5" oX="41" oY="1" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_09" x="2" y="669" w="119" h="31" pX="0.5" pY="0.5" oX="40" oY="8" oW="178" oH="41"/>
+    <sprite n="S04_mouth_10" x="2" y="437" w="160" h="20" pX="0.5" pY="0.5" oX="12" oY="7" oW="178" oH="41"/>
+    <sprite n="S04_nose" x="121" y="728" w="24" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_pupil_left_purple" x="123" y="669" w="28" h="28" pX="0.5" pY="0.5" oX="1" oY="1" oW="30" oH="30"/>
+    <sprite n="S04_pupil_right_blue" x="123" y="699" w="28" h="27" pX="0.5" pY="0.5" oX="1" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="S04_shadow" x="273" y="694" w="116" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="120" oH="46"/>
+    <sprite n="S04_tail" x="153" y="705" w="114" h="105" pX="0.5" pY="0.5" oX="32" oY="35" oW="146" oH="160" r="y"/>
+    <sprite n="S04_toes_left" x="154" y="541" w="128" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="130" oH="66"/>
+    <sprite n="S04_toes_right" x="154" y="474" w="130" h="65" pX="0.5" pY="0.5" oX="0" oY="1" oW="130" oH="66"/>
+    <sprite n="S04_whiskers" x="2" y="268" w="190" h="44" pX="0.5" pY="0.5"/>
+</TextureAtlas>

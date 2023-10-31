@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:31a85671c5d1ed6bc05dede669ab1eb0:f4679690717d73336a60b204c2508c42:5e144af0ce5fe024025c9e2d70b2627a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GM_sheet.png" width="512" height="512" hires="true">
+    <sprite n="GM_eyeball" x="333" y="397" w="61" h="59" pX="0.5" pY="0.5" oX="2" oY="1" oW="64" oH="64" r="y"/>
+    <sprite n="GM_eyelid_01" x="281" y="257" w="70" h="64" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72" r="y"/>
+    <sprite n="GM_eyelid_02" x="259" y="323" w="64" h="70" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72"/>
+    <sprite n="GM_eyelid_03" x="353" y="265" w="70" h="64" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72" r="y"/>
+    <sprite n="GM_eyelid_04" x="325" y="331" w="70" h="64" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="72" r="y"/>
+    <sprite n="GM_jellybody" x="39" y="2" w="168" h="184" pX="0.5" pY="0.5"/>
+    <sprite n="GM_left_fin" x="209" y="2" w="85" h="175" pX="0.5" pY="0.5" oX="0" oY="1" oW="176" oH="88" r="y"/>
+    <sprite n="GM_left_hand" x="425" y="265" w="42" h="69" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="72"/>
+    <sprite n="GM_left_moustache" x="404" y="36" w="90" h="68" pX="0.5" pY="0.5" oX="1" oY="0" oW="92" oH="68"/>
+    <sprite n="GM_lowerarm" x="296" y="2" w="106" h="61" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="108" r="y"/>
+    <sprite n="GM_mouth_01" x="469" y="191" w="38" h="82" pX="0.5" pY="0.5" oX="5" oY="2" oW="92" oH="68" r="y"/>
+    <sprite n="GM_mouth_02" x="296" y="65" w="90" h="40" pX="0.5" pY="0.5" oX="1" oY="1" oW="92" oH="68"/>
+    <sprite n="GM_mouth_03" x="388" y="106" w="89" h="44" pX="0.5" pY="0.5" oX="1" oY="1" oW="92" oH="68"/>
+    <sprite n="GM_mouth_04" x="296" y="107" w="86" h="50" pX="0.5" pY="0.5" oX="3" oY="0" oW="92" oH="68"/>
+    <sprite n="GM_mouth_05" x="384" y="152" w="83" h="58" pX="0.5" pY="0.5" oX="5" oY="0" oW="92" oH="68"/>
+    <sprite n="GM_mouth_06" x="397" y="336" w="70" h="60" pX="0.5" pY="0.5" oX="12" oY="3" oW="92" oH="68"/>
+    <sprite n="GM_mouth_07" x="396" y="398" w="64" h="58" pX="0.5" pY="0.5" oX="19" oY="4" oW="92" oH="68" r="y"/>
+    <sprite n="GM_mouth_08" x="333" y="458" w="57" h="52" pX="0.5" pY="0.5" oX="23" oY="5" oW="92" oH="68" r="y"/>
+    <sprite n="GM_mouth_09" x="392" y="458" w="47" h="51" pX="0.5" pY="0.5" oX="27" oY="6" oW="92" oH="68"/>
+    <sprite n="GM_mouth_10" x="469" y="152" w="41" h="37" pX="0.5" pY="0.5" oX="31" oY="7" oW="92" oH="68"/>
+    <sprite n="GM_mouth_11" x="469" y="275" w="36" h="61" pX="0.5" pY="0.5" oX="19" oY="5" oW="92" oH="68" r="y"/>
+    <sprite n="GM_mouth_12" x="281" y="211" w="79" h="44" pX="0.5" pY="0.5" oX="7" oY="3" oW="92" oH="68"/>
+    <sprite n="GM_mouth_13" x="362" y="212" w="74" h="51" pX="0.5" pY="0.5" oX="10" oY="4" oW="92" oH="68"/>
+    <sprite n="GM_pupil" x="39" y="188" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="GM_right_fin" x="2" y="410" w="95" h="96" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="96"/>
+    <sprite n="GM_right_hand" x="281" y="398" w="50" h="66" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="68"/>
+    <sprite n="GM_right_moustache" x="296" y="159" w="79" h="50" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="52"/>
+    <sprite n="GM_shadow" x="99" y="410" w="180" h="92" pX="0.5" pY="0.5" oX="3" oY="0" oW="184" oH="92"/>
+    <sprite n="GM_spike2_RARE" x="404" y="2" w="92" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="GM_spike_RARE" x="2" y="2" w="35" h="216" pX="0.5" pY="0.5" oX="1" oY="0" oW="36" oH="216"/>
+    <sprite n="GM_tentacles_layer1" x="2" y="220" w="122" h="188" pX="0.5" pY="0.5" oX="1" oY="0" oW="124" oH="188"/>
+    <sprite n="GM_tentacles_layer2" x="126" y="210" w="131" h="175" pX="0.5" pY="0.5" oX="0" oY="0" oW="132" oH="176"/>
+    <sprite n="GM_upperarm" x="69" y="188" w="87" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="88" r="y"/>
+</TextureAtlas>

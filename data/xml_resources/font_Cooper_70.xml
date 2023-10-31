@@ -1,0 +1,31 @@
+<FontInfo>
+
+	<!-- 
+	<SpriteFont path="font/font_cooper_70" />
+	-->
+
+	<!-- -->
+	<TTF
+	 langs="ru"
+	 path="font/OpenDyslexic-Bold.otf"
+	 w="0" h="50"
+	 line_spacing="65"
+	 character_spacing="2"
+	 stroke_size="4"
+	 use_sdf="true"
+	 shader="ShaderFont2ru"
+	/>
+	
+	<TTF 
+		 path="font/Hobeaux-Bold.otf"
+		 w="0" h="50"
+		 line_spacing="65"
+		 character_spacing="3"
+		 stroke_size="6"
+		 use_sdf="true"
+		 shader="ShaderFont2"
+		 alphabet="ok"
+	/>
+	<!-- -->
+
+</FontInfo>

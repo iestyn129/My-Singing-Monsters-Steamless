@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:09376b41cca1d710538adda3e7e057df:a5664a7ec61d4706a23cccda97f0805c:6169b55123b2f86f312fac419029fce1$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_N_costume_01_sheet.png" width="512" height="256" hires="true">
+	<!-- original anchor = (42, 89) -> new anchor (55, 39.5) diff = (-13, 49.5)-->
+	<!-- add double it to texturepacker output offsets (10, 6) -> (-16, 105)-->
+    <sprite n="N_gobbley_beak.png" x="346" y="2" w="138" h="88" pX="0.5" pY="0.5" oX="-16" oY="105" oW="160" oH="100"/>
+	<!-- original anchor = (37, 45) -> new anchor (57.5, 38) diff = (-20.5, 7)-->
+	<!-- add double it to texturepacker output offsets (2, 4) -> (-39, 18)-->
+    <sprite n="N_gobbley_body.png" x="2" y="2" w="170" h="220" pX="0.5" pY="0.5" oX="-39" oY="18" oW="224" oH="179" r="y"/>
+	<!-- original anchor = (42, 89) -> new anchor (53, 100) diff = (-11, -11)-->
+	<!-- add double it to texturepacker output offsets (21, 23) -> (-1, 1)-->
+    <sprite n="N_gobbley_head.png" x="174" y="2" w="170" h="197" pX="0.5" pY="0.5" oX="-1" oY="1" oW="200" oH="240"/>
+</TextureAtlas>

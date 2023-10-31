@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:50ef97f8014766079588bcc39f4fd19e:569b4618ad55074e9e89bd2fcf97ebaa:965e641e4ebe39e2c8806aa4cac857cf$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_S01_costume_01_sheet.png" width="512" height="512" hires="true">
+		<!-- original anchor = (22, 48) -> new anchor (10, 37) diff = (12, 11)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (24, 22), cause hires-->
+    <sprite n="S01_chest.png" x="406" y="166" w="104" h="112" pX="0.5" pY="0.5" r="y" oX="24" oY="22"/>
+    <sprite n="S01_eyes_01.png" x="423" y="2" w="84" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40"/>
+    <sprite n="S01_eyes_02.png" x="423" y="43" w="84" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40"/>
+    <sprite n="S01_eyes_03.png" x="423" y="84" w="84" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40"/>
+    <sprite n="S01_eyes_04.png" x="423" y="125" w="84" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40"/>
+    <sprite n="S01_eyes_05.png" x="103" y="135" w="39" h="84" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40" r="y"/>
+    <sprite n="S01_eyes_06.png" x="144" y="163" w="84" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="86" oH="40"/>
+    <sprite n="S01_eyes_07.png" x="136" y="239" w="83" h="24" pX="0.5" pY="0.5" oX="0" oY="7" oW="86" oH="40"/>
+    <sprite n="S01_eyes_08.png" x="136" y="265" w="82" h="19" pX="0.5" pY="0.5" oX="0" oY="9" oW="86" oH="40"/>
+		<!-- original anchor = (31, 41) -> new anchor (31, 47) diff = (0, -6)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (0, -12), cause hires-->
+    <sprite n="S01_head.png" x="2" y="2" w="144" h="131" pX="0.5" pY="0.5" oX="0" oY="-12" oW="144" oH="132"/>
+    <sprite n="S01_left_lowerarm.png" x="286" y="128" w="118" h="82" pX="0.5" pY="0.5" oX="1" oY="0" oW="84" oH="118" r="y"/>
+    <sprite n="S01_mouth_01.png" x="148" y="132" w="102" h="29" pX="0.5" pY="0.5" oX="4" oY="2" oW="110" oH="34"/>
+    <sprite n="S01_mouth_02.png" x="2" y="135" w="99" h="27" pX="0.5" pY="0.5" oX="5" oY="3" oW="110" oH="34"/>
+    <sprite n="S01_mouth_03.png" x="286" y="212" w="102" h="28" pX="0.5" pY="0.5" oX="4" oY="2" oW="110" oH="34"/>
+    <sprite n="S01_mouth_04.png" x="252" y="132" w="32" h="99" pX="0.5" pY="0.5" oX="5" oY="1" oW="110" oH="34" r="y"/>
+    <sprite n="S01_mouth_05.png" x="144" y="204" w="84" h="33" pX="0.5" pY="0.5" oX="17" oY="1" oW="110" oH="34"/>
+    <sprite n="S01_mouth_06.png" x="100" y="221" w="34" h="57" pX="0.5" pY="0.5" oX="32" oY="0" oW="110" oH="34" r="y"/>
+    <sprite n="S01_mouth_07.png" x="252" y="233" w="32" h="49" pX="0.5" pY="0.5" oX="33" oY="2" oW="110" oH="34" r="y"/>
+    <sprite n="S01_mouth_08.png" x="230" y="163" w="20" h="64" pX="0.5" pY="0.5" oX="29" oY="9" oW="110" oH="34" r="y"/>
+    <sprite n="S01_mouth_09.png" x="230" y="229" w="20" h="30" pX="0.5" pY="0.5" oX="49" oY="11" oW="110" oH="34" r="y"/>
+    <sprite n="S01_right_lowerarm.png" x="2" y="164" w="96" h="82" pX="0.5" pY="0.5" oX="1" oY="0" oW="84" oH="98" r="y"/>
+		<!-- original anchor = (44, 20) -> new anchor (77, 36) diff = (-33, -16)-->
+		<!-- add double it to texturepacker output offsets (2, 0) -> (-64, -32), cause hires-->
+    <sprite n="S01_shoulder_left.png" x="148" y="2" w="136" h="128" pX="0.5" pY="0.5" oX="-64" oY="-32" oW="132" oH="136" r="y"/>
+		<!-- original anchor = (44, 20) -> new anchor (-8, 42) diff = (52, -22)-->
+		<!-- add double it to texturepacker output offsets (0, 0) -> (104, -44), cause hires-->
+    <sprite n="S01_shoulder_right.png" x="286" y="2" w="135" h="124" pX="0.5" pY="0.5" oX="104" oY="-44" oW="124" oH="136" r="y"/>
+		<!-- original anchor = (25, 32) -> new anchor (9, 40) diff = (16, -8)-->
+		<!-- add double it to texturepacker output offsets (1, 1) -> (33, -15), cause hires-->
+    <sprite n="S01_stick.png" x="221" y="261" w="29" h="78" pX="0.5" pY="0.5" oX="33" oY="-15" oW="32" oH="80"/>
+</TextureAtlas>

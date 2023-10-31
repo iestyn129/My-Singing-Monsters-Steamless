@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6afbd1d472878dd61260e4334ed86afe:2dd6c818ef6acbb7e34598b0960e1d91:97f0ecc25ec5c69d4f3e8309f3e55b15$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_DNR_sheet.png" width="512" height="512" hires="true">
+    <sprite n="body" x="2" y="2" w="196" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="bonusarm_1" x="372" y="2" w="129" h="33" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bonusarm_2" x="162" y="133" w="36" h="29" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bonusarm_3" x="199" y="198" w="49" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="51" oH="50" r="y"/>
+    <sprite n="bubble 1" x="372" y="37" w="94" h="67" pX="0.5" pY="0.5" oX="0" oY="0" oW="95" oH="69"/>
+    <sprite n="bubble 2" x="200" y="92" w="89" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="bubble 3" x="291" y="154" w="57" h="83" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bubble 4" x="2" y="133" w="52" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="bubble 5" x="252" y="158" w="35" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="bubble 6" x="125" y="249" w="28" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="bubble 7" x="488" y="228" w="21" h="24" pX="0.5" pY="0.5" oX="0" oY="0" oW="25" oH="21" r="y"/>
+    <sprite n="bubble 8" x="37" y="253" w="32" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="eye 1" x="454" y="172" w="54" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="eye 2" x="102" y="212" w="33" h="33" pX="0.5" pY="0.5"/>
+    <sprite n="eye 3" x="480" y="279" w="30" h="31" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye 4" x="468" y="37" w="42" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="eyelid 1_1" x="56" y="133" w="51" h="49" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="54"/>
+    <sprite n="eyelid 1_2" x="2" y="172" w="51" h="49" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="54"/>
+    <sprite n="eyelid 1_3" x="109" y="133" w="51" h="49" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="54"/>
+    <sprite n="eyelid 1_4" x="434" y="228" w="52" h="49" pX="0.5" pY="0.5" oX="2" oY="3" oW="54" oH="54"/>
+    <sprite n="eyelid 2_1" x="55" y="219" w="33" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="33" oH="33"/>
+    <sprite n="eyelid 2_2" x="2" y="223" w="33" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="33" oH="33"/>
+    <sprite n="eyelid 2_3" x="137" y="215" w="33" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="33" oH="33"/>
+    <sprite n="eyelid 2_4" x="90" y="247" w="33" h="32" pX="0.5" pY="0.5" oX="0" oY="1" oW="33" oH="33"/>
+    <sprite n="eyelid 3_1" x="480" y="312" w="30" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="31" oH="30"/>
+    <sprite n="eyelid 3_2" x="205" y="248" w="30" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="31" oH="30"/>
+    <sprite n="eyelid 3_3" x="2" y="257" w="31" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="31" oH="30"/>
+    <sprite n="eyelid 3_4" x="172" y="248" w="31" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="31" oH="30"/>
+    <sprite n="eyelid 4_1" x="468" y="124" w="41" h="46" pX="0.5" pY="0.5" oX="1" oY="2" oW="42" oH="49"/>
+    <sprite n="eyelid 4_2" x="341" y="250" w="46" h="41" pX="0.5" pY="0.5" oX="1" oY="2" oW="42" oH="49" r="y"/>
+    <sprite n="eyelid 4_3" x="389" y="250" w="41" h="46" pX="0.5" pY="0.5" oX="1" oY="2" oW="42" oH="49"/>
+    <sprite n="eyelid 4_4" x="432" y="279" w="46" h="41" pX="0.5" pY="0.5" oX="1" oY="2" oW="42" oH="49" r="y"/>
+    <sprite n="glow" x="365" y="106" w="87" h="87" pX="0.5" pY="0.5" oX="4" oY="5" oW="97" oH="97"/>
+    <sprite n="leg 1" x="290" y="239" w="49" h="33" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leg 2" x="55" y="184" w="45" h="33" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leg 3" x="102" y="184" w="40" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="mandible 1" x="250" y="206" w="38" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="mandible 2" x="468" y="88" w="42" h="34" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pupil large" x="454" y="106" w="12" h="24" pX="0.5" pY="0.5" oX="1" oY="0" oW="13" oH="24"/>
+    <sprite n="pupil small" x="454" y="132" w="10" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="200" y="2" w="170" h="88" pX="0.5" pY="0.5" oX="0" oY="1" oW="170" oH="90"/>
+    <sprite n="tail 1" x="162" y="164" w="35" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="tail 2" x="200" y="158" w="50" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tail 3" x="291" y="92" w="72" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tail 4" x="350" y="195" w="82" h="53" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:183a552f94b2994acbd8cfaf7a34d01b:234b5cfc9701cf97fb93cfe3f6946371:6ac266dd4abeb821857516136a532ef5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_vegidian_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Vegidian_base" x="2" y="2" w="820" h="957" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992"/>
+    <sprite n="castle_Vegidian_crystalA" x="824" y="596" w="139" h="136" pX="0.5" pY="0.5" oX="11" oY="10" oW="160" oH="160" r="y"/>
+    <sprite n="castle_Vegidian_crystalB" x="824" y="187" w="192" h="183" pX="0.5" pY="0.5" oX="0" oY="4" oW="192" oH="192"/>
+    <sprite n="castle_Vegidian_crystalC" x="824" y="2" w="195" h="183" pX="0.5" pY="0.5" oX="22" oY="28" oW="240" oH="240"/>
+    <sprite n="castle_Vegidian_pyramid" x="824" y="372" w="156" h="222" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240"/>
+</TextureAtlas>

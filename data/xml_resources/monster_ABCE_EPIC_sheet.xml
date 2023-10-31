@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:762b4b466f422b9d47d5fccfa86151e3:75f18bfd16033d9955a666ad13163c3d:7045a416f97e8d6255907345ac2c41dd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABCE_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="ABCE_body" x="2" y="2" w="274" h="168" pX="0.5" pY="0.5" oX="0" oY="1" oW="274" oH="170"/>
+    <sprite n="ABCE_eyes_a1" x="184" y="476" w="43" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="50"/>
+    <sprite n="ABCE_eyes_a2" x="2" y="846" w="49" h="50" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="50" r="y"/>
+    <sprite n="ABCE_eyes_a3" x="2" y="795" w="50" h="49" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="50"/>
+    <sprite n="ABCE_eyes_b1" x="463" y="339" w="44" h="44" pX="0.5" pY="0.5" oX="2" oY="4" oW="50" oH="50"/>
+    <sprite n="ABCE_eyes_b2" x="229" y="476" w="43" h="44" pX="0.5" pY="0.5" oX="3" oY="4" oW="50" oH="50"/>
+    <sprite n="ABCE_eyes_b3" x="54" y="795" w="43" h="44" pX="0.5" pY="0.5" oX="3" oY="4" oW="50" oH="50"/>
+    <sprite n="ABCE_eyes_c1" x="387" y="733" w="23" h="83" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="34" r="y"/>
+    <sprite n="ABCE_eyes_c2" x="387" y="648" w="33" h="83" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="34" r="y"/>
+    <sprite n="ABCE_eyes_c3" x="422" y="712" w="83" h="33" pX="0.5" pY="0.5" oX="2" oY="0" oW="88" oH="34"/>
+    <sprite n="ABCE_eyes_d1" x="498" y="2" w="12" h="43" pX="0.5" pY="0.5" oX="7" oY="2" oW="54" oH="26" r="y"/>
+    <sprite n="ABCE_eyes_d2" x="486" y="799" w="21" h="43" pX="0.5" pY="0.5" oX="7" oY="2" oW="54" oH="26" r="y"/>
+    <sprite n="ABCE_eyes_d3" x="378" y="818" w="21" h="43" pX="0.5" pY="0.5" oX="7" oY="2" oW="54" oH="26" r="y"/>
+    <sprite n="ABCE_eyes_e1" x="498" y="47" w="12" h="38" pX="0.5" pY="0.5" oX="18" oY="1" oW="60" oH="30" r="y"/>
+    <sprite n="ABCE_eyes_e2" x="402" y="526" w="25" h="42" pX="0.5" pY="0.5" oX="15" oY="1" oW="60" oH="30" r="y"/>
+    <sprite n="ABCE_eyes_e3" x="402" y="570" w="25" h="42" pX="0.5" pY="0.5" oX="15" oY="1" oW="60" oH="30" r="y"/>
+    <sprite n="ABCE_head_a" x="2" y="651" w="144" h="142" pX="0.5" pY="0.5" oX="5" oY="3" oW="150" oH="150"/>
+    <sprite n="ABCE_head_c" x="274" y="376" w="155" h="148" pX="0.5" pY="0.5" oX="1" oY="5" oW="156" oH="160" r="y"/>
+    <sprite n="ABCE_head_d" x="148" y="653" w="114" h="94" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCE_head_e_EPIC" x="278" y="88" w="200" h="158" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="ABCE_head_f" x="2" y="437" w="151" h="117" pX="0.5" pY="0.5" oX="1" oY="9" oW="126" oH="160" r="y"/>
+    <sprite n="ABCE_leavesA" x="197" y="172" w="79" h="139" pX="0.5" pY="0.5" oX="0" oY="0" oW="140" oH="80" r="y"/>
+    <sprite n="ABCE_leavesB" x="2" y="556" w="147" h="93" pX="0.5" pY="0.5" oX="0" oY="0" oW="148" oH="94"/>
+    <sprite n="ABCE_leavesC" x="412" y="747" w="98" h="50" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="50"/>
+    <sprite n="ABCE_left_foot" x="186" y="410" w="85" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="66"/>
+    <sprite n="ABCE_left_hand" x="431" y="385" w="76" h="83" pX="0.5" pY="0.5" oX="1" oY="0" oW="86" oH="78" r="y"/>
+    <sprite n="ABCE_left_knee" x="461" y="844" w="49" h="56" pX="0.5" pY="0.5" oX="0" oY="1" oW="50" oH="58"/>
+    <sprite n="ABCE_left_lowerarm" x="429" y="575" w="80" h="113" pX="0.5" pY="0.5" oX="0" oY="0" oW="82" oH="114"/>
+    <sprite n="ABCE_left_lowerleg" x="271" y="630" w="114" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="ABCE_left_upperarm" x="278" y="248" w="183" h="126" pX="0.5" pY="0.5" oX="0" oY="1" oW="126" oH="186" r="y"/>
+    <sprite n="ABCE_left_upperleg" x="155" y="523" w="114" h="128" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="130"/>
+    <sprite n="ABCE_mouth_a1" x="422" y="690" w="85" h="20" pX="0.5" pY="0.5" oX="5" oY="13" oW="94" oH="58"/>
+    <sprite n="ABCE_mouth_a2" x="480" y="136" w="28" h="91" pX="0.5" pY="0.5" oX="1" oY="4" oW="94" oH="58" r="y"/>
+    <sprite n="ABCE_mouth_a3" x="463" y="252" w="46" h="85" pX="0.5" pY="0.5" oX="5" oY="3" oW="94" oH="58" r="y"/>
+    <sprite n="ABCE_mouth_a4" x="2" y="902" w="53" h="56" pX="0.5" pY="0.5" oX="19" oY="0" oW="94" oH="58"/>
+    <sprite n="ABCE_mouth_a5" x="402" y="614" w="25" h="32" pX="0.5" pY="0.5" oX="29" oY="8" oW="98" oH="58"/>
+    <sprite n="ABCE_mouth_a6" x="480" y="88" w="16" h="40" pX="0.5" pY="0.5" oX="20" oY="11" oW="98" oH="58" r="y"/>
+    <sprite n="ABCE_mouth_b1" x="197" y="313" w="77" h="18" pX="0.5" pY="0.5" oX="3" oY="6" oW="86" oH="50"/>
+    <sprite n="ABCE_mouth_b2" x="155" y="437" w="27" h="84" pX="0.5" pY="0.5" oX="0" oY="2" oW="86" oH="50" r="y"/>
+    <sprite n="ABCE_mouth_b3" x="412" y="799" w="72" h="42" pX="0.5" pY="0.5" oX="5" oY="1" oW="86" oH="50"/>
+    <sprite n="ABCE_mouth_b4" x="53" y="846" w="42" h="48" pX="0.5" pY="0.5" oX="14" oY="0" oW="86" oH="50"/>
+    <sprite n="ABCE_mouth_b5" x="480" y="229" w="28" h="21" pX="0.5" pY="0.5" oX="23" oY="6" oW="86" oH="50" r="y"/>
+    <sprite n="ABCE_mouth_b6" x="498" y="87" w="12" h="33" pX="0.5" pY="0.5" oX="16" oY="12" oW="86" oH="50" r="y"/>
+    <sprite n="ABCE_pupil" x="498" y="122" w="12" h="12" pX="0.5" pY="0.5" oX="0" oY="0" oW="14" oH="14"/>
+    <sprite n="ABCE_right_foot" x="148" y="749" w="104" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="106" oH="66"/>
+    <sprite n="ABCE_right_hand" x="186" y="333" w="86" h="75" pX="0.5" pY="0.5" oX="1" oY="2" oW="88" oH="78"/>
+    <sprite n="ABCE_right_knee" x="401" y="843" w="58" h="56" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="60" r="y"/>
+    <sprite n="ABCE_right_lowerarm" x="431" y="470" w="74" h="103" pX="0.5" pY="0.5" oX="0" oY="1" oW="74" oH="104"/>
+    <sprite n="ABCE_right_lowerleg" x="264" y="742" w="112" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="102" oH="114" r="y"/>
+    <sprite n="ABCE_right_upperarm" x="2" y="172" w="193" h="142" pX="0.5" pY="0.5" oX="1" oY="0" oW="144" oH="194" r="y"/>
+    <sprite n="ABCE_right_upperleg" x="271" y="526" w="129" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="102" oH="130" r="y"/>
+    <sprite n="ABCE_shadow" x="278" y="2" w="218" h="84" pX="0.5" pY="0.5" oX="2" oY="0" oW="222" oH="84"/>
+    <sprite n="ABCE_tree" x="2" y="316" w="182" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="182" r="y"/>
+</TextureAtlas>

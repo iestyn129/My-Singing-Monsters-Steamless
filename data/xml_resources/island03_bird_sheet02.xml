@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:eb542fe228ced25fadd6cd0972c6871c:1822fdfc8dbff1007d12730cd7a04a18:7dca2a5accee3ff62234dcb60efc83f8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island03_bird_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="island03_back_feathers" x="630" y="229" w="659" h="798" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_back_feathers_centre" x="1364" y="1418" w="632" h="476" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_bell_shadow" x="928" y="1029" w="332" h="332" pX="0.5" pY="0.5"/>
+    <sprite n="island03_ear01" x="2" y="2" w="626" h="1171" pX="0.5" pY="0.5"/>
+    <sprite n="island03_ear02" x="928" y="2" w="926" h="225" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_feather_small" x="928" y="1418" w="434" h="477" pX="0.5" pY="0.5" oX="0" oY="2" oW="434" oH="479"/>
+    <sprite n="island03_floor" x="2" y="1175" w="429" h="866" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_nest_centre" x="433" y="1175" w="493" h="864" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island03_nest_side" x="1291" y="229" w="712" h="513" pX="0.5" pY="0.5"/>
+    <sprite n="round_cloud" x="1291" y="744" w="680" h="672" pX="0.5" pY="0.5" oX="8" oY="22" oW="692" oH="724" r="y"/>
+</TextureAtlas>

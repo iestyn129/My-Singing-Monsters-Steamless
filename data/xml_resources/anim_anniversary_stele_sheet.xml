@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7dd4729790e537a29588564298c03d08:1a005e4446d38a48845ffe6329c975f7:c39ba533c0fa9b98ce33e6156e6bd076$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_anniversary_stele_sheet.png" width="2048" height="2048" hires="true">
+    <sprite n="anniversary_stele_11" x="1527" y="4" w="396" h="546" pX="0.5" pY="0.5" oX="33" oY="26" oW="460" oH="606"/>
+    <sprite n="anniversary_stele_01" x="403" y="1105" w="395" h="545" pX="0.5" pY="0.5" oX="33" oY="28" oW="460" oH="608"/>
+    <sprite n="anniversary_stele_02" x="802" y="802" w="543" h="395" pX="0.5" pY="0.5" oX="33" oY="30" oW="460" oH="608" r="y"/>
+    <sprite n="anniversary_stele_03" x="403" y="4" w="558" h="395" pX="0.5" pY="0.5" oX="33" oY="15" oW="460" oH="608" r="y"/>
+    <sprite n="anniversary_stele_04" x="4" y="4" w="395" h="563" pX="0.5" pY="0.5" oX="33" oY="10" oW="460" oH="608"/>
+    <sprite n="anniversary_stele_05" x="965" y="4" w="558" h="395" pX="0.5" pY="0.5" oX="33" oY="15" oW="460" oH="608" r="y"/>
+    <sprite n="anniversary_stele_06" x="403" y="403" w="557" h="395" pX="0.5" pY="0.5" oX="33" oY="16" oW="460" oH="608" r="y"/>
+    <sprite n="anniversary_stele_07" x="4" y="571" w="395" h="563" pX="0.5" pY="0.5" oX="33" oY="10" oW="460" oH="608"/>
+    <sprite n="anniversary_stele_08" x="964" y="403" w="555" h="395" pX="0.5" pY="0.5" oX="33" oY="18" oW="460" oH="608" r="y"/>
+    <sprite n="anniversary_stele_09" x="4" y="1138" w="395" h="561" pX="0.5" pY="0.5" oX="33" oY="12" oW="460" oH="608"/>
+    <sprite n="anniversary_stele_10" x="1523" y="554" w="395" h="547" pX="0.5" pY="0.5" oX="33" oY="26" oW="460" oH="608"/>
+    <sprite n="fire_sprite_1_simpleB" x="4" y="1703" w="88" h="96" pX="0.5" pY="0.5" oX="6" oY="2" oW="100" oH="100"/>
+    <sprite n="fire_sprite_2_simpleB" x="4" y="1803" w="68" h="96" pX="0.5" pY="0.5" oX="16" oY="2" oW="100" oH="100"/>
+    <sprite n="glow_sprite_resized" x="76" y="1803" w="83" h="83" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="88"/>
+    <sprite n="smoke_sprite" x="4" y="1903" w="93" h="93" pX="0.5" pY="0.5" oX="4" oY="4" oW="100" oH="100"/>
+    <sprite n="spark_sprite" x="4" y="2000" w="37" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="40" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:bf4076df2acde019f545921b2a0faead$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="gfx/goals_shimmer_sheet.png" width="256" height="256">
+    <sprite n="goals_shimmer00" x="189" y="219" w="42" h="24" oX="6" oY="95" oW="132" oH="132"/>
+    <sprite n="goals_shimmer01" x="1" y="205" w="58" h="48" oX="7" oY="61" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer02" x="107" y="191" w="80" h="58" oX="13" oY="37" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer03" x="103" y="1" w="102" h="84" oX="7" oY="15" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer04" x="1" y="1" w="100" h="102" oX="15" oY="14" oW="132" oH="132"/>
+    <sprite n="goals_shimmer05" x="1" y="105" w="104" h="98" oX="24" oY="12" oW="132" oH="132" r="y"/>
+    <sprite n="goals_shimmer06" x="107" y="87" w="80" h="102" oX="42" oY="11" oW="132" oH="132"/>
+    <sprite n="goals_shimmer07" x="189" y="87" w="66" h="76" oX="59" oY="13" oW="132" oH="132"/>
+    <sprite n="goals_shimmer08" x="189" y="165" w="50" h="52" oX="76" oY="12" oW="132" oH="132"/>
+    <sprite n="goals_shimmer09" x="61" y="205" w="38" h="46" oX="80" oY="13" oW="132" oH="132" r="y"/>
+</TextureAtlas>

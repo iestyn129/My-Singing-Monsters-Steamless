@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:53d872de4c06f84e5770ed3d155b0052:d2e7121e02daa4380f30fd25a52a365f:ce2d8fe65926c6ef9921376d3f62d4c0$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_surfboards_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="board1" x="2" y="428" w="380" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="board2" x="384" y="428" w="110" h="378" pX="0.5" pY="0.5"/>
+    <sprite n="chairumbrella" x="2" y="2" w="430" h="424" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="grass1" x="474" y="32" w="28" h="103" pX="0.5" pY="0.5" oX="2" oY="7" oW="30" oH="110"/>
+    <sprite n="grass2" x="434" y="2" w="38" h="171" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="172"/>
+    <sprite n="grass3" x="474" y="137" w="23" h="169" pX="0.5" pY="0.5" oX="6" oY="2" oW="30" oH="174"/>
+    <sprite n="grass_base" x="2" y="542" w="280" h="230" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="light" x="474" y="2" w="30" h="28" pX="0.5" pY="0.5" oX="1" oY="2" oW="32" oH="30"/>
+</TextureAtlas>

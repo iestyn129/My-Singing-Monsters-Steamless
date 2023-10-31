@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:51a3e89ae06739c04d8dccc6179972cb:5ad0156ab9829e8f3df0751ed883bebf:4115b18d129e179215a2eedca524b7db$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_haven_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_haven" x="2" y="2" w="259" h="477" pX="0.5" pY="0.5" oX="14" oY="6" oW="275" oH="483"/>
+    <sprite n="star_rock_shadow" x="263" y="2" w="173" h="85" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200"/>
+    <sprite n="star_rock_stones_haven_01" x="405" y="118" w="80" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_stones_haven_02" x="263" y="89" w="140" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_stones_haven_03" x="438" y="2" w="66" h="114" pX="0.5" pY="0.5"/>
+</TextureAtlas>

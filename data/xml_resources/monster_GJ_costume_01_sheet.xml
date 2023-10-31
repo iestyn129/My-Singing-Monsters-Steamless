@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c0dadf2577bf37a5c71f1ea36d6bd7f6:fda1c9abeeb2ebd09ae363ab4e1f9376:7357333aef47edc82d78fba5b7e891e5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GJ_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="GJ_hair_A1.png" x="118" y="228" w="116" h="177" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="184"/>
+    <sprite n="GJ_hair_A2.png" x="85" y="2" w="115" h="178" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="184"/>
+    <sprite n="GJ_hair_A3.png" x="2" y="235" w="114" h="183" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="184"/>
+    <sprite n="GJ_hair_B.png" x="2" y="420" w="120" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="GJ_hair_C.png" x="365" y="435" w="105" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="56" oH="112" r="y"/>
+    <sprite n="GJ_hair_C1.png" x="316" y="60" w="160" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_C2.png" x="316" y="171" w="155" h="52" pX="0.5" pY="0.5" oX="3" oY="0" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_C3.png" x="316" y="116" w="157" h="53" pX="0.5" pY="0.5" oX="3" oY="0" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_C4.png" x="316" y="2" w="160" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_E1.png" x="365" y="225" w="131" h="104" pX="0.5" pY="0.5" oX="0" oY="7" oW="104" oH="140" r="y"/>
+    <sprite n="GJ_hair_E2.png" x="124" y="407" w="135" h="102" pX="0.5" pY="0.5" oX="2" oY="2" oW="104" oH="140" r="y"/>
+    <sprite n="GJ_hair_E3.png" x="261" y="375" w="102" h="134" pX="0.5" pY="0.5" oX="2" oY="5" oW="104" oH="140"/>
+    <sprite n="GJ_hair_E4.png" x="365" y="331" w="127" h="102" pX="0.5" pY="0.5" oX="2" oY="8" oW="104" oH="140" r="y"/>
+    <sprite n="GJ_hair_G.png" x="2" y="2" w="81" h="231" pX="0.5" pY="0.5" oX="1" oY="1" oW="84" oH="232"/>
+	
+	<!-- original anchor = (9, 35) -> new anchor (8, 21) diff = (1, 14)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (2, 28), cause hires-->
+    <sprite n="GJ_Halloween_Collar.png" x="183" y="182" w="36" h="40" pX="0.5" pY="0.5" r="y" oX="2" oY="28"/>
+	
+	<!-- original anchor = (27, 35) -> new anchor (35, 48) diff = (-8, -13)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-16, -26), cause hires-->
+    <sprite n="GJ_Halloween_Ears.png" x="261" y="175" w="52" h="140" pX="0.5" pY="0.5" r="y" oX="-16" oY="-26"/>
+	
+	<!-- original anchor = (27, 35) -> new anchor (42, 23) diff = (-15, 12)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-30, 24), cause hires-->
+    <sprite n="GJ_Halloween_Nose.png" x="236" y="317" w="111" h="56" pX="0.5" pY="0.5" oX="-30" oY="24" oW="112" oH="56"/>
+	
+	<!-- original anchor = (86, 17) -> new anchor (93, -58) diff = (-7, 75)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-14, 150), cause hires-->
+    <sprite n="GJ_Halloween_Tail.png" x="202" y="2" w="112" h="171" pX="0.5" pY="0.5" oX="-14" oY="150" oW="172" oH="112" r="y"/>
+	
+	<!-- original anchor = (27, 35) -> new anchor (-12, 18) diff = (39, 17)-->
+	<!-- add it to texturepacker output offsets (0, 0) -> (78, 34)-->
+    <sprite n="GJ_Halloween_Whisker.png" x="85" y="182" w="96" h="44" pX="0.5" pY="0.5" oX="78" oY="34"/>
+</TextureAtlas>

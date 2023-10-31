@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:978bddd45bd031e480dac5d49b0d7f19:86f87d231634720ea43bd03194b9e665:31f15c1150b5f4d706cb78f6b117b739$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_F_EPIC_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="F_EPIC_ankle" x="945" y="1473" w="72" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_beam_1" x="928" y="4" w="92" h="200" pX="0.5" pY="0.5" oX="0" oY="3" oW="200" oH="100" r="y"/>
+    <sprite n="F_EPIC_beam_2" x="4" y="1601" w="96" h="200" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="100" r="y"/>
+    <sprite n="F_EPIC_beam_3" x="928" y="700" w="89" h="200" pX="0.5" pY="0.5" oX="0" oY="5" oW="200" oH="100" r="y"/>
+    <sprite n="F_EPIC_beam_4" x="928" y="496" w="90" h="200" pX="0.5" pY="0.5" oX="0" oY="7" oW="200" oH="100" r="y"/>
+    <sprite n="F_EPIC_big_orb" x="934" y="1807" w="86" h="86" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="88"/>
+    <sprite n="F_EPIC_castle" x="4" y="4" w="920" h="742" pX="0.5" pY="0.5" oX="9" oY="29" oW="760" oH="980" r="y"/>
+    <sprite n="F_EPIC_castleglow" x="568" y="904" w="379" h="465" pX="0.5" pY="0.5" oX="14" oY="12" oW="410" oH="490"/>
+    <sprite n="F_EPIC_chest" x="4" y="1305" w="244" h="170" pX="0.5" pY="0.5" oX="7" oY="11" oW="260" oH="220"/>
+    <sprite n="F_EPIC_chest_bg" x="524" y="1548" w="238" h="203" pX="0.5" pY="0.5" oX="10" oY="10" oW="260" oH="220"/>
+    <sprite n="F_EPIC_eyeball_1" x="951" y="1251" w="56" h="56" pX="0.5" pY="0.5" oX="18" oY="18" oW="92" oH="92"/>
+    <sprite n="F_EPIC_eyeball_2" x="297" y="1897" w="88" h="88" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="92"/>
+    <sprite n="F_EPIC_eyelid_1" x="890" y="841" w="24" h="54" pX="0.5" pY="0.5" oX="2" oY="35" oW="60" oH="60" r="y"/>
+    <sprite n="F_EPIC_eyelid_2" x="890" y="750" w="28" h="57" pX="0.5" pY="0.5" oX="1" oY="31" oW="60" oH="60" r="y"/>
+    <sprite n="F_EPIC_eyelid_3" x="951" y="1127" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_eyelid_4" x="951" y="1189" w="58" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="60"/>
+    <sprite n="F_EPIC_eyesockets" x="951" y="1311" w="55" h="158" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="56" r="y"/>
+    <sprite n="F_EPIC_fist_1B" x="412" y="1466" w="108" h="192" pX="0.5" pY="0.5" oX="4" oY="3" oW="196" oH="112" r="y"/>
+    <sprite n="F_EPIC_foot" x="297" y="1818" w="88" h="70" pX="0.5" pY="0.5" oX="71" oY="2" oW="164" oH="184"/>
+    <sprite n="F_EPIC_foot_pad" x="526" y="1373" w="241" h="171" pX="0.5" pY="0.5" oX="10" oY="20" oW="260" oH="200"/>
+    <sprite n="F_EPIC_fxray" x="945" y="1577" w="70" h="226" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="228"/>
+    <sprite n="F_EPIC_horns" x="4" y="750" w="560" h="435" pX="0.5" pY="0.5" oX="17" oY="47" oW="600" oH="560"/>
+    <sprite n="F_EPIC_knee" x="389" y="1897" w="79" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="84"/>
+    <sprite n="F_EPIC_left_twig" x="252" y="1466" w="156" h="124" pX="0.5" pY="0.5" oX="39" oY="39" oW="220" oH="200"/>
+    <sprite n="F_EPIC_lowerarm" x="268" y="1293" w="254" h="169" pX="0.5" pY="0.5" oX="10" oY="0" oW="280" oH="200"/>
+    <sprite n="F_EPIC_lowerarm_cut" x="951" y="1023" w="61" h="56" pX="0.5" pY="0.5" oX="38" oY="72" oW="280" oH="200"/>
+    <sprite n="F_EPIC_mouth_01" x="124" y="1818" w="82" h="226" pX="0.5" pY="0.5" oX="15" oY="1" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_mouth_02" x="568" y="750" w="76" h="146" pX="0.5" pY="0.5" oX="55" oY="12" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_mouth_03" x="4" y="1479" w="77" h="117" pX="0.5" pY="0.5" oX="87" oY="11" oW="260" oH="244"/>
+    <sprite n="F_EPIC_mouth_04" x="271" y="1695" w="185" h="93" pX="0.5" pY="0.5" oX="80" oY="12" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_mouth_05" x="4" y="1807" w="116" h="235" pX="0.5" pY="0.5" oX="68" oY="7" oW="260" oH="244"/>
+    <sprite n="F_EPIC_mouth_06" x="648" y="750" w="238" h="141" pX="0.5" pY="0.5" oX="56" oY="5" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_mouth_07" x="771" y="1373" w="170" h="224" pX="0.5" pY="0.5" oX="41" oY="4" oW="260" oH="244"/>
+    <sprite n="F_EPIC_mouth_08" x="104" y="1596" w="163" h="207" pX="0.5" pY="0.5" oX="26" oY="0" oW="260" oH="244" r="y"/>
+    <sprite n="F_EPIC_mouth_09" x="4" y="1189" w="260" h="112" pX="0.5" pY="0.5" oX="0" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_mouth_10" x="268" y="1189" w="256" h="100" pX="0.5" pY="0.5" oX="2" oY="0" oW="260" oH="244"/>
+    <sprite n="F_EPIC_neck" x="951" y="904" w="66" h="39" pX="0.5" pY="0.5" oX="1" oY="3" oW="68" oH="44"/>
+    <sprite n="F_EPIC_orb_1" x="928" y="208" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_orb_2" x="928" y="304" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_orb_3" x="928" y="400" w="92" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_pupil" x="890" y="811" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="1" oW="28" oH="28"/>
+    <sprite n="F_EPIC_right_twig" x="85" y="1479" w="158" h="113" pX="0.5" pY="0.5" oX="35" oY="40" oW="220" oH="200"/>
+    <sprite n="F_EPIC_shadow" x="210" y="1818" w="83" h="187" pX="0.5" pY="0.5" oX="3" oY="3" oW="192" oH="88" r="y"/>
+    <sprite n="F_EPIC_shock" x="297" y="1594" w="97" h="97" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="F_EPIC_toes" x="766" y="1601" w="164" h="213" pX="0.5" pY="0.5" oX="24" oY="9" oW="260" oH="200" r="y"/>
+    <sprite n="F_EPIC_upperarm" x="951" y="947" w="64" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="F_EPIC_upperleg" x="951" y="1083" w="60" h="40" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="40"/>
+</TextureAtlas>

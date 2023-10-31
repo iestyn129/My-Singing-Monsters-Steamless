@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a9fc8f3fceb2c6d63abf99042cbcdd59:ec08b2b9c57094755ac3787154d88a87:6008d413183fa6c2522e22b6e7c55ff6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island22_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="island22_bg hair" x="1" y="1" w="376" h="953" pX="0.5" pY="0.5" oX="2" oY="3" oW="380" oH="960"/>
+    <sprite n="island22_critter_01" x="1411" y="1000" w="156" h="139" pX="0.5" pY="0.5" oX="17" oY="33" oW="200" oH="200"/>
+    <sprite n="island22_critter_02" x="1937" y="275" w="100" h="185" pX="0.5" pY="0.5" oX="44" oY="2" oW="200" oH="200"/>
+    <sprite n="island22_critter_03" x="1051" y="817" w="191" h="137" pX="0.5" pY="0.5" oX="26" oY="6" oW="200" oH="200" r="y"/>
+    <sprite n="island22_critter_04" x="871" y="817" w="173" h="131" pX="0.5" pY="0.5" oX="31" oY="17" oW="200" oH="200" r="y"/>
+    <sprite n="island22_critter_05" x="1051" y="1077" w="170" h="145" pX="0.5" pY="0.5" oX="19" oY="37" oW="200" oH="200"/>
+    <sprite n="island22_critter_06" x="1792" y="892" w="133" h="141" pX="0.5" pY="0.5" oX="32" oY="36" oW="200" oH="200"/>
+    <sprite n="island22_critter_07" x="1792" y="1035" w="133" h="121" pX="0.5" pY="0.5" oX="40" oY="37" oW="200" oH="200" r="y"/>
+    <sprite n="island22_critter_08" x="1237" y="1000" w="172" h="129" pX="0.5" pY="0.5" oX="11" oY="37" oW="200" oH="200"/>
+    <sprite n="island22_ear" x="460" y="954" w="386" h="831" pX="0.5" pY="0.5" oX="7" oY="4" oW="400" oH="840"/>
+    <sprite n="island22_earring_right_01" x="781" y="2000" w="50" h="40" pX="0.5" pY="0.5" oX="2" oY="2" oW="44" oH="54" r="y"/>
+    <sprite n="island22_earring_right_02" x="1927" y="1042" w="59" h="144" pX="0.5" pY="0.5" oX="3" oY="5" oW="150" oH="70" r="y"/>
+    <sprite n="island22_front_beads" x="832" y="1" w="448" h="814" pX="0.5" pY="0.5" oX="3" oY="6" oW="820" oH="460" r="y"/>
+    <sprite n="island22_front_metal_piece_01" x="1282" y="733" w="323" h="265" pX="0.5" pY="0.5" oX="8" oY="7" oW="340" oH="280"/>
+    <sprite n="island22_front_metal_piece_02" x="1282" y="620" w="334" h="111" pX="0.5" pY="0.5" oX="3" oY="4" oW="340" oH="120"/>
+    <sprite n="island22_front_metal_piece_03" x="1932" y="866" w="72" h="120" pX="0.5" pY="0.5" oX="0" oY="4" oW="120" oH="80" r="y"/>
+    <sprite n="island22_front_metal_piece_04" x="1932" y="725" w="75" h="139" pX="0.5" pY="0.5" oX="0" oY="2" oW="140" oH="80" r="y"/>
+    <sprite n="island22_front_metal_piece_05" x="680" y="848" w="189" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="190" oH="100"/>
+    <sprite n="island22_front_metal_piece_06" x="1937" y="462" w="97" h="126" pX="0.5" pY="0.5" oX="2" oY="1" oW="130" oH="100" r="y"/>
+    <sprite n="island22_glow_01" x="737" y="1787" w="312" h="211" pX="0.5" pY="0.5" oX="0" oY="15" oW="230" oH="430" r="y"/>
+    <sprite n="island22_glow_02" x="532" y="848" w="146" h="104" pX="0.5" pY="0.5" oX="31" oY="28" oW="160" oH="200" r="y"/>
+    <sprite n="island22_hair_beads_left" x="1607" y="892" w="183" h="156" pX="0.5" pY="0.5" oX="8" oY="2" oW="200" oH="160"/>
+    <sprite n="island22_hair_beads_right" x="216" y="1811" w="250" h="223" pX="0.5" pY="0.5" oX="8" oY="5" oW="240" oH="260" r="y"/>
+    <sprite n="island22_horn" x="379" y="1" w="451" h="845" pX="0.5" pY="0.5" oX="4" oY="7" oW="460" oH="860"/>
+    <sprite n="island22_side_bead" x="468" y="1787" w="267" h="245" pX="0.5" pY="0.5" oX="1" oY="2" oW="270" oH="250"/>
+    <sprite n="island22_side_bead_anim" x="1282" y="1" w="668" h="136" pX="0.5" pY="0.5" oX="7" oY="6" oW="150" oH="680" r="y"/>
+    <sprite n="island22_side_braid" x="1282" y="139" w="653" h="479" pX="0.5" pY="0.5" oX="5" oY="13" oW="490" oH="680" r="y"/>
+    <sprite n="island22_side_ground" x="1" y="956" w="457" h="853" pX="0.5" pY="0.5" oX="11" oY="13" oW="480" oH="880"/>
+    <sprite n="island22_side_rock" x="1618" y="620" w="312" h="270" pX="0.5" pY="0.5" oX="5" oY="4" oW="280" oH="320" r="y"/>
+    <sprite n="island22_sm_rocks_01" x="1952" y="1" w="87" h="84" pX="0.5" pY="0.5" oX="1" oY="3" oW="90" oH="90"/>
+    <sprite n="island22_sm_rocks_02" x="1051" y="956" w="184" h="119" pX="0.5" pY="0.5" oX="8" oY="5" oW="200" oH="130"/>
+    <sprite n="island22_sm_rocks_03" x="848" y="950" w="190" h="149" pX="0.5" pY="0.5" oX="5" oY="5" oW="200" oH="160"/>
+    <sprite n="island22_sm_rocks_04" x="1223" y="1131" w="155" h="126" pX="0.5" pY="0.5" oX="2" oY="2" oW="160" oH="130"/>
+    <sprite n="island22_sm_rocks_05" x="737" y="2000" w="42" h="46" pX="0.5" pY="0.5" oX="2" oY="1" oW="46" oH="48"/>
+    <sprite n="island22_sm_rocks_06" x="1927" y="988" w="67" h="52" pX="0.5" pY="0.5" oX="6" oY="4" oW="80" oH="60"/>
+    <sprite n="island22_sm_rocks_07" x="1937" y="590" w="82" h="133" pX="0.5" pY="0.5" oX="3" oY="4" oW="140" oH="90" r="y"/>
+    <sprite n="island22_sm_rocks_08" x="1996" y="988" w="49" h="55" pX="0.5" pY="0.5" oX="5" oY="2" oW="60" oH="60"/>
+    <sprite n="island22_sm_rocks_09" x="1952" y="87" w="83" h="186" pX="0.5" pY="0.5" oX="2" oY="3" oW="190" oH="90" r="y"/>
+    <sprite n="island22_sm_rocks_10" x="1" y="1811" w="213" h="235" pX="0.5" pY="0.5" oX="2" oY="3" oW="240" oH="220" r="y"/>
+    <sprite n="island22_sm_rocks_11" x="379" y="848" w="151" h="104" pX="0.5" pY="0.5" oX="3" oY="4" oW="110" oH="160" r="y"/>
+</TextureAtlas>

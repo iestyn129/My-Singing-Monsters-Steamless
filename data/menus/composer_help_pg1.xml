@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<event name="onPostInit" params="element">	
+		local bgSprite = element["bg"]["Sprite"]
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+				
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("TickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					element("transitionTime"):SetFloat(transitionTime)
+					
+					if(transitionTime > 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime < 0.0) then
+						element:root():popPopUp()
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		element["bg"]("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="3" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="-0.05*lua_sys.screenHeight()" priorityOffset="2" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.85*lua_sys.screenWidth()" h="0.85*lua_sys.screenHeight()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("ContextBar")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish3">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="4" yOffset="14" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish4">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TopScroll">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="3*game.menuScaleX()" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.8*lua_sys.screenWidth()" h="56*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/scroll_frame")
+				component("layer"):SetString("ContextBar")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTutorialFont())
+				component("size"):SetFloat(0.75*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_TITLE")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="PortraitButtonImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="28*game.menuScaleX()" yOffset="-10*game.menuScaleY()" priorityOffset="0" />
+		<spriteComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/breeding/monster_portrait_square_e")
+				component("size"):SetFloat(0.39*game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_PORTRAIT")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="NavButtonImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="PortraitButtonImage" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("hFlip"):SetInt(0)
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_step_ALT")
+				component("sheetName"):Set("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_NAV")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="PlayButtonImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="NavButtonImage" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="-3*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.45 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_PLAY_REAL")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="SaveButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="PortraitButtonImage" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("hFlip"):SetInt(0)
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_save")
+				component("sheetName"):Set("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(1.0*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_SAVE")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="ClearButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="SaveButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="-3*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("hFlip"):SetInt(0)
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_clear")
+				component("sheetName"):Set("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(1.0*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_CLEAR")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="SaveTrackButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="Base" />
+		<position relativeTo="ClearButton" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="-3*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Base">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("hFlip"):SetInt(0)
+				component("spriteName"):Set("button_base_grey")
+				component("sheetName"):Set("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):Set("button_template_save")
+				component("sheetName"):Set("xml_resources/composer_buttons01.xml")
+				component("size"):SetFloat(0.3 * game.menuScaleX())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="0.75*lua_sys.screenWidth()" h="30*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(1.0*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("ISLAND_COMPOSER_MENU_HELP_TEMP")
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="NextButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.35" />
+		<templateVar name="$layer" equals="ContextBar" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="10" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				--menu:popPopUp()
+				element:root():popPopUp()
+				element:root():pushPopUp("composer_help_pg2");
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_next")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.35)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+
+</menu>

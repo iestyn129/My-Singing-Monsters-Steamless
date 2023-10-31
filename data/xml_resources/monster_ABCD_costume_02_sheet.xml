@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3709bcb17fc58656af7b7154612282da:867a6cdce8e7bdb64bd1939ba4bf1fb5:508c855c71ed190708865dd67738bd0d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABCD_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="ABCD_body_straps.png" x="2" y="2" w="232" h="169" pX="0.5" pY="0.5" oX="0" oY="0" oW="170" oH="234" r="y"/>
+	
+	<!-- original anchor = (90, 55) -> new anchor (96, 46) diff = (-6, 9)-->
+	<!-- add double it to texturepacker output offsets (1, 0) -> (-11, 18), because hires-->
+    <sprite n="ABCD_shell_drum.png" x="2" y="173" w="230" h="253" pX="0.5" pY="0.5" oX="-11" oY="18" oW="254" oH="230" r="y"/>
+</TextureAtlas>

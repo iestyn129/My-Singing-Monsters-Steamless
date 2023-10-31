@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:359519cf9152748c3696d1c504734ffb:16d855503ed2c3a0c32bd5d8c70d393d:193bafb2acc5b64fa3f5c014801138dd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CE_costume_05_sheet.png" width="427" height="249" hires="true">
+    <sprite n="CE_c5_belly.png" x="165" y="1" w="132" h="146" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CE_c5_body.png" x="1" y="1" w="162" h="247" pX="0.5" pY="0.5" oX="0" oY="13" oW="162" oH="260"/>
+    <sprite n="CE_c5_glasses.png" x="165" y="149" w="42" h="96" pX="0.5" pY="0.5" oX="-7" oY="-34" oW="100" oH="46" r="y"/>
+    <sprite n="CE_c5_hat.png" x="299" y="1" w="127" h="82" pX="0.5" pY="0.5" oX="-15.8" oY="-92" oW="130" oH="88"/>
+    <sprite n="CE_c5_left_arm.png" x="341" y="85" w="84" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="CE_c5_left_leg.png" x="341" y="169" w="64" h="72" pX="0.5" pY="0.5" oX="-5.4" oY="-6"/>
+    <sprite n="CE_c5_right_arm.png" x="209" y="149" w="64" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="CE_c5_right_leg.png" x="275" y="149" w="64" h="90" pX="0.5" pY="0.5" oX="-5" oY="-3"/>
+</TextureAtlas>

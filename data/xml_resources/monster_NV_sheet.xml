@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e0340c4c224bb0516a627ebbcbcf8401:663d92a42c60746980aa3e910dc64c4e:1cfb9f02711dc4a7ddbb12c64220d013$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_NV_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="NV_arm_cover" x="482" y="4" w="25" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="25" oH="77"/>
+    <sprite n="NV_arm_cover_RARE" x="482" y="73" w="25" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="25" oH="77"/>
+    <sprite n="NV_body" x="4" y="4" w="288" h="150" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_body_RARE" x="4" y="158" w="288" h="150" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_drum" x="4" y="312" w="120" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_drum_RARE" x="128" y="312" w="120" h="92" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_eye" x="360" y="524" w="44" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="NV_eye_RARE" x="360" y="572" w="44" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="NV_foot_left" x="412" y="470" w="67" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_foot_left_RARE" x="99" y="490" w="67" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_foot_right" x="4" y="525" w="66" h="65" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_foot_right_RARE" x="290" y="524" w="66" h="65" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_hand_left_01" x="227" y="497" w="59" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="NV_hand_left_02" x="408" y="535" w="59" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="NV_hand_left_03" x="352" y="620" w="51" h="58" pX="0.5" pY="0.5" oX="1" oY="0" oW="59" oH="51" r="y"/>
+    <sprite n="NV_hand_right_01" x="170" y="490" w="53" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_hand_right_02" x="233" y="552" w="53" h="58" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_hand_right_03" x="290" y="593" w="58" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="NV_head" x="296" y="277" w="135" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="NV_head_RARE" x="296" y="4" w="182" h="179" pX="0.5" pY="0.5" oX="18" oY="11" oW="200" oH="190"/>
+    <sprite n="NV_leaf" x="373" y="460" w="35" h="43" pX="0.5" pY="0.5" oX="4" oY="0" oW="39" oH="44"/>
+    <sprite n="NV_lower_arm_left" x="293" y="401" w="116" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="NV_lower_arm_left_RARE" x="4" y="408" w="116" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="NV_lower_arm_right" x="413" y="412" w="91" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="103" oH="56"/>
+    <sprite n="NV_lower_arm_right_RARE" x="4" y="467" w="91" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="103" oH="56"/>
+    <sprite n="NV_upper arm_left" x="470" y="187" w="37" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_upper arm_left_RARE" x="252" y="312" w="37" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_upper_arm_right" x="124" y="408" w="101" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="NV_upper_arm_right_RARE" x="124" y="449" w="101" h="37" pX="0.5" pY="0.5"/>
+    <sprite n="NV_upper_leg_left" x="229" y="417" w="60" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="NV_upper_leg_left_RARE" x="293" y="460" w="76" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_upper_leg_right" x="435" y="292" w="70" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="NV_upper_leg_right_RARE" x="435" y="352" w="70" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_NV_hand_left_01" x="408" y="590" w="59" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_NV_hand_left_02" x="170" y="552" w="59" h="51" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_NV_hand_left_03" x="66" y="612" w="58" h="51" pX="0.5" pY="0.5" oX="1" oY="0" oW="59" oH="51"/>
+    <sprite n="RARE_NV_hand_right_01" x="74" y="555" w="58" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_NV_hand_right_02" x="4" y="594" w="58" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_NV_hand_right_03" x="136" y="607" w="58" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="296" y="187" w="170" h="86" pX="0.5" pY="0.5"/>
+</TextureAtlas>

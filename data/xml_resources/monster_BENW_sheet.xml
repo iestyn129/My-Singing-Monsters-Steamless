@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:812a6caff2177fd1f72c9feb7c155dc3:cb2889891e17702e3bd19337b3ea0629:18cbfad7c8afc945523ddeb2aaec35cd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BENW_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="BENW_body" x="366" y="2" w="349" h="304" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_chin_spikes" x="974" y="2" w="47" h="63" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_01" x="95" y="656" w="117" h="153" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_glow_02" x="2" y="671" w="91" h="135" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_glow_03" x="361" y="397" w="201" h="95" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_04" x="717" y="156" w="255" h="135" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_05" x="703" y="574" w="182" h="95" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_06" x="2" y="191" w="228" h="123" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_07" x="564" y="486" w="137" h="105" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_glow_08" x="717" y="2" w="255" h="152" pX="0.5" pY="0.5" oX="0" oY="0" oW="154" oH="255" r="y"/>
+    <sprite n="BENW_glow_09" x="232" y="282" w="127" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_glow_10" x="214" y="671" w="113" h="126" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_left_cheek_01" x="974" y="67" w="47" h="30" pX="0.5" pY="0.5" oX="73" oY="75" oW="148" oH="180" r="y"/>
+    <sprite n="BENW_left_cheek_02" x="232" y="191" w="129" h="89" pX="0.5" pY="0.5" oX="44" oY="26" oW="148" oH="180" r="y"/>
+    <sprite n="BENW_left_cheek_03" x="197" y="462" w="156" h="106" pX="0.5" pY="0.5" oX="36" oY="15" oW="148" oH="180" r="y"/>
+    <sprite n="BENW_left_cheek_04" x="900" y="492" w="122" h="171" pX="0.5" pY="0.5" oX="23" oY="7" oW="148" oH="180"/>
+    <sprite n="BENW_left_cheek_05" x="572" y="308" w="142" h="176" pX="0.5" pY="0.5" oX="1" oY="2" oW="148" oH="180"/>
+    <sprite n="BENW_left_eye" x="329" y="671" w="59" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_left_leg" x="819" y="671" w="65" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_left_lid_01" x="245" y="799" w="81" h="65" pX="0.5" pY="0.5" oX="9" oY="2" oW="77" oH="86" r="y"/>
+    <sprite n="BENW_left_lid_02" x="536" y="755" w="81" h="65" pX="0.5" pY="0.5" oX="9" oY="2" oW="77" oH="86" r="y"/>
+    <sprite n="BENW_left_lid_03" x="694" y="820" w="65" h="81" pX="0.5" pY="0.5" oX="9" oY="2" oW="77" oH="86"/>
+    <sprite n="BENW_left_lid_04" x="619" y="701" w="65" h="81" pX="0.5" pY="0.5" oX="9" oY="2" oW="77" oH="86"/>
+    <sprite n="BENW_left_lid_05" x="717" y="903" w="64" h="81" pX="0.5" pY="0.5" oX="10" oY="2" oW="77" oH="86"/>
+    <sprite n="BENW_left_lid_06" x="465" y="755" w="69" h="71" pX="0.5" pY="0.5" oX="3" oY="2" oW="77" oH="86" r="y"/>
+    <sprite n="BENW_left_lid_07" x="974" y="262" w="40" h="72" pX="0.5" pY="0.5" oX="3" oY="1" oW="77" oH="86" r="y"/>
+    <sprite n="BENW_mouth_01" x="197" y="593" w="101" h="61" pX="0.5" pY="0.5" oX="5" oY="23" oW="106" oH="120"/>
+    <sprite n="BENW_mouth_02" x="390" y="570" w="73" h="101" pX="0.5" pY="0.5" oX="5" oY="15" oW="106" oH="120" r="y"/>
+    <sprite n="BENW_mouth_03" x="418" y="829" w="104" h="106" pX="0.5" pY="0.5" oX="0" oY="8" oW="106" oH="120" r="y"/>
+    <sprite n="BENW_mouth_04" x="245" y="866" w="104" h="119" pX="0.5" pY="0.5" oX="2" oY="1" oW="106" oH="120"/>
+    <sprite n="BENW_mouth_05" x="563" y="593" w="120" h="106" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_mouth_06" x="351" y="949" w="105" h="71" pX="0.5" pY="0.5" oX="19" oY="9" oW="106" oH="120" r="y"/>
+    <sprite n="BENW_mouth_07" x="351" y="836" w="65" h="111" pX="0.5" pY="0.5" oX="22" oY="4" oW="106" oH="120"/>
+    <sprite n="BENW_mouth_08" x="761" y="820" w="56" h="78" pX="0.5" pY="0.5" oX="15" oY="17" oW="106" oH="120" r="y"/>
+    <sprite n="BENW_mouth_09" x="329" y="784" w="58" h="50" pX="0.5" pY="0.5" oX="27" oY="14" oW="106" oH="120"/>
+    <sprite n="BENW_mouth_10" x="2" y="620" w="59" h="34" pX="0.5" pY="0.5" oX="27" oY="19" oW="106" oH="120"/>
+    <sprite n="BENW_mouth_11" x="974" y="99" w="42" h="71" pX="0.5" pY="0.5" oX="24" oY="15" oW="106" oH="120" r="y"/>
+    <sprite n="BENW_pupil" x="63" y="620" w="34" h="34" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_right_back_leg" x="900" y="403" w="62" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_right_cheek_01" x="819" y="729" w="54" h="54" pX="0.5" pY="0.5" oX="54" oY="79" oW="189" oH="195"/>
+    <sprite n="BENW_right_cheek_02" x="887" y="665" w="135" h="153" pX="0.5" pY="0.5" oX="19" oY="6" oW="189" oH="195"/>
+    <sprite n="BENW_right_cheek_03" x="88" y="820" w="155" h="166" pX="0.5" pY="0.5" oX="7" oY="13" oW="189" oH="195"/>
+    <sprite n="BENW_right_cheek_04" x="716" y="403" w="182" h="169" pX="0.5" pY="0.5" oX="8" oY="4" oW="189" oH="195" r="y"/>
+    <sprite n="BENW_right_cheek_05" x="2" y="434" w="193" h="184" pX="0.5" pY="0.5" oX="3" oY="1" oW="189" oH="195" r="y"/>
+    <sprite n="BENW_right_eye" x="390" y="673" w="73" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_right_leg" x="465" y="632" w="94" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_right_lid_01" x="458" y="937" w="87" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92" r="y"/>
+    <sprite n="BENW_right_lid_02" x="524" y="828" w="83" h="87" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92"/>
+    <sprite n="BENW_right_lid_03" x="547" y="917" w="83" h="87" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92"/>
+    <sprite n="BENW_right_lid_04" x="609" y="822" w="83" h="87" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92"/>
+    <sprite n="BENW_right_lid_05" x="632" y="911" w="83" h="87" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92"/>
+    <sprite n="BENW_right_lid_06" x="389" y="739" w="74" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92" r="y"/>
+    <sprite n="BENW_right_lid_07" x="974" y="172" w="41" h="88" pX="0.5" pY="0.5" oX="3" oY="2" oW="94" oH="92" r="y"/>
+    <sprite n="BENW_spike_01" x="355" y="494" w="108" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_02" x="465" y="494" w="97" h="52" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_03" x="965" y="336" w="57" h="154" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_spike_04" x="361" y="308" w="209" h="87" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_05" x="214" y="406" w="138" h="54" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_06" x="2" y="820" w="84" h="177" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_spike_07" x="465" y="686" w="91" h="67" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_08" x="2" y="316" w="210" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_09" x="300" y="570" w="88" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BENW_spike_10" x="465" y="548" w="96" h="82" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_spike_mini" x="88" y="988" w="27" h="31" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_spikes_head_01" x="717" y="293" w="246" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="BENW_spikes_head_02" x="329" y="729" w="58" h="53" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="2" y="2" w="362" h="187" pX="0.5" pY="0.5"/>
+</TextureAtlas>

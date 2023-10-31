@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f48fe33a2681d8c0818579da3ce44fee:b3927c8cccf5c0c5114e1317edbb7e73:63ee324f4f9811d5549203fd2de118cf$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<!-- original anchor = (51, 85) -> new anchor (52, 110) diff = (-1, -25)-->
+<!-- add double it to texturepacker output offsets (2, 0) -> (0, -50), because hires-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_BC_costume_03_sheet.png" width="256" height="256" hires="true">
+    <sprite n="BC_body_hydrant.png" x="2" y="2" w="146" h="250" pX="0.5" pY="0.5" oX="0" oY="-50" oW="150" oH="250"/>
+</TextureAtlas>

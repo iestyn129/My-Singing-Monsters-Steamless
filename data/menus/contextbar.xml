@@ -1,0 +1,9 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<element name="ContextBar">
+		<hudScale scale="game.bgScale()" />
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<script src="scripts/ContextBar.lua" />
+	</element>
+</menu>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ff261fc9b4c265d4e3deaff03a83a3a9:478c032606bf8c245f0a608e7a8cab26:17d7490cec1acaf7574f5049175922e3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_ABDEN_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ABDEN_baleen_1" x="747" y="350" w="194" h="110" pX="0.5" pY="0.5" oX="14" oY="4" oW="212" oH="120"/>
+    <sprite n="ABDEN_baleen_bend_in" x="747" y="235" w="195" h="111" pX="0.5" pY="0.5" oX="13" oY="4" oW="212" oH="120"/>
+    <sprite n="ABDEN_baleen_bend_out" x="749" y="4" w="201" h="111" pX="0.5" pY="0.5" oX="7" oY="3" oW="212" oH="120"/>
+    <sprite n="ABDEN_baleen_vibe_01" x="749" y="119" w="197" h="112" pX="0.5" pY="0.5" oX="12" oY="3" oW="212" oH="120"/>
+    <sprite n="ABDEN_baleen_vibe_02" x="526" y="108" w="199" h="112" pX="0.5" pY="0.5" oX="10" oY="3" oW="212" oH="120"/>
+    <sprite n="ABDEN_body_A" x="4" y="159" w="225" h="217" pX="0.5" pY="0.5" oX="11" oY="7" oW="240" oH="240" r="y"/>
+    <sprite n="ABDEN_body_B" x="272" y="4" w="250" h="202" pX="0.5" pY="0.5" oX="9" oY="5" oW="220" oH="260" r="y"/>
+    <sprite n="ABDEN_body_C" x="469" y="307" w="174" h="152" pX="0.5" pY="0.5" oX="2" oY="4" oW="160" oH="180" r="y"/>
+    <sprite n="ABDEN_body_D" x="223" y="466" w="140" h="127" pX="0.5" pY="0.5" oX="4" oY="5" oW="148" oH="136"/>
+    <sprite n="ABDEN_bottom_left_hand" x="382" y="393" w="67" h="132" pX="0.5" pY="0.5" oX="9" oY="6" oW="144" oH="80" r="y"/>
+    <sprite n="ABDEN_bottom_left_lowerarm" x="945" y="365" w="69" h="155" pX="0.5" pY="0.5" oX="2" oY="5" oW="160" oH="80" r="y"/>
+    <sprite n="ABDEN_bottom_left_upperarm" x="954" y="4" w="53" h="104" pX="0.5" pY="0.5" oX="2" oY="1" oW="108" oH="56" r="y"/>
+    <sprite n="ABDEN_bottom_right_hand" x="272" y="210" w="197" h="79" pX="0.5" pY="0.5" oX="2" oY="1" oW="200" oH="80"/>
+    <sprite n="ABDEN_bottom_right_lowerarm" x="950" y="219" w="70" h="142" pX="0.5" pY="0.5" oX="1" oY="1" oW="144" oH="72" r="y"/>
+    <sprite n="ABDEN_bottom_right_upperarm" x="954" y="112" w="52" h="103" pX="0.5" pY="0.5" oX="3" oY="2" oW="108" oH="56" r="y"/>
+    <sprite n="ABDEN_brow" x="233" y="159" w="31" h="46" pX="0.5" pY="0.5" oX="1" oY="0" oW="48" oH="32" r="y"/>
+    <sprite n="ABDEN_chin" x="647" y="370" w="83" h="131" pX="0.5" pY="0.5" oX="5" oY="4" oW="140" oH="92" r="y"/>
+    <sprite n="ABDEN_eye_01" x="254" y="209" w="14" h="14" pX="0.5" pY="0.5" oX="3" oY="3" oW="20" oH="20"/>
+    <sprite n="ABDEN_eye_02" x="729" y="108" w="16" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="20"/>
+    <sprite n="ABDEN_eye_03" x="233" y="209" w="17" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="20"/>
+    <sprite n="ABDEN_headtop" x="4" y="4" w="264" h="151" pX="0.5" pY="0.5" oX="8" oY="4" oW="280" oH="160"/>
+    <sprite n="ABDEN_jaw" x="526" y="4" w="219" h="100" pX="0.5" pY="0.5" oX="68" oY="8" oW="288" oH="116"/>
+    <sprite n="ABDEN_mane_A" x="4" y="380" w="160" h="136" pX="0.5" pY="0.5" oX="0" oY="0" oW="160" oH="140"/>
+    <sprite n="ABDEN_mane_B" x="910" y="524" w="106" h="105" pX="0.5" pY="0.5" oX="3" oY="2" oW="108" oH="108" r="y"/>
+    <sprite n="ABDEN_shadow" x="233" y="293" w="176" h="96" pX="0.5" pY="0.5" oX="11" oY="1" oW="200" oH="100"/>
+    <sprite n="ABDEN_tail_L" x="734" y="464" w="172" h="114" pX="0.5" pY="0.5" oX="2" oY="4" oW="120" oH="180" r="y"/>
+    <sprite n="ABDEN_tail_R" x="453" y="463" w="137" h="120" pX="0.5" pY="0.5" oX="6" oY="2" oW="132" oH="140" r="y"/>
+    <sprite n="ABDEN_top_left_hand" x="367" y="529" w="67" h="132" pX="0.5" pY="0.5" oX="9" oY="6" oW="144" oH="80" r="y"/>
+    <sprite n="ABDEN_top_left_lowerarm" x="223" y="393" w="155" h="69" pX="0.5" pY="0.5" oX="2" oY="5" oW="160" oH="80"/>
+    <sprite n="ABDEN_top_left_upperarm" x="168" y="380" w="51" h="97" pX="0.5" pY="0.5" oX="2" oY="4" oW="100" oH="60" r="y"/>
+    <sprite n="ABDEN_top_right_hand" x="473" y="224" w="196" h="79" pX="0.5" pY="0.5" oX="2" oY="0" oW="200" oH="80"/>
+    <sprite n="ABDEN_top_right_lowerarm" x="673" y="224" w="70" h="142" pX="0.5" pY="0.5" oX="1" oY="1" oW="144" oH="72" r="y"/>
+    <sprite n="ABDEN_top_right_upperarm" x="413" y="293" w="52" h="96" pX="0.5" pY="0.5" oX="2" oY="4" oW="100" oH="60" r="y"/>
+    <sprite n="spore_ABDEN" x="594" y="505" w="136" h="131" pX="0.5" pY="0.5" oX="20" oY="21" oW="172" oH="172" r="y"/>
+</TextureAtlas>

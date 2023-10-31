@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9f282bb53595f15520b42b0a39591f28:0b26f87a00ef042f724a7a15d6330d2e:a3dee4e412c741440b2df28de0e03540$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_eyetree_sheet_2.png" width="512" height="1024" hires="true">
+    <sprite n="eyetree_bigbranch" x="2" y="444" w="344" h="200" pX="0.5" pY="0.5"/>
+    <sprite n="eyetree_eyeball" x="416" y="580" w="61" h="61" pX="0.5" pY="0.5" oX="2" oY="2" oW="64" oH="64"/>
+    <sprite n="eyetree_eyelid_1" x="348" y="580" w="66" h="66" pX="0.5" pY="0.5" oX="1" oY="1" oW="68" oH="68"/>
+    <sprite n="eyetree_eyelid_2" x="348" y="444" w="68" h="66" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="68"/>
+    <sprite n="eyetree_eyelid_3" x="418" y="444" w="68" h="66" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="68"/>
+    <sprite n="eyetree_eyelid_4" x="348" y="512" w="68" h="66" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="68"/>
+    <sprite n="eyetree_eyelid_5" x="418" y="512" w="68" h="66" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="68"/>
+    <sprite n="eyetree_pupil" x="472" y="18" w="31" h="31" pX="0.5" pY="0.5" oX="1" oY="1" oW="32" oH="32"/>
+    <sprite n="eyetree_trunk" x="2" y="2" w="468" h="440" pX="0.5" pY="0.5"/>
+    <sprite n="eyetree_vine_1" x="472" y="72" w="26" h="20" pX="0.5" pY="0.5" oX="0" oY="1" oW="20" oH="52" r="y"/>
+    <sprite n="eyetree_vine_2" x="472" y="51" w="29" h="19" pX="0.5" pY="0.5" oX="0" oY="5" oW="20" oH="52" r="y"/>
+    <sprite n="eyetree_vine_3" x="472" y="2" w="37" h="14" pX="0.5" pY="0.5" oX="2" oY="6" oW="20" oH="52" r="y"/>
+    <sprite n="eyetree_vine_4" x="500" y="72" w="10" h="46" pX="0.5" pY="0.5" oX="2" oY="6" oW="20" oH="52"/>
+</TextureAtlas>

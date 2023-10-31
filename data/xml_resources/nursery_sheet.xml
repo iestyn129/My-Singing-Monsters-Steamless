@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4114e37e520b96936dc6cbd82c16b436:564a9a9122018ba68d16ecb59d312784:eb5e9df0232e20ee06ed5cbe648ba7e9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_nursery.png" width="1024" height="1024" hires="true">
+    <sprite n="nursery_base" x="2" y="2" w="674" h="870" pX="0.5" pY="0.5" oX="11" oY="0" oW="690" oH="870"/>
+    <sprite n="nursery_glow" x="2" y="874" w="188" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="nursery_light" x="678" y="577" w="318" h="368" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="nursery_sparkle" x="2" y="970" w="48" h="40" pX="0.5" pY="0.5" oX="4" oY="0" oW="48" oH="48" r="y"/>
+    <sprite n="nursery_upgrade_ring" x="934" y="2" w="59" h="246" pX="0.5" pY="0.5" oX="2" oY="0" oW="250" oH="60" r="y"/>
+    <sprite n="nursery_upgrade_shroom_bottom" x="192" y="874" w="153" h="114" pX="0.5" pY="0.5" oX="3" oY="0" oW="160" oH="114"/>
+    <sprite n="nursery_upgrade_shroom_left" x="347" y="874" w="135" h="126" pX="0.5" pY="0.5" oX="0" oY="5" oW="136" oH="136"/>
+    <sprite n="nursery_upgrade_shroom_right" x="484" y="874" w="118" h="98" pX="0.5" pY="0.5" oX="1" oY="1" oW="120" oH="100"/>
+    <sprite n="nursery_upgrade_top" x="678" y="2" w="254" h="573" pX="0.5" pY="0.5" oX="3" oY="3" oW="580" oH="260" r="y"/>
+    <sprite n="nursery_upgrade_wireA" x="934" y="353" w="72" h="99" pX="0.5" pY="0.5" oX="0" oY="2" oW="100" oH="80" r="y"/>
+    <sprite n="nursery_upgrade_wireB" x="934" y="250" w="68" h="101" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="104"/>
+    <sprite n="nursery_upgrade_wireC" x="934" y="454" w="83" h="98" pX="0.5" pY="0.5" oX="2" oY="0" oW="86" oH="100"/>
+</TextureAtlas>

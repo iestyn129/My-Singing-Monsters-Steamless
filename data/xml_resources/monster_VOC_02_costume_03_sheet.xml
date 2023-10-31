@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:36b780f4a104bee3f2e898a7d7d06913:1b9c1520743c67c97d0a04121b9ff8c4:8f6c804787da6376c188bf3e90f74471$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_VOC_02_costume_03_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (43, 72) -> new anchor (44, 25) diff = (-1, 47)-->
+    <!-- add double it to texturepacker output offsets (0, 4) -> (-2, 98), cause hires-->
+    <sprite n="VOC_02_Heart.png" x="1" y="386" w="126" h="115" pX="0.5" pY="0.5" oX="-2" oY="98" oW="126" oH="120"/>
+    <sprite n="VOC_02_hair_front.png" x="136" y="224" w="48" h="178" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="200"/>
+    <sprite n="VOC_02_head.png" x="1" y="1" w="134" h="221" pX="0.5" pY="0.5" oX="1" oY="11" oW="144" oH="244"/>
+    <sprite n="VOC_02_left_eyelid_01.png" x="129" y="404" w="42" h="46" pX="0.5" pY="0.5" oX="5" oY="0" oW="52" oH="56"/>
+    <sprite n="VOC_02_left_eyelid_02.png" x="186" y="380" w="43" h="41" pX="0.5" pY="0.5" oX="4" oY="5" oW="52" oH="56"/>
+    <sprite n="VOC_02_left_eyelid_03.png" x="137" y="189" w="36" h="33" pX="0.5" pY="0.5" oX="8" oY="10" oW="52" oH="56" r="y"/>
+    <sprite n="VOC_02_left_eyelid_04.png" x="218" y="423" w="37" h="37" pX="0.5" pY="0.5" oX="4" oY="9" oW="52" oH="56"/>
+    <sprite n="VOC_02_lower_body.png" x="137" y="1" w="117" h="140" pX="0.5" pY="0.5" oX="9" oY="8" oW="136" oH="156"/>
+    <sprite n="VOC_02_right_eyelid_01.png" x="186" y="329" w="41" h="49" pX="0.5" pY="0.5" oX="7" oY="0" oW="60" oH="60"/>
+    <sprite n="VOC_02_right_eyelid_02.png" x="129" y="452" w="43" h="43" pX="0.5" pY="0.5" oX="5" oY="6" oW="60" oH="60"/>
+    <sprite n="VOC_02_right_eyelid_03.png" x="174" y="464" w="40" h="39" pX="0.5" pY="0.5" oX="8" oY="10" oW="60" oH="60"/>
+    <sprite n="VOC_02_right_eyelid_04.png" x="174" y="423" w="42" h="39" pX="0.5" pY="0.5" oX="6" oY="10" oW="60" oH="60"/>
+    <sprite n="VOC_02_upper_body.png" x="1" y="224" w="133" h="160" pX="0.5" pY="0.5" oX="10" oY="11" oW="152" oH="184"/>
+    <sprite n="VOC_02_upperarm.png" x="137" y="143" w="112" h="44" pX="0.5" pY="0.5" oX="10" oY="10" oW="132" oH="64"/>
+    <sprite n="VOC_02_upperleg.png" x="186" y="189" w="67" h="138" pX="0.5" pY="0.5" oX="4" oY="10" oW="76" oH="156"/>
+</TextureAtlas>

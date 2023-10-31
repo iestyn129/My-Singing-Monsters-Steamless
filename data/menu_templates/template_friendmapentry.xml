@@ -1,0 +1,123 @@
+<template name="template_friendmapentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+	
+	<spriteSheetComponent name="TorchesUnlit">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-15*game.menuScaleY()" priorityOffset="-0.4" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("button_light_torch")
+			component("sheetName"):SetString("xml_resources/context_buttons.xml")
+			component("size"):SetFloat(0.2*game.menuScaleX()*element("IslandScale"):GetFloat())
+			component("layer"):SetString("MidPopUps")
+			
+			local islandsForType = game.islandIDForType(element("IslandId"):GetInt())
+			local showTorch = false
+			
+			if(game.doesFriendIslandHaveLightTorchFlag(element("IslandId"):GetInt()) == false
+				and game.islandHasUnlitTorches(element("IslandId"):GetInt())) then
+				component("visible"):SetInt(1)
+			else
+				component("visible"):SetInt(0)
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="LightTorchFlag">
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-15*game.menuScaleY()" priorityOffset="-0.4" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_light_torch")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.2*game.menuScaleX()*element("IslandScale"):GetFloat())
+				component("layer"):SetString("MidPopUps")
+				
+				if(game.doesFriendIslandHaveLightTorchFlag(element("IslandId"):GetInt())
+					and game.islandHasUnlitTorches(element("IslandId"):GetInt())) then
+					component("visible"):SetInt(1)
+				else
+					component("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Overlay">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7*game.menuScaleY()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			local islandId = element("IslandId"):GetInt()
+			local activeThemeId = game.getFriendActiveIslandTheme(islandId)
+			local sheet = game.islandIconSheetForId(islandId);
+			local sprite = game.islandIconSpriteForId(islandId);
+			
+			if(activeThemeId ~= -1) then
+				component("spriteName"):SetString(game.islandThemeIconForId(activeThemeId))
+				sheet = game.islandThemeIconSheetForId(activeThemeId)
+			else
+				component("spriteName"):SetString(sprite)
+			end
+			component("sheetName"):SetString("xml_resources/"..sheet)
+			
+			component("size"):SetFloat(0.2*game.menuScaleX()*element("IslandScale"):GetFloat())
+			component("layer"):SetString("MidPopUps")
+		</event>
+		<event name="onPostInit" params="component, element">
+			if(not game.doesFriendOwnIsland(element("IslandId"):GetInt())) then
+				element["Lock"]("visible"):SetInt(1)
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Lock">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7*game.menuScaleY()" priorityOffset="-0.01" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("button_lock")
+			component("sheetName"):SetString("xml_resources/buttons01.xml")
+			component("size"):SetFloat(0.35*game.menuScaleX()*element("IslandScale"):GetFloat())
+			component("layer"):SetString("MidPopUps")
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="onPostInit" params="element">
+		if(element("IslandActive"):GetInt() == 1) then
+			if(not game.doesFriendOwnIsland(element("IslandId"):GetInt())) then
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+				element["Lock"]("visible"):SetInt(1)
+			end
+		else
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		end
+	</event>
+	
+	<event name="disable" params="element">
+		element["Overlay"]:setColor(0.5,0.5,0.5)
+	</event>
+	
+	<event name="enable" params="element">
+		element["Overlay"]:setColor(1.0,1.0,1.0)
+	</event>
+	
+	<touchComponent name="Touch">	
+		<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+		<event name="onTouchDown" params="component, element, x, y">
+			element:parent()("entryCurrentX"):SetInt(x)
+			element:parent()("entryCurrentY"):SetInt(y)
+			element:parent():DoStoredScript("islandTouched")
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			element:parent()("entryCurrentX"):SetInt(x)
+			element:parent()("entryCurrentY"):SetInt(y)			
+			element:parent():DoStoredScript("islandDragged")
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element:parent():DoStoredScript("islandReleased")	
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element:parent():DoStoredScript("islandReleased")	
+		</event>
+	</touchComponent>
+
+</template>

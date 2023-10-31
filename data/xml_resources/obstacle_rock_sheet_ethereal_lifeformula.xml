@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cdb18711e3fd9caf6c5a66177f970cd8:a104ec15c52a93ef92f530831cec8f26:75889641738a1de91c6516b28f605997$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/obstacle_rock_sheet_ethereal_lifeformula.png" width="512" height="1024" hires="true">
+    <sprite n="obstacle_rock01_ethereal_lifeformula" x="287" y="317" w="142" h="133" pX="0.5" pY="0.5" oX="9" oY="5" oW="152" oH="152" r="y"/>
+    <sprite n="obstacle_rock02_ethereal_lifeformula" x="2" y="317" w="283" h="269" pX="0.5" pY="0.5" oX="7" oY="10" oW="276" oH="304" r="y"/>
+    <sprite n="obstacle_rock03_ethereal_lifeformula" x="2" y="2" w="436" h="313" pX="0.5" pY="0.5" oX="15" oY="12" oW="340" oH="460" r="y"/>
+</TextureAtlas>

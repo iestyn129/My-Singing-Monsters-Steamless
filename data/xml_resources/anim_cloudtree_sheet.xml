@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:630fe81d1809a5505ca47dda27dfbbd9:60b3883836aeb0deee295ac49fb251ae:986b502ffd54f31c4395743abd27f489$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_cloudtree_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="cloud_tree_branch.png" x="381" y="563" w="122" h="87" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cloud_tree_cloud_01.png" x="298" y="597" w="73" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_cloud_02.png" x="2" y="597" w="68" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_cloud_03.png" x="72" y="597" w="65" h="47" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_dot.png" x="483" y="2" w="18" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_glow.png" x="381" y="433" w="128" h="128" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_shadow.png" x="2" y="433" w="377" h="162" pX="0.5" pY="0.5" oX="6" oY="0" oW="384" oH="162"/>
+    <sprite n="cloud_tree_star.png" x="298" y="658" w="41" h="40" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_star_glow_01.png" x="373" y="652" w="42" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="cloud_tree_star_glow_02.png" x="221" y="597" w="75" h="67" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_star_glow_03.png" x="139" y="597" w="80" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_star_glow_04.png" x="2" y="652" w="105" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_star_ribbon.png" x="483" y="20" w="15" h="186" pX="0.5" pY="0.5"/>
+    <sprite n="cloud_tree_tree.png" x="2" y="2" w="479" h="429" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

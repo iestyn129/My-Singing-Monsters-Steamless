@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e413ca72bd0d2051eeaee44422895330:3552270b16d7830236c26fa1fe236c77:7781744742efbb5b07e6b543154f85ad$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/island01_specific_deco.png" width="512" height="512" hires="true">
+    <sprite n="deco_fence_W1_01" x="2" y="371" w="149" h="125" pX="0.5" pY="0.5" oX="24" oY="17" oW="200" oH="160"/>
+    <sprite n="deco_grnd_W1_01" x="197" y="101" w="188" h="97" pX="0.5" pY="0.5" oX="5" oY="2" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W1_02" x="197" y="2" w="192" h="97" pX="0.5" pY="0.5" oX="5" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W1_03" x="2" y="2" w="193" h="98" pX="0.5" pY="0.5" oX="3" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W1_04" x="2" y="102" w="178" h="97" pX="0.5" pY="0.5" oX="11" oY="1" oW="200" oH="100"/>
+    <sprite n="deco_grnd_W1_05" x="387" y="194" w="93" h="175" pX="0.5" pY="0.5" oX="14" oY="3" oW="200" oH="100" r="y"/>
+    <sprite n="deco_grnd_W1_06" x="2" y="201" w="90" h="163" pX="0.5" pY="0.5" oX="16" oY="6" oW="200" oH="100" r="y"/>
+    <sprite n="deco_grnd_W1_07" x="391" y="2" w="98" h="190" pX="0.5" pY="0.5" oX="7" oY="1" oW="200" oH="100" r="y"/>
+    <sprite n="deco_grnd_W1_08" x="94" y="201" w="81" h="159" pX="0.5" pY="0.5" oX="18" oY="7" oW="200" oH="100" r="y"/>
+</TextureAtlas>

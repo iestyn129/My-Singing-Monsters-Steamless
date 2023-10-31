@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:5d88d9d0bc1f4d8fec9d44d394172f57:b3dfa72803f3e1855b76f64575ef0203:47a679c585f4765eecd9f201411a44f2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S02_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CR_beard" x="202" y="2" w="84" h="138" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="86" r="y"/>
+    <sprite n="CR_beard_long" x="2" y="393" w="148" h="109" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="148" r="y"/>
+    <sprite n="CR_bell" x="381" y="109" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_bell_RARE" x="313" y="456" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_body" x="2" y="2" w="198" h="219" pX="0.5" pY="0.5" oX="0" oY="1" oW="198" oH="220"/>
+    <sprite n="CR_ear" x="358" y="401" w="40" h="51" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="42" r="y"/>
+    <sprite n="CR_eyeback_RARE" x="281" y="456" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CR_eyelids_01" x="433" y="50" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_02" x="472" y="102" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_03" x="470" y="189" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_04" x="373" y="214" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_head" x="152" y="391" w="127" h="104" pX="0.5" pY="0.5" oX="1" oY="0" oW="130" oH="106"/>
+    <sprite n="CR_left_antler" x="2" y="223" w="110" h="168" pX="0.5" pY="0.5" oX="1" oY="0" oW="112" oH="170"/>
+    <sprite n="CR_left_fingers" x="412" y="288" w="52" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="54" r="y"/>
+    <sprite n="CR_left_foot" x="293" y="219" w="78" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="86"/>
+    <sprite n="CR_left_leg" x="281" y="388" w="75" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="66"/>
+    <sprite n="CR_left_lowerarm" x="202" y="142" w="117" h="75" pX="0.5" pY="0.5" oX="2" oY="0" oW="78" oH="118" r="y"/>
+    <sprite n="CR_left_shoulder" x="299" y="305" w="67" h="73" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="74"/>
+    <sprite n="CR_left_upperarm" x="213" y="312" w="84" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="86" r="y"/>
+    <sprite n="CR_mouth_01" x="373" y="301" w="29" h="98" pX="0.5" pY="0.5" oX="1" oY="1" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_02" x="476" y="2" w="30" h="98" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_03" x="468" y="276" w="36" h="85" pX="0.5" pY="0.5" oX="9" oY="3" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_04" x="426" y="137" w="42" h="79" pX="0.5" pY="0.5" oX="13" oY="4" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_05" x="404" y="356" w="53" h="45" pX="0.5" pY="0.5" oX="31" oY="0" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_06" x="459" y="363" w="45" h="38" pX="0.5" pY="0.5" oX="36" oY="2" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_07" x="358" y="454" w="37" h="30" pX="0.5" pY="0.5" oX="43" oY="5" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_08" x="288" y="112" w="63" h="25" pX="0.5" pY="0.5" oX="23" oY="7" oW="100" oH="54"/>
+    <sprite n="CR_nose01_RARE" x="353" y="112" w="26" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26" r="y"/>
+    <sprite n="CR_pupil" x="408" y="109" w="16" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="20"/>
+    <sprite n="CR_pupil_RARE" x="408" y="127" w="16" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="20"/>
+    <sprite n="CR_right_antler" x="114" y="223" w="97" h="166" pX="0.5" pY="0.5" oX="0" oY="1" oW="98" oH="168"/>
+    <sprite n="CR_right_fingers" x="412" y="218" w="54" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="54" r="y"/>
+    <sprite n="CR_right_foot" x="213" y="219" w="78" h="91" pX="0.5" pY="0.5" oX="1" oY="1" oW="94" oH="80" r="y"/>
+    <sprite n="CR_right_leg" x="400" y="403" w="63" h="77" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="64" r="y"/>
+    <sprite n="CR_right_lowerarm" x="288" y="2" w="68" h="108" pX="0.5" pY="0.5" oX="3" oY="0" oW="76" oH="110"/>
+    <sprite n="CR_right_shoulder" x="358" y="50" w="73" h="57" pX="0.5" pY="0.5" oX="0" oY="0" oW="58" oH="74" r="y"/>
+    <sprite n="CR_right_upperarm" x="321" y="139" w="85" h="73" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="86" r="y"/>
+    <sprite n="CR_shadow" x="358" y="2" w="116" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="120" oH="46"/>
+    <sprite n="CR_sprinkle01_RARE" x="152" y="497" w="25" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26" r="y"/>
+    <sprite n="CR_sprinkle02_RARE" x="179" y="497" w="25" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26" r="y"/>
+    <sprite n="CR_sprinkle03_RARE" x="206" y="497" w="25" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26" r="y"/>
+    <sprite n="CR_sprinkle04_RARE" x="233" y="497" w="25" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26" r="y"/>
+    <sprite n="CR_sprinkle05_RARE" x="260" y="497" w="25" h="10" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26" r="y"/>
+    <sprite n="CR_sprinkle06_RARE" x="408" y="145" w="10" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="10" oH="26"/>
+</TextureAtlas>

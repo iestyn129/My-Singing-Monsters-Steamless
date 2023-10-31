@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8599511df8b26d66f40b13e5844b256a:2c72f19a56f2bc2d8305405f38af0a19:e75a2ed6559787cbdccf6b0ca15ce08a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/decoration_harmonorb.png" width="512" height="1024" hires="true">
+    <sprite n="bottom" x="1" y="543" w="172" h="133" pX="0.5" pY="0.5"/>
+    <sprite n="finger_behind" x="264" y="611" w="87" h="85" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="finger_mid" x="353" y="640" w="84" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="finger_shadow" x="1" y="146" w="203" h="196" pX="0.5" pY="0.5"/>
+    <sprite n="finger_tip" x="443" y="413" w="68" h="133" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="horns" x="206" y="146" w="51" h="188" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="horns_behind" x="206" y="336" w="39" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="horns_middle" x="461" y="294" w="42" h="117" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="orb" x="274" y="1" w="203" h="203" pX="0.5" pY="0.5"/>
+    <sprite n="orb_glow" x="259" y="206" w="200" h="178" pX="0.5" pY="0.5"/>
+    <sprite n="orb_inside" x="1" y="344" w="197" h="197" pX="0.5" pY="0.5"/>
+    <sprite n="orb_shine" x="175" y="611" w="87" h="87" pX="0.5" pY="0.5"/>
+    <sprite n="pizza" x="247" y="386" w="194" h="113" pX="0.5" pY="0.5"/>
+    <sprite n="pizza_behind" x="200" y="501" w="186" h="108" pX="0.5" pY="0.5"/>
+    <sprite n="pizza_middle" x="388" y="548" w="108" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="spring" x="461" y="206" w="49" h="86" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="tower" x="1" y="1" w="271" h="143" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

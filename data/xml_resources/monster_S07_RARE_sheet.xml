@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1f243510197c8a5b2a6379c003c8f096:4f17d19a169deea96e4ff23447e9b6e0:e1df14ce60ae2a40f2023824b06b4f1b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S07_RARE_sheet.png" width="512" height="512" hires="true">
+    <sprite n="dress_flower_right" x="150" y="183" w="44" h="42" pX="0.5" pY="0.5" oX="9" oY="11" oW="60" oH="60" r="y"/>
+    <sprite n="S07_boot" x="105" y="223" w="41" h="81" pX="0.5" pY="0.5" oX="8" oY="3" oW="56" oH="86"/>
+    <sprite n="S07_bottom_lip" x="347" y="256" w="24" h="28" pX="0.5" pY="0.5" oX="2" oY="3" oW="32" oH="32" r="y"/>
+    <sprite n="S07_dress_bg_01" x="348" y="186" w="147" h="68" pX="0.5" pY="0.5" oX="7" oY="6" oW="100" oH="160" r="y"/>
+    <sprite n="S07_dress_bg_02" x="197" y="109" w="149" h="79" pX="0.5" pY="0.5" oX="12" oY="4" oW="100" oH="160" r="y"/>
+    <sprite n="S07_dress_bg_03" x="2" y="133" w="146" h="88" pX="0.5" pY="0.5" oX="7" oY="5" oW="100" oH="160" r="y"/>
+    <sprite n="S07_dress_flower_left" x="150" y="133" w="44" h="48" pX="0.5" pY="0.5" oX="6" oY="6" oW="60" oH="60" r="y"/>
+    <sprite n="S07_dress_lace_left" x="139" y="430" w="40" h="79" pX="0.5" pY="0.5" oX="2" oY="3" oW="47" oH="86"/>
+    <sprite n="S07_dress_lace_right" x="181" y="430" w="40" h="79" pX="0.5" pY="0.5" oX="4" oY="3" oW="47" oH="86"/>
+    <sprite n="S07_earring_bg" x="284" y="287" w="32" h="61" pX="0.5" pY="0.5" oX="15" oY="8" oW="60" oH="80"/>
+    <sprite n="S07_earring_fg" x="318" y="287" w="34" h="60" pX="0.5" pY="0.5" oX="8" oY="10" oW="60" oH="80"/>
+    <sprite n="S07_finger_01" x="80" y="438" w="24" h="71" pX="0.5" pY="0.5" oX="1" oY="3" oW="72" oH="32" r="y"/>
+    <sprite n="S07_finger_02" x="223" y="354" w="63" h="25" pX="0.5" pY="0.5" oX="1" oY="3" oW="64" oH="28"/>
+    <sprite n="S07_hat_bg" x="197" y="2" w="190" h="105" pX="0.5" pY="0.5" oX="6" oY="45" oW="200" oH="160"/>
+    <sprite n="S07_hat_fg" x="2" y="2" w="193" h="129" pX="0.5" pY="0.5" oX="4" oY="5" oW="200" oH="160"/>
+    <sprite n="S07_head" x="2" y="359" w="81" h="77" pX="0.5" pY="0.5" oX="7" oY="5" oW="96" oH="88"/>
+    <sprite n="S07_hips" x="348" y="109" w="39" h="37" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="44"/>
+    <sprite n="S07_left_dress" x="389" y="2" w="116" h="99" pX="0.5" pY="0.5" oX="5" oY="4" oW="108" oH="124" r="y"/>
+    <sprite n="S07_left_elbow" x="373" y="256" w="32" h="24" pX="0.5" pY="0.5" oX="2" oY="2" oW="36" oH="28"/>
+    <sprite n="S07_left_eyelid_01" x="437" y="351" w="36" h="35" pX="0.5" pY="0.5" oX="0" oY="2" oW="38" oH="38"/>
+    <sprite n="S07_left_eyelid_02" x="475" y="351" w="35" h="36" pX="0.5" pY="0.5" oX="0" oY="2" oW="38" oH="38" r="y"/>
+    <sprite n="S07_left_eyelid_03" x="430" y="388" w="36" h="35" pX="0.5" pY="0.5" oX="0" oY="2" oW="38" oH="38"/>
+    <sprite n="S07_left_eyelid_04" x="468" y="389" w="36" h="35" pX="0.5" pY="0.5" oX="0" oY="2" oW="38" oH="38"/>
+    <sprite n="S07_left_foot" x="437" y="318" w="73" h="31" pX="0.5" pY="0.5" oX="2" oY="4" oW="36" oH="80" r="y"/>
+    <sprite n="S07_left_knee" x="314" y="350" w="23" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="28" oH="32"/>
+    <sprite n="S07_left_lower_arm_01" x="148" y="227" w="46" h="74" pX="0.5" pY="0.5" oX="3" oY="4" oW="80" oH="52" r="y"/>
+    <sprite n="S07_left_lower_arm_02" x="359" y="420" w="38" h="73" pX="0.5" pY="0.5" oX="4" oY="8" oW="80" oH="52" r="y"/>
+    <sprite n="S07_left_lower_arm_03" x="401" y="282" w="34" h="73" pX="0.5" pY="0.5" oX="4" oY="10" oW="80" oH="52" r="y"/>
+    <sprite n="S07_left_lower_arm_04" x="205" y="382" w="73" h="40" pX="0.5" pY="0.5" oX="4" oY="6" oW="80" oH="52"/>
+    <sprite n="S07_left_lower_arm_05" x="148" y="303" w="46" h="74" pX="0.5" pY="0.5" oX="3" oY="2" oW="80" oH="52" r="y"/>
+    <sprite n="S07_left_lower_leg" x="223" y="424" w="30" h="81" pX="0.5" pY="0.5" oX="3" oY="3" oW="36" oH="88"/>
+    <sprite n="S07_left_shoulder" x="478" y="256" w="31" h="22" pX="0.5" pY="0.5" oX="5" oY="2" oW="32" oH="36" r="y"/>
+    <sprite n="S07_left_upper_arm" x="85" y="382" w="20" h="49" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="24" r="y"/>
+    <sprite n="S07_left_upper_leg" x="2" y="304" w="96" h="53" pX="0.5" pY="0.5" oX="1" oY="2" oW="56" oH="100" r="y"/>
+    <sprite n="S07_lower_spine" x="355" y="379" w="34" h="39" pX="0.5" pY="0.5" oX="3" oY="4" oW="40" oH="48"/>
+    <sprite n="S07_neck" x="196" y="354" w="25" h="26" pX="0.5" pY="0.5" oX="3" oY="3" oW="32" oH="32"/>
+    <sprite n="S07_pupil" x="498" y="103" w="12" h="10" pX="0.5" pY="0.5" oX="2" oY="3" oW="16" oH="16"/>
+    <sprite n="S07_ribs" x="2" y="438" w="76" h="71" pX="0.5" pY="0.5" oX="4" oY="2" oW="80" oH="80" r="y"/>
+    <sprite n="S07_right_dress_back" x="196" y="190" w="95" h="75" pX="0.5" pY="0.5" oX="0" oY="2" oW="80" oH="100" r="y"/>
+    <sprite n="S07_right_dress_front" x="2" y="223" w="101" h="79" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="104" r="y"/>
+    <sprite n="S07_right_elbow" x="407" y="256" w="32" h="24" pX="0.5" pY="0.5" oX="0" oY="2" oW="36" oH="28"/>
+    <sprite n="S07_right_eyelid_01" x="389" y="161" w="35" h="23" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="38" r="y"/>
+    <sprite n="S07_right_eyelid_02" x="426" y="161" w="35" h="23" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="38" r="y"/>
+    <sprite n="S07_right_eyelid_03" x="463" y="161" w="35" h="23" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="38" r="y"/>
+    <sprite n="S07_right_eyelid_04" x="441" y="256" w="35" h="23" pX="0.5" pY="0.5" oX="3" oY="1" oW="28" oH="38" r="y"/>
+    <sprite n="S07_right_foot" x="106" y="433" w="31" h="76" pX="0.5" pY="0.5" oX="2" oY="1" oW="36" oH="80"/>
+    <sprite n="S07_right_knee" x="339" y="349" w="20" h="28" pX="0.5" pY="0.5" oX="4" oY="2" oW="28" oH="32"/>
+    <sprite n="S07_right_lower_arm_01" x="100" y="306" w="46" h="74" pX="0.5" pY="0.5" oX="3" oY="4" oW="80" oH="52" r="y"/>
+    <sprite n="S07_right_lower_arm_02" x="361" y="286" w="38" h="73" pX="0.5" pY="0.5" oX="3" oY="8" oW="80" oH="52" r="y"/>
+    <sprite n="S07_right_lower_arm_03" x="437" y="282" w="73" h="34" pX="0.5" pY="0.5" oX="3" oY="10" oW="80" oH="52"/>
+    <sprite n="S07_right_lower_arm_04" x="280" y="381" w="73" h="40" pX="0.5" pY="0.5" oX="3" oY="6" oW="80" oH="52"/>
+    <sprite n="S07_right_lower_arm_05" x="129" y="382" w="74" h="46" pX="0.5" pY="0.5" oX="3" oY="2" oW="80" oH="52"/>
+    <sprite n="S07_right_lower_leg" x="255" y="424" w="30" h="81" pX="0.5" pY="0.5" oX="3" oY="3" oW="36" oH="88"/>
+    <sprite n="S07_right_shoulder" x="399" y="400" w="22" h="31" pX="0.5" pY="0.5" oX="5" oY="2" oW="32" oH="36"/>
+    <sprite n="S07_right_upper_arm" x="107" y="382" w="20" h="49" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="24" r="y"/>
+    <sprite n="S07_right_upper_leg" x="293" y="190" w="52" h="95" pX="0.5" pY="0.5" oX="2" oY="2" oW="56" oH="100"/>
+    <sprite n="S07_sleeve_left" x="391" y="361" w="37" h="37" pX="0.5" pY="0.5" oX="6" oY="6" oW="48" oH="48"/>
+    <sprite n="S07_sleeve_right" x="348" y="148" w="39" h="36" pX="0.5" pY="0.5" oX="7" oY="4" oW="48" oH="48" r="y"/>
+    <sprite n="S07_thumb" x="288" y="350" w="24" h="29" pX="0.5" pY="0.5" oX="3" oY="4" oW="32" oH="28" r="y"/>
+    <sprite n="S07_top_bg" x="287" y="423" w="70" h="73" pX="0.5" pY="0.5" oX="6" oY="4" oW="96" oH="96" r="y"/>
+    <sprite n="S07_top_fg" x="196" y="267" w="86" h="85" pX="0.5" pY="0.5" oX="7" oY="5" oW="96" oH="96" r="y"/>
+    <sprite n="shadow" x="389" y="103" w="107" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="56"/>
+</TextureAtlas>

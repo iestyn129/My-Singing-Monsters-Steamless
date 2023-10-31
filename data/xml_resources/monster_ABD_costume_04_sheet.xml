@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f231af7eb649f98da896333c7c59cbdb:da5af562b697debb4c817a8c28cdd7c1:953684a9d1c512b42c7de7006cf2746c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABD_costume_04_sheet.png" width="512" height="512" hires="true">
+
+	<!-- original anchor = (6, 38) -> new anchor (15, 86) diff = (-9, -48)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-18, -96), because hires -->	
+    <sprite n="ABD_costume_04_hennin.png" x="2" y="2" w="123" h="184" pX="0.5" pY="0.5" oX="-18" oY="-96"/>
+    <sprite n="ABD_costume_04_silk_01.png" x="357" y="101" w="115" h="100" pX="0.5" pY="0.5" oX="14" oY="22" oW="127" oH="158" r="y"/>
+    <sprite n="ABD_costume_04_silk_02.png" x="234" y="2" w="121" h="105" pX="0.5" pY="0.5" oX="14" oY="20" oW="127" oH="158" r="y"/>
+    <sprite n="ABD_costume_04_silk_03.png" x="2" y="324" w="102" h="132" pX="0.5" pY="0.5" oX="17" oY="20" oW="127" oH="158"/>
+    <sprite n="ABD_costume_04_silk_04.png" x="357" y="2" w="121" h="97" pX="0.5" pY="0.5" oX="19" oY="22" oW="127" oH="158" r="y"/>
+    <sprite n="ABD_costume_04_silk_05.png" x="109" y="188" w="102" h="128" pX="0.5" pY="0.5" oX="18" oY="21" oW="127" oH="158"/>
+    <sprite n="ABD_costume_04_silk_06.png" x="127" y="2" w="105" h="127" pX="0.5" pY="0.5" oX="15" oY="23" oW="127" oH="158"/>
+    <sprite n="ABD_costume_04_silk_07.png" x="2" y="188" w="105" h="134" pX="0.5" pY="0.5" oX="13" oY="21" oW="127" oH="158"/>
+    <sprite n="ABD_costume_04_silk_08.png" x="106" y="324" w="105" h="130" pX="0.5" pY="0.5" oX="11" oY="18" oW="127" oH="158"/>
+</TextureAtlas>

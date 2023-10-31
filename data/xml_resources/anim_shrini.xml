@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:06af15d2c931cc65a8bfd24a3b393ad6:1bf474f35bace8308382bb2415b6c312:381f7bbd6baeccd4b3948e03d59eac17$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_shrini.png" width="512" height="1024" hires="true">
+    <sprite n="deco_shrini_leaf_01" x="436" y="1" w="24" h="20" pX="0.5" pY="0.5" oX="10" oY="9" oW="40" oH="40"/>
+    <sprite n="deco_shrini_leaf_02" x="462" y="1" w="15" h="10" pX="0.5" pY="0.5" oX="14" oY="19" oW="40" oH="40"/>
+    <sprite n="deco_shrini_tower" x="1" y="1" w="433" h="739" pX="0.5" pY="0.5" oX="13" oY="14" oW="460" oH="760"/>
+</TextureAtlas>

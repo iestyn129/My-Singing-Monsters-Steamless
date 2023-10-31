@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:652a78babadf24f5802245802cf30f54:83fd8f858b14be8f48a441d9871b9006:81c47bc0e1cf78dabbe93e31613a681f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CDE_EPIC_costume_01_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="C_behind_jaw_1.png" x="2" y="354" w="101" h="53" pX="0.5" pY="0.5" oX="1" oY="0" oW="102" oH="70"/>
+    <sprite n="C_behind_jaw_2.png" x="2" y="409" w="99" h="59" pX="0.5" pY="0.5" oX="3" oY="0" oW="102" oH="70"/>
+    <sprite n="C_behind_jaw_3.png" x="206" y="431" w="97" h="66" pX="0.5" pY="0.5" oX="5" oY="0" oW="102" oH="70"/>
+    <sprite n="C_behind_jaw_4.png" x="102" y="500" w="90" h="68" pX="0.5" pY="0.5" oX="12" oY="0" oW="102" oH="70"/>
+    <sprite n="C_behind_jaw_5.png" x="2" y="562" w="86" h="69" pX="0.5" pY="0.5" oX="16" oY="1" oW="102" oH="70"/>
+    <sprite n="C_body.png" x="2" y="2" w="160" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="C_face.png" x="2" y="150" w="132" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="C_face_EPIC.png" x="314" y="2" w="144" h="123" pX="0.5" pY="0.5" oX="9" oY="10" oW="160" oH="140"/>
+	<sprite n="C_face_EPIC_GLOW.png"/>
+	<sprite n="C_foot_right.png" x="257" y="262" w="112" h="66" pX="0.5" pY="0.5"/>
+    <sprite n="C_foot_EPIC.png" x="136" y="219" w="119" h="86" pX="0.5" pY="0.5" oX="11" oY="7" oW="140" oH="100"/>
+	<sprite n="C_foot_right_EPIC_GLOW.png"/>
+    <sprite n="C_jaw_1.png" x="302" y="127" w="128" h="63" pX="0.5" pY="0.5" oX="0" oY="7" oW="130" oH="100"/>
+    <sprite n="C_jaw_2.png" x="265" y="192" w="125" h="68" pX="0.5" pY="0.5" oX="3" oY="7" oW="130" oH="100"/>
+    <sprite n="C_jaw_3.png" x="2" y="272" w="119" h="80" pX="0.5" pY="0.5" oX="9" oY="6" oW="130" oH="100"/>
+    <sprite n="C_jaw_4.png" x="392" y="213" w="114" h="87" pX="0.5" pY="0.5" oX="14" oY="6" oW="130" oH="100"/>
+    <sprite n="C_jaw_5.png" x="123" y="307" w="105" h="93" pX="0.5" pY="0.5" oX="24" oY="6" oW="130" oH="100"/>
+    <sprite n="C_jaw_6.png" x="136" y="157" w="127" h="60" pX="0.5" pY="0.5" oX="0" oY="7" oW="130" oH="100"/>
+    <sprite n="C_leg1_left.png" x="430" y="395" w="80" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="C_leg1_left_EPIC.png" x="331" y="395" w="97" h="84" pX="0.5" pY="0.5" oX="8" oY="1" oW="100" oH="100" r="y"/>
+    <sprite n="C_leg1_right.png" x="2" y="470" w="98" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_leg1_right_EPIC.png" x="230" y="330" w="99" h="99" pX="0.5" pY="0.5" oX="9" oY="5" oW="110" oH="110"/>
+	<sprite n="C_leg1_right_EPIC_GLOW.png"/>
+    <sprite n="C_leg2_left.png" x="432" y="127" w="76" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="C_leg2_right.png" x="401" y="491" w="84" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_shadow.png" x="164" y="100" w="136" h="55" pX="0.5" pY="0.5" oX="1" oY="6" oW="140" oH="66"/>
+    <sprite n="C_shoulder_left.png" x="206" y="499" w="94" h="92" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="C_shoulder_left_GLOW.png"/>
+    <sprite n="C_shoulder_right.png" x="305" y="481" w="94" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="C_shoulder_right_EPIC.png" x="105" y="402" w="99" h="96" pX="0.5" pY="0.5" oX="1" oY="1" oW="100" oH="100"/>
+	<sprite n="C_shoulder_right_EPIC_GLOW.png"/>
+    <sprite n="C_tail1.png" x="371" y="302" w="100" h="91" pX="0.5" pY="0.5" oX="0" oY="19" oW="100" oH="110"/>
+	<sprite n="C_tail1_GLOW.png"/>
+    <sprite n="C_tail2.png" x="401" y="567" w="80" h="62" pX="0.5" pY="0.5" r="y"/>
+	<sprite n="C_tail2_GLOW.png"/>
+    <sprite n="C_tail3.png" x="460" y="2" w="36" h="56" pX="0.5" pY="0.5"/>
+	<sprite n="C_tail3_GLOW.png"/>
+	<!-- original anchor = (40, 37) -> new anchor (22, 72) diff = (18, -35)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (36, -70), cause hires-->
+	<sprite n="CDE_back_pipe.png" x="164" y="2" w="148" h="96" pX="0.5" pY="0.5" oX="36" oY="-70"/>
+</TextureAtlas>

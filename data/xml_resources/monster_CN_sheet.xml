@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2a27ebc16263a6b2475c7f61b768c967:8d2338f209deacb0a7a1cff2912d4898:900cce87f07bca18eee4edef2f404c5e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="CF_body" x="4" y="4" w="246" h="208" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CF_eyeback_RARE" x="168" y="491" w="28" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="28"/>
+    <sprite n="CF_eyelid_RARE_01" x="66" y="467" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CF_eyelid_RARE_02" x="100" y="467" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CF_eyelid_RARE_03" x="4" y="500" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CF_eyelid_RARE_04" x="134" y="491" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CF_eyelids_01" x="396" y="220" w="101" h="36" pX="0.5" pY="0.5" oX="2" oY="2" oW="106" oH="40"/>
+    <sprite n="CF_eyelids_02" x="144" y="216" w="101" h="36" pX="0.5" pY="0.5" oX="2" oY="2" oW="106" oH="40"/>
+    <sprite n="CF_eyelids_03" x="280" y="256" w="101" h="36" pX="0.5" pY="0.5" oX="2" oY="2" oW="106" oH="40"/>
+    <sprite n="CF_eyelids_04" x="385" y="260" w="101" h="36" pX="0.5" pY="0.5" oX="2" oY="2" oW="106" oH="40"/>
+    <sprite n="CF_foot" x="448" y="485" w="60" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="CF_foot_RARE" x="369" y="455" w="75" h="46" pX="0.5" pY="0.5" oX="3" oY="0" oW="80" oH="48"/>
+    <sprite n="CF_glow" x="144" y="256" w="132" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="CF_head" x="396" y="122" w="108" h="94" pX="0.5" pY="0.5"/>
+    <sprite n="CF_left_lowerleg" x="279" y="491" w="70" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CF_left_upperleg" x="279" y="426" w="86" h="61" pX="0.5" pY="0.5" oX="1" oY="0" oW="62" oH="86" r="y"/>
+    <sprite n="CF_leg_eyeback_RARE" x="467" y="376" w="41" h="42" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="44"/>
+    <sprite n="CF_mouth_01" x="375" y="416" w="88" h="35" pX="0.5" pY="0.5" oX="3" oY="0" oW="92" oH="44"/>
+    <sprite n="CF_mouth_02" x="135" y="390" w="88" h="31" pX="0.5" pY="0.5" oX="2" oY="4" oW="92" oH="44"/>
+    <sprite n="CF_mouth_03" x="375" y="376" w="88" h="36" pX="0.5" pY="0.5" oX="3" oY="2" oW="92" oH="44"/>
+    <sprite n="CF_pupil" x="353" y="491" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="CF_pupil_RARE" x="490" y="260" w="16" h="11" pX="0.5" pY="0.5" oX="2" oY="0" oW="16" oH="16" r="y"/>
+    <sprite n="CF_right_lowerleg" x="369" y="505" w="70" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CF_right_upperleg" x="135" y="425" w="86" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CF_shadow" x="254" y="4" w="241" h="114" pX="0.5" pY="0.5" oX="0" oY="0" oW="242" oH="114"/>
+    <sprite n="CF_snout_RARE_01" x="225" y="454" w="50" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="CF_stripe_01" x="4" y="312" w="129" h="65" pX="0.5" pY="0.5" oX="1" oY="30" oW="130" oH="104"/>
+    <sprite n="CF_stripe_02" x="375" y="301" w="126" h="71" pX="0.5" pY="0.5" oX="2" oY="23" oW="130" oH="104"/>
+    <sprite n="CF_stripe_03" x="4" y="381" w="127" h="82" pX="0.5" pY="0.5" oX="1" oY="12" oW="130" oH="104"/>
+    <sprite n="CF_stripe_04" x="280" y="296" w="91" h="126" pX="0.5" pY="0.5" oX="1" oY="4" oW="130" oH="104" r="y"/>
+    <sprite n="CF_tail" x="4" y="216" w="136" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="CF_tailstripe_01" x="443" y="531" w="58" h="29" pX="0.5" pY="0.5" oX="4" oY="5" oW="64" oH="48"/>
+    <sprite n="CF_tailstripe_02" x="4" y="467" w="58" h="29" pX="0.5" pY="0.5" oX="5" oY="5" oW="64" oH="48"/>
+    <sprite n="CF_tailstripe_03" x="467" y="422" w="34" h="59" pX="0.5" pY="0.5" oX="3" oY="6" oW="64" oH="48" r="y"/>
+    <sprite n="CF_tailstripe_04" x="227" y="390" w="48" h="60" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="48" r="y"/>
+    <sprite n="CF_tooth_left_RARE" x="490" y="275" w="15" h="22" pX="0.5" pY="0.5" oX="9" oY="3" oW="32" oH="32"/>
+    <sprite n="CF_tooth_right_RARE" x="448" y="455" w="15" h="21" pX="0.5" pY="0.5" oX="8" oY="3" oW="32" oH="32"/>
+    <sprite n="spore_CN" x="254" y="122" w="138" h="130" pX="0.5" pY="0.5" oX="20" oY="24" oW="172" oH="172" r="y"/>
+</TextureAtlas>

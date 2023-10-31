@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ea90bc947c6a9efeac4ff2d85e140a1f:ced16d9103e98c81ed82e5060ed0b593:df7d78e647197e1f619b27c7889b5570$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_G_sheet.png" width="512" height="512" hires="true">
+    <sprite n="G_body" x="2" y="2" w="152" h="283" pX="0.5" pY="0.5" oX="0" oY="1" oW="152" oH="284"/>
+    <sprite n="G_bump_RARE" x="353" y="452" w="28" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="G_head" x="134" y="287" w="144" h="164" pX="0.5" pY="0.5" oX="0" oY="0" oW="164" oH="156" r="y"/>
+    <sprite n="G_left_eye_1" x="455" y="82" w="39" h="27" pX="0.5" pY="0.5" oX="0" oY="0" oW="28" oH="40" r="y"/>
+    <sprite n="G_left_eye_2" x="411" y="391" w="30" h="25" pX="0.5" pY="0.5" oX="0" oY="4" oW="28" oH="40" r="y"/>
+    <sprite n="G_left_eye_3" x="280" y="409" w="25" h="35" pX="0.5" pY="0.5" oX="0" oY="2" oW="28" oH="40"/>
+    <sprite n="G_left_eye_4" x="307" y="409" w="25" h="35" pX="0.5" pY="0.5" oX="0" oY="2" oW="28" oH="40"/>
+    <sprite n="G_left_hand" x="445" y="340" w="63" h="59" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="60"/>
+    <sprite n="G_left_lowerarm" x="449" y="199" w="60" h="74" pX="0.5" pY="0.5" oX="2" oY="0" oW="76" oH="60" r="y"/>
+    <sprite n="G_left_upperarm" x="280" y="345" w="69" h="62" pX="0.5" pY="0.5" oX="1" oY="2" oW="68" oH="72" r="y"/>
+    <sprite n="G_mouth_01" x="156" y="42" w="102" h="36" pX="0.5" pY="0.5" oX="2" oY="2" oW="104" oH="44"/>
+    <sprite n="G_mouth_02" x="156" y="2" w="103" h="38" pX="0.5" pY="0.5" oX="1" oY="1" oW="104" oH="44"/>
+    <sprite n="G_mouth_03" x="41" y="469" w="103" h="39" pX="0.5" pY="0.5" oX="1" oY="2" oW="104" oH="44"/>
+    <sprite n="G_mouth_04" x="248" y="453" w="103" h="44" pX="0.5" pY="0.5" oX="1" oY="0" oW="104" oH="44"/>
+    <sprite n="G_mouth_05" x="353" y="2" w="104" h="43" pX="0.5" pY="0.5" oX="0" oY="1" oW="104" oH="44"/>
+    <sprite n="G_mouth_inside_01" x="353" y="225" w="94" h="26" pX="0.5" pY="0.5" oX="3" oY="2" oW="104" oH="44"/>
+    <sprite n="G_mouth_inside_02" x="353" y="359" w="87" h="30" pX="0.5" pY="0.5" oX="4" oY="3" oW="104" oH="44"/>
+    <sprite n="G_mouth_inside_03" x="353" y="253" w="92" h="34" pX="0.5" pY="0.5" oX="4" oY="2" oW="104" oH="44"/>
+    <sprite n="G_mouth_inside_04" x="353" y="322" w="90" h="35" pX="0.5" pY="0.5" oX="7" oY="4" oW="104" oH="44"/>
+    <sprite n="G_mouth_inside_05" x="353" y="289" w="92" h="31" pX="0.5" pY="0.5" oX="6" oY="4" oW="104" oH="44"/>
+    <sprite n="G_right_eye_1" x="459" y="2" w="44" h="43" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44"/>
+    <sprite n="G_right_eye_2" x="2" y="469" w="37" h="40" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="44" r="y"/>
+    <sprite n="G_right_eye_3" x="455" y="47" w="39" h="33" pX="0.5" pY="0.5" oX="2" oY="6" oW="44" oH="44"/>
+    <sprite n="G_right_eye_4" x="455" y="111" w="39" h="25" pX="0.5" pY="0.5" oX="2" oY="12" oW="44" oH="44"/>
+    <sprite n="G_right_hand" x="351" y="391" w="58" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60"/>
+    <sprite n="G_right_lowerarm" x="280" y="275" w="70" h="68" pX="0.5" pY="0.5" oX="0" oY="4" oW="68" oH="76" r="y"/>
+    <sprite n="G_right_upperarm" x="280" y="2" w="71" h="70" pX="0.5" pY="0.5" oX="3" oY="2" oW="76" oH="76"/>
+    <sprite n="G_shadow" x="146" y="453" w="100" h="52" pX="0.5" pY="0.5" oX="3" oY="1" oW="108" oH="56"/>
+    <sprite n="G_sphere_01" x="447" y="275" w="63" h="63" pX="0.5" pY="0.5" oX="20" oY="20" oW="104" oH="104"/>
+    <sprite n="G_sphere_02" x="449" y="138" w="61" h="59" pX="0.5" pY="0.5" oX="21" oY="19" oW="104" oH="104" r="y"/>
+    <sprite n="G_sphere_03" x="411" y="418" w="84" h="85" pX="0.5" pY="0.5" oX="9" oY="9" oW="104" oH="104"/>
+    <sprite n="G_sphere_04" x="156" y="178" w="95" h="95" pX="0.5" pY="0.5" oX="3" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_05" x="260" y="74" w="90" h="92" pX="0.5" pY="0.5" oX="4" oY="6" oW="104" oH="104" r="y"/>
+    <sprite n="G_sphere_06" x="353" y="129" w="94" h="94" pX="0.5" pY="0.5" oX="4" oY="4" oW="104" oH="104"/>
+    <sprite n="G_sphere_07" x="156" y="80" w="96" h="96" pX="0.5" pY="0.5" oX="3" oY="3" oW="104" oH="104"/>
+    <sprite n="G_tail_1" x="2" y="287" w="130" h="180" pX="0.5" pY="0.5" oX="0" oY="2" oW="184" oH="132" r="y"/>
+    <sprite n="G_tail_2" x="353" y="47" w="100" h="80" pX="0.5" pY="0.5" oX="0" oY="4" oW="80" oH="104" r="y"/>
+    <sprite n="G_tail_3" x="253" y="178" w="79" h="95" pX="0.5" pY="0.5" oX="0" oY="1" oW="80" oH="100"/>
+</TextureAtlas>

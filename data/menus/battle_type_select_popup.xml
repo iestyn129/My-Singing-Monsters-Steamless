@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<size dependentOnElement="Fade" dependentOnComponent="Sprite" />
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$priority" equals="8" />
+	</template>
+
+	<element name="Bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.hudScale()" yOffset="lua_sys.screenHeight() * 2.0" priorityOffset="5" />
+		<ninesliceComponent name="Sprite">
+			<size w="400*game.menuScaleX()" h="225*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("topHeight"):SetFloat(50.0)
+						component("bottomHeight"):SetFloat(50.0)
+						component("leftWidth"):SetFloat(50.0)
+						component("rightWidth"):SetFloat(50.0)
+						component("size"):SetFloat(0.5)
+						component("includeBorder"):SetInt(1)
+						component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+						component("layer"):SetString("MidPopUps")
+					]]>
+			</event>
+		</ninesliceComponent>
+		
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_swirl_01")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_swirl_02")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("rotation"):SetFloat(-0.5*math.pi)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<ninesliceComponent name="TitleFrame">
+			<size w="260*game.menuScaleX()" h="50*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("topHeight"):SetFloat(44.0)
+				component("bottomHeight"):SetFloat(44.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("multiline"):SetInt(0)
+				component("autoScale"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.35*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("ISLAND_BATTLE")
+				component("layer"):SetString("MidPopUps")
+				component:setColor(0.93, 0.60, 0.11)
+				]]>
+			</event>
+		</textComponent>
+		
+	</element>
+
+	<element name="PVE">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_market_frame")
+					component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="100*game.hudScale()" h="32*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.35*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("BATTLE_CAMPAIGNS")
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("quests_button")
+					component("sheetName"):SetString("xml_resources/battle_buttons.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+				]]>
+			</event>
+		</spriteSheetComponent>
+		
+		<element name="NewNotification">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<spriteSheetComponent name="Sprite">
+				<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="15*game.hudScale()" yOffset="15*game.hudScale()" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("goal_exclaim")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.6*game.hudScale())
+					component("layer"):SetString("MidPopUps")
+					
+					if(component("isSourceRotated"):GetInt() == 1) then
+						component("vFlip"):SetInt(1)
+					else
+						component("hFlip"):SetInt(1)
+					end
+					
+					if(game.showNewCampaignNotification() == false) then
+						element("transitionState"):SetInt(0)
+						component("visible"):SetInt(0)
+					end
+				</event>
+			</spriteSheetComponent>
+			<event name="onInit" params="element">
+				element("transitionTime"):SetFloat(1.0)
+				element("transitionState"):SetInt(1)
+			</event>
+			
+			<event name="onTick" params="element, dt">
+				local transitionState = element("transitionState"):GetInt()
+				
+				if(transitionState ~= 0 and dt &lt;= 0.5) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element["Sprite"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+					
+					if(transitionTime &lt;= 1.0 ) then
+						element("transitionState"):SetInt(1)
+					elseif(transitionTime &gt;= 1.25) then
+						element("transitionState"):SetInt(2)
+					end	
+
+					if(transitionState == 1) then
+						element("transitionTime"):SetFloat(transitionTime + dt)
+					else
+						element("transitionTime"):SetFloat(transitionTime - dt)
+					end
+				end
+			</event>
+		</element>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					element:parent()("GoToCampaign"):SetInt(1)
+					game.logEvent("battle_menu", "menu", "battle_type_select_popup", "action", "click_campaign")
+					game.popPopUp()
+				]]>
+			</event>
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					--element["Icon"]:setColor(0.5, 0.5, 0.5)
+					--element["Text"]:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					--element["Icon"]:setColor(1.0, 1.0, 1.0)
+					--element["Text"]:setColor(1.0, 1.0, 1.0)
+				]]>
+			</event>
+			
+		</touchComponent>
+	</element>
+
+	<element name="PVP">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_market_frame")
+					component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					--component:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<size w="100*game.hudScale()" h="32*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.35*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("BATTLE_VERSUS")
+					component("layer"):SetString("MidPopUps")
+					--component:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("versus_button")
+					component("sheetName"):SetString("xml_resources/battle_buttons.xml")
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					--component:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="NotAvailable">
+			<size w="100*game.hudScale()" h="32*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="32*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.35*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("BATTLE_VERSUS_COMING_SOON")
+					component("layer"):SetString("MidPopUps")
+					component:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+		</textComponent>
+
+		<template type="template_battle_attempts" name="Attempts">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="24*game.hudScale()" priorityOffset="-1" />
+		</template>
+
+		<element name="NewNotification">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<spriteSheetComponent name="Sprite">
+				<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="15*game.hudScale()" yOffset="15*game.hudScale()" priorityOffset="-2" />
+				
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("goal_exclaim")
+						component("sheetName"):SetString("xml_resources/hud01.xml")
+						component("size"):SetFloat(0.6*game.hudScale())
+						component("layer"):SetString("MidPopUps")
+
+						if component("isSourceRotated"):GetInt() == 1 then
+							component("vFlip"):SetInt(1)
+						else
+							component("hFlip"):SetInt(1)
+						end
+					]]>
+				</event>
+				
+			</spriteSheetComponent>
+			
+			<event name="onInit" params="element">
+				<![CDATA[
+					element("transitionTime"):SetFloat(1.0)
+					element("transitionState"):SetInt(1)
+				]]>
+			</event>
+
+			<event name="onTick" params="element, dt">
+				<![CDATA[
+					local transitionState = element("transitionState"):GetInt()
+
+					if(transitionState ~= 0 and dt <= 0.5) then
+						local transitionTime = element("transitionTime"):GetFloat()
+
+						element["Sprite"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+
+						if(transitionTime <= 1.0 ) then
+							element("transitionState"):SetInt(1)
+							elseif(transitionTime >= 1.25) then
+							element("transitionState"):SetInt(2)
+						end
+
+						if(transitionState == 1) then
+							element("transitionTime"):SetFloat(transitionTime + dt)
+						else
+							element("transitionTime"):SetFloat(transitionTime - dt)
+						end
+					end
+				]]>
+			</event>
+		</element>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+
+					if element.versionOk and element("CampaignId"):GetInt() ~= 0 then
+					
+						game.setLastSeenVersusCampaignId(element("CampaignId"):GetInt())
+						
+						element:parent()("GoToVersus"):SetInt(1)
+						game.logEvent("battle_menu", "menu", "battle_type_select_popup", "action", "click_pvp")
+						game.popPopUp()
+					else
+						game.logEvent("battle_menu", "menu", "battle_type_select_popup", "action", "click_pvp_locked")
+
+						if not element.versionOk then
+							game.displayNotification("PVP_BATTLES_VERSION_LOCKED")
+						else
+							game.displayNotification("PVP_BATTLES_LOCKED")
+						end
+					end
+				]]>
+			</event>
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					--element["Icon"]:setColor(0.5, 0.5, 0.5)
+					--element["Text"]:setColor(0.5, 0.5, 0.5)
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					--element["Icon"]:setColor(1.0, 1.0, 1.0)
+					--element["Text"]:setColor(1.0, 1.0, 1.0)
+				]]>
+			</event>
+
+		</touchComponent>
+
+		<event name="onInit" params="element">
+			<![CDATA[
+				local versusCampaignId = game.getBattleVersusCampaignId()
+				element("CampaignId"):SetInt(versusCampaignId)
+				element["Attempts"]("CampaignId"):SetInt(versusCampaignId)
+			]]>
+		</event>
+		
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local campaignId = element("CampaignId"):GetInt()
+			
+				local VersionCompare = include("VersionCompare")
+				element.versionOk = (VersionCompare(game.versionNumber(), "3.9.3") >= 0)
+
+				if campaignId == 0 or not element.versionOk then
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element["Text"]:setColor(0.5, 0.5, 0.5)
+					element["Icon"]:setColor(0.5, 0.5, 0.5)
+					element["Touch"]("enabled"):SetInt(0)
+					element["NotAvailable"]("visible"):SetInt(1)
+				else
+					element["NotAvailable"]("visible"):SetInt(0)
+				end
+				
+				if not game.playerCanFriendBattle() or not element.versionOk then
+					element["Touch"]("enabled"):SetInt(1)
+				end
+				
+				if campaignId == 0 
+					or not element.versionOk
+					or campaignId == game.getLastSeenVersusCampaignId()
+					or game.hasBattleVersusPlayerData(campaignId)
+				then
+					element["NewNotification"]("transitionState"):SetInt(0)
+					element["NewNotification"]["Sprite"]("visible"):SetInt(0)
+				end
+				
+			]]>
+		</event>
+		
+	</element>
+
+	<event name="queuePop" params="element">
+		<![CDATA[
+			element:DoStoredScript("hide")
+		]]>
+	</event>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			local offsetTransition = include("MenuElementPositionOffsetTransition")
+			offsetTransition.OnInit(element:GetElement("Bg"), {startY = lua_sys.screenHeight() * 2.0, endY = 6*game.hudScale(), duration = 0.66})
+			
+			element:DoStoredScript("show")
+			
+			element("GoToCampaign"):SetInt(0)
+			element("GoToVersus"):SetInt(0)
+			element("init"):SetInt(1)
+			
+			game.updateBattleVersusStatus()
+			
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+		
+			if element("init"):GetInt() == 1 then
+				-- sizes were not set correctly in onPostInit for some reason...
+				element("init"):SetInt(0)
+				local MenuHelpers = include("MenuHelpers")
+				MenuHelpers.CenterHorizontally({
+					element:GetElement("PVE"),
+					element:GetElement("PVP")
+				})
+			end
+		
+			local offsetTransition = include("MenuElementPositionOffsetTransition")
+			local options = {
+				ease = lua_sys.Quadratic_EaseIn,
+				onDoneHide = function(e) 
+					e:root():popPopUp() 
+					if element("GoToCampaign"):GetInt() == 1 then
+						manager:setContext("BATTLE_CAMPAIGN_MENU")
+					elseif element("GoToVersus"):GetInt() == 1 then
+						manager:setContext("BATTLE_VERSUS_MENU")
+					end
+				end
+			}
+			offsetTransition.OnTick(element:GetElement("Bg"), dt, options)
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			local offsetTransition = include("MenuElementPositionOffsetTransition")
+			offsetTransition.Show(element:GetElement("Bg"))
+			
+			playSoundFx("audio/sfx/menu_slide.wav")
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			local offsetTransition = include("MenuElementPositionOffsetTransition")
+			offsetTransition.Hide(element:GetElement("Bg"))
+			
+			element["Fade"]:DoStoredScript("hide")
+			
+			playSoundFx("audio/sfx/menu_slide.wav")
+		]]>
+	</event>
+
+
+</menu>

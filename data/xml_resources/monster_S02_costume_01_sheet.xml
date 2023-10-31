@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0a59ef6e18d980c53d90b79073d0015e:3eea22b21ca847b8d7a2d04c0b0d3b1f:71a1e8441272442d7c7f11feb329cd88$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_S02_costume_01_sheet.png" width="512" height="512" hires="true">
+	<!-- original anchor = (48, 90) -> new anchor (73, 103) diff = (-25, -13)-->
+	<!-- add double it to texturepacker output offsets (17, 23) -> (-33, -3), because hires-->
+    <sprite n="S02_yool_xmastree_body.png" x="2" y="2" w="265" h="250" pX="0.5" pY="0.5" oX="-33" oY="-3" oW="300" oH="300"/>
+	<!-- original anchor = (32, 44) -> new anchor (75, 100) diff = (-43, -56)-->
+	<!-- add double it to texturepacker output offsets (33, 17) -> (-53, -85), because hires-->
+    <sprite n="S02_yool_xmastree_head.png" x="269" y="2" w="232" h="257" pX="0.5" pY="0.5" oX="-53" oY="-85" oW="300" oH="300"/>
+</TextureAtlas>

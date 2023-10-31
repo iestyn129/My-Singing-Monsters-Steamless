@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e7e2e020c0c527f21890b762912be66d:dca95240bc2319282b597da7a97b6757:80e7e6d5bdea6d0025bca31ce82582bb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island04_fish_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="big_fish_01" x="1955" y="827" w="88" h="175" pX="0.5" pY="0.5" oX="7" oY="12" oW="182" oH="112" r="y"/>
+    <sprite n="big_fish_02" x="549" y="1870" w="93" h="173" pX="0.5" pY="0.5" oX="9" oY="9" oW="182" oH="112" r="y"/>
+    <sprite n="big_fish_03" x="454" y="1870" w="93" h="175" pX="0.5" pY="0.5" oX="7" oY="9" oW="182" oH="112" r="y"/>
+    <sprite n="big_fish_04" x="1694" y="1325" w="177" h="97" pX="0.5" pY="0.5" oX="5" oY="7" oW="182" oH="112"/>
+    <sprite n="big_fish_05" x="1694" y="1225" w="178" h="98" pX="0.5" pY="0.5" oX="4" oY="7" oW="182" oH="112"/>
+    <sprite n="big_fish_06" x="367" y="1019" w="101" h="182" pX="0.5" pY="0.5" oX="0" oY="5" oW="182" oH="112" r="y"/>
+    <sprite n="big_fish_07" x="644" y="1870" w="177" h="109" pX="0.5" pY="0.5" oX="5" oY="1" oW="182" oH="112"/>
+    <sprite n="big_fish_08" x="1874" y="1225" w="103" h="177" pX="0.5" pY="0.5" oX="5" oY="4" oW="182" oH="112" r="y"/>
+    <sprite n="big_fish_09" x="823" y="1870" w="180" h="97" pX="0.5" pY="0.5" oX="2" oY="7" oW="182" oH="112"/>
+    <sprite n="big_fish_10" x="1955" y="643" w="91" h="182" pX="0.5" pY="0.5" oX="0" oY="10" oW="182" oH="112" r="y"/>
+    <sprite n="island04_bridgeofnose" x="2" y="722" w="363" h="492" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island04_burns" x="470" y="1019" w="542" h="849" pX="0.5" pY="0.5" oX="4" oY="0" oW="550" oH="850"/>
+    <sprite n="island04_castle_clam" x="2" y="2" w="1043" h="368" pX="0.5" pY="0.5" oX="5" oY="6" oW="1056" oH="376"/>
+    <sprite n="island04_castle_clam_top" x="1033" y="643" w="920" h="580" pX="0.5" pY="0.5" oX="66" oY="8" oW="1056" oH="588"/>
+    <sprite n="island04_edge" x="367" y="722" w="648" h="295" pX="0.5" pY="0.5" oX="1" oY="0" oW="298" oH="648" r="y"/>
+    <sprite n="island04_eye" x="1014" y="1225" w="678" h="785" pX="0.5" pY="0.5" oX="2" oY="1" oW="790" oH="680" r="y"/>
+    <sprite n="island04_side_fin" x="2" y="372" w="1029" h="348" pX="0.5" pY="0.5" oX="5" oY="3" oW="360" oH="1040" r="y"/>
+    <sprite n="island04_side_fin_ridge" x="2" y="1225" w="450" h="795" pX="0.5" pY="0.5" oX="4" oY="2" oW="460" oH="800"/>
+    <sprite n="island04_stump_all" x="1047" y="2" w="992" h="639" pX="0.5" pY="0.5" oX="4" oY="0" oW="1000" oH="640"/>
+</TextureAtlas>

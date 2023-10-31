@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e51aece5d3169125b19f82791697d3e3:56099ab1cfcccdc61c99bebe2b8bbd2f:94c161748fdc88e4f6b98dc05e585feb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S05_sheet.png" width="512" height="512" hires="true">
+    <sprite n="RARE_X_hand_01" x="312" y="369" w="58" h="60" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="60"/>
+    <sprite n="RARE_X_hand_02" x="287" y="247" w="61" h="59" pX="0.5" pY="0.5" oX="5" oY="0" oW="68" oH="60"/>
+    <sprite n="RARE_X_hand_03" x="251" y="383" w="59" h="50" pX="0.5" pY="0.5" oX="16" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="RARE_X_head" x="104" y="320" w="107" h="113" pX="0.5" pY="0.5" oX="2" oY="1" oW="110" oH="116"/>
+    <sprite n="RARE_X_hips" x="2" y="320" w="100" h="156" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_X_hoop_01" x="2" y="2" w="247" h="67" pX="0.5" pY="0.5" oX="0" oY="1" oW="248" oH="132"/>
+    <sprite n="RARE_X_hoop_02" x="251" y="2" w="247" h="67" pX="0.5" pY="0.5" oX="0" oY="64" oW="248" oH="132"/>
+    <sprite n="RARE_X_left_foot" x="116" y="478" w="44" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="32"/>
+    <sprite n="RARE_X_left_lowerarm" x="412" y="320" w="46" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="20"/>
+    <sprite n="RARE_X_left_upperarm" x="372" y="369" w="21" h="54" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="24" r="y"/>
+    <sprite n="RARE_X_left_upperleg" x="481" y="166" w="28" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="RARE_X_mouth_01" x="104" y="435" w="20" h="41" pX="0.5" pY="0.5" oX="8" oY="4" oW="60" oH="40" r="y"/>
+    <sprite n="RARE_X_mouth_02" x="252" y="302" w="28" h="58" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="40" r="y"/>
+    <sprite n="RARE_X_mouth_03" x="2" y="478" w="55" h="32" pX="0.5" pY="0.5" oX="2" oY="1" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_04" x="171" y="117" w="37" h="54" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="40" r="y"/>
+    <sprite n="RARE_X_mouth_05" x="287" y="473" w="44" h="35" pX="0.5" pY="0.5" oX="6" oY="3" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_06" x="213" y="366" w="36" h="35" pX="0.5" pY="0.5" oX="8" oY="4" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_07" x="258" y="140" w="27" h="28" pX="0.5" pY="0.5" oX="12" oY="5" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_08" x="258" y="200" w="26" h="18" pX="0.5" pY="0.5" oX="13" oY="6" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_09" x="251" y="362" w="34" h="19" pX="0.5" pY="0.5" oX="10" oY="5" oW="60" oH="40"/>
+    <sprite n="RARE_X_mouth_10" x="213" y="140" w="39" h="23" pX="0.5" pY="0.5" oX="8" oY="5" oW="60" oH="40"/>
+    <sprite n="RARE_X_pupil" x="171" y="173" w="13" h="13" pX="0.5" pY="0.5" oX="1" oY="1" oW="16" oH="16"/>
+    <sprite n="RARE_X_right_foot" x="388" y="259" w="28" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="28" r="y"/>
+    <sprite n="RARE_X_right_lowerarm" x="140" y="71" w="63" h="21" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="24"/>
+    <sprite n="RARE_X_right_upperarm" x="140" y="177" w="21" h="60" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="24" r="y"/>
+    <sprite n="RARE_X_right_upperleg" x="208" y="477" w="77" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="80" r="y"/>
+    <sprite n="X_body" x="401" y="71" w="107" h="93" pX="0.5" pY="0.5" oX="1" oY="2" oW="96" oH="112" r="y"/>
+    <sprite n="X_eyeback" x="140" y="117" w="29" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="32" r="y"/>
+    <sprite n="X_eyelid_01" x="172" y="248" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_eyelid_02" x="471" y="244" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_eyelid_03" x="213" y="304" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_eyelid_04" x="350" y="247" w="36" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_hand_01" x="350" y="309" w="60" h="58" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="60" r="y"/>
+    <sprite n="X_hand_02" x="287" y="308" w="61" h="59" pX="0.5" pY="0.5" oX="5" oY="0" oW="68" oH="60"/>
+    <sprite n="X_hand_03" x="418" y="259" w="50" h="59" pX="0.5" pY="0.5" oX="16" oY="0" oW="68" oH="60"/>
+    <sprite n="X_head" x="287" y="161" w="104" h="84" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_hips" x="287" y="71" w="112" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="X_hoop_01" x="2" y="71" w="67" h="247" pX="0.5" pY="0.5" oX="0" oY="1" oW="248" oH="132" r="y"/>
+    <sprite n="X_hoop_02" x="71" y="71" w="67" h="247" pX="0.5" pY="0.5" oX="0" oY="64" oW="248" oH="132" r="y"/>
+    <sprite n="X_left_foot" x="162" y="477" w="44" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="32"/>
+    <sprite n="X_left_lowerarm" x="412" y="342" w="46" h="20" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="20"/>
+    <sprite n="X_left_lowerleg" x="172" y="190" w="84" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_left_upperarm" x="470" y="306" w="21" h="54" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="24" r="y"/>
+    <sprite n="X_left_upperleg" x="393" y="229" w="76" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="X_mouth_01" x="126" y="435" w="20" h="41" pX="0.5" pY="0.5" oX="8" oY="4" oW="60" oH="40" r="y"/>
+    <sprite n="X_mouth_02" x="333" y="472" w="58" h="28" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="40"/>
+    <sprite n="X_mouth_03" x="59" y="478" w="55" h="32" pX="0.5" pY="0.5" oX="2" oY="1" oW="60" oH="40"/>
+    <sprite n="X_mouth_04" x="213" y="248" w="37" h="54" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="40" r="y"/>
+    <sprite n="X_mouth_05" x="295" y="435" w="44" h="35" pX="0.5" pY="0.5" oX="6" oY="3" oW="60" oH="40"/>
+    <sprite n="X_mouth_06" x="258" y="435" w="35" h="36" pX="0.5" pY="0.5" oX="8" oY="4" oW="60" oH="40" r="y"/>
+    <sprite n="X_mouth_07" x="258" y="170" w="27" h="28" pX="0.5" pY="0.5" oX="12" oY="5" oW="60" oH="40"/>
+    <sprite n="X_mouth_08" x="258" y="220" w="26" h="18" pX="0.5" pY="0.5" oX="13" oY="6" oW="60" oH="40"/>
+    <sprite n="X_mouth_09" x="213" y="403" w="34" h="19" pX="0.5" pY="0.5" oX="10" oY="5" oW="60" oH="40"/>
+    <sprite n="X_mouth_10" x="213" y="165" w="39" h="23" pX="0.5" pY="0.5" oX="8" oY="5" oW="60" oH="40"/>
+    <sprite n="X_ponytail" x="213" y="71" w="72" h="67" pX="0.5" pY="0.5" oX="2" oY="2" oW="72" oH="76" r="y"/>
+    <sprite n="X_pupil" x="186" y="173" w="13" h="13" pX="0.5" pY="0.5" oX="1" oY="1" oW="16" oH="16"/>
+    <sprite n="X_right_foot" x="341" y="431" w="47" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="28"/>
+    <sprite n="X_right_lowerarm" x="140" y="94" w="63" h="21" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="24"/>
+    <sprite n="X_right_lowerleg" x="393" y="166" w="86" h="61" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="88" r="y"/>
+    <sprite n="X_right_upperarm" x="258" y="240" w="21" h="60" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="24" r="y"/>
+    <sprite n="X_right_upperleg" x="140" y="240" w="30" h="77" pX="0.5" pY="0.5" oX="0" oY="1" oW="32" oH="80"/>
+    <sprite n="X_shadow" x="148" y="435" w="108" h="40" pX="0.5" pY="0.5" oX="0" oY="3" oW="108" oH="44"/>
+</TextureAtlas>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a70f7cf4bf8c7d7f558978e4c92679b2:cedb4e294cb1d04bf48604bba1c3ab66:434919c33b5e77e1187abe4cbf382525$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CN_costume_01_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (52, 104) -> new anchor (76, 119) diff = (-24, -15)-->
+	<!-- add double it to texturepacker output offsets (41, 21) -> (-7, -9), because hires-->
+    <sprite n="CF_body_costume_01.png" x="2" y="2" w="222" h="258" pX="0.5" pY="0.5" oX="-7" oY="-9" oW="300" oH="300"/>
+
+    <!-- original anchor = (14, 5) -> new anchor (16, 14) diff = (-2, -9)-->
+	<!-- add double it to texturepacker output offsets (4, 16) -> (0, -2), because hires-->
+    <sprite n="CF_foot_costume_01.png" x="137" y="262" w="72" h="52" pX="0.5" pY="0.5" oX="-3" oY="-2" oW="80" oH="80"/>
+
+    <!-- original anchor = (10, 29) -> new anchor (14, 29) diff = (-4, 0)-->
+	<!-- add double it to texturepacker output offsets (7, 4) -> (-1, 4), because hires-->
+    <sprite n="CF_right_lowerleg_costume_01.png" x="164" y="363" w="64" h="48" pX="0.5" pY="0.5" oX="-1" oY="4" oW="60" oH="70" r="y"/>
+
+    <!-- original anchor = (14, 34) -> new anchor (14, 34) diff = (0, 0)-->
+	<!-- add double it to texturepacker output offsets (2, 3) -> (2, 3), because hires-->
+    <sprite n="CF_right_upperleg_costume_01.png" x="2" y="410" w="58" h="77" pX="0.5" pY="0.5" oX="2" oY="3" oW="62" oH="86"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-18, 25) diff = (45, 6)-->
+	<!-- add double it to texturepacker output offsets (11, 10) -> (101, 22), because hires-->
+    <sprite n="CF_shoulder_bg_costume_01.png" x="62" y="410" w="73" h="73" pX="0.5" pY="0.5" oX="101" oY="22" oW="90" oH="90"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-46, 39) diff = (73, -8)-->
+	<!-- add double it to texturepacker output offsets (11, 10) -> (157, -6), because hires-->
+    <sprite n="CF_shoulder_bg_costume_02.png" x="62" y="410" w="73" h="73" pX="0.5" pY="0.5" oX="157" oY="-6" oW="90" oH="90"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-18, 25) diff = (45, 6)-->
+	<!-- add double it to texturepacker output offsets (11, 10) -> (101, 22), because hires-->
+    <sprite n="CF_shoulder_fg_costume_01.png" x="137" y="413" w="49" h="53" pX="0.5" pY="0.5" oX="101" oY="22" oW="90" oH="90" r="y"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-46, 39) diff = (73, -8)-->
+	<!-- add double it to texturepacker output offsets (11, 10) -> (157, -6), because hires-->
+    <sprite n="CF_shoulder_fg_costume_02.png" x="137" y="413" w="49" h="53" pX="0.5" pY="0.5" oX="157" oY="-6" oW="90" oH="90" r="y"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-22, 31) diff = (49, 0)-->
+	<!-- add double it to texturepacker output offsets (6, 9) -> (104, 9), because hires-->
+    <sprite n="CF_shroom_01_costume_01.png" x="164" y="316" w="65" h="45" pX="0.5" pY="0.5" oX="104" oY="9" oW="80" oH="60"/>
+
+    <!-- original anchor = (27, 31) -> new anchor (-48, 39) diff = (75, -8)-->
+	<!-- add double it to texturepacker output offsets (10, 9) -> (160, -7), because hires-->
+    <sprite n="CF_shroom_02_costume_01.png" x="99" y="316" w="63" h="66" pX="0.5" pY="0.5" oX="160" oY="-7" oW="80" oH="80"/>
+
+    <!-- original anchor = (28, 14) -> new anchor (24, 38) diff = (4, -24)-->
+	<!-- add double it to texturepacker output offsets (11, 10) -> (19, -23), because hires-->
+    <sprite n="CF_tail_costume_01.png" x="2" y="262" w="95" h="146" pX="0.5" pY="0.5" oX="19" oY="-23" oW="160" oH="120" r="y"/>
+
+    <sprite n="monster_CF_left_eye_costume_01.png" x="188" y="463" w="45" h="46" pX="0.5" pY="0.5" oX="11" oY="6" oW="60" oH="60"/>
+    <sprite n="monster_CF_pupil_costume_01.png" x="226" y="2" w="22" h="21" pX="0.5" pY="0.5" oX="7" oY="2" oW="30" oH="30"/>
+    <sprite n="monster_CF_right_eye_costume_01.png" x="188" y="413" w="51" h="48" pX="0.5" pY="0.5" oX="4" oY="6" oW="60" oH="60" r="y"/>
+</TextureAtlas>

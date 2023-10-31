@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2720ce55da63fb6654cf83c189c3ab3c:0049a5de8ffe5278c424e1b3fd625af3:8a7764d1e68d4c86430a30dabe7172af$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/store_buttons01.png" width="512" height="512">
+    <sprite n="burst01" x="2" y="249" w="100" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="button_free" x="257" y="58" w="252" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="button_free_glow" x="205" y="413" w="34" h="65" pX="0.5" pY="0.5"/>
+    <sprite n="button_rnd_base" x="104" y="249" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="button_rnd_base_gold" x="190" y="243" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="button_rnd_base_green" x="248" y="124" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="button_rnd_base_pink" x="200" y="328" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="coins_01_icon" x="136" y="114" w="110" h="108" pX="0.5" pY="0.5" oX="71" oY="121" oW="240" oH="286"/>
+    <sprite n="decoration_filters_1gene" x="286" y="324" w="28" h="51" pX="0.5" pY="0.5" oX="32" oY="18" oW="90" oH="90"/>
+    <sprite n="decoration_filters_2gene" x="349" y="374" w="46" h="48" pX="0.5" pY="0.5" oX="23" oY="18" oW="90" oH="90"/>
+    <sprite n="decoration_filters_3gene" x="412" y="124" w="58" h="45" pX="0.5" pY="0.5" oX="17" oY="18" oW="90" oH="90"/>
+    <sprite n="decoration_filters_4gene" x="289" y="466" w="62" h="43" pX="0.5" pY="0.5" oX="15" oY="17" oW="90" oH="90"/>
+    <sprite n="decoration_filters_5gene" x="349" y="424" w="61" h="40" pX="0.5" pY="0.5" oX="15" oY="18" oW="90" oH="90"/>
+    <sprite n="decoration_filters_base" x="104" y="249" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="decoration_filters_base_green" x="276" y="239" w="84" h="83" pX="0.5" pY="0.5" oX="3" oY="2" oW="90" oH="100"/>
+    <sprite n="decoration_filters_battle" x="362" y="124" w="47" h="45" pX="0.5" pY="0.5" oX="22" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_building" x="165" y="447" w="38" h="52" pX="0.5" pY="0.5" oX="26" oY="15" oW="90" oH="90"/>
+    <sprite n="decoration_filters_building2" x="297" y="377" w="50" h="50" pX="0.5" pY="0.5" oX="19" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_decorations" x="334" y="171" w="56" h="47" pX="0.5" pY="0.5" oX="18" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_monsters" x="412" y="171" w="57" h="46" pX="0.5" pY="0.5" oX="18" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_musical" x="241" y="466" w="46" h="44" pX="0.5" pY="0.5" oX="20" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_obstacles" x="412" y="219" w="43" h="46" pX="0.5" pY="0.5" oX="23" oY="18" oW="90" oH="90"/>
+    <sprite n="decoration_filters_plants" x="113" y="447" w="50" h="58" pX="0.5" pY="0.5" oX="20" oY="14" oW="90" oH="90"/>
+    <sprite n="decoration_filters_relics" x="55" y="453" w="56" h="53" pX="0.5" pY="0.5" oX="19" oY="15" oW="90" oH="90"/>
+    <sprite n="decoration_filters_seasonal" x="316" y="324" w="50" h="48" pX="0.5" pY="0.5" oX="19" oY="20" oW="90" oH="90"/>
+    <sprite n="decoration_filters_special" x="241" y="413" w="54" h="51" pX="0.5" pY="0.5" oX="19" oY="16" oW="90" oH="90"/>
+    <sprite n="decoration_filters_tiles" x="2" y="453" w="51" h="56" pX="0.5" pY="0.5" oX="22" oY="16" oW="90" oH="90"/>
+    <sprite n="diamonds_01_icon" x="100" y="351" w="98" h="94" pX="0.5" pY="0.5" oX="75" oY="128" oW="240" oH="286"/>
+    <sprite n="exchange_01_icon" x="2" y="351" w="96" h="100" pX="0.5" pY="0.5" oX="72" oY="114" oW="240" oH="286"/>
+    <sprite n="foodpack_01_icon" x="2" y="114" w="132" h="133" pX="0.5" pY="0.5" oX="57" oY="96" oW="240" oH="286"/>
+    <sprite n="sale_tag_updated_taller" x="2" y="2" w="253" h="54" pX="0.5" pY="0.5" oX="2" oY="10" oW="256" oH="64"/>
+    <sprite n="saletag_battle" x="257" y="2" w="253" h="54" pX="0.5" pY="0.5" oX="2" oY="10" oW="256" oH="64"/>
+    <sprite n="saletag_promo" x="2" y="58" w="253" h="54" pX="0.5" pY="0.5" oX="2" oY="10" oW="256" oH="64"/>
+    <sprite n="sparkle_A_01" x="104" y="334" w="13" h="12" pX="0.5" pY="0.5" oX="8" oY="8" oW="28" oH="28"/>
+    <sprite n="sparkle_A_02" x="174" y="224" w="16" h="17" pX="0.5" pY="0.5" oX="6" oY="6" oW="28" oH="28"/>
+    <sprite n="sparkle_A_03" x="278" y="209" w="24" h="25" pX="0.5" pY="0.5" oX="2" oY="1" oW="28" oH="28"/>
+    <sprite n="sparkle_A_04" x="248" y="209" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="sparkle_B_01" x="248" y="114" w="7" h="7" pX="0.5" pY="0.5" oX="11" oY="11" oW="28" oH="28"/>
+    <sprite n="sparkle_B_02" x="165" y="501" w="8" h="9" pX="0.5" pY="0.5" oX="10" oY="10" oW="28" oH="28"/>
+    <sprite n="sparkle_B_03" x="136" y="224" w="17" h="19" pX="0.5" pY="0.5" oX="6" oY="6" oW="28" oH="28"/>
+    <sprite n="sparkle_B_04" x="155" y="224" w="17" h="19" pX="0.5" pY="0.5" oX="6" oY="5" oW="28" oH="28"/>
+</TextureAtlas>

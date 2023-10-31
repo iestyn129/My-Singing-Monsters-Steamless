@@ -1,0 +1,652 @@
+<template name="template_battle_campaign_card" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+
+	<!--
+		required variables:
+			campaignId
+			campaignName
+			bgAnimFile (optional)
+			bgAnimName (optional)
+			animationFile
+			animationName
+			costumeId
+			totalBattles
+			completedBattles
+			locked
+			status
+			completed
+			timed
+			reward
+			requirements
+
+			clipX
+			clipY
+			clipW
+			clipH
+
+		in parent:
+			selectedCardName
+			selectedCardId
+	-->
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("menu_market_frame")
+				component("sheetName"):SetString("xml_resources/store_elements_01.xml")
+				component("layer"):SetString("$layer")
+				component("size"):SetFloat(0.48*game.menuScaleX())
+
+				if element("locked"):GetInt() == 1 then
+					component:setColor(0.5, 0.5, 0.5)
+				end
+
+				include("MenuHelpers").SetClipFrom(component, element)
+
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<element name="TitleFrame">
+		<size w="126*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="12*game.menuScaleX()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="-4*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+			<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.35*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("$layer")
+					component:setColor(0.94, 0.63, 0.17)
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="TimeFrame">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="4*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("menu_quest_frame_timed_top")
+					component("sheetName"):SetString("xml_resources/battle_elements.xml")
+					component("size"):SetFloat(0.46*game.menuScaleY())
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+
+					if element:parent()("timed"):GetInt() == 0 then
+						component("visible"):SetInt(0)
+					end
+
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="TimeIcon">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="12*game.menuScaleX()" yOffset="6*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("quest_number_time")
+					component("sheetName"):SetString("xml_resources/battle_elements.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+
+					-- hide if  not timed
+					if element:parent()("timed"):GetInt() == 0 then
+						component("visible"):SetInt(0)
+					end
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="StatusLabel">
+		<size w="126*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="36*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="-4*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.25*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="TimeLabel">
+		<size w="126*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-2*game.menuScaleX()" yOffset="4*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.25*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("$layer")
+					component:setColor(0.56, 0.88, 0.18)
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RequirementsTitle">
+		<size w="126*game.menuScaleX()" h="16*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-42*game.menuScaleX()" priorityOffset="-3" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.3*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RequirementsLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-32*game.menuScaleX()" priorityOffset="-3" />
+		<textComponent name="Text">
+			<size w="126*game.menuScaleX()" h="16*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("textPadding"):SetInt(3*game.menuScaleX())
+					component("size"):SetFloat(0.25*game.menuScaleY())
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("$layer")
+					component:setColor(0.94, 0.63, 0.17)
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RequirementsIcon">
+		<position relativeTo="RequirementsLabel" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("goal_exclaim")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.4*game.hudScale())
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="CampaignNumber">
+		<size dependentOnElement="element:name()" dependentOnComponent="BG"/>
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="12*game.menuScaleX()" yOffset="6*game.menuScaleX()" priorityOffset="0" />
+
+		<spriteSheetComponent name="BG">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("quest_number_blank")
+					component("sheetName"):SetString("xml_resources/battle_elements.xml")
+
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<numberComponent name="Number">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("res"):SetString("xml_resources/number_font.xml")
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</numberComponent>
+
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				local campaignId = element:parent()("campaignId"):GetInt()
+
+				local bgComponent = element["BG"]
+				local numberComponent = element["Number"]
+
+				-- don't display for timed battles
+				if game.isBattleCampaignTimed(campaignId) then
+					bgComponent("visible"):SetInt(0)
+					numberComponent("visible"):SetInt(0)
+				else
+					local displayIdStr = element:parent()("displayId"):GetString()
+					if string.len(displayIdStr) > 0 then
+						numberComponent("value"):SetInt(tonumber(displayIdStr))
+					else
+						numberComponent("value"):SetInt(campaignId)
+					end
+				end
+			]]>
+		</event>
+
+	</element>
+
+	<!-- anims -->
+
+	<element name="BackgroundAnimation">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="16" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+
+					local bgAnimFile = element:parent()("bgAnimFile"):GetString()
+					local bgAnimName = element:parent()("bgAnimName"):GetString()
+
+					if bgAnimFile ~= "" and bgAnimName ~= "" then
+
+						component("animationName"):SetString("xml_bin/"..bgAnimFile)
+						component("animation"):SetString(bgAnimName)
+						component:setScale(Vector2(0.7*game.menuScaleX(),0.7*game.menuScaleX()))
+						component("layer"):SetString("$layer")
+
+						if element:parent()("locked"):GetInt() == 1 then
+							component:setColor(0.25, 0.25, 0.25)
+						end
+
+						include("MenuHelpers").SetClipFrom(component, element:parent())
+
+					else
+
+						component("visible"):SetInt(0)
+
+					end
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<element name="ForegroundAnimation">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="16" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+
+					local animFile = element:parent()("animFile"):GetString()
+					local animName = element:parent()("animName"):GetString()
+
+					if animFile ~= "" and animName ~= "" then
+
+						component("animationName"):SetString("xml_bin/"..animFile)
+						component("animation"):SetString(animName)
+						component:setScale(Vector2(0.7*game.menuScaleX(),0.7*game.menuScaleX()))
+						component("layer"):SetString("$layer")
+
+						if element:parent()("locked"):GetInt() == 1 then
+							component:setColor(0.25, 0.25, 0.25)
+						end
+
+						game.applyCostumeToAnimComponent(component, element:parent()("costumeId"):GetInt())
+
+						include("MenuHelpers").SetClipFrom(component, element:parent())
+
+					else
+
+						component("visible"):SetInt(0)
+
+					end
+				]]>
+			</event>
+		</aeComponent>
+	</element>
+
+	<!-- sticker -->
+	<element name="Sticker">
+		<size dependentOnElement="element:name()" dependentOnComponent="BG" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-16*game.hudScale()" yOffset="-32*game.hudScale()" priorityOffset="-2" />
+
+		<ninesliceComponent name="BG">
+			<size w="52*game.hudScale()" h="52*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(49.0)
+					component("bottomHeight"):SetFloat(49.0)
+					component("leftWidth"):SetFloat(49.0)
+					component("rightWidth"):SetFloat(49.0)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("$layer")
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</ninesliceComponent>
+
+		<spriteSheetComponent name="Icon">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("layer"):SetString("$layer")
+					component("rotation"):SetFloat(-0.25)
+
+					include("MenuHelpers").SetClipFrom(component, element:parent())
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<!-- touches-->
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+				component("realStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			<![CDATA[
+				component("dragging"):SetInt( component("dragging"):GetInt() + math.abs(x - component("touchStart"):GetInt()) )
+				component("touchStart"):SetInt(x)
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				component("touchStart"):SetInt(x)
+				component("realStart"):SetInt(x)
+
+				include("MenuHelpers").SetClipFrom(component, element)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+
+				if element("completed"):GetInt() == 1 then
+					return
+				end
+
+				if(math.abs(component("touchStart"):GetInt() - component("realStart"):GetInt()) < 10.0) then
+
+					if element("locked"):GetInt() == 1 then
+
+						local campaignId = element("campaignId"):GetInt()
+						local campaignData = game.getBattleCampaignData(campaignId)
+						if campaignData.depends > 0 then
+							local notification = LOC("NOTIFICATION_BATTLE_CAMPAIGN_UNLOCK")
+							local dependentCampaign = game.getBattleCampaignData(campaignData.depends)
+							notification = notification:gsub("%${QUEST}", LOC(dependentCampaign.name))
+							game.displayNotification(notification)
+						end
+
+						return
+					end
+
+					element:parent()("selectedCardName"):SetString(element:name())
+					element:parent()("selectedCampaignId"):SetInt(element("campaignId"):GetInt())
+
+					element:parent():DoStoredScript("onCardSelected")
+
+					component("dragging"):SetInt(0)
+					component("touchStart"):SetInt(0)
+					component("realStart"):SetInt(0)
+				end
+			]]>
+		</event>
+	</touchComponent>
+
+	<!-- script events-->
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			element("isHidden"):SetInt(0)
+
+			local campaignId = element("campaignId"):GetInt()
+			local campaignData = game.getBattleCampaignData(campaignId)
+
+			element("label"):SetInt(0)
+			element("labelTime"):SetFloat(3.0)
+
+			--setup header
+			local function showProgress()
+				local totalBattles = element("totalBattles"):GetInt()
+				local completedBattles = element("completedBattles"):GetInt()
+				local progressText = game.getLocalizedText("BATTLE_CAMPAIGN_BATTLES_COMPLETED")
+				progressText = progressText:gsub("%${COMPLETED}", completedBattles.."/"..totalBattles)
+				element["StatusLabel"]["Text"]("text"):SetString(progressText)
+			end
+
+			local frame = element("frame"):GetString()
+			local frameSheet = "xml_resources/" .. element("frameSheet"):GetString()
+			element["Sprite"]("spriteName"):SetString(frame)
+			element["Sprite"]("sheetName"):SetString(frameSheet)
+
+			local icon = element("icon"):GetString()
+			local iconSheet = "xml_resources/" .. element("iconSheet"):GetString()
+
+			element["TimeIcon"]["Sprite"]("spriteName"):SetString(icon)
+			element["TimeIcon"]["Sprite"]("sheetName"):SetString(iconSheet)
+
+			element["TitleFrame"]["Text"]("text"):SetString(element("campaignName"):GetString())
+
+			if element("locked"):GetInt() == 1 then
+
+				element["StatusLabel"]["Text"]("text"):SetString("BATTLE_CAMPAIGN_STATUS_LOCKED")
+
+			elseif element("completed"):GetInt() == 1 then
+
+				element["StatusLabel"]["Text"]("text"):SetString("BATTLE_CAMPAIGN_STATUS_COMPLETED")
+
+			else
+
+				showProgress()
+
+			end
+
+			--setup sticker
+			if element("completed"):GetInt() == 1 then
+				element["Sticker"]["Icon"]("spriteName"):SetString("button_yes")
+				element["Sticker"]["Icon"]("sheetName"):SetString("xml_resources/context_buttons.xml")
+			else
+				element["Sticker"]["BG"]("visible"):SetInt(0)
+				element["Sticker"]["Icon"]("visible"):SetInt(0)
+			end
+
+			--setup footer
+			if element("locked"):GetInt() == 1 then
+				--does battle have dependencies?
+				element["RequirementsIcon"]["Sprite"]("visible"):SetInt(0)
+				if campaignData.depends == 0 then
+					element["RequirementsTitle"]["Text"]("visible"):SetInt(0)
+					element["RequirementsLabel"]["Text"]("visible"):SetInt(0)
+				else
+					element["RequirementsTitle"]["Text"]("text"):SetString("BATTLE_CAMPAIGN_REQUIRES")
+					local dependentCampaign = game.getBattleCampaignData(campaignData.depends)
+					element["RequirementsLabel"]["Text"]("text"):SetString(dependentCampaign.name)
+				end
+			else
+				local requirementsText = element("requirements"):GetString()
+				if element("completed"):GetInt() == 1 or string.len(requirementsText) == 0 then
+					element["RequirementsTitle"]["Text"]("visible"):SetInt(0)
+					element["RequirementsLabel"]["Text"]("visible"):SetInt(0)
+					element["RequirementsIcon"]["Sprite"]("visible"):SetInt(0)
+				else
+					element["RequirementsTitle"]["Text"]("text"):SetString("BATTLE_CAMPAIGN_TEAM_REQUIRES")
+					element["RequirementsLabel"]["Text"]:setColor(1.0,1.0,1.0)
+					element["RequirementsLabel"]["Text"]("text"):SetString(requirementsText)
+				end
+			end
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if element("isHidden"):GetInt() == 0 and element("timed"):GetInt() == 1 then
+
+				local campaignId = element("campaignId"):GetInt()
+				local secsRemaining = game.getBattleCampaignSecsRemaining(campaignId)
+
+				if secsRemaining > 0 then
+					element["TimeLabel"]["Text"]("text"):SetString(game.timeToString(secsRemaining))
+				else
+					element["TimeLabel"]["Text"]("text"):SetString("BATTLE_CAMPAIGN_STATUS_EXPIRED")
+				end
+
+			end
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			element("isHidden"):SetInt(0)
+
+			element["Sprite"]("visible"):SetInt(1)
+			element["TitleFrame"]["Text"]("visible"):SetInt(1)
+
+			if element("timed"):GetInt() == 1 then
+				element["TimeFrame"]["Sprite"]("visible"):SetInt(1)
+				element["TimeIcon"]["Sprite"]("visible"):SetInt(1)
+			end
+
+			element["StatusLabel"]["Text"]("visible"):SetInt(1)
+			element["TimeLabel"]["Text"]("visible"):SetInt(1)
+
+			if (element("locked"):GetInt() == 1 and campaignData.depends > 0)
+				or (element("completed"):GetInt() == 0 and string.len(element("requirements"):GetString()) > 0)
+			then
+
+				element["RequirementsTitle"]["Text"]("visible"):SetInt(1)
+				element["RequirementsLabel"]["Text"]("visible"):SetInt(1)
+				element["RequirementsIcon"]["Sprite"]("visible"):SetInt(1)
+
+			end
+
+			element["CampaignNumber"]["BG"]("visible"):SetInt(1)
+			element["CampaignNumber"]["Number"]("visible"):SetInt(1)
+
+			local bgAnimFile = element("bgAnimFile"):GetString()
+			local bgAnimName = element("bgAnimName"):GetString()
+			if bgAnimFile ~= "" and bgAnimName ~= "" then
+				element["BackgroundAnimation"]["Sprite"]("visible"):SetInt(1)
+			end
+
+			local animFile = element("animFile"):GetString()
+			local animName = element("animName"):GetString()
+			if animFile ~= "" and animName ~= "" then
+				element["ForegroundAnimation"]["Sprite"]("visible"):SetInt(1)
+			end
+
+			if element("completed"):GetInt() == 1 then
+				element["Sticker"]["BG"]("visible"):SetInt(1)
+				element["Sticker"]["Icon"]("visible"):SetInt(1)
+			end
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element("isHidden"):SetInt(1)
+
+			element["Sprite"]("visible"):SetInt(0)
+			element["TitleFrame"]["Text"]("visible"):SetInt(0)
+			element["TimeFrame"]["Sprite"]("visible"):SetInt(0)
+			element["TimeIcon"]["Sprite"]("visible"):SetInt(0)
+			element["StatusLabel"]["Text"]("visible"):SetInt(0)
+			element["TimeLabel"]["Text"]("visible"):SetInt(0)
+			element["RequirementsTitle"]["Text"]("visible"):SetInt(0)
+			element["RequirementsLabel"]["Text"]("visible"):SetInt(0)
+			element["RequirementsIcon"]["Sprite"]("visible"):SetInt(0)
+			element["CampaignNumber"]["BG"]("visible"):SetInt(0)
+			element["CampaignNumber"]["Number"]("visible"):SetInt(0)
+			element["BackgroundAnimation"]["Sprite"]("visible"):SetInt(0)
+			element["ForegroundAnimation"]["Sprite"]("visible"):SetInt(0)
+			element["Sticker"]["BG"]("visible"):SetInt(0)
+			element["Sticker"]["Icon"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+</template>

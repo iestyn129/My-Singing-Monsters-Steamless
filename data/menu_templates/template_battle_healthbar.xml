@@ -1,0 +1,289 @@
+<template name="template_battle_healthbar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$TeamId" equals="0"/>
+	<defaultTemplateVar name="$FillSize" equals="0.45"/>
+
+	<size dependentOnElement="BG" dependentOnComponent="Sprite" />
+
+	<element name="BG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="3*(lua_sys.screenWidth()/480.0)" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="element">
+		<![CDATA[
+			
+			local priority = -1
+			local offsetX = element("xOffset"):GetInt()
+			local offsetY = element("yOffset"):GetInt()
+			
+			element:relativeTo(element:parent())
+			
+			if $TeamId == 1 then
+				element:setRelativeObjectAnchors(lua_sys.VCENTER, lua_sys.VCENTER)
+				element:setOrientation(lua_sys.MenuOrientation(-offsetX, offsetY, priority, lua_sys.VCENTER, lua_sys.VCENTER))
+			else
+				element:setRelativeObjectAnchors(lua_sys.VCENTER, lua_sys.VCENTER)
+				element:setOrientation(lua_sys.MenuOrientation(offsetX, offsetY, priority, lua_sys.VCENTER, lua_sys.VCENTER))
+			end
+			
+		]]>
+		</event>
+
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("spriteName"):SetString("level_bar_empty")
+						component("sheetName"):SetString("xml_resources/hud01.xml")
+						component("size"):SetFloat($FillSize*game.menuScaleX())
+						component("layer"):SetString("HUD")
+					]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+
+	<element name="FillDamage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BG" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("spriteName"):SetString("level_bar_full")
+						component("sheetName"):SetString("xml_resources/hud01.xml")
+						component("size"):SetFloat($FillSize*game.menuScaleX())
+						component("layer"):SetString("HUD")
+						component("FullMaskH"):SetInt(component("maskHeight"):GetInt())
+						component("FullMaskW"):SetInt(component("maskWidth"):GetInt())
+						component:setColor(1.0, 0, 0)
+					]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="Fill">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BG" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("spriteName"):SetString("level_bar_full")
+						component("sheetName"):SetString("xml_resources/hud01.xml")
+						component("size"):SetFloat($FillSize*game.menuScaleX())
+						component("layer"):SetString("HUD")
+						component("FullMaskH"):SetInt(component("maskHeight"):GetInt())
+						component("FullMaskW"):SetInt(component("maskWidth"):GetInt())
+					]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="TextBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Fill" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="-17*game.menuScaleY()" yOffset="2*game.menuScaleY()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					  component("spriteName"):SetString("battle_name_backing")
+					  component("sheetName"):SetString("xml_resources/element_buttons.xml")
+					  component("size"):SetFloat(0.5*game.menuScaleY())
+					  component("layer"):SetString("HUD")
+					  component("alpha"):SetFloat(0)
+				  ]]>
+			</event>
+		</spriteSheetComponent>
+		<event name="onPostInit" params="element">
+			<![CDATA[
+			
+					  local xOffset = element("xOffset"):GetInt()
+					  local yOffset = element("yOffset"):GetInt()
+					  local priority = -2
+					
+					  if $TeamId == 1 then -- (opponent)
+						  element:setOrientation(lua_sys.MenuOrientation(xOffset, yOffset, priority, lua_sys.RIGHT, lua_sys.TOP))
+						  element:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.BOTTOM)
+					  else
+						  element:setOrientation(lua_sys.MenuOrientation(xOffset, yOffset, priority, lua_sys.LEFT, lua_sys.TOP))
+						  element:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					  end
+			  ]]>
+		</event>
+	</element>
+
+	<textComponent name="Text">
+		<size dependentOnElement="TextBG" />
+		<position relativeTo="TextBG" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.18*game.menuScaleY())
+				component("text"):SetString("")
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				]]>
+		</event>
+	</textComponent>
+
+	<textComponent name="HealthText">
+		<size dependentOnElement="Fill" dependentOnComponent="Sprite" />
+		<position relativeTo="Fill" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-1*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("text"):SetString("10/10")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+				]]>
+		</event>
+	</textComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("totalHealth"):SetInt(1)
+			element("targetHealth"):SetInt(1)
+			element("currentHealth"):SetInt(1)
+			element("currentPercent"):SetFloat(1.0)
+			element("targetPercent"):SetFloat(1.0)
+			element("tweenTime"):SetFloat(0)
+		]]>
+	</event>
+
+	<!-- called from game -->
+	<event name="refresh" params="element, tween">
+		<![CDATA[
+		
+				local activePlayer = game.battleSystem():getActiveBattlePlayer($TeamId)
+				
+				local currentHealth = activePlayer:health()
+				local totalHealth = activePlayer:totalHealth()
+				
+				include("MenuHelpers").ShrinkTextToWidth(activePlayer:name(), 
+					element:GetComponent("Text"), 130*game.menuScaleX())
+				
+				element["GeneHolder"]("MonsterId"):SetInt(activePlayer:data().monsterId)
+				element["GeneHolder"]:DoStoredScript("repopulate")
+				
+				element("totalHealth"):SetInt(totalHealth)
+				
+				local fill = element:GetElement("Fill"):GetComponent("Sprite")
+				
+				local percent = currentHealth / totalHealth;
+		
+				--if fill is a sprite
+				--local width = fill("width"):GetInt()
+				--fill("maskW"):SetFloat(width * percent)
+				
+				--if fill is a spritesheet
+				local width = fill("FullMaskW"):GetInt()
+				fill("maskWidth"):SetFloat(width * percent)
+
+				if tween == 1 then
+					element("targetPercent"):SetFloat(percent)
+					element("tweenTime"):SetFloat(1.0)
+
+					element("targetHealth"):SetInt(currentHealth)
+				else
+					element("currentPercent"):SetFloat(percent)
+					element("targetPercent"):SetFloat(percent)
+					
+					local fill = element:GetElement("FillDamage"):GetComponent("Sprite")
+					local width = fill("FullMaskW"):GetInt()
+					fill("maskWidth"):SetFloat(width * element("currentPercent"):GetFloat())
+					
+					element("targetHealth"):SetInt(currentHealth)
+					element("currentHealth"):SetInt(currentHealth)
+					element:GetComponent("HealthText")("text"):SetString(element("currentHealth"):GetInt().."/"..element("totalHealth"):GetInt())
+				end
+
+			]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local function tickFill()
+				local tweenTime = element("tweenTime"):GetFloat()
+
+				if tweenTime > 0 then
+
+					tweenTime = tweenTime - dt
+					element("tweenTime"):SetFloat(tweenTime)
+
+					local totalAnimTime = 0.5
+
+					if tweenTime < totalAnimTime then
+
+						local from = element("currentPercent"):GetFloat()
+						local to = element("targetPercent"):GetFloat()
+
+						local easedTime = 1.0 - Quadratic_EaseIn(tweenTime, 0, 1.0, totalAnimTime)
+						local p = lerp(from, to, easedTime)
+					
+						local fill = element:GetElement("FillDamage"):GetComponent("Sprite")
+						local width = fill("FullMaskW"):GetInt()
+						fill("maskWidth"):SetFloat(width * p)
+					
+						from = element("currentHealth"):GetFloat()
+						to = element("targetHealth"):GetFloat()
+						local h = math.floor(lerp(from, to, easedTime))
+						element:GetComponent("HealthText")("text"):SetString(h.."/"..element("totalHealth"):GetInt())
+					
+					end
+				
+					if tweenTime <= 0 then
+						element("currentPercent"):SetFloat(element("targetPercent"):GetFloat())
+						local fill = element:GetElement("FillDamage"):GetComponent("Sprite")
+						local width = fill("FullMaskW"):GetInt()
+						fill("maskWidth"):SetFloat(width * element("currentPercent"):GetFloat())
+					
+						element("currentHealth"):SetInt(element("targetHealth"):GetInt())
+						element:GetComponent("HealthText")("text"):SetString(element("currentHealth"):GetInt().."/"..element("totalHealth"):GetInt())
+					end
+				
+				end
+			end
+			
+			tickFill()
+		]]>
+	</event>
+
+	<template type="template_square_genes" name="GeneHolder">
+		<templateVar name="$Size" equals="0.20 * game.hudScale()" />
+		<templateVar name="$Spacing" equals="-1 * game.hudScale()" />
+		<templateVar name="$Layer" equals="HUD" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Fill" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0*-15*game.hudScale()" yOffset="5*game.menuScaleY()" priorityOffset="0" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("MonsterId"):SetInt(0)
+				element("TeamId"):SetInt($TeamId)
+
+				local priority = 0
+				local offsetX = element("xOffset"):GetInt()
+				local offsetY = element("yOffset"):GetInt()
+				
+				element:relativeTo(element:parent():GetElement("Fill"))
+				
+				if $TeamId == 1 then
+					element:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					element:setOrientation(lua_sys.MenuOrientation(offsetX, offsetY, priority, lua_sys.LEFT, lua_sys.TOP))
+				else
+					element:setRelativeObjectAnchors(lua_sys.RIGHT, lua_sys.BOTTOM)
+					element:setOrientation(lua_sys.MenuOrientation(offsetX, offsetY, priority, lua_sys.RIGHT, lua_sys.TOP))
+				end
+				
+			]]>
+		</event>
+	</template>
+
+</template>

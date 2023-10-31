@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:64c413a9becdccc69bd3f0ae9bff0015:247b85c72c3965ddb42848dd9228210c:f577cddd3aecbc9c5c91c2ba1373cf6b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BEN_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BEN_body" x="219" y="148" w="161" h="123" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_body_RARE" x="384" y="262" w="123" h="161" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_eyelid_01" x="384" y="210" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="BEN_eyelid_02" x="158" y="199" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="BEN_eyelid_03" x="158" y="232" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="BEN_eyelid_04" x="158" y="265" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="BEN_eyes" x="139" y="664" w="53" h="23" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_eyes_RARE" x="75" y="671" w="53" h="23" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_face_red" x="4" y="534" w="72" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_hair_front" x="100" y="459" w="38" h="33" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_hair_left" x="208" y="651" w="56" h="55" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_hair_right" x="384" y="148" w="58" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_hand" x="100" y="496" w="37" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_hand_RARE" x="4" y="677" w="44" h="37" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_head" x="141" y="507" w="74" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_head_RARE" x="384" y="427" w="100" h="96" pX="0.5" pY="0.5" oX="4" oY="0" oW="100" oH="100" r="y"/>
+    <sprite n="BEN_hornbell" x="4" y="325" w="137" h="130" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_hornbell_RARE" x="219" y="412" w="137" h="130" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_horntube" x="4" y="199" w="150" h="59" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_horntube_RARE" x="4" y="262" w="150" h="59" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_key01_RARE" x="488" y="427" w="20" h="26" pX="0.5" pY="0.5" oX="5" oY="2" oW="30" oH="30"/>
+    <sprite n="BEN_key02_RARE" x="480" y="582" w="27" h="26" pX="0.5" pY="0.5" oX="1" oY="2" oW="30" oH="30"/>
+    <sprite n="BEN_key03_RARE" x="384" y="602" w="26" h="26" pX="0.5" pY="0.5" oX="1" oY="3" oW="30" oH="30"/>
+    <sprite n="BEN_key04_RARE" x="4" y="718" w="27" h="25" pX="0.5" pY="0.5" oX="2" oY="2" oW="30" oH="30" r="y"/>
+    <sprite n="BEN_key05_RARE" x="480" y="527" w="28" h="26" pX="0.5" pY="0.5" oX="1" oY="2" oW="30" oH="30"/>
+    <sprite n="BEN_key06_RARE" x="480" y="557" w="28" h="21" pX="0.5" pY="0.5" oX="5" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="BEN_left_foot" x="4" y="587" w="70" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_foot_RARE" x="219" y="546" w="70" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_lowerarm" x="446" y="4" w="62" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_lowerarm_RARE" x="446" y="29" w="62" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_lowerleg" x="145" y="331" w="70" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_lowerleg_RARE" x="145" y="419" w="70" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_left_upperarm" x="360" y="412" w="20" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_left_upperarm_RARE" x="360" y="477" w="20" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_mouth_01" x="488" y="457" w="18" h="29" pX="0.5" pY="0.5" oX="18" oY="8" oW="68" oH="36" r="y"/>
+    <sprite n="BEN_mouth_02" x="52" y="698" w="31" h="24" pX="0.5" pY="0.5" oX="18" oY="6" oW="68" oH="36"/>
+    <sprite n="BEN_mouth_03" x="132" y="691" w="34" h="32" pX="0.5" pY="0.5" oX="17" oY="2" oW="68" oH="36" r="y"/>
+    <sprite n="BEN_mouth_04" x="141" y="601" w="67" h="34" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="36"/>
+    <sprite n="BEN_pupil" x="427" y="83" w="9" h="8" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_pupil_RARE" x="427" y="95" w="9" h="8" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_right_foot" x="293" y="546" w="67" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_right_foot_RARE" x="219" y="598" w="67" h="49" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_right_lowerarm" x="139" y="639" w="65" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_right_lowerarm_RARE" x="290" y="599" w="65" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_right_lowerleg" x="384" y="527" w="92" h="71" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_right_lowerleg_RARE" x="4" y="459" w="92" h="71" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_right_upperarm" x="359" y="599" w="21" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_right_upperarm_RARE" x="290" y="624" w="64" h="21" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_shadow" x="4" y="83" w="211" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_tube_behind" x="446" y="54" w="61" h="204" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_tube_behind_RARE" x="219" y="83" w="204" h="61" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_tube_front" x="4" y="4" w="217" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_tube_front_RARE" x="225" y="4" w="217" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="BEN_upperleg" x="75" y="643" w="60" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BEN_upperleg_RARE" x="290" y="649" w="60" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="RARE_BEN_eyelid_01" x="158" y="298" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="RARE_BEN_eyelid_02" x="80" y="544" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="RARE_BEN_eyelid_03" x="80" y="577" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="RARE_BEN_eyelid_04" x="78" y="610" w="57" h="29" pX="0.5" pY="0.5" oX="2" oY="1" oW="61" oH="31"/>
+    <sprite n="RARE_BEN_mouth_01" x="488" y="490" w="18" h="29" pX="0.5" pY="0.5" oX="18" oY="8" oW="68" oH="36" r="y"/>
+    <sprite n="RARE_BEN_mouth_02" x="87" y="698" w="31" h="24" pX="0.5" pY="0.5" oX="18" oY="6" oW="68" oH="36"/>
+    <sprite n="RARE_BEN_mouth_03" x="170" y="691" w="34" h="32" pX="0.5" pY="0.5" oX="17" oY="2" oW="68" oH="36" r="y"/>
+    <sprite n="RARE_BEN_mouth_04" x="4" y="639" w="67" h="34" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="36"/>
+    <sprite n="spore_BEN" x="219" y="275" w="141" h="133" pX="0.5" pY="0.5" oX="21" oY="14" oW="172" oH="172" r="y"/>
+</TextureAtlas>

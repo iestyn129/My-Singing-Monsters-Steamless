@@ -1,0 +1,61 @@
+<template name="template_overlayedcheckbox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$layer" equals="'HUD'" />
+	<defaultTemplateVar name="$scale" equals="1.0" />
+	<defaultTemplateVar name="$sfx" equals="[[audio/sfx/menu_click_small.wav]]" />
+	<defaultTemplateVar name="$check" equals="1"/>
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+	
+	<spriteSheetComponent name="bg">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("$bgSprite")
+			component("sheetName"):SetString("$sheetName")
+			component("size"):SetFloat($scale)
+			component("layer"):SetString("$layer")
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="overlay">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("$overlaySprite")
+			component("sheetName"):SetString("$sheetName")
+			component("size"):SetFloat($scale)
+			component("layer"):SetString("$layer")
+			
+			if(($check == 1) and (element["bg"]("visible"):GetInt() == 1)) then
+				component("visible"):SetInt(1)
+			else
+				component("visible"):SetInt(0)
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchDown" params="component, element">
+			element["bg"]:setColor(0.5, 0.5, 0.5)
+			element["overlay"]:setColor(0.5, 0.5, 0.5)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			element["bg"]:setColor(1.0, 1.0, 1.0)
+			element["overlay"]:setColor(1.0, 1.0, 1.0)
+			lua_sys.playSoundFx("$sfx")
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element["bg"]:setColor(1.0, 1.0, 1.0)
+			element["overlay"]:setColor(1.0, 1.0, 1.0)
+		</event>
+	</touchComponent>
+	
+	<event name="hide" params="element">
+		element["bg"]("visible"):SetInt(0)
+		element["overlay"]("visible"):SetInt(0)
+		element["Touch"]("enabled"):SetInt(0)
+	</event>
+	
+</template>

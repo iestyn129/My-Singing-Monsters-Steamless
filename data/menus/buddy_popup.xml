@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	<element name="Label">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="buddyLight3" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="30*game.hudScale()" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="250*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("text"):SetString("LIGHTING_SEQUENCE_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="onInit" params="element">
+		element:DoStoredScript("populate")
+	</event>
+	
+	<event name="populate" params="element">
+		<![CDATA[
+			local numItems = 16
+			local rootItem = nil
+			local previous = nil
+			
+			for i=0, numItems-1 do
+				local emptyItem = menu:addTemplateElement("template_barbutton", "buddyLight"..i, element)
+				emptyItem("SheetName"):SetString("xml_resources/context_buttons.xml")
+				emptyItem("ButtonSheetName"):SetString("xml_resources/context_buttons.xml")
+				emptyItem("UpSpriteName"):SetString("button_base_grey")
+				
+				if(game.buddyLightStatus(i)) then
+					emptyItem("ButtonImageName"):SetString("button_bulb_on")
+				else
+					emptyItem("ButtonImageName"):SetString("button_bulb_off")
+				end
+				
+				emptyItem("ButtonLabelText"):SetString("")
+				emptyItem("ButtonScale"):SetFloat(0.5 * game.hudScale())
+				emptyItem("ButtonHFlip"):SetInt(0)
+				emptyItem("ButtonVFlip"):SetInt(0)
+				emptyItem("AttachedTemplate"):SetString("")
+				emptyItem("FunctionName"):SetString("buddy_light_toggle" .. i)
+				emptyItem("ButtonMapping"):SetString("")
+				emptyItem("ReactToTouches"):SetInt(1);
+				emptyItem("TextScale"):SetFloat(1.0)
+				
+				emptyItem:setParent(element)
+				emptyItem:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+				
+				if (previous == nil) then
+					emptyItem:setOrientation(lua_sys.MenuOrientation((20 + lua_sys.deviceMarginX()) * game.hudScale(), (40 + lua_sys.deviceMarginY()) * game.hudScale(), 5, lua_sys.LEFT, lua_sys.BOTTOM))
+					rootItem = emptyItem
+				elseif(i == 8) then
+					previous = rootItem
+					emptyItem:setOrientation(lua_sys.MenuOrientation(previous("xOffset"):GetInt(), previous("yOffset"):GetInt() - (32 * game.hudScale()), 5, lua_sys.LEFT, lua_sys.BOTTOM))
+				else
+					emptyItem:setOrientation(lua_sys.MenuOrientation(previous("xOffset"):GetInt() + (32 * game.hudScale()), previous("yOffset"):GetInt(), 5, lua_sys.LEFT, lua_sys.BOTTOM))
+				end
+				
+				previous = emptyItem
+				
+				emptyItem:init()
+				emptyItem:setPositionBroadcast(true)
+			end
+		]]>
+	</event>
+	
+	<event name="buddy_light_toggle0" params="element">
+		game.toggleBuddyLight(0)
+		if(game.buddyLightStatus(0)) then
+			element["buddyLight0"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight0"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle1" params="element">
+		game.toggleBuddyLight(1)
+		if(game.buddyLightStatus(1)) then
+			element["buddyLight1"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight1"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle2" params="element">
+		game.toggleBuddyLight(2)
+		if(game.buddyLightStatus(2)) then
+			element["buddyLight2"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight2"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle3" params="element">
+		game.toggleBuddyLight(3)
+		if(game.buddyLightStatus(3)) then
+			element["buddyLight3"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight3"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle4" params="element">
+		game.toggleBuddyLight(4)
+		if(game.buddyLightStatus(4)) then
+			element["buddyLight4"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight4"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle5" params="element">
+		game.toggleBuddyLight(5)
+		if(game.buddyLightStatus(5)) then
+			element["buddyLight5"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight5"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle6" params="element">
+		game.toggleBuddyLight(6)
+		if(game.buddyLightStatus(6)) then
+			element["buddyLight6"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight6"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle7" params="element">
+		game.toggleBuddyLight(7)
+		if(game.buddyLightStatus(7)) then
+			element["buddyLight7"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight7"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle8" params="element">
+		game.toggleBuddyLight(8)
+		if(game.buddyLightStatus(8)) then
+			element["buddyLight8"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight8"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle9" params="element">
+		game.toggleBuddyLight(9)
+		if(game.buddyLightStatus(9)) then
+			element["buddyLight9"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight9"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle10" params="element">
+		game.toggleBuddyLight(10)
+		if(game.buddyLightStatus(10)) then
+			element["buddyLight10"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight10"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle11" params="element">
+		game.toggleBuddyLight(11)
+		if(game.buddyLightStatus(11)) then
+			element["buddyLight11"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight11"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle12" params="element">
+		game.toggleBuddyLight(12)
+		if(game.buddyLightStatus(12)) then
+			element["buddyLight12"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight12"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle13" params="element">
+		game.toggleBuddyLight(13)
+		if(game.buddyLightStatus(13)) then
+			element["buddyLight13"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight13"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle14" params="element">
+		game.toggleBuddyLight(14)
+		if(game.buddyLightStatus(14)) then
+			element["buddyLight14"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight14"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="buddy_light_toggle15" params="element">
+		game.toggleBuddyLight(15)
+		if(game.buddyLightStatus(15)) then
+			element["buddyLight15"]["ButtonImage"]("spriteName"):SetString("button_bulb_on")
+		else
+			element["buddyLight15"]["ButtonImage"]("spriteName"):SetString("button_bulb_off")
+		end
+	</event>
+	
+	<event name="queuePop" params="element">
+		element:root():popPopUp()
+	</event>
+	
+</menu>

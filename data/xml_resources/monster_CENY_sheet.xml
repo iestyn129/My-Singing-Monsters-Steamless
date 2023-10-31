@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f72b8d51446be3b3b273fae4ae3877bd:f1d5cac0119f8946aaeb71bf2f5271bd:44c9914e81e5fa3636eefbf8f151f708$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CENY_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="L eyeball" x="191" y="790" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="L eyelid 1" x="206" y="838" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="L eyelid 2" x="235" y="790" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="L eyelid 3" x="206" y="886" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="L eyelid 4" x="215" y="934" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="L eyelid 5" x="250" y="838" w="42" h="46" pX="0.5" pY="0.5"/>
+    <sprite n="R eyeball" x="340" y="373" w="42" h="37" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="42" r="y"/>
+    <sprite n="R eyelid 1" x="231" y="749" w="42" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R eyelid 2" x="275" y="749" w="42" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R eyelid 3" x="215" y="982" w="42" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="R eyelid 4" x="279" y="790" w="38" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="R eyelid 5" x="250" y="886" w="38" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="base" x="245" y="630" w="216" h="117" pX="0.5" pY="0.5" oX="0" oY="1" oW="216" oH="118"/>
+    <sprite n="body 1" x="2" y="135" w="316" h="226" pX="0.5" pY="0.5" oX="5" oY="20" oW="280" oH="336" r="y"/>
+    <sprite n="body 2" x="2" y="2" w="336" h="131" pX="0.5" pY="0.5" oX="79" oY="0" oW="280" oH="336" r="y"/>
+    <sprite n="body 3" x="262" y="412" w="242" h="216" pX="0.5" pY="0.5" oX="39" oY="93" oW="280" oH="336" r="y"/>
+    <sprite n="body 4" x="2" y="528" w="241" h="196" pX="0.5" pY="0.5" oX="20" oY="138" oW="280" oH="336"/>
+    <sprite n="body 5" x="340" y="92" w="163" h="279" pX="0.5" pY="0.5" oX="1" oY="171" oW="280" oH="336" r="y"/>
+    <sprite n="body 6" x="2" y="363" w="258" h="163" pX="0.5" pY="0.5" oX="10" oY="172" oW="280" oH="336"/>
+    <sprite n="mouth 1" x="463" y="718" w="47" h="70" pX="0.5" pY="0.5" oX="20" oY="29" oW="104" oH="88" r="y"/>
+    <sprite n="mouth 2" x="262" y="363" w="76" h="47" pX="0.5" pY="0.5" oX="15" oY="27" oW="104" oH="88"/>
+    <sprite n="mouth 3" x="463" y="630" w="47" h="86" pX="0.5" pY="0.5" oX="10" oY="26" oW="104" oH="88" r="y"/>
+    <sprite n="mouth 4" x="2" y="790" w="51" h="104" pX="0.5" pY="0.5" oX="0" oY="21" oW="104" oH="88" r="y"/>
+    <sprite n="mouth 5" x="83" y="880" w="69" h="72" pX="0.5" pY="0.5" oX="19" oY="13" oW="104" oH="88"/>
+    <sprite n="mouth 6" x="55" y="790" w="82" h="88" pX="0.5" pY="0.5" oX="14" oY="0" oW="104" oH="88"/>
+    <sprite n="pipe 1 base" x="384" y="373" w="56" h="34" pX="0.5" pY="0.5" oX="0" oY="0" oW="34" oH="58" r="y"/>
+    <sprite n="pipe 1 end" x="2" y="726" w="61" h="62" pX="0.5" pY="0.5" oX="0" oY="0" oW="62" oH="62" r="y"/>
+    <sprite n="pipe 2 base" x="151" y="726" w="78" h="42" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pipe 2 end" x="83" y="954" w="59" h="64" pX="0.5" pY="0.5" oX="1" oY="1" oW="66" oH="62" r="y"/>
+    <sprite n="pipe 3 base" x="65" y="749" w="84" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="38" oH="86" r="y"/>
+    <sprite n="pipe 3 end" x="154" y="864" w="50" h="70" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pipe 4 base" x="2" y="896" w="38" h="98" pX="0.5" pY="0.5"/>
+    <sprite n="pipe 4 end" x="144" y="954" w="69" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="52"/>
+    <sprite n="pipe 5 base" x="42" y="896" w="39" h="93" pX="0.5" pY="0.5" oX="1" oY="1" oW="40" oH="94"/>
+    <sprite n="pipe 5 end" x="139" y="790" w="50" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pupil" x="320" y="135" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="shadow" x="340" y="2" w="170" h="88" pX="0.5" pY="0.5" oX="0" oY="1" oW="170" oH="90"/>
+</TextureAtlas>

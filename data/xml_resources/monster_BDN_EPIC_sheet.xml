@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:25f611ebe64f96143d158a81cb1c534a:761c06e0fb8485f5ccfda0ca5551e14b:761ce0a759c855942b6063f57f5f44e5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BDN_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="eyelids1" x="277" y="129" w="41" h="70" pX="0.5" pY="0.5" oX="4" oY="3" oW="78" oH="46" r="y"/>
+    <sprite n="eyelids2" x="2" y="213" w="70" h="39" pX="0.5" pY="0.5" oX="4" oY="4" oW="78" oH="46"/>
+    <sprite n="eyelids3" x="74" y="213" w="70" h="39" pX="0.5" pY="0.5" oX="4" oY="4" oW="78" oH="46"/>
+    <sprite n="eyelids4" x="436" y="75" w="72" h="39" pX="0.5" pY="0.5" oX="3" oY="4" oW="78" oH="46"/>
+    <sprite n="left foot_EPIC" x="319" y="224" w="82" h="82" pX="0.5" pY="0.5" oX="3" oY="3" oW="90" oH="86"/>
+    <sprite n="left_finger_inner_EPIC" x="352" y="338" w="34" h="28" pX="0.5" pY="0.5" oX="67" oY="39" oW="100" oH="100" r="y"/>
+    <sprite n="left_finger_outer_EPIC" x="352" y="308" w="35" h="28" pX="0.5" pY="0.5" oX="35" oY="64" oW="100" oH="100"/>
+    <sprite n="left_knuckle_inner_EPIC" x="403" y="262" w="25" h="31" pX="0.5" pY="0.5" oX="50" oY="32" oW="100" oH="100" r="y"/>
+    <sprite n="left_knuckle_outer_EPIC" x="315" y="308" w="35" h="31" pX="0.5" pY="0.5" oX="33" oY="44" oW="100" oH="100"/>
+    <sprite n="lower body" x="172" y="2" w="146" h="125" pX="0.5" pY="0.5" oX="3" oY="0" oW="128" oH="146" r="y"/>
+    <sprite n="lower leg" x="146" y="248" w="66" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="lower_arm_left_EPIC" x="257" y="252" w="56" h="63" pX="0.5" pY="0.5" oX="0" oY="3" oW="100" oH="100" r="y"/>
+    <sprite n="lower_arm_right_EPIC" x="259" y="201" w="58" h="49" pX="0.5" pY="0.5" oX="35" oY="6" oW="100" oH="100" r="y"/>
+    <sprite n="mouth1" x="320" y="93" w="110" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="110" oH="72"/>
+    <sprite n="mouth2" x="165" y="129" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="mouth3" x="320" y="163" w="110" h="59" pX="0.5" pY="0.5" oX="0" oY="11" oW="110" oH="72"/>
+    <sprite n="pipe A" x="214" y="248" w="41" h="48" pX="0.5" pY="0.5" oX="0" oY="2" oW="50" oH="44" r="y"/>
+    <sprite n="pipe B" x="320" y="49" w="114" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="114" r="y"/>
+    <sprite n="pipe B_RARE" x="320" y="2" w="114" h="45" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="114" r="y"/>
+    <sprite n="pipe C" x="150" y="190" w="107" h="56" pX="0.5" pY="0.5" oX="0" oY="3" oW="58" oH="110" r="y"/>
+    <sprite n="pipe D" x="429" y="302" w="81" h="49" pX="0.5" pY="0.5" oX="3" oY="3" oW="52" oH="84" r="y"/>
+    <sprite n="pipe E" x="403" y="295" w="24" h="50" pX="0.5" pY="0.5" oX="5" oY="0" oW="32" oH="52"/>
+    <sprite n="pipe end" x="150" y="94" w="16" h="26" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="pupil" x="150" y="122" w="13" h="12" pX="0.5" pY="0.5" oX="3" oY="3" oW="20" oH="20"/>
+    <sprite n="right foot_EPIC" x="436" y="2" w="74" h="71" pX="0.5" pY="0.5" oX="8" oY="2" oW="90" oH="80"/>
+    <sprite n="right_finger_inner_EPIC" x="388" y="347" w="33" h="33" pX="0.5" pY="0.5" oX="7" oY="50" oW="100" oH="100"/>
+    <sprite n="right_finger_outer_EPIC" x="403" y="224" w="27" h="36" pX="0.5" pY="0.5" oX="37" oY="70" oW="100" oH="100" r="y"/>
+    <sprite n="right_knuckle_inner_EPIC" x="458" y="353" w="31" h="31" pX="0.5" pY="0.5" oX="18" oY="37" oW="100" oH="100"/>
+    <sprite n="right_knuckle_outer_EPIC" x="423" y="353" w="33" h="29" pX="0.5" pY="0.5" oX="38" oY="48" oW="100" oH="100" r="y"/>
+    <sprite n="shadow" x="2" y="2" w="168" h="90" pX="0.5" pY="0.5" oX="1" oY="0" oW="170" oH="90"/>
+    <sprite n="upper body_EPIC" x="2" y="94" w="146" h="117" pX="0.5" pY="0.5" oX="10" oY="3" oW="140" oH="152" r="y"/>
+    <sprite n="upper_arm_left_EPIC" x="432" y="116" w="78" h="66" pX="0.5" pY="0.5" oX="16" oY="10" oW="100" oH="100" r="y"/>
+    <sprite n="upper_arm_right_EPIC" x="432" y="184" w="78" h="66" pX="0.5" pY="0.5" oX="15" oY="10" oW="100" oH="100" r="y"/>
+    <sprite n="upperleg" x="432" y="252" w="76" h="48" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

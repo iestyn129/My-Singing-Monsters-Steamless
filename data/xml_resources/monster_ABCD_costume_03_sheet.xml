@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:01097d2c83593b21bc48a10d0edc5b49:71c63a9dd1f571de84cc1b337785524e:26f017e9a6f625f581d293ef96b5ff3b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_ABCD_costume_03_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (28, 53) -> new anchor (59, 64) diff = (-31, -11)-->
+	<!-- add double it to texturepacker output offsets (1, 2) -> (-61, -20), because hires-->
+    <sprite n="ABCD_snowman.png" x="2" y="2" w="237" h="176" pX="0.5" pY="0.5" oX="-61" oY="-20" oW="240" oH="180"/>
+</TextureAtlas>

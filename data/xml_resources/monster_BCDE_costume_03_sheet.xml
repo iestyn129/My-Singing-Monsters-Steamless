@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4bda5da6212fbc4aa9f0a38052d080ff:0ef09910688e6fb842d6bdf171d1530e:097775ffe9eb8b27033918e6e4feab69$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCDE_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="BCDE_head_CARVED.png" x="2" y="2" w="394" h="272" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_horn_back_CARVED.png" x="2" y="276" w="156" h="218" pX="0.5" pY="0.5"/>
+	<!-- original anchor = (64, 60) -> new anchor (21, 80) diff = (43, -20)-->
+	<!-- add double it to texturepacker output offsets (1, 3) -> (87, -37), because hires-->
+    <sprite n="BCDE_small_horns_CARVED.png" x="398" y="2" w="72" h="125" pX="0.5" pY="0.5" oX="87" oY="-37" oW="130" oH="80" r="y"/>
+</TextureAtlas>

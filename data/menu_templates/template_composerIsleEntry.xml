@@ -1,0 +1,272 @@
+<template name="template_composerIsleEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+	<event name="onPostInit" params="element">
+		--if island isn't owned:
+		if(element("islandUid"):GetInt() == -1) then
+			local currency = game.islandCurrency(element:parent()("nextComposerIslandId"):GetInt())
+			if(currency == "DIAMONDS") then
+				element["CurrencyIcon"]["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+			else
+				element["CurrencyIcon"]["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+			end
+			element["CurrencyIcon"]["Sprite"]("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+			element["CurrencyIcon"]["Sprite"]("visible"):SetInt(1)
+		else
+			element["CurrencyIcon"]["Sprite"]("visible"):SetInt(0)
+		end
+		
+		if(game.currentIslandUid() == element("islandUid"):GetInt()) then
+			element["bg"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["MusicBacking"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["MusicSprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["SongName"]["Text"]:setColor(0.5, 0.5, 0.5)
+			element["Touch"]("enable"):SetInt(0)
+		end
+		
+	</event>
+	
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite" >
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.525*lua_sys.screenWidth()/480)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="CurrencyIcon">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.375*lua_sys.screenWidth()/480)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Price">
+		<size dependentOnElement="element:name()" dependentOnComponent="RedStrip" />
+		<position relativeTo="CurrencyIcon" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="2" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<size w="50*lua_sys.screenWidth()/480" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.28*lua_sys.screenWidth()/480)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				
+				if(element:parent()("islandUid"):GetInt() == -1) then
+					local baseCost = game.islandCost(element:parent():parent()("nextComposerIslandId"):GetInt())
+					component("text"):SetString(game.commaizeNumber(baseCost))
+					local currency = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt());
+					if(currency == "DIAMONDS") then
+						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
+					else
+						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
+					end
+					component("visible"):SetInt(1)
+					
+					if(baseCost ~= 0 and game.islandSale(element:parent():parent()("nextComposerIslandId"):GetInt())) then
+						component("alpha"):SetFloat(0.5)
+					end
+				else
+					component("visible"):SetInt(0)
+				end
+				
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+		<spriteComponent name="RedStrip">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="1*game.menuScaleX()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/redstrip")
+				component:setScale(Vector2(8.0*lua_sys.screenWidth()/480, 1.5*lua_sys.screenWidth()/480))
+				component("size"):SetFloat(1.0)
+				component("alpha"):SetFloat(0.6)
+				component("layer"):SetString("Clipping")
+
+				local baseCost = game.islandCost(element:parent():parent()("nextComposerIslandId"):GetInt())
+				if(element:parent()("islandUid"):GetInt() == -1 and baseCost ~= 0 and game.islandSale(element:parent():parent()("nextComposerIslandId"):GetInt())) then
+					component("visible"):SetInt(1)
+				else
+					component("visible"):SetInt(0)
+				end
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="SalePrice">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Price" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="50*lua_sys.screenWidth()/480" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.28*lua_sys.screenWidth()/480)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				
+				local baseCost = game.islandCost(element:parent():parent()("nextComposerIslandId"):GetInt())
+				if(element:parent()("islandUid"):GetInt() == -1 and baseCost ~= 0 and game.islandSale(element:parent():parent()("nextComposerIslandId"):GetInt())) then
+					component("text"):SetString(game.commaizeNumber(game.islandSaleCost(element:parent():parent()("nextComposerIslandId"):GetInt())))
+					local currency = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt());
+					if(currency == "DIAMONDS") then
+						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
+					else
+						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
+					end
+					component("visible"):SetInt(1)
+				else
+					component("visible"):SetInt(0)
+				end
+				
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="MusicBacking">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_rnd_base_green")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenWidth()/480)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="MusicSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MusicBacking" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("decoration_filters_musical")
+				component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+				component("size"):SetFloat(0.4*lua_sys.screenWidth()/480)
+				component("layer"):SetString("Clipping")
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<element name="SongName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="MusicBacking" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="155*lua_sys.screenWidth()/480" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.25*lua_sys.screenWidth()/480)
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				if(element:parent()("islandUid"):GetInt() ~= -1) then
+					if(element:parent()("songName"):GetString()=="") then
+						component("text"):SetString(game.StoreContext_DEFAULT_OWNED_SONGNAME)
+					else
+						component("text"):SetString(element:parent()("songName"):GetString())
+					end
+					component("noTranslate"):SetInt(1)
+				else
+					component:setSize(Vector2(100*lua_sys.screenWidth()/480, 0))
+					component("text"):SetString(game.StoreContext_DEFAULT_NEW_SONGNAME)
+				end
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Clipping")
+			</event>
+		</textComponent>
+	</element>
+
+	<!-- template type="template_spritesheetbutton" name="DeleteButton">
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.2*game.menuScaleX()" />
+		<templateVar name="$layer" equals="Clipping" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="5*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				--game.displayConfirmation(("TEMPLATE_DELETE"..element:parent():name()), game.getLocalizedText("TEMPLATE_DELETE_CONFIRMATION"))
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("Clipping")
+				component("size"):SetFloat(0.2*game.menuScaleX())
+			</event>
+		</spriteSheetComponent>
+	</template -->
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			component("touchStart"):SetInt(y)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if(component("dragging"):GetInt() < 10) then
+					if(element("islandUid"):GetInt() == -1) then
+						game.makeNewComposerIsland();
+					else
+						game.setCurrentIslandByUid(element("islandUid"):GetInt());
+					end
+				end
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		</event>
+	</touchComponent>
+</template>

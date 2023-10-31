@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="Label">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SliderBg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="4*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="150*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("text"):SetString("ADJUST_TIME_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="SliderBg">
+		<size dependentOnElement="element:name()" dependentOnComponent="bg" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="5*game.hudScale()" yOffset="15*game.hudScale()" priorityOffset="5" />
+		<spriteSheetComponent name="bg">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_slider_frame")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="minus">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="24*game.hudScale()" yOffset="13*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_minus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="plus">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="RIGHT" />
+			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="19*game.hudScale()" yOffset="6*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_plus")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="Slider">
+		<size w="240*game.hudScale()" h="44*game.hudScale()" />
+		<position relativeTo="SliderBg" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-16*game.hudScale()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("time_slider")
+				component("sheetName"):SetString("xml_resources/buttons01.xml")
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("layer"):SetString("ContextBar")
+				if(game.timeWarpSpeed() >= 1.0) then
+					component("xOffset"):SetInt((element:absW()/2)*(game.timeWarpSpeed()-1))
+				else
+					component("xOffset"):SetInt(((element:absW())*(game.timeWarpSpeed()-1)))
+				end
+			</event>
+		</spriteSheetComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" component="Sprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDrag" params="component, element, x, y, relX, relY">
+				<![CDATA[
+					local slider = element:GetComponent("Sprite")
+					
+					if(((slider("xOffset"):GetInt() - slider:absW()/2 + relX) <= (element:absW()/2)) and ((slider("xOffset"):GetInt() - slider:absW()/2 + relX) >= (-1 * element:absW()/2))) then
+						slider("xOffset"):SetInt(slider("xOffset"):GetInt() - slider:absW()/2 + relX)
+						
+						if(slider("xOffset"):GetInt() <= 15 and slider("xOffset"):GetInt() >= -15) then
+							slider("xOffset"):SetInt(0)
+						end
+						
+						if(element["Sprite"]("xOffset"):GetInt() >= 0) then
+							game.setTimeWarpSpeed(1.0 + ((slider("xOffset"):GetInt()) / (element:absW()/2)))
+						else
+							game.setTimeWarpSpeed(1.0 + ((slider("xOffset"):GetInt()) / (element:absW()/2))/2)
+						end
+					end
+				]]>
+			</event>
+		</touchComponent>
+	</element>
+	
+	<event name="queuePop" params="element">
+		element:root():popPopUp()
+	</event>
+	
+</menu>

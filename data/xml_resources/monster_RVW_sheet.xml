@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:60a2a55ab3cb5a7ae722ce7e74eb9582:01b052babbb4655d029ff2fee1e0e7bc:b29ad6eb14860a9a3db7377499b13017$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_RVW_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="RVW_body" x="2" y="110" w="185" h="111" pX="0.5" pY="0.5" oX="9" oY="8" oW="128" oH="200" r="y"/>
+    <sprite n="RVW_fingerA_lower" x="209" y="653" w="56" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="RVW_fingerA_upper" x="352" y="689" w="52" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="RVW_fingerB_lower" x="352" y="639" w="53" h="48" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="48"/>
+    <sprite n="RVW_fingerB_upper" x="407" y="665" w="49" h="48" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="52"/>
+    <sprite n="RVW_fingerC_lower" x="458" y="665" w="40" h="56" pX="0.5" pY="0.5" oX="4" oY="2" oW="64" oH="44" r="y"/>
+    <sprite n="RVW_fingerC_upper" x="406" y="715" w="38" h="53" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="40" r="y"/>
+    <sprite n="RVW_hairA_01" x="79" y="549" w="75" h="66" pX="0.5" pY="0.5" oX="10" oY="4" oW="88" oH="76"/>
+    <sprite n="RVW_hairA_02" x="2" y="581" w="75" h="66" pX="0.5" pY="0.5" oX="10" oY="4" oW="88" oH="76"/>
+    <sprite n="RVW_hairA_03" x="2" y="437" w="76" h="70" pX="0.5" pY="0.5" oX="9" oY="0" oW="88" oH="76"/>
+    <sprite n="RVW_hairA_04" x="185" y="399" w="70" h="79" pX="0.5" pY="0.5" oX="6" oY="0" oW="88" oH="76" r="y"/>
+    <sprite n="RVW_hairA_05" x="2" y="509" w="75" h="70" pX="0.5" pY="0.5" oX="10" oY="0" oW="88" oH="76"/>
+    <sprite n="RVW_hairB_01" x="180" y="480" w="74" h="98" pX="0.5" pY="0.5" oX="6" oY="22" oW="108" oH="96" r="y"/>
+    <sprite n="RVW_hairB_02" x="420" y="393" w="76" h="97" pX="0.5" pY="0.5" oX="6" oY="20" oW="108" oH="96" r="y"/>
+    <sprite n="RVW_hairB_03" x="310" y="543" w="96" h="94" pX="0.5" pY="0.5" oX="6" oY="2" oW="108" oH="96"/>
+    <sprite n="RVW_hairB_04" x="414" y="492" w="95" h="97" pX="0.5" pY="0.5" oX="6" oY="1" oW="108" oH="96" r="y"/>
+    <sprite n="RVW_hairB_05" x="425" y="293" w="84" h="98" pX="0.5" pY="0.5" oX="6" oY="12" oW="108" oH="96" r="y"/>
+    <sprite n="RVW_hairC_01" x="310" y="448" w="102" h="93" pX="0.5" pY="0.5" oX="6" oY="25" oW="112" oH="132" r="y"/>
+    <sprite n="RVW_hairC_02" x="311" y="355" w="107" h="91" pX="0.5" pY="0.5" oX="6" oY="20" oW="112" oH="132" r="y"/>
+    <sprite n="RVW_hairC_03" x="315" y="149" w="121" h="103" pX="0.5" pY="0.5" oX="6" oY="6" oW="112" oH="132" r="y"/>
+    <sprite n="RVW_hairC_04" x="2" y="223" w="122" h="103" pX="0.5" pY="0.5" oX="6" oY="5" oW="112" oH="132" r="y"/>
+    <sprite n="RVW_hairC_05" x="314" y="254" w="109" h="99" pX="0.5" pY="0.5" oX="6" oY="18" oW="112" oH="132" r="y"/>
+    <sprite n="RVW_head" x="316" y="2" w="168" h="145" pX="0.5" pY="0.5" oX="6" oY="5" oW="180" oH="156"/>
+    <sprite n="RVW_left_eye" x="256" y="537" w="52" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="56" oH="56"/>
+    <sprite n="RVW_left_eyelid_01" x="2" y="649" w="63" h="57" pX="0.5" pY="0.5" oX="10" oY="6" oW="72" oH="72" r="y"/>
+    <sprite n="RVW_left_eyelid_02" x="79" y="617" w="64" h="58" pX="0.5" pY="0.5" oX="9" oY="5" oW="72" oH="72" r="y"/>
+    <sprite n="RVW_left_eyelid_03" x="113" y="488" w="64" h="59" pX="0.5" pY="0.5" oX="8" oY="5" oW="72" oH="72" r="y"/>
+    <sprite n="RVW_left_eyelid_04" x="156" y="580" w="64" h="59" pX="0.5" pY="0.5" oX="8" oY="5" oW="72" oH="72" r="y"/>
+    <sprite n="RVW_left_hand" x="257" y="398" w="51" h="68" pX="0.5" pY="0.5" oX="4" oY="2" oW="76" oH="56" r="y"/>
+    <sprite n="RVW_left_lowerarm" x="438" y="149" w="64" h="142" pX="0.5" pY="0.5" oX="5" oY="4" oW="152" oH="72" r="y"/>
+    <sprite n="RVW_left_pupil" x="486" y="51" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="RVW_left_upperarm" x="275" y="110" w="38" h="110" pX="0.5" pY="0.5" oX="1" oY="3" oW="112" oH="44" r="y"/>
+    <sprite n="RVW_mouth_01" x="486" y="2" w="20" h="26" pX="0.5" pY="0.5" oX="31" oY="59" oW="100" oH="108"/>
+    <sprite n="RVW_mouth_02" x="80" y="465" w="31" h="25" pX="0.5" pY="0.5" oX="29" oY="55" oW="100" oH="108" r="y"/>
+    <sprite n="RVW_mouth_03" x="446" y="723" w="46" h="34" pX="0.5" pY="0.5" oX="26" oY="44" oW="100" oH="108" r="y"/>
+    <sprite n="RVW_mouth_04" x="257" y="468" w="50" h="67" pX="0.5" pY="0.5" oX="21" oY="28" oW="100" oH="108"/>
+    <sprite n="RVW_mouth_05" x="126" y="325" w="57" h="75" pX="0.5" pY="0.5" oX="18" oY="22" oW="100" oH="108"/>
+    <sprite n="RVW_mouth_06" x="113" y="402" w="65" h="84" pX="0.5" pY="0.5" oX="15" oY="14" oW="100" oH="108"/>
+    <sprite n="RVW_mouth_07" x="408" y="591" w="90" h="72" pX="0.5" pY="0.5" oX="14" oY="9" oW="100" oH="108" r="y"/>
+    <sprite n="RVW_mouth_08" x="80" y="437" w="30" h="26" pX="0.5" pY="0.5" oX="26" oY="59" oW="100" oH="108"/>
+    <sprite n="RVW_right_eyelid_01" x="222" y="595" w="62" h="56" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="72" r="y"/>
+    <sprite n="RVW_right_eyelid_02" x="145" y="641" w="62" h="56" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="72" r="y"/>
+    <sprite n="RVW_right_eyelid_03" x="67" y="677" w="62" h="56" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="72" r="y"/>
+    <sprite n="RVW_right_eyelid_04" x="2" y="708" w="62" h="56" pX="0.5" pY="0.5" oX="7" oY="5" oW="68" oH="72" r="y"/>
+    <sprite n="RVW_right_hand" x="257" y="323" w="52" h="73" pX="0.5" pY="0.5" oX="3" oY="6" oW="80" oH="64" r="y"/>
+    <sprite n="RVW_right_lowerarm" x="187" y="272" w="68" h="125" pX="0.5" pY="0.5" oX="3" oY="4" oW="132" oH="76" r="y"/>
+    <sprite n="RVW_right_pupil" x="486" y="30" w="20" h="19" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="24" r="y"/>
+    <sprite n="RVW_right_upperarm" x="275" y="222" w="37" h="99" pX="0.5" pY="0.5" oX="4" oY="1" oW="108" oH="40" r="y"/>
+    <sprite n="RVW_shadow" x="189" y="110" w="84" h="160" pX="0.5" pY="0.5" oX="2" oY="2" oW="164" oH="88" r="y"/>
+    <sprite n="RVW_snout" x="2" y="328" w="109" h="107" pX="0.5" pY="0.5" oX="4" oY="3" oW="116" oH="116" r="y"/>
+    <sprite n="RVW_tail_01" x="126" y="223" w="59" h="100" pX="0.5" pY="0.5" oX="6" oY="4" oW="112" oH="68" r="y"/>
+    <sprite n="RVW_tail_02" x="286" y="639" w="64" h="53" pX="0.5" pY="0.5" oX="6" oY="2" oW="64" oH="68" r="y"/>
+    <sprite n="RVW_tube" x="2" y="2" w="312" h="106" pX="0.5" pY="0.5" oX="7" oY="9" oW="324" oH="124"/>
+</TextureAtlas>

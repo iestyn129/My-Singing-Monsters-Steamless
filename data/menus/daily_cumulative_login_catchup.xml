@@ -1,0 +1,253 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="Tutorial" />
+		<templateVar name="$priority" equals="10" />
+		<templateVar name="$touchPriority" equals="-9" />
+		<templateVar name="$maxAlpha" equals="0.75" />
+	</template>
+
+	<template type="template_panel_decorated" name="BG">
+		<templateVar name="$layer" equals="Tutorial" />
+		<size w="300*game.menuScaleX()" h="180*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="screenHeight() * 2.0" priorityOffset="8" />
+
+		<template type="template_closebutton" name="CloseButton">
+			<templateVar name="$TouchPriority" equals="-8" />
+			<templateVar name="$Layer" equals="Tutorial"/>
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-16*game.hudScale()" yOffset="16*game.hudScale()" priorityOffset="-1" />
+		</template>
+
+		<element name="Title">
+			<size w="200*game.menuScaleX()" h="40*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()" priorityOffset="0" />
+
+			<ninesliceComponent name="Sprite">
+				<size w="200*game.menuScaleX()" h="40*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("topHeight"):SetFloat(45.0)
+						component("bottomHeight"):SetFloat(45.0)
+						component("leftWidth"):SetFloat(50.0)
+						component("rightWidth"):SetFloat(50.0)
+						component("size"):SetFloat(0.5*game.hudScale())
+						component("includeBorder"):SetInt(1)
+						component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+						component("layer"):SetString("Tutorial")
+					]]>
+				</event>
+			</ninesliceComponent>
+
+			<textComponent name="Text">
+				<size w="200*game.menuScaleX()" h="40*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTitleFont())
+					component("size"):SetFloat(0.4*game.menuScaleY())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component:setColor(0.26, 0.96, 0.26)
+					component("layer"):SetString("Tutorial")
+					component("text"):SetString("ACTION_CATCHUP")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+		<element name="Contents">
+			<size w="(300-20)*game.menuScaleX()" h="(90)*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="32*game.menuScaleY()" priorityOffset="-1" />		
+			<textComponent name="Text">
+				<size w="(300-20)*game.menuScaleX()" h="(90)*game.menuScaleY()" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />			
+				<event name="onInit" params="component, element">
+					<![CDATA[ 
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.3*game.menuScaleY())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString("Tutorial")
+						--TODO: localize
+						component("text"):SetString("You missed some days\nbut you can still catch up!\n\n(4/5 catch up days available)\n\nUse one of your Catch Up Days to collect another puzzle piece?")					
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+		<element name="CatchUp">
+			<size w="160*game.menuScaleY()" h="40*game.menuScaleY()"/>
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="-1" />
+			<element name="BuyButton">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="setEnable" params="element">
+					<![CDATA[
+						element["Sprite"]:setColor(1.0, 1.0, 1.0)
+						element["Text"]:setColor(1.0, 1.0, 1.0)
+						if(element["Sprite"]("visible"):GetInt() == 1) then
+							element["Touch"]("enabled"):SetInt(1)
+						end
+					]]>
+				</event>
+				<event name="setDisable" params="element">
+					<![CDATA[
+						element["Sprite"]:setColor(0.5, 0.5, 0.5)
+						element["Text"]:setColor(0.5, 0.5, 0.5)
+						element["Touch"]("enabled"):SetInt(0)
+					]]>
+				</event>
+				<event name="setVisible" params="element">
+					<![CDATA[
+						element["Sprite"]("visible"):SetInt(1)
+						element["Text"]("visible"):SetInt(1)
+						element["Touch"]("enabled"):SetInt(1)
+					]]>
+				</event>
+				<event name="setInvisible" params="element">
+					<![CDATA[
+						element["Sprite"]("visible"):SetInt(0)
+						element["Text"]("visible"):SetInt(0)
+						element["Touch"]("enabled"):SetInt(0)
+					]]>
+				</event>
+				<spriteSheetComponent name="Sprite">
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("spriteName"):SetString("button_buy")
+							component("sheetName"):SetString("xml_resources/buttons01.xml")
+							component("size"):SetFloat(0.5*game.menuScaleX())
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</spriteSheetComponent>
+				<textComponent name="Text">
+					<size w="65*game.menuScaleX()" h="26*game.menuScaleX()"/>
+					<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+					<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("multiline"):SetInt(1)
+							component("autoScale"):SetInt(1)
+							component("autoScaleFactor"):SetFloat(0.01)
+							component("font"):SetString(game.getTextFont())
+							component("size"):SetFloat(0.2*game.menuScaleX())
+							component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+							component("text"):SetString("ACTION_CATCHUP")
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</textComponent>
+				<touchComponent name="Touch">
+					<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+					<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+					<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-9" />
+					<event name="onTouchDown" params="component, element">
+						<![CDATA[
+							element["Sprite"]:setColor(0.5, 0.5, 0.5)
+						]]>
+					</event>
+					<!--
+					<event name="onTouchUp" params="component, element">
+						<![CDATA[
+							element["Sprite"]:setColor(1.0, 1.0, 1.0)
+						]]>
+					</event>
+					-->
+					<event name="onTouchRelease" params="component, element">
+						<![CDATA[
+							element["Sprite"]:setColor(1.0, 1.0, 1.0)
+						]]>
+					</event>
+				</touchComponent>
+			</element>
+			<element name="BuyPrice">
+				<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+				<position relativeTo="BuyButton" vAnchor="VCENTER" hAnchor="LEFT" />
+				<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-20" yOffset="5*game.hudScale()" priorityOffset="-1" />
+				<spriteSheetComponent name="BackingSprite">
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("spriteName"):SetString("stats_bar")
+							component("sheetName"):SetString("xml_resources/hud01.xml")
+							component("size"):SetFloat(0.4*game.menuScaleX())
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</spriteSheetComponent>
+				<spriteSheetComponent name="CurrencySprite">
+					<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+					<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+							component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+							component("size"):SetFloat(0.35*game.menuScaleX())
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</spriteSheetComponent>
+				<textComponent name="Text">
+					<size w="65*game.menuScaleX()" h="50*game.menuScaleX()" />
+					<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+					<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*game.menuScaleX()" yOffset="-2*game.menuScaleY()" priorityOffset="-1" />
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("multiline"):SetInt(0)
+							component("autoScaleFactor"):SetFloat(0.01)
+							component("autoScale"):SetInt(1)
+							component("font"):Set(game.getTextFont())
+							component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+							component("size"):SetFloat(0.25*game.menuScaleX())
+							component("text"):SetString("5")
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</textComponent>
+				<event name="onInit" params="element">
+					<![CDATA[
+						element("alpha"):SetFloat(0)
+					]]>
+				</event>
+				<event name="setInvisible" params="element">
+					<![CDATA[
+						element["BackingSprite"]("visible"):SetInt(0)
+						element["CurrencySprite"]("visible"):SetInt(0)
+						element["Text"]("visible"):SetInt(0)
+					]]>
+				</event>
+				<event name="setVisible" params="element">
+					<![CDATA[
+						element["BackingSprite"]("visible"):SetInt(1)
+						element["CurrencySprite"]("visible"):SetInt(1)
+						element["Text"]("visible"):SetInt(1)
+					]]>
+				</event>
+				<event name="updateAlpha" params="element">
+					<![CDATA[
+						local alpha = element("alpha"):GetFloat()
+						element["BackingSprite"]("alpha"):SetFloat(alpha)
+						element["CurrencySprite"]("alpha"):SetFloat(alpha)
+						element["Text"]("alpha"):SetFloat(alpha)
+					]]>
+				</event>
+			</element>
+		</element>
+
+	</template>
+
+	<script src="scripts/DailyCumulativeLogin/DCLCatchup.lua"/>
+
+</menu>

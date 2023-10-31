@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<event name="onInit" params="element">
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+		manager:setContext("DAILY_BONUS")
+		element.countdownOver = false;
+		
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgDailyLoginBought", "gotMsgDailyLoginBought")
+	</event>
+	
+	<event name="gotMsgDailyLoginBought" params="element">
+		element:E("DayDisplay"):refresh()
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			if(dt < game.maxTickTime()) then
+				local transitionState = element("transitionState"):GetInt()
+
+				if(transitionState ~= 0) then
+					local transitionTime = element("transitionTime"):GetFloat()
+					
+					element:DoStoredScript("TickTransition")
+					
+					if(transitionState == 1) then
+						transitionTime = (transitionTime + dt*3)
+					elseif(transitionState == 2) then
+						transitionTime = (transitionTime - dt*3)
+					end
+					
+					element("transitionTime"):SetFloat(clamp( transitionTime, 0.0, 1.0 ))
+					
+					local timeLeft = game.nextDailyRewardInSeconds()
+					if(timeLeft > 0 ) then
+						local text = game.getLocalizedText("NEXT_COLLECT_REWARD_MESSAGE")
+						text = text:gsub("%${TIME}", game.timeToString(timeLeft ))
+						element:E("FooterText"):C("Text"):V("text"):SetString(text)
+					elseif (not element.countdownOver) then
+						element.countdownOver = true
+						element:E("FooterText"):C("Text"):V("text"):SetString("REWARD_AVAIL_NEXT_LOGIN")
+						
+					end
+					
+					if(transitionTime == 1.0) then
+						element("transitionState"):SetInt(0)
+						element("transitionTime"):SetFloat(1.0)
+						element:DoStoredScript("TickTransition")
+					elseif(transitionTime <= 0.0) then
+						element:root():popPopUp()
+						
+						local curRewardDay = game.dailyBonusCollectionDay()
+						local theDay = element["BonusElement"..curRewardDay]
+						
+						if(theDay ~= nil) then
+							if(theDay("currencyType"):GetString() == "relics" ) then
+								game.queueDailyLoginAds(0);
+								if(not game.getRelicCelebrationSeen()) then
+									element:root():pushPopUp("relic_confetti_popup")
+								else
+									game.showQueuedRelicAds();
+								end
+							elseif(theDay("currencyType"):GetString() == "keys") then
+								game.queueDailyLoginAds(0);
+								if(not game.getKeyCelebrationSeen()) then
+									element:root():pushPopUp("key_confetti_popup")
+								else
+									game.showQueuedRelicAds();
+								end
+							end
+						end
+					end
+				end
+			end
+		]]>
+	</event>
+	
+	<event name="TickTransition" params="element">
+		local transitionTime = element("transitionTime"):GetFloat()
+		element["Frame"]("xOffset"):SetFloat(lua_sys.screenWidth()*(0.5) + (-0.5)*lua_sys.screenWidth()*(1/transitionTime))
+		element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime*0.5)
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="11" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-lua_sys.screenWidth()" yOffset="-7" priorityOffset="10" />
+		<ninesliceComponent name="Sprite">
+			<size w="450*(lua_sys.screenWidth()/480)" h="260*(lua_sys.screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5)
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="250*(lua_sys.screenWidth()/480)" h="40*(lua_sys.screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*(lua_sys.screenHeight()/320))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="TitleText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="225*(lua_sys.screenWidth()/480)" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.44, 0.98, 0.71)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("DAILY_LOGIN_BONUS"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="DescriptionText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="380*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.localizedUpper("DAILY_LOGIN_BONUS_DESC"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="DayDisplay">
+		<position relativeTo="DescriptionText" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="refresh" params="element">
+			<![CDATA[
+			
+			local dailyBonusTypes = game.dailyBonusTypes();
+		
+			local curRewardDay = game.dailyBonusCollectionDay()
+			local cachedRewardDay = game.dailyBonusCollectionDayCached()
+			
+			if cachedRewardDay > curRewardDay then
+				
+				--not a collection day
+				
+					
+				if(curRewardDay == 0) then
+				
+					--already collected today
+					
+					element:parent():RemoveElement(element:parent():E("CollectButton"))
+					
+					element:parent():RemoveElement(element:parent():E("BuybackContinueButton"))
+					element:parent():RemoveElement(element:parent():E("BuybackRestartButton"))
+					element:parent():RemoveElement(element:parent():E("BuybackPrice"))
+			
+					element:parent():E("FooterFrame"):C("Sprite"):V("visible"):SetInt(1)
+					element:parent():E("FooterText"):C("Text"):V("visible"):SetInt(1)
+					local timeLeft = game.nextDailyRewardInSeconds()
+					if(timeLeft > 0) then
+						local text = game.getLocalizedText("NEXT_COLLECT_REWARD_MESSAGE")
+						text = text:gsub("%${TIME}", game.timeToString(timeLeft))
+						element:parent():E("FooterText"):C("Text"):V("text"):SetString(text)
+					else
+						element.countdownOver = true
+						element:E("FooterText"):C("Text"):V("text"):SetString("REWARD_AVAIL_NEXT_LOGIN")
+					end
+					
+				end
+					
+				for i = 1, cachedRewardDay do
+					element["BonusElement"..i]:DoStoredScript("setAchieved")
+				end
+				
+				if(curRewardDay == 0) then
+					--reward already collected
+					if(element["BonusElement"..cachedRewardDay] ~= nil) then
+						element["BonusElement"..cachedRewardDay]:DoStoredScript("setAchievedToday")
+					end
+					
+					if(dailyBonusTypes ~= nil ) then
+						for i = cachedRewardDay+1, dailyBonusTypes:size() - 1 do
+							element["BonusElement"..i]:DoStoredScript("setUnachieved")
+						end
+					end
+
+				elseif(curRewardDay == -1) then
+				
+					--buyback mode, reward deferred
+					element:parent():RemoveElement(element:parent():E("CloseButton"))
+					
+					--element:parent():RemoveElement(element:parent():E("CollectButton"))
+					element:parent():E("CollectButton"):setInvisible()
+
+					if(dailyBonusTypes ~= nil ) then
+						for i = cachedRewardDay+1, dailyBonusTypes:size() - 1 do
+							element["BonusElement"..i]:DoStoredScript("setUnachieved")
+						end
+					end
+					
+					local todayString = "BonusElement"..(cachedRewardDay+1)
+					if(element[todayString] ~= nil) then
+						element[todayString]:DoStoredScript("setUnknownToday")
+					end
+
+				end
+			
+			else
+			
+				--collection day, yay!
+				
+				if(element:parent():E("CollectButton") ~= nil) then
+					element:parent():E("CollectButton"):setVisible()
+				end
+				
+				element:parent():RemoveElement(element:parent():E("BuybackContinueButton"))
+				element:parent():RemoveElement(element:parent():E("BuybackRestartButton"))
+				element:parent():RemoveElement(element:parent():E("BuybackPrice"))
+				
+				element:parent():RemoveElement(element:parent():E("CloseButton"))
+
+				for i = 1, curRewardDay-1 do
+					element["BonusElement"..i]:DoStoredScript("setAchieved")
+				end
+				
+				if(element["BonusElement"..curRewardDay] ~= nil) then
+					element["BonusElement"..curRewardDay]:DoStoredScript("setToday")
+				end
+				
+				if(dailyBonusTypes ~= nil ) then
+					for i = cachedRewardDay+1, dailyBonusTypes:size() - 1 do
+						element["BonusElement"..i]:DoStoredScript("setUnachieved")
+					end
+				end
+			end
+			
+			]]>
+		</event>
+		
+		<event name="onPostInit" params="element">
+			<![CDATA[
+			local dailyBonusTypes = game.dailyBonusTypes();
+			local scaledDailyBonusAmounts = game.scaledDailyBonusAmounts();
+			local dailyBonusEntities = game.dailyBonusEntities();
+
+			if(dailyBonusTypes ~= nil and scaledDailyBonusAmounts ~= nil) then
+				--skip the first day, which is 0 server-side because of changes to legacy code
+				for i = 1, dailyBonusTypes:size() - 1 do
+
+					local storeItem = element:GetElement("BonusElement"..i)
+					if(storeItem ~= nil) then
+						storeItem("dayText"):SetString("DAY_"..i)
+						storeItem("currencyType"):SetString(dailyBonusTypes[i]);
+						storeItem("currencyAmount"):SetInt(scaledDailyBonusAmounts[i])
+						storeItem("bonusEntity"):SetInt(dailyBonusEntities[i])
+					end
+					
+				end
+			end
+		
+			element:refresh()
+			]]>
+		</event>
+		<template type="template_dailybonus" name="BonusElement3">
+			<templateVar name="$text" equals="'DAY_3'" />
+			<position relativeTo="DayDisplay" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement2">
+			<templateVar name="$text" equals="'DAY_2'" />
+			<position relativeTo="BonusElement3" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0.0514*lua_sys.screenWidth()" yOffset="0" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement1">
+			<templateVar name="$text" equals="'DAY_1'" />
+			<position relativeTo="BonusElement2" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0.0514*lua_sys.screenWidth()" yOffset="0" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement4">
+			<templateVar name="$text" equals="'DAY_4'" />
+			<position relativeTo="BonusElement3" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0.0514*lua_sys.screenWidth()" yOffset="0" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement5">
+			<templateVar name="$text" equals="'DAY_5'" />
+			<position relativeTo="BonusElement4" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0.0514*lua_sys.screenWidth()" yOffset="0" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement6">
+			<templateVar name="$text" equals="'DAY_6'" />
+			<position relativeTo="BonusElement1" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.0514*lua_sys.screenWidth()" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement7">
+			<templateVar name="$text" equals="'DAY_7'" />
+			<position relativeTo="BonusElement2" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.0514*lua_sys.screenWidth()" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement8">
+			<templateVar name="$text" equals="'DAY_8'" />
+			<position relativeTo="BonusElement3" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.0514*lua_sys.screenWidth()" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement9">
+			<templateVar name="$text" equals="'DAY_9'" />
+			<position relativeTo="BonusElement4" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.0514*lua_sys.screenWidth()" priorityOffset="0" />
+		</template>	
+		<template type="template_dailybonus" name="BonusElement10">
+			<templateVar name="$text" equals="'DAY_10'" />
+			<position relativeTo="BonusElement5" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.0514*lua_sys.screenWidth()" priorityOffset="0" />
+		</template>
+	</element>
+	
+	<element name="FooterFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<ninesliceComponent name="Sprite">
+			<size w="250*(lua_sys.screenWidth()/480)" h="40*(lua_sys.screenHeight()/320)" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.4*(lua_sys.screenHeight()/320))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="FooterText">
+		<size dependentOnElement="FooterFrame"/>
+		<position relativeTo="FooterFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="225*(lua_sys.screenWidth()/480)" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.43, 0.98, 0.02)
+				component("size"):SetFloat(0.45*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				local text = game.getLocalizedText("NEXT_COLLECT_REWARD_MESSAGE")
+				text = text:gsub("%${TIME}", "00:00:00")
+				component("text"):SetString(text)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(0)
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="CloseButton">
+		<templateVar name="$layer" equals="ContextBar" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="12*game.hudScale()" priorityOffset="5" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+
+				element:parent():queuePop()
+				manager:setContext(manager:getDefaultContext())
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("ContextBar")
+			</event>
+		</textComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="CollectButton">
+		<templateVar name="$upSpriteName" equals="'button_invite'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.45*game.hudScale()" />
+		<templateVar name="$text" equals="LABEL_COLLECT" />
+		<templateVar name="$textPadding" equals="8*game.menuScaleX()" />
+		<templateVar name="$autoScale" equals="1" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			onInit(element)
+			element("touched"):SetInt(0)
+		</event>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+			
+				if(element("touched"):GetInt() == 0) then
+					element("touched"):SetInt(1)
+
+					local curRewardDay = game.dailyBonusCollectionDay();
+				
+					local theDay = element:parent()["BonusElement"..curRewardDay];
+					if(theDay ~= nil) then
+						theDay:DoStoredScript("playParticles")
+						local image = theDay:GetElement("BonusFrame");
+				
+						local midX = image:absX() + image:absW()/2
+						local midY = image:absY() + image:absH()/2
+
+						local hudIconDest = theDay("hudIconDest"):GetString();
+						local hudElementDest = theDay("hudElementDest"):GetString();
+						if(hudIconDest ~= "" and hudElementDest ~= "") then
+							game.showFlyingIconFromDailyLogin(hudIconDest, hudElementDest, "Icon", midX, midY, "MidPopUps");
+						else
+							game.popPopUp()
+						end
+					else
+						game.popPopUp()
+					end
+
+					game.collectDailyBonus();
+				end
+					
+				--[[this will be done in GotDailyBonusComplete now, to show the animations before popping up ads:
+				game.popPopUp()
+				game.collectDailyBonus();
+				manager:setContext(manager:getDefaultContext())]]
+			</event>
+		</touchComponent>
+	</template>
+	
+	<element name="BuybackPrice">
+		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0.0514*lua_sys.screenWidth()" yOffset="-10*game.hudScale()" priorityOffset="-1" />
+		
+		<spriteSheetComponent name="BackingSprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("stats_bar")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.5*lua_sys.screenWidth() / 480.0)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		
+		<spriteSheetComponent name="CurrencySprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+					component("size"):SetFloat(0.5*lua_sys.screenWidth() / 480.0)
+					--component("visible"):SetInt(0)
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</spriteSheetComponent>
+		
+		<textComponent name="Text">
+			<size w="65*lua_sys.screenWidth() / 480.0" h="50*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5*lua_sys.screenWidth() / 480.0" yOffset="-2*game.menuScaleY()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("autoScale"):SetInt(1)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.25*lua_sys.screenWidth() / 480.0)
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString(""..game.dailyLoginBuybackDiamonds())
+					component("layer"):SetString("MidPopUps")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="setInvisible" params="element">
+			<![CDATA[
+				element["BackingSprite"]("visible"):SetInt(0)
+				element["CurrencySprite"]("visible"):SetInt(0)
+				element["Text"]("alpha"):SetFloat(0.0)
+			]]>
+		</event>
+		<event name="setVisible" params="element">
+			<![CDATA[
+				element["BackingSprite"]("visible"):SetInt(1)
+				element["CurrencySprite"]("visible"):SetInt(1)
+				element["Text"]("alpha"):SetFloat(1.0)
+			]]>
+		</event>
+	</element>
+
+	<template type="template_nineslicebutton" name="BuybackContinueButton">
+		<templateVar name="$upSpriteName" equals="'gfx/menu/button_vert_square01_green'" />
+		<templateVar name="$spriteScale" equals="0.65*game.menuScaleX()" />
+		<templateVar name="$text" equals="CONTINUE_DAILY_LOGIN" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$topHeight" equals="17.0" />
+		<templateVar name="$bottomHeight" equals="17.0" />
+		<templateVar name="$leftWidth" equals="17.0" />
+		<templateVar name="$rightWidth" equals="17.0" />
+		
+		<templateVar name="$width" equals="0.25*lua_sys.screenWidth()" />
+		<templateVar name="$height" equals="45*game.menuScaleX()" />
+		
+		<templateVar name="$includeBorder" equals="1" />
+		
+		<position relativeTo="BuybackPrice" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Flourish">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-25*game.menuScaleX()" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("rotation"):SetFloat(0.75*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<function name="setVisible" params="element">
+			setVisible(element)
+			element["Flourish"]("visible"):SetInt(1)
+		</function>
+		<function name="setInvisible" params="element">
+			setInvisible(element)
+			element["Flourish"]("visible"):SetInt(0)
+		</function>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+
+				element:setInvisible()
+				element:parent():RemoveElement(element:parent():E("BuybackRestartButton"))
+				element:parent():RemoveElement(element:parent():E("BuybackPrice"))
+				
+				game.submitConfirmation("DAILY_BUY_IN", true, "")
+				
+			</event>
+		</touchComponent>
+		<event name="onPostInit" params="element">
+			element["Text"]("size"):SetFloat(0.25*game.hudScale())
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</template>
+	
+	<template type="template_nineslicebutton" name="BuybackRestartButton">
+		<templateVar name="$upSpriteName" equals="'gfx/menu/button_vert_square01_purple'" />
+		<templateVar name="$spriteScale" equals="0.65*game.menuScaleX()" />
+		<templateVar name="$text" equals="RESTART_DAILY_LOGIN" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<templateVar name="$topHeight" equals="17.0" />
+		<templateVar name="$bottomHeight" equals="17.0" />
+		<templateVar name="$leftWidth" equals="17.0" />
+		<templateVar name="$rightWidth" equals="17.0" />
+		
+		<templateVar name="$width" equals="0.25*lua_sys.screenWidth()" />
+		<templateVar name="$height" equals="45*game.menuScaleX()" />
+
+		<templateVar name="$includeBorder" equals="1" />
+
+		<position relativeTo="BuybackContinueButton" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0.0314*lua_sys.screenWidth()" yOffset="0" priorityOffset="0" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				
+				element:setInvisible()
+				element:parent():RemoveElement(element:parent():E("BuybackContinueButton"))
+				element:parent():RemoveElement(element:parent():E("BuybackPrice"))
+				
+				game.submitConfirmation("DAILY_BUY_IN", false, "")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+			</event>
+		</touchComponent>
+		
+		<event name="onPostInit" params="element">
+			element["Text"]("size"):SetFloat(0.25*game.hudScale())
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</template>
+	
+</menu>

@@ -1,0 +1,179 @@
+<template name="template_admin_view_panel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<event name="show" params="element">
+		<![CDATA[
+			if(game.numIslands() > 1) then
+				element["IslandChangeButtons"]["PrevIsland"]:DoStoredScript("show")
+				element["IslandChangeButtons"]["NextIsland"]:DoStoredScript("show")
+				element["DeleteIsland"]:DoStoredScript("show")
+			else
+				element["IslandChangeButtons"]["PrevIsland"]:DoStoredScript("hide")
+				element["IslandChangeButtons"]["NextIsland"]:DoStoredScript("hide")
+				element["DeleteIsland"]:DoStoredScript("hide")
+			end
+		]]>
+	</event>
+	
+	<event name="hide" params="element">
+		element["IslandChangeButtons"]["PrevIsland"]:DoStoredScript("hide")
+		element["IslandChangeButtons"]["NextIsland"]:DoStoredScript("hide")
+		element["DeleteIsland"]:DoStoredScript("hide")
+	</event>
+
+	<element name="IslandChangeButtons" >
+		<size w="lua_sys.screenWidth() - (40*game.hudScale()/2)"/>
+		<position relativeTo="element:parent():parent()[&quot;RefreshAll&quot;]" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="2" />
+		<template type="template_spritesheetbutton" name="PrevIsland">
+			<templateVar name="$layer" equals="HUD" />
+			<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+			
+			<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<touchComponent name="Touch">
+				<event name="onTouchDown" params="component, element">
+					onTouchDown(component, element)
+					game.adminSetPrevIsland();
+				</event>
+			</touchComponent>
+			<textComponent name="Label">
+				<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+				<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+				<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.2*game.hudScale())
+					component("text"):SetString("PrevIsland")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("HUD")
+				</event>
+			</textComponent>
+			<spriteSheetComponent name="Overlay">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("button_thumbsup")
+					component("sheetName"):SetString("xml_resources/context_buttons.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("HUD")
+				</event>
+			</spriteSheetComponent>
+			<event name="hide" params="element">
+				element:DoStoredScript("setInvisible")
+				element["Overlay"]("visible"):SetInt(0)
+				element["Label"]("visible"):SetInt(0)
+				element["Touch"]("enabled"):SetInt(0)
+			</event>
+			<event name="show" params="element">
+				element:DoStoredScript("setVisible")
+				element["Overlay"]("visible"):SetInt(1)
+				element["Label"]("visible"):SetInt(1)
+				element["Touch"]("enabled"):SetInt(1)
+			</event>
+		</template>	
+
+		<template type="template_spritesheetbutton" name="NextIsland">
+			<templateVar name="$layer" equals="HUD" />
+			<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+			<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="hide" params="element">
+				element:DoStoredScript("setInvisible")
+				element["Overlay"]("visible"):SetInt(0)
+				element["Label"]("visible"):SetInt(0)
+				element["Touch"]("enabled"):SetInt(0)
+			</event>
+			<event name="show" params="element">
+				element:DoStoredScript("setVisible")
+				element["Overlay"]("visible"):SetInt(1)
+				element["Label"]("visible"):SetInt(1)
+				element["Touch"]("enabled"):SetInt(1)
+			</event>
+			<touchComponent name="Touch">
+				<event name="onTouchDown" params="component, element">
+					onTouchDown(component, element)
+					game.adminSetNextIsland()
+				</event>
+			</touchComponent>
+			<textComponent name="Label">
+				<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+				<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+				<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("size"):SetFloat(0.2*game.hudScale())
+					component("text"):SetString("NextIsland")
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("HUD")
+				</event>
+			</textComponent>
+			<spriteSheetComponent name="Overlay">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("button_thumbsup")
+					component("sheetName"):SetString("xml_resources/context_buttons.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("HUD")
+				</event>
+			</spriteSheetComponent>
+		</template>
+	</element>
+
+	<template type="template_spritesheetbutton" name="DeleteIsland">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="element:parent():parent()[&quot;LaunchWebTool&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				game.adminDeleteCurrentIsland()
+			</event>
+		</touchComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("text"):SetString("DeleteIsland")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_thumbsup")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="hide" params="element">
+			element:DoStoredScript("setInvisible")
+			element["Overlay"]("visible"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element:DoStoredScript("setVisible")
+			element["Overlay"]("visible"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+		</event>
+	</template>
+	
+</template>

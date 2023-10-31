@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d3445ba79d35862f181bfcb14668a01e:4cd0702536dc64898abb478a6616b9a5:b3edbe3d5022f681dffcf8caf4062355$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_BCD_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="BCD_body_EPIC" x="2" y="2" w="296" h="211" pX="0.5" pY="0.5" oX="3" oY="29" oW="300" oH="240"/>
+    <sprite n="BCD_body_RARE" x="300" y="2" w="174" h="212" pX="0.5" pY="0.5" oX="0" oY="10" oW="174" oH="222"/>
+    <sprite n="BCD_eyeback" x="476" y="154" w="34" h="34" pX="0.5" pY="0.5" oX="34" oY="6" oW="68" oH="40"/>
+    <sprite n="BCD_eyeback_left" x="476" y="190" w="34" h="34" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="40"/>
+    <sprite n="BCD_fins_EPIC" x="2" y="215" w="253" h="67" pX="0.5" pY="0.5" oX="6" oY="1" oW="270" oH="70"/>
+    <sprite n="BCD_left_arm_RARE" x="452" y="396" w="52" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCD_left_eyelid1_RARE" x="481" y="438" w="28" h="16" pX="0.5" pY="0.5" oX="8" oY="0" oW="36" oH="36"/>
+    <sprite n="BCD_left_eyelid2_RARE" x="476" y="2" w="34" h="36" pX="0.5" pY="0.5" oX="2" oY="0" oW="36" oH="36"/>
+    <sprite n="BCD_left_eyelid3_RARE" x="252" y="682" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_left_eyelid4_RARE" x="290" y="682" w="36" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_left_foot_RARE" x="466" y="226" w="44" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_left_hand_RARE" x="257" y="215" w="40" h="60" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCD_left_leg_RARE" x="201" y="284" w="50" h="22" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_mouth1" x="151" y="335" w="145" h="135" pX="0.5" pY="0.5" oX="3" oY="0" oW="144" oH="146" r="y"/>
+    <sprite n="BCD_mouth2" x="2" y="478" w="128" h="127" pX="0.5" pY="0.5" oX="5" oY="12" oW="144" oH="146" r="y"/>
+    <sprite n="BCD_mouth3" x="2" y="607" w="114" h="114" pX="0.5" pY="0.5" oX="8" oY="21" oW="144" oH="146"/>
+    <sprite n="BCD_mouth4" x="410" y="661" w="99" h="96" pX="0.5" pY="0.5" oX="14" oY="31" oW="144" oH="146" r="y"/>
+    <sprite n="BCD_mouth5" x="2" y="368" w="144" h="108" pX="0.5" pY="0.5" oX="0" oY="30" oW="144" oH="146"/>
+    <sprite n="BCD_pupil_RARE" x="236" y="308" w="16" h="16" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_arm_RARE" x="466" y="284" w="42" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_eyelid1_RARE" x="201" y="308" w="33" h="17" pX="0.5" pY="0.5" oX="1" oY="0" oW="34" oH="36"/>
+    <sprite n="BCD_right_eyelid2_RARE" x="476" y="40" w="34" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_eyelid3_RARE" x="476" y="78" w="34" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_eyelid4_RARE" x="476" y="116" w="34" h="36" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_foot_RARE" x="452" y="344" w="58" h="50" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_hand_RARE" x="151" y="284" w="48" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="BCD_right_leg_RARE" x="257" y="277" w="40" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCD_shadow" x="440" y="438" w="39" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="BCD_tail_EPIC" x="411" y="556" w="99" h="103" pX="0.5" pY="0.5" oX="2" oY="0" oW="104" oH="104"/>
+    <sprite n="BCD_tongue01_RARE" x="148" y="472" w="138" h="121" pX="0.5" pY="0.5" oX="27" oY="12" oW="166" oH="164"/>
+    <sprite n="BCD_tongue02_RARE" x="299" y="289" w="151" h="106" pX="0.5" pY="0.5" oX="14" oY="27" oW="166" oH="164"/>
+    <sprite n="BCD_tongue03_RARE" x="299" y="216" w="165" h="71" pX="0.5" pY="0.5" oX="0" oY="57" oW="166" oH="164"/>
+    <sprite n="BCD_tongue04_RARE" x="298" y="397" w="140" h="105" pX="0.5" pY="0.5" oX="25" oY="59" oW="166" oH="164"/>
+    <sprite n="BCD_tongue05_RARE" x="2" y="284" w="147" h="82" pX="0.5" pY="0.5" oX="18" oY="31" oW="166" oH="164"/>
+    <sprite n="BCD_tongue06_RARE" x="288" y="594" w="120" h="86" pX="0.5" pY="0.5" oX="79" oY="0" oW="166" oH="164" r="y"/>
+    <sprite n="BCD_tongue07_RARE" x="288" y="504" w="121" h="88" pX="0.5" pY="0.5" oX="77" oY="0" oW="166" oH="164" r="y"/>
+    <sprite n="BCD_tongue08_RARE" x="132" y="595" w="118" h="106" pX="0.5" pY="0.5" oX="59" oY="4" oW="166" oH="164" r="y"/>
+</TextureAtlas>

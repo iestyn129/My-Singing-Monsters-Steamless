@@ -1,0 +1,254 @@
+<template name="template_battle_campaign_infopane_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+
+	<!--
+
+		required variables:
+			MonsterId
+			NameText
+			LevelText
+			CostumeId
+			HasRequirement
+
+		optional variables: (if selecting)
+			Id
+	-->
+
+	<size w="78*game.menuScaleX()" h="120*game.menuScaleY()" />
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<!--<size w="78*game.menuScaleX()" h="120*game.menuScaleY()" />-->
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+			element:parent()("SelectedEntry"):SetInt(element("Id"):GetInt())
+			element:parent():DoStoredScript("onEntrySelected")
+		  ]]>
+		</event>
+	</touchComponent>
+
+	<!-- this is needed for the tutorial arrow to point to a roughly correct location, as anims have weird sizes -->
+	<spriteSheetComponent name="TutorialPointer">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):Set("button_base_grey")
+			component("sheetName"):Set("xml_resources/context_buttons.xml")
+			component("size"):SetFloat(0.5*game.hudScale())
+			component("layer"):SetString("$layer")
+			component("alpha"):SetFloat(1.0)
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+
+	<element name="Anim">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0*game.menuScaleY()" priorityOffset="-1" />
+		<aeComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component:DoStoredScript("refresh")
+				]]>
+			</event>
+
+			<event name="refresh" params="component, element">
+				<![CDATA[
+				if(element:parent()("AnimationFile"):GetString() ~= "" and element:parent()("AnimationName"):GetString() ~= "") then
+					component("animationName"):SetString("xml_bin/"..element:parent()("AnimationFile"):GetString())
+					component("animation"):SetString(element:parent()("AnimationName"):GetString())
+					component("hFlip"):SetInt(element:parent()("AnimationFlipped"):GetInt())
+
+					game.applyCostumeToAnimComponent(component, element:parent()("CostumeId"):GetInt())
+
+					component("layer"):SetString("$layer")
+
+					component:setScale(Vector2(0.5*game.menuScaleX(),0.5*game.menuScaleX()))
+
+					local offsetX = component:size().x * 0.5
+					local offsetY = 0
+
+					element:setOrientationPosition(Vector2(offsetX, offsetY))
+
+					component("alpha"):SetFloat(0)
+					component:setColor(0,0,0)
+				else
+					component("visible"):SetInt(0)
+				end
+				]]>
+			</event>
+
+		</aeComponent>
+	</element>
+
+	<template type="template_genes" name="Genes">
+		<templateVar name="$Size" equals="0.25*game.hudScale()" />
+		<templateVar name="$Spacing" equals="-1*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleY()" priorityOffset="-1" />
+	</template>
+
+	<element name="LevelFrame">
+		<size w="80*game.menuScaleX()" h="12*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="14*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.2*game.menuScaleY())
+				component("autoScale"):SetInt(1)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("text"):SetString(element:parent()("LevelText"):GetString())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("layer"):SetString("$layer")
+				component("alpha"):SetFloat(0)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="NameFrame">
+		<size w="80*game.menuScaleX()" h="12*game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="24*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+				component("textPadding"):SetInt(3*game.menuScaleX())
+				component("size"):SetFloat(0.2*game.menuScaleY())
+				component("autoScale"):SetInt(0)
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+
+				include("MenuHelpers").ShrinkTextToWidth(element:parent()("NameText"):GetString(),
+					component, 80*game.menuScaleX())
+
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("noTranslate"):SetInt(1)
+				component("layer"):SetString("$layer")
+				component("alpha"):SetFloat(0)
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RequirementsIcon">
+		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("goal_exclaim")
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.4*game.hudScale())
+					component("layer"):SetString("$layer")
+					component("alpha"):SetFloat(0)
+					component("visible"):SetInt(0)
+				]]>
+			</event>
+		</spriteSheetComponent>
+	</element>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element["Touch"]("enabled"):SetInt(0)
+			element("alpha"):SetFloat(1.0)
+			element["Genes"]("MonsterId"):SetInt(element("MonsterId"):GetInt())
+		]]>
+	</event>
+
+	<event name="refreshTeamSlot" params="element">
+		<![CDATA[
+			local uniqueMonsterId = element("UniqueMonsterId"):GetInt()
+			if uniqueMonsterId > 0 then
+				local monsterId = game.monsterTypeId(uniqueMonsterId)
+				element("MonsterId"):SetInt(monsterId)
+				element("NameText"):SetString(game.getMonsterName(uniqueMonsterId))
+				element("LevelText"):SetString(LOC("LEVEL").." "..game.monsterLevel(uniqueMonsterId))
+				element("AnimationFile"):SetString(game.getMonsterAnimationFileFromType(monsterId))
+				element("AnimationName"):SetString("Store")
+				if game.isBattleMonsterFlipped(monsterId) then
+					element("AnimationFlipped"):SetInt(0)
+				else
+					element("AnimationFlipped"):SetInt(1)
+				end
+				element("CostumeId"):SetInt(game.getEquippedCostumeForMonster(uniqueMonsterId))
+
+				element["RequirementsIcon"]["Sprite"]("visible"):SetInt(0)
+
+			else
+				element("MonsterId"):SetInt(0)
+				element("NameText"):SetString(LOC("BATTLE_SLOT_EMPTY"))
+				element("LevelText"):SetString("BATTLE_SLOT_EMPTY2")
+				element("AnimationFile"):SetString("battle_slot_empty.bin")
+				element("AnimationName"):SetString("base")
+				element("AnimationFlipped"):SetInt(0)
+				element("CostumeId"):SetInt(0)
+
+				element["RequirementsIcon"]["Sprite"]("visible"):SetInt(element("HasRequirement"):GetInt())
+			end
+
+			element["Anim"]["Sprite"]:DoStoredScript("refresh")
+
+			element["NameFrame"]["Text"]("size"):SetFloat(0.2*game.menuScaleY())
+			include("MenuHelpers").ShrinkTextToWidth(element("NameText"):GetString(),
+					element:GetElement("NameFrame"):GetComponent("Text"), 80*game.menuScaleX())
+
+			element["LevelFrame"]["Text"]("text"):SetString(element("LevelText"):GetString())
+			element["Genes"]("MonsterId"):SetInt(element("MonsterId"):GetInt())
+			element["Genes"]:DoStoredScript("repopulate")
+		]]>
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			element["LevelFrame"]["Text"]("alpha"):SetFloat(alpha)
+			element["NameFrame"]["Text"]("alpha"):SetFloat(alpha)
+			element["Anim"]["Sprite"]("alpha"):SetFloat(alpha)
+			element["Anim"]["Sprite"]:setColor(alpha, alpha, alpha)
+			element["RequirementsIcon"]["Sprite"]("alpha"):SetFloat(alpha)
+			element["Genes"]("alpha"):SetFloat(alpha)
+			element["Genes"]:DoStoredScript("update")
+		]]>
+	</event>
+
+	<event name="show" params="element">
+		<![CDATA[
+			element["Touch"]("enabled"):SetInt(1)
+			element["LevelFrame"]["Text"]("visible"):SetInt(1)
+			element["NameFrame"]["Text"]("visible"):SetInt(1)
+			element["Anim"]["Sprite"]("visible"):SetInt(1)
+			if element("MonsterId"):GetInt() == 0 then
+				element["RequirementsIcon"]["Sprite"]("visible"):SetInt(element("HasRequirement"):GetInt())
+			end
+			element["Genes"]:DoStoredScript("show")
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["Touch"]("enabled"):SetInt(0)
+			element["LevelFrame"]["Text"]("visible"):SetInt(0)
+			element["NameFrame"]["Text"]("visible"):SetInt(0)
+			element["Anim"]["Sprite"]("visible"):SetInt(0)
+			element["RequirementsIcon"]["Sprite"]("visible"):SetInt(0)
+			element["Genes"]:DoStoredScript("hide")
+		]]>
+	</event>
+
+</template>

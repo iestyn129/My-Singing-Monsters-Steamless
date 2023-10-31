@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d199e129555703e270e0b4a82897f5b1:55fea24a0209b40719e251d4ac3735ed:37b538b522ad0ac06a986f99c9a54bf8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island20_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="facade" x="2" y="2" w="1175" h="884" pX="0.5" pY="0.5" oX="0" oY="6" oW="1178" oH="890"/>
+    <sprite n="flower_01" x="1214" y="888" w="184" h="210" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="flower_02" x="1724" y="1309" w="276" h="262" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="flower_03" x="1900" y="1050" w="146" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="front_arch_bg" x="1392" y="1309" w="330" h="362" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_slb_01" x="1242" y="1230" w="148" h="474" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_slb_02" x="1214" y="1706" w="310" h="206" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_slb_03" x="1724" y="1573" w="262" h="174" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_slt_01" x="886" y="1842" w="82" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_slt_02" x="614" y="1842" w="46" h="78" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_slt_03" x="1931" y="680" w="96" h="156" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_slt_04" x="970" y="1842" w="84" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_slt_05" x="662" y="1842" w="64" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_srb_01" x="2" y="1922" w="156" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_srb_02" x="1242" y="1100" w="154" h="128" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_srb_03" x="384" y="1922" w="208" h="112" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_srb_04" x="160" y="1922" w="222" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_srt_01" x="1056" y="1842" w="94" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leaf_srt_02" x="1931" y="838" w="88" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_srt_03" x="594" y="1922" w="58" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="leaf_srt_04" x="728" y="1842" w="156" h="68" pX="0.5" pY="0.5"/>
+    <sprite n="mid_arch" x="1401" y="582" w="528" h="407" pX="0.5" pY="0.5" oX="1" oY="0" oW="408" oH="528" r="y"/>
+    <sprite n="plant_sticker_03" x="1400" y="991" w="498" h="316" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="platform" x="614" y="888" w="598" h="952" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="platform_seam" x="1179" y="582" w="220" h="304" pX="0.5" pY="0.5"/>
+    <sprite n="rocks_sl" x="1931" y="920" w="82" h="128" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="rocks_sr" x="1931" y="582" w="102" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="side_arch_bg" x="654" y="1922" w="586" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="sl_arch" x="1242" y="2" w="726" h="578" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="sm_flower_01" x="1056" y="1888" w="26" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="sm_flower_02" x="1084" y="1888" w="34" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sr_arch" x="2" y="888" w="610" h="1032" pX="0.5" pY="0.5"/>
+</TextureAtlas>

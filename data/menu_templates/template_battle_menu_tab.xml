@@ -1,0 +1,142 @@
+<template name="template_battle_menu_tab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<event name="selectTab" params="element">
+		<![CDATA[
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-2)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Icon"]:setColor(1.0, 1.0, 1.0)
+		]]>
+	</event>
+	
+	<event name="deselectTab" params="element">
+		<![CDATA[
+			--[[change priorities when tabs are selected to push the unselected tab to the back]]
+			element:setOrientationPriority(2)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Icon"]:setColor(0.75, 0.75, 0.75)
+		]]>
+	</event>
+	
+<!--
+	<spriteComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			<![CDATA[			
+				component("spriteName"):SetString("gfx/menu/tab01")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.35*game.menuScaleX())
+			]]>
+		</event>
+	</spriteComponent>
+-->
+	
+	<ninesliceComponent name="Sprite">
+		<size w="100*game.menuScaleX()" h="35*game.menuScaleY()" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			component("topHeight"):SetFloat(0.0)
+			component("bottomHeight"):SetFloat(0.0)
+			component("leftWidth"):SetFloat(92.0)
+			component("rightWidth"):SetFloat(92.0)
+			component("includeBorder"):SetInt(1)
+			component("size"):SetFloat(0.35*game.menuScaleX())
+			component("spriteName"):SetString("gfx/menu/tab01")
+			component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</ninesliceComponent>
+
+	
+	<spriteSheetComponent name="Icon">
+		<position relativeTo="element[&quot;Sprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+			
+				local iconSprite = element("iconSprite"):GetString()
+				local iconSheet = element("iconSheet"):GetString()
+				if iconSprite ~= "" and iconSheet ~= "" then			
+					component("spriteName"):SetString("$iconSprite")
+					component("sheetName"):SetString("$iconSheet")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("MidPopUps")
+				else
+					component("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+
+	<textComponent name="Label">
+		<size w="80*game.menuScaleX()" h="30*game.menuScaleX()"/>
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+					local labelText = element("labelText"):GetString()
+					if labelText ~= "" then
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("autoScaleFactor"):SetFloat(0.01)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.3*game.menuScaleX())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString(labelText)
+						component("layer"):SetString("MidPopUps")
+					else
+						component("visible"):SetInt(0)
+					end
+				]]>
+		</event>
+	</textComponent>
+
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				element:parent()("selectedTabId"):SetInt(element("tabId"):GetInt())
+				element:parent():DoStoredScript("selectNewTab")
+			]]>
+		</event>
+	</touchComponent>
+
+	<event name="onInit" params="element">
+		<![CDATA[
+			element("alpha"):SetFloat(0.0)
+			element("labelText"):SetString("")
+			element("iconSprite"):SetString("")
+			element("iconSheet"):SetString("")
+			element("tabWidth"):SetFloat(200*game.menuScaleX())
+		]]>
+	</event>
+
+	<event name="onPostInit" params="element">
+		<![CDATA[
+			local tabWidth = element("tabWidth"):GetFloat()
+			element["Sprite"]("width"):SetFloat(tabWidth)
+			element:DoStoredScript("update")
+		]]>
+	</event>
+
+	<event name="update" params="element">
+		<![CDATA[
+			local alpha = element("alpha"):GetFloat()
+			element["Sprite"]("alpha"):SetFloat(alpha)
+			element["Icon"]("alpha"):SetFloat(alpha)
+			element["Label"]("alpha"):SetFloat(alpha)
+			
+			if alpha > 0.9 then
+				element["Touch"]("enabled"):SetInt(1)
+			else
+				element["Touch"]("enabled"):SetInt(0)
+			end
+		]]>
+	</event>
+	
+</template>

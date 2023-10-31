@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2af585f1102bfe47c96edc23e8dd99f3:39b923cdbae1da3324706331a06ff5a0:d1f79a199e437dc32731c93bdf3e231f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BCDE_costume_06_sheet.png" width="512" height="1024" hires="true">
+	<!-- original anchor = (70, 100) -> new anchor (84, 101) diff = (-14, -1)-->
+	<!-- add double it to texturepacker output offsets (5, 1) -> (-23, -1), because hires-->
+    <sprite n="BCDE_costume_06_body.png" x="1" y="568" w="331" h="297" pX="0.5" pY="0.5" oX="-23" oY="-1" oW="340" oH="300"/>
+    <sprite n="BCDE_costume_06_head.png" x="1" y="1" w="387" h="272" pX="0.5" pY="0.5" oX="7" oY="0" oW="394" oH="272"/>
+	<!-- original anchor = (64, 60) -> new anchor (69, 113) diff = (-5, -53)-->
+	<!-- add double it to texturepacker output offsets (2, 2) -> (-8, -104), because hires-->
+    <sprite n="BCDE_costume_06_hood.png" x="1" y="275" w="351" h="291" pX="0.5" pY="0.5" oX="-8" oY="-104" oW="296" oH="356" r="y"/>
+    <sprite n="BCDE_costume_06_leafbody_1.png" x="100" y="867" w="190" h="98" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_costume_06_leafbody_3.png" x="390" y="161" w="114" h="110" pX="0.5" pY="0.5" r="y"/>
+	<!-- original anchor = (23, 7) -> new anchor (26, 7) diff = (-3, 0)-->
+	<!-- add double it to texturepacker output offsets (1, 0) -> (-5, 0), because hires-->
+    <sprite n="BCDE_costume_06_left_lower_arm.png" x="1" y="867" w="97" h="128" pX="0.5" pY="0.5" oX="-5" oY="0" oW="100" oH="128"/>
+    <sprite n="BCDE_costume_06_left_upper_arm.png" x="390" y="273" w="102" h="142" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_costume_06_right_lower_arm.png" x="390" y="1" w="118" h="158" pX="0.5" pY="0.5"/>
+    <sprite n="BCDE_costume_06_right_upper_arm.png" x="354" y="417" w="152" h="184" pX="0.5" pY="0.5"/>
+</TextureAtlas>

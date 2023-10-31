@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7d83e515e00f0c77097abc7d1f6da8aa:4e08e89939fa0d92cab05fd4764074b3:e9c94ab9952bd4c57232c74dd8d1e048$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_Confettite_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Confettite_base" x="2" y="2" w="820" h="957" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992"/>
+    <sprite n="castle_Confettite_crystalA" x="824" y="616" w="133" h="139" pX="0.5" pY="0.5" oX="11" oY="6" oW="160" oH="160"/>
+    <sprite n="castle_Confettite_crystalB" x="824" y="423" w="180" h="191" pX="0.5" pY="0.5" oX="1" oY="7" oW="192" oH="192" r="y"/>
+    <sprite n="castle_Confettite_crystalC" x="824" y="226" w="183" h="195" pX="0.5" pY="0.5" oX="22" oY="30" oW="240" oH="240" r="y"/>
+    <sprite n="castle_Confettite_pyramid" x="824" y="2" w="156" h="222" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240"/>
+</TextureAtlas>

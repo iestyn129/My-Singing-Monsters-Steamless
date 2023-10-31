@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:273c57e85118792d2249d71cf9b663ea:264c857be69ad173bf12a1dd17d07349:f54b8f51961dfb1fe156d5e940e66534$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S04_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="S04_body" x="2" y="2" w="251" h="294" pX="0.5" pY="0.5" oX="2" oY="3" oW="256" oH="300"/>
+    <sprite n="S04_bubble01" x="358" y="912" w="79" h="79" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="80"/>
+    <sprite n="S04_ear_left" x="184" y="506" w="97" h="174" pX="0.5" pY="0.5" oX="0" oY="1" oW="98" oH="176"/>
+    <sprite n="S04_ear_RARE" x="2" y="298" w="192" h="204" pX="0.5" pY="0.5"/>
+    <sprite n="S04_ear_right" x="196" y="298" w="84" h="206" pX="0.5" pY="0.5" oX="1" oY="1" oW="86" oH="208"/>
+    <sprite n="S04_ear_tip_left" x="282" y="294" w="141" h="153" pX="0.5" pY="0.5" oX="1" oY="1" oW="156" oH="144" r="y"/>
+    <sprite n="S04_ear_tip_right" x="150" y="682" w="145" h="131" pX="0.5" pY="0.5" oX="0" oY="1" oW="146" oH="134"/>
+    <sprite n="S04_foot_left" x="148" y="815" w="75" h="150" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_foot_right" x="225" y="815" w="75" h="150" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_hip_left" x="297" y="673" w="95" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="S04_hip_right" x="358" y="815" w="84" h="95" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_lids_01" x="282" y="449" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_lids_02" x="425" y="275" w="54" h="149" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58" r="y"/>
+    <sprite n="S04_lids_03" x="297" y="759" w="149" h="54" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58"/>
+    <sprite n="S04_lids_04" x="302" y="815" w="54" h="149" pX="0.5" pY="0.5" oX="2" oY="2" oW="154" oH="58" r="y"/>
+    <sprite n="S04_mouth_01" x="312" y="993" w="178" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="178" oH="41"/>
+    <sprite n="S04_mouth_02" x="444" y="815" w="24" h="163" pX="0.5" pY="0.5" oX="10" oY="6" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_03" x="470" y="764" w="30" h="121" pX="0.5" pY="0.5" oX="36" oY="3" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_04" x="391" y="578" w="102" h="22" pX="0.5" pY="0.5" oX="49" oY="11" oW="178" oH="41"/>
+    <sprite n="S04_mouth_05" x="482" y="144" w="18" h="118" pX="0.5" pY="0.5" oX="41" oY="8" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_06" x="481" y="275" w="29" h="118" pX="0.5" pY="0.5" oX="43" oY="7" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_07" x="411" y="602" w="32" h="124" pX="0.5" pY="0.5" oX="40" oY="3" oW="178" oH="41" r="y"/>
+    <sprite n="S04_mouth_08" x="391" y="538" w="116" h="38" pX="0.5" pY="0.5" oX="41" oY="1" oW="178" oH="41"/>
+    <sprite n="S04_mouth_09" x="391" y="505" w="119" h="31" pX="0.5" pY="0.5" oX="40" oY="8" oW="178" oH="41"/>
+    <sprite n="S04_mouth_10" x="477" y="602" w="21" h="160" pX="0.5" pY="0.5" oX="12" oY="6" oW="178" oH="41" r="y"/>
+    <sprite n="S04_nose" x="470" y="887" w="24" h="36" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_pupil_left_purple" x="150" y="652" w="28" h="28" pX="0.5" pY="0.5" oX="1" oY="1" oW="30" oH="30"/>
+    <sprite n="S04_pupil_right_blue" x="448" y="734" w="27" h="28" pX="0.5" pY="0.5" oX="1" oY="1" oW="30" oH="30"/>
+    <sprite n="S04_shadow" x="194" y="967" w="116" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="120" oH="46"/>
+    <sprite n="S04_tail" x="2" y="652" w="146" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="S04_tail01_base_RARE" x="255" y="144" w="160" h="148" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S04_tail02_RARE" x="2" y="814" w="144" h="158" pX="0.5" pY="0.5"/>
+    <sprite n="S04_tail03_RARE" x="255" y="2" w="250" h="140" pX="0.5" pY="0.5"/>
+    <sprite n="S04_tail04_RARE" x="2" y="504" w="180" h="146" pX="0.5" pY="0.5"/>
+    <sprite n="S04_tail05_RARE" x="283" y="505" w="106" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="S04_toes_left" x="417" y="144" w="63" h="129" pX="0.5" pY="0.5" oX="0" oY="2" oW="130" oH="66" r="y"/>
+    <sprite n="S04_toes_right" x="283" y="607" w="126" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="130" oH="66"/>
+    <sprite n="S04_whiskers" x="2" y="974" w="190" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="S04_whiskers_RARE" x="445" y="602" w="30" h="130" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:59c72c673d585fde0a06fe6f06bb4011:4b794d03113b97e9e27f2b6a66e6ea66:142f5c56e29d70df835a00bdbc7f01e7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_BDE_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="BDE_body_hornless.png" x="2" y="2" w="184" h="130" pX="0.5" pY="0.5" oX="62" oY="88" oW="192" oH="272" r="y"/>
+
+	<!-- original anchor = (68, 118) -> new anchor (53, 105) diff = (15, 13)-->
+	<!-- add double it to texturepacker output offsets (1, 4) -> (31, 30), because hires-->
+
+	<sprite n="BDE_hat.png" x="2" y="134" w="177" h="151" pX="0.5" pY="0.5" oX="31" oY="30" oW="180" oH="160"/>
+</TextureAtlas>

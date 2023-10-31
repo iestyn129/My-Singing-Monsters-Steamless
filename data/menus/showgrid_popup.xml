@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<template type="template_overlayedcheckbox" name="ShowGridBox">
+		<templateVar name="$overlaySprite" equals="'button_yes'" />
+		<templateVar name="$bgSprite" equals="'button_base_grey'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$scale" equals="0.2*game.hudScale()" />
+		<templateVar name="$layer" equals="'ContextBar'" />
+		<templateVar name="$check" equals="game.showingOccupiedTileSpots()" />
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="5*game.hudScale()" yOffset="15*game.hudScale()" priorityOffset="5" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				if(not game.showingOccupiedTileSpots()) then
+					game.populateOccupiedTileSpots()
+					element["overlay"]("visible"):SetInt(1)
+				else
+					game.hideOccupiedTileSpots()
+					element["overlay"]("visible"):SetInt(0)
+				end
+			</event>
+		</touchComponent>
+	</template>
+	<element name="ShowGridLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="ShowGridBox" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="2*game.hudScale()" yOffset="0" />
+		<textComponent name="Text">
+			<size w="256*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("SHOW_GRID_LABEL")
+				component("layer"):SetString("ContextBar")
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="queuePop" params="element">
+		element:root():popPopUp()
+	</event>
+	
+</menu>

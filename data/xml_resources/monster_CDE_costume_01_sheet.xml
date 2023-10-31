@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9f52e117484c1a3ce2cac94b104f224d:fb1b09b10e88940b9e41a7ebf115b2fa:ab8f869ea9a9ba06f881ec2588e320a8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<!-- original anchor = (44, 35) -> new anchor (51 49) diff = (-7, -14)-->
+<!-- add double it to texturepacker output offsets (3, 2) -> (-11, -26), because hires-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_CDE_costume_01_sheet.png" width="128" height="256" hires="true">
+    <sprite n="CDE_horns.png" x="2" y="2" w="103" h="135" pX="0.5" pY="0.5" oX="-11" oY="-26" oW="110" oH="140"/>
+</TextureAtlas>

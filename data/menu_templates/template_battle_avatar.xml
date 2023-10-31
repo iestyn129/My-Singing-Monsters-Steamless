@@ -1,0 +1,84 @@
+<template name="template_battle_avatar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$flip" equals="0" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="MonsterAnim"/>
+	
+	<aeComponent name="MonsterAnim">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[      
+					component("animationName"):SetString("xml_bin/monster_e_composer.bin")
+					component("animation"):SetString( "Idle" )
+					component:setScale(Vector2(0.4*game.battleScale(),0.4*game.battleScale()))
+					component("hFlip"):SetInt($flip)
+					component:calculatePosition()
+					component("visible"):SetInt(0)
+			]]>
+		</event>
+	</aeComponent>
+
+	<event name="setAvatar" params="element, animName, costume, flipped">
+		<![CDATA[
+		
+				local component = element:GetComponent("MonsterAnim")
+				component("animationName"):SetString(animName)
+				component("animation"):SetString( "Idle" )
+
+				component("costume"):SetString(costume)
+				game.applyCostumeToAnimComponent(component, costume)
+
+				component:setScale(Vector2(0.4*game.battleScale(),0.4*game.battleScale()))
+				
+				if flipped == 1 then
+					component("hFlip"):SetInt(1-$flip)
+				else
+					component("hFlip"):SetInt($flip)
+				end
+				component:calculatePosition()
+				component("visible"):SetInt(1)
+				
+				
+			]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["MonsterAnim"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<!--
+	<spriteComponent name="test_box">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(1.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+			]]>
+		</event>
+		<event name="onTick" params="component, element, dt">
+			<![CDATA[
+				component:setScale(Vector2( element:absW() / 4.0, element:absH() / 4.0))
+			]]>
+		</event>
+	</spriteComponent>
+-->
+<!--
+	<spriteComponent name="debug">		
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 1.0, 0.0)
+				component("alpha"):SetFloat(0.5)
+			]]>
+		</event>
+	</spriteComponent>
+-->	
+
+</template>

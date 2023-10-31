@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:77e5bf4cd143d0d3aef45a83eb6b48f7:2a94970218e87b0be109c540013aa834:670a6344081466c46e4627bd2315acec$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/castle_Nebulox_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="castle_Nebulox_base" x="2" y="187" w="957" h="820" pX="0.5" pY="0.5" oX="50" oY="25" oW="880" oH="992" r="y"/>
+    <sprite n="castle_Nebulox_crystalA" x="2" y="2" w="142" h="128" pX="0.5" pY="0.5" oX="10" oY="22" oW="160" oH="160"/>
+    <sprite n="castle_Nebulox_crystalB" x="370" y="2" w="191" h="181" pX="0.5" pY="0.5" oX="1" oY="6" oW="192" oH="192"/>
+    <sprite n="castle_Nebulox_crystalC" x="563" y="2" w="195" h="183" pX="0.5" pY="0.5" oX="22" oY="30" oW="240" oH="240"/>
+    <sprite n="castle_Nebulox_pyramid" x="146" y="2" w="222" h="156" pX="0.5" pY="0.5" oX="6" oY="7" oW="168" oH="240" r="y"/>
+</TextureAtlas>

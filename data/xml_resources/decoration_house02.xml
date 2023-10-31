@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:acc78d47b863a41dea539ccf2841a7f7:dd0d8f7c0d33e6197e9aa0f925ffc765:afbf5471b87fa9b7243b9d17ebd72066$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/house02.png" width="512" height="1024" hires="true">
+    <sprite n="flag01" x="2" y="742" w="438" h="192" pX="0.5" pY="0.5" oX="3" oY="0" oW="198" oH="438" r="y"/>
+    <sprite n="house02" x="2" y="2" w="487" h="738" pX="0.5" pY="0.5" oX="0" oY="0" oW="488" oH="738"/>
+</TextureAtlas>

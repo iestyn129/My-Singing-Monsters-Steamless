@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:fd824fb7918b570046a2766d9da82c77:dce79c6aef8d35b6a1d6f861ee5c20e1:385d15fadd2628daaeba496ce79c6b93$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_fabergeegg_sheet.png" width="512" height="512" hires="true">
+    <sprite n="egg.png" x="2" y="2" w="288" h="365" pX="0.5" pY="0.5" oX="0" oY="0" oW="288" oH="368"/>
+    <sprite n="leg 1.png" x="413" y="77" w="78" h="117" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="118"/>
+    <sprite n="leg 2.png" x="292" y="77" w="119" h="78" pX="0.5" pY="0.5" oX="1" oY="2" oW="80" oH="122" r="y"/>
+    <sprite n="leg 3.png" x="292" y="2" w="142" h="73" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="142" r="y"/>
+    <sprite n="ring.png" x="268" y="369" w="236" h="71" pX="0.5" pY="0.5" oX="8" oY="0" oW="244" oH="88"/>
+    <sprite n="shadow.png" x="2" y="369" w="264" h="132" pX="0.5" pY="0.5"/>
+</TextureAtlas>

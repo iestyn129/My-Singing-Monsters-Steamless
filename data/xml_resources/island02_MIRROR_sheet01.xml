@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:aa111b03d503dbc4c6228e8edc70c433:91e599fd9aec7199dc22d9e76fbdde32:1b673ac35a19b093781a923c04767244$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island02_MIRROR_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island02_CAVE" x="642" y="2" w="419" h="420" pX="0.5" pY="0.5" oX="3" oY="5" oW="440" oH="424" r="y"/>
+    <sprite n="island02_burns" x="2" y="2" w="638" h="1087" pX="0.5" pY="0.5" oX="0" oY="33" oW="638" oH="1166"/>
+    <sprite n="island02_ear" x="1147" y="2" w="803" h="435" pX="0.5" pY="0.5" oX="13" oY="1" oW="456" oH="804" r="y"/>
+    <sprite n="island02_edge" x="1576" y="1020" w="414" h="328" pX="0.5" pY="0.5" oX="0" oY="4" oW="414" oH="334"/>
+    <sprite n="island02_eyeclosed" x="416" y="1091" w="729" h="870" pX="0.5" pY="0.5" oX="0" oY="44" oW="870" oH="816" r="y"/>
+    <sprite n="island02_nose" x="642" y="439" w="680" h="580" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island02_stumpcenter" x="1147" y="1021" w="427" h="990" pX="0.5" pY="0.5" oX="0" oY="0" oW="990" oH="460" r="y"/>
+    <sprite n="island02_stumpside" x="1324" y="439" w="720" h="579" pX="0.5" pY="0.5" oX="5" oY="41" oW="728" oH="672"/>
+    <sprite n="w2_cloud" x="2" y="1091" w="412" h="900" pX="0.5" pY="0.5" oX="0" oY="3" oW="900" oH="420" r="y"/>
+    <sprite n="w2_comet" x="2" y="1993" w="220" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="w2_snow_hamster" x="224" y="1993" w="48" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="w2_sparkle" x="274" y="1993" w="21" h="22" pX="0.5" pY="0.5" oX="1" oY="0" oW="22" oH="22"/>
+    <sprite n="w2_waterdrop" x="274" y="2017" w="12" h="20" pX="0.5" pY="0.5"/>
+</TextureAtlas>

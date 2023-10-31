@@ -1,0 +1,31 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<element name="dummy">
+		<size w="480" h="320"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="30" />
+	</element>
+	
+	<!-- this is just a dummy for now -->
+	<event name="onInit" params="element">
+		element("closing"):SetInt(0)
+
+		game.logEvent("battle_menu", "menu", "battle_campaign_info_popup", "action", "init")
+	</event>
+
+	<event name="onTick" params="element, dt">
+		<![CDATA[
+			-- nested popups need to wait a tick before setting the context
+			-- otherwise back button functionality won't work correctly
+			if element("closing"):GetInt() == 1 then
+				element:root():popPopUp()
+				manager:setContext(manager:reserveState())
+			end
+		]]>
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("closing"):SetInt(1)
+	</event>
+
+</menu>

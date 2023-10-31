@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:da94d489cd8427c4b89a4462c3efc29c:e14b700ef82145f1bd2981b70da91b2e:95f6f08269d43cf51291137e5c1d7b12$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AC_costume_05_flower.png" width="1060" height="126" hires="true">
+    <sprite n="AC_costume_05_flower_01.png" x="1" y="1" w="215" h="110" pX="0.5" pY="0.5" oX="8" oY="32" oW="232" oH="160"/>
+    <sprite n="AC_costume_05_flower_02.png" x="218" y="1" w="229" h="96" pX="0.5" pY="0.5" oX="2" oY="12" oW="232" oH="160"/>
+    <sprite n="AC_costume_05_flower_03.png" x="449" y="1" w="202" h="88" pX="0.5" pY="0.5" oX="16" oY="0" oW="232" oH="160"/>
+    <sprite n="AC_costume_05_flower_04.png" x="653" y="1" w="227" h="84" pX="0.5" pY="0.5" oX="2" oY="11" oW="232" oH="160"/>
+    <sprite n="AC_costume_05_flower_05.png" x="882" y="1" w="177" h="124" pX="0.5" pY="0.5" oX="27" oY="34" oW="232" oH="160"/>
+</TextureAtlas>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:584739732e298c9289784e230c570661:b7ecfc20c3f49e935899aa8187041ad2:09086090c18d2a6199166c134f265232$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+
+<TextureAtlas imagePath="gfx/costumes/monster_CDE_costume_05_sheet.png" width="256" height="512" hires="true">
+    <!-- original anchor = (40, 37) -> new anchor (41, 40) diff = (-1, -3) -->
+    <!-- add double it to texturepacker output offsets (1, 3) -> (-1, -3), because hires -->
+    <sprite n="C_body.png" x="1" y="1" w="193" h="162" pX="0.5" pY="0.5" oX="-1" oY="-3" oW="164" oH="200" r="y"/>
+    <sprite n="C_face_crystal.png" x="196" y="1" w="46" h="96" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_shoulder_right.png" x="1" y="165" w="94" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="C_tail1_crystal.png" x="196" y="99" w="38" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="C_tail2_crystal.png" x="196" y="131" w="30" h="26" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

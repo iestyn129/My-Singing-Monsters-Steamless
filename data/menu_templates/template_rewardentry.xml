@@ -1,0 +1,70 @@
+<template name="template_rewardentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+
+	<event name="setInvisible" params="element">
+		element.Text:V("visible"):SetInt(0)
+		element.Sprite:V("visible"):SetInt(0)
+		element.AnimSprite:V("visible"):SetInt(0)
+	</event>
+
+	<event name="setVisible" params="element">
+		element.Text:V("visible"):SetInt(1)
+		element.Sprite:V("visible"):SetInt(1)
+		element.AnimSprite:V("visible"):SetInt(1)
+	</event>
+	
+	<textComponent name="Text">
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.19*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_RIGHT_ALIGNED)
+			component("text"):SetString(element("RewardAmount"):GetString())
+			component("layer"):SetString("Clipping")
+			
+			local rewardIds = { RewardCoins=game.StoreContext_TYPE_COINS, RewardDiamonds=game.StoreContext_TYPE_DIAMOND, RewardXp=game.StoreContext_TYPE_XP, RewardFood=game.StoreContext_TYPE_FOOD, RewardShards=game.StoreContext_TYPE_ETH_CURRENCY, RewardEntity="entity", RewardKeys=game.StoreContext_TYPE_KEYS, RewardRelics=game.StoreContext_TYPE_RELICS }
+			local type = rewardIds[element("RewardId"):GetString()]
+			game.StoreContext_setCurrencyTypeColour(type, component)
+		</event>
+	</textComponent>
+	
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">			
+			if(element("RewardId"):GetString() ~= "RewardEntity") then
+				local rewardIds = { RewardCoins=game.StoreContext_SPRITE_COINS, RewardDiamonds=game.StoreContext_SPRITE_DIAMOND, RewardXp=game.StoreContext_TYPE_XP, RewardFood=game.StoreContext_SPRITE_FOOD, RewardShards=game.StoreContext_SPRITE_ETH_CURRENCY, RewardEntity="entity", RewardKeys=game.StoreContext_SPRITE_KEY, RewardRelics=game.StoreContext_SPRITE_RELIC }
+				local spriteName = rewardIds[element("RewardId"):GetString()]
+				
+				if(spriteName ~= nil) then
+					component("spriteName"):SetString(spriteName)
+					component("sheetName"):SetString("xml_resources/hud01.xml")
+					component("size"):SetFloat(0.19*game.menuScaleX())
+					component("layer"):SetString("Clipping")
+				end
+			end
+		</event>
+	</spriteSheetComponent>
+	
+	<aeComponent name="AnimSprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="40*game.hudScale()" yOffset="70*game.hudScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">			
+			if(element("RewardId"):GetString() == "RewardEntity") then
+			
+				local entityId = tonumber(element("RewardAmount"):GetString())
+				local animFile = game.getEntityAnimationFileFromEntId(entityId)
+				local animName = game.getEntityAnimationNameFromEntId(entityId)
+				if(animFile ~= nil and animName ~= nil) then
+					component("animationName"):SetString("xml_bin/"..animFile)
+					component("animation"):SetString(animName)
+					component:setScale(Vector2(0.25*game.menuScaleX(),0.25*game.menuScaleX()))
+					component("layer"):SetString("Clipping")
+					element:setOrientationPosition(Vector2((component:size().x * 0.5)-(3*game.menuScaleX()), component:size().y * 0.5 + (25*game.menuScaleX())))
+				end
+				
+				element["Text"]("visible"):SetInt(0)
+			end
+		</event>
+	</aeComponent>
+</template>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:08fc40741f4101dde4d87b06a2c6791b:b28765b7f2ba4555b8490a10f833e08d:171427e16957b419a8378288a577070a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island19_sheet02_newyear.png" width="2048" height="2048" hires="true">
+    <sprite n="centre_platform.png" x="4" y="4" w="1528" h="725" pX="0.5" pY="0.5"/>
+    <sprite n="centre_platform_runes_03.png" x="587" y="733" w="120" h="113" pX="0.5" pY="0.5" oX="0" oY="0" oW="145" oH="113"/>
+    <sprite n="centre_platform_runes_04.png" x="749" y="1652" w="303" h="365" pX="0.5" pY="0.5" oX="0" oY="0" oW="502" oH="397"/>
+    <sprite n="centre_platform_runes_05.png" x="1601" y="1276" w="167" h="177" pX="0.5" pY="0.5" oX="0" oY="0" oW="371" oH="362"/>
+    <sprite n="centre_platform_runes_06.png" x="1932" y="990" w="112" h="111" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="centre_platform_runes_08.png" x="843" y="733" w="124" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="142" oH="295"/>
+    <sprite n="centre_platform_runes_13.png" x="1202" y="1276" w="251" h="268" pX="0.5" pY="0.5" oX="93" oY="0" oW="361" oH="420" r="y"/>
+    <sprite n="centre_platform_runes_14.png" x="587" y="1276" w="308" h="372" pX="0.5" pY="0.5" oX="142" oY="0" oW="514" oH="353" r="y"/>
+    <sprite n="centre_platform_runes_15.png" x="1772" y="1364" w="176" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="cheek.png" x="1536" y="4" w="505" h="846" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="eye.png" x="4" y="733" w="579" h="1303" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="front_horn.png" x="587" y="854" w="1341" h="370" pX="0.5" pY="0.5" oX="7" oY="4" oW="1354" oH="388"/>
+    <sprite n="front_horn_runes_02.png" x="1351" y="1804" w="125" h="214" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="front_horn_runes_04.png" x="1602" y="1592" w="151" h="147" pX="0.5" pY="0.5" oX="75" oY="0" oW="226" oH="192"/>
+    <sprite n="front_horn_runes_06.png" x="1772" y="1228" w="154" h="132" pX="0.5" pY="0.5" oX="129" oY="1" oW="283" oH="133"/>
+    <sprite n="front_horn_runes_07.png" x="1768" y="1498" w="160" h="152" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="front_horn_runes_08.png" x="1056" y="1603" w="211" h="294" pX="0.5" pY="0.5" oX="241" oY="0" oW="535" oH="380" r="y"/>
+    <sprite n="nose_rune_01.png" x="1056" y="1901" w="291" h="141" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="nose_rune_02.png" x="1457" y="1276" w="140" h="203" pX="0.5" pY="0.5"/>
+    <sprite n="side_horn_rune_01.png" x="899" y="1276" w="299" h="323" pX="0.5" pY="0.5" oX="14" oY="0" oW="313" oH="354"/>
+    <sprite n="side_horn_rune_02.png" x="1480" y="1761" w="119" h="135" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_01.png" x="1271" y="1548" w="155" h="252" pX="0.5" pY="0.5" oX="80" oY="73" oW="332" oH="228" r="y"/>
+    <sprite n="side_platform_runes_03.png" x="711" y="733" w="128" h="96" pX="0.5" pY="0.5"/>
+    <sprite n="side_platform_runes_04.png" x="1602" y="1457" w="162" h="131" pX="0.5" pY="0.5" oX="67" oY="0" oW="229" oH="254"/>
+    <sprite n="side_platform_runes_06.png" x="1932" y="854" w="112" h="132" pX="0.5" pY="0.5" oX="228" oY="90" oW="360" oH="202" r="y"/>
+    <sprite n="side_platform_runes_08.png" x="587" y="1652" w="158" h="372" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform_runes_09.png" x="1932" y="1105" w="111" h="167" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="side_platform_runes_10.png" x="1430" y="1548" w="168" h="209" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

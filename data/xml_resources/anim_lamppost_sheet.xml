@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8b63bbbca7d69e00304f7ce56c2d019d:df7d2f5ec4d581c449537e0e3b5bc0b8:55d9de70ce6e0316c5d4a1481bbdd9db$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_lamppost_sheet.png" width="256" height="512">
+    <sprite n="Bell 1.png" x="193" y="63" w="17" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="18" oH="20"/>
+    <sprite n="Bell 2.png" x="212" y="63" w="17" h="17" pX="0.5" pY="0.5" oX="2" oY="0" oW="21" oH="18"/>
+    <sprite n="Bell 3.png" x="173" y="63" w="18" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="19" oH="19"/>
+    <sprite n="Bow.png" x="134" y="46" w="37" h="37" pX="0.5" pY="0.5" oX="3" oY="0" oW="43" oH="37"/>
+    <sprite n="Footing.png" x="2" y="46" w="130" h="52" pX="0.5" pY="0.5" oX="4" oY="2" oW="137" oH="54"/>
+    <sprite n="Glow.png" x="2" y="100" w="106" h="105" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Lamp.png" x="2" y="2" w="169" h="42" pX="0.5" pY="0.5" oX="0" oY="2" oW="45" oH="174" r="y"/>
+    <sprite n="Pinecone 1.png" x="79" y="207" w="28" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="28"/>
+    <sprite n="Pinecone 2.png" x="109" y="225" w="28" h="27" pX="0.5" pY="0.5" oX="1" oY="0" oW="28" oH="28" r="y"/>
+    <sprite n="Tree 1 Base.png" x="134" y="85" w="114" h="85" pX="0.5" pY="0.5" oX="0" oY="5" oW="114" oH="90"/>
+    <sprite n="Tree 1 Mid.png" x="110" y="172" w="85" h="51" pX="0.5" pY="0.5" oX="0" oY="6" oW="85" oH="64"/>
+    <sprite n="Tree 1 Top.png" x="2" y="207" w="75" h="70" pX="0.5" pY="0.5" oX="0" oY="3" oW="70" oH="84" r="y"/>
+    <sprite n="Tree 2 Base.png" x="173" y="2" w="79" h="59" pX="0.5" pY="0.5" oX="2" oY="3" oW="81" oH="65"/>
+    <sprite n="Tree 2 Mid.png" x="197" y="172" w="57" h="43" pX="0.5" pY="0.5" oX="0" oY="3" oW="57" oH="49"/>
+    <sprite n="Tree 2 Top.png" x="197" y="217" w="46" h="38" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Yellow Light.png" x="110" y="100" w="22" h="26" pX="0.5" pY="0.5" oX="0" oY="2" oW="22" oH="28"/>
+</TextureAtlas>

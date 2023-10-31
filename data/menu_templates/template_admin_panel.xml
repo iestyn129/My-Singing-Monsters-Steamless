@@ -1,0 +1,215 @@
+<template name="template_admin_panel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<event name="onInit" params="element">
+		if(game.isAdmin() == 1) then
+			element:DoStoredScript("show")
+		else
+			element:DoStoredScript("hide")
+		end
+	</event>
+	
+	<event name="show" params="element">
+		element["PanelLabel"]("visible"):SetInt(1)
+		element["BBBIDEntryButton"]:DoStoredScript("show")
+		element["LaunchWebTool"]:DoStoredScript("show")
+		element["SupportIDEntryButton"]:DoStoredScript("show")
+		
+		if(game.inAdminViewMode()) then
+			element["AdminViewPanel"]:DoStoredScript("show")
+		else
+			element["AdminViewPanel"]:DoStoredScript("hide")
+		end
+	</event>
+	
+	<event name="hide" params="element">
+		element["PanelLabel"]("visible"):SetInt(0)
+		element["BBBIDEntryButton"]:DoStoredScript("hide")
+		element["AdminViewPanel"]:DoStoredScript("hide")
+		element["LaunchWebTool"]:DoStoredScript("hide")
+		element["SupportIDEntryButton"]:DoStoredScript("hide")
+	</event>
+
+	<template type="template_spritesheetbutton" name="BBBIDEntryButton">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="element:parent()" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="25*game.hudScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.enterUserBBBId()
+			</event>
+		</touchComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("text"):SetString("BBB_Id Entry")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_thumbsup")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="hide" params="element">
+			element:DoStoredScript("setInvisible")
+			element["Overlay"]("visible"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element:DoStoredScript("setVisible")
+			element["Overlay"]("visible"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="RefreshAll">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="element:parent()[&quot;BBBIDEntryButton&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			onInit(element)
+			element:DoStoredScript("setInvisible")
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="SupportIDEntryButton">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="element:parent()[&quot;RefreshAll&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				game.enterSupportId()
+			</event>
+		</touchComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("text"):SetString("SupportID Entry")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_thumbsup")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="hide" params="element">
+			element:DoStoredScript("setInvisible")
+			element["Overlay"]("visible"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element:DoStoredScript("setVisible")
+			element["Overlay"]("visible"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+		</event>
+	</template>
+
+	<template type="template_spritesheetbutton" name="LaunchWebTool">
+		<templateVar name="$layer" equals="HUD" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<position relativeTo="element:parent()[&quot;SupportIDEntryButton&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				game.adminLaunchWebTool()
+			</event>
+		</touchComponent>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("text"):SetString("Web Tool")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("HUD")
+			</event>
+		</textComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_thumbsup")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("HUD")
+			</event>
+		</spriteSheetComponent>
+		<event name="hide" params="element">
+			element:DoStoredScript("setInvisible")
+			element["Overlay"]("visible"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+		</event>
+		<event name="show" params="element">
+			element:DoStoredScript("setVisible")
+			element["Overlay"]("visible"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+		</event>
+	</template>	
+	
+	<textComponent name="PanelLabel">
+		<size w="80" h="0" />
+		<position relativeTo="element[&quot;BBBIDEntryButton&quot;]" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(1)
+			component("font"):Set(game.getTitleFont())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("size"):SetFloat(0.2*game.hudScale())
+			component("text"):SetString("ADMIN PANEL")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+			component("layer"):SetString("HUD")
+		</event>
+	</textComponent>
+	
+	<template type="template_admin_view_panel" name="AdminViewPanel">
+		<position relativeTo="element:parent()[&quot;BBBIDEntryButton&quot;]" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+	</template>
+	
+	
+	
+</template>

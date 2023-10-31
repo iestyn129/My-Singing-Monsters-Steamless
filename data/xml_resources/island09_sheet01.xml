@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:37d5917b9b0e41447dc4e8eee7d7fa38:cb97b78d0b8693ea30d71341747d5d02:604df2d240cea9bd97e353b6bc9e5ed9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island09_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="Feather01_tip" x="748" y="1761" w="236" h="268" pX="0.5" pY="0.5"/>
+    <sprite n="Feather02" x="1680" y="644" w="266" h="290" pX="0.5" pY="0.5"/>
+    <sprite n="Feather03" x="993" y="1614" w="296" h="286" pX="0.5" pY="0.5"/>
+    <sprite n="Feather04_base" x="1495" y="1438" w="316" h="342" pX="0.5" pY="0.5"/>
+    <sprite n="island09_bone_joint" x="751" y="1225" w="240" h="534" pX="0.5" pY="0.5"/>
+    <sprite n="island09_bone_sleeve" x="1680" y="936" w="149" h="276" pX="0.5" pY="0.5" oX="0" oY="0" oW="150" oH="276"/>
+    <sprite n="island09_bone_spike" x="1492" y="1782" w="466" h="112" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island09_bone_wrap" x="1492" y="1896" w="332" h="144" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island09_bone_wrap_half" x="842" y="666" w="138" h="166" pX="0.5" pY="0.5" oX="3" oY="0" oW="144" oH="166"/>
+    <sprite n="island09_burns" x="2" y="1545" w="744" h="317" pX="0.5" pY="0.5" oX="3" oY="3" oW="320" oH="748" r="y"/>
+    <sprite n="island09_burns_LEFT" x="2" y="1225" w="747" h="318" pX="0.5" pY="0.5" oX="0" oY="0" oW="320" oH="748" r="y"/>
+    <sprite n="island09_ear" x="2" y="878" w="1012" h="345" pX="0.5" pY="0.5" oX="1" oY="4" oW="346" oH="1016" r="y"/>
+    <sprite n="island09_eye" x="842" y="2" w="770" h="662" pX="0.5" pY="0.5"/>
+    <sprite n="island09_eye_LEFT" x="1016" y="666" w="662" h="770" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island09_hair_A" x="2" y="1864" w="338" h="180" pX="0.5" pY="0.5" oX="0" oY="2" oW="180" oH="340" r="y"/>
+    <sprite n="island09_hair_B" x="1291" y="1614" w="199" h="370" pX="0.5" pY="0.5" oX="0" oY="0" oW="200" oH="370"/>
+    <sprite n="island09_hair_C" x="342" y="1864" w="332" h="175" pX="0.5" pY="0.5" oX="6" oY="1" oW="342" oH="176"/>
+    <sprite n="island09_hair_D" x="993" y="1438" w="500" h="174" pX="0.5" pY="0.5" oX="0" oY="6" oW="500" oH="180"/>
+    <sprite n="island09_plug_LEFT" x="1680" y="1214" w="208" h="178" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island09_plug_RIGHT" x="1831" y="936" w="178" h="208" pX="0.5" pY="0.5"/>
+    <sprite n="island09_stump" x="2" y="2" w="838" h="874" pX="0.5" pY="0.5"/>
+    <sprite n="w9_cloud" x="1614" y="2" w="300" h="640" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="worm1" x="1826" y="1937" w="44" h="44" pX="0.5" pY="0.5" oX="0" oY="5" oW="56" oH="56"/>
+    <sprite n="worm2" x="1879" y="1896" w="47" h="42" pX="0.5" pY="0.5" oX="0" oY="7" oW="56" oH="56"/>
+    <sprite n="worm3" x="1826" y="1896" w="51" h="39" pX="0.5" pY="0.5" oX="0" oY="10" oW="56" oH="56"/>
+    <sprite n="worm4" x="982" y="666" w="32" h="53" pX="0.5" pY="0.5" oX="0" oY="17" oW="56" oH="56" r="y"/>
+    <sprite n="worm5" x="958" y="834" w="55" h="39" pX="0.5" pY="0.5" oX="0" oY="11" oW="56" oH="56"/>
+    <sprite n="worm6" x="842" y="834" w="56" h="28" pX="0.5" pY="0.5" oX="0" oY="21" oW="56" oH="56"/>
+    <sprite n="worm7" x="900" y="834" w="56" h="25" pX="0.5" pY="0.5" oX="0" oY="24" oW="56" oH="56"/>
+</TextureAtlas>

@@ -1,0 +1,165 @@
+<template name="template_mailindicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	
+	<spriteSheetComponent name="Sprite">
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("goal_exclaim")
+			component("sheetName"):SetString("xml_resources/hud01.xml")
+			component("size"):SetFloat(0.6*game.hudScale())
+			component("layer"):SetString("ContextBar")
+			
+			if(component("isSourceRotated"):GetInt() == 1) then
+				component("vFlip"):SetInt(1)
+			else
+				component("hFlip"):SetInt(1)
+			end
+			
+			component("xOffset"):SetInt(-22*game.hudScale())
+			component("yOffset"):SetInt(3*game.hudScale())
+		</event>
+	</spriteSheetComponent>
+
+	<element name="Attachments">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite2" />
+		<position relativeTo="element:parent():parent()" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+
+		<spriteSheetComponent name="Sprite2">
+			<position relativeTo="element" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("goal_blank")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.6*game.hudScale())
+				component("layer"):SetString("ContextBar")
+
+				if(component("isSourceRotated"):GetInt() == 1) then
+					component("vFlip"):SetInt(1)
+				else
+					component("hFlip"):SetInt(1)
+				end
+
+				component("xOffset"):SetInt(-22*game.hudScale())
+				component("yOffset"):SetInt(3*game.hudScale())
+
+				-- if(game.isMailIndicatorActive()) then
+					--component("visible"):SetInt(1)
+				--end
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="AttchmentCount">
+			<position relativeTo="element" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("ContextBar")
+				component("text"):SetString(game.getNumMailAttachments())
+				component:setColor(0.47, 0.95, 0.12)
+				
+				component("xOffset"):SetInt(22*game.hudScale())
+				component("yOffset"):SetInt(2*game.hudScale())
+			</event>
+		</textComponent>
+		
+		<event name="onPostInit" params="element">
+			if(game.getNumMailAttachments() ~= 0) then
+				element:DoStoredScript("setVisible")
+			else
+				element:DoStoredScript("setInvisible")
+			end
+		</event>
+		
+		<event name="setVisible" params="element">
+			if(element:parent():parent()["UpSprite"]("visible"):GetInt() == 1) then
+				element["Sprite2"]("visible"):SetInt(1)
+				element["AttchmentCount"]("visible"):SetInt(1)
+			end
+		</event>
+		
+		<event name="setInvisible" params="element">
+			element["Sprite2"]("visible"):SetInt(0)
+			element["AttchmentCount"]("visible"):SetInt(0)
+		</event>
+	</element>
+
+	<event name="onInit" params="element">
+		element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgUpdateMailIndicator", "gotMsgUpdateMailIndicator")
+		element("transitionTime"):SetFloat(1.0)
+		element("transitionState"):SetInt(1)
+	</event>
+	
+	<event name="gotMsgUpdateMailIndicator" params="element, msg">
+		if(msg.visible and element:parent():parent()["UpSprite"]("visible"):GetInt() == 1) then
+			element["Sprite"]("visible"):SetInt(1)
+			element("transitionState"):SetInt(1)
+		else
+			element["Sprite"]("visible"):SetInt(0)
+			element("transitionState"):SetInt(0)
+		end
+		
+		if(game.getNumMailAttachments() ~= 0) then
+			element["Attachments"]:DoStoredScript("setVisible")
+			element["Attachments"]["AttchmentCount"]("text"):SetString(game.getNumMailAttachments())
+		else
+			element["Attachments"]:DoStoredScript("setInvisible")
+		end
+	</event>
+	
+	<event name="show" params="element">
+		if(element:parent():parent()["UpSprite"]("visible"):GetInt() == 1) then
+			element["Sprite"]("visible"):SetInt(1)
+		end
+	</event>
+	
+	<event name="hide" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+		element["Attachments"]:DoStoredScript("setInvisible");
+	</event>
+	
+	<event name="onTick" params="element, dt">
+		local transitionState = element("transitionState"):GetInt()
+		
+		if(transitionState ~= 0 and dt &lt;= 0.5) then
+			local transitionTime = element("transitionTime"):GetFloat()
+			
+			element["Sprite"]("size"):SetFloat(0.6*game.hudScale()*transitionTime)
+			
+			if( transitionTime &lt;= 1.0 ) then
+				element("transitionState"):SetInt(1)
+			elseif(transitionTime &gt;= 1.25) then
+				element("transitionState"):SetInt(2)
+			end	
+
+			if(transitionState == 1) then
+				element("transitionTime"):SetFloat(transitionTime + dt)
+			else
+				element("transitionTime"):SetFloat(transitionTime - dt)
+			end
+		end
+
+		-- if(game.isMailIndicatorActive() and (element["Sprite"]("visible"):GetInt() == 0)) then
+		--	element["Sprite"]("visible"):SetInt(1)
+		--	element("transitionTime"):SetFloat(1.0)
+		--	element("transitionState"):SetInt(1)
+		--end
+	</event>
+	
+	<event name="SetInvisible" params="element">
+		element["Sprite"]("visible"):SetInt(0)
+		element["Attachments"]:DoStoredScript("setInvisible");
+	</event>
+	
+	<event name="SetEnabled" params="element">
+		element["Sprite"]:setColor(1.0, 1.0, 1.0)
+	</event>
+	
+	<event name="SetDisabled" params="element">
+		element["Sprite"]:setColor(0.5, 0.5, 0.5)
+	</event>
+	
+</template>

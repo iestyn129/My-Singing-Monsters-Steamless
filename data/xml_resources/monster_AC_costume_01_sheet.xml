@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6458fea6bcf2b261557db29d1d0bf5ad:199d84891e543e1364a47c7819bfa9b8:fa030b9c33af3d36224ee82e13e273b4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_AC_costume_01_sheet.png" width="256" height="256" hires="true">
+
+	<!-- original anchor = (26, 20) -> new anchor (55, 24) diff = (-29, -4)-->
+	<!-- add double it to texturepacker output offsets (4, 1) -> (-54, -7), because hires-->
+    <sprite n="AC_MIT_LEFT.png" x="2" y="2" w="122" h="87" pX="0.5" pY="0.5" oX="-54" oY="-7" oW="130" oH="90"/>
+
+	<!-- original anchor = (31, 3) -> new anchor (47, 15) diff = (-16, -12)-->
+	<!-- add double it to texturepacker output offsets (3, 3) -> (-29, -21), because hires-->
+    <sprite n="AC_MIT_LOWER.png" x="2" y="91" w="94" h="113" pX="0.5" pY="0.5" oX="-29" oY="-21" oW="120" oH="100" r="y"/>
+
+	<!-- original anchor = (4, 17) -> new anchor (8, 24) diff = (-4, -7)-->
+	<!-- add double it to texturepacker output offsets (4, 1) -> (-4, -13), because hires-->
+    <sprite n="AC_MIT_RIGHT.png" x="126" y="2" w="122" h="87" pX="0.5" pY="0.5" oX="-4" oY="-13" oW="130" oH="90"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f575008c9a551c42d2cbd463ea24ece6:213b18fe59b73837aa0464adee830553:0c9dab62472106004fdcfa8c67f75cfb$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island22_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island22_braid" x="1" y="1" w="542" h="1216" pX="0.5" pY="0.5" oX="9" oY="12" oW="560" oH="1240"/>
+    <sprite n="island22_central platform" x="1" y="1219" w="936" h="813" pX="0.5" pY="0.5" oX="7" oY="18" oW="950" oH="850"/>
+    <sprite n="island22_cloud" x="1318" y="585" w="632" h="330" pX="0.5" pY="0.5" oX="57" oY="15" oW="760" oH="356"/>
+    <sprite n="island22_face" x="545" y="1" w="771" h="1131" pX="0.5" pY="0.5" oX="4" oY="4" oW="1140" oH="780" r="y"/>
+    <sprite n="island22_nose" x="1318" y="1" w="686" h="582" pX="0.5" pY="0.5" oX="9" oY="7" oW="600" oH="700" r="y"/>
+    <sprite n="island22_side_platform" x="1318" y="917" w="623" h="743" pX="0.5" pY="0.5" oX="18" oY="8" oW="780" oH="640" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:06e0c82a51b5abe1e46fa4a49f853842:5023922aa3d8fc05a6b534fdd0f03c45:3a34c43f406279ea668956e299d53b8c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island05_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="island05_burns" x="827" y="0" w="638" h="1161" pX="0.5" pY="0.5" oX="0" oY="5" oW="638" oH="1166"/>
+    <sprite n="island05_ear" x="459" y="1566" w="804" h="456" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island05_edge" x="1467" y="680" w="458" h="433" pX="0.5" pY="0.5" oX="9" oY="5" oW="480" oH="440"/>
+    <sprite n="island05_eyeclosed" x="0" y="0" w="825" h="781" pX="0.5" pY="0.5" oX="39" oY="35" oW="870" oH="816"/>
+    <sprite n="island05_nose" x="1467" y="0" w="580" h="678" pX="0.5" pY="0.5" oX="0" oY="2" oW="580" oH="680"/>
+    <sprite n="island05_stumpcenter" x="0" y="783" w="457" h="988" pX="0.5" pY="0.5" oX="2" oY="0" oW="990" oH="460" r="y"/>
+    <sprite n="island05_stumpside" x="1354" y="1163" w="653" h="724" pX="0.5" pY="0.5" oX="3" oY="13" oW="728" oH="672" r="y"/>
+    <sprite n="w5_cloud" x="459" y="1163" w="893" h="401" pX="0.5" pY="0.5" oX="2" oY="8" oW="900" oH="420"/>
+    <sprite n="w5_flamedance_01" x="516" y="835" w="53" h="54" pX="0.5" pY="0.5" oX="11" oY="7" oW="64" oH="64"/>
+    <sprite n="w5_flamedance_02" x="516" y="891" w="54" h="51" pX="0.5" pY="0.5" oX="12" oY="7" oW="64" oH="64" r="y"/>
+    <sprite n="w5_flamedance_03" x="509" y="783" w="55" h="50" pX="0.5" pY="0.5" oX="11" oY="5" oW="64" oH="64" r="y"/>
+    <sprite n="w5_flamedance_04" x="571" y="832" w="53" h="51" pX="0.5" pY="0.5" oX="0" oY="7" oW="64" oH="64" r="y"/>
+    <sprite n="w5_flamedance_05" x="459" y="783" w="48" h="56" pX="0.5" pY="0.5" oX="1" oY="4" oW="64" oH="64"/>
+    <sprite n="w5_flamedance_06" x="459" y="841" w="55" h="51" pX="0.5" pY="0.5" oX="3" oY="6" oW="64" oH="64" r="y"/>
+    <sprite n="w5_sparks_01" x="566" y="783" w="30" h="25" pX="0.5" pY="0.5" oX="3" oY="0" oW="30" oH="30" r="y"/>
+    <sprite n="w5_sparks_02" x="566" y="810" w="23" h="20" pX="0.5" pY="0.5" oX="5" oY="3" oW="30" oH="30" r="y"/>
+</TextureAtlas>

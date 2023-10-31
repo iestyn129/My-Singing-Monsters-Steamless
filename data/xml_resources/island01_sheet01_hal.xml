@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2ba7e7ba10bf0fb25cf0cba22c57b42b:28348e29fec5fb541256a41d5927024c:75b5abd6c72767febcc034488f0535de$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island01_sheet01_hal.png" width="2048" height="2048" hires="true">
+    <sprite n="island01_burns" x="2" y="2" w="638" h="1165" pX="0.5" pY="0.5" oX="0" oY="1" oW="638" oH="1166"/>
+    <sprite n="island01_ear" x="1101" y="794" w="800" h="446" pX="0.5" pY="0.5" oX="10" oY="4" oW="456" oH="804" r="y"/>
+    <sprite n="island01_edge" x="1663" y="1242" w="333" h="403" pX="0.5" pY="0.5" oX="0" oY="1" oW="414" oH="334" r="y"/>
+    <sprite n="island01_eyeclosed" x="1101" y="2" w="804" h="790" pX="0.5" pY="0.5" oX="51" oY="26" oW="870" oH="816"/>
+    <sprite n="island01_nose" x="1081" y="1242" w="580" h="680" pX="0.5" pY="0.5"/>
+    <sprite n="island01_stumpcenter" x="642" y="2" w="457" h="990" pX="0.5" pY="0.5" oX="0" oY="3" oW="990" oH="460" r="y"/>
+    <sprite n="island01_stumpside" x="2" y="1169" w="663" h="830" pX="0.5" pY="0.5" oX="2" oY="17" oW="840" oH="680" r="y"/>
+    <sprite n="w1_cloud" x="667" y="1138" w="412" h="900" pX="0.5" pY="0.5" oX="0" oY="3" oW="900" oH="420" r="y"/>
+    <sprite n="w1_ghost" x="642" y="994" w="108" h="142" pX="0.5" pY="0.5" oX="3" oY="1" oW="112" oH="144"/>
+    <sprite n="w1_leaves_1" x="840" y="994" w="106" h="114" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="w1_leaves_2" x="948" y="994" w="94" h="104" pX="0.5" pY="0.5"/>
+    <sprite n="w1_plant_bird_01" x="1044" y="994" w="51" h="96" pX="0.5" pY="0.5" oX="0" oY="4" oW="96" oH="56" r="y"/>
+    <sprite n="w1_plant_bird_02" x="1907" y="51" w="91" h="55" pX="0.5" pY="0.5" oX="5" oY="0" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_03" x="1907" y="2" w="96" h="47" pX="0.5" pY="0.5" oX="0" oY="8" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_04" x="56" y="2001" w="91" h="40" pX="0.5" pY="0.5" oX="4" oY="16" oW="96" oH="56"/>
+    <sprite n="w1_plant_bird_05" x="2" y="2001" w="52" h="43" pX="0.5" pY="0.5" oX="21" oY="13" oW="96" oH="56"/>
+    <sprite n="w1_vine_1" x="2000" y="51" w="46" h="82" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="w1_vine_2" x="752" y="994" w="86" h="140" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

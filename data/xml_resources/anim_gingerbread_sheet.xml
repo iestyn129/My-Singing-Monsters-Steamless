@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6a5a7c0d8f875ddb75f8d5be9c076660:366fb9964cc43c4d89a23d1deda9b25b:945271af60e723c4fea462a159903a62$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_gingerbread_sheet.png" width="256" height="512">
+    <sprite n="Candycanes.png" x="2" y="262" w="51" h="45" pX="0.5" pY="0.5" oX="5" oY="5" oW="56" oH="60" r="y"/>
+    <sprite n="GingerMan.png" x="130" y="2" w="98" h="89" pX="0.5" pY="0.5" oX="1" oY="1" oW="91" oH="99" r="y"/>
+    <sprite n="Gingerman_Cane.png" x="129" y="175" w="59" h="27" pX="0.5" pY="0.5" oX="4" oY="5" oW="37" oH="64" r="y"/>
+    <sprite n="Green_Stocking.png" x="128" y="260" w="42" h="21" pX="0.5" pY="0.5" oX="5" oY="2" oW="31" oH="44" r="y"/>
+    <sprite n="Green_Stocking_Candycane.png" x="111" y="242" w="15" h="18" pX="0.5" pY="0.5" oX="5" oY="2" oW="31" oH="44"/>
+    <sprite n="House_Base.png" x="2" y="2" w="126" h="109" pX="0.5" pY="0.5" oX="0" oY="4" oW="111" oH="130" r="y"/>
+    <sprite n="House_Mid.png" x="2" y="113" w="84" h="72" pX="0.5" pY="0.5" oX="0" oY="3" oW="84" oH="75"/>
+    <sprite n="House_Top.png" x="130" y="93" w="88" h="80" pX="0.5" pY="0.5" oX="8" oY="7" oW="94" oH="95" r="y"/>
+    <sprite n="Icing_Front.png" x="2" y="187" w="84" h="46" pX="0.5" pY="0.5" oX="2" oY="4" oW="92" oH="50"/>
+    <sprite n="Purple_Stocking_1.png" x="87" y="242" w="22" h="43" pX="0.5" pY="0.5" oX="8" oY="20" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_2.png" x="88" y="166" w="39" h="24" pX="0.5" pY="0.5" oX="7" oY="20" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_3.png" x="88" y="192" w="39" h="23" pX="0.5" pY="0.5" oX="8" oY="20" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_4.png" x="88" y="217" w="38" h="23" pX="0.5" pY="0.5" oX="7" oY="20" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_5.png" x="230" y="56" w="24" h="42" pX="0.5" pY="0.5" oX="6" oY="19" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_6.png" x="88" y="141" w="40" h="23" pX="0.5" pY="0.5" oX="7" oY="20" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_7.png" x="88" y="113" w="40" h="26" pX="0.5" pY="0.5" oX="4" oY="19" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_8.png" x="60" y="235" w="25" h="55" pX="0.5" pY="0.5" oX="5" oY="8" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_9.png" x="128" y="232" w="57" h="26" pX="0.5" pY="0.5" oX="4" oY="8" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_10.png" x="230" y="2" w="24" h="52" pX="0.5" pY="0.5" oX="6" oY="12" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_11.png" x="129" y="204" w="57" h="26" pX="0.5" pY="0.5" oX="4" oY="7" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_12.png" x="220" y="166" w="29" h="51" pX="0.5" pY="0.5" oX="1" oY="12" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_13.png" x="218" y="219" w="25" h="56" pX="0.5" pY="0.5" oX="5" oY="7" oW="37" oH="66"/>
+    <sprite n="Purple_Stocking_14.png" x="2" y="235" w="56" h="25" pX="0.5" pY="0.5" oX="5" oY="7" oW="37" oH="66" r="y"/>
+    <sprite n="Purple_Stocking_15.png" x="190" y="201" w="26" h="58" pX="0.5" pY="0.5" oX="4" oY="5" oW="37" oH="66"/>
+    <sprite n="Tentacle_12.png" x="190" y="175" w="27" h="24" pX="0.5" pY="0.5" oX="1" oY="12" oW="37" oH="66" r="y"/>
+    <sprite n="Tentacle_13.png" x="220" y="122" w="32" h="20" pX="0.5" pY="0.5" oX="5" oY="7" oW="37" oH="66" r="y"/>
+    <sprite n="Tentacle_14.png" x="220" y="144" w="32" h="20" pX="0.5" pY="0.5" oX="5" oY="7" oW="37" oH="66" r="y"/>
+    <sprite n="Tentacle_15.png" x="220" y="100" w="34" h="20" pX="0.5" pY="0.5" oX="4" oY="5" oW="37" oH="66" r="y"/>
+</TextureAtlas>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ec01ec73a904dec6760f662d3908ea2f:e26d5ae337994d24e324e16c1d2488ae:47a679c585f4765eecd9f201411a44f2$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_S02_EPIC_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CR_beard" x="331" y="108" w="138" h="84" pX="0.5" pY="0.5" oX="1" oY="0" oW="140" oH="86"/>
+    <sprite n="CR_beard_long" x="114" y="223" w="110" h="141" pX="0.5" pY="0.5" oX="0" oY="7" oW="110" oH="148"/>
+    <sprite n="CR_bell" x="468" y="339" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_bell_RARE" x="468" y="366" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_bell_green" x="460" y="393" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_bell_red" x="460" y="420" w="25" h="25" pX="0.5" pY="0.5" oX="0" oY="0" oW="26" oH="26"/>
+    <sprite n="CR_body" x="2" y="2" w="198" h="219" pX="0.5" pY="0.5" oX="0" oY="1" oW="198" oH="220"/>
+    <sprite n="CR_ear" x="381" y="313" w="41" h="54" pX="0.5" pY="0.5" oX="0" oY="0" oW="54" oH="42" r="y"/>
+    <sprite n="CR_eyeback_RARE" x="468" y="307" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="CR_eyelids_01" x="471" y="108" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_02" x="383" y="226" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_03" x="454" y="195" w="37" h="85" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42" r="y"/>
+    <sprite n="CR_eyelids_04" x="312" y="369" w="85" h="37" pX="0.5" pY="0.5" oX="2" oY="2" oW="90" oH="42"/>
+    <sprite n="CR_head_EPIC" x="202" y="2" w="127" h="147" pX="0.5" pY="0.5" oX="1" oY="1" oW="130" oH="150"/>
+    <sprite n="CR_left_antler" x="2" y="223" w="110" h="168" pX="0.5" pY="0.5" oX="1" oY="0" oW="112" oH="170"/>
+    <sprite n="CR_left_fingers" x="411" y="450" w="66" h="54" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="54"/>
+    <sprite n="CR_left_foot" x="127" y="366" w="78" h="84" pX="0.5" pY="0.5" oX="0" oY="0" oW="78" oH="86"/>
+    <sprite n="CR_left_leg" x="306" y="226" w="75" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="66"/>
+    <sprite n="CR_left_lowerarm" x="2" y="393" w="75" h="117" pX="0.5" pY="0.5" oX="2" oY="0" oW="78" oH="118"/>
+    <sprite n="CR_left_shoulder" x="312" y="294" w="67" h="73" pX="0.5" pY="0.5" oX="1" oY="0" oW="70" oH="74"/>
+    <sprite n="CR_left_upperarm" x="226" y="314" w="84" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="86" r="y"/>
+    <sprite n="CR_mouth_01" x="312" y="194" w="100" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="54"/>
+    <sprite n="CR_mouth_02" x="422" y="194" w="30" h="98" pX="0.5" pY="0.5" oX="1" oY="0" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_03" x="292" y="473" w="85" h="36" pX="0.5" pY="0.5" oX="9" oY="3" oW="100" oH="54"/>
+    <sprite n="CR_mouth_04" x="424" y="294" w="42" h="79" pX="0.5" pY="0.5" oX="13" oY="4" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_05" x="197" y="465" w="53" h="45" pX="0.5" pY="0.5" oX="31" oY="0" oW="100" oH="54" r="y"/>
+    <sprite n="CR_mouth_06" x="252" y="465" w="38" h="45" pX="0.5" pY="0.5" oX="36" oY="2" oW="100" oH="54"/>
+    <sprite n="CR_mouth_07" x="379" y="473" w="30" h="37" pX="0.5" pY="0.5" oX="43" oY="5" oW="100" oH="54"/>
+    <sprite n="CR_mouth_08" x="373" y="408" w="26" h="63" pX="0.5" pY="0.5" oX="23" oY="6" oW="100" oH="54" r="y"/>
+    <sprite n="CR_nose_carrot" x="468" y="282" w="42" h="23" pX="0.5" pY="0.5" oX="5" oY="2" oW="50" oH="26"/>
+    <sprite n="CR_pupil" x="294" y="390" w="16" h="16" pX="0.5" pY="0.5" oX="2" oY="2" oW="20" oH="20"/>
+    <sprite n="CR_right_antler_EPIC" x="331" y="2" w="166" h="104" pX="0.5" pY="0.5" oX="0" oY="1" oW="104" oH="168" r="y"/>
+    <sprite n="CR_right_fingers_EPIC" x="127" y="452" w="68" h="58" pX="0.5" pY="0.5" oX="0" oY="0" oW="70" oH="60"/>
+    <sprite n="CR_right_foot" x="226" y="221" w="78" h="91" pX="0.5" pY="0.5" oX="1" oY="1" oW="94" oH="80" r="y"/>
+    <sprite n="CR_right_leg" x="294" y="408" w="77" h="63" pX="0.5" pY="0.5" oX="0" oY="1" oW="78" oH="64"/>
+    <sprite n="CR_right_lowerarm" x="202" y="151" w="108" h="68" pX="0.5" pY="0.5" oX="3" oY="0" oW="76" oH="110" r="y"/>
+    <sprite n="CR_right_shoulder" x="401" y="375" w="57" h="73" pX="0.5" pY="0.5" oX="0" oY="0" oW="58" oH="74"/>
+    <sprite n="CR_right_upperarm" x="207" y="390" w="85" h="73" pX="0.5" pY="0.5" oX="0" oY="0" oW="74" oH="86" r="y"/>
+    <sprite n="CR_shadow" x="79" y="393" w="46" h="116" pX="0.5" pY="0.5" oX="2" oY="0" oW="120" oH="46" r="y"/>
+</TextureAtlas>

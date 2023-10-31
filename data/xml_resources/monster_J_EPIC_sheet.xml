@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ad21fd45718c01e24d143ed3f1cc35fe:3cc534aa9a46738019d83b277448250b:a82b140ba4b7e856c975817b110a342c$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_J_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="arm_bubble_pop_01" x="407" y="583" w="10" h="10" pX="0.5" pY="0.5" oX="14" oY="16" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_02" x="421" y="658" w="12" h="12" pX="0.5" pY="0.5" oX="13" oY="15" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_03" x="306" y="725" w="14" h="14" pX="0.5" pY="0.5" oX="12" oY="14" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_04" x="306" y="707" w="16" h="16" pX="0.5" pY="0.5" oX="11" oY="13" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_05" x="25" y="683" w="19" h="18" pX="0.5" pY="0.5" oX="10" oY="11" oW="40" oH="40" r="y"/>
+    <sprite n="arm_bubble_pop_06" x="2" y="683" w="21" h="20" pX="0.5" pY="0.5" oX="9" oY="10" oW="40" oH="40" r="y"/>
+    <sprite n="arm_bubble_pop_07" x="487" y="798" w="22" h="24" pX="0.5" pY="0.5" oX="8" oY="9" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_08" x="137" y="654" w="26" h="24" pX="0.5" pY="0.5" oX="7" oY="8" oW="40" oH="40" r="y"/>
+    <sprite n="arm_bubble_pop_09" x="225" y="415" w="30" h="28" pX="0.5" pY="0.5" oX="5" oY="6" oW="40" oH="40" r="y"/>
+    <sprite n="arm_bubble_pop_10" x="390" y="628" w="15" h="15" pX="0.5" pY="0.5" oX="12" oY="13" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_11" x="406" y="658" w="13" h="13" pX="0.5" pY="0.5" oX="13" oY="14" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_12" x="435" y="658" w="11" h="12" pX="0.5" pY="0.5" oX="14" oY="15" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_13" x="501" y="20" w="9" h="8" pX="0.5" pY="0.5" oX="15" oY="17" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_14" x="501" y="43" w="7" h="7" pX="0.5" pY="0.5" oX="16" oY="17" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_15" x="501" y="60" w="5" h="5" pX="0.5" pY="0.5" oX="17" oY="18" oW="40" oH="40"/>
+    <sprite n="arm_bubble_pop_16" x="501" y="67" w="5" h="5" pX="0.5" pY="0.5" oX="17" oY="18" oW="40" oH="40"/>
+    <sprite n="bubble_pop_01" x="501" y="2" w="9" h="16" pX="0.5" pY="0.5" oX="40" oY="51" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_02" x="390" y="645" w="14" h="26" pX="0.5" pY="0.5" oX="35" oY="46" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_03" x="306" y="676" w="16" h="29" pX="0.5" pY="0.5" oX="33" oY="44" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_04" x="179" y="542" w="36" h="18" pX="0.5" pY="0.5" oX="30" oY="42" oW="100" oH="70"/>
+    <sprite n="bubble_pop_05" x="419" y="501" w="40" h="22" pX="0.5" pY="0.5" oX="28" oY="38" oW="100" oH="70"/>
+    <sprite n="bubble_pop_06" x="420" y="408" w="41" h="24" pX="0.5" pY="0.5" oX="27" oY="37" oW="100" oH="70"/>
+    <sprite n="bubble_pop_07" x="47" y="639" w="43" h="26" pX="0.5" pY="0.5" oX="27" oY="35" oW="100" oH="70"/>
+    <sprite n="bubble_pop_08" x="92" y="654" w="43" h="26" pX="0.5" pY="0.5" oX="27" oY="35" oW="100" oH="70"/>
+    <sprite n="bubble_pop_09" x="463" y="226" w="46" h="33" pX="0.5" pY="0.5" oX="25" oY="30" oW="100" oH="70"/>
+    <sprite n="bubble_pop_10" x="215" y="563" w="38" h="48" pX="0.5" pY="0.5" oX="24" oY="25" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_11" x="407" y="602" w="49" h="54" pX="0.5" pY="0.5" oX="21" oY="15" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_12" x="383" y="734" w="57" h="52" pX="0.5" pY="0.5" oX="23" oY="7" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_13" x="243" y="676" w="61" h="54" pX="0.5" pY="0.5" oX="23" oY="3" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_14" x="390" y="673" w="64" h="59" pX="0.5" pY="0.5" oX="22" oY="1" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_15" x="324" y="628" w="64" h="62" pX="0.5" pY="0.5" oX="21" oY="1" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_16" x="255" y="611" w="67" h="63" pX="0.5" pY="0.5" oX="19" oY="4" oW="100" oH="70"/>
+    <sprite n="bubble_pop_17" x="106" y="542" w="71" h="54" pX="0.5" pY="0.5" oX="17" oY="11" oW="100" oH="70"/>
+    <sprite n="bubble_pop_18" x="419" y="525" w="39" h="75" pX="0.5" pY="0.5" oX="16" oY="25" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_19" x="225" y="445" w="29" h="79" pX="0.5" pY="0.5" oX="12" oY="34" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_20" x="338" y="538" w="77" h="26" pX="0.5" pY="0.5" oX="12" oY="36" oW="100" oH="70"/>
+    <sprite n="bubble_pop_21" x="456" y="709" w="54" h="63" pX="0.5" pY="0.5" oX="16" oY="5" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_22" x="407" y="566" w="10" h="15" pX="0.5" pY="0.5" oX="42" oY="48" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_23" x="501" y="30" w="8" h="11" pX="0.5" pY="0.5" oX="44" oY="49" oW="100" oH="70" r="y"/>
+    <sprite n="bubble_pop_24" x="501" y="52" w="7" h="6" pX="0.5" pY="0.5" oX="46" oY="50" oW="100" oH="70"/>
+    <sprite n="J_body_EPIC" x="257" y="226" w="204" h="180" pX="0.5" pY="0.5" oX="10" oY="17" oW="280" oH="200"/>
+    <sprite n="J_body_EPIC_right_ear" x="2" y="540" w="102" h="97" pX="0.5" pY="0.5" oX="183" oY="21" oW="280" oH="200" r="y"/>
+    <sprite n="J_brow_left" x="179" y="562" w="34" h="48" pX="0.5" pY="0.5" oX="0" oY="0" oW="50" oH="34" r="y"/>
+    <sprite n="J_brow_right" x="179" y="612" w="31" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="34" r="y"/>
+    <sprite n="J_left_eyeball" x="462" y="446" w="48" h="55" pX="0.5" pY="0.5" oX="9" oY="7" oW="64" oH="64"/>
+    <sprite n="J_left_eyelid_01" x="212" y="613" w="37" h="27" pX="0.5" pY="0.5" oX="4" oY="5" oW="44" oH="48"/>
+    <sprite n="J_left_eyelid_02" x="442" y="774" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="2" oW="44" oH="48" r="y"/>
+    <sprite n="J_left_eyelid_03" x="47" y="667" w="42" h="42" pX="0.5" pY="0.5" oX="2" oY="3" oW="44" oH="48"/>
+    <sprite n="J_left_eyelid_04" x="463" y="358" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="3" oW="44" oH="48"/>
+    <sprite n="J_left_lowerarm_02_EPIC" x="111" y="480" w="104" h="60" pX="0.5" pY="0.5" oX="4" oY="16" oW="80" oH="120" r="y"/>
+    <sprite n="J_left_lowerarm_EPIC" x="2" y="475" w="107" h="63" pX="0.5" pY="0.5" oX="11" oY="0" oW="80" oH="120" r="y"/>
+    <sprite n="J_left_upperarm" x="106" y="598" w="71" h="54" pX="0.5" pY="0.5" oX="1" oY="1" oW="56" oH="72" r="y"/>
+    <sprite n="J_mouth_01" x="420" y="434" w="40" h="65" pX="0.5" pY="0.5" oX="6" oY="7" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_02" x="256" y="498" w="80" h="42" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78"/>
+    <sprite n="J_mouth_03" x="338" y="498" w="79" h="38" pX="0.5" pY="0.5" oX="0" oY="8" oW="80" oH="78"/>
+    <sprite n="J_mouth_04" x="461" y="503" w="49" h="69" pX="0.5" pY="0.5" oX="6" oY="5" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_05" x="334" y="566" w="71" h="60" pX="0.5" pY="0.5" oX="11" oY="1" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_06" x="256" y="542" w="76" h="67" pX="0.5" pY="0.5" oX="8" oY="0" oW="80" oH="78" r="y"/>
+    <sprite n="J_mouth_07" x="460" y="574" w="50" h="60" pX="0.5" pY="0.5" oX="14" oY="2" oW="80" oH="78"/>
+    <sprite n="J_mouth_08" x="463" y="261" w="43" h="50" pX="0.5" pY="0.5" oX="15" oY="3" oW="80" oH="78"/>
+    <sprite n="J_pupil" x="487" y="774" w="23" h="22" pX="0.5" pY="0.5" oX="2" oY="3" oW="26" oH="26" r="y"/>
+    <sprite n="J_right_eyeball" x="324" y="692" w="57" h="53" pX="0.5" pY="0.5" oX="7" oY="8" oW="64" oH="64"/>
+    <sprite n="J_right_eyelid_01" x="217" y="526" w="37" h="35" pX="0.5" pY="0.5" oX="3" oY="5" oW="44" oH="48"/>
+    <sprite n="J_right_eyelid_02" x="2" y="639" w="43" h="42" pX="0.5" pY="0.5" oX="1" oY="2" oW="44" oH="48" r="y"/>
+    <sprite n="J_right_eyelid_03" x="463" y="313" w="43" h="43" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="48"/>
+    <sprite n="J_right_eyelid_04" x="463" y="402" w="43" h="42" pX="0.5" pY="0.5" oX="0" oY="3" oW="44" oH="48"/>
+    <sprite n="J_right_lowerarm_02_EPIC" x="2" y="415" w="111" h="58" pX="0.5" pY="0.5" oX="13" oY="1" oW="80" oH="120" r="y"/>
+    <sprite n="J_right_lowerarm_EPIC" x="115" y="415" w="108" h="63" pX="0.5" pY="0.5" oX="5" oY="1" oW="80" oH="120" r="y"/>
+    <sprite n="J_right_upperarm" x="458" y="636" w="52" h="71" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="72"/>
+    <sprite n="J_shadow" x="257" y="408" w="161" h="88" pX="0.5" pY="0.5" oX="0" oY="0" oW="164" oH="88"/>
+    <sprite n="J_wing_01" x="266" y="2" w="233" h="222" pX="0.5" pY="0.5" oX="8" oY="38" oW="300" oH="300"/>
+    <sprite n="J_wing_02" x="2" y="202" w="253" h="211" pX="0.5" pY="0.5" oX="9" oY="31" oW="300" oH="300"/>
+    <sprite n="J_wing_03" x="2" y="2" w="262" h="198" pX="0.5" pY="0.5" oX="8" oY="17" oW="300" oH="300"/>
+    <sprite n="J_wing_arm_EPIC" x="212" y="642" w="29" h="55" pX="0.5" pY="0.5" oX="0" oY="5" oW="56" oH="40" r="y"/>
+</TextureAtlas>

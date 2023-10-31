@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3026beff51aaebf83c18696d15e29936:55b0816a989b500b7cf24d7fb6431c5b:155760ccb4b0fdd679b2ea5342cb5ab6$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/structure_castle04_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="structure_castle04_base" x="2" y="2" w="798" h="685" pX="0.5" pY="0.5" oX="0" oY="3" oW="824" oH="688"/>
+    <sprite n="structure_castle04_shroom01" x="802" y="2" w="219" h="161" pX="0.5" pY="0.5" oX="2" oY="1" oW="164" oH="220" r="y"/>
+    <sprite n="structure_castle04_shroom02" x="802" y="502" w="177" h="445" pX="0.5" pY="0.5" oX="17" oY="1" oW="194" oH="450"/>
+    <sprite n="structure_castle04_shroom03" x="802" y="165" w="179" h="335" pX="0.5" pY="0.5" oX="0" oY="1" oW="180" oH="336"/>
+    <sprite n="structure_castle04_shroom04" x="2" y="689" w="186" h="320" pX="0.5" pY="0.5"/>
+</TextureAtlas>

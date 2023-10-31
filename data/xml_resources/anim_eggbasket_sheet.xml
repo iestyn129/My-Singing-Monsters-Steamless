@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9e63b7920fd26819eeaecfe3fbbdec87:1df25fa2c70bc9204172c274c52bf35c:55f326f8f7a22d937aa1c68f7112cb49$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_eggbasket_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="basket back.png" x="2" y="786" w="320" h="166" pX="0.5" pY="0.5"/>
+    <sprite n="basket front.png" x="2" y="412" w="258" h="372" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="fin 1.png" x="494" y="24" w="16" h="18" pX="0.5" pY="0.5" oX="5" oY="0" oW="26" oH="20" r="y"/>
+    <sprite n="fin 2.png" x="238" y="1002" w="24" h="20" pX="0.5" pY="0.5" oX="0" oY="2" oW="20" oH="26" r="y"/>
+    <sprite n="fin 3.png" x="124" y="1000" w="30" h="22" pX="0.5" pY="0.5" oX="0" oY="0" oW="22" oH="32" r="y"/>
+    <sprite n="fin 4.png" x="494" y="2" w="16" h="20" pX="0.5" pY="0.5"/>
+    <sprite n="fwog egg.png" x="324" y="781" w="100" h="122" pX="0.5" pY="0.5"/>
+    <sprite n="fwog face.png" x="262" y="686" w="99" h="93" pX="0.5" pY="0.5" oX="1" oY="13" oW="100" oH="122"/>
+    <sprite n="hair.png" x="124" y="954" w="60" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="handle.png" x="2" y="2" w="346" h="408" pX="0.5" pY="0.5"/>
+    <sprite n="jammer egg.png" x="394" y="496" w="103" h="132" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="132"/>
+    <sprite n="jammer face.png" x="394" y="630" w="99" h="90" pX="0.5" pY="0.5" oX="6" oY="7" oW="104" oH="132" r="y"/>
+    <sprite n="leaf.png" x="2" y="954" w="120" h="56" pX="0.5" pY="0.5"/>
+    <sprite n="left ear.png" x="186" y="954" w="50" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="left shrooms.png" x="350" y="2" w="142" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="right ear.png" x="238" y="954" w="50" h="46" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="right log.png" x="262" y="412" w="130" h="272" pX="0.5" pY="0.5" oX="0" oY="0" oW="130" oH="278"/>
+    <sprite n="toe 1.png" x="156" y="1000" w="24" h="22" pX="0.5" pY="0.5" oX="0" oY="6" oW="24" oH="28"/>
+    <sprite n="toe 2.png" x="350" y="358" w="28" h="28" pX="0.5" pY="0.5"/>
+    <sprite n="toe 3.png" x="363" y="686" w="29" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="28"/>
+    <sprite n="toe 4.png" x="363" y="716" w="24" h="26" pX="0.5" pY="0.5"/>
+    <sprite n="toe 5.png" x="290" y="954" w="27" h="26" pX="0.5" pY="0.5" oX="0" oY="2" oW="28" oH="30"/>
+    <sprite n="tweedle egg.png" x="394" y="358" w="102" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="tweedle face.png" x="324" y="905" w="96" h="76" pX="0.5" pY="0.5" oX="16" oY="22" oW="102" oH="136" r="y"/>
+</TextureAtlas>

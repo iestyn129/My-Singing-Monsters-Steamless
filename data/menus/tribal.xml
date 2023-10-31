@@ -1,0 +1,2480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<event name="onInit" params="element">
+		element("activeTab"):SetInt(2)
+		element("timeToUnlock"):SetInt(0)
+		
+		if(game.numRandomTribes() == 0) then
+			game.requestRandomTribes();
+		end
+	</event>
+	
+	<event name="onPostInit" params="element">
+		if(game.onTribalIsland() == true) then
+			element["TabTopTribes"]["Touch"]:DoStoredScript("onTouchUp")
+			element["TabMyTribe"]["Touch"]:DoStoredScript("onTouchUp")
+
+			game.logEvent("open_tribal_menu", "on_tribal_island", "true")
+		else
+			element:DoStoredScript("selectNewTab")
+
+			game.logEvent("open_tribal_menu", "on_tribal_island", "false")
+		end
+		element("transitionState"):SetInt(1)
+		element("transitionTime"):SetFloat(0.0)
+		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+	</event>
+
+	<event name="onTick" params="element, dt">		
+		if(element["RandomTribesList"]("locked"):GetInt() == 1) then
+			if(element("timeToUnlock"):GetInt() &lt; 1) then
+				element["RandomTribesList"]("locked"):SetInt(0)
+				element("timeToUnlock"):SetInt(0)
+			else
+				element("timeToUnlock"):SetInt(element("timeToUnlock"):GetInt() - 1)
+			end
+		end
+	
+		if(element["TribesList"]("locked"):GetInt() == 1) then
+			if(element("timeToUnlock"):GetInt() &lt; 1) then
+				element["TribesList"]("locked"):SetInt(0)
+				element("timeToUnlock"):SetInt(0)
+			else
+				element("timeToUnlock"):SetInt(element("timeToUnlock"):GetInt() - 1)
+			end
+		end
+		
+		if(element["MembersList"]("locked"):GetInt() == 1) then
+			if(element("timeToUnlock"):GetInt() &lt; 1) then
+				element["MembersList"]("locked"):SetInt(0)
+				element("timeToUnlock"):SetInt(0)
+			else
+				element("timeToUnlock"):SetInt(element("timeToUnlock"):GetInt() - 1)
+			end
+		end
+		
+		if(element["TopTribesList"]("locked"):GetInt() == 1) then
+			if(element("timeToUnlock"):GetInt() &lt; 1) then
+				element["TopTribesList"]("locked"):SetInt(0)
+				element("timeToUnlock"):SetInt(0)
+			else
+				element("timeToUnlock"):SetInt(element("timeToUnlock"):GetInt() - 1)
+			end
+		end
+		
+		if(dt &lt; game.maxTickTime()) then
+			local transitionState = element("transitionState"):GetInt()
+			
+			if(transitionState ~= 0) then
+				local transitionTime = element("transitionTime"):GetFloat()
+				
+				if(transitionState == 1) then
+					transitionTime = (transitionTime + dt*3)
+				elseif(transitionState == 2) then
+					transitionTime = (transitionTime - dt*3)
+				end
+				
+				transitionTime = clamp(transitionTime, 0.0, 1.0)
+				element("transitionTime"):SetFloat(transitionTime)
+				
+				element["Frame"]("xOffset"):SetFloat((lua_sys.screenWidth() * (0.5)) + (((-0.5) * lua_sys.screenWidth()) * (1 / transitionTime)))
+				element["FadedBG"]["Sprite"]("alpha"):SetFloat(transitionTime * 0.5)
+				
+				if(transitionTime == 1.0) then
+					element("transitionState"):SetInt(0)
+				elseif(transitionTime == 0.0) then
+					element:root():popPopUp()
+				end
+			end
+		end
+	</event>
+	
+	<event name="queuePop" params="element">
+		element("transitionState"):SetInt(2)
+	</event>
+	
+	<element name="FadedBG">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="15" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(Vector2(lua_sys.screenWidth()*0.25, lua_sys.screenHeight()*0.25))
+				component:setColor(0.0, 0.0, 0.0)
+				component("alpha"):SetFloat(0.0)
+				component("layer"):SetString("MidPopUps")
+				component("visible"):SetInt(1)
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		</touchComponent>
+	</element>
+	
+	<element name="Frame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="7*game.hudScale()" priorityOffset="10" />
+		<ninesliceComponent name="Sprite">
+			<size w="0.9*lua_sys.screenWidth()" h="275*game.menuScaleY()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(50.0)
+				component("bottomHeight"):SetFloat(50.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)				
+				component("includeBorder"):SetInt(1)
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<spriteSheetComponent name="Flourish1">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_01")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+		<spriteSheetComponent name="Flourish2">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("menu_swirl_02")
+				component("sheetName"):SetString("xml_resources/hud01.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("rotation"):SetFloat(-0.5*math.pi)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</spriteSheetComponent>
+	</element>
+	
+	<event name="selectNewTab" params="element">
+		element["TabRandomTribes"]:DoStoredScript("deselectTab")
+		element["TabTribes"]:DoStoredScript("deselectTab")
+		element["TabMyTribe"]:DoStoredScript("deselectTab")
+		element["TabTopTribes"]:DoStoredScript("deselectTab")
+		element["DeclineAllButton"]:DoStoredScript("setInvisible")
+		element["CancelJoinRequestsButton"]:DoStoredScript("setInvisible")
+		
+		local activeTab = element("activeTab"):GetInt()
+		
+		if(activeTab == 0) then
+			element["TabRandomTribes"]:DoStoredScript("selectTab")
+		elseif(activeTab == 1) then
+			element["TabTribes"]:DoStoredScript("selectTab")
+			element["DeclineAllButton"]:DoStoredScript("setVisible")
+			element["CancelJoinRequestsButton"]:DoStoredScript("setVisible")
+		elseif(activeTab == 2) then
+			element["TabMyTribe"]:DoStoredScript("selectTab")
+		elseif(activeTab == 3) then
+			element["TabTopTribes"]:DoStoredScript("selectTab")
+		end
+	</event>	
+	
+	<element name="TabTopTribes">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="18*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-3)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the unselected tab to the back]]
+			element:setOrientationPriority(3)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.75, 0.75, 0.75)
+			
+			if(element:parent()("activeTab"):GetInt() ~= 3) then
+				element:parent()["TitleFrame"]["PagesText"]("visible"):SetInt(1)
+				local topTribesList = element:parent():GetElement("TopTribesList")
+				local prevNumItems = topTribesList("NumEntries"):GetInt()
+				for i = 0, prevNumItems - 1 do
+					topTribesList:RemoveElement(topTribesList:GetElement("toptribeentry"..i))
+				end
+				
+				topTribesList("NumEntries"):SetInt(0)
+			end
+		</event>
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.35*game.menuScaleX())
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<position relativeTo="element[&quot;Sprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("TRIBES_TOP_TAB_LABEL")
+				component:setColor(1.0, 0.9, 0.09)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				if(element:parent()("activeTab"):GetInt() ~= 3) then
+					element:parent()("activeTab"):SetInt(3)
+					game.setLastTribePage(1)
+					element:parent():DoStoredScript("selectNewTab")
+					element:parent()["TopTribesList"]:DoStoredScript("repopulate")
+				end
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TabMyTribe">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="93*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-2)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+			
+			if(game.isIslandOwned(9) == false) then
+				element:parent()["CreateButton"]:DoStoredScript("setVisible")
+				element:parent()["JoinButton"]:DoStoredScript("setVisible")
+				element:parent()["JoinRandomButton"]:DoStoredScript("setVisible")
+				element:parent()["NotMemberLabel"]["Text"]("visible"):SetInt(1)
+				element:parent()["TitleFrame"]["PagesText"]("visible"):SetInt(0)
+			else
+				element:parent()["MyTribeName"]["Text"]("visible"):SetInt(1)
+				include("MenuHelpers").ShrinkTextToWidth(element:parent()["MyTribeName"]["Text"]("text"):GetString(),
+					element:parent():GetElement("MyTribeName"):GetComponent("Text"), 110*game.menuScaleX())
+				if(game.isChief()) then
+					element:parent()["MyTribeName"]["SpriteElement"]["Sprite"]("visible"):SetInt(1)
+					element:parent()["MyTribeName"]["SpriteElement"]["Touch"]("enabled"):SetInt(1)
+				end
+				
+				element:parent()["MyTribePic"]["Sprite"]("visible"):SetInt(1)
+				element:parent()["MyTribeStats"]:DoStoredScript("show")
+				element:parent()["MembersList"]:DoStoredScript("repopulate")
+				element:parent()["InviteButton"]:DoStoredScript("setVisible")
+				element:parent()["LeaveButton"]:DoStoredScript("setVisible")
+				element:parent()["TitleFrame"]["PagesText"]("visible"):SetInt(1)
+			end
+			
+			element:parent()["PageLeft"]:DoStoredScript("refresh")
+			element:parent()["PageRight"]:DoStoredScript("refresh")
+			element:parent()["PageBeginning"]:DoStoredScript("refresh")
+			element:parent()["PageEnd"]:DoStoredScript("refresh")
+
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the unselected tab to the back]]
+			element:setOrientationPriority(2)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.75, 0.75, 0.75)
+			
+			element:parent()["CreateButton"]:DoStoredScript("setInvisible")
+			element:parent()["JoinButton"]:DoStoredScript("setInvisible")
+			element:parent()["JoinRandomButton"]:DoStoredScript("setInvisible")
+			element:parent()["NotMemberLabel"]["Text"]("visible"):SetInt(0)
+			element:parent()["TitleFrame"]["PagesText"]("visible"):SetInt(1)
+			element:parent()["MyTribeName"]["Text"]("visible"):SetInt(0)
+			element:parent()["MyTribeName"]["SpriteElement"]["Sprite"]("visible"):SetInt(0)
+			element:parent()["MyTribeName"]["SpriteElement"]["Touch"]("enabled"):SetInt(0)
+
+			element:parent()["MyTribePic"]["Sprite"]("visible"):SetInt(0)
+			element:parent()["MyTribeStats"]:DoStoredScript("hide")
+			element:parent()["InviteButton"]:DoStoredScript("setInvisible")
+			element:parent()["LeaveButton"]:DoStoredScript("setInvisible")
+			
+			local membersList = element:parent():GetElement("MembersList")
+			local prevNumItems = membersList("NumEntries"):GetInt()
+			for i = 0, prevNumItems - 1 do
+				membersList:RemoveElement(membersList:GetElement("tribemember"..i))
+			end
+			
+			membersList("NumEntries"):SetInt(0)
+		</event>
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.35*game.menuScaleX())
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<position relativeTo="element[&quot;Sprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("TRIBES_MY_TAB_LABEL")
+				component:setColor(1.0, 1.0, 1.0)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				if(element:parent()("activeTab"):GetInt() ~= 2) then
+					element:parent()("activeTab"):SetInt(2)
+					game.setLastTribePage(1)
+					element:parent():DoStoredScript("selectNewTab")
+				end
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TabTribes">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="169*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-1)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+			element:parent()["invite_indicator"]:DoStoredScript("hide")
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the unselected tabs to the back]]
+			element:setOrientationPriority(1)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.75, 0.75, 0.75)
+			element:parent()["invite_indicator"]:DoStoredScript("show")
+			
+			if(element:parent()("activeTab"):GetInt() ~= 1) then
+				local tribeList = element:parent():GetElement("TribesList")
+				local prevNumItems = tribeList("NumEntries"):GetInt()
+				for i = 0, prevNumItems - 1 do
+					tribeList:RemoveElement(tribeList:GetElement("tribeentry"..i))
+				end
+				
+				if(tribeList:GetElement("tribeentry_large") ~= nil) then
+					tribeList:RemoveElement(tribeList:GetElement("tribeentry_large"))
+					tribeList("kill"):SetInt(0)
+				end
+				
+				tribeList("NumEntries"):SetInt(0)
+				element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(0)
+			end
+		</event>
+		<spriteComponent name="Sprite">
+			<position relativeTo="element" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.35*game.menuScaleX())
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<position relativeTo="element[&quot;Sprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("TRIBES_TAB_LABEL")
+				component:setColor(1.0, 1.0, 1.0)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<template type="template_tribe_invite_indicator" name="invite_indicator">
+			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="10*game.menuScaleX()" yOffset="5*game.hudScale()" priorityOffset="-1" />
+		</template>
+		
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				if(element:parent()("activeTab"):GetInt() ~= 1) then
+					element:parent()("activeTab"):SetInt(1)
+					game.setLastTribePage(1)
+					element:parent():DoStoredScript("selectNewTab")
+					element:parent()["TribesList"]:DoStoredScript("repopulate")
+				end
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TabRandomTribes">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="244*game.menuScaleX()" yOffset="-9*game.menuScaleX()" priorityOffset="-1" />
+		<event name="selectTab" params="element">
+			--[[change priorities when tabs are selected to bring the selected tab to the front]]
+			element:setOrientationPriority(-1)
+			element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["Text"]:setColor(1.0, 1.0, 1.0)
+		</event>
+		<event name="deselectTab" params="element">
+			--[[change priorities when tabs are selected to push the unselected tabs to the back]]
+			element:setOrientationPriority(1)
+			element["Sprite"]:setColor(0.9, 0.9, 0.9)
+			element["Text"]:setColor(0.75, 0.75, 0.75)
+			
+			if(element:parent()("activeTab"):GetInt() ~= 0) then
+				local tribeList = element:parent():GetElement("RandomTribesList")
+				local prevNumItems = tribeList("NumEntries"):GetInt()
+				for i = 0, prevNumItems - 1 do
+					tribeList:RemoveElement(tribeList:GetElement("tribeentry"..i))
+				end
+				
+				if(tribeList:GetElement("tribeentry_large") ~= nil) then
+					tribeList:RemoveElement(tribeList:GetElement("tribeentry_large"))
+					tribeList("kill"):SetInt(0)
+				end
+				
+				tribeList("NumEntries"):SetInt(0)
+				element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(0)
+			end
+		</event>
+		<spriteComponent name="Sprite">
+			<position relativeTo="element" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/tab02")
+				component("layer"):SetString("MidPopUps")
+				component("size"):SetFloat(0.35*game.menuScaleX())
+			</event>
+		</spriteComponent>
+		<textComponent name="Text">
+			<position relativeTo="element[&quot;Sprite&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("RANDOM_TRIBES_TAB_LABEL")
+				component:setColor(1.0, 1.0, 1.0)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				if(element:parent()("activeTab"):GetInt() ~= 0) then
+					element:parent()("activeTab"):SetInt(0)
+					element:parent():DoStoredScript("selectNewTab")
+					element:parent()["RandomTribesList"]:DoStoredScript("repopulate")
+				end
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-15*game.menuScaleX()" yOffset="0" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="120*game.menuScaleX()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(49.0)
+				component("bottomHeight"):SetFloat(49.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Text">
+			<size w="110*game.menuScaleX()" h="20*game.menuScaleY()"  />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-6" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.94, 0.6, 0.11)
+				component("size"):SetFloat(0.40*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("CONTEXTBAR_TRIBAL_LABEL")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="PagesText">
+			<size w="160*game.hudScale()" h="10*game.hudScale()"  />
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="5" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(1.0, 1.0, 1.0)
+				component("size"):SetFloat(0.30*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("MENU_PAGE").." 0/0")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="RandomTribesList">
+		<size w="lua_sys.screenWidth()/5*4" h="135*game.menuScaleY()" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="element">
+			element("kill"):SetInt(0)
+			element("locked"):SetInt(0)
+			element("MaxPages"):SetInt(1)
+			element("NumEntries"):SetInt(0)
+			element("Page"):SetInt(1)
+			element:DoStoredScript("populate")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgRandomTribesUpdated", "gotMsgRandomTribesUpdated")
+		</event>
+		<event name="gotMsgRandomTribesUpdated" params="element">
+			if(element:parent()("activeTab"):GetInt()==0) then
+				element("Page"):SetInt(1)
+				element:DoStoredScript("repopulate")
+			end
+		</event>
+		<event name="repopulate" params="element">
+			<![CDATA[				
+				local prevNumItems = element("NumEntries"):GetInt()
+				
+				local page = element("Page"):GetInt()
+				local totalEntries = game.getRandomTribeKeys():size()
+				
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("tribeentry"..i))
+				end
+				
+				--don't go past the number of friend tribes we have
+				while(((page - 1) * 3) >= totalEntries) do
+					page = page - 1
+				end
+				
+				if(page < 1) then
+					page = 1
+				end
+				
+				element("Page"):SetInt(page)
+				element:DoStoredScript("populate")
+				element:parent()["PageLeft"]:DoStoredScript("refresh")
+				element:parent()["PageRight"]:DoStoredScript("refresh")
+				element:parent()["PageBeginning"]:DoStoredScript("refresh")
+				element:parent()["PageEnd"]:DoStoredScript("refresh")
+				
+				local tribesList = element:GetElement("RandomTribesList")
+				local numEntries = element["RandomTribesList"]("NumEntries"):GetInt()
+		
+				if(numEntries == 0) then
+					element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(1)
+				else
+					element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				local page = element("Page"):GetInt()
+				local tribes_per_page = 3
+				local tribeKeys = game.getRandomTribeKeys()
+				local numItems = tribeKeys:size()
+				local previous = nil
+				local numThisPage = 0
+				
+				if(element:GetElement("tribeentry_large") ~= nil) then
+					element:RemoveElement(element:GetElement("tribeentry_large"))
+					element("kill"):SetInt(0)
+				end
+				
+				if(numItems > tribes_per_page) then
+					numThisPage = numItems - ((page - 1) * tribes_per_page)
+					
+					if(numThisPage > tribes_per_page) then
+						numThisPage = tribes_per_page
+					end
+				else
+					numThisPage = numItems
+				end
+				
+				element("NumEntries"):SetInt(numThisPage)
+				element("MaxPages"):SetInt(math.ceil(numItems / tribes_per_page))
+				
+				--Having zero friend tribes when this runs will result in zero pages, but even if you have no friend tribes you still have 1 page
+				if(element("MaxPages"):GetInt() == 0) then
+					element("MaxPages"):SetInt(1)
+				end
+				
+				element:parent()["TitleFrame"]["PagesText"]("text"):SetString(game.getLocalizedText("MENU_PAGE").." "..page.."/"..element("MaxPages"):GetInt())
+				
+				local startIndex = (page - 1) * tribes_per_page
+				
+				for i = 0, (numThisPage - 1) do
+					local key = tribeKeys[startIndex+i]
+					local tribeEntry = menu:addTemplateElement("template_tribalentry", "tribeentry"..i, element)
+					
+					if(previous == nil) then
+						tribeEntry:relativeTo(element)
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 4, lua_sys.HCENTER, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						tribeEntry:relativeTo(previous:GetElement("BackgroundElement"))
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					end
+					
+					previous = tribeEntry
+					
+					tribeEntry("greyColor"):SetInt(i % 2)
+					tribeEntry("DisplayName"):SetString(game.getRandomTribeName(i+startIndex))
+					tribeEntry("Level"):SetInt(game.getRandomTribeRank(i+startIndex))
+					tribeEntry("UserId"):SetInt(game.getRandomTribeChief(i+startIndex))
+					tribeEntry("MonsterType"):SetInt(game.getRandomTribeChiefMonster(i+startIndex))
+
+					tribeEntry("MemberListShort"):SetString("")
+					tribeEntry("NumMembers"):SetInt(game.getRandomTribeNumber(i+startIndex))
+					tribeEntry("Key"):SetInt(game.getRandomTribeID(i+startIndex))
+					tribeEntry("IsRandom"):SetInt(1)
+					
+					if(game.getRandomTribeInvited(i+startIndex) == true) then
+						tribeEntry("Invited"):SetInt(1)
+					else
+						tribeEntry("Invited"):SetInt(0)
+					end
+					
+					tribeEntry("entryNum"):SetInt(i)
+					tribeEntry:calculatePosition()
+					tribeEntry:init()
+					tribeEntry:postInit()
+					tribeEntry:setPositionBroadcast(true)
+				end
+			]]>
+		</event>
+		<event name="onTick" params="element, dt">
+			if(element("kill"):GetInt() == 1) then
+				element:RemoveElement(element:GetElement("tribeentry_large"))
+				element("kill"):SetInt(0)
+			end
+		</event>
+	</element>
+	
+	<element name="TribesList">
+		<size w="lua_sys.screenWidth()/5*4" h="135*game.menuScaleY()" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="element">
+			element("kill"):SetInt(0)
+			element("locked"):SetInt(0)
+			element("MaxPages"):SetInt(1)
+			element("NumEntries"):SetInt(0)
+			element:DoStoredScript("populate")
+		</event>
+		
+		<template type="template_nineslicebutton" name="DeclineAllButton">
+			<templateVar name="$upSpriteName" equals="'gfx/menu/button_vert_square01_purple'" />
+			<templateVar name="$spriteScale" equals="0.65*game.menuScaleX()" />
+			<templateVar name="$text" equals="DECLINE_ALL" />
+			<templateVar name="$textPadding" equals="6*game.hudScale()" />
+			<templateVar name="$textYOffset" equals="0" />
+			<templateVar name="$layer" equals="MidPopUps" />
+			<templateVar name="$topHeight" equals="17.0" />
+			<templateVar name="$bottomHeight" equals="17.0" />
+			<templateVar name="$leftWidth" equals="17.0" />
+			<templateVar name="$rightWidth" equals="17.0" />
+			
+			<templateVar name="$width" equals="150*game.menuScaleX()" />
+			<templateVar name="$height" equals="35*game.menuScaleX()" />
+
+			<templateVar name="$includeBorder" equals="1" />
+			
+			<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="1" />
+			
+			<event name="onInit" params="element">
+				onInit(element)
+				element("disabled"):SetInt(0)
+			</event>
+			<event name="onPostInit" params="element">
+				--element["Text"]("size"):SetFloat(0.25*game.hudScale())
+				--element["Text"]("autoScale"):SetInt(1)
+				
+				local showDeclineAllButton = false;
+				local tribeKeys = game.getFriendTribeKeys()
+				local numEntries = tribeKeys:size();
+				
+				for i = 0, (numEntries - 1) do
+					if(game.getFriendTribeInvited(tribeKeys[i]) == true) then
+						showDeclineAllButton = true;
+						break;
+					end
+				end
+
+				if(showDeclineAllButton == false) then
+					element:DoStoredScript("disable");
+				end
+			</event>
+			<event name="setVisible" params="element">
+
+				setVisible(element)
+				element["Text"]("visible"):SetInt(1)
+				element["Touch"]("enable"):SetInt(1)
+			
+				local showDeclineAllButton = false;
+				
+				local tribeKeys = game.getFriendTribeKeys()
+				local numEntries = tribeKeys:size();
+				
+				for i = 0, (numEntries - 1) do
+					if(game.getFriendTribeInvited(tribeKeys[i]) == true) then
+						showDeclineAllButton = true;
+						break;
+					end
+				end
+
+				if(showDeclineAllButton == true) then
+					element:DoStoredScript("enable")
+				else
+					element:DoStoredScript("disable")
+				end
+			</event>
+			<event name="setInvisible" params="element">
+				setInvisible(element)
+				element["Text"]("visible"):SetInt(0)
+				element["Touch"]("enable"):SetInt(0)
+			</event>
+			
+			<event name="enable" params="element">
+			
+				local showDeclineAllButton = false;
+				
+				local tribeKeys = game.getFriendTribeKeys()
+				local numEntries = tribeKeys:size();
+				
+				for i = 0, (numEntries - 1) do
+					if(game.getFriendTribeInvited(tribeKeys[i]) == true) then
+						showDeclineAllButton = true;
+						break;
+					end
+				end
+
+				if(showDeclineAllButton == true) then
+					enable(element)
+				end
+			</event>
+			<event name="disable" params="element">
+				disable(element)
+			</event>
+			
+			<touchComponent name="Touch">
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.displayConfirmation("DECLINE_ALL_MSG", "NOTIFICATION_DECLINE_ALL")
+				</event>
+			</touchComponent>
+
+		</template>
+		
+		<template type="template_nineslicebutton" name="CancelJoinRequestsButton">
+			<templateVar name="$upSpriteName" equals="'gfx/menu/button_vert_square01_purple'" />
+			<templateVar name="$spriteScale" equals="0.65*game.menuScaleX()" />
+			<templateVar name="$text" equals="CANCEL_TRIBE_REQUESTS" />
+			<templateVar name="$textPadding" equals="6*game.hudScale()" />
+			<templateVar name="$textYOffset" equals="0" />
+			<templateVar name="$layer" equals="MidPopUps" />
+			<templateVar name="$topHeight" equals="17.0" />
+			<templateVar name="$bottomHeight" equals="17.0" />
+			<templateVar name="$leftWidth" equals="17.0" />
+			<templateVar name="$rightWidth" equals="17.0" />
+			
+			<templateVar name="$width" equals="150*game.menuScaleX()" />
+			<templateVar name="$height" equals="35*game.menuScaleX()" />
+
+			<templateVar name="$includeBorder" equals="1" />
+			
+			<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="1" />
+			<event name="onInit" params="element">
+				onInit(element)
+				element("disabled"):SetInt(0)
+			</event>
+			<event name="onPostInit" params="element">
+				if(game.getMyTribeRequest() == 0) then
+					element:DoStoredScript("disable");
+				end
+			</event>
+			<event name="setVisible" params="element">
+				setVisible(element)
+				element["Text"]("visible"):SetInt(1)
+				element["Touch"]("enable"):SetInt(1)
+			
+				if(game.getMyTribeRequest() ~= 0) then
+					element:DoStoredScript("enable")
+				else
+					element:DoStoredScript("disable")
+				end
+			</event>
+			<event name="setInvisible" params="element">
+				setInvisible(element)
+				element["Text"]("visible"):SetInt(0)
+				element["Touch"]("enable"):SetInt(0)
+			</event>
+			
+			<event name="enable" params="element">
+				if(game.getMyTribeRequest() ~= 0) then
+					enable(element)
+				end
+			</event>
+			<event name="disable" params="element">
+				disable(element)
+			</event>
+			
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.displayConfirmation("CANCEL_TRIBE_REQUEST", "CONFIRMATION_CANCEL_TRIBE_REQUEST")
+				</event>
+			</touchComponent>
+		</template>
+		
+		<event name="repopulate" params="element">
+			<![CDATA[
+				local prevNumItems = element("NumEntries"):GetInt()
+				
+				local page = game.getLastTribePage()
+				local totalEntries = game.getFriendTribeKeys():size()
+				
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("tribeentry"..i))
+				end
+				
+				--don't go past the number of friend tribes we have
+				while(((page - 1) * 3) >= totalEntries) do
+					page = page - 1
+				end
+				
+				if(page < 1) then
+					page = 1
+				end
+				
+				if(page ~= game.getLastTribePage()) then
+					game.setLastTribePage(page)
+				end
+				
+				element:DoStoredScript("populate")
+				element:parent()["PageLeft"]:DoStoredScript("refresh")
+				element:parent()["PageRight"]:DoStoredScript("refresh")
+				element:parent()["PageBeginning"]:DoStoredScript("refresh")
+				element:parent()["PageEnd"]:DoStoredScript("refresh")
+				
+				local tribesList = element:GetElement("TribesList")
+				local numEntries = tribesList("NumEntries"):GetInt()
+		
+				if(numEntries == 0) then
+					element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(1)
+				else
+					element:parent()["NoTribesLabel"]["Text"]("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				local page = game.getLastTribePage()
+				local tribes_per_page = 3
+				local tribeKeys = game.getFriendTribeKeysSortedByInvited()
+				local numItems = tribeKeys:size()
+				local previous = nil
+				local numThisPage = 0
+				
+				if(element:GetElement("tribeentry_large") ~= nil) then
+					element:RemoveElement(element:GetElement("tribeentry_large"))
+					element("kill"):SetInt(0)
+				end
+				
+				if(numItems > tribes_per_page) then
+					numThisPage = numItems - ((page - 1) * tribes_per_page)
+					
+					if(numThisPage > tribes_per_page) then
+						numThisPage = tribes_per_page
+					end
+				else
+					numThisPage = numItems
+				end
+				
+				element("NumEntries"):SetInt(numThisPage)
+				element("MaxPages"):SetInt(math.ceil(numItems / tribes_per_page))
+				
+				--Having zero friend tribes when this runs will result in zero pages, but even if you have no friend tribes you still have 1 page
+				if(element("MaxPages"):GetInt() == 0) then
+					element("MaxPages"):SetInt(1)
+				end
+				
+				element:parent()["TitleFrame"]["PagesText"]("text"):SetString(game.getLocalizedText("MENU_PAGE").." "..page.."/"..element("MaxPages"):GetInt())
+				
+				local startIndex = (page - 1) * tribes_per_page
+				
+				for i = 0, (numThisPage - 1) do
+					local key = tribeKeys[startIndex+i]
+					local tribeEntry = menu:addTemplateElement("template_tribalentry", "tribeentry"..i, element)
+					
+					if(previous == nil) then
+						tribeEntry:relativeTo(element)
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 4, lua_sys.HCENTER, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						tribeEntry:relativeTo(previous:GetElement("BackgroundElement"))
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					end
+					
+					previous = tribeEntry
+					
+					tribeEntry("greyColor"):SetInt(i % 2)
+					tribeEntry("DisplayName"):SetString(game.getFriendTribeName(key))
+					tribeEntry("Level"):SetInt(game.getFriendTribeRank(key))
+					tribeEntry("UserId"):SetInt(game.getFriendTribeChief(key))
+					tribeEntry("MonsterType"):SetInt(game.getFriendTribeChiefMonster(key))
+					tribeEntry("MemberListShort"):SetString(game.getTribeMembers(key, true))
+					tribeEntry("NumMembers"):SetInt(game.getFriendTribeNumber(key))
+					tribeEntry("IsRandom"):SetInt(0)
+
+					tribeEntry("Key"):SetInt(key)
+					
+					if(game.getFriendTribeInvited(key) == true) then
+						tribeEntry("Invited"):SetInt(1)
+					else
+						tribeEntry("Invited"):SetInt(0)
+					end
+					
+					tribeEntry("entryNum"):SetInt(i)
+					tribeEntry:calculatePosition()
+					tribeEntry:init()
+					tribeEntry:postInit()
+					tribeEntry:setPositionBroadcast(true)
+				end
+				
+				local showDeclineAllButton = false;
+				
+				for i = 0, (numItems - 1) do
+					if(game.getFriendTribeInvited(tribeKeys[i]) == true) then
+						showDeclineAllButton = true;
+						break;
+					end
+				end
+				
+				if(showDeclineAllButton == true) then
+					element["DeclineAllButton"]:DoStoredScript("enable");
+				else
+					element["DeclineAllButton"]:DoStoredScript("disable");
+				end
+			]]>
+		</event>
+		<event name="onTick" params="element, dt">
+			if(element("kill"):GetInt() == 1) then
+				element:RemoveElement(element:GetElement("tribeentry_large"))
+				element("kill"):SetInt(0)
+			end
+		</event>
+	</element>
+	
+	<element name="TopTribesList">
+		<size w="lua_sys.screenWidth()/5*4" h="135*game.menuScaleY()" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="26*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="element">
+			element("locked"):SetInt(0)
+			element("MaxPages"):SetInt(1)
+			element("NumEntries"):SetInt(0)
+			element("Page"):SetInt(1)
+		</event>
+		<event name="repopulate" params="element">
+			<![CDATA[
+				local prevNumItems = element("NumEntries"):GetInt()
+				
+				local page = element("Page"):GetInt()
+				local totalEntries = game.getTopTribeSize()
+				
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("toptribeentry"..i))
+				end
+				
+				--don't go past the number of top tribes we have
+				while(((page - 1) * 3) >= totalEntries) do
+					page = page - 1
+				end
+				
+				if(page < 1) then
+					page = 1
+				end
+				
+				element("Page"):SetInt(page)
+				element:DoStoredScript("populate")
+				element:parent()["PageLeft"]:DoStoredScript("refresh")
+				element:parent()["PageRight"]:DoStoredScript("refresh")
+				element:parent()["PageBeginning"]:DoStoredScript("refresh")
+				element:parent()["PageEnd"]:DoStoredScript("refresh")
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				local page = element("Page"):GetInt()
+				local tribes_per_page = 6
+				local numItems = game.getTopTribeSize()
+				local previous = nil
+				local numThisPage = 0
+				
+				if(numItems > tribes_per_page) then
+					numThisPage = numItems - ((page - 1) * tribes_per_page)
+					
+					if(numThisPage > tribes_per_page) then
+						numThisPage = tribes_per_page
+					end
+				else
+					numThisPage = numItems
+				end
+				
+				element("NumEntries"):SetInt(numThisPage)
+				element("MaxPages"):SetInt(math.ceil(numItems / tribes_per_page))
+				
+				--Having zero top tribes when this runs will result in zero pages, but even if you have no top tribes you still have 1 page
+				if(element("MaxPages"):GetInt() == 0) then
+					element("MaxPages"):SetInt(1)
+				end
+				
+				element:parent()["TitleFrame"]["PagesText"]("text"):SetString(game.getLocalizedText("MENU_PAGE").." "..page.."/"..element("MaxPages"):GetInt())
+				
+				local startIndex = (page - 1) * tribes_per_page
+				
+				for i = 0, (numThisPage - 1) do
+					local tribeEntry = menu:addTemplateElement("template_toptribalentry", "toptribeentry"..i, element)
+					
+					if(previous == nil) then
+						tribeEntry:relativeTo(element)
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 4, lua_sys.HCENTER, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						tribeEntry:relativeTo(previous:GetElement("BackgroundElement"))
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					end
+					
+					previous = tribeEntry
+					
+					tribeEntry("greyColor"):SetInt(i % 2)
+					tribeEntry("DisplayName"):SetString(game.getTopTribeName(i+startIndex))
+					tribeEntry("MonsterType"):SetInt(game.getTopTribeChiefMonster(i+startIndex))
+					tribeEntry("Level"):SetInt(game.getTopTribeRank(i+startIndex))
+					tribeEntry("Key"):SetInt(game.getTopTribeID(i+startIndex))
+					tribeEntry("entryNum"):SetInt(i+startIndex+1)
+					tribeEntry:calculatePosition()
+					tribeEntry:init()
+					tribeEntry:postInit()
+					tribeEntry:setPositionBroadcast(true)
+				end
+			]]>
+		</event>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="PageLeft">
+		<templateVar name="$upSpriteName" equals="'button_play'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+			
+			if(element["BoundsSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["BoundsSprite"]("vFlip"):SetInt(1)
+			else
+				element["BoundsSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["UpSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["UpSprite"]("vFlip"):SetInt(1)
+			else
+				element["UpSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["DownSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["DownSprite"]("vFlip"):SetInt(1)
+			else
+				element["DownSprite"]("hFlip"):SetInt(1)
+			end
+		</event>
+		<event name="refresh" params="element">
+			local tab = element:parent()("activeTab"):GetInt()
+			if(tab == 0) then
+				if(element:parent():GetElement("RandomTribesList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("RandomTribesList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 1) then
+				if(element:parent():GetElement("TribesList"):GetVar("MaxPages"):GetInt() == 1 or game.getLastTribePage() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 2) then
+				if(element:parent():GetElement("MembersList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("MembersList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 3) then
+				if(element:parent():GetElement("TopTribesList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("TopTribesList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="90*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				
+				local tab = element:parent()("activeTab"):GetInt()
+				if(tab == 0) then
+					local tribesList = element:parent():GetElement("RandomTribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = tribesList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = curPage - 1
+							tribesList("Page"):SetInt(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 1) then
+					local tribesList = element:parent():GetElement("TribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = game.getLastTribePage()
+						
+						if(curPage &gt; 1) then
+							curPage = curPage - 1
+							game.setLastTribePage(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 2) then
+					local membersList = element:parent():GetElement("MembersList")
+					
+					if(membersList("locked"):GetInt() == 0) then
+						membersList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = membersList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = curPage - 1
+							membersList("Page"):SetInt(curPage)
+							membersList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 3) then
+					local topTribesList = element:parent():GetElement("TopTribesList")
+					
+					if(topTribesList("locked"):GetInt() == 0) then
+						topTribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = topTribesList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = curPage - 1
+							topTribesList("Page"):SetInt(curPage)
+							topTribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				end
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PageRight">
+		<templateVar name="$upSpriteName" equals="'button_play'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+		</event>
+		<event name="refresh" params="element">
+			local tab = element:parent()("activeTab"):GetInt()
+			if(tab == 0) then
+				local maxPages = element:parent():GetElement("RandomTribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("RandomTribesList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 1) then
+				local maxPages = element:parent():GetElement("TribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == game.getLastTribePage()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 2) then
+				local maxPages = element:parent():GetElement("MembersList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("MembersList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 3) then
+				local maxPages = element:parent():GetElement("TopTribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("TopTribesList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="90*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				
+				local tab = element:parent()("activeTab"):GetInt()
+				if(tab == 0) then
+					local tribesList = element:parent():GetElement("RandomTribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = tribesList("Page"):GetInt();
+						
+						if(curPage &lt; tribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = curPage + 1
+							tribesList("Page"):SetInt(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 1) then
+					local tribesList = element:parent():GetElement("TribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = game.getLastTribePage()
+						
+						if(curPage &lt; tribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = curPage + 1
+							game.setLastTribePage(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 2) then
+					local membersList = element:parent():GetElement("MembersList")
+					
+					if(membersList("locked"):GetInt() == 0) then
+						membersList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = membersList("Page"):GetInt()
+						
+						if(curPage &lt; membersList:GetVar("MaxPages"):GetInt()) then
+							curPage = curPage + 1
+							membersList("Page"):SetInt(curPage)
+							membersList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 3) then
+					local topTribesList = element:parent():GetElement("TopTribesList")
+					
+					if(topTribesList("locked"):GetInt() == 0) then
+						topTribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = topTribesList("Page"):GetInt()
+						
+						if(curPage &lt; topTribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = curPage + 1
+							topTribesList("Page"):SetInt(curPage)
+							topTribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				end
+			</event>
+		</touchComponent>		
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PageBeginning">
+		<templateVar name="$upSpriteName" equals="'button_next'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="PageLeft" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.menuScaleY()" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+			
+			if(element["BoundsSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["BoundsSprite"]("vFlip"):SetInt(1)
+			else
+				element["BoundsSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["UpSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["UpSprite"]("vFlip"):SetInt(1)
+			else
+				element["UpSprite"]("hFlip"):SetInt(1)
+			end
+			
+			if(element["DownSprite"]("isSourceRotated"):GetInt() == 1) then
+				element["DownSprite"]("vFlip"):SetInt(1)
+			else
+				element["DownSprite"]("hFlip"):SetInt(1)
+			end
+		</event>
+		<event name="refresh" params="element">
+			local tab = element:parent()("activeTab"):GetInt()
+			if(tab == 0) then
+				if(element:parent():GetElement("RandomTribesList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("RandomTribesList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 1) then
+				if(element:parent():GetElement("TribesList"):GetVar("MaxPages"):GetInt() == 1 or game.getLastTribePage() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 2) then
+				if(element:parent():GetElement("MembersList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("MembersList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 3) then
+				if(element:parent():GetElement("TopTribesList"):GetVar("MaxPages"):GetInt() == 1 or element:parent():GetElement("TopTribesList"):GetVar("Page"):GetInt() == 1) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				
+				local tab = element:parent()("activeTab"):GetInt()
+				if(tab == 0) then
+					local tribesList = element:parent():GetElement("RandomTribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = tribesList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = 1
+							tribesList("Page"):SetInt(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				
+				elseif(tab == 1) then
+					local tribesList = element:parent():GetElement("TribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = game.getLastTribePage()
+						
+						if(curPage &gt; 1) then
+							curPage = 1
+							game.setLastTribePage(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 2) then
+					local membersList = element:parent():GetElement("MembersList")
+					
+					if(membersList("locked"):GetInt() == 0) then
+						membersList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = membersList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = 1
+							membersList("Page"):SetInt(curPage)
+							membersList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 3) then
+					local topTribesList = element:parent():GetElement("TopTribesList")
+					
+					if(topTribesList("locked"):GetInt() == 0) then
+						topTribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(2)
+						local curPage = topTribesList("Page"):GetInt()
+						
+						if(curPage &gt; 1) then
+							curPage = 1
+							topTribesList("Page"):SetInt(curPage)
+							topTribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				end
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="PageEnd">
+		<templateVar name="$upSpriteName" equals="'button_next'" />
+		<templateVar name="$sheetName" equals="'xml_resources/context_buttons.xml'" />
+		<templateVar name="$spriteScale" equals="0.33*game.menuScaleY()" />
+		<templateVar name="$layer" equals="'MidPopUps'" />
+		<position relativeTo="PageRight" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="40*game.menuScaleY()" priorityOffset="0" />
+		<event name="onPostInit" params="element">
+			element:DoStoredScript("refresh")
+		</event>
+		<event name="refresh" params="element">
+			local tab = element:parent()("activeTab"):GetInt()
+			if(tab == 0) then
+				local maxPages = element:parent():GetElement("RandomTribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("RandomTribesList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 1) then
+				local maxPages = element:parent():GetElement("TribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == game.getLastTribePage()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 2) then
+				local maxPages = element:parent():GetElement("MembersList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("MembersList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			elseif(tab == 3) then
+				local maxPages = element:parent():GetElement("TopTribesList"):GetVar("MaxPages"):GetInt()
+				if(maxPages == 1 or maxPages == element:parent():GetElement("TopTribesList"):GetVar("Page"):GetInt()) then
+					element:DoStoredScript("setInvisible")
+				else
+					element:DoStoredScript("setVisible")
+				end
+			end
+		</event>
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			element["BgElement"]["Touch"]("enabled"):SetInt(1)
+			element["BgElement"]["Sprite"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			element["BgElement"]["Touch"]("enabled"):SetInt(0)
+			element["BgElement"]["Sprite"]("visible"):SetInt(0)
+		</event>
+		<element name="BgElement">
+			<size w="35*game.menuScaleX()" h="35*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
+			<ninesliceComponent name="Sprite">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("topHeight"):SetFloat(17.0)
+					component("bottomHeight"):SetFloat(17.0)
+					component("leftWidth"):SetFloat(17.0)
+					component("rightWidth"):SetFloat(17.0)
+					component("includeBorder"):SetInt(1)
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/button_vert_square01")
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</ninesliceComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchDown" params="component, element">
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element:parent()["Touch"]:DoStoredScript("onTouchDown")
+				</event>
+				<event name="onTouchUp" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchUp")
+				</event>
+				<event name="onTouchRelease" params="component, element">
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element:parent()["Touch"]:DoStoredScript("onTouchRelease")
+				</event>
+			</touchComponent>
+		</element>
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["BgElement"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["BgElement"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+				
+				local tab = element:parent()("activeTab"):GetInt()
+				if(tab == 0) then
+					local tribesList = element:parent():GetElement("RandomTribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = tribesList("Page"):GetInt()
+						
+						if(curPage &lt; tribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = tribesList:GetVar("MaxPages"):GetInt()
+							tribesList("Page"):SetInt(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 1) then
+					local tribesList = element:parent():GetElement("TribesList")
+					
+					if(tribesList("locked"):GetInt() == 0) then
+						tribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = game.getLastTribePage()
+						
+						if(curPage &lt; tribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = tribesList:GetVar("MaxPages"):GetInt()
+							game.setLastTribePage(curPage)
+							tribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 2) then
+					local membersList = element:parent():GetElement("MembersList")
+					
+					if(membersList("locked"):GetInt() == 0) then
+						membersList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = membersList("Page"):GetInt()
+						
+						if(curPage &lt; membersList:GetVar("MaxPages"):GetInt()) then
+							curPage = membersList:GetVar("MaxPages"):GetInt()
+							membersList("Page"):SetInt(curPage)
+							membersList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				elseif(tab == 3) then
+					local topTribesList = element:parent():GetElement("TopTribesList")
+					
+					if(topTribesList("locked"):GetInt() == 0) then
+						topTribesList("locked"):SetInt(1)
+						element:parent()("timeToUnlock"):SetInt(4)
+						local curPage = topTribesList("Page"):GetInt()
+						
+						if(curPage &lt; topTribesList:GetVar("MaxPages"):GetInt()) then
+							curPage = topTribesList:GetVar("MaxPages"):GetInt()
+							topTribesList("Page"):SetInt(curPage)
+							topTribesList:DoStoredScript("repopulate")
+							element("enable"):SetInt(0)
+						end
+					end
+				end
+			</event>
+		</touchComponent>		
+	</template>
+	
+	<element name="NoTribesLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Frame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="300*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("NOTIFICATION_NO_TRIBES")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>		
+		<event name="onPostInit" params="element">
+			if((element:parent()("activeTab"):GetInt() == 1) and (element:parent()["TribesList"]("NumEntries"):GetInt() == 0)) then
+				element["Text"]("visible"):SetInt(1)
+			else
+				element["Text"]("visible"):SetInt(0)
+			end
+		</event>
+	</element>
+	
+	<element name="hack2">
+		<template type="template_spritesheetbutton" name="CreateButton">
+			<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+			<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+			<templateVar name="$spriteScale" equals="game.menuScaleX()" />
+			<templateVar name="$layer" equals="MidPopUps" />		
+			<position relativeTo="element:parent():parent()[&quot;Frame&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="-10*game.menuScaleY()" priorityOffset="-1" />
+			<event name="setVisible" params="element">
+				setVisible(element)
+				element["Label"]("visible"):SetInt(1)
+				element["Touch"]("enable"):SetInt(1)
+			</event>
+			<event name="setInvisible" params="element">
+				setInvisible(element)
+				element["Label"]("visible"):SetInt(0)
+				element["Touch"]("enable"):SetInt(0)
+			</event>
+			<event name="onInit" params="element">
+				onInit(element)
+				element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgTextEntrySubmission", "gotMsgTextEntrySubmission")
+				element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgPermission", "gotMsgPermission")
+			</event>
+			<event name="gotMsgKeyboardEntryResult" params="element, msg">
+				if(not msg.cancelled) then
+					if(not game.isTribalIsland()) then
+						game.unlockTribalIsland(msg.text)
+					end
+				end
+			</event>
+			<event name="gotMsgTextEntrySubmission" params="element, msg">
+				if((msg.messageID == "TRIBE_NAME") and (msg.choice == true)) then
+					if(not game.isTribalIsland()) then
+						game.unlockTribalIsland(msg.text)
+					end
+				end
+			</event>
+			<event name="gotMsgPermission" params="element, msg">
+				<![CDATA[
+					if(not game.isTribalIsland()) then
+						if msg.name == "TRIBAL" and msg.allowed then
+							game.displayTextEntry(game.getLocalizedText("TRIBE_NAME"), "", true, -1, 25, true, "TRIBE_NAME")
+						end
+					end
+				]]>
+			</event>
+			<textComponent name="Label">
+				<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("CREATE_TRIBAL_LABEL")
+					component("textPadding"):SetInt(4)
+					component("autoScaleFactor"):SetFloat(0.01)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</textComponent>
+			<touchComponent name="Touch">
+				<size dependentOnElement="element:name()"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onTouchUp" params="component, element">
+					onTouchUp(component, element)
+					game.checkGamePermission("TRIBAL", "popup_permission_tribal")
+				</event>
+			</touchComponent>
+		</template>
+	</element>
+	
+	<template type="template_spritesheetbutton" name="JoinButton">
+		<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />		
+		<position relativeTo="CreateButton" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enable"):SetInt(1)
+			local oldSize = element["UpSprite"]("size"):GetFloat()
+			element["UpSprite"]("size"):SetFloat(10)
+			element["UpSprite"]("size"):SetFloat(oldSize)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enable"):SetInt(0)
+		</event>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("JOIN_TRIBAL_LABEL")
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent()("activeTab"):SetInt(1)
+				game.setLastTribePage(1)
+				element:parent():DoStoredScript("selectNewTab")
+				element:parent()["TribesList"]:DoStoredScript("repopulate")
+			</event>
+		</touchComponent>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="JoinRandomButton">
+		<templateVar name="$upSpriteName" equals="'button_long_purp@2x'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="game.menuScaleX()" />
+		<templateVar name="$layer" equals="MidPopUps" />		
+		<position relativeTo="CreateButton" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+		<event name="setVisible" params="element">
+			setVisible(element)
+			element["Label"]("visible"):SetInt(1)
+			element["Touch"]("enable"):SetInt(1)
+			local oldSize = element["UpSprite"]("size"):GetFloat()
+			element["UpSprite"]("size"):SetFloat(10)
+			element["UpSprite"]("size"):SetFloat(oldSize)
+		</event>
+		<event name="setInvisible" params="element">
+			setInvisible(element)
+			element["Label"]("visible"):SetInt(0)
+			element["Touch"]("enable"):SetInt(0)
+		</event>
+		<textComponent name="Label">
+			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("JOIN_RANDOM_TRIBAL_LABEL")
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element:parent()("activeTab"):SetInt(0)
+				element:parent():GetElement("RandomTribesList")("Page"):SetInt(1)
+				element:parent():DoStoredScript("selectNewTab")
+				element:parent()["RandomTribesList"]:DoStoredScript("repopulate")
+			</event>
+		</touchComponent>
+	</template>
+	
+	<element name="NotMemberLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="element:parent()[&quot;hack2&quot;][&quot;CreateButton&quot;]" vAnchor="TOP" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="350*game.hudScale()" h="75*game.hudScale()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("NOTIFICATION_NOT_MEMBER")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="MyTribeStats">
+		<size dependentOnElement="element:name()" dependentOnComponent="ChiefText" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="10*game.menuScaleX()" yOffset="40*game.menuScaleY()" priorityOffset="-4" />
+		<textComponent name="LvlText">
+			<size w="275*game.hudScale()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.94, 0.6, 0.11)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("FRIEND_LEVEL_ABBREV_TAG").." "..game.myTribeLevel())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="MembersText">
+			<size w="275*game.hudScale()" />
+			<position relativeTo="PARENT" component="LvlText" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("TRIBAL_MEMBERS_LABEL").." "..game.myTribeMembers().."/"..game.maxTribeMembers())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<textComponent name="ChiefText">
+			<size w="275*game.hudScale()" />
+			<position relativeTo="PARENT" component="MembersText" vAnchor="BOTTOM" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="10*game.menuScaleY()" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(1.0, 0.9, 0.09)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("TRIBAL_CHIEF_LABEL")..game.myTribeChief())
+				include("MenuHelpers").ShrinkTextToWidth(component("text"):GetString(), component, 192*game.menuScaleX())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<event name="show" params="element">
+			element["LvlText"]("visible"):SetInt(1)
+			element["MembersText"]("visible"):SetInt(1)
+			element["ChiefText"]("visible"):SetInt(1)
+		</event>
+		<event name="hide" params="element">
+			element["LvlText"]("visible"):SetInt(0)
+			element["MembersText"]("visible"):SetInt(0)
+			element["ChiefText"]("visible"):SetInt(0)
+		</event>
+	</element>
+	
+	<element name="MyTribeName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="0" yOffset="75*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="element">
+			element:SetupGenericListener(game.engineReceiver(), "sys::msg::MsgKeyboardEntryResult", "gotMsgKeyboardEntryResult")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgTextEntrySubmission", "gotMsgTextEntrySubmission")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgUpdateTribeName", "gotMsgUpdateTribeName")
+			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgPermission", "gotMsgPermission")
+		</event>
+		<event name="onPostInit" params="element">
+			element("xOffset"):SetInt(element:parent():GetElement("Frame"):absW()/5)
+		</event>
+		<event name="gotMsgKeyboardEntryResult" params="element, msg">
+			if(not msg.cancelled) then
+				if(element["SpriteElement"]["Sprite"]("visible"):GetInt()==1) then
+					game.setTribeName(msg.text)
+				end
+			end
+		</event>
+		<event name="gotMsgTextEntrySubmission" params="element, msg">
+			if((msg.messageID == "TRIBE_NAME") and (msg.choice == true)) then
+				if(element["SpriteElement"]["Sprite"]("visible"):GetInt()==1) then
+					game.setTribeName(msg.text)
+				end
+			end
+		</event>
+		<event name="gotMsgUpdateTribeName" params="element, msg">
+			element["Text"]("text"):SetString(msg.name)
+			include("MenuHelpers").ShrinkTextToWidth(element["Text"]("text"):GetString(), element:GetComponent("Text"), 110*game.menuScaleX())
+		</event>
+		<event name="gotMsgPermission" params="element, msg">
+			<![CDATA[
+				if(element["SpriteElement"]["Sprite"]("visible"):GetInt()==1) then
+					if msg.name == "TRIBAL" and msg.allowed then
+						game.displayTextEntry(game.getLocalizedText("TRIBE_NAME"), game.myTribeName(), true, -1, 25, true, "TRIBE_NAME")
+					end
+				end
+			]]>
+		</event>
+		<element name = "SpriteElement">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<spriteSheetComponent name="Sprite">
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("selectable_bar_grey")
+					component("sheetName"):SetString("xml_resources/breeding01.xml")
+					component("size"):SetFloat(0.5*game.hudScale())
+					component("layer"):SetString("MidPopUps")
+					if(not game.isChief()) then
+						component("visible"):SetInt(0)
+						element["Touch"]("enabled"):SetInt(0)
+					end
+					component:setPositionBroadcast(true);
+				</event>
+			</spriteSheetComponent>
+			<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				game.checkGamePermission("TRIBAL", "popup_permission_tribal")
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				print("Touch onTouchRelease")
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		</element>
+		
+		<textComponent name="Text">
+			<size w="275*game.hudScale()" />
+			<position relativeTo="SpriteElement" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component:setColor(0.94, 0.6, 0.11)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("noTranslate"):SetInt(1)
+				component("text"):SetString(game.myTribeName())
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		
+	</element>
+	
+	<element name="MyTribePic">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MyTribeName" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15*game.hudScale()" priorityOffset="0" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString(game.myTribePic())
+					component("layer"):SetString("MidPopUps")
+					component("size"):SetFloat(game.menuScaleY()*0.7*64/component:absW())
+					
+					local tribeName = element:parent():GetElement("MyTribeName")
+					
+					if(tribeName:absW() < 32) then
+						tribeName("xOffset"):SetFloat(tribeName("xOffset"):GetFloat() + ((component:absW() / game.menuScaleY()) / 2.0))
+					end
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+	
+	<element name="MembersList">
+		<size w="lua_sys.screenWidth()/5*4" h="135*game.menuScaleY()" />
+		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="100*game.menuScaleY()" priorityOffset="-5" />
+		<event name="onInit" params="element">
+			element("locked"):SetInt(0)
+			element("MaxPages"):SetInt(1)
+			element("NumEntries"):SetInt(0)
+			element("Page"):SetInt(1)
+		</event>
+		<event name="repopulate" params="element">
+			<![CDATA[
+				local prevNumItems = element("NumEntries"):GetInt()
+				local page = element("Page"):GetInt()
+				local totalEntries = game.getRequestKeys():size() + game.myTribeMembers()
+				
+				for i = 0, prevNumItems - 1 do
+					element:RemoveElement(element:GetElement("tribemember"..i))
+				end
+				
+				--don't go past the number of tribe members we have
+				while(((page - 1) * 3) >= totalEntries) do
+					page = page - 1
+				end
+				
+				if(page < 1) then
+					page = 1
+				end
+				
+				element("Page"):SetInt(page)
+				element:DoStoredScript("populate")
+				element:parent()["PageLeft"]:DoStoredScript("refresh")
+				element:parent()["PageRight"]:DoStoredScript("refresh")
+				element:parent()["PageBeginning"]:DoStoredScript("refresh")
+				element:parent()["PageEnd"]:DoStoredScript("refresh")
+				element:parent():DoStoredScript("showFooter")
+			]]>
+		</event>
+		<event name="populate" params="element">
+			<![CDATA[
+				local page = element("Page"):GetInt()
+				local members_per_page = 3
+				local memberKeys = game.getMemberKeys()
+				local requestKeys = game.getRequestKeys()
+				local numItems = requestKeys:size() + memberKeys:size()
+				local previous = nil
+				local numThisPage = 0
+				
+				if(numItems > members_per_page) then
+					numThisPage = numItems - ((page - 1) * members_per_page)
+					
+					if(numThisPage > members_per_page) then
+						numThisPage = members_per_page
+					end
+				else
+					numThisPage = numItems
+				end
+				
+				element("NumEntries"):SetInt(numThisPage)
+				element("MaxPages"):SetInt(math.ceil(numItems / members_per_page))
+				
+				--Having zero tribe requests/members when this runs will result in zero pages, but even if you have no tribe requests/members you still have 1 page
+				if(element("MaxPages"):GetInt() == 0) then
+					element("MaxPages"):SetInt(1)
+				end
+				
+				element:parent()["TitleFrame"]["PagesText"]("text"):SetString(game.getLocalizedText("MENU_PAGE").." "..page.."/"..element("MaxPages"):GetInt())
+				
+				local startIndex = (page - 1) * members_per_page
+				
+				for i = 0, (numThisPage - 1) do
+					local key = 0
+					
+					if(startIndex+i >= requestKeys:size()) then
+						key = memberKeys[(startIndex+i) - requestKeys:size()]
+					else
+						key = requestKeys[startIndex+i]
+					end
+					
+					local tribeEntry = nil
+					
+					if(startIndex+i < requestKeys:size()) then
+						tribeEntry = menu:addTemplateElement("template_tribalrequestentry", "tribemember"..i, element)
+					else
+						tribeEntry = menu:addTemplateElement("template_tribalmemberentry", "tribemember"..i, element)
+					end
+					
+					if(previous == nil) then
+						tribeEntry:relativeTo(element)
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 4, lua_sys.HCENTER, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
+					else
+						tribeEntry:relativeTo(previous:GetElement("BackgroundElement"))
+						tribeEntry:setOrientation(lua_sys.MenuOrientation(0, 0, 0, lua_sys.LEFT, lua_sys.TOP))
+						tribeEntry:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.BOTTOM)
+					end
+					
+					previous = tribeEntry
+					
+					if(startIndex+i < requestKeys:size()) then
+						tribeEntry("DisplayName"):SetString(game.getRequestName(key))
+						tribeEntry("DisplayPic"):SetString(game.getRequestPortrait(key))
+						tribeEntry("MonsterID"):SetInt(game.getRequestMonster(key))
+						tribeEntry("UserID"):SetInt(key)
+					else
+						tribeEntry("DisplayName"):SetString(game.getMonsterName(key))
+						tribeEntry("DisplayPic"):SetString(game.getPortraitName(key))
+						tribeEntry("Level"):SetInt(game.monsterLevel(key))
+					end
+					
+					tribeEntry("greyColor"):SetInt(i % 2)
+					tribeEntry("entryNum"):SetInt(i)
+					tribeEntry:calculatePosition()
+					tribeEntry:init()
+					tribeEntry:postInit()
+					tribeEntry:setPositionBroadcast(true)
+				end
+			]]>
+		</event>
+		<event name="deselectAll" params="element">
+			local i = 0
+			while(true) do
+				local tribeEntry = element:GetElement("tribemember"..i)
+				if(tribeEntry == nil) then
+					break
+				end
+				if(tribeEntry("selected"):GetInt() == 1) then
+					tribeEntry:DoStoredScript("toggle")
+				end
+				i = i + 1
+			end
+			element:parent():DoStoredScript("showFooter")
+		</event>
+	</element>
+	
+	<element name="InviteButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="50*game.menuScaleX()" yOffset="-35*game.menuScaleY()" priorityOffset="-1" />
+		<event name="setVisible" params="element">
+			element["UpSprite"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["UpSprite"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+		</event>
+		<ninesliceComponent name="UpSprite">
+			<size w="lua_sys.screenHeight()/4" h="lua_sys.screenHeight()/8" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(20.0)
+				component("bottomHeight"):SetFloat(20.0)
+				component("leftWidth"):SetFloat(20.0)
+				component("rightWidth"):SetFloat(20.0)
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/button_vert_square01_green")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Label">
+			<size w="80*game.menuScaleX()" h="40*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("INVITE_FRIENDS_LABEL")
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.popPopUp()
+				manager:setContext("FRIENDS_TRIBAL")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<element name="LeaveButton">
+		<size dependentOnElement="element:name()" dependentOnComponent="UpSprite" />
+		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="50*game.menuScaleX()" yOffset="-35*game.menuScaleY()" priorityOffset="-1" />
+		<event name="setVisible" params="element">
+			element["UpSprite"]("visible"):SetInt(1)
+			element["Touch"]("enabled"):SetInt(1)
+			element["Label"]("visible"):SetInt(1)
+		</event>
+		<event name="setInvisible" params="element">
+			element["UpSprite"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+			element["Label"]("visible"):SetInt(0)
+		</event>
+		<ninesliceComponent name="UpSprite">
+			<size w="lua_sys.screenHeight()/4" h="lua_sys.screenHeight()/8" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(20.0)
+				component("bottomHeight"):SetFloat(20.0)
+				component("leftWidth"):SetFloat(20.0)
+				component("rightWidth"):SetFloat(20.0)
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/button_vert_square01_red")
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</ninesliceComponent>
+		<textComponent name="Label">
+			<size w="80*game.menuScaleX()" h="40*game.menuScaleY()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(1)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("LEAVE_TRIBE_LABEL")
+				component("textPadding"):SetInt(4)
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("MidPopUps")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER"/>
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				element["UpSprite"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click.wav")
+				game.displayConfirmation("LEAVE_TRIBE", "CONFIRMATION_LEAVE_TRIBE")
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				element["UpSprite"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+	</element>
+	
+	<event name="showFooter" params="element">
+		element["InviteButton"]:DoStoredScript("setVisible")
+		element["LeaveButton"]:DoStoredScript("setVisible")
+	</event>
+	
+	<event name="hideFooter" params="element">
+		element["InviteButton"]:DoStoredScript("setInvisible")
+		element["LeaveButton"]:DoStoredScript("setInvisible")
+	</event>
+	
+</menu>

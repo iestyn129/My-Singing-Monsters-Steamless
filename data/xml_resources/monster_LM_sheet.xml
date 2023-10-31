@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:200718703902d4a18b736912084d069a:7d79e39b0dd20e8fcdcca2900371e671:66603ec3aea120d6d82b14e4f2c15df5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_LM_sheet.png" width="512" height="512" hires="true">
+    <sprite n="LM_back_eyeball" x="27" y="395" w="44" h="39" pX="0.5" pY="0.5" oX="0" oY="1" oW="40" oH="48" r="y"/>
+    <sprite n="LM_claw" x="257" y="99" w="220" h="46" pX="0.5" pY="0.5" oX="0" oY="0" oW="220" oH="48"/>
+    <sprite n="LM_collar_RARE" x="74" y="343" w="94" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="LM_hair_01_RARE" x="2" y="108" w="174" h="139" pX="0.5" pY="0.5" oX="0" oY="0" oW="140" oH="174" r="y"/>
+    <sprite n="LM_head" x="178" y="233" w="72" h="94" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="76" r="y"/>
+    <sprite n="LM_head_RARE" x="2" y="249" w="94" h="72" pX="0.5" pY="0.5" oX="0" oY="2" oW="96" oH="76"/>
+    <sprite n="LM_head_glow" x="393" y="358" w="114" h="35" pX="0.5" pY="0.5" oX="3" oY="0" oW="117" oH="37"/>
+    <sprite n="LM_headcap" x="257" y="2" w="237" h="95" pX="0.5" pY="0.5" oX="1" oY="0" oW="240" oH="96"/>
+    <sprite n="LM_headcap_glow" x="2" y="2" w="253" h="104" pX="0.5" pY="0.5" oX="2" oY="0" oW="258" oH="106"/>
+    <sprite n="LM_leafbase_01" x="2" y="329" w="70" h="64" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="72" r="y"/>
+    <sprite n="LM_leafbase_02" x="171" y="329" w="62" h="60" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="64" r="y"/>
+    <sprite n="LM_leafbase_03" x="98" y="249" w="72" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="48" oH="76" r="y"/>
+    <sprite n="LM_leafbase_04" x="98" y="294" w="71" h="47" pX="0.5" pY="0.5" oX="0" oY="0" oW="48" oH="72" r="y"/>
+    <sprite n="LM_leafbase_05" x="395" y="251" w="80" h="62" pX="0.5" pY="0.5" oX="1" oY="0" oW="64" oH="80" r="y"/>
+    <sprite n="LM_leafpad" x="252" y="147" w="160" h="80" pX="0.5" pY="0.5" oX="0" oY="1" oW="160" oH="84"/>
+    <sprite n="LM_left_eyelid_01" x="371" y="323" w="20" h="37" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48" r="y"/>
+    <sprite n="LM_left_eyelid_02" x="272" y="395" w="40" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48"/>
+    <sprite n="LM_left_eyelid_03" x="272" y="443" w="40" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48"/>
+    <sprite n="LM_left_eyelid_04" x="314" y="365" w="46" h="40" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48" r="y"/>
+    <sprite n="LM_left_lowerarm" x="252" y="323" w="117" h="40" pX="0.5" pY="0.5" oX="1" oY="2" oW="120" oH="44"/>
+    <sprite n="LM_left_upperarm" x="478" y="217" w="24" h="100" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="LM_lowerbody" x="252" y="229" w="141" h="92" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="144" r="y"/>
+    <sprite n="LM_mouth_01" x="478" y="157" w="28" h="58" pX="0.5" pY="0.5" oX="1" oY="1" oW="60" oH="36" r="y"/>
+    <sprite n="LM_mouth_02" x="479" y="99" w="30" h="56" pX="0.5" pY="0.5" oX="3" oY="2" oW="60" oH="36" r="y"/>
+    <sprite n="LM_mouth_03" x="77" y="429" w="34" h="55" pX="0.5" pY="0.5" oX="3" oY="1" oW="60" oH="36" r="y"/>
+    <sprite n="LM_neck" x="170" y="395" w="52" h="93" pX="0.5" pY="0.5" oX="0" oY="1" oW="52" oH="96"/>
+    <sprite n="LM_neck_ruff" x="27" y="436" w="48" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="LM_pupil" x="496" y="37" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="LM_pupil_RARE" x="496" y="51" w="12" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="LM_right_eyelid_01" x="496" y="2" w="13" h="33" pX="0.5" pY="0.5" oX="5" oY="0" oW="44" oH="48" r="y"/>
+    <sprite n="LM_right_eyelid_02" x="113" y="472" w="46" h="38" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48" r="y"/>
+    <sprite n="LM_right_eyelid_03" x="314" y="407" w="40" h="46" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48"/>
+    <sprite n="LM_right_eyelid_04" x="113" y="429" w="48" h="41" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="48" r="y"/>
+    <sprite n="LM_right_lowerarm" x="395" y="319" w="114" h="37" pX="0.5" pY="0.5" oX="2" oY="1" oW="116" oH="40"/>
+    <sprite n="LM_right_upperarm" x="2" y="395" w="23" h="100" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="24" r="y"/>
+    <sprite n="LM_shadow" x="224" y="395" w="46" h="92" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="48" r="y"/>
+    <sprite n="LM_spikes_RARE" x="178" y="108" w="72" h="123" pX="0.5" pY="0.5" oX="0" oY="1" oW="74" oH="124"/>
+    <sprite n="LM_upperbody" x="414" y="147" w="62" h="102" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="104"/>
+</TextureAtlas>

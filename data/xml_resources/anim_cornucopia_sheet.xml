@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:46ee99fe44529880285dbc6b57bc8c65:7b68d22dfe677909912ea88e3e14e976:c8a9a4d01fee6fb6cfd64ba6363340c5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_cornucopia_sheet.png" width="512" height="512" hires="true">
+    <sprite n="deco_cornucopia_body" x="294" y="2" w="192" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_body_02" x="98" y="294" w="112" h="121" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_front_veggies" x="2" y="140" w="263" h="120" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_mouth" x="267" y="148" w="177" h="144" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_shadow" x="2" y="2" w="290" h="136" pX="0.5" pY="0.5" oX="6" oY="2" oW="298" oH="138"/>
+    <sprite n="deco_cornucopia_tail" x="112" y="417" w="71" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_wheat_left" x="2" y="294" w="94" h="125" pX="0.5" pY="0.5"/>
+    <sprite n="deco_cornucopia_wheat_right" x="2" y="421" w="108" h="79" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,87 @@
+<template name="template_stat_store_maxcoins" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size w="228*game.menuScaleX()" h="20*game.menuScaleX()" />
+	
+	<textComponent name="Stat">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.22*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString(game.getLocalizedText("MAX"))
+			component("layer"):SetString("FrontPopUps")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+		</event>
+	</textComponent>
+	
+	<element name="Value">
+		<size w="114*game.menuScaleX()" h="20*game.menuScaleX()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="CoinSprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				if(element:root():GetElement("SelectedMonsterView") == nil) then
+					component("spriteName"):SetString(game.objectRateUnitCurrencySprite())
+				else
+					local islandType = game.getBookOfMonstersIslandType();
+					if(game.isEtherealIsland(islandType)) then
+						component("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
+					elseif(game.isAmberIsland(islandType)) then 
+						component("spriteName"):SetString(game.StoreContext_SPRITE_RELIC)
+					else
+						component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					end
+				end
+				component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
+				component("size"):SetFloat(0.3*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		<textComponent name="Text">
+			<position relativeTo="PARENT" component="CoinSprite" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.22*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				if(element:root():GetElement("SelectedMonsterView") == nil) then
+					component("text"):SetString(game.commaizeNumber(store:ItemMaxCoins(element:parent()("ItemIndex"):GetInt())))
+				else
+					component("text"):SetString(game.commaizeNumber(game.monsterTypeResourceCap(element:parent():parent():parent()("selectedMonster"):GetInt(), game.getBookOfMonstersIslandType())))
+				end
+				component("layer"):SetString("FrontPopUps")
+				component("autoScaleFactor"):SetFloat(0.01)
+				component("autoScale"):SetInt(1)
+			</event>
+		</textComponent>
+	</element>
+	
+	<event name="onInit" params="element">
+		element("alpha"):SetFloat(0.0)
+	</event>
+	
+	<event name="setVisible" params="element">
+		element["Stat"]("visible"):SetInt(1)
+		element["Value"]["Text"]("visible"):SetInt(1)
+		element["Value"]["CoinSprite"]("visible"):SetInt(1)
+	</event>
+	
+	<event name="setInvisible" params="element">
+		element["Stat"]("visible"):SetInt(0)
+		element["Value"]["Text"]("visible"):SetInt(0)
+		element["Value"]["CoinSprite"]("visible"):SetInt(0)
+	</event>
+	
+	<event name="updateComponents" params="element">
+		local alpha = element("alpha"):GetFloat()
+		element["Stat"]("alpha"):SetFloat(alpha)
+		element["Value"]["Text"]("alpha"):SetFloat(alpha)
+		element["Value"]["CoinSprite"]("alpha"):SetFloat(alpha)
+	</event>
+	
+</template>

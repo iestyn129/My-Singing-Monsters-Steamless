@@ -1,0 +1,87 @@
+<template name="template_select_avatar_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<defaultTemplateVar name="$Layer" equals="FrontPopUps" />
+	<defaultTemplateVar name="$Scale" equals="0.5*game.menuScaleY()" />
+
+	<!--<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>-->
+
+	<size w="50*game.menuScaleY()" h="50*game.menuScaleY()"/>
+	
+	<spriteComponent name="Sprite">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				local type = element("Type"):GetInt()
+					
+				if type == 0 then
+					local monsterId = element("Info"):GetInt()
+					if monsterId == 0 then
+						component("spriteName"):SetString("gfx/menu/friend_default_pic01")
+						component("size"):SetFloat($Scale * 1.28125) -- 64:82 (82 is the dimension of the monster portrait without padding)
+					else
+						local MonsterPortraits = include("MonsterPortraits")
+						local monsterImage = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+						component("spriteName"):SetString(monsterImage)
+						component("size"):SetFloat($Scale)
+					end
+				elseif type == 1 then
+					component("spriteName"):SetString("gfx/menu/friend_default_pic01")
+					component("size"):SetFloat($Scale * 1.28125)
+				end
+				
+				component("layer"):SetString("$Layer")
+			]]>
+		</event>
+	</spriteComponent>
+
+	<spriteSheetComponent name="Selected">
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-8*game.menuScaleX()" yOffset="-8*game.menuScaleY()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("button_yes")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("layer"):SetString("$Layer")
+				component("size"):SetFloat(0.25*game.menuScaleX())
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()"/>
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onTouchDown" params="component, element">
+			<![CDATA[
+				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+			]]>
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("NewSelectedEntryName"):SetString(element:name())
+				element:parent():DoStoredScript("OnEntrySelected")
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+			]]>
+		</event>
+	</touchComponent>
+
+	<event name="Select" params ="element">
+		<![CDATA[
+			element["Selected"]("visible"):SetInt(1)
+		]]>
+	</event>
+
+	<event name="Unselect" params ="element">
+		<![CDATA[
+			element["Selected"]("visible"):SetInt(0)
+		]]>
+	</event>
+
+</template>

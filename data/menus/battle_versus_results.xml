@@ -1,0 +1,273 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="MidPopUps" />
+		<templateVar name="$priority" equals="6" />
+	</template>
+
+	<template type="template_panel_decorated" name="Bg">
+		<templateVar name="$layer" equals="MidPopUps" />
+		<size w="380 * game.menuScaleX()" h="220 * game.menuScaleY()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="screenHeight() * 2.0" priorityOffset="4" />
+
+		<element name="HeaderBg">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleY()" priorityOffset="-1" />
+			
+			<ninesliceComponent name="Sprite">
+				<size w="200*game.menuScaleX()" h="76*game.menuScaleY()" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+							component("topHeight"):SetFloat(0.0)
+							component("bottomHeight"):SetFloat(0.0)
+							component("leftWidth"):SetFloat(120.0)
+							component("rightWidth"):SetFloat(120.0)
+							component("size"):SetFloat(0.5)
+							component("includeBorder"):SetInt(1)
+							component("spriteName"):SetString("gfx/battle/battle_banner_header")
+							component("layer"):SetString("MidPopUps")
+						]]>
+				</event>
+			</ninesliceComponent>
+<!--
+			<spriteSheetComponent name="Topper">
+				<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+				<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-24*game.menuScaleY()" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("loading_topper_versus")
+						component("sheetName"):SetString("xml_resources/battle_loading_sheet.xml")
+						component("size"):SetFloat(0.5*game.hudScale())
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</spriteSheetComponent>
+-->
+
+		</element>
+		
+		<textComponent name="TitleText">
+			<position relativeTo="HeaderBg" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.menuScaleY()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("multiline"):SetInt(0)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTitleFont())
+						component("size"):SetFloat(0.6*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString("BATTLE_VICTORY")
+						component("layer"):SetString("MidPopUps")
+						component:setColor(255/255, 141/255, 0/255)
+					]]>
+			</event>
+		</textComponent>
+
+		<element name="Defeat">
+			<size dependentOnElement="Bg" dependentOnComponent="Sprite"/>
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+
+			<spriteSheetComponent name="Furcorn">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+				<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="LEFT" />
+				<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0.02*lua_sys.screenHeight()" yOffset="-0.23*lua_sys.screenHeight()" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("Furcorn_Sad")
+					component("sheetName"):SetString("xml_resources/buttons01.xml")
+					component("size"):SetFloat(0.45*game.composerScale())
+					component("layer"):SetString("MidPopUps")
+				</event>
+			</spriteSheetComponent>
+
+			<event name="onPostInit" params="element">
+				element:DoStoredScript("hide")
+			</event>
+
+			<event name="show" params="element">
+				element:GetComponent("Furcorn")("visible"):SetInt(1)
+			</event>
+
+			<event name="hide" params="element">
+				element:GetComponent("Furcorn")("visible"):SetInt(0)
+			</event>
+		</element>
+
+		<textComponent name="ResultText">
+			<size w="280 * game.menuScaleX()" h="240 * game.menuScaleY()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-32*game.menuScaleY()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.4*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString("MidPopUps")
+					]]>
+			</event>
+		</textComponent>
+
+		<template type="template_battle_tier" name="Tier">
+			<templateVar name="$layer" equals="MidPopUps" />
+			<templateVar name="$scale" equals="1.5" />
+			<templateVar name="$animated" equals="1" />
+			
+			<size w="344*game.menuScaleX()" h="40*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="-1" />
+		</template>
+
+		<element name="Rewards">
+			<size w="344*game.menuScaleX()" h="40*game.menuScaleY()" />
+			<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleY()" priorityOffset="0" />
+<!--
+			<spriteComponent name="test_box">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onPostInit" params="component, element">
+					<![CDATA[
+						component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+						component:setScale(
+							Vector2( element:absW() / 4.0, element:absH() / 4.0))
+						component:setColor(1.0, 0.0, 0.0)
+						component("alpha"):SetFloat(0.5)
+						component("layer"):SetString("MidPopUps")
+						component("visible"):SetInt(1)
+					]]>
+				</event>
+			</spriteComponent>
+-->
+			<textComponent name="RewardsText">
+				<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-8*game.menuScaleY()" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.4*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString("BATTLE_VERSUS_REWARD_HEADER")
+						component("layer"):SetString("MidPopUps")
+					]]>
+				</event>
+			</textComponent>
+
+			<template type="template_battle_reward" name="Medals">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="element">
+					<![CDATA[
+						local currencyType = "medals"
+						element("CurrencyType"):SetString(currencyType)
+						element("Icon"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyType))
+					]]>
+				</event>
+			</template>
+
+			<template type="template_battle_reward" name="XP">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="element">
+					<![CDATA[
+						local currencyType = "battle_xp"
+						element("CurrencyType"):SetString(currencyType)
+						element("Icon"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyType))
+					]]>
+				</event>
+			</template>
+
+			<event name="onInit" params="element">
+				<![CDATA[
+						element["Medals"]("Amount"):SetInt(100)
+						element["XP"]("Amount"):SetInt(100)
+				]]>
+			</event>
+
+			<event name="onPostInit" params="element">
+				<![CDATA[
+						local MenuHelpers = include("MenuHelpers")
+						MenuHelpers.CenterHorizontally({
+							element:GetElement("Medals"),
+							element:GetElement("XP"),
+						})
+				]]>
+			</event>
+
+			<event name="hide" params="element">
+				<![CDATA[
+					element["RewardsText"]("visible"):SetInt(0)
+					element["Medals"]["Value"]["Icon"]("visible"):SetInt(0)
+					element["Medals"]["Value"]["Text"]("visible"):SetInt(0)
+					element["XP"]["Value"]["Icon"]("visible"):SetInt(0)
+					element["XP"]["Value"]["Text"]("visible"):SetInt(0)
+				]]>
+			</event>
+
+		</element>
+
+		<element name="Streak">
+			<size w="64" h="64"/>
+			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-32*game.menuScaleX()" yOffset="20*game.menuScaleY()" priorityOffset="-1" />
+
+			<textComponent name="Text">
+				<size w="128" h="64"/>
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(1)
+						component("autoScale"):SetInt(1)
+						component("font"):Set(game.getTitleFont())
+						component("size"):SetFloat(0.3*game.hudScale())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("text"):SetString("BATTLE_VERSUS_STREAK")
+						component("layer"):SetString("MidPopUps")
+						component:setColor(0.31, 0.94, 0.26) -- green
+						component("rotation"):SetFloat(12.5 * math.pi/180)
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+	</template>
+
+	<template type="template_spritesheetbutton" name="ContinueButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+		<templateVar name="$text" equals="MAIN_CONTINUE" />
+		<templateVar name="$textPadding" equals="6*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="Bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleY()" priorityOffset="-1" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					if game.inBattleContext() then
+						local campaignId = game.battleSystem():campaignId()
+						game.postBattleSwitch(campaignId)
+					else
+						element:root():popPopUp()
+					end
+				]]>
+			</event>
+		</touchComponent>
+		<event name="onPostInit" params="element">
+			element["Text"]("size"):SetFloat(0.25*game.hudScale())
+			element["Text"]("autoScale"):SetInt(1)
+		</event>
+	</template>
+
+	<script src="scripts/BattleVersusResultsUI.lua"/>
+
+</menu>

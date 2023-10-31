@@ -1,0 +1,230 @@
+<template name="template_battle_team_select_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+
+	<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+
+	<element name="bg">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("layer"):SetString("$layer")
+			</event>
+		</spriteSheetComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="bg" dependentOnComponent="Sprite" />
+			<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					element:parent():DoStoredScript("onSelected")
+				]]>
+			</event>
+		</touchComponent>
+
+
+	</element>
+
+	<element name="CharacterImage">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("size"):SetFloat(0.525*game.menuScaleX())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteComponent>
+
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+			  element:parent():DoStoredScript("onSelected")
+		  ]]>
+			</event>
+		</touchComponent>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				if monsterId > 0 then
+					local MonsterPortraits = include("MonsterPortraits")
+					local img = MonsterPortraits:getDefaultMonsterPortrait(monsterId)
+					element["Sprite"]("spriteName"):SetString(img)
+				else
+					element["Sprite"]("spriteName"):SetString("gfx/breeding/monster_portrait_random")
+				end
+			]]>
+		</event>
+
+	</element>
+
+	<element name="monsterName">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="-6*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.25*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					component("noTranslate"):SetInt(1)
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				if monsterId > 0 then
+					local monsterName = element:parent()("MonsterName"):GetString()
+					include("MenuHelpers").ShrinkTextToWidth(monsterName,
+						element:GetComponent("Text"), 70*game.menuScaleX())
+					element["Text"]("visible"):SetInt(1)
+				else
+					element["Text"]("text"):SetString("")
+					element["Text"]("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+	</element>
+
+	<element name="monsterType">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="CharacterImage" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="6*game.menuScaleY()" priorityOffset="-1" />
+		<textComponent name="Text">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.18*game.menuScaleX())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+					component("layer"):SetString("$layer")
+					component:setColor(0.75, 0.75, 0.75)
+				]]>
+			</event>
+		</textComponent>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				if monsterId > 0 then
+					element["Text"]("text"):SetString(game.monsterTypeName(monsterId))
+					element["Text"]("visible"):SetInt(1)
+				else
+					element["Text"]("text"):SetString("")
+					element["Text"]("visible"):SetInt(0)
+				end
+      ]]>
+		</event>
+
+	</element>
+
+	<element name="levelSprite">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="monsterName" vAnchor="VCENTER" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("sheetName"):SetString("xml_resources/level_numbers.xml")
+					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("layer"):SetString("$layer")
+				]]>
+			</event>
+		</spriteSheetComponent>
+
+		<event name="refresh" params="element">
+			<![CDATA[
+				local monsterId = element:parent()("MonsterID"):GetInt()
+				if monsterId > 0 then
+					local spriteString = "monster_level_numbers_"
+					local level = element:parent()("MonsterLevel"):GetInt()
+					if(level < 10) then
+						spriteString = (spriteString.."0")
+					end
+					element["Sprite"]("spriteName"):SetString(spriteString..level)
+					element["Sprite"]("visible"):SetInt(1)
+				else
+					element["Sprite"]("visible"):SetInt(0)
+				end
+			]]>
+		</event>
+
+	</element>
+
+	<event name="refresh" params="element">
+		<![CDATA[
+			element["CharacterImage"]:DoStoredScript("refresh")
+			element["monsterName"]:DoStoredScript("refresh")
+			element["monsterType"]:DoStoredScript("refresh")
+			element["levelSprite"]:DoStoredScript("refresh")
+
+			element["GeneHolder"]("MonsterId"):SetInt(element("MonsterID"):GetInt())
+			element["GeneHolder"]:DoStoredScript("repopulate")
+		]]>
+	</event>
+
+	<event name="disable" params="element">
+		<![CDATA[
+			element["bg"]["Touch"]("enabled"):SetInt(0)
+			element["CharacterImage"]["Touch"]("enabled"):SetInt(0)
+
+			--set greyscale shader
+			local shader = include("ShaderDesaturate")
+
+			if shader then
+
+				element["CharacterImage"]:GetComponent("Sprite"):setShader(shader)
+				element["levelSprite"]:GetComponent("Sprite"):setShader(shader)
+				element["bg"]:GetComponent("Sprite"):setShader(shader)
+
+				for i=0,3 do
+					local e = element:GetElement("entry"..i)
+					if e then
+						e:GetComponent("Sprite"):setShader(shader)
+					end
+				end
+
+			end
+		]]>
+	</event>
+
+	<event name="hide" params="element">
+		<![CDATA[
+			element["bg"]["Touch"]("enabled"):SetInt(0)
+			element["CharacterImage"]["Touch"]("enabled"):SetInt(0)
+			element["CharacterImage"]:GetComponent("Sprite")("visible"):SetInt(0)
+			element["levelSprite"]:GetComponent("Sprite")("visible"):SetInt(0)
+			element["bg"]:GetComponent("Sprite")("visible"):SetInt(0)
+		]]>
+	</event>
+
+	<template type="template_genes" name="GeneHolder">
+		<templateVar name="$Size" equals="0.25*game.hudScale()" />
+		<templateVar name="$Spacing" equals="-1*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="element">
+			<![CDATA[
+				onInit(element)
+				element("MonsterId"):SetInt(0)
+				element("Layer"):SetString("$layer")
+			]]>
+		</event>
+	</template>
+
+</template>

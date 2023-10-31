@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1348916bea00b3cf1eab4aa4be82d263:7beff2c740e13c0859e9fb62cf899c97:e1dd171e1642295e8606eb73d49be0d5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_P03_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="P03_back_shell.png" x="185" y="238" w="103" h="93" pX="0.5" pY="0.5" oX="0" oY="3" oW="104" oH="100"/>
+    <sprite n="P03_body_segment1.png" x="376" y="2" w="134" h="131" pX="0.5" pY="0.5" oX="0" oY="5" oW="132" oH="144" r="y"/>
+    <sprite n="P03_body_segment2.png" x="197" y="114" w="151" h="122" pX="0.5" pY="0.5" oX="0" oY="5" oW="152" oH="132"/>
+    
+    <!-- original anchor = (20, 36) -> new anchor (21, 35) diff = (-1, 1)-->
+	<!-- add double it to texturepacker output offsets (1, 9) -> (-1, 11), cause hires-->
+    <sprite n="P03_costume_01_back_left_foot.png" x="121" y="245" w="61" h="77" pX="0.5" pY="0.5" oX="-1" oY="11" oW="80" oH="80" r="y"/>
+
+    <!-- original anchor = (20, 36) -> new anchor (18, 11) diff = (2, 25)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (4, 50), cause hires-->
+    <sprite n="P03_costume_01_back_right_foot.png" x="121" y="163" w="69" h="30" pX="0.5" pY="0.5" oX="4" oY="50" oW="70" oH="30"/>
+
+    <!-- original anchor = (23, 36) -> new anchor (28, 28) diff = (-5, 8)-->
+	<!-- add double it to texturepacker output offsets (3, 4) -> (-7, 20), cause hires-->
+    <sprite n="P03_costume_01_front_left_foot.png" x="2" y="279" w="94" h="52" pX="0.5" pY="0.5" oX="-7" oY="20" oW="100" oH="60"/>
+
+    <!-- original anchor = (20, 33) -> new anchor (23, 23) diff = (-3, 10)-->
+	<!-- add double it to texturepacker output offsets (2, 2) -> (-4, 22), cause hires-->
+    <sprite n="P03_costume_01_front_right_foot.png" x="290" y="238" w="56" h="85" pX="0.5" pY="0.5" oX="-4" oY="22" oW="90" oH="60" r="y"/>
+    
+    <!-- original anchor = (38, 63) -> new anchor (35, 73) diff = (3, -10)-->
+	<!-- add double it to texturepacker output offsets (6, 6) -> (12, -14), cause hires-->
+    <sprite n="P03_costume_01_hat.png" x="350" y="135" w="140" h="135" pX="0.5" pY="0.5" oX="12" oY="-14" oW="148" oH="152" r="y"/>
+
+    <!-- original anchor = (9, 6) -> new anchor (9, 11) diff = (0, -5)-->
+	<!-- add double it to texturepacker output offsets (0, 4) -> (0, -6), cause hires-->
+    <sprite n="P03_costume_01_left_lowerarm.png" x="98" y="324" w="84" h="53" pX="0.5" pY="0.5" oX="0" oY="-6" oW="84" oH="60"/>
+    <sprite n="P03_horn.png" x="2" y="2" w="193" h="159" pX="0.5" pY="0.5" oX="1" oY="0" oW="200" oH="160"/>
+    <sprite n="P03_horn_inside.png" x="197" y="2" w="177" h="110" pX="0.5" pY="0.5" oX="1" oY="1" oW="112" oH="180" r="y"/>
+    <sprite n="P03_left_hand.png" x="121" y="195" w="62" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="64" r="y"/>
+    <sprite n="P03_left_shoulderplate.png" x="56" y="462" w="77" h="48" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="80" r="y"/>
+    <sprite n="P03_left_upperarm.png" x="2" y="380" w="52" h="87" pX="0.5" pY="0.5" oX="3" oY="0" oW="92" oH="52" r="y"/>
+    <sprite n="P03_right_hand.png" x="2" y="469" w="48" h="36" pX="0.5" pY="0.5" oX="3" oY="0" oW="40" oH="48" r="y"/>
+    <sprite n="P03_right_lowerarm.png" x="2" y="333" w="88" h="45" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="48"/>
+    <sprite n="P03_right_upperarm.png" x="56" y="380" w="52" h="80" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="P03_tail_01.png" x="2" y="163" w="117" h="114" pX="0.5" pY="0.5" oX="3" oY="1" oW="120" oH="120" r="y"/>
+</TextureAtlas>

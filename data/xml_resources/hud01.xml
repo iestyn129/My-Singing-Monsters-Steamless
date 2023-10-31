@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:383119a7edfb6198c26115a829eb150a:bc5e02d1822075dbf20367d7784c02f4:c9eff5ec419ec2fe057c857e4aac8668$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/hud01.png" width="512" height="1024">
+    <sprite n="arrow01" x="325" y="603" w="92" h="105" pX="0.5" pY="0.5" oX="2" oY="1" oW="96" oH="108"/>
+    <sprite n="battle_bar_full" x="2" y="68" w="328" h="38" pX="0.5" pY="0.5" oX="19" oY="11" oW="360" oH="66"/>
+    <sprite n="battle_xp" x="415" y="831" w="66" h="60" pX="0.5" pY="0.5" oX="1" oY="4" oW="68" oH="68"/>
+    <sprite n="button_goal_collect" x="2" y="518" w="82" h="76" pX="0.5" pY="0.5" oX="4" oY="8" oW="88" oH="88"/>
+    <sprite n="coin" x="86" y="518" w="44" h="56" pX="0.5" pY="0.5" oX="9" oY="4" oW="58" oH="66"/>
+    <sprite n="currency_seemore" x="294" y="955" w="63" h="62" pX="0.5" pY="0.5" oX="3" oY="3" oW="68" oH="68"/>
+    <sprite n="diamond" x="139" y="518" w="61" h="56" pX="0.5" pY="0.5" oX="3" oY="4" oW="68" oH="66"/>
+    <sprite n="emote01" x="124" y="778" w="68" h="72" pX="0.5" pY="0.5" oX="4" oY="2" oW="75" oH="75"/>
+    <sprite n="emote02" x="277" y="786" w="68" h="72" pX="0.5" pY="0.5" oX="4" oY="2" oW="75" oH="75"/>
+    <sprite n="emote03" x="194" y="847" w="68" h="72" pX="0.5" pY="0.5" oX="4" oY="2" oW="75" oH="75"/>
+    <sprite n="emote04" x="124" y="852" w="68" h="72" pX="0.5" pY="0.5" oX="4" oY="2" oW="75" oH="75"/>
+    <sprite n="food" x="155" y="926" w="68" h="62" pX="0.5" pY="0.5" oX="0" oY="5" oW="68" oH="68"/>
+    <sprite n="food_01" x="2" y="949" w="82" h="73" pX="0.5" pY="0.5" oX="19" oY="23" oW="120" oH="120"/>
+    <sprite n="food_02" x="347" y="831" w="66" h="62" pX="0.5" pY="0.5" oX="31" oY="23" oW="120" oH="120"/>
+    <sprite n="food_03" x="139" y="654" w="86" h="60" pX="0.5" pY="0.5" oX="17" oY="32" oW="120" oH="120"/>
+    <sprite n="food_04" x="47" y="772" w="62" h="57" pX="0.5" pY="0.5" oX="29" oY="32" oW="120" oH="120"/>
+    <sprite n="food_05" x="202" y="501" w="44" h="93" pX="0.5" pY="0.5" oX="39" oY="14" oW="120" oH="120"/>
+    <sprite n="food_06" x="419" y="613" w="90" h="70" pX="0.5" pY="0.5" oX="15" oY="23" oW="120" oH="120"/>
+    <sprite n="food_07" x="419" y="685" w="89" h="68" pX="0.5" pY="0.5" oX="15" oY="26" oW="120" oH="120"/>
+    <sprite n="food_08" x="326" y="543" w="94" h="58" pX="0.5" pY="0.5" oX="14" oY="23" oW="120" oH="120"/>
+    <sprite n="food_09" x="2" y="596" w="72" h="108" pX="0.5" pY="0.5" oX="27" oY="5" oW="120" oH="120"/>
+    <sprite n="food_010" x="329" y="444" w="101" h="97" pX="0.5" pY="0.5" oX="8" oY="12" oW="120" oH="120"/>
+    <sprite n="goal_blank" x="86" y="576" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="goal_exclaim" x="120" y="576" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="goal_icon_breed" x="432" y="537" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icon_castle" x="249" y="468" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icon_coins" x="248" y="544" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icon_food" x="240" y="620" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icon_island" x="227" y="696" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icon_monster" x="304" y="710" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icons_decorations" x="381" y="755" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icons_friends" x="47" y="831" w="75" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icons_mine" x="251" y="324" w="76" h="74" pX="0.5" pY="0.5" oX="0" oY="1" oW="76" oH="76"/>
+    <sprite n="goal_icons_obstacle" x="432" y="459" w="75" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="76"/>
+    <sprite n="goal_progress_bar_empty" x="332" y="108" w="126" h="42" pX="0.5" pY="0.5" oX="1" oY="1" oW="128" oH="44"/>
+    <sprite n="goal_progress_bar_fill" x="329" y="412" w="114" h="30" pX="0.5" pY="0.5" oX="7" oY="5" oW="128" oH="44"/>
+    <sprite n="goal_swirl" x="332" y="90" w="158" h="16" pX="0.5" pY="0.5" oX="2" oY="5" oW="162" oH="26"/>
+    <sprite n="happiness_bar_empty" x="2" y="188" w="268" h="42" pX="0.5" pY="0.5" oX="1" oY="0" oW="270" oH="42"/>
+    <sprite n="happiness_bar_full" x="2" y="232" w="247" h="42" pX="0.5" pY="0.5" oX="11" oY="0" oW="270" oH="42"/>
+    <sprite n="keys" x="86" y="926" w="67" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="68"/>
+    <sprite n="level_bar_empty" x="2" y="2" w="358" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="360" oH="66"/>
+    <sprite n="level_bar_full" x="2" y="108" w="328" h="38" pX="0.5" pY="0.5" oX="19" oY="11" oW="360" oH="66"/>
+    <sprite n="loading_bar_full" x="2" y="148" w="328" h="38" pX="0.5" pY="0.5" oX="19" oY="11" oW="360" oH="66"/>
+    <sprite n="magnet_electric_divider" x="332" y="220" w="116" h="190" pX="0.5" pY="0.5" oX="4" oY="5" oW="124" oH="200"/>
+    <sprite n="magnet_electric_icon" x="39" y="706" w="42" h="45" pX="0.5" pY="0.5" oX="11" oY="9" oW="64" oH="64"/>
+    <sprite n="magnet_negative_bar" x="332" y="152" w="124" h="42" pX="0.5" pY="0.5"/>
+    <sprite n="magnet_negative_icon" x="450" y="410" w="46" h="47" pX="0.5" pY="0.5" oX="9" oY="9" oW="64" oH="64"/>
+    <sprite n="magnet_negative_spark_icon" x="154" y="576" w="41" h="57" pX="0.5" pY="0.5" oX="11" oY="3" oW="64" oH="64"/>
+    <sprite n="magnet_positive_bar" x="332" y="196" w="123" h="22" pX="0.5" pY="0.5" oX="0" oY="9" oW="124" oH="42"/>
+    <sprite n="magnet_positive_icon" x="202" y="452" w="45" h="47" pX="0.5" pY="0.5" oX="10" oY="9" oW="64" oH="64"/>
+    <sprite n="magnet_positive_spark_icon" x="197" y="596" w="41" h="56" pX="0.5" pY="0.5" oX="11" oY="4" oW="64" oH="64"/>
+    <sprite n="medal" x="458" y="173" w="52" h="68" pX="0.5" pY="0.5" oX="7" oY="0" oW="68" oH="68"/>
+    <sprite n="menu_flute" x="2" y="755" w="43" h="192" pX="0.5" pY="0.5" oX="0" oY="1" oW="44" oH="194"/>
+    <sprite n="menu_leaves" x="450" y="243" w="57" h="54" pX="0.5" pY="0.5" oX="2" oY="5" oW="60" oH="60"/>
+    <sprite n="menu_swirl_01" x="124" y="716" w="75" h="60" pX="0.5" pY="0.5" oX="2" oY="10" oW="80" oH="80"/>
+    <sprite n="menu_swirl_02" x="251" y="250" w="78" h="72" pX="0.5" pY="0.5" oX="1" oY="4" oW="80" oH="80"/>
+    <sprite n="monster_bar_empty" x="2" y="188" w="268" h="42" pX="0.5" pY="0.5" oX="1" oY="0" oW="270" oH="42"/>
+    <sprite n="monster_bar_full" x="2" y="276" w="247" h="42" pX="0.5" pY="0.5" oX="11" oY="0" oW="270" oH="42"/>
+    <sprite n="plus" x="2" y="710" w="35" h="36" pX="0.5" pY="0.5" oX="3" oY="2" oW="40" oH="40"/>
+    <sprite n="power_bar" x="362" y="2" w="135" h="42" pX="0.5" pY="0.5" oX="3" oY="0" oW="140" oH="42"/>
+    <sprite n="progress_bar_full" x="2" y="320" w="247" h="42" pX="0.5" pY="0.5" oX="11" oY="0" oW="270" oH="42"/>
+    <sprite n="relic" x="460" y="108" w="49" h="63" pX="0.5" pY="0.5" oX="9" oY="2" oW="68" oH="66"/>
+    <sprite n="shard" x="272" y="188" w="58" h="60" pX="0.5" pY="0.5" oX="0" oY="3" oW="58" oH="66"/>
+    <sprite n="stamina_bar" x="362" y="46" w="135" h="42" pX="0.5" pY="0.5" oX="3" oY="0" oW="140" oH="42"/>
+    <sprite n="stamina_icon" x="450" y="299" w="56" h="53" pX="0.5" pY="0.5" oX="11" oY="11" oW="80" oH="68"/>
+    <sprite n="star_power" x="225" y="921" w="67" h="62" pX="0.5" pY="0.5" oX="0" oY="4" oW="68" oH="68"/>
+    <sprite n="starpower_bar_full" x="2" y="364" w="247" h="42" pX="0.5" pY="0.5" oX="11" oY="0" oW="270" oH="42"/>
+    <sprite n="starpower_flare" x="450" y="354" w="47" h="54" pX="0.5" pY="0.5"/>
+    <sprite n="stats_bar" x="2" y="452" w="198" h="64" pX="0.5" pY="0.5" oX="1" oY="0" oW="200" oH="64"/>
+    <sprite n="swirls" x="76" y="620" w="61" h="77" pX="0.5" pY="0.5" oX="0" oY="0" oW="62" oH="78"/>
+    <sprite n="tribal_level_flare" x="251" y="400" w="76" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="77" oH="66"/>
+    <sprite n="tribal_reward" x="201" y="772" w="74" h="73" pX="0.5" pY="0.5" oX="3" oY="3" oW="80" oH="81"/>
+    <sprite n="wublin_bar_full" x="2" y="408" w="247" h="42" pX="0.5" pY="0.5" oX="11" oY="0" oW="270" oH="42"/>
+    <sprite n="xp" x="415" y="893" w="66" h="60" pX="0.5" pY="0.5" oX="1" oY="4" oW="68" oH="68"/>
+</TextureAtlas>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:808dff0177909baf00a6f32b3529f0ce:8e052587d620de74e01052b7bfcde57a:ac816e1cc1d655da2b358b12b519ecd7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/anim_starrocks_bone_sheet.png" width="512" height="512" hires="true">
+    <sprite n="star_rock_bone" x="2" y="2" w="358" h="354" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_bone_01" x="362" y="210" w="101" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_bone_02" x="362" y="105" w="107" h="103" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_bone_03" x="362" y="2" w="110" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_bone_04" x="2" y="358" w="97" h="100" pX="0.5" pY="0.5"/>
+    <sprite n="star_rock_bone_bottom" x="101" y="358" w="157" h="99" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="star_rock_shadow" x="362" y="311" w="85" h="173" pX="0.5" pY="0.5" oX="16" oY="56" oW="200" oH="200" r="y"/>
+</TextureAtlas>

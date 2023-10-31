@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:09ec304e32b02de5b3b08f385e8e2708:3b893d87f437cbab49d67dd3154b800e:be8e0103c16b511f3655939ca5873de3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/menu/anim_crucible_themometer_sheet.png" width="1024" height="1024">
+    <sprite n="crucible_01_black_block_large.png" x="269" y="684" w="65" h="192" pX="0.5" pY="0.5" oX="3" oY="4" oW="72" oH="200"/>
+    <sprite n="crucible_01_black_block_small.png" x="222" y="98" w="65" h="90" pX="0.5" pY="0.5" oX="3" oY="1" oW="72" oH="92"/>
+    <sprite n="crucible_01_colour_lvl1.png" x="122" y="336" w="79" h="315" pX="0.5" pY="0.5" oX="5" oY="5" oW="88" oH="324"/>
+    <sprite n="crucible_01_colour_lvl2.png" x="203" y="336" w="79" h="315" pX="0.5" pY="0.5" oX="5" oY="5" oW="88" oH="324"/>
+    <sprite n="crucible_01_colour_lvl3.png" x="188" y="684" w="79" h="315" pX="0.5" pY="0.5" oX="4" oY="4" oW="88" oH="324"/>
+    <sprite n="crucible_01_colour_lvl4.png" x="102" y="710" w="79" h="289" pX="0.5" pY="0.5" oX="4" oY="30" oW="88" oH="324"/>
+    <sprite n="crucible_01_note_large.png" x="222" y="2" w="69" h="94" pX="0.5" pY="0.5" oX="3" oY="3" oW="76" oH="100"/>
+    <sprite n="crucible_01_note_small.png" x="122" y="653" w="56" h="35" pX="0.5" pY="0.5" oX="2" oY="4" oW="40" oH="64" r="y"/>
+    <sprite n="crucible_01_thermometer_back.png" x="122" y="2" w="98" h="332" pX="0.5" pY="0.5" oX="7" oY="16" oW="112" oH="364"/>
+    <sprite n="crucible_01_thermometer_frame.png" x="2" y="2" w="118" h="356" pX="0.5" pY="0.5" oX="11" oY="11" oW="140" oH="376"/>
+    <sprite n="crucible_01_top_01.png" x="337" y="270" w="72" h="56" pX="0.5" pY="0.5" oX="2" oY="6" oW="60" oH="80" r="y"/>
+    <sprite n="crucible_01_top_02.png" x="222" y="190" w="56" h="78" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_03.png" x="280" y="190" w="56" h="78" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_04.png" x="289" y="98" w="56" h="78" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_05.png" x="293" y="2" w="56" h="77" pX="0.5" pY="0.5" oX="2" oY="1" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_06.png" x="284" y="329" w="56" h="75" pX="0.5" pY="0.5" oX="2" oY="3" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_07.png" x="338" y="178" w="56" h="72" pX="0.5" pY="0.5" oX="2" oY="6" oW="60" oH="80"/>
+    <sprite n="crucible_01_top_08.png" x="263" y="270" w="72" h="57" pX="0.5" pY="0.5" oX="2" oY="6" oW="60" oH="80" r="y"/>
+    <sprite n="crucible_01_topA_01.png" x="149" y="1001" w="64" h="12" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16"/>
+    <sprite n="crucible_01_topA_02.png" x="250" y="270" w="11" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16" r="y"/>
+    <sprite n="crucible_01_topA_03.png" x="122" y="690" w="64" h="12" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16"/>
+    <sprite n="crucible_01_topA_04.png" x="215" y="1001" w="64" h="12" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16"/>
+    <sprite n="crucible_01_topA_05.png" x="222" y="270" w="12" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16" r="y"/>
+    <sprite n="crucible_01_topA_06.png" x="68" y="1002" w="64" h="13" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16"/>
+    <sprite n="crucible_01_topA_07.png" x="2" y="1002" w="64" h="14" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16"/>
+    <sprite n="crucible_01_topA_08.png" x="236" y="270" w="12" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="16" r="y"/>
+    <sprite n="crucible_01_topB_01.png" x="180" y="653" w="66" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="crucible_01_topB_02.png" x="378" y="70" w="28" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32" r="y"/>
+    <sprite n="crucible_01_topB_03.png" x="248" y="653" w="66" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="crucible_01_topB_04.png" x="382" y="2" w="28" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32" r="y"/>
+    <sprite n="crucible_01_topB_05.png" x="281" y="989" w="66" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="crucible_01_topB_06.png" x="349" y="989" w="66" h="29" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32"/>
+    <sprite n="crucible_01_topB_07.png" x="347" y="81" w="29" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32" r="y"/>
+    <sprite n="crucible_01_topB_08.png" x="351" y="2" w="29" h="66" pX="0.5" pY="0.5" oX="1" oY="0" oW="68" oH="32" r="y"/>
+    <sprite n="crucible_02_thermometer_back.png" x="2" y="710" w="98" h="290" pX="0.5" pY="0.5" oX="7" oY="58" oW="112" oH="364"/>
+    <sprite n="crucible_02_thermometer_frame.png" x="2" y="360" w="118" h="348" pX="0.5" pY="0.5" oX="11" oY="19" oW="140" oH="376"/>
+    <sprite n="crucible_bubble.png" x="134" y="1001" w="13" h="13" pX="0.5" pY="0.5" oX="2" oY="2" oW="16" oH="16"/>
+    <sprite n="crucible_glow.png" x="269" y="878" w="96" h="109" pX="0.5" pY="0.5" oX="2" oY="1" oW="100" oH="112"/>
+</TextureAtlas>

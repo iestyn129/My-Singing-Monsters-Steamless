@@ -1,0 +1,89 @@
+<template name="template_upgradecost" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<hudScale scale="game.hudScale()" />
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+	
+	<textComponent name="Text">
+		<event name="onInit" params="component, element">		
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(0.25)
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString("-"..game.commaizeNumber(game.structureUpgradeCost()))
+			
+			local upgradeCur = game.structureUpgradeCurrency();
+			game.StoreContext_setCurrencyTypeColour(upgradeCur, component);
+		
+			component("layer"):SetString("ContextBar")
+			
+			if(game.structureUpgradeSale()) then
+				component("text"):SetString("-"..game.commaizeNumber(game.structureUpgradeOrigCost()))
+				component:setColor(component("red"):GetFloat() * 0.5, component("green"):GetFloat() * 0.5, component("blue"):GetFloat() * 0.5)
+			end
+		</event>
+	</textComponent>
+	
+	<spriteComponent name="RedStrip">
+		<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="1*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("gfx/menu/redstrip")
+			component:setScale(Vector2(8.0*game.hudScale(), 1.5*game.hudScale()))
+			component("size"):SetFloat(1.0)
+			component("alpha"):SetFloat(0.6)
+			component("layer"):SetString("ContextBar")
+			
+			if(not game.structureUpgradeSale()) then
+				component("visible"):SetInt(0)
+			end
+		</event>
+	</spriteComponent>
+	
+	<textComponent name="SaleText">
+		<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("font"):Set(game.getTitleFont())
+			component("size"):SetFloat(0.25)
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("text"):SetString("-"..game.commaizeNumber(game.structureUpgradeCost()))
+			
+			local upgradeCur = game.structureUpgradeCurrency();
+			game.StoreContext_setCurrencyTypeColour(upgradeCur, component);
+			
+			component("layer"):SetString("ContextBar")
+			
+			if(not game.structureUpgradeSale()) then
+				component("visible"):SetInt(0)
+			end
+		</event>
+	</textComponent>
+	
+	<event name="SetEnabled" params="element">
+		local text = element["Text"]
+		text:setColor(text("red"):GetFloat() * 2.0, text("green"):GetFloat() * 2.0, text("blue"):GetFloat() * 2.0)
+		text = element["SaleText"]
+		text:setColor(text("red"):GetFloat() * 2.0, text("green"):GetFloat() * 2.0, text("blue"):GetFloat() * 2.0)
+	</event>
+	
+	<event name="SetDisabled" params="element">
+		local text = element["Text"]
+		text:setColor(text("red"):GetFloat() * 0.5, text("green"):GetFloat() * 0.5, text("blue"):GetFloat() * 0.5)
+		text = element["SaleText"]
+		text:setColor(text("red"):GetFloat() * 0.5, text("green"):GetFloat() * 0.5, text("blue"):GetFloat() * 0.5)
+	</event>
+	
+	<event name="SetVisible" params="element">
+		element["Text"]("visible"):SetInt(1)
+		
+		if(game.structureUpgradeSale()) then
+			element["SaleText"]("visible"):SetInt(1)
+		end
+	</event>
+	
+	<event name="SetInvisible" params="element">
+		element["Text"]("visible"):SetInt(0)
+		element["SaleText"]("visible"):SetInt(0)
+	</event>
+	
+</template>

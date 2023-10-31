@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:ef559d3967751f54ce768c73a76fe0b6:dc8eced8aecccca60f47736ab47d9eeb:49506d473becbcfcd8daad6f2f558dd3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_M_costume_01_sheet.png" width="256" height="256" hires="true">
+	<!-- original anchor = (27, 20) -> new anchor (64, 63) diff = (-37, -43)-->
+	<!-- add double it to texturepacker output offsets (0, 0) -> (-74, -86), because hires-->
+    <sprite n="M_strawhat.png" x="2" y="2" w="230" h="200" oX="-74" oY="-86"/>
+</TextureAtlas>

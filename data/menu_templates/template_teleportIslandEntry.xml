@@ -1,0 +1,148 @@
+<template name="template_teleportIslandEntry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	<!-- hudScale scale="game.hudScale()" / -->
+	<defaultTemplateVar name="$sheetName" equals="'xml_resources/island_buttons01.xml'" />
+	<defaultTemplateVar name="$upSpriteName" equals="'islands_button_isl01'" />
+	<defaultTemplateVar name="$spriteScale" equals="0.4*(lua_sys.screenHeight()/320.0)" />
+	<defaultTemplateVar name="$text" equals="" />
+	<defaultTemplateVar name="$textScale" equals="0.3*game.menuScaleY()" />
+	<defaultTemplateVar name="$sfx" equals="[[audio/sfx/menu_click.wav]]" />
+	<defaultTemplateVar name="$layer" equals="MidPopUps" />
+	<defaultTemplateVar name="$textPadding" equals="0.0" />
+	<defaultTemplateVar name="$multiLine" equals="0" />
+	<defaultTemplateVar name="$autoScaleFactor" equals="0.05" />
+	<defaultTemplateVar name="$alpha" equals="1.0" />
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+
+	<event name="onPostInit" params="element">
+		element["Overlay"]("size"):SetFloat($spriteScale)
+		element["Text"]("autoScale"):SetFloat(0)
+		element["Text"]("size"):SetFloat($textScale)
+	</event>
+	
+	<event name="setLocked" params="element">
+		element:DoStoredScript("disable")
+		element["LockedText"]("visible"):SetInt(1)
+		element["LockedText"]("text"):SetString("LOCKED")
+		element["LockIcon"]("visible"):SetInt(1)
+		element["TeleportButton"]:DoStoredScript("setInvisible")
+	</event>
+	
+	<textComponent name="Text">
+		<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+		<position relativeTo="element:name()" component="Overlay" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component:GetVar("multiline"):SetInt($multiLine)
+			component:GetVar("textPadding"):SetInt($textPadding)
+			component:GetVar("font"):Set(game.getTextFont())
+			component:GetVar("size"):SetFloat($textScale)
+			component:GetVar("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component:GetVar("text"):SetString("$text")
+			component:GetVar("autoScaleFactor"):SetFloat($autoScaleFactor)
+			component:GetVar("autoScale"):SetInt(1)
+			component:GetVar("layer"):SetString("$layer")
+			component:GetVar("alpha"):SetFloat($alpha)
+		</event>
+	</textComponent>
+	
+	<textComponent name="LockedText">
+		<size w="125*(lua_sys.screenWidth()/480.0)" h="35*(lua_sys.screenHeight()/320.0)" />
+		<position relativeTo="element:name()" component="Text" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0"  priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("autoScale"):SetInt(1)
+			component("font"):Set(game.getTextFont())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("text"):SetString("UNLOCKED")
+			component("size"):SetFloat($textScale*0.8)
+			component("layer"):SetString("$layer")
+			component:setColor(0.278, 0.953, 0.278)
+			component("visible"):SetInt(0)
+		</event>
+	</textComponent>
+
+	<template type="template_spritesheetbutton" name="TeleportButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.4*game.hudScale()" />
+		<templateVar name="$text" equals="CONTEXTBAR_SEND_TO_ETH" />
+		<templateVar name="$textPadding" equals="8*game.hudScale()" />
+		<templateVar name="$textYOffset" equals="0" />
+		<templateVar name="$layer" equals="MidPopUps" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.menuScaleY()" priorityOffset="0" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					element:parent():DoStoredScript("teleport")
+				]]>
+			</event>
+		</touchComponent>		
+	</template>
+	
+	<spriteSheetComponent name="LockIcon">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-7*game.menuScaleY()" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("button_lock")
+			component("sheetName"):SetString("xml_resources/buttons01.xml")
+			component("size"):SetFloat($spriteScale)
+			component("layer"):SetString("$layer")
+			component("visible"):SetInt(0)
+		</event>
+	</spriteSheetComponent>
+	
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Overlay" />
+		<event name="onTouchDown" params="component, element">
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+		</event>
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				if("$sfx" ~= "") then
+					lua_sys.playSoundFx("$sfx")
+				end
+				element:DoStoredScript("teleport")
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			element["Overlay"]:setColor(1.0, 1.0, 1.0)
+		</event>
+	</touchComponent>
+	
+	<spriteSheetComponent name="Overlay">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("spriteName"):SetString("$upSpriteName")
+			component("sheetName"):SetString("$sheetName")
+			component("useOffsets"):SetInt(1)
+			component("size"):SetFloat($spriteScale)
+			component("layer"):SetString("$layer")
+			component("alpha"):SetFloat($alpha)
+		</event>
+	</spriteSheetComponent>
+	
+	<event name="setInvisible" params="element">
+		<![CDATA[
+			element["Overlay"]("visible"):SetInt(0)
+			element["Text"]("visible"):SetInt(0)
+			element["LockedText"]("visible"):SetInt(0)
+			element["Touch"]("enabled"):SetInt(0)
+			element["TeleportButton"]:DoStoredScript("setInvisible")
+		]]>
+	</event>
+	
+	<function name="disable" params="element">
+		<![CDATA[
+			element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			element["LockedText"]:setColor(0.5, 0.5, 0.5)
+			element["Touch"]("enabled"):SetInt(0)
+			element["TeleportButton"]:DoStoredScript("disable")
+		]]>
+	</function>
+</template>
