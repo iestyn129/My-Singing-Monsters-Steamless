@@ -5,8 +5,13 @@
 	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 	
 	<textComponent name="Text">
+		<size w="60*game.hudScale()" />
 		<event name="onInit" params="component, element">
 
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+			component("multiline"):SetInt(0)
+			
 			local inventoryAmount = game.getInventoryAmount(game.selectedEntityId())
 			if inventoryAmount > 0 then
 				element("cost"):SetInt(inventoryAmount)

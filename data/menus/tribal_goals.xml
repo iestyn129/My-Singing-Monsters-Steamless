@@ -187,7 +187,7 @@
 				component("size"):SetFloat(0.5)
 				component("includeBorder"):SetInt(1)
 				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
-				component("layer"):SetString("FrontPopUps")
+				component("layer"):SetString("MidFrontPopUps")
 			</event>
 		</ninesliceComponent>
 	</element>
@@ -212,7 +212,7 @@
 					end
 					component("text"):SetString(game.getLocalizedText("LABEL_DIAMOND_TIME").." - "..component("timeString"):GetString())
 					component("autoScale"):SetInt(1)
-					component("layer"):SetString("FrontPopUps")
+					component("layer"):SetString("MidFrontPopUps")
 				]]>
 			</event>
 			<event name="onTick" params="component, element, dt">
@@ -248,7 +248,7 @@
 					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
 					component("text"):SetString(game.getLocalizedText("LABEL_STARPOWER_EARNED").." - "..game.starpowerEarnedThisWeek())
 					component("autoScale"):SetInt(1)
-					component("layer"):SetString("FrontPopUps")
+					component("layer"):SetString("MidFrontPopUps")
 				]]>
 			</event>
 		</textComponent>

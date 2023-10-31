@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:2d68c9ed46cf8917d28acff4cd7bc295:460eaaa944e611f2da45ecb684c67be9:01cc602b3cc7699f54cc89b82eeb43c8$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_JK_costume_02_sheet.png" width="512" height="256" hires="true">
+    <sprite n="JK_left_lowerarm.png" x="238" y="2" w="56" h="99" pX="0.5" pY="0.5" oX="2" oY="0" oW="101" oH="56" r="y"/>
+    <sprite n="JK_mane.png" x="2" y="2" w="188" h="208" pX="0.5" pY="0.5" oX="-66" oY="-42" oW="200" oH="220"/>
+    <sprite n="JK_right_lowerarm.png" x="192" y="115" w="60" h="106" pX="0.5" pY="0.5" oX="0" oY="0" oW="108" oH="60" r="y"/>
+    <sprite n="JK_small_lowerleg.png" x="192" y="2" w="44" h="111" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="112"/>
+</TextureAtlas>

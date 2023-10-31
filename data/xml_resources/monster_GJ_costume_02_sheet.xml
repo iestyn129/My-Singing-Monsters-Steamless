@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f5445c1bae10f706188f8fd0fc826e47:97dba51fbfd6d2896bd308330df17d98:e5973178ca92cb3ee5f3b8eb32bf2ab7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GJ_costume_02_sheet.png" width="256" height="256" hires="true">
+    <sprite n="GJ_eyepatch.png" x="1" y="131" w="94" h="115" pX="0.5" pY="0.5" oX="1" oY="0" oW="116" oH="96" r="y"/>
+    <sprite n="GJ_hat.png" x="1" y="1" w="175" h="129" pX="0.5" pY="0.5" oX="-36" oY="-94" oW="200" oH="150"/>
+</TextureAtlas>

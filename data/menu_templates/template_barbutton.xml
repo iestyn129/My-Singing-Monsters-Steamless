@@ -79,6 +79,8 @@
 				element["ButtonImage"]:setColor(0.75, 0.75, 0.75)
 			end
 			
+			element["UpSprite"]("size"):SetFloat(0.5 * element("ButtonScale"):GetFloat())
+			element["ButtonImage"]("size"):SetFloat(0.5 * element("ButtonScale"):GetFloat())
 			element("ButtonState"):SetInt(game.BUTTON_PRESSED)
 			element("TickTimer"):SetFloat(0.0)
 		</event>
@@ -94,6 +96,9 @@
 				element:parent():DoStoredScript(element("FunctionName"):GetString())
 			end
 			
+			element["UpSprite"]("size"):SetFloat(0.47 * element("ButtonScale"):GetFloat())
+			element["ButtonImage"]("size"):SetFloat(0.47 * element("ButtonScale"):GetFloat())
+
 			element("ButtonState"):SetInt(game.BUTTON_RELEASED)
 			element("TickTimer"):SetFloat(0.0)
 		</event>
@@ -103,6 +108,8 @@
 				element["ButtonImage"]:setColor(1.0, 1.0, 1.0)
 			end
 			
+			element["UpSprite"]("size"):SetFloat(0.47 * element("ButtonScale"):GetFloat())
+			element["ButtonImage"]("size"):SetFloat(0.47 * element("ButtonScale"):GetFloat())
 			element("ButtonState"):SetInt(game.BUTTON_RELEASED)
 			element("TickTimer"):SetFloat(0.0)
 		</event>
@@ -250,8 +257,10 @@
 					element["UpSprite"]("size"):SetFloat(size * scale)
 					element["ButtonImage"]("size"):SetFloat(size * scale)
 					
-					if(size == 0.47) then
+					if(size <= 0.47) then
 						element("ButtonState"):SetInt(game.BUTTON_IDLE)
+						element["UpSprite"]("size"):SetFloat(0.47 * scale)
+						element["ButtonImage"]("size"):SetFloat(0.47 * scale)
 					end
 				elseif(buttonState == game.BUTTON_RELEASED) then
 					if(time < 0.1) then
@@ -265,9 +274,17 @@
 						element["UpSprite"]("size"):SetFloat(size * scale)
 						element["ButtonImage"]("size"):SetFloat(size * scale)
 						
-						if(size == 0.5) then
+						if(size >= 0.5) then
 							element("ButtonState"):SetInt(game.BUTTON_IDLE)
+							element["UpSprite"]("size"):SetFloat(0.5 * scale)
+							element["ButtonImage"]("size"):SetFloat(0.5 * scale)
 						end
+					else
+						--shot passed the time
+						element("ButtonState"):SetInt(game.BUTTON_IDLE)
+						element["UpSprite"]("size"):SetFloat(0.5 * scale)
+						element["ButtonImage"]("size"):SetFloat(0.5 * scale)
+					
 					end
 				end
 			end

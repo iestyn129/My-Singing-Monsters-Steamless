@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:af0ce66226718e4e35e9139138aff325:9b56874ba27c6b6db231a33455d60708:ec063beb11f35b245730be5bd6783346$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island24_sheet02.png" width="2048" height="2048" hires="true">
+    <sprite n="crit_plasma_chomp_01.png" x="1994" y="326" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_plasma_chomp_02.png" x="993" y="1858" w="77" h="49" pX="0.5" pY="0.5" oX="21" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_plasma_chomp_03.png" x="1995" y="4" w="49" h="81" pX="0.5" pY="0.5" oX="21" oY="7" oW="92" oH="92"/>
+    <sprite n="crit_plasma_chomp_04.png" x="818" y="1858" w="86" h="48" pX="0.5" pY="0.5" oX="20" oY="3" oW="92" oH="92" r="y"/>
+    <sprite n="crit_plasma_chomp_05.png" x="1866" y="1227" w="53" h="87" pX="0.5" pY="0.5" oX="13" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_plasma_chomp_06.png" x="1925" y="4" w="66" h="87" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_plasma_chomp_07.png" x="1977" y="186" w="67" h="66" pX="0.5" pY="0.5" oX="14" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_plasma_chomp_08.png" x="239" y="1972" w="59" h="67" pX="0.5" pY="0.5" oX="17" oY="15" oW="92" oH="92"/>
+    <sprite n="crit_plasma_chomp_09.png" x="1994" y="401" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_plasma_flap_01.png" x="1383" y="1164" w="68" h="52" pX="0.5" pY="0.5" oX="20" oY="14" oW="92" oH="92" r="y"/>
+    <sprite n="crit_plasma_flap_02.png" x="1008" y="1911" w="61" h="62" pX="0.5" pY="0.5" oX="13" oY="16" oW="92" oH="92"/>
+    <sprite n="crit_plasma_flap_03.png" x="1426" y="1101" w="66" h="59" pX="0.5" pY="0.5" oX="10" oY="17" oW="92" oH="92"/>
+    <sprite n="crit_plasma_flap_04.png" x="1866" y="1408" w="57" h="74" pX="0.5" pY="0.5" oX="14" oY="9" oW="92" oH="92"/>
+    <sprite n="crit_plasma_flap_05.png" x="1312" y="1045" w="73" h="52" pX="0.5" pY="0.5" oX="18" oY="8" oW="92" oH="92" r="y"/>
+    <sprite n="crit_plasma_flap_06.png" x="1925" y="276" w="47" h="73" pX="0.5" pY="0.5" oX="23" oY="10" oW="92" oH="92"/>
+    <sprite n="crit_poison_chomp_01.png" x="1994" y="476" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_poison_chomp_02.png" x="1074" y="1858" w="77" h="49" pX="0.5" pY="0.5" oX="21" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_chomp_03.png" x="1995" y="89" w="49" h="81" pX="0.5" pY="0.5" oX="21" oY="7" oW="92" oH="92"/>
+    <sprite n="crit_poison_chomp_04.png" x="1866" y="1318" w="48" h="86" pX="0.5" pY="0.5" oX="20" oY="3" oW="92" oH="92"/>
+    <sprite n="crit_poison_chomp_05.png" x="1155" y="1089" w="53" h="87" pX="0.5" pY="0.5" oX="13" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_poison_chomp_06.png" x="727" y="1858" w="87" h="66" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_chomp_07.png" x="1977" y="256" w="67" h="66" pX="0.5" pY="0.5" oX="14" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_chomp_08.png" x="1284" y="1101" w="67" h="59" pX="0.5" pY="0.5" oX="17" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_chomp_09.png" x="1994" y="551" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_poison_flap_01.png" x="1829" y="1909" w="68" h="52" pX="0.5" pY="0.5" oX="20" oY="14" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_flap_02.png" x="1073" y="1911" w="61" h="62" pX="0.5" pY="0.5" oX="13" oY="16" oW="92" oH="92"/>
+    <sprite n="crit_poison_flap_03.png" x="1243" y="1164" w="66" h="59" pX="0.5" pY="0.5" oX="10" oY="17" oW="92" oH="92"/>
+    <sprite n="crit_poison_flap_04.png" x="1866" y="1486" w="57" h="74" pX="0.5" pY="0.5" oX="14" oY="9" oW="92" oH="92"/>
+    <sprite n="crit_poison_flap_05.png" x="1389" y="1045" w="73" h="52" pX="0.5" pY="0.5" oX="18" oY="8" oW="92" oH="92" r="y"/>
+    <sprite n="crit_poison_flap_06.png" x="1496" y="1101" w="47" h="73" pX="0.5" pY="0.5" oX="23" oY="10" oW="92" oH="92"/>
+    <sprite n="crit_shadow_chomp_01.png" x="1994" y="626" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_shadow_chomp_02.png" x="1155" y="1858" w="77" h="49" pX="0.5" pY="0.5" oX="21" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_chomp_03.png" x="908" y="1858" w="81" h="49" pX="0.5" pY="0.5" oX="21" oY="7" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_chomp_04.png" x="1925" y="186" w="48" h="86" pX="0.5" pY="0.5" oX="20" oY="3" oW="92" oH="92"/>
+    <sprite n="crit_shadow_chomp_05.png" x="1925" y="95" w="53" h="87" pX="0.5" pY="0.5" oX="13" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_shadow_chomp_06.png" x="148" y="1972" w="87" h="66" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_chomp_07.png" x="728" y="1928" w="66" h="67" pX="0.5" pY="0.5" oX="14" oY="15" oW="92" oH="92"/>
+    <sprite n="crit_shadow_chomp_08.png" x="1355" y="1101" w="67" h="59" pX="0.5" pY="0.5" oX="17" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_chomp_09.png" x="1994" y="701" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_shadow_flap_01.png" x="1901" y="1909" w="68" h="52" pX="0.5" pY="0.5" oX="20" oY="14" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_flap_02.png" x="1138" y="1911" w="61" h="62" pX="0.5" pY="0.5" oX="13" oY="16" oW="92" oH="92"/>
+    <sprite n="crit_shadow_flap_03.png" x="1313" y="1164" w="66" h="59" pX="0.5" pY="0.5" oX="10" oY="17" oW="92" oH="92"/>
+    <sprite n="crit_shadow_flap_04.png" x="1925" y="353" w="57" h="74" pX="0.5" pY="0.5" oX="14" oY="9" oW="92" oH="92"/>
+    <sprite n="crit_shadow_flap_05.png" x="1466" y="1045" w="73" h="52" pX="0.5" pY="0.5" oX="18" oY="8" oW="92" oH="92" r="y"/>
+    <sprite n="crit_shadow_flap_06.png" x="1752" y="1909" w="73" h="47" pX="0.5" pY="0.5" oX="23" oY="10" oW="92" oH="92" r="y"/>
+    <sprite n="island24_floor.png" x="4" y="4" w="1147" h="1201" pX="0.5" pY="0.5" oX="1" oY="0" oW="1150" oH="1202"/>
+    <sprite n="island24_foreground_left.png" x="1243" y="1227" w="619" h="360" pX="0.5" pY="0.5"/>
+    <sprite n="island24_foreground_right.png" x="1547" y="632" w="381" h="591" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_lightbeam_1.png" x="1155" y="4" w="388" h="1037" pX="0.5" pY="0.5" oX="0" oY="0" oW="1037" oH="389" r="y"/>
+    <sprite n="island24_platfrom_center.png" x="1547" y="4" w="374" h="624" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_ripple_01.png" x="302" y="1948" w="68" h="68" pX="0.5" pY="0.5" oX="17" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_ripple_02.png" x="374" y="1948" w="68" h="68" pX="0.5" pY="0.5" oX="17" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_ripple_03.png" x="1925" y="431" w="64" h="70" pX="0.5" pY="0.5" oX="21" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_ripple_04.png" x="78" y="1972" w="66" h="72" pX="0.5" pY="0.5" oX="23" oY="13" oW="106" oH="96"/>
+    <sprite n="island24_ripple_05.png" x="4" y="1972" w="70" h="72" pX="0.5" pY="0.5" oX="21" oY="15" oW="106" oH="96"/>
+    <sprite n="island24_ripple_06.png" x="1212" y="1089" w="68" h="70" pX="0.5" pY="0.5" oX="21" oY="15" oW="106" oH="96"/>
+    <sprite n="island24_ripple_07.png" x="446" y="1948" w="68" h="68" pX="0.5" pY="0.5" oX="21" oY="15" oW="106" oH="96"/>
+    <sprite n="island24_ripple_08.png" x="518" y="1948" w="66" h="68" pX="0.5" pY="0.5" oX="21" oY="13" oW="106" oH="96"/>
+    <sprite n="island24_ripple_09.png" x="588" y="1948" w="66" h="68" pX="0.5" pY="0.5" oX="17" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_ripple_10.png" x="798" y="1928" w="66" h="66" pX="0.5" pY="0.5" oX="19" oY="13" oW="106" oH="96"/>
+    <sprite n="island24_ripple_11.png" x="868" y="1911" w="66" h="66" pX="0.5" pY="0.5" oX="19" oY="13" oW="106" oH="96"/>
+    <sprite n="island24_ripple_12.png" x="938" y="1911" w="66" h="66" pX="0.5" pY="0.5" oX="19" oY="13" oW="106" oH="96"/>
+    <sprite n="island24_ripple_13.png" x="658" y="1948" w="66" h="68" pX="0.5" pY="0.5" oX="17" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_ripple_14.png" x="1925" y="505" w="64" h="68" pX="0.5" pY="0.5" oX="19" oY="11" oW="106" oH="96"/>
+    <sprite n="island24_Wire_01.png" x="4" y="1209" w="719" h="735" pX="0.5" pY="0.5" oX="0" oY="0" oW="720" oH="736"/>
+    <sprite n="island24_Wire_02.png" x="1752" y="1591" w="238" h="314" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_Wire_left.png" x="727" y="1209" w="512" h="645" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_Wire_right.png" x="1243" y="1591" w="505" h="334" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_Wire_right2.png" x="4" y="1948" w="270" h="20" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_Wire_right3.png" x="1155" y="1045" w="153" h="40" pX="0.5" pY="0.5"/>
+</TextureAtlas>

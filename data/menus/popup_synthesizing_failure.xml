@@ -1,0 +1,151 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+
+	<size dependentOnElement="Fade" dependentOnComponent="Sprite" />
+
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$priority" equals="6" />
+		<templateVar name="$touchPriority" equals="-2" />
+	</template>
+
+	<spriteComponent name="flash">
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onPostInit" params="component, element">
+			<![CDATA[
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setScale(
+					Vector2( element:absW() / 4.0, element:absH() / 4.0))
+				component:setColor(1.0, 1.0, 1.0)
+				component("layer"):SetString("FrontPopUps")
+				component("alpha"):SetFloat(0)
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteComponent>
+
+	<element name="BorderTop">
+		<size w="screenWidth()" h="128*game.hudScale()"/>
+		<position relativeTo="SCREEN" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="TOP" xOffset="0" yOffset="-128*game.hudScale()" priorityOffset="3" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(0.0, 0.0, 0.0)
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="BorderBottom">
+		<size w="screenWidth()" h="128*game.hudScale()"/>
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="BOTTOM" xOffset="0" yOffset="128*game.hudScale()" priorityOffset="3" />
+		<spriteComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onPostInit" params="component, element">
+				<![CDATA[
+					component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+					component:setScale(
+						Vector2( element:absW() / 4.0, element:absH() / 4.0))
+					component:setColor(0.0, 0.0, 0.0)
+					component("layer"):SetString("FrontPopUps")
+					component("visible"):SetInt(1)
+				]]>
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="BGGradient">
+		<size w="screenWidth()" h="screenHeight()"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<spriteComponent name="Sprite"/>
+	</element>
+
+	<element name="BGPattern">
+		<size w="screenWidth()" h="screenHeight()"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
+		<spriteComponent name="Sprite"/>
+	</element>
+
+	<element name="FailureText">
+		<size w="140*game.hudScale()" h="100*game.hudScale()"/>
+		<position relativeTo="Critters" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="-20*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<size w="550*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("SYNTHESIZING_FAILURE")
+					component("size"):SetFloat(0.4*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="Critters">
+		<size w="270*game.menuScaleX()" h="60*game.hudScale()" />
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.menuScaleY()" priorityOffset="3" />
+	</element>
+
+	<element name="FailureText2">
+		<size w="140*game.hudScale()" h="100*game.hudScale()"/>
+		<position relativeTo="Critters" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0*game.menuScaleX()" yOffset="-20*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(1)
+					component("autoScale"):SetInt(1)
+					component("font"):Set(game.getTextFont())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("text"):SetString("SYNTHESIZING_FAILURE_PART2")
+					component("size"):SetFloat(0.4*game.hudScale())
+					component("layer"):SetString("FrontPopUps")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+	
+	<element name="ContinueLabel">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="SCREEN" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-64*game.hudScale()" priorityOffset="2" />
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.3*game.hudScale())
+					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("layer"):SetString("FrontPopUps")
+					component("text"):SetString("TAP_TO_CONTINUE")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<script src="scripts/SynthesizingFailure.lua" />
+	
+</menu>

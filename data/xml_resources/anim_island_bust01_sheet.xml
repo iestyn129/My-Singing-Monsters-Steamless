@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:42fc0d17a76761603fce20460bb75e9e:a61e70e5c1572bfe3f00b0fe7f061ab9:63566062e90141d03f0ac4747a149238$ -->
+<!-- $TexturePacker:SmartUpdate:88c6b46dc8bf6569c106b861e22c7d15:7a6ec3a61095812b72428a233865d46f:63566062e90141d03f0ac4747a149238$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -22,12 +22,13 @@ triangles  => sprite triangulation, 3 vertex indices per triangle
 <TextureAtlas imagePath="gfx/structures/anim_island_bust01_sheet.png" width="512" height="1024" hires="true">
     <sprite n="branch01" x="4" y="901" w="92" h="106" pX="0.5" pY="0.5" oX="6" oY="12" oW="120" oH="120" r="y"/>
     <sprite n="bust" x="4" y="4" w="492" h="583" pX="0.5" pY="0.5" oX="44" oY="44" oW="580" oH="660"/>
-    <sprite n="eyeback" x="91" y="591" w="57" h="62" pX="0.5" pY="0.5" oX="7" oY="3" oW="70" oH="70"/>
-    <sprite n="lid_bottom" x="91" y="720" w="34" h="59" pX="0.5" pY="0.5" oX="6" oY="33" oW="70" oH="70" r="y"/>
-    <sprite n="lid_top" x="91" y="657" w="46" h="59" pX="0.5" pY="0.5" oX="6" oY="4" oW="70" oH="70" r="y"/>
-    <sprite n="pupil" x="100" y="991" w="31" h="29" pX="0.5" pY="0.5" oX="6" oY="7" oW="40" oH="40" r="y"/>
+    <sprite n="eyeback" x="91" y="688" w="57" h="62" pX="0.5" pY="0.5" oX="7" oY="3" oW="70" oH="70"/>
+    <sprite n="lid_bottom" x="152" y="751" w="59" h="34" pX="0.5" pY="0.5" oX="6" oY="33" oW="70" oH="70"/>
+    <sprite n="lid_top" x="152" y="688" w="46" h="59" pX="0.5" pY="0.5" oX="6" oY="4" oW="70" oH="70" r="y"/>
+    <sprite n="pupil" x="91" y="754" w="29" h="31" pX="0.5" pY="0.5" oX="6" oY="7" oW="40" oH="40"/>
     <sprite n="top_leaves" x="4" y="591" w="83" h="195" pX="0.5" pY="0.5" oX="22" oY="8" oW="240" oH="100" r="y"/>
-    <sprite n="tree01" x="100" y="894" w="75" h="93" pX="0.5" pY="0.5" oX="10" oY="19" oW="90" oH="120"/>
+    <sprite n="tree01" x="91" y="591" w="75" h="93" pX="0.5" pY="0.5" oX="10" oY="19" oW="90" oH="120"/>
     <sprite n="tree02" x="77" y="790" w="89" h="100" pX="0.5" pY="0.5" oX="16" oY="22" oW="120" oH="120" r="y"/>
     <sprite n="tree03" x="4" y="790" w="69" h="107" pX="0.5" pY="0.5" oX="3" oY="22" oW="120" oH="120" r="y"/>
+    <sprite n="tree04" x="100" y="894" w="88" h="94" pX="0.5" pY="0.5" oX="0" oY="5" oW="90" oH="120"/>
 </TextureAtlas>

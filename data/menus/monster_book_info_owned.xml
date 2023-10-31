@@ -405,7 +405,7 @@
 								component("animation"):SetString( "01-F_EPIC_Dance_Default_01" )
 							end
 							
-							local scale = 270/component:size().y;
+							local scale = 270/component:size().y
 							component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
 							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + component:size().y / 4.0))
 
@@ -413,16 +413,17 @@
 							
 							component("animation"):SetString("Activate")
 							component("pingpong"):SetInt(1)
-							local scale = 270/component:size().y;
+							
+							local scale = 265/component:size().y							
 							component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
-							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + component:size().y / 4.0))
+							element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + 85*game.composerScale()))							
 
 						end
 
 					else
-					
+						
 						component("animation"):SetString(game.objectStoreAnim())
-						local scale = 112.5/component:size().y;
+						local scale = 112.5/component:size().y
 						component:setScale(Vector2(scale*game.menuScaleX(), scale*game.menuScaleX()))
 						element:setOrientationPosition(Vector2(component:size().x / 2.0, component:size().y / 2.0 + 15*game.hudScale()))
 

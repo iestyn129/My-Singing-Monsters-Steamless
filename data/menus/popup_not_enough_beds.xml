@@ -182,7 +182,9 @@
 				element["Overlay"]:setColor(1.0, 1.0, 1.0)
 				element:parent()("choice"):SetString("false")
 				element:parent():DoStoredScript("queuePop")
+
 				game.hatchEggInHotel()
+
 			</event>
 			<event name="onTouchRelease" params="component, element">
 				onTouchRelease(component, element)

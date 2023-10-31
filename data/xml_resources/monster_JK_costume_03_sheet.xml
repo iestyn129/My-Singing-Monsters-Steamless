@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:d5e5b8abce479b7ad8f32d1d97b78216:a8dcbe04d6016011e48c0926ae8ee142:537655af669ea0085b7d42ebc6bbcd86$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_JK_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="JK_airship.png" x="2" y="2" w="266" h="260" pX="0.5" pY="0.5" oX="-79" oY="-79" oW="300" oH="300"/>
+    <sprite n="JK_goggles.png" x="270" y="2" w="120" h="87" pX="0.5" pY="0.5" oX="-8" oY="2" oW="140" oH="100"/>
+</TextureAtlas>

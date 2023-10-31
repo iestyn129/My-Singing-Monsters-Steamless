@@ -304,7 +304,7 @@
 	<element name="Notification">
 		<size w="200*game.hudScale()" h="142*game.hudScale()" />
 		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="60*game.hudScale()" yOffset="7*game.hudScale()" priorityOffset="-2" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="25*game.hudScale()" yOffset="7*game.hudScale()" priorityOffset="-2" />
 		<event name="onInit" params="element">
 			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgPlacementInfo", "gotMsgPlacementInfo")
 		</event>
@@ -450,38 +450,10 @@
 		</touchComponent>
 	</element>
 
-	<element name="TopFade">
+	<element name="TopBlackCover">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-2" />
-		<spriteComponent name="Sprite">
-			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("gfx/fade_sprite")
-				component:setScale(Vector2(19.0*game.hudScale(), 0.5*game.hudScale()))
-				component("layer"):SetString("FrontClipping")
-				
-			</event>
-		</spriteComponent>
-	</element>
-
-	<element name="BotFade">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="50*game.hudScale()" priorityOffset="-1" />
-		<spriteComponent name="Sprite">
-			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("gfx/fade_sprite")
-				component:setScale(Vector2(20.0*game.hudScale(), 0.5*game.hudScale()))
-				component("vFlip"):SetInt(1)
-				component("layer"):SetString("FrontClipping")
-			</event>
-		</spriteComponent>
-	</element>
-
-	<element name="BotBlackout">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-		<position relativeTo="BotFade" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="0" />
+		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="15" priorityOffset="-2" />
 		<ninesliceComponent name="Sprite">
 			<size w="310*game.hudScale()"/>
 			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -497,15 +469,66 @@
 				component:setColor(0.0, 0.0, 0.0)
 				component("layer"):SetString("FrontPopUps")
 				element:calculatePosition()
-				component("height"):SetInt(40*game.hudScale())
+				component("height"):SetInt(15*game.hudScale())
 			</event>
 		</ninesliceComponent>
+	</element>
+	
+	<element name="TopFade">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="TopBlackCover" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-2" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(20.0*game.hudScale(), 0.5*game.hudScale()))
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
+	</element>
+
+	<element name="BotBlackCover">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="15" priorityOffset="-2" />
+		<ninesliceComponent name="Sprite">
+			<size w="310*game.hudScale()"/>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(1.0)
+				component("bottomHeight"):SetFloat(1.0)
+				component("leftWidth"):SetFloat(1.0)
+				component("rightWidth"):SetFloat(1.0)
+				component("size"):SetFloat(0.5)
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+				component:setColor(0.0, 0.0, 0.0)
+				component("layer"):SetString("FrontPopUps")
+				element:calculatePosition()
+				component("height"):SetInt(15*game.hudScale())
+			</event>
+		</ninesliceComponent>
+	</element>
+	
+	<element name="BotFade">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="BotBlackCover" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-2" priorityOffset="-2" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/fade_sprite")
+				component:setScale(Vector2(20.0*game.hudScale(), 0.5*game.hudScale()))
+				component("vFlip"):SetInt(1)
+				component("layer"):SetString("FrontClipping")
+			</event>
+		</spriteComponent>
 	</element>
 
 	<element name="ActionButton">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-30*game.hudScale()" priorityOffset="-3" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="30*game.hudScale()" priorityOffset="-3" />
 		<ninesliceComponent name="Sprite">
 			<size w="0.15*lua_sys.screenWidth()" h="0.05*lua_sys.screenHeight()" />
 			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1c043c97376b21b707253035db1b6209:a97b546b74cd010822a3216f2aecf3c1:a22683899f10c60fef0b126f847630e5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GJM_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="GJM_backmane.png" x="894" y="143" w="116" h="65" pX="0.5" pY="0.5" oX="9" oY="9" oW="138" oH="84"/>
+    <sprite n="GJM_butt.png" x="2" y="188" w="138" h="106" pX="0.5" pY="0.5" oX="9" oY="8" oW="124" oH="146" r="y"/>
+    <sprite n="GJM_eyelid_01.png" x="634" y="452" w="33" h="30" pX="0.5" pY="0.5" oX="9" oY="9" oW="52" oH="48"/>
+    <sprite n="GJM_eyelid_02.png" x="634" y="484" w="33" h="30" pX="0.5" pY="0.5" oX="9" oY="9" oW="52" oH="48"/>
+    <sprite n="GJM_eyelid_03.png" x="595" y="494" w="33" h="30" pX="0.5" pY="0.5" oX="9" oY="9" oW="52" oH="48"/>
+    <sprite n="GJM_eyelid_04.png" x="96" y="365" w="30" h="33" pX="0.5" pY="0.5" oX="9" oY="9" oW="52" oH="48" r="y"/>
+    <sprite n="GJM_eyelid_05.png" x="96" y="400" w="30" h="33" pX="0.5" pY="0.5" oX="9" oY="9" oW="52" oH="48" r="y"/>
+    <sprite n="GJM_head.png" x="148" y="131" w="98" h="102" pX="0.5" pY="0.5" oX="9" oY="9" oW="120" oH="116" r="y"/>
+    <sprite n="GJM_lbackleg.png" x="380" y="334" w="48" h="58" pX="0.5" pY="0.5" oX="9" oY="9" oW="66" oH="76"/>
+    <sprite n="GJM_lbackpaw_01.png" x="320" y="390" w="53" h="31" pX="0.5" pY="0.5" oX="10" oY="9" oW="73" oH="60"/>
+    <sprite n="GJM_lbackpaw_02.png" x="174" y="399" w="41" h="39" pX="0.5" pY="0.5" oX="22" oY="9" oW="73" oH="60"/>
+    <sprite n="GJM_lbackpaw_03.png" x="320" y="347" w="53" h="41" pX="0.5" pY="0.5" oX="10" oY="9" oW="73" oH="60"/>
+    <sprite n="GJM_lear.png" x="128" y="397" w="44" h="42" pX="0.5" pY="0.5" oX="9" oY="9" oW="62" oH="60"/>
+    <sprite n="GJM_lfrontlowerleg.png" x="670" y="449" w="62" h="43" pX="0.5" pY="0.5" oX="8" oY="9" oW="60" oH="80" r="y"/>
+    <sprite n="GJM_lfrontpaw_01.png" x="380" y="303" w="50" h="29" pX="0.5" pY="0.5" oX="9" oY="10" oW="68" oH="56"/>
+    <sprite n="GJM_lfrontpaw_02.png" x="396" y="129" w="36" h="41" pX="0.5" pY="0.5" oX="18" oY="10" oW="68" oH="56" r="y"/>
+    <sprite n="GJM_lfrontpaw_03.png" x="496" y="481" w="48" h="31" pX="0.5" pY="0.5" oX="11" oY="10" oW="68" oH="56"/>
+    <sprite n="GJM_lfrontupperleg.png" x="328" y="273" w="50" h="72" pX="0.5" pY="0.5" oX="9" oY="9" oW="68" oH="90"/>
+    <sprite n="GJM_mouthbottom_01.png" x="247" y="273" w="79" h="64" pX="0.5" pY="0.5" oX="15" oY="9" oW="104" oH="108"/>
+    <sprite n="GJM_mouthbottom_02.png" x="432" y="327" w="78" h="74" pX="0.5" pY="0.5" oX="15" oY="9" oW="104" oH="108"/>
+    <sprite n="GJM_mouthbottom_03.png" x="432" y="241" w="89" h="84" pX="0.5" pY="0.5" oX="10" oY="9" oW="104" oH="108" r="y"/>
+    <sprite n="GJM_mouthbottom_04.png" x="128" y="336" w="73" h="59" pX="0.5" pY="0.5" oX="16" oY="9" oW="104" oH="108"/>
+    <sprite n="GJM_mouthbottom_05.png" x="977" y="311" w="45" h="70" pX="0.5" pY="0.5" oX="19" oY="9" oW="104" oH="108" r="y"/>
+    <sprite n="GJM_mouthbottom_06.png" x="203" y="336" w="42" h="61" pX="0.5" pY="0.5" oX="19" oY="10" oW="104" oH="108" r="y"/>
+    <sprite n="GJM_mouthbottom_07.png" x="2" y="411" w="42" h="38" pX="0.5" pY="0.5" oX="16" oY="18" oW="104" oH="108"/>
+    <sprite n="GJM_mouthbottom_08.png" x="714" y="290" w="55" h="54" pX="0.5" pY="0.5" oX="14" oY="10" oW="104" oH="108"/>
+    <sprite n="GJM_mouthbottom_09.png" x="523" y="287" w="71" h="63" pX="0.5" pY="0.5" oX="15" oY="10" oW="104" oH="108"/>
+    <sprite n="GJM_mouthmiddle_01.png" x="512" y="352" w="78" h="63" pX="0.5" pY="0.5" oX="12" oY="10" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_02.png" x="592" y="377" w="76" h="73" pX="0.5" pY="0.5" oX="14" oY="10" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_03.png" x="596" y="294" w="88" h="81" pX="0.5" pY="0.5" oX="9" oY="10" oW="100" oH="108" r="y"/>
+    <sprite n="GJM_mouthmiddle_04.png" x="670" y="389" w="74" h="58" pX="0.5" pY="0.5" oX="13" oY="10" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_05.png" x="429" y="403" w="70" h="44" pX="0.5" pY="0.5" oX="16" oY="10" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_06.png" x="571" y="452" w="61" h="40" pX="0.5" pY="0.5" oX="16" oY="12" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_07.png" x="217" y="403" w="41" h="38" pX="0.5" pY="0.5" oX="13" oY="20" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_08.png" x="967" y="418" w="54" h="52" pX="0.5" pY="0.5" oX="11" oY="13" oW="100" oH="108"/>
+    <sprite n="GJM_mouthmiddle_09.png" x="247" y="339" w="71" h="62" pX="0.5" pY="0.5" oX="12" oY="11" oW="100" oH="108"/>
+    <sprite n="GJM_mouthtop_01.png" x="876" y="311" w="99" h="70" pX="0.5" pY="0.5" oX="12" oY="11" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_02.png" x="771" y="325" w="98" h="83" pX="0.5" pY="0.5" oX="12" oY="10" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_03.png" x="142" y="235" w="103" h="99" pX="0.5" pY="0.5" oX="12" oY="10" oW="120" oH="124" r="y"/>
+    <sprite n="GJM_mouthtop_04.png" x="871" y="383" w="94" h="64" pX="0.5" pY="0.5" oX="12" oY="11" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_05.png" x="432" y="195" w="91" h="44" pX="0.5" pY="0.5" oX="11" oY="11" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_06.png" x="686" y="346" w="80" h="41" pX="0.5" pY="0.5" oX="11" oY="13" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_07.png" x="720" y="113" w="51" h="52" pX="0.5" pY="0.5" oX="10" oY="16" oW="120" oH="124" r="y"/>
+    <sprite n="GJM_mouthtop_08.png" x="501" y="417" w="68" h="62" pX="0.5" pY="0.5" oX="9" oY="12" oW="120" oH="124"/>
+    <sprite n="GJM_mouthtop_09.png" x="525" y="195" w="69" h="90" pX="0.5" pY="0.5" oX="12" oY="12" oW="120" oH="124" r="y"/>
+    <sprite n="GJM_neckbottom.png" x="604" y="2" w="167" h="109" pX="0.5" pY="0.5" oX="9" oY="9" oW="128" oH="186" r="y"/>
+    <sprite n="GJM_neckmanebottom.png" x="899" y="89" w="123" h="52" pX="0.5" pY="0.5" oX="10" oY="10" oW="72" oH="144" r="y"/>
+    <sprite n="GJM_neckmanetop.png" x="2" y="131" w="144" h="55" pX="0.5" pY="0.5" oX="10" oY="10" oW="76" oH="164" r="y"/>
+    <sprite n="GJM_neckmiddle.png" x="434" y="2" w="168" h="100" pX="0.5" pY="0.5" oX="9" oY="9" oW="122" oH="186" r="y"/>
+    <sprite n="GJM_necktop.png" x="434" y="104" w="160" h="89" pX="0.5" pY="0.5" oX="9" oY="9" oW="108" oH="178" r="y"/>
+    <sprite n="GJM_pupil.png" x="686" y="294" w="21" h="20" pX="0.5" pY="0.5" oX="9" oY="9" oW="40" oH="38"/>
+    <sprite n="GJM_rbackleg.png" x="429" y="449" w="65" h="44" pX="0.5" pY="0.5" oX="9" oY="9" oW="62" oH="83" r="y"/>
+    <sprite n="GJM_rbackpaw_01.png" x="714" y="251" w="56" h="37" pX="0.5" pY="0.5" oX="10" oY="9" oW="76" oH="66"/>
+    <sprite n="GJM_rbackpaw_02.png" x="49" y="365" w="45" h="41" pX="0.5" pY="0.5" oX="21" oY="12" oW="76" oH="66"/>
+    <sprite n="GJM_rbackpaw_03.png" x="714" y="202" w="57" h="47" pX="0.5" pY="0.5" oX="9" oY="9" oW="76" oH="66"/>
+    <sprite n="GJM_rear_01.png" x="396" y="172" w="34" h="48" pX="0.5" pY="0.5" oX="10" oY="16" oW="70" oH="76" r="y"/>
+    <sprite n="GJM_rear_02.png" x="381" y="222" w="49" h="40" pX="0.5" pY="0.5" oX="9" oY="9" oW="70" oH="76"/>
+    <sprite n="GJM_rear_03.png" x="381" y="264" w="49" h="37" pX="0.5" pY="0.5" oX="9" oY="17" oW="70" oH="76"/>
+    <sprite n="GJM_rear_04.png" x="2" y="365" w="45" h="44" pX="0.5" pY="0.5" oX="9" oY="21" oW="70" oH="76" r="y"/>
+    <sprite n="GJM_rear_05.png" x="546" y="494" w="47" h="40" pX="0.5" pY="0.5" oX="9" oY="19" oW="70" oH="76"/>
+    <sprite n="GJM_rear_06.png" x="720" y="167" w="51" h="33" pX="0.5" pY="0.5" oX="9" oY="19" oW="70" oH="76"/>
+    <sprite n="GJM_rfrontlowerleg.png" x="746" y="410" w="62" h="44" pX="0.5" pY="0.5" oX="9" oY="9" oW="62" oH="80" r="y"/>
+    <sprite n="GJM_rfrontpaw_01.png" x="967" y="383" w="55" h="33" pX="0.5" pY="0.5" oX="10" oY="9" oW="76" oH="56"/>
+    <sprite n="GJM_rfrontpaw_02.png" x="49" y="408" w="43" h="38" pX="0.5" pY="0.5" oX="22" oY="9" oW="76" oH="56"/>
+    <sprite n="GJM_rfrontpaw_03.png" x="810" y="410" w="52" h="37" pX="0.5" pY="0.5" oX="13" oY="9" oW="76" oH="56"/>
+    <sprite n="GJM_rfrontupperleg.png" x="375" y="394" w="52" h="68" pX="0.5" pY="0.5" oX="9" oY="9" oW="70" oH="86"/>
+    <sprite n="GJM_shadow.png" x="2" y="2" w="244" h="127" pX="0.5" pY="0.5" oX="0" oY="0" oW="244" oH="128"/>
+    <sprite n="GJM_tail_01.png" x="773" y="2" w="124" h="63" pX="0.5" pY="0.5" oX="21" oY="31" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_02.png" x="773" y="67" w="124" h="63" pX="0.5" pY="0.5" oX="21" oY="31" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_03.png" x="899" y="2" w="123" h="85" pX="0.5" pY="0.5" oX="21" oY="33" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_04.png" x="596" y="182" w="116" h="110" pX="0.5" pY="0.5" oX="21" oY="56" oW="156" oH="248"/>
+    <sprite n="GJM_tail_05.png" x="596" y="113" w="122" h="67" pX="0.5" pY="0.5" oX="21" oY="115" oW="156" oH="248"/>
+    <sprite n="GJM_tail_06.png" x="773" y="132" w="119" h="94" pX="0.5" pY="0.5" oX="21" oY="88" oW="156" oH="248"/>
+    <sprite n="GJM_tail_07.png" x="248" y="129" w="146" h="69" pX="0.5" pY="0.5" oX="9" oY="9" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_08.png" x="248" y="200" w="131" h="71" pX="0.5" pY="0.5" oX="21" oY="24" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_09.png" x="773" y="228" w="101" h="95" pX="0.5" pY="0.5" oX="21" oY="54" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_10.png" x="2" y="296" w="124" h="67" pX="0.5" pY="0.5" oX="20" oY="31" oW="156" oH="248" r="y"/>
+    <sprite n="GJM_tail_11.png" x="894" y="210" w="111" h="99" pX="0.5" pY="0.5" oX="21" oY="139" oW="156" oH="248"/>
+    <sprite n="GJM_torso.png" x="248" y="2" w="184" h="125" pX="0.5" pY="0.5" oX="9" oY="9" oW="202" oH="143"/>
+</TextureAtlas>

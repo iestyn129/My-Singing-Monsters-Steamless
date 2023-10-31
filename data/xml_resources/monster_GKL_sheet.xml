@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9f9d6e841984200d6e57afa4760393f7:7c9c49b0837b8957c197fbd6d205d475:582cb8f8956298c47a01ed496defdb91$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GKL_sheet.png" width="512" height="512" hires="true">
+    <sprite n="GKL_body.png" x="236" y="1" w="208" h="185" pX="0.5" pY="0.5" oX="7" oY="6" oW="200" oH="220" r="y"/>
+    <sprite n="GKL_bottom_leg_l.png" x="400" y="360" w="59" h="38" pX="0.5" pY="0.5" oX="9" oY="6" oW="56" oH="72" r="y"/>
+    <sprite n="GKL_bottom_leg_r.png" x="1" y="460" w="35" h="51" pX="0.5" pY="0.5" oX="6" oY="5" oW="48" oH="64"/>
+    <sprite n="GKL_eye_l_bottom.png" x="209" y="126" w="25" h="23" pX="0.5" pY="0.5" oX="6" oY="7" oW="40" oH="40"/>
+    <sprite n="GKL_eye_l_top.png" x="176" y="438" w="26" h="28" pX="0.5" pY="0.5" oX="9" oY="6" oW="44" oH="44"/>
+    <sprite n="GKL_eye_r.png" x="157" y="325" w="31" h="34" pX="0.5" pY="0.5" oX="4" oY="6" oW="44" oH="48"/>
+    <sprite n="GKL_eyelid_l_bottom_01.png" x="176" y="405" w="29" h="31" pX="0.5" pY="0.5" oX="8" oY="6" oW="48" oH="44" r="y"/>
+    <sprite n="GKL_eyelid_l_bottom_02.png" x="175" y="478" w="30" h="31" pX="0.5" pY="0.5" oX="8" oY="6" oW="48" oH="44" r="y"/>
+    <sprite n="GKL_eyelid_l_bottom_03.png" x="184" y="365" w="29" h="31" pX="0.5" pY="0.5" oX="9" oY="6" oW="48" oH="44" r="y"/>
+    <sprite n="GKL_eyelid_l_bottom_04.png" x="190" y="325" w="29" h="31" pX="0.5" pY="0.5" oX="8" oY="6" oW="48" oH="44" r="y"/>
+    <sprite n="GKL_eyelid_l_top_01.png" x="141" y="405" w="33" h="36" pX="0.5" pY="0.5" oX="6" oY="7" oW="48" oH="52"/>
+    <sprite n="GKL_eyelid_l_top_02.png" x="141" y="443" w="33" h="33" pX="0.5" pY="0.5" oX="6" oY="9" oW="48" oH="52"/>
+    <sprite n="GKL_eyelid_l_top_03.png" x="150" y="365" w="32" h="34" pX="0.5" pY="0.5" oX="6" oY="10" oW="48" oH="52" r="y"/>
+    <sprite n="GKL_eyelid_l_top_04.png" x="141" y="478" w="32" h="33" pX="0.5" pY="0.5" oX="7" oY="10" oW="48" oH="52" r="y"/>
+    <sprite n="GKL_eyelid_r_01.png" x="85" y="319" w="33" h="40" pX="0.5" pY="0.5" oX="9" oY="5" oW="52" oH="52"/>
+    <sprite n="GKL_eyelid_r_02.png" x="120" y="319" w="35" h="37" pX="0.5" pY="0.5" oX="7" oY="6" oW="52" oH="52"/>
+    <sprite n="GKL_eyelid_r_03.png" x="130" y="275" w="35" h="37" pX="0.5" pY="0.5" oX="7" oY="7" oW="52" oH="52"/>
+    <sprite n="GKL_eyelid_r_04.png" x="167" y="288" w="37" h="35" pX="0.5" pY="0.5" oX="7" oY="7" oW="52" oH="52" r="y"/>
+    <sprite n="GKL_foot_l.png" x="331" y="188" w="95" h="66" pX="0.5" pY="0.5" oX="0" oY="0" oW="96" oH="66"/>
+    <sprite n="GKL_foot_r.png" x="230" y="256" w="92" h="61" pX="0.5" pY="0.5" oX="7" oY="7" oW="108" oH="76"/>
+    <sprite n="GKL_gill_l_1.png" x="1" y="275" w="40" h="42" pX="0.5" pY="0.5" oX="6" oY="6" oW="56" oH="56" r="y"/>
+    <sprite n="GKL_gill_l_2.png" x="43" y="275" w="37" h="41" pX="0.5" pY="0.5" oX="7" oY="6" oW="56" oH="52" r="y"/>
+    <sprite n="GKL_gill_l_3.png" x="461" y="360" w="49" h="43" pX="0.5" pY="0.5" oX="6" oY="8" oW="60" oH="60"/>
+    <sprite n="GKL_gill_l_4.png" x="1" y="319" w="46" h="43" pX="0.5" pY="0.5" oX="5" oY="7" oW="56" oH="60"/>
+    <sprite n="GKL_gill_r_1.png" x="82" y="275" w="46" h="40" pX="0.5" pY="0.5" oX="2" oY="7" oW="56" oH="56"/>
+    <sprite n="GKL_gill_r_2.png" x="1" y="405" w="39" h="53" pX="0.5" pY="0.5" oX="7" oY="6" oW="56" oH="64"/>
+    <sprite n="GKL_gill_r_3.png" x="167" y="250" w="36" h="36" pX="0.5" pY="0.5" oX="6" oY="7" oW="52" oH="52"/>
+    <sprite n="GKL_goatee_01.png" x="428" y="202" w="82" h="35" pX="0.5" pY="0.5" oX="6" oY="4" oW="100" oH="60"/>
+    <sprite n="GKL_goatee_02.png" x="428" y="202" w="82" h="35" pX="0.5" pY="0.5" oX="6" oY="5" oW="100" oH="60"/>
+    <sprite n="GKL_goatee_03.png" x="428" y="202" w="82" h="35" pX="0.5" pY="0.5" oX="6" oY="11" oW="100" oH="60"/>
+    <sprite n="GKL_goatee_04.png" x="428" y="202" w="82" h="35" pX="0.5" pY="0.5" oX="6" oY="15" oW="100" oH="60"/>
+    <sprite n="GKL_goatee_05.png" x="428" y="202" w="82" h="35" pX="0.5" pY="0.5" oX="6" oY="18" oW="100" oH="60"/>
+    <sprite n="GKL_iris_l_bottom.png" x="218" y="249" w="10" h="10" pX="0.5" pY="0.5" oX="7" oY="7" oW="24" oH="24"/>
+    <sprite n="GKL_iris_l_top.png" x="218" y="237" w="11" h="10" pX="0.5" pY="0.5" oX="7" oY="6" oW="24" oH="24" r="y"/>
+    <sprite n="GKL_iris_r.png" x="428" y="188" w="10" h="10" pX="0.5" pY="0.5" oX="7" oY="7" oW="24" oH="24"/>
+    <sprite n="GKL_mini_head_frill_l.png" x="42" y="405" w="30" h="52" pX="0.5" pY="0.5" oX="5" oY="7" oW="64" oH="48" r="y"/>
+    <sprite n="GKL_mini_head_frill_r.png" x="38" y="460" w="32" h="51" pX="0.5" pY="0.5" oX="5" oY="6" oW="64" oH="48" r="y"/>
+    <sprite n="GKL_mini_head_l.png" x="446" y="125" w="62" h="75" pX="0.5" pY="0.5" oX="8" oY="2" oW="80" oH="80"/>
+    <sprite n="GKL_mini_head_l_mouth_01.png" x="209" y="193" w="12" h="42" pX="0.5" pY="0.5" oX="7" oY="23" oW="56" oH="56" r="y"/>
+    <sprite n="GKL_mini_head_l_mouth_02.png" x="209" y="151" w="20" h="40" pX="0.5" pY="0.5" oX="7" oY="22" oW="56" oH="56" r="y"/>
+    <sprite n="GKL_mini_head_l_mouth_03.png" x="107" y="405" w="32" h="40" pX="0.5" pY="0.5" oX="8" oY="14" oW="56" oH="56" r="y"/>
+    <sprite n="GKL_mini_head_l_mouth_04.png" x="112" y="365" w="36" h="38" pX="0.5" pY="0.5" oX="8" oY="9" oW="56" oH="56" r="y"/>
+    <sprite n="GKL_mini_head_r.png" x="446" y="47" w="63" h="76" pX="0.5" pY="0.5" oX="5" oY="6" oW="76" oH="84"/>
+    <sprite n="GKL_mini_head_r_mouth_01.png" x="205" y="237" w="11" h="36" pX="0.5" pY="0.5" oX="9" oY="22" oW="56" oH="52" r="y"/>
+    <sprite n="GKL_mini_head_r_mouth_02.png" x="43" y="364" w="27" h="39" pX="0.5" pY="0.5" oX="8" oY="16" oW="56" oH="52" r="y"/>
+    <sprite n="GKL_mini_head_r_mouth_03.png" x="1" y="365" w="40" h="38" pX="0.5" pY="0.5" oX="8" oY="7" oW="56" oH="52" r="y"/>
+    <sprite n="GKL_mini_head_r_mouth_04.png" x="72" y="365" w="38" h="38" pX="0.5" pY="0.5" oX="8" oY="9" oW="56" oH="52"/>
+    <sprite n="GKL_mouth_01.png" x="1" y="208" w="98" h="40" pX="0.5" pY="0.5" oX="8" oY="11" oW="116" oH="92"/>
+    <sprite n="GKL_mouth_02.png" x="105" y="204" w="98" h="44" pX="0.5" pY="0.5" oX="8" oY="10" oW="116" oH="92"/>
+    <sprite n="GKL_mouth_03.png" x="231" y="188" w="98" h="66" pX="0.5" pY="0.5" oX="8" oY="8" oW="116" oH="92"/>
+    <sprite n="GKL_mouth_04.png" x="105" y="126" w="102" h="76" pX="0.5" pY="0.5" oX="6" oY="4" oW="116" oH="92"/>
+    <sprite n="GKL_mouth_05.png" x="1" y="126" w="102" h="80" pX="0.5" pY="0.5" oX="6" oY="4" oW="116" oH="92"/>
+    <sprite n="GKL_neck_l_1.png" x="72" y="459" w="32" h="49" pX="0.5" pY="0.5" oX="6" oY="7" oW="48" oH="64"/>
+    <sprite n="GKL_neck_l_2.png" x="106" y="454" w="33" h="40" pX="0.5" pY="0.5" oX="9" oY="7" oW="52" oH="56"/>
+    <sprite n="GKL_neck_r_1.png" x="74" y="405" w="31" h="47" pX="0.5" pY="0.5" oX="9" oY="4" oW="48" oH="56"/>
+    <sprite n="GKL_neck_r_2.png" x="49" y="319" w="34" h="41" pX="0.5" pY="0.5" oX="6" oY="6" oW="48" oH="56"/>
+    <sprite n="GKL_shadow.png" x="1" y="1" w="233" h="123" pX="0.5" pY="0.5" oX="7" oY="6" oW="248" oH="136"/>
+    <sprite n="GKL_tail_1.png" x="324" y="310" w="74" h="53" pX="0.5" pY="0.5" oX="6" oY="8" oW="88" oH="68"/>
+    <sprite n="GKL_tail_2.png" x="446" y="1" w="65" h="44" pX="0.5" pY="0.5" oX="6" oY="8" oW="80" oH="60"/>
+    <sprite n="GKL_tail_3.png" x="324" y="256" w="86" h="52" pX="0.5" pY="0.5" oX="6" oY="7" oW="100" oH="68"/>
+    <sprite n="GKL_top_leg_l.png" x="412" y="299" w="85" h="59" pX="0.5" pY="0.5" oX="7" oY="5" oW="76" oH="100" r="y"/>
+    <sprite n="GKL_top_leg_r.png" x="428" y="239" w="81" h="58" pX="0.5" pY="0.5" oX="2" oY="6" oW="64" oH="96" r="y"/>
+</TextureAtlas>

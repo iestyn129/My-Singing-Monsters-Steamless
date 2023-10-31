@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:7c6a531755e1076f9285e4bfb39f6c4d:b5951c978ca2bfbd890fcf848e21393a:e5d689ea7a09098297cfd2ab61b918a7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/synthesizer_sheet.png" width="1024" height="2048"  hires="true">
+    <sprite n="glow_blue.png" x="928" y="444" w="79" h="79" pX="0.5" pY="0.5" oX="5" oY="5" oW="88" oH="88"/>
+    <sprite n="star.png" x="765" y="1" w="200" h="200" pX="0.5" pY="0.5"/>
+    <sprite n="synchronizer_base.png" x="1" y="1" w="762" h="739" pX="0.5" pY="0.5" oX="69" oY="331" oW="900" oH="1100"/>
+    <sprite n="synchronizer_critter_01.png" x="967" y="1" w="56" h="75" pX="0.5" pY="0.5"/>
+    <sprite n="synchronizer_critter_02.png" x="967" y="78" w="44" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="synchronizer_critter_03.png" x="967" y="139" w="36" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="synchronizer_glass_01.png" x="928" y="342" w="90" h="100" pX="0.5" pY="0.5" oX="10" oY="15" oW="120" oH="120" r="y"/>
+    <sprite n="synchronizer_off.png" x="1" y="742" w="499" h="370" pX="0.5" pY="0.5" oX="164" oY="591" oW="900" oH="1100"/>
+    <sprite n="synchronizer_spore.png" x="957" y="203" w="61" h="67" pX="0.5" pY="0.5" oX="6" oY="9" oW="80" oH="80" r="y"/>
+    <sprite n="synchronizer_spot.png" x="1005" y="139" w="16" h="23" pX="0.5" pY="0.5" oX="7" oY="3" oW="30" oH="30"/>
+    <sprite n="synchronizer_starter.png" x="765" y="203" w="190" h="137" pX="0.5" pY="0.5" oX="11" oY="5" oW="159" oH="200" r="y"/>
+    <sprite n="synchronizer_veincover.png" x="765" y="342" w="161" h="158" pX="0.5" pY="0.5" oX="9" oY="8" oW="180" oH="180"/>
+</TextureAtlas>

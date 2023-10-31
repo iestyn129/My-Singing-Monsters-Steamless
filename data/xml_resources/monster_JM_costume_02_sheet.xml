@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:352fe873070ccacc05f20018eb25b623:327698a15ab77e0e50b35972f38b8c9b:4f78c03bc480f059686fb0a3b15df1a9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_JM_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="JM_1st_upperarm.png" x="3" y="426" w="52" h="75" pX="0.5" pY="0.5" oX="-23" oY="-5" oW="60" oH="80"/>
+    <sprite n="JM_back_plant.png" x="3" y="199" w="141" h="101" pX="0.5" pY="0.5" oX="-23" oY="-16" oW="150" oH="150"/>
+    <sprite n="JM_hand_flower.png" x="147" y="199" w="75" h="140" pX="0.5" pY="0.5" oX="-12" oY="-14" oW="80" oH="150"/>
+    <sprite n="JM_head.png" x="3" y="303" w="138" h="120" pX="0.5" pY="0.5" oX="2" oY="8" oW="124" oH="148" r="y"/>
+    <sprite n="JM_head_plant.png" x="3" y="3" w="219" h="193" pX="0.5" pY="0.5" oX="-36" oY="-68" oW="200" oH="220" r="y"/>
+    <sprite n="JM_left_eyeball_1.png" x="104" y="426" w="51" h="52" pX="0.5" pY="0.5" oX="2" oY="2" oW="56" oH="56"/>
+    <sprite n="JM_left_eyeball_2.png" x="144" y="342" w="42" h="42" pX="0.5" pY="0.5" oX="1" oY="1" oW="44" oH="44"/>
+    <sprite n="JM_left_eyeball_3.png" x="144" y="387" w="32" h="32" pX="0.5" pY="0.5"/>
+    <sprite n="JM_left_eyelid_01.png" x="225" y="3" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="JM_left_eyelid_02.png" x="225" y="29" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="JM_left_eyelid_03.png" x="225" y="55" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="JM_left_eyelid_04.png" x="225" y="81" w="23" h="23" pX="0.5" pY="0.5" oX="0" oY="0" oW="24" oH="24"/>
+    <sprite n="JM_shoulder.png" x="58" y="426" w="43" h="56" pX="0.5" pY="0.5" oX="41" oY="82" oW="80" oH="100"/>
+</TextureAtlas>

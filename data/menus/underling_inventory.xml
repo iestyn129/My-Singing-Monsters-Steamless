@@ -29,8 +29,8 @@
 	
 	<element name="BoxMonsterTitle">
 		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
-		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="5" />
+		<position relativeTo="EggListBg" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.menuScaleX()" priorityOffset="5" />
 		<ninesliceComponent name="BackingSprite">
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(50.0)
@@ -38,11 +38,9 @@
 				component("leftWidth"):SetFloat(50.0)
 				component("rightWidth"):SetFloat(50.0)
 				
-				local scalex = lua_sys.screenWidth()/480.0
-				
-				component("size"):SetFloat(0.4 * scalex)
-				component("width"):SetInt(210.0 * scalex)
-				component("height"):SetInt(3.33 * game.hudScale())
+				component("size"):SetFloat(0.4 * (lua_sys.screenHeight()/320.0))
+				component("width"):SetInt(180.0 * (lua_sys.screenWidth()/480.0))
+				component("height"):SetInt(3.33 * (lua_sys.screenHeight()/320.0))
 				component("spriteName"):SetString("gfx/menu/BlackTitleFrame")
 				component("layer"):SetString("FrontPopUps")
 			</event>
@@ -55,7 +53,7 @@
 			<event name="onInit" params="component, element" >
 				component("multiline"):SetInt(0)
 				component("font"):Set(game.getTitleFont())
-				component("size"):SetFloat(0.6*game.hudScale())
+				component("size"):SetFloat(0.5*(lua_sys.screenHeight()/320.0))
 				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
 				component("text"):SetString("CONTEXTBAR_INVENTORY_LABEL")
 				
@@ -108,32 +106,24 @@
 	
 	<element name="EggListBg">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
-		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10" priorityOffset="5" />		
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleY()" priorityOffset="5" />
 		<ninesliceComponent name="Sprite">
-			<size w="430*(lua_sys.screenWidth()/480.0)" h="260*game.menuScaleY()" />
+			<size w="430*(lua_sys.screenWidth()/480.0)" h="280*(lua_sys.screenHeight()/320.0)" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
 					component("topHeight"):SetFloat(50.0)
 					component("bottomHeight"):SetFloat(50.0)
 					component("leftWidth"):SetFloat(50.0)
 					component("rightWidth"):SetFloat(50.0)
-					component("size"):SetFloat(0.5*(lua_sys.screenWidth()/480.0))
+					component("size"):SetFloat(0.5*(lua_sys.screenHeight()/320.0))
 					component("includeBorder"):SetInt(1)
 					component("spriteName"):SetString("gfx/menu/Black9SFrame50")
 					component("layer"):SetString("MidPopUps")
-					
-					if(game.hudScale() > 1) then
-						component("height"):SetInt(component("height"):GetInt() + 20*game.hudScale())
-					end
 				]]>
 			</event>
 			<event name="onPostInit" params="component, element">
-				local scrollerX = (element:absX() + (20*game.menuScaleX())) * lua_sys.deviceScaleX()
-				local scrollerY = (element:absY() )*lua_sys.deviceScaleY()
-				local scrollerWidth = (element:absW() - (20*game.menuScaleX()*2) )*lua_sys.deviceScaleX()
-				local scrollerHeight = (360 * game.menuScaleY() * lua_sys.deviceScaleY()) 
-				game.setClipping("Clipping", scrollerX, scrollerY, scrollerWidth, scrollerHeight)
+				element:updateClipping()
 				element:setPositionBroadcast(true)
 			</event>
 		</ninesliceComponent>
@@ -208,12 +198,12 @@
 	<element name="ScrollBar">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="EggListBg" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-20*game.menuScaleY()" priorityOffset="-1" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-25*game.menuScaleY()" priorityOffset="-1" />
 		<spriteSheetComponent name="Sprite">
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("scroll_bar_01")
 				component("sheetName"):SetString("xml_resources/buttons01.xml")
-				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("size"):SetFloat(0.5*(lua_sys.screenHeight()/320.0))
 				component("rotation"):SetFloat(-0.5*math.pi)
 				component("layer"):SetString("MidPopUps")
 			</event>
@@ -226,10 +216,10 @@
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<spriteSheetComponent name="Marker">
 			<event name="onInit" params="component, element">
-				component("useOffsets"):SetInt(1)
+				component("useOffsets"):SetInt(0)
 				component("spriteName"):SetString("scroll_bar_dot")
 				component("sheetName"):SetString("xml_resources/buttons01.xml")
-				component("size"):SetFloat(0.5*game.menuScaleY())
+				component("size"):SetFloat(0.5*(lua_sys.screenHeight()/320.0))
 				component("rotation"):SetFloat(-0.5*math.pi)
 				component("layer"):SetString("MidPopUps")
 				element("markerBookend"):SetInt(7*game.menuScaleY())

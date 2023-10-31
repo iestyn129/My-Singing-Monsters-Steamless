@@ -507,7 +507,7 @@
 		</event>
 	</element>
 	
-	<template type="template_spritesheetbutton" name="FlipAllButton">
+	<template type="template_spritesheetbutton" name="TestButton">
 		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
 		<templateVar name="$buttonMapping" equals="game.cancelButton()" />
 		<position relativeTo="QuitButton" vAnchor="BOTTOM" hAnchor="LEFT" />

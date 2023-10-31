@@ -22,7 +22,7 @@
 		for i=0,numItems-1 do
 			local underlingItem = element:E("HotelEntries"):E("monster"..i)
 			if(underlingItem ~= nil) then
-				if(underlingItem:V("ID"):GetInt() == msg.underlingUid) then
+				if(underlingItem:V("ID"):GetInt() == msg.monsterUid) then
 					underlingItem:unlock()
 					break
 				end

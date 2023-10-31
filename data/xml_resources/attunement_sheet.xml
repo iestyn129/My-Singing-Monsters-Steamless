@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:29bcc35161bd58dad03ac7429452bae3:33e683d1517d9d184545b134d80a69f6:40a8e7bf716234ee169a12b4202449e7$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/attunement_sheet.png" width="1024" height="2048"  hires="true">
+    <sprite n="attunement_window.png" x="575" y="583" w="228" h="449" pX="0.5" pY="0.5" oX="331" oY="264" oW="860" oH="1050"/>
+    <sprite n="atunement_base_01.png" x="1" y="1" w="871" h="580" pX="0.5" pY="0.5" oX="132" oY="128" oW="860" oH="1050" r="y"/>
+    <sprite n="atunement_cell.png" x="964" y="263" w="16" h="14" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="atunement_glass_01.png" x="874" y="133" w="143" h="128" pX="0.5" pY="0.5" oX="6" oY="8" oW="140" oH="160" r="y"/>
+    <sprite n="atunement_glass_02.png" x="958" y="549" w="65" h="75" pX="0.5" pY="0.5" oX="7" oY="2" oW="80" oH="80"/>
+    <sprite n="atunement_internal.png" x="874" y="1" w="147" h="130" pX="0.5" pY="0.5" oX="5" oY="6" oW="140" oH="160" r="y"/>
+    <sprite n="atunement_shadow.png" x="1" y="583" w="572" h="212" pX="0.5" pY="0.5" oX="139" oY="808" oW="860" oH="1050"/>
+    <sprite n="atunement_turbine_01.png" x="874" y="330" w="86" h="71" pX="0.5" pY="0.5" oX="18" oY="9" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_02.png" x="874" y="549" w="82" h="71" pX="0.5" pY="0.5" oX="14" oY="16" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_03.png" x="886" y="989" w="78" h="75" pX="0.5" pY="0.5" oX="11" oY="20" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_04.png" x="805" y="828" w="80" h="72" pX="0.5" pY="0.5" oX="10" oY="15" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_05.png" x="874" y="475" w="83" h="72" pX="0.5" pY="0.5" oX="11" oY="8" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_06.png" x="805" y="982" w="79" h="71" pX="0.5" pY="0.5" oX="15" oY="5" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_07.png" x="874" y="403" w="86" h="70" pX="0.5" pY="0.5" oX="20" oY="2" oW="100" oH="100" r="y"/>
+    <sprite n="atunement_turbine_08.png" x="874" y="263" w="88" h="65" pX="0.5" pY="0.5" oX="25" oY="4" oW="100" oH="100" r="y"/>
+    <sprite n="glow.png" x="805" y="902" w="79" h="78" pX="0.5" pY="0.5" oX="5" oY="5" oW="88" oH="88" r="y"/>
+    <sprite n="glow_blue.png" x="887" y="828" w="79" h="79" pX="0.5" pY="0.5" oX="5" oY="5" oW="88" oH="88"/>
+    <sprite n="glow_yellow.png" x="886" y="909" w="79" h="78" pX="0.5" pY="0.5" oX="6" oY="5" oW="88" oH="88" r="y"/>
+    <sprite n="star.png" x="805" y="626" w="200" h="200" pX="0.5" pY="0.5"/>
+</TextureAtlas>

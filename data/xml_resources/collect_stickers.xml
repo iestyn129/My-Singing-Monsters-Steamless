@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:05701c7fc2bf0ee8af15aedf025c3d7b:f8d094455824a9251ffc7982d117f787:e4d9db37f64a4572ed68086ede35fe7e$ -->
+<!-- $TexturePacker:SmartUpdate:cc2e0afd678c18f7e26f351c06f2deb4:365249bff22453cc308818a615f20725:e4d9db37f64a4572ed68086ede35fe7e$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,12 +20,13 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/collect_stickers.png" width="256" height="512">
+    <sprite n="collect_attunement_alone" x="127" y="367" w="53" h="51" pX="0.5" pY="0.5" oX="15" oY="7" oW="80" oH="68" r="y"/>
     <sprite n="collect_battle_xp_alone" x="82" y="2" w="76" h="67" pX="0.5" pY="0.5" oX="3" oY="1" oW="80" oH="68"/>
     <sprite n="collect_blank_box" x="2" y="2" w="78" h="67" pX="0.5" pY="0.5" oX="1" oY="1" oW="80" oH="68"/>
     <sprite n="collect_breeding_alone" x="196" y="255" w="58" h="52" pX="0.5" pY="0.5" oX="11" oY="11" oW="80" oH="68"/>
-    <sprite n="collect_coins_alone" x="66" y="258" w="61" h="56" pX="0.5" pY="0.5" oX="10" oY="9" oW="80" oH="68"/>
+    <sprite n="collect_coins_alone" x="2" y="307" w="61" h="56" pX="0.5" pY="0.5" oX="10" oY="9" oW="80" oH="68"/>
     <sprite n="collect_conundra_piece" x="144" y="71" w="67" h="60" pX="0.5" pY="0.5" oX="6" oY="5" oW="80" oH="68"/>
-    <sprite n="collect_diamond_bag_alone" x="2" y="307" w="61" h="56" pX="0.5" pY="0.5" oX="10" oY="8" oW="80" oH="68"/>
+    <sprite n="collect_diamond_bag_alone" x="129" y="309" w="61" h="56" pX="0.5" pY="0.5" oX="10" oY="8" oW="80" oH="68"/>
     <sprite n="collect_diamonds_alone" x="2" y="140" w="64" h="54" pX="0.5" pY="0.5" oX="8" oY="7" oW="80" oH="68"/>
     <sprite n="collect_dot01" x="238" y="2" w="15" h="15" pX="0.5" pY="0.5"/>
     <sprite n="collect_dot02" x="238" y="19" w="13" h="13" pX="0.5" pY="0.5"/>
@@ -35,12 +36,13 @@ triangles  => sprite triangulation, 3 vertex indices per triangle
     <sprite n="collect_glowb_alone" x="207" y="191" w="44" h="62" pX="0.5" pY="0.5" oX="18" oY="6" oW="80" oH="68"/>
     <sprite n="collect_hatch_alone" x="2" y="196" w="64" h="50" pX="0.5" pY="0.5" oX="7" oY="10" oW="80" oH="68"/>
     <sprite n="collect_key_alone" x="2" y="248" w="62" h="57" pX="0.5" pY="0.5" oX="9" oY="9" oW="80" oH="68"/>
-    <sprite n="collect_light_torch" x="191" y="309" w="56" h="42" pX="0.5" pY="0.5" oX="19" oY="7" oW="80" oH="68" r="y"/>
-    <sprite n="collect_memory_alone" x="2" y="365" w="57" h="48" pX="0.5" pY="0.5" oX="11" oY="10" oW="80" oH="68"/>
+    <sprite n="collect_light_torch" x="192" y="359" w="56" h="42" pX="0.5" pY="0.5" oX="19" oY="7" oW="80" oH="68" r="y"/>
+    <sprite n="collect_memory_alone" x="192" y="309" w="57" h="48" pX="0.5" pY="0.5" oX="11" oY="10" oW="80" oH="68"/>
     <sprite n="collect_relics_alone" x="132" y="252" w="62" h="55" pX="0.5" pY="0.5" oX="10" oY="8" oW="80" oH="68"/>
     <sprite n="collect_scratch_alone" x="68" y="198" w="62" h="58" pX="0.5" pY="0.5" oX="12" oY="1" oW="80" oH="68" r="y"/>
-    <sprite n="collect_shard_alone" x="65" y="316" w="60" h="54" pX="0.5" pY="0.5" oX="11" oY="9" oW="80" oH="68"/>
-    <sprite n="collect_starpower_alone" x="129" y="309" w="60" h="56" pX="0.5" pY="0.5" oX="10" oY="6" oW="80" oH="68"/>
+    <sprite n="collect_shard_alone" x="2" y="365" w="60" h="54" pX="0.5" pY="0.5" oX="11" oY="9" oW="80" oH="68"/>
+    <sprite n="collect_starpower_alone" x="65" y="317" w="60" h="56" pX="0.5" pY="0.5" oX="10" oY="6" oW="80" oH="68"/>
+    <sprite n="collect_synthesize_alone" x="66" y="258" w="61" h="57" pX="0.5" pY="0.5" oX="9" oY="5" oW="80" oH="68"/>
     <sprite n="collect_xp_alone" x="160" y="2" w="76" h="67" pX="0.5" pY="0.5" oX="3" oY="1" oW="80" oH="68"/>
     <sprite n="evolve" x="74" y="71" w="68" h="64" pX="0.5" pY="0.5" oX="8" oY="0" oW="80" oH="68" r="y"/>
     <sprite n="evolve_common_epic" x="74" y="137" w="66" h="59" pX="0.5" pY="0.5" oX="7" oY="0" oW="80" oH="68" r="y"/>

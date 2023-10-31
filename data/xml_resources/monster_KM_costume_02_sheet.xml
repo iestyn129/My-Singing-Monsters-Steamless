@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:51b90a4c033d3b8a69180a6810ba094c:776d55e9c2d0d3a73a8e5b15bd637304:3801041e383363cb910e11a75f766057$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_KM_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="KM_gauntlet_left.png" x="107" y="321" w="120" h="90" pX="0.5" pY="0.5" oX="-22" oY="-23" oW="140" oH="100"/>
+    <sprite n="KM_gauntlet_right.png" x="107" y="413" w="103" h="90" pX="0.5" pY="0.5" oX="-24" oY="-23" oW="140" oH="100"/>
+    <sprite n="KM_helmet.png" x="2" y="2" w="240" h="180" pX="0.5" pY="0.5" oX="-4" oY="-143" oW="200" oH="300" r="y"/>
+    <sprite n="KM_shield.png" x="2" y="184" w="174" h="135" pX="0.5" pY="0.5" oX="-28" oY="42" oW="160" oH="200" r="y"/>
+    <sprite n="KM_sword.png" x="2" y="321" w="103" h="169" pX="0.5" pY="0.5" oX="-54" oY="-110" oW="140" oH="200"/>
+</TextureAtlas>

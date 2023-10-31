@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:48659e525da5ca655257621f8f1f2599:6e5f47e1b693f357c3da866848869611:9f54d3da733a865f01e65943c9fdfde9$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island24_sheet01.png" width="2048" height="2048" hires="true">
+    <sprite n="crit_crystal_chomp_01.png" x="1955" y="332" w="71" h="50" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_chomp_02.png" x="792" y="923" w="49" h="77" pX="0.5" pY="0.5" oX="21" oY="9" oW="92" oH="92"/>
+    <sprite n="crit_crystal_chomp_03.png" x="686" y="923" w="49" h="81" pX="0.5" pY="0.5" oX="21" oY="7" oW="92" oH="92"/>
+    <sprite n="crit_crystal_chomp_04.png" x="1955" y="4" w="86" h="48" pX="0.5" pY="0.5" oX="20" oY="3" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_chomp_05.png" x="823" y="1838" w="53" h="87" pX="0.5" pY="0.5" oX="13" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_crystal_chomp_06.png" x="965" y="789" w="66" h="87" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_crystal_chomp_07.png" x="1085" y="1658" w="66" h="67" pX="0.5" pY="0.5" oX="14" oY="15" oW="92" oH="92"/>
+    <sprite n="crit_crystal_chomp_08.png" x="496" y="1985" w="67" h="59" pX="0.5" pY="0.5" oX="17" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_chomp_09.png" x="1027" y="686" w="50" h="71" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92"/>
+    <sprite n="crit_crystal_flap_01.png" x="907" y="1929" w="68" h="52" pX="0.5" pY="0.5" oX="20" oY="14" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_flap_02.png" x="1225" y="1658" w="61" h="62" pX="0.5" pY="0.5" oX="13" oY="16" oW="92" oH="92"/>
+    <sprite n="crit_crystal_flap_03.png" x="638" y="1985" w="66" h="59" pX="0.5" pY="0.5" oX="10" oY="17" oW="92" oH="92"/>
+    <sprite n="crit_crystal_flap_04.png" x="778" y="1985" w="74" h="57" pX="0.5" pY="0.5" oX="14" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_flap_05.png" x="753" y="1929" w="73" h="52" pX="0.5" pY="0.5" oX="18" oY="8" oW="92" oH="92" r="y"/>
+    <sprite n="crit_crystal_flap_06.png" x="1955" y="230" w="73" h="47" pX="0.5" pY="0.5" oX="23" oY="10" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_chomp_01.png" x="1454" y="624" w="71" h="50" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_chomp_02.png" x="1955" y="177" w="77" h="49" pX="0.5" pY="0.5" oX="21" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_chomp_03.png" x="739" y="923" w="49" h="81" pX="0.5" pY="0.5" oX="21" oY="7" oW="92" oH="92"/>
+    <sprite n="crit_mech_chomp_04.png" x="1955" y="56" w="86" h="48" pX="0.5" pY="0.5" oX="20" oY="3" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_chomp_05.png" x="880" y="1838" w="53" h="87" pX="0.5" pY="0.5" oX="13" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_mech_chomp_06.png" x="753" y="1838" w="66" h="87" pX="0.5" pY="0.5" oX="7" oY="2" oW="92" oH="92"/>
+    <sprite n="crit_mech_chomp_07.png" x="1155" y="1658" w="66" h="67" pX="0.5" pY="0.5" oX="14" oY="15" oW="92" oH="92"/>
+    <sprite n="crit_mech_chomp_08.png" x="567" y="1985" w="67" h="59" pX="0.5" pY="0.5" oX="17" oY="15" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_chomp_09.png" x="1529" y="624" w="71" h="50" pX="0.5" pY="0.5" oX="21" oY="12" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_flap_01.png" x="979" y="1838" w="52" h="68" pX="0.5" pY="0.5" oX="20" oY="14" oW="92" oH="92"/>
+    <sprite n="crit_mech_flap_02.png" x="1290" y="1658" w="61" h="62" pX="0.5" pY="0.5" oX="13" oY="16" oW="92" oH="92"/>
+    <sprite n="crit_mech_flap_03.png" x="708" y="1985" w="66" h="59" pX="0.5" pY="0.5" oX="10" oY="17" oW="92" oH="92"/>
+    <sprite n="crit_mech_flap_04.png" x="856" y="1985" w="74" h="57" pX="0.5" pY="0.5" oX="14" oY="9" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_flap_05.png" x="830" y="1929" w="73" h="52" pX="0.5" pY="0.5" oX="18" oY="8" oW="92" oH="92" r="y"/>
+    <sprite n="crit_mech_flap_06.png" x="1955" y="281" w="73" h="47" pX="0.5" pY="0.5" oX="23" oY="10" oW="92" oH="92" r="y"/>
+    <sprite n="island24_branch_01.png" x="1081" y="686" w="666" h="286" pX="0.5" pY="0.5"/>
+    <sprite n="island24_branch_01b.png" x="738" y="1735" w="293" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="294" oH="100"/>
+    <sprite n="island24_branch_02.png" x="738" y="1008" w="343" h="723" pX="0.5" pY="0.5" oX="0" oY="0" oW="724" oH="344" r="y"/>
+    <sprite n="island24_cheek.png" x="1035" y="4" w="415" h="678" pX="0.5" pY="0.5" oX="0" oY="0" oW="420" oH="678"/>
+    <sprite n="island24_computer_nub.png" x="905" y="789" w="56" h="104" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_computer_platfrom.png" x="1035" y="1735" w="420" h="294" pX="0.5" pY="0.5"/>
+    <sprite n="island24_eye_shadow1.png" x="1454" y="357" w="263" h="263" pX="0.5" pY="0.5" oX="4" oY="4" oW="270" oH="270"/>
+    <sprite n="island24_eye_shadow2.png" x="1751" y="654" w="263" h="263" pX="0.5" pY="0.5" oX="4" oY="3" oW="270" oH="270"/>
+    <sprite n="island24_eyeball.png" x="1751" y="386" w="264" h="264" pX="0.5" pY="0.5" oX="3" oY="3" oW="270" oH="270"/>
+    <sprite n="island24_eyelid_01.png" x="845" y="906" w="227" h="88" pX="0.5" pY="0.5" oX="1" oY="0" oW="228" oH="90"/>
+    <sprite n="island24_eyelid_02.png" x="424" y="1839" w="325" h="142" pX="0.5" pY="0.5" oX="0" oY="0" oW="326" oH="142"/>
+    <sprite n="island24_face.png" x="4" y="1009" w="730" h="826" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_face_nub1.png" x="1674" y="624" w="62" h="44" pX="0.5" pY="0.5"/>
+    <sprite n="island24_face_nub2.png" x="424" y="1985" w="68" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="60"/>
+    <sprite n="island24_jello4_nub.png" x="818" y="789" w="83" h="113" pX="0.5" pY="0.5" oX="0" oY="0" oW="114" oH="84" r="y"/>
+    <sprite n="island24_jello_01.png" x="1459" y="4" w="492" h="349" pX="0.5" pY="0.5" oX="0" oY="0" oW="350" oH="492" r="y"/>
+    <sprite n="island24_jello_04.png" x="1459" y="1658" w="405" h="354" pX="0.5" pY="0.5" oX="0" oY="0" oW="406" oH="354"/>
+    <sprite n="island24_jello_computer.png" x="4" y="1839" w="262" h="190" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="island24_lightbeam_2.png" x="1749" y="976" w="32" h="613" pX="0.5" pY="0.5" oX="7" oY="3" oW="626" oH="39" r="y"/>
+    <sprite n="island24_lightbeam_3.png" x="1785" y="921" w="32" h="613" pX="0.5" pY="0.5" oX="7" oY="3" oW="626" oH="39" r="y"/>
+    <sprite n="island24_platfrom_side.png" x="686" y="4" w="337" h="781" pX="0.5" pY="0.5" oX="5" oY="0" oW="792" oH="338" r="y"/>
+    <sprite n="island24_pupil.png" x="686" y="789" w="128" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="island24_side jello.png" x="270" y="1839" w="150" h="172" pX="0.5" pY="0.5"/>
+    <sprite n="island24_side.png" x="1085" y="976" w="660" h="678" pX="0.5" pY="0.5" oX="0" oY="1" oW="678" oH="664" r="y"/>
+    <sprite n="island24_sidejello_nub1.png" x="979" y="1969" w="44" h="75" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="44" r="y"/>
+    <sprite n="island24_sidejello_nub2.png" x="937" y="1838" w="34" h="52" pX="0.5" pY="0.5"/>
+    <sprite n="island24_sidejello_nub3.png" x="1604" y="624" w="66" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="island24_sidejello_nub4.png" x="1955" y="108" w="85" h="65" pX="0.5" pY="0.5" oX="0" oY="0" oW="86" oH="66"/>
+    <sprite n="island24_sidejello_nub5.png" x="979" y="1910" w="52" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="52" r="y"/>
+    <sprite n="island24_tentacles.png" x="4" y="4" w="678" h="1001" pX="0.5" pY="0.5" oX="0" oY="0" oW="690" oH="1002"/>
+</TextureAtlas>

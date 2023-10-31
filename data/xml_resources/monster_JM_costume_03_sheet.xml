@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e90d141e4f2f721086f377da0c91e106:3dce225114593cd631512c22b0f4988e:cb6d82d3fc9e338b36ffd082bb5869b3$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_JM_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="JM_1st_hand.png" x="3" y="459" w="60" h="43" pX="0.5" pY="0.5" oX="2" oY="0" oW="48" oH="60" r="y"/>
+    <sprite n="JM_1st_lowerarm.png" x="182" y="224" w="71" h="36" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="80" r="y"/>
+    <sprite n="JM_2nd_lowerarm.png" x="3" y="384" w="36" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="36" oH="80"/>
+    <sprite n="JM_hand_01.png" x="3" y="323" w="144" h="55" pX="0.5" pY="0.5" oX="-13" oY="-4" oW="180" oH="80"/>
+    <sprite n="JM_hand_02.png" x="185" y="121" w="65" h="100" pX="0.5" pY="0.5" oX="-46" oY="-13" oW="100" oH="80" r="y"/>
+    <sprite n="JM_hand_03.png" x="182" y="263" w="70" h="118" pX="0.5" pY="0.5" oX="-17" oY="-3" oW="120" oH="80" r="y"/>
+    <sprite n="JM_hand_04.png" x="185" y="3" w="65" h="115" pX="0.5" pY="0.5" oX="-52" oY="-1" oW="150" oH="80" r="y"/>
+    <sprite n="JM_hat.png" x="3" y="3" w="179" h="177" pX="0.5" pY="0.5" oX="-28" oY="-9" oW="200" oH="200" r="y"/>
+    <sprite n="JM_shawl.png" x="3" y="183" w="176" h="137" pX="0.5" pY="0.5" oX="23" oY="-5" oW="180" oH="180" r="y"/>
+</TextureAtlas>

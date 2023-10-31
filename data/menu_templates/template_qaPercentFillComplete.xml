@@ -1,0 +1,39 @@
+<template name="template_qaPercentFillComplete" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+	
+	<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+	
+	<textComponent name="Text">
+		<size w="75*game.menuScaleX()" h="32*game.hudScale()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="14*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(1)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.18*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			component("noTranslate"):SetInt(0)
+			component("text"):SetString("Fill Complete")
+			component("layer"):SetString("MidPopUps")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+		</event>
+	</textComponent>
+	
+	<textComponent name="Stat">
+		<size w="60*game.menuScaleX()" h="32*game.menuScaleY()" />
+		<position relativeTo="element:name()" component="Text" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("size"):SetFloat(0.18*game.menuScaleX())
+			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+			print("first call: "..game.evolvingCelestialFillPercentage(game.selectedMonsterId()))
+			print("second call: "..game.evolvingCelestialFillPercentage(game.selectedMonsterId()))
+			component("text"):SetString(string.format(": %.1f %%", game.evolvingCelestialFillPercentage(game.selectedMonsterId())*100))
+			component("layer"):SetString("MidPopUps")
+			component("autoScale"):SetInt(1)
+		</event>
+	</textComponent>
+	
+</template>

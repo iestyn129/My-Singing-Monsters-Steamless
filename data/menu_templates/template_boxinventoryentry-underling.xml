@@ -9,7 +9,7 @@
 	</event>
 	
 	<event name="onPostInit" params="element">
-		if(game.inAdminViewMode() and element:parent()("isUnderling"):GetInt() == 1) then
+		if((game.inAdminViewMode() or game.isQABuild()) and element:parent()("isUnderling"):GetInt() == 1) then
 			element["upArrow"]["Sprite"]("visible"):SetInt(1)
 			element["downArrow"]["Sprite"]("visible"):SetInt(1)
 		else
@@ -142,7 +142,7 @@
 		<event name="onTouchUp" params="component, element, x, y">
 			<![CDATA[
 				if(component("dragging"):GetInt() < 2) then
-					if(game.inAdminViewMode()) then
+					if(game.inAdminViewMode() or game.isQABuild()) then
 						if(element:parent()("isUnderling"):GetInt() == 1) then
 						
 							local upPosX = element:GetElement("upArrow"):absX();

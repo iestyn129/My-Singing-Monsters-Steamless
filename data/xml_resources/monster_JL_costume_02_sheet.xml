@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:cec655cb6b5b5f4beb671d3f9e20fdb1:db0302c44d0e79878b8fc8a327e83346:b6fd672b776d8ceee7eea81959a9c77d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_JL_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="JL_bucket.png" x="2" y="174" w="144" h="136" pX="0.5" pY="0.5" oX="4" oY="0"/>
+    <sprite n="JL_ice_cream.png" x="2" y="2" w="185" h="170" pX="0.5" pY="0.5" oX="-69" oY="-94" oW="200" oH="200" r="y"/>
+    <sprite n="JL_left_lowerleg.png" x="148" y="265" w="72" h="118" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="132"/>
+    <sprite n="JL_lowerarm.png" x="189" y="2" w="64" h="108" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="64" r="y"/>
+    <sprite n="JL_right_lowerleg.png" x="2" y="312" w="107" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="124" r="y"/>
+    <sprite n="JL_shaker_handle.png" x="189" y="112" w="63" h="25" pX="0.5" pY="0.5" oX="24" oY="117" oW="72" oH="180" r="y"/>
+    <sprite n="JL_shaker_head.png" x="189" y="139" w="61" h="124" pX="0.5" pY="0.5" oX="8" oY="3" oW="72" oH="180"/>
+    <sprite n="JL_shaker_head_02.png" x="2" y="385" w="61" h="124" pX="0.5" pY="0.5" oX="4" oY="3" oW="72" oH="180"/>
+</TextureAtlas>

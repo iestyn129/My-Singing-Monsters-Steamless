@@ -167,6 +167,7 @@
 			<event name="onTouchUp" params="component, element">
 				onTouchUp(component, element)
 				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				
 				if(game.hatchEgg()) then
 					element:root():popPopUp()
 				end
@@ -293,7 +294,9 @@
 				onTouchUp(component, element)
 				element["Overlay"]:setColor(1.0, 1.0, 1.0)
 				element:root():popPopUp()
+
 				game.sellEgg()
+
 			</event>
 			<event name="onTouchRelease" params="component, element">
 				onTouchRelease(component, element)

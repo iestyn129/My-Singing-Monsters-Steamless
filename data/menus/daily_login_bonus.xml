@@ -242,7 +242,7 @@
 						element:parent():E("FooterText"):C("Text"):V("text"):SetString(text)
 					else
 						element.countdownOver = true
-						element:E("FooterText"):C("Text"):V("text"):SetString("REWARD_AVAIL_NEXT_LOGIN")
+						element:parent():E("FooterText"):C("Text"):V("text"):SetString("REWARD_AVAIL_NEXT_LOGIN")
 					end
 					
 				end
@@ -532,6 +532,16 @@
 					end
 
 					game.collectDailyBonus();
+				else
+					--prevent problems with exiting menu if this process got interrupted 
+					-- (also don't fuck up the flow because that would do bad things too):
+					if(theDay ~= nil) then
+						local hudIconDest = theDay("hudIconDest"):GetString();
+						local hudElementDest = theDay("hudElementDest"):GetString();
+						if(hudIconDest ~= "" and hudElementDest ~= "") then
+							game.showFlyingIconFromDailyLogin(hudIconDest, hudElementDest, "Icon", midX, midY, "MidPopUps");
+						end
+					end
 				end
 					
 				--[[this will be done in GotDailyBonusComplete now, to show the animations before popping up ads:

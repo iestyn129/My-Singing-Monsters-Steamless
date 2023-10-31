@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:1545a94c829c287d7c3428842a18351d:2f754d5a0f29de481d5f2f9564a9e89b:fa70552c12eee92fa79f8b9c7a5d435b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_KL_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="KL_armjoint_01.png" x="71" y="449" w="63" h="59" pX="0.5" pY="0.5" oX="0" oY="14" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_02.png" x="2" y="449" w="67" h="60" pX="0.5" pY="0.5" oX="0" oY="10" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_03.png" x="146" y="237" w="57" h="73" pX="0.5" pY="0.5" oX="0" oY="7" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_04.png" x="432" y="72" w="77" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="64" oH="88" r="y"/>
+    <sprite n="KL_armjoint_05.png" x="93" y="235" w="51" h="81" pX="0.5" pY="0.5" oX="0" oY="3" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_06.png" x="64" y="364" w="48" h="83" pX="0.5" pY="0.5" oX="0" oY="2" oW="64" oH="88"/>
+    <sprite n="KL_armjoint_07.png" x="2" y="317" w="85" h="45" pX="0.5" pY="0.5" oX="0" oY="1" oW="64" oH="88" r="y"/>
+    <sprite n="KL_body.png" x="224" y="2" w="206" h="182" pX="0.5" pY="0.5" oX="0" oY="0" oW="184" oH="208" r="y"/>
+    <sprite n="KL_crystal.png" x="2" y="235" w="89" h="80" pX="0.5" pY="0.5" oX="-8" oY="-13" oW="100" oH="100" r="y"/>
+    <sprite n="KL_head_crystal.png" x="2" y="2" w="220" h="160" pX="0.5" pY="0.5" oX="-26" oY="-46" oW="240" oH="200"/>
+    <sprite n="KL_left_hand.png" x="180" y="312" w="68" h="69" pX="0.5" pY="0.5" oX="0" oY="1" oW="68" oH="72"/>
+    <sprite n="KL_right_hand.png" x="136" y="400" w="69" h="69" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="72"/>
+    <sprite n="KL_shoulder_behind.png" x="2" y="164" w="142" h="69" pX="0.5" pY="0.5" oX="1" oY="0" oW="72" oH="144" r="y"/>
+    <sprite n="KL_shoulderjoint_01.png" x="2" y="364" w="60" h="83" pX="0.5" pY="0.5" oX="2" oY="8" oW="88" oH="76" r="y"/>
+    <sprite n="KL_shoulderjoint_02.png" x="114" y="318" w="64" h="80" pX="0.5" pY="0.5" oX="2" oY="6" oW="88" oH="76" r="y"/>
+    <sprite n="KL_shoulderjoint_03.png" x="432" y="2" w="77" h="68" pX="0.5" pY="0.5" oX="2" oY="4" oW="88" oH="76"/>
+    <sprite n="KL_shoulderjoint_04.png" x="432" y="128" w="74" h="72" pX="0.5" pY="0.5" oX="2" oY="2" oW="88" oH="76"/>
+    <sprite n="KL_shoulderjoint_05.png" x="146" y="164" w="74" h="71" pX="0.5" pY="0.5" oX="2" oY="1" oW="88" oH="76" r="y"/>
+</TextureAtlas>

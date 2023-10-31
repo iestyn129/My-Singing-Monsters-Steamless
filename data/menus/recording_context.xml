@@ -27,8 +27,6 @@
 		
 		if(msg.showRevert) then
 			element("showRevert"):SetInt(1)
-			origButton:DoStoredScript("setVisible")
-			muteButton:relativeTo(origButton)
 			
 			if(msg.enable) then
 				origButton:DoStoredScript("enable");
@@ -37,12 +35,9 @@
 			end
 		else
 			element("showRevert"):SetInt(0)
-			origButton:DoStoredScript("setInvisible")
-			muteButton:relativeTo(infoButton)
+			origButton:DoStoredScript("disable");
 		end
 		
-		-- needed to reposition the button after reassigning its relative object
-		muteButton:setOrientation(lua_sys.MenuOrientation(3*game.hudScale(), 0, 0, lua_sys.RIGHT, lua_sys.VCENTER))
 	</event>
 	
 	<template type="template_spritesheetbutton" name="BackButton">
@@ -165,9 +160,7 @@
 		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
 		<position relativeTo="InfoButton" vAnchor="VCENTER" hAnchor="LEFT" />
 		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="3*game.hudScale()" yOffset="0" priorityOffset="0" />
-		<event name="onPostInit" params="element">
-			element:DoStoredScript("setInvisible");
-		</event>
+		
 		<event name="setVisible" params="element">
 			if(element:parent()("showRevert"):GetInt() == 1) then
 				setVisible(element)

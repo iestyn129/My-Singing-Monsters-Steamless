@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:6d85dd53b1341d551966a54c9c1c7eb8:986d77a8de1ac5bfa3f42132d5293813:e85b78e504cb89196527f907a0e28838$ -->
+<!-- $TexturePacker:SmartUpdate:ea42cff157ccf281ba5cb8100c22ef73:4d35996531939207c73b6b6b699a84a1:e85b78e504cb89196527f907a0e28838$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,18 +20,18 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/menu/island_buttons01.png" width="1024" height="1024">
-    <sprite n="islands_button_isl01" x="215" y="658" w="208" h="289" pX="0.5" pY="0.5" oX="10" oY="4" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl01_th01" x="308" y="214" w="298" h="204" pX="0.5" pY="0.5" oX="4" oY="5" oW="304" oH="228"/>
-    <sprite n="islands_button_isl02" x="2" y="232" w="296" h="212" pX="0.5" pY="0.5" oX="3" oY="0" oW="304" oH="228"/>
-    <sprite n="islands_button_isl03" x="613" y="212" w="299" h="223" pX="0.5" pY="0.5" oX="0" oY="0" oW="304" oH="228"/>
-    <sprite n="islands_button_isl04" x="2" y="658" w="211" h="289" pX="0.5" pY="0.5" oX="7" oY="8" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl05" x="2" y="446" w="294" h="210" pX="0.5" pY="0.5" oX="5" oY="9" oW="304" oH="228"/>
-    <sprite n="islands_button_isl06" x="425" y="611" w="191" h="289" pX="0.5" pY="0.5" oX="10" oY="21" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl07" x="2" y="2" w="304" h="228" pX="0.5" pY="0.5"/>
-    <sprite n="islands_button_isl08" x="308" y="2" w="303" h="210" pX="0.5" pY="0.5" oX="1" oY="2" oW="304" oH="228"/>
-    <sprite n="islands_button_isl09" x="618" y="634" w="221" h="274" pX="0.5" pY="0.5" oX="17" oY="7" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl010" x="300" y="420" w="296" h="189" pX="0.5" pY="0.5" oX="4" oY="12" oW="304" oH="228"/>
-    <sprite n="islands_button_isl012" x="841" y="634" w="176" h="266" pX="0.5" pY="0.5" oX="20" oY="21" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl013" x="613" y="2" w="300" h="208" pX="0.5" pY="0.5" oX="0" oY="5" oW="304" oH="228"/>
-    <sprite n="islands_button_isl014" x="618" y="437" w="288" h="195" pX="0.5" pY="0.5" oX="4" oY="8" oW="304" oH="228"/>
+    <sprite n="islands_button_isl01" x="214" y="428" w="208" h="289" pX="0.5" pY="0.5" oX="10" oY="4" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl01_th01" x="307" y="212" w="298" h="204" pX="0.5" pY="0.5" oX="4" oY="5" oW="304" oH="228"/>
+    <sprite n="islands_button_isl02" x="2" y="214" w="296" h="212" pX="0.5" pY="0.5" oX="3" oY="0" oW="304" oH="228"/>
+    <sprite n="islands_button_isl03" x="609" y="2" w="299" h="223" pX="0.5" pY="0.5" oX="0" oY="0" oW="304" oH="228"/>
+    <sprite n="islands_button_isl04" x="2" y="724" w="211" h="289" pX="0.5" pY="0.5" oX="7" oY="8" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl05" x="2" y="428" w="210" h="294" pX="0.5" pY="0.5" oX="5" oY="9" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl06" x="215" y="719" w="191" h="289" pX="0.5" pY="0.5" oX="10" oY="21" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl07" x="605" y="694" w="206" h="270" pX="0.5" pY="0.5" oX="21" oY="1" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl08" x="2" y="2" w="303" h="210" pX="0.5" pY="0.5" oX="1" oY="2" oW="304" oH="228"/>
+    <sprite n="islands_button_isl09" x="424" y="418" w="221" h="274" pX="0.5" pY="0.5" oX="17" oY="7" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl010" x="607" y="227" w="296" h="189" pX="0.5" pY="0.5" oX="4" oY="12" oW="304" oH="228"/>
+    <sprite n="islands_button_isl012" x="647" y="418" w="176" h="266" pX="0.5" pY="0.5" oX="20" oY="21" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl013" x="307" y="2" w="300" h="208" pX="0.5" pY="0.5" oX="0" oY="5" oW="304" oH="228"/>
+    <sprite n="islands_button_isl014" x="408" y="719" w="195" h="288" pX="0.5" pY="0.5" oX="4" oY="8" oW="304" oH="228" r="y"/>
 </TextureAtlas>

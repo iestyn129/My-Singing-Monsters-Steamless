@@ -12,10 +12,10 @@
 			
 			local entityId = element("EntityId"):GetInt()
 
-			if(element("AnimName"):GetString() == "Idle") then
-				component:setScale(Vector2(0.3*game.menuScaleX(), 0.3*game.menuScaleX()))
-			elseif game.IsBoxFromEntityId(entityId) and not game.isAmberIsland() then
-				component:setScale(Vector2(0.2*game.menuScaleX(), 0.2*game.menuScaleX()))
+			if game.IsBoxFromEntityId(entityId) and not game.isAmberIsland() then
+				component:setScale(Vector2(0.22*game.menuScaleX(), 0.22*game.menuScaleX()))
+			elseif(element("AnimName"):GetString() == "Idle") then
+				component:setScale(Vector2(0.3*game.menuScaleX(), 0.3*game.menuScaleX()))			
 			else
 				component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
 			end

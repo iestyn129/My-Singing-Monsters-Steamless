@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b93bbf1c5bca6e9d3ff08b177c4d9a7f:9296ddf22df7a0315c5d49f5818ac9a7:e93312f48d1d6d73f15cb2643abead69$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_LM_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="LM_head_bush.png" x="2" y="2" w="307" h="223" pX="0.5" pY="0.5" oX="-39" oY="-120" oW="320" oH="250"/>
+    <sprite n="LM_neck_bush.png" x="2" y="230" w="74" h="121" pX="0.5" pY="0.5" oX="-46" oY="57" oW="130" oH="90" r="y"/>
+    <sprite n="LM_pot.png" x="311" y="2" w="150" h="226" pX="0.5" pY="0.5" oX="-43" oY="-73" oW="250" oH="150" r="y"/>
+    <sprite n="LM_pot_back.png" x="463" y="2" w="38" h="132" pX="0.5" pY="0.5" oX="5" oY="-65" oW="150" oH="50" r="y"/>
+</TextureAtlas>

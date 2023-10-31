@@ -1,0 +1,93 @@
+<template name="template_critter_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
+				component("spriteName"):SetString("critter_portrait_square_g")
+				component("size"):SetFloat(0.45*game.menuScaleX())
+				component("layer"):SetString(element("Layer"):GetString())
+
+				if(element.gene ~= nil) then
+					component("spriteName"):SetString(game.critterSprite(element.gene))
+				end
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<spriteSheetComponent name="SelectedSprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
+				component("spriteName"):SetString("critter_portrait_square_g")
+				component("size"):SetFloat(0.48*game.menuScaleX())
+				component("layer"):SetString(element("Layer"):GetString())
+
+				if(element.gene ~= nil) then
+					component("spriteName"):SetString(game.critterSprite(element.gene))
+				end
+
+				local ShaderColorize = include("ShaderColorize")
+				ShaderColorize:getUniform("u_Factor"):setFloat(1.0)
+				component:setShader(ShaderColorize);
+
+				component("visible"):SetInt(0)
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<textComponent name="Text">
+		<size w="65*game.menuScaleX()" h="100" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleX()" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("size"):SetFloat(0.25*game.menuScaleX())
+			component("text"):SetString(element.num)
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+			component("layer"):SetString(element("Layer"):GetString())
+		</event>
+	</textComponent>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<event name="onTouchUp" params="component, element">
+			<![CDATA[
+				if not element.isSelected and not element.isDisabled then
+					if(element.num > 0) then
+						element:unGrey()
+						element:parent():parent():CritterSelected(element)
+					end
+				end
+			]]>
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+				if not element.isSelected and not element.isDisabled then
+					element:grey()
+				end
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element">
+			<![CDATA[
+				if not element.isDisabled and not element.isDisabled then
+					element:unGrey()
+				end
+			]]>
+		</event>
+	</touchComponent>
+
+	<script src="scripts/AttunerCritterEntry.lua" />
+
+</template>

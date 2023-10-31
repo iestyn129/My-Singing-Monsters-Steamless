@@ -7,7 +7,7 @@
 			--let people see the popup notice telling them how to unlock it:
 			element:parent()["StarpowerButton"]["Touch"]("enabled"):SetInt(1)
 
-		elseif(game.isUnderlingIsland() or game.isCelestialIsland() or game.isAmberIsland() or game.isMythicalIsland()) then
+		elseif(game.isUnderlingIsland() or game.isCelestialIsland() or game.isAmberIsland() or game.isMythicalIsland() or game.isEtherealAtelierIsland()) then
 		
 			element["Functions"]:DoStoredScript("disableStarpowerButton");
 			--let people see the popup notice telling them how to unlock it:
@@ -511,6 +511,7 @@
 				store:SelectCategory(game.StoreCategories_TYPE_CURRENCY)
 				store:SetMenuState(game.StoreContext_IDLE)
 				element:parent()["Functions"]:DoStoredScript("dismissMarketButton");
+				game.logEvent("enter_iap_store", "source", "main_market_menu", "context", "StoreContext")
 				menu:popPopUp()
 			</event>
 			<event name="onTouchRelease" params="component, element">
@@ -576,6 +577,7 @@
 					game.isCelestialIsland() or
 					game.isAmberIsland() or
 					game.isMythicalIsland() or
+					game.isEtherealAtelierIsland() or
 					game.isBattleIsland())) then
 					
 					element["Sprite"]:setColor(0.5, 0.5, 0.5)
@@ -592,6 +594,7 @@
 					game.isCelestialIsland() or 
 					game.isAmberIsland() or 
 					game.isMythicalIsland() or
+					game.isEtherealAtelierIsland() or
 					game.isBattleIsland()) then
 					
 					game.displayNotification(game.getLocalizedText("STARPOWER_CATEGORY_ISLAND_LOCKED"))

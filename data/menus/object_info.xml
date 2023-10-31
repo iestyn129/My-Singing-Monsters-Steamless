@@ -590,7 +590,16 @@
 		</event>
 		<event name="populateCastleStats" params="element">
 			local previous = nil
-			local statsArray = { "template_stat_bedsused", "template_stat_maxbeds", "template_stat_islandlikes", "template_stat_islandrank" }
+			local statsArray = { 
+				"template_stat_bedsused", 
+				"template_stat_maxbeds", 
+				"template_stat_islandlikes", 
+				"template_stat_islandrank" 
+			}
+
+			if game.isEtherealAtelierIsland() then
+				table.insert(statsArray, "template_stat_critters")
+			end
 			
 			for i=1, #statsArray do
 				local statEntry = menu:addTemplateElement(statsArray[i], "statEntry"..i, element)

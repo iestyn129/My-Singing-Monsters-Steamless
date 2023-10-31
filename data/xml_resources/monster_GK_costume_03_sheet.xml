@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:dc0d7e6dd9609f2548c482a874309dc3:6bb53bdae88b79f7ced2b55fab595b7a:d0a0c123adb94e0b548201c94dbc85fa$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GK_costume_03_sheet.png" width="256" height="512" hires="true">
+    <sprite n="GK_chest_piece.png" x="1" y="150" w="176" h="97" pX="0.5" pY="0.5" oX="-23" oY="14" oW="200" oH="100"/>
+    <sprite n="GK_chest_piece_OL.png" x="1" y="248" w="128" h="97" pX="0.5" pY="0.5" oX="-23" oY="14" oW="200" oH="100"/>
+    <sprite n="GK_helmet.png" x="1" y="1" w="184" h="148" pX="0.5" pY="0.5" oX="-23" oY="-21" oW="200" oH="200"/>
+    <sprite n="GK_left_foot.png" x="186" y="94" w="56" h="56" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="57"/>
+    <sprite n="GK_left_lowerleg.png" x="186" y="1" w="56" h="92" pX="0.5" pY="0.5"/>
+    <sprite n="GK_right_foot.png" x="178" y="151" w="53" h="52" pX="0.5" pY="0.5" oX="0" oY="0" oW="64" oH="52"/>
+    <sprite n="GK_right_upperleg.png" x="178" y="204" w="52" h="88" pX="0.5" pY="0.5"/>
+</TextureAtlas>

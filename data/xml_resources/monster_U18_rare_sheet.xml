@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e81cea7be751565c859dae3e19038d69:72b32baa0c69517cd65cb48c4a85a15a:7e0620a052d07ab4ca14bf17559936be$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U18_rare_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="beam.png" x="787" y="422" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot.png" x="656" y="670" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="U18_antlerLeft.png" x="645" y="457" w="125" h="52" pX="0.5" pY="0.5" oX="5" oY="6" oW="64" oH="140" r="y"/>
+    <sprite n="U18_antlerRight.png" x="287" y="935" w="171" h="84" pX="0.5" pY="0.5" oX="4" oY="3" oW="90" oH="176" r="y"/>
+    <sprite n="U18_BackFlower1_base.png" x="946" y="339" w="69" h="63" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="78" r="y"/>
+    <sprite n="U18_BackFlower1_blue.png" x="598" y="788" w="63" h="69" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="78"/>
+    <sprite n="U18_BackFlower1_red.png" x="598" y="916" w="63" h="69" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="78"/>
+    <sprite n="U18_BackFlower2_base.png" x="462" y="935" w="83" h="84" pX="0.5" pY="0.5" oX="5" oY="5" oW="94" oH="94" r="y"/>
+    <sprite n="U18_BackFlower2_blue.png" x="549" y="701" w="84" h="83" pX="0.5" pY="0.5" oX="5" oY="5" oW="94" oH="94"/>
+    <sprite n="U18_BackFlower2_red.png" x="511" y="788" w="83" h="84" pX="0.5" pY="0.5" oX="5" oY="5" oW="94" oH="94" r="y"/>
+    <sprite n="U18_Backshell_base.png" x="851" y="3" w="163" h="137" pX="0.5" pY="0.5" oX="12" oY="6" oW="163" oH="173" r="y"/>
+    <sprite n="U18_Backshell_blue.png" x="659" y="227" w="157" h="139" pX="0.5" pY="0.5" oX="10" oY="7" oW="163" oH="173" r="y"/>
+    <sprite n="U18_Backshell_Pink.png" x="399" y="81" w="141" h="158" pX="0.5" pY="0.5" oX="9" oY="6" oW="163" oH="173"/>
+    <sprite n="U18_belly.png" x="399" y="243" w="242" h="271" pX="0.5" pY="0.5" oX="5" oY="22" oW="280" oH="270" r="y"/>
+    <sprite n="U18_bottomjaw_1.png" x="656" y="624" w="98" h="42" pX="0.5" pY="0.5" oX="5" oY="4" oW="108" oH="50"/>
+    <sprite n="U18_bottomjaw_1Rare.png" x="898" y="496" w="120" h="54" pX="0.5" pY="0.5" oX="3" oY="0" oW="123" oH="54"/>
+    <sprite n="U18_bottomjaw_2.png" x="758" y="668" w="98" h="39" pX="0.5" pY="0.5" oX="5" oY="8" oW="108" oH="50"/>
+    <sprite n="U18_bottomjaw_2Rare.png" x="898" y="554" w="111" h="49" pX="0.5" pY="0.5" oX="4" oY="2" oW="123" oH="54"/>
+    <sprite n="U18_chest.png" x="659" y="108" w="185" h="115" pX="0.5" pY="0.5" oX="4" oY="5" oW="194" oH="124"/>
+    <sprite n="U18_chinspikes.png" x="511" y="3" w="30" h="41" pX="0.5" pY="0.5" oX="4" oY="5" oW="38" oH="52"/>
+    <sprite n="U18_chinspikes1.png" x="860" y="672" w="62" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="63" oH="58"/>
+    <sprite n="U18_eyeballLeft.png" x="820" y="227" w="16" h="13" pX="0.5" pY="0.5" oX="0" oY="1" oW="13" oH="18" r="y"/>
+    <sprite n="U18_eyeballRight.png" x="511" y="48" w="18" h="19" pX="0.5" pY="0.5" oX="1" oY="1" oW="20" oH="20"/>
+    <sprite n="U18_face.png" x="848" y="222" w="158" h="113" pX="0.5" pY="0.5" oX="35" oY="13" oW="208" oH="128"/>
+    <sprite n="U18_glow_01.png" x="3" y="519" w="504" h="412" pX="0.5" pY="0.5" oX="33" oY="130" oW="570" oH="580"/>
+    <sprite n="U18_glow_02.png" x="3" y="3" w="392" h="512" pX="0.5" pY="0.5" oX="104" oY="34" oW="570" oH="580"/>
+    <sprite n="U18_glowlight.png" x="511" y="876" w="54" h="54" pX="0.5" pY="0.5" oX="5" oY="5" oW="64" oH="64"/>
+    <sprite n="U18_Headattachement_Left.png" x="838" y="339" w="104" h="77" pX="0.5" pY="0.5" oX="9" oY="2" oW="94" oH="108" r="y"/>
+    <sprite n="U18_Headattachement_Right.png" x="544" y="108" w="111" h="128" pX="0.5" pY="0.5" oX="4" oY="7" oW="124" oH="142"/>
+    <sprite n="U18_leftHand.png" x="549" y="624" w="103" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="82" oH="112" r="y"/>
+    <sprite n="U18_leftleg1.png" x="877" y="607" w="109" h="61" pX="0.5" pY="0.5" oX="4" oY="4" oW="70" oH="118" r="y"/>
+    <sprite n="U18_LowerBack.png" x="549" y="3" w="298" h="101" pX="0.5" pY="0.5" oX="3" oY="1" oW="106" oH="306" r="y"/>
+    <sprite n="U18_MidBack.png" x="511" y="518" w="248" h="102" pX="0.5" pY="0.5" oX="4" oY="0" oW="252" oH="102"/>
+    <sprite n="U18_pupil.png" x="533" y="48" w="10" h="10" pX="0.5" pY="0.5"/>
+    <sprite n="U18_RightHand.png" x="763" y="559" w="110" h="105" pX="0.5" pY="0.5" oX="5" oY="5" oW="114" oH="120" r="y"/>
+    <sprite n="U18_RightLowerLeg.png" x="774" y="496" w="120" h="59" pX="0.5" pY="0.5" oX="6" oY="4" oW="68" oH="130" r="y"/>
+    <sprite n="U18_RightUpperLeg.png" x="399" y="3" w="108" h="74" pX="0.5" pY="0.5" oX="8" oY="1" oW="88" oH="114" r="y"/>
+    <sprite n="U18_shadow.png" x="848" y="144" w="162" h="74" pX="0.5" pY="0.5" oX="5" oY="5" oW="172" oH="84"/>
+    <sprite n="U18_SmallArm.png" x="787" y="370" w="25" h="48" pX="0.5" pY="0.5" oX="3" oY="2" oW="30" oH="54"/>
+    <sprite n="U18_SmallHand.png" x="569" y="876" w="35" h="36" pX="0.5" pY="0.5" oX="5" oY="4" oW="46" oH="44"/>
+    <sprite n="U18_SmallHand_Rare.png" x="549" y="934" w="45" h="80" pX="0.5" pY="0.5" oX="3" oY="2" oW="51" oH="83"/>
+    <sprite n="U18_soundwav1.png" x="820" y="244" w="14" h="139" pX="0.5" pY="0.5" oX="5" oY="41" oW="148" oH="96" r="y"/>
+    <sprite n="U18_soundwav2.png" x="145" y="935" w="138" h="85" pX="0.5" pY="0.5" oX="5" oY="2" oW="148" oH="96"/>
+    <sprite n="U18_soundwav3.png" x="3" y="935" w="138" h="86" pX="0.5" pY="0.5" oX="5" oY="5" oW="148" oH="96"/>
+    <sprite n="U18_soundwav4.png" x="645" y="370" w="138" h="83" pX="0.5" pY="0.5" oX="5" oY="5" oW="148" oH="96"/>
+</TextureAtlas>

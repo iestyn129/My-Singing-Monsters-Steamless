@@ -132,7 +132,7 @@
 	<textComponent name="LevelReq">
 		<size w="135*game.menuScaleX()" />
 		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="22*game.menuScaleY()" priorityOffset="-5" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="22*game.menuScaleY()" priorityOffset="-4" />
 		<event name="onInit" params="component, element">
 			<![CDATA[
 				component("multiline"):SetInt(1)

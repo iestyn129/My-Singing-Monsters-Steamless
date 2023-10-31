@@ -10,13 +10,18 @@
 	</event>
 
 	<event name="onPostInit" params="element">
-		if(game.inAdminViewMode()) then
+		if(game.inAdminViewMode() or game.isQABuild()) then
 			element["upArrow"]["Sprite"]("visible"):SetInt(1)
 			element["downArrow"]["Sprite"]("visible"):SetInt(1)
 		else
 			element["upArrow"]["Sprite"]("visible"):SetInt(0)
 			element["downArrow"]["Sprite"]("visible"):SetInt(0)
 		end
+		
+		if(element.flexEggDef:exactNumGenes() &lt;= 0) then
+			element:RemoveElement(element:GetElement("ToolTip"))
+		end
+		
 	</event>
 	<event name="select" params="element">
 		element["CharacterImage"]["Sprite"]:setColor(0.25, 0.25, 0.25)
@@ -34,7 +39,7 @@
 		
 		--green to show it's done:
 		element["RequiredNum"]["Text"]:setColor(0.0, 1.0, 0.0)
-		element["DividerBecauseIDontCare"]["Text"]:setColor(0.0, 1.0, 0.0)
+		element["RatioCenter"]["Text"]:setColor(0.0, 1.0, 0.0)
 		element["PossessedNum"]["Text"]:setColor(0.0, 1.0, 0.0)
 	</event>
 	
@@ -53,11 +58,6 @@
 		
 		local firstGeneOffset = 0
 		local geneWidth = 0
-		
-		if(numGenes > 0) then
-			--no room for both monster name and gene pictures:
-			element:E("MonsterName"):C("Text"):V("visible"):SetInt(0)
-		end
 		
 		for i=0, numGenes-1 do
 			
@@ -78,7 +78,7 @@
 
 			if(previous == nil) then
 				geneEntry:relativeTo(element:E("CharacterImage"))
-				geneEntry:setOrientation(lua_sys.MenuOrientation(0, 0, -2, lua_sys.HCENTER, lua_sys.VCENTER))
+				geneEntry:setOrientation(lua_sys.MenuOrientation(0, -8*game.hudScale(), -2, lua_sys.HCENTER, lua_sys.VCENTER))
 				geneEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
 			else
 				geneEntry:relativeTo(previous)
@@ -109,6 +109,8 @@
 		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
 		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				local sporeGfx = element:parent().flexEggDef:eggSprite()
 				if(sporeGfx == "") then
@@ -121,6 +123,24 @@
 				component("layer"):SetString("Clipping")
 			</event>
 		</spriteSheetComponent>
+		<aeComponent name="RareAnim">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="-3*game.hudScale()" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("visible"):SetInt(0)
+					local effect = element:parent().flexEggDef:overlayEffect()
+					if(effect ~= "") then
+						component("animationName"):SetString("xml_bin/"..effect..".bin")
+						component("animation"):SetString(effect)
+						component("visible"):SetInt(1)
+					end
+					component:setScale(Vector2(0.75*game.hudScale(), 0.75*game.hudScale()))
+
+					component("layer"):SetString("Clipping")
+				]]>
+			</event>
+		</aeComponent>
 	</element>
 	
 	<element name="Spacer">
@@ -141,7 +161,7 @@
 	<element name="MonsterName">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
 		<position relativeTo="CharacterImage" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="-1" />
 		<textComponent name="Text">
 			<size w="1265*lua_sys.screenWidth() / 480.0"/>
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
@@ -159,10 +179,36 @@
 		</textComponent>
 	</element>
 	
-	<element name="DividerBecauseIDontCare">
+	<template type="template_tooltip" name="ToolTip">
+		<position relativeTo="CharacterImage" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<event name="onPostInit" params="element">
+			<![CDATA[
+				element.Sprite:setSize(lua_sys.Vector2(220*game.hudScale(), 80*game.hudScale()))
+				--element("xOffset"):SetInt(-element:parent()("actualWidth"):GetInt()/2*0.8)
+				
+				if(element:parent().flexEggDef:exactNumGenes() > 0) then
+				
+					local desc = LOC("FLEX_INFO_POPUP")
+					desc = desc:gsub("${LABEL}", LOC(element:parent().flexEggDef:strTitle()))
+					
+					--only one gene for now
+					desc = desc:gsub("${ELEMENT}", LOC(game.geneString(element:parent().flexEggDef:gene(0))))
+					desc = desc:gsub("${NUMBER}", element:parent().flexEggDef:exactNumGenes())
+					
+					element.Text:GetVar("text"):SetString(desc)
+					
+					element.onTouchUp = function(element, x, y) element:Hide() end
+					element.onTouchRelease = function(element, x, y) element:Hide() end
+				end
+			]]>
+		</event>
+	</template>
+	
+	<element name="RatioCenter">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
 		<position relativeTo="Spacer" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*20*game.hudScale()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="5*game.hudScale()" priorityOffset="0" />
 		<textComponent name="Text">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
 			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
@@ -179,7 +225,7 @@
 	
 	<element name="PossessedNum">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
-		<position relativeTo="DividerBecauseIDontCare" vAnchor="VCENTER" hAnchor="LEFT" />
+		<position relativeTo="RatioCenter" vAnchor="VCENTER" hAnchor="LEFT" />
 		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
 		<textComponent name="Text">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
@@ -197,7 +243,7 @@
 	
 	<element name="RequiredNum">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
-		<position relativeTo="DividerBecauseIDontCare" vAnchor="VCENTER" hAnchor="RIGHT" />
+		<position relativeTo="RatioCenter" vAnchor="VCENTER" hAnchor="RIGHT" />
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
 		<textComponent name="Text">
 			<event name="onInit" params="component, element" >
@@ -217,45 +263,72 @@
 		<event name="onInit" params="component, element">
 			component("dragging"):SetInt(0)
 			component("touchStart"):SetInt(0)
-		</event>
-		<event name="onTouchDrag" params="component, element, x, y">
-			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
-			component("touchStart"):SetInt(y)
-		</event>
-		<event name="onTouchDown" params="component, element, x, y">
-			component("touchStart"):SetInt(y)	
+			component("delayedTooltip"):SetInt(0)
 		</event>
 		<event name="onPostInit" params="component, element">
 			component:setSize(Vector2(element("actualWidth"):GetInt(), element("actualHeight"):GetInt()));
 		</event>
+		<event name="onTick" params="component, element, dt">
+			--delayed tooltip so dragging doesn't cause it to popup:
+			if(element.ToolTip ~= nil and component("delayedTooltip"):GetInt() > 0) then
+				if(component("delayedTooltip"):GetInt() > 2) then
+					component("delayedTooltip"):SetInt(0)
+					element.ToolTip:Show()
+				end
+				component("delayedTooltip"):SetInt(component("delayedTooltip"):GetInt()+1)
+			end
+		</event>
+		<event name="onTouchDrag" params="component, element, x, y">
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+			component("delayedTooltip"):SetInt(0)
+		</event>
+		<event name="onTouchDown" params="component, element, x, y">
+			<![CDATA[
+			component("touchStart"):SetInt(y)
+			if(component("dragging"):GetInt() < 2) then
+				component("delayedTooltip"):SetInt(1)
+			end
+			]]>
+		</event>
+		<event name="onTouchRelease" params="component, element, x, y">
+			if(element.ToolTip ~= nil) then
+				element.ToolTip:Hide()
+			end
+			component("delayedTooltip"):SetInt(0)
+		</event>
 		<event name="onTouchUp" params="component, element, x, y">
 			<![CDATA[
 			
-				if(component("dragging"):GetInt() < 2) then
+			if(component("dragging"):GetInt() < 2) then
+			
+				if(game.inAdminViewMode() or game.isQABuild()) then
 				
-					if(game.inAdminViewMode()) then
+					local upPosX = element:GetElement("upArrow"):absX();
+					local upPosY = element:GetElement("upArrow"):absY();
 					
-						local upPosX = element:GetElement("upArrow"):absX();
-						local upPosY = element:GetElement("upArrow"):absY();
+					local downPosX = element:GetElement("downArrow"):absX();
+					local downPosY = element:GetElement("downArrow"):absY();
+					
+					if(upPosX < x and x < ( upPosX + element:GetElement("upArrow"):absW() ) and
+						upPosY < y and y < ( upPosY + element:GetElement("upArrow"):absH() )) then
 						
-						local downPosX = element:GetElement("downArrow"):absX();
-						local downPosY = element:GetElement("downArrow"):absY();
+						game.adminBoxMonsterToggleOn(element.flexEggDef)
 						
-						if(upPosX < x and x < ( upPosX + element:GetElement("upArrow"):absW() ) and
-							upPosY < y and y < ( upPosY + element:GetElement("upArrow"):absH() )) then
-							
-							game.adminBoxMonsterToggleOn(element.flexEggDef)
-							
-						elseif(downPosX < x and x < (downPosX + element:GetElement("downArrow"):absW() ) and 
-							downPosY < y and y < (downPosY + element:GetElement("downArrow"):absH())) then
-							
-							game.adminBoxMonsterToggleOff(element.flexEggDef)
-						end
+					elseif(downPosX < x and x < (downPosX + element:GetElement("downArrow"):absW() ) and 
+						downPosY < y and y < (downPosY + element:GetElement("downArrow"):absH())) then
+						
+						game.adminBoxMonsterToggleOff(element.flexEggDef)
 					end
 				end
-				
-				component("dragging"):SetInt(0)
-				component("touchStart"):SetInt(0)
+			end
+			
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+			if(element.ToolTip ~= nil) then
+				element.ToolTip:Hide()
+			end
+			component("delayedTooltip"):SetInt(0)
 			]]>
 		</event>
 	</touchComponent>

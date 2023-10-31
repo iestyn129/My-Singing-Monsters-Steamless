@@ -194,7 +194,7 @@
 				component("size"):SetFloat(0.25)
 			</event>
 		</textComponent>
-		<textComponent name="PriceText">
+		<!-- textComponent name="PriceText">
 			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
 			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" />
 			<event name="onInit" params="component, element">
@@ -208,7 +208,7 @@
 				component("multiline"):SetInt(0)
 				
 			</event>
-		</textComponent>
+		</textComponent -->
 		<touchComponent name="Touch">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
@@ -231,8 +231,8 @@
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("button_show_hide")
-				component("sheetName"):SetString("xml_resources/composer_buttons01.xml")
+				component("spriteName"):SetString("button_fill_wild")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
 				component("layer"):SetString("FrontPopUps")
 				component("size"):SetFloat(0.5)
 			</event>

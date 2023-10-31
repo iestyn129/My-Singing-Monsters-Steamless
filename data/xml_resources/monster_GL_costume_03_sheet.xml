@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b247bf637e58b8b36c0365b635e3c662:3a21af25935555b90919d94777ad08c2:e69ce18f2aaf1cf274eddaf1a083e171$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GL_costume_03_sheet.png" width="512" height="256" hires="true">
+    <sprite n="GL_cloak" x="179" y="1" w="199" h="213" pX="0.5" pY="0.5" oX="-39" oY="-33" oW="250" oH="250" r="y"/>
+    <sprite n="GL_hat" x="1" y="1" w="177" h="227" pX="0.5" pY="0.5" oX="-42" oY="-73" oW="250" oH="200" r="y"/>
+    <sprite n="GL_left_leg" x="379" y="1" w="130" h="89" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="132" r="y"/>
+    <sprite n="GL_right_leg" x="379" y="91" w="127" h="76" pX="0.5" pY="0.5" oX="0" oY="0" oW="76" oH="128" r="y"/>
+</TextureAtlas>

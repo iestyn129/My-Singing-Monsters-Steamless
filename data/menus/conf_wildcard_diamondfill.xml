@@ -4,7 +4,7 @@
 	<element name="FadedBG">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="3" />
 		<spriteComponent name="Sprite">
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
@@ -17,16 +17,16 @@
 		<touchComponent name="Touch">
 			<size dependentOnElement="element:name()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
-			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		</touchComponent>
 	</element>
 	
 	<element name="bg">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="-15*game.hudScale()" priorityOffset="4" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-1*lua_sys.screenWidth()" yOffset="-15*game.hudScale()" priorityOffset="2" />
 		<ninesliceComponent name="Sprite">
-			<size w="340*game.menuScaleX()" h="230*game.menuScaleY()" />
+			<size w="370*game.menuScaleX()" h="230*game.menuScaleX()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(50.0)
 				component("bottomHeight"):SetFloat(50.0)
@@ -48,23 +48,12 @@
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>
-		<spriteSheetComponent name="Flourish2">
-			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
-			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-1" />
-			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("menu_swirl_02")
-				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("size"):SetFloat(0.5*game.menuScaleX())
-				component("rotation"):SetFloat(-0.5*math.pi)
-				component("layer"):SetString("FrontPopUps")
-			</event>
-		</spriteSheetComponent>
 	</element>
 	
 	<element name="CloseButton">
 		<size dependentOnElement="element:name()" dependentOnComponent="CloseImage" />
 		<position relativeTo="bg" vAnchor="TOP" hAnchor="RIGHT" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="20*game.hudScale()" priorityOffset="-2" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="20*game.hudScale()" priorityOffset="-1" />
 		<spriteSheetComponent name="CloseImage">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
@@ -78,14 +67,14 @@
 		<touchComponent name="Touch">
 			<size dependentOnElement="element:name()" dependentOnComponent="CloseImage" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
-			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchDown" params="component, element">
 				element["CloseImage"]:setColor(0.5, 0.5, 0.5)
 			</event>
 			<event name="onTouchUp" params="component, element">
 				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
 				element:parent()("transitionState"):SetInt(2)
-				element:parent()("choice"):SetInt(1)
+				element:parent().choice = 1
 			</event>
 			<event name="onTouchRelease" params="component, element">
 				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
@@ -157,22 +146,104 @@
 	<element name="Notification">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-40*game.hudScale()" priorityOffset="-1" />
 		<textComponent name="Text">
-			<size w="280*game.hudScale()" h="120*game.hudScale()" />
+			<size w="300*game.menuScaleX()" h="120*game.menuScaleX()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				component("multiline"):SetInt(1)
 				component("font"):Set(game.getTextFont())
 				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
-				component("text"):SetString("...")
-				component("size"):SetFloat(0.4*game.hudScale())
+				component("text"):SetString("CONFIRMATION_PURCHASE_BOX_FILL_v2")
+				component("size"):SetFloat(0.4*game.menuScaleX())
 				component("layer"):SetString("FrontPopUps")
 				component("autoScale"):SetInt(1)
 			</event>
-			<event name="moveDown" params="component, element">
-				component("yOffset"):SetFloat(20*game.hudScale())
+		</textComponent>
+	</element>
+	
+	<element name="WildcardSwitch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="Notification" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="40*game.hudScale()" priorityOffset="0" />
+		<spriteSheetComponent name="Sprite">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				
+				if(element:parent().preferWildcards == 0) then
+					component("spriteName"):SetString("menu_switch_off")
+				else
+					component("spriteName"):SetString("menu_switch_on")
+				end
+				component("sheetName"):SetString("xml_resources/menu_assets_01.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+			</event>
+		</spriteSheetComponent>
+		
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchDown" params="component, element">
+				--element["Switch"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+				element:touchDownCallback()
+			</event>
+			<event name="onTouchUp" params="component, element">
+				--element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				lua_sys.playSoundFx("audio/sfx/menu_click_small.wav")
+				element:touchUpCallback()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				--element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element:touchReleaseCallback()
+			</event>
+		</touchComponent>
+		<event name="touchUpCallback" params="element">
+			if(element:parent().preferWildcards == 0) then
+				element:parent().preferWildcards = 1
+			else
+				element:parent().preferWildcards = 0
+			end
+			
+			game.updateBoxFillCost(element:parent().preferWildcards ~= 0)
+			
+			element:parent():update()
+		</event>
+		<event name="touchDownCallback" params="element">
+		</event>
+		<event name="touchReleaseCallback" params="element">
+		</event>
+		<event name="turnOn" params="element">
+			element["Sprite"]("spriteName"):SetString("menu_switch_on")
+		</event>
+		<event name="turnOff" params="element">
+			element["Sprite"]("spriteName"):SetString("menu_switch_off")
+		</event>
+	</element>
+	
+	<element name="UseWildcardText">
+		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+		<position relativeTo="Notification" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="40*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="230*game.menuScaleX()" h="120*game.menuScaleX()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString("PREFER_WILDCARD_COST_LABEL")
+				component("size"):SetFloat(0.4*game.menuScaleX())
+				component("layer"):SetString("FrontPopUps")
+				component("autoScaleFactor"):SetFloat(0.05)
+				component("autoScale"):SetInt(1)
+			</event>
+			<event name="onPostInit" params="component, element">
+				--element("xOffset"):SetInt(-element:parent():E("WildcardSwitch"):C("Sprite")("width"):GetInt()/2)
 			</event>
 		</textComponent>
 	</element>
@@ -191,18 +262,18 @@
 				]]>
 			</event>
 		</spriteSheetComponent>
-		<spriteSheetComponent name="CurrencySprite">
+		<aeComponent name="CurrencySprite">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
-			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="80*game.hudScale()" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
-					component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("animationName"):SetString("xml_bin/diamondAnim.bin")
+					component("animation"):SetString("diamond")
+					component:setScale(Vector2(0.16*game.menuScaleX(), 0.16*game.menuScaleX()))
 					component("layer"):SetString("FrontPopUps")
 				]]>
 			</event>
-		</spriteSheetComponent>
+		</aeComponent>
 		<textComponent name="Text">
 			<size w="65*game.menuScaleX()" h="50*game.menuScaleX()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -217,6 +288,8 @@
 					component("size"):SetFloat(0.25*game.menuScaleX())
 					component("text"):SetString("0")
 					component("layer"):SetString("FrontPopUps")
+					
+					game.StoreContext_setDiamondTextColour(component)
 				]]>
 			</event>
 		</textComponent>
@@ -226,7 +299,7 @@
 	<element name="Plus">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 		<position relativeTo="DiamondPrice" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-54*game.menuScaleX()" yOffset="-4*game.menuScaleY()" priorityOffset="0" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-60*game.menuScaleX()" yOffset="-4*game.menuScaleY()" priorityOffset="0" />
 		<textComponent name="Text">
 			<size w="64*game.menuScaleX()" h="64*game.menuScaleX()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -251,8 +324,6 @@
 		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
 		<templateVar name="$spriteScale" equals="0.5*game.menuScaleX()" />
 		<templateVar name="$layer" equals="FrontPopUps" />
-		<!-- position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="-10*game.menuScaleX()" yOffset="10*game.hudScale()" priorityOffset="-1" / -->
 		<position relativeTo="DiamondPrice" vAnchor="VCENTER" hAnchor="RIGHT" />
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-20" yOffset="-5*game.hudScale()" priorityOffset="0" />
 		
@@ -282,10 +353,26 @@
 			</event>
 			<event name="onTouchUp" params="component, element">
 				<![CDATA[
-					onTouchUp(component, element)
-					element["Text"]:setColor(1.0, 1.0, 1.0)
-					element:parent()("transitionState"):SetInt(2)
-					element:parent()("choice"):SetInt(2)
+					
+					if(element:parent().notEnoughDiamonds and element:parent().notEnoughWildcards) then
+						
+						game.displayNotification("NOTIFICATION_NOT_ENOUGH_FOR_INV_FILL")
+						
+					elseif(element:parent().notEnoughDiamonds) then
+					
+						game.displayConfirmation("GET_DIAMONDS", "NOTIFICATION_NOT_ENOUGH_DIAMONDS")
+					
+					elseif(element:parent().notEnoughWildcards) then
+					
+						game.displayNotification("NOTIFICATION_NOT_ENOUGH_WILDCARDS")
+					
+					else
+					
+						onTouchUp(component, element)
+						element["Text"]:setColor(1.0, 1.0, 1.0)
+						element:parent()("transitionState"):SetInt(2)
+						element:parent().choice = 2
+					end
 				]]>
 			</event>
 			<event name="onTouchRelease" params="component, element">
@@ -296,14 +383,14 @@
 			</event>
 		</touchComponent>
 	</template>
-
-	<element name="WildcardBuyPrice">
+	
+	<element name="WildcardPrice">
 		<size dependentOnElement="element:name()" dependentOnComponent="BackingSprite" />
-		<!-- position relativeTo="DiamondPrice" vAnchor="VCENTER" hAnchor="LEFT" />
-		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" / -->
 		<position relativeTo="Plus" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-54*game.menuScaleX()" yOffset="4*game.menuScaleY()" priorityOffset="0" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-60*game.menuScaleX()" yOffset="4*game.menuScaleY()" priorityOffset="0" />
 		<spriteSheetComponent name="BackingSprite">
+			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
 					component("spriteName"):SetString("stats_bar")
@@ -313,18 +400,18 @@
 				]]>
 			</event>
 		</spriteSheetComponent>
-		<spriteSheetComponent name="CurrencySprite">
+		<aeComponent name="CurrencySprite">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
-			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="80*game.hudScale()" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
-					component("spriteName"):SetString(game.StoreContext_SPRITE_EGG_WILDCARD)
-					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					component("size"):SetFloat(0.5*game.menuScaleX())
+					component("animationName"):SetString("xml_bin/Relic_confetti01.bin")
+					component("animation"):SetString("wild card rotation")
+					component:setScale(Vector2(0.16*game.menuScaleX(), 0.16*game.menuScaleX()))
 					component("layer"):SetString("FrontPopUps")
 				]]>
 			</event>
-		</spriteSheetComponent>
+		</aeComponent>
 		<textComponent name="Text">
 			<size w="65*game.menuScaleX()" h="50*game.menuScaleX()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -339,20 +426,62 @@
 					component("size"):SetFloat(0.25*game.menuScaleX())
 					component("text"):SetString("0")
 					component("layer"):SetString("FrontPopUps")
+
+					game.StoreContext_setEggWildcardTextColour(component)
 				]]>
 			</event>
 		</textComponent>
 	</element>
 	
-	
-	
-	
 	<event name="onInit" params="element">
 		element("transitionState"):SetInt(1)
 		element("transitionTime"):SetFloat(0.0)
-		element("choice"):SetInt(0)
+		
+		element.choice = 0
+		element.preferWildcards = 1
+		
+		element("diamondPrice"):SetInt(0)
+		element("wildcardPrice"):SetInt(0)
+		
+		element.notEnoughDiamonds = false
+		element.notEnoughWildcards = false
+
 		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
 	</event>
+	
+	<event name="update" params="element">
+		if(element.preferWildcards == 0) then
+			element:E("WildcardSwitch"):turnOff()
+		else
+			element:E("WildcardSwitch"):turnOn()
+		end
+		
+		local diamondPrice = element("diamondPrice"):GetInt()
+		local wildcardPrice = element("wildcardPrice"):GetInt()
+		
+		element:E("DiamondPrice"):C("Text"):V("text"):SetString(game.commaizeNumber(diamondPrice))
+		element:E("WildcardPrice"):C("Text"):V("text"):SetString(game.commaizeNumber(wildcardPrice))
+
+		if(diamondPrice > game.playerDiamonds()) then
+			element.notEnoughDiamonds = true
+		else
+			element.notEnoughDiamonds = false
+		end
+		
+		if(wildcardPrice > game.playerEggWildcards()) then
+			element.notEnoughWildcards = true
+		else
+			element.notEnoughWildcards = false
+		end
+		
+		if(element.notEnoughDiamonds or element.notEnoughWildcards) then
+			element.BuyButton:disable()
+			element.BuyButton.Touch:V("enabled"):SetInt(1)
+		else
+			element.BuyButton:enable()
+		end
+	</event>
+	
 	
 	<event name="onTick" params="element, dt">
 		<![CDATA[
@@ -385,14 +514,19 @@
 							textID = ""
 						end
 						
-						if(element("choice"):GetInt() == 1) then
+						--close/cancel button pushed:
+						if(element.choice == 1) then
 							element:root():popPopUp()
-						elseif(element("choice"):GetInt() == 2) then
+							
+						--BuyButton pushed
+						elseif(element.choice == 2) then
 							element:root():popPopUp()
-							game.submitConfirmation(element("messageID"):GetString(), true, textID)
-						elseif(element("choice"):GetInt() == 3) then
-							element:root():popPopUp()
-							game.submitConfirmation(element("messageID"):GetString(), false, textID)
+							if(element.preferWildcards ~= 0) then
+								game.submitConfirmation(element("messageID"):GetString(), true, textID)
+							else
+								game.submitConfirmation(element("messageID"):GetString(), false, textID)
+							end
+							
 						end
 					end
 				end

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:b8ceb4d8d976f214aa87ce2cd6a60909:a97633c585920b9ae2921e1f13ed39d6:782f19c41f552af1be87003d8d87b666$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_KM_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="KM_body_A.png" x="194" y="118" w="118" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="123" oH="121"/>
+    <sprite n="KM_dirtbag.png" x="2" y="2" w="190" h="239" pX="0.5" pY="0.5" oX="-7" oY="-115" oW="240" oH="260"/>
+    <sprite n="KM_glove_left.png" x="287" y="2" w="155" h="114" pX="0.5" pY="0.5" oX="-12" oY="-26" oW="180" oH="180"/>
+    <sprite n="KM_glove_left_back.png" x="2" y="428" w="96" h="48" pX="0.5" pY="0.5" oX="19" oY="-37" oW="180" oH="180"/>
+    <sprite n="KM_glove_right.png" x="202" y="239" w="114" h="144" pX="0.5" pY="0.5" oX="-20" oY="-26" oW="180" oH="180" r="y"/>
+    <sprite n="KM_glove_right_back.png" x="100" y="407" w="46" h="92" pX="0.5" pY="0.5" oX="14" oY="-33" oW="180" oH="180" r="y"/>
+    <sprite n="KM_neck_B.png" x="2" y="243" w="84" h="183" pX="0.5" pY="0.5"/>
+    <sprite n="KM_neck_cloth.png" x="148" y="407" w="137" h="88" pX="0.5" pY="0.5" oX="-60" oY="56" oW="180" oH="100"/>
+    <sprite n="KM_shovel.png" x="88" y="243" w="112" h="162" pX="0.5" pY="0.5" oX="-52" oY="-110" oW="140" oH="200"/>
+    <sprite n="KM_upper_leg_left.png" x="314" y="118" w="40" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="40" r="y"/>
+    <sprite n="KM_upper_leg_right.png" x="287" y="385" w="40" h="119" pX="0.5" pY="0.5" oX="0" oY="0" oW="120" oH="40" r="y"/>
+</TextureAtlas>

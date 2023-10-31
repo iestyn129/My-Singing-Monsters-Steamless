@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0582090782a5bbb3f40e55340214a2c2:02942b1fbac8dfea78ed441e981024b9:953d39759c8817b8165eb61110867b42$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_LM_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="LM_glasses.png" x="178" y="2" w="54" h="116" pX="0.5" pY="0.5" oX="1" oY="0" oW="130" oH="100" r="y"/>
+    <sprite n="LM_ufo.png" x="2" y="2" w="174" h="263" pX="0.5" pY="0.5" oX="-20" oY="-73" oW="300" oH="200" r="y"/>
+</TextureAtlas>

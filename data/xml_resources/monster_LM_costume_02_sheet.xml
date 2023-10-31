@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:6c281eca1c480c4b2f03eda8cc917fcb:99ef2744560d9688ebec51312ba25f66:7359829eb0f2986ad1921c53cf5f6628$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_LM_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="LM_apron.png" x="2" y="226" w="142" h="95" pX="0.5" pY="0.5" oX="-7" oY="10" oW="100" oH="150" r="y"/>
+    <sprite n="LM_burger.png" x="2" y="2" w="234" h="222" pX="0.5" pY="0.5" oX="-88" oY="-138" oW="250" oH="250"/>
+    <sprite n="LM_left_sleeves.png" x="2" y="369" w="34" h="52" pX="0.5" pY="0.5" oX="52" oY="-9" oW="60" oH="40" r="y"/>
+    <sprite n="LM_lowerbody.png" x="146" y="226" w="92" h="141" pX="0.5" pY="0.5" oX="0" oY="1" oW="92" oH="144"/>
+    <sprite n="LM_right_sleeves.png" x="2" y="323" w="51" h="34" pX="0.5" pY="0.5" oX="2" oY="-3" oW="60" oH="40"/>
+</TextureAtlas>

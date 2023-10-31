@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4afffdf0cf077b62a12caa97fc5701e0:be568be3416bcd2a7362eda9dde16ca0:b2548d1ce30d95ee4f42e3a56bb31c42$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GK_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="GK_back_fan.png" x="258" y="116" w="73" h="60" pX="0.5" pY="0.5" oX="-34" oY="3" oW="100" oH="100"/>
+    <sprite n="GK_body.png" x="1" y="1" w="143" h="183" pX="0.5" pY="0.5" oX="0" oY="0" oW="145" oH="184"/>
+    <sprite n="GK_gas_swirl.png" x="154" y="184" w="110" h="112" pX="0.5" pY="0.5" oX="2" oY="1" oW="120" oH="116"/>
+    <sprite n="GK_hand_01.png" x="221" y="1" w="93" h="114" pX="0.5" pY="0.5" oX="1" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_02.png" x="148" y="346" w="90" h="116" pX="0.5" pY="0.5" oX="1" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_03.png" x="68" y="346" w="79" h="117" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_04.png" x="145" y="117" w="112" h="66" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="96"/>
+    <sprite n="GK_hand_05.png" x="1" y="346" w="66" h="118" pX="0.5" pY="0.5" oX="1" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_06.png" x="145" y="1" w="75" h="115" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_07.png" x="315" y="1" w="85" h="107" pX="0.5" pY="0.5" oX="0" oY="2" oW="120" oH="96" r="y"/>
+    <sprite n="GK_hand_08.png" x="401" y="1" w="106" h="89" pX="0.5" pY="0.5" oX="0" oY="3" oW="120" oH="96"/>
+    <sprite n="GK_helmet.png" x="1" y="185" w="152" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="GK_left_lowerleg.png" x="401" y="91" w="91" h="56" pX="0.5" pY="0.5" oX="0" oY="1" oW="56" oH="92" r="y"/>
+    <sprite n="GK_left_upperarm.png" x="332" y="148" w="79" h="78" pX="0.5" pY="0.5" oX="0" oY="0" oW="80" oH="80"/>
+    <sprite n="GK_right_upperarm.png" x="412" y="148" w="78" h="70" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="80" r="y"/>
+</TextureAtlas>

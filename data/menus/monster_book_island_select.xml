@@ -352,7 +352,7 @@
 		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="1" />
 		<event name="onInit" params="element">
 			<![CDATA[
-				local islands = { 1, 2, 3, 4, 5, 13, 14, 18, 15, 16, 17, 8, 21, 7, 23, 19, 10, 12, 22, 6 }
+				local islands = { 1, 2, 3, 4, 5, 13, 14, 18, 15, 16, 17, 8, 21, 7, 24, 23, 19, 10, 12, 22, 6 }
 				
 				local previous = nil
 				local width = 0

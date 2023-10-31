@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:97d1cae53473d648e57f3e332a98d430:4d9deb287a3b28ab92e54cc11f83ce72:6c7ca7766de21e7b7e60483874fd0a36$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GJ_costume_03_sheet.png" width="512" height="512" hires="true">
+    <sprite n="GJ_hair_A1.png" x="81" y="1" w="114" h="170" pX="0.5" pY="0.5" oX="0" oY="1" oW="116" oH="184"/>
+    <sprite n="GJ_hair_A2.png" x="196" y="1" w="114" h="170" pX="0.5" pY="0.5" oX="0" oY="2" oW="116" oH="184"/>
+    <sprite n="GJ_hair_A3.png" x="1" y="231" w="113" h="180" pX="0.5" pY="0.5" oX="0" oY="1" oW="116" oH="184"/>
+    <sprite n="GJ_hair_B.png" x="135" y="388" w="62" h="120" pX="0.5" pY="0.5" oX="2" oY="0" oW="64" oH="120"/>
+    <sprite n="GJ_hair_C.png" x="242" y="172" w="105" h="54" pX="0.5" pY="0.5" oX="0" oY="5" oW="56" oH="112" r="y"/>
+    <sprite n="GJ_hair_C1.png" x="81" y="172" w="160" h="55" pX="0.5" pY="0.5" oX="0" oY="0" oW="56" oH="168" r="y"/>
+    <sprite n="GJ_hair_C2.png" x="170" y="228" w="52" h="155" pX="0.5" pY="0.5" oX="3" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_C3.png" x="223" y="228" w="51" h="155" pX="0.5" pY="0.5" oX="4" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_C4.png" x="115" y="228" w="54" h="159" pX="0.5" pY="0.5" oX="1" oY="0" oW="56" oH="168"/>
+    <sprite n="GJ_hair_E1.png" x="198" y="384" w="101" h="124" pX="0.5" pY="0.5" oX="2" oY="8" oW="104" oH="140"/>
+    <sprite n="GJ_hair_E2.png" x="275" y="227" w="101" h="132" pX="0.5" pY="0.5" oX="2" oY="2" oW="104" oH="140"/>
+    <sprite n="GJ_hair_E3.png" x="1" y="412" w="133" h="99" pX="0.5" pY="0.5" oX="4" oY="5" oW="104" oH="140" r="y"/>
+    <sprite n="GJ_hair_E4.png" x="377" y="1" w="124" h="100" pX="0.5" pY="0.5" oX="3" oY="9" oW="104" oH="140" r="y"/>
+    <sprite n="GJ_hair_G.png" x="1" y="1" w="79" h="229" pX="0.5" pY="0.5" oX="0" oY="0" oW="84" oH="232"/>
+    <sprite n="GJ_neck_plasma.png" x="348" y="102" w="89" h="97" pX="0.5" pY="0.5" oX="125" oY="24"/>
+</TextureAtlas>

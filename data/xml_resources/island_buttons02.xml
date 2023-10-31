@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:fa4ca2e01cda6667a67b3534f3196f7b:4e419fe391291adbb942a43f5840394a:116e613b006062d72a859d7d4af37471$ -->
+<!-- $TexturePacker:SmartUpdate:030105e51d3c85ffdf5d934377993467:e2a5f34af4ca87b2e473e13d5801b196:116e613b006062d72a859d7d4af37471$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,18 +20,18 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/menu/island_buttons02.png" width="1024" height="1024">
-    <sprite n="islands_button_isl01_MIRROR" x="645" y="421" w="208" h="289" pX="0.5" pY="0.5" oX="10" oY="4" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl01_MIRROR" x="645" y="426" w="208" h="289" pX="0.5" pY="0.5" oX="10" oY="4" oW="304" oH="228" r="y"/>
     <sprite n="islands_button_isl02_MIRROR" x="219" y="460" w="212" h="296" pX="0.5" pY="0.5" oX="3" oY="0" oW="304" oH="228" r="y"/>
     <sprite n="islands_button_isl02_th02" x="608" y="2" w="304" h="210" pX="0.5" pY="0.5" oX="0" oY="8" oW="304" oH="228"/>
     <sprite n="islands_button_isl03_MIRROR" x="2" y="235" w="299" h="223" pX="0.5" pY="0.5" oX="0" oY="0" oW="304" oH="228"/>
     <sprite n="islands_button_isl03_th05" x="306" y="2" w="300" h="217" pX="0.5" pY="0.5" oX="0" oY="10" oW="304" oH="228"/>
-    <sprite n="islands_button_isl04_MIRROR" x="767" y="712" w="210" h="287" pX="0.5" pY="0.5" oX="8" oY="8" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl04_MIRROR" x="451" y="726" w="210" h="287" pX="0.5" pY="0.5" oX="8" oY="8" oW="304" oH="228" r="y"/>
     <sprite n="islands_button_isl04_th04" x="2" y="2" w="302" h="231" pX="0.5" pY="0.5" oX="1" oY="8" oW="307" oH="241"/>
-    <sprite n="islands_button_isl05_MIRROR" x="306" y="221" w="294" h="210" pX="0.5" pY="0.5" oX="5" oY="9" oW="304" oH="228"/>
+    <sprite n="islands_button_isl05_MIRROR" x="611" y="214" w="294" h="210" pX="0.5" pY="0.5" oX="5" oY="9" oW="304" oH="228"/>
     <sprite n="islands_button_isl05_th03" x="433" y="433" w="210" h="291" pX="0.5" pY="0.5" oX="3" oY="8" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl011" x="576" y="726" w="189" h="281" pX="0.5" pY="0.5" oX="8" oY="12" oW="304" oH="228" r="y"/>
-    <sprite n="islands_button_isl015" x="271" y="758" w="303" h="210" pX="0.5" pY="0.5" oX="1" oY="7" oW="304" oH="228"/>
+    <sprite n="islands_button_isl011" x="663" y="717" w="189" h="281" pX="0.5" pY="0.5" oX="8" oY="12" oW="304" oH="228" r="y"/>
+    <sprite n="islands_button_isl015" x="306" y="221" w="303" h="210" pX="0.5" pY="0.5" oX="1" oY="7" oW="304" oH="228"/>
     <sprite n="islands_button_isl016" x="2" y="460" w="215" h="301" pX="0.5" pY="0.5" oX="3" oY="8" oW="304" oH="228" r="y"/>
     <sprite n="islands_button_isl017" x="2" y="763" w="267" h="219" pX="0.5" pY="0.5" oX="30" oY="8" oW="304" oH="228"/>
-    <sprite n="islands_button_isl020" x="608" y="214" w="290" h="205" pX="0.5" pY="0.5" oX="8" oY="8" oW="304" oH="228"/>
+    <sprite n="islands_button_isl020" x="271" y="758" w="178" h="252" pX="0.5" pY="0.5" oX="26" oY="20" oW="304" oH="228" r="y"/>
 </TextureAtlas>

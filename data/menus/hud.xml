@@ -671,16 +671,22 @@
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchDown" params="component, element">
-				element["Plus"]:setColor(0.5, 0.5, 0.5)
+				<![CDATA[
+					if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+						element["Plus"]:setColor(0.5, 0.5, 0.5)
+					end
+				]]>
 			</event>
 			<event name="onTouchUp" params="component, element">
 				<![CDATA[
-					element["Plus"]:setColor(1.0, 1.0, 1.0)
 					if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+						element["Plus"]:setColor(1.0, 1.0, 1.0)
 						playSoundFx("audio/sfx/menu_click_small.wav")
 						if(element("currencyType"):GetString() == game.StoreContext_TYPE_COINS) then
+							game.logEvent("enter_iap_store", "source", "COIN_HUD", "context", "HUD")
 							game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_COINS)
 						else
+							game.logEvent("enter_iap_store", "source", "CURRENCY_EXCHANGE_HUD", "context", "HUD")
 							game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_CURRENCY_EXCHANGE)
 						end
 					end
@@ -778,13 +784,18 @@
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchDown" params="component, element">
-				element["Plus"]:setColor(0.5, 0.5, 0.5)
+				<![CDATA[
+				if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+					element["Plus"]:setColor(0.5, 0.5, 0.5)
+				end
+				]]>
 			</event>
 			<event name="onTouchUp" params="component, element">
 				<![CDATA[
-					element["Plus"]:setColor(1.0, 1.0, 1.0)
 					if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+						element["Plus"]:setColor(1.0, 1.0, 1.0)
 						playSoundFx("audio/sfx/menu_click_small.wav")
+						game.logEvent("enter_iap_store", "source", "DIAMOND_HUD", "context", "HUD")
 						game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_DIAMOND)
 					end
 				]]>
@@ -867,13 +878,18 @@
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchDown" params="component, element">
-				element["Plus"]:setColor(0.5, 0.5, 0.5)
+				<![CDATA[
+					if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+						element["Plus"]:setColor(0.5, 0.5, 0.5)
+					end
+				]]>
 			</event>
 			<event name="onTouchUp" params="component, element">
 				<![CDATA[
-					element["Plus"]:setColor(1.0, 1.0, 1.0)
 					if((game.popUpLevel() <= 1) and (game.disableCurrencyHud() == false)) then
+						element["Plus"]:setColor(1.0, 1.0, 1.0)
 						playSoundFx("audio/sfx/menu_click_small.wav")
+						game.logEvent("enter_iap_store", "source", "FOOD_HUD", "context", "HUD")
 						game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_FOOD)
 					end
 				]]>
@@ -1183,7 +1199,9 @@
 				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 				<event name="onTouchDown" params="component, element">
 					<![CDATA[
-						element["Plus"]:setColor(0.5, 0.5, 0.5)
+						if element["BackingSprite"]("visible"):GetInt() == 1 then
+							element["Plus"]:setColor(0.5, 0.5, 0.5)
+						end
 					]]>
 				</event>
 
@@ -1193,6 +1211,7 @@
 							element["Plus"]:setColor(1.0, 1.0, 1.0)
 							playSoundFx("audio/sfx/key_button_click.wav")
 							if game.popUpLevel() <= 1 then
+								game.logEvent("enter_iap_store", "source", "KEYS_HUD", "context", "HUD")
 								game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_KEYS)
 							end
 						end
@@ -1287,6 +1306,7 @@
 							and (game.disableCurrencyHud() == false)
 						then
 							playSoundFx("audio/sfx/menu_click_small.wav")
+							game.logEvent("enter_iap_store", "source", "RELICS_HUD", "context", "HUD")
 							game.loadStoreContext(game.StoreCategories_TYPE_CURRENCY, game.StoreContext_TYPE_CURRENCY_EXCHANGE)
 						end
 					]]>
@@ -2087,7 +2107,11 @@
 							element["icon"]:setColor(1.0, 1.0, 1.0)
 							onTouchUp(component, element)
 
-							game.deselectSelectedObject();
+							if(game.isObjectSelected()) then
+								manager:setContext(manager:getDefaultContext())
+								game.deselectSelectedObject()
+							end
+
 							game.setScratchDismissed(false)
 							game.displayScratchGame("M")
 							game.logEvent("activity_center", "button", "monster_scratch", "level", game.playerLevel(), "island_id", game.currentIsland())

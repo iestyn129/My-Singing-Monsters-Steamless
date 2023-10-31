@@ -101,7 +101,7 @@
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0-screenWidth()" yOffset="-7" priorityOffset="10" />
 		<ninesliceComponent name="Sprite">
-			<size w="450*(screenWidth()/480)" h="200*(screenHeight()/320)" />
+			<size w="420*game.menuScaleX()" h="240*game.menuScaleY()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(50.0)
 				component("bottomHeight"):SetFloat(50.0)
@@ -141,13 +141,13 @@
 		<position relativeTo="Frame" vAnchor="TOP" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<ninesliceComponent name="Sprite">
-			<size w="400*(screenWidth()/480)" h="40*(screenHeight()/320)" />
+			<size w="340*game.menuScaleX()" h="40*game.menuScaleY()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(40.0)
 				component("bottomHeight"):SetFloat(40.0)
 				component("leftWidth"):SetFloat(50.0)
 				component("rightWidth"):SetFloat(50.0)
-				component("size"):SetFloat(0.4*(screenHeight()/320))
+				component("size"):SetFloat(0.4*game.menuScaleY())
 				component("includeBorder"):SetInt(1)
 				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
 				component("layer"):SetString("MidPopUps")
@@ -160,7 +160,7 @@
 		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<textComponent name="Text">
-			<size w="380*(screenWidth()/480)" h="35" />
+			<size w="380*game.menuScaleX()" h="35" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
@@ -184,7 +184,7 @@
 		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
 		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.menuScaleY()" priorityOffset="-1" />
 		<textComponent name="Text">
-			<size w="380*(screenWidth()/480)" h="100*(screenHeight()/320)" />
+			<size w="380*game.menuScaleX()" h="100*game.menuScaleY()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
@@ -407,13 +407,13 @@
 		<position relativeTo="Frame" vAnchor="BOTTOM" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-55*game.menuScaleY()" priorityOffset="-1" />
 		<ninesliceComponent name="Sprite">
-			<size w="400*(screenWidth()/480)" h="50*(screenHeight()/320)" />
+			<size w="400*game.menuScaleX()" h="50*game.menuScaleY()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(40.0)
 				component("bottomHeight"):SetFloat(40.0)
 				component("leftWidth"):SetFloat(50.0)
 				component("rightWidth"):SetFloat(50.0)
-				component("size"):SetFloat(0.4*(screenHeight()/320))
+				component("size"):SetFloat(0.4*game.menuScaleY())
 				component("includeBorder"):SetInt(1)
 				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
 				component("layer"):SetString("MidPopUps")
@@ -433,7 +433,7 @@
 			]]>
 		</event>
 		<textComponent name="Text">
-			<size w="380*(screenWidth()/480)" h="100*(screenHeight()/320)" />
+			<size w="380*game.menuScaleX()" h="100*game.menuScaleY()" />
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">

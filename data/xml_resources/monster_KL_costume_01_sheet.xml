@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:435fd6d718a60885d4fac07c6113134d:7b6c18e51f01a565f30768c689eb4379:3b5aba26ce0b3a5095d2f531b31c1fba$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_KL_costume_01_sheet.png" width="256" height="512" hires="true">
+    <sprite n="KL_head.png" x="2" y="128" w="154" h="134" pX="0.5" pY="0.5" oX="1" oY="64" oW="156" oH="200"/>
+    <sprite n="KL_plunger.png" x="2" y="2" w="184" h="124" pX="0.5" pY="0.5" oX="17" oY="-78" oW="140" oH="200" r="y"/>
+</TextureAtlas>

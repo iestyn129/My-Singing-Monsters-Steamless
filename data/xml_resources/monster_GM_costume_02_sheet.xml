@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ba99084ef7324b7a000126eee0daf20e:cdab98a3af26c1f77c251e321eeab142:5413871762d90a566b6d568585f93d0b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_GM_costume_02_sheet.png" width="256" height="512" hires="true">
+    <sprite n="GM_hat.png" x="1" y="91" w="213" h="141" pX="0.5" pY="0.5" oX="-107" oY="-204" oW="240" oH="160"/>
+    <sprite n="GM_left_hand.png" x="211" y="234" w="44" h="72" pX="0.5" pY="0.5"/>
+    <sprite n="GM_lowerarm.png" x="106" y="234" w="103" h="60" pX="0.5" pY="0.5" oX="1" oY="1" oW="64" oH="108" r="y"/>
+    <sprite n="GM_mustache.png" x="1" y="1" w="215" h="88" pX="0.5" pY="0.5" oX="-62" oY="-12" oW="220" oH="120"/>
+    <sprite n="GM_neck_cloth.png" x="1" y="234" w="103" h="101" pX="0.5" pY="0.5" oX="-17" oY="-2" oW="150" oH="150"/>
+    <sprite n="GM_right_hand.png" x="106" y="296" w="68" h="52" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>
