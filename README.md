@@ -10,7 +10,7 @@ Well with no need for Steam, you can play on a school computer, even if you've b
 
 ## Install
 
-Well for home use you can go to releases and download the installer to install it, but for cases where you can't use an installer, you can download the "Source Code" of the release as a zip. This isn't actually source code, it's just the files that get installed.
+Well for home use you can go to releases and download the installer to install it, but for cases where you can't use an installer, you can download the "Source Code" of the release as a zip. This isn't actually source code, it's just the files that get installed. A Windows Firewall popup may appear asking if the exe can access private and public networks, only selecting private networks should work fine, however, issues can sometimes occur if you don't select public networks. Just be sure to press allow.
 
 ## Arent game cracks illegal?
 
