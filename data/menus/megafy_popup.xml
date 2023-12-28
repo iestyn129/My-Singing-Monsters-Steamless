@@ -270,10 +270,9 @@
 
 				component("text"):SetString("-"..priceToDisplay)
 				
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
 				if(game.permaMegaSale()) then
-					component:setColor(0.13, 0.43, 0.3)
-				else
-					component:setColor(0.27, 0.86, 0.6)
+					component:setColor(component("red"):GetFloat() * 0.5, component("green"):GetFloat() * 0.5, component("blue"):GetFloat() * 0.5)
 				end
 				
 				component("layer"):SetString("FrontPopUps")
@@ -304,7 +303,7 @@
 				component("font"):SetString(game.getTitleFont())
 				component("autoScale"):SetFloat(0)
 				component("text"):SetString("-"..game.permaMegaSalePrice())
-				component:setColor(0.27, 0.86, 0.6)
+				game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
 				component("layer"):SetString("FrontPopUps")
 				component("multiline"):SetInt(0)
 				

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0e377b9b71896dd18c123b97c61650ca:e5159fa80cf465a5df72ac5753f3fc96:258ace1eb0e48b7ac55f4fd2bfbda9c5$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_JL_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="JL_bell" x="197" y="161" w="22" h="32" pX="0.5" pY="0.5" oX="3" oY="0" oW="28" oH="32"/>
+    <sprite n="JL_body" x="1" y="477" w="136" h="136" pX="0.5" pY="0.5" oX="4" oY="0" oW="144" oH="136"/>
+    <sprite n="JL_Collar" x="197" y="326" w="168" h="98" pX="0.5" pY="0.5"/>
+    <sprite n="JL_eye" x="325" y="426" w="35" h="35" pX="0.5" pY="0.5" oX="12" oY="12" oW="60" oH="60"/>
+    <sprite n="JL_eye_reflection" x="197" y="195" w="22" h="28" pX="0.5" pY="0.5" oX="19" oY="16" oW="60" oH="60"/>
+    <sprite n="JL_eyelid_01" x="63" y="705" w="59" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60"/>
+    <sprite n="JL_eyelid_02" x="1" y="741" w="59" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60"/>
+    <sprite n="JL_eyelid_03" x="124" y="705" w="59" h="59" pX="0.5" pY="0.5" oX="0" oY="0" oW="60" oH="60"/>
+    <sprite n="JL_feather_Rare" x="1" y="161" w="194" h="190" pX="0.5" pY="0.5" oX="23" oY="6" oW="242" oH="202"/>
+    <sprite n="JL_feathers" x="221" y="164" w="192" h="160" pX="0.5" pY="0.5"/>
+    <sprite n="JL_hand_01" x="1" y="683" w="60" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64" r="y"/>
+    <sprite n="JL_hand_01Epic" x="431" y="106" w="78" h="74" pX="0.5" pY="0.5" oX="7" oY="17" oW="96" oH="102"/>
+    <sprite n="JL_hand_02" x="70" y="647" w="62" h="56" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64" r="y"/>
+    <sprite n="JL_hand_02Epic" x="325" y="463" w="77" h="84" pX="0.5" pY="0.5" oX="3" oY="18" oW="96" oH="102"/>
+    <sprite n="JL_hand_03" x="141" y="353" w="52" h="63" pX="0.5" pY="0.5" oX="2" oY="0" oW="60" oH="64"/>
+    <sprite n="JL_hand_03Epic" x="322" y="549" w="76" h="84" pX="0.5" pY="0.5" oX="18" oY="16" oW="96" oH="102"/>
+    <sprite n="JL_headdress" x="1" y="1" w="218" h="158" pX="0.5" pY="0.5" oX="1" oY="0" oW="220" oH="160"/>
+    <sprite n="JL_headdressEpic" x="221" y="1" w="208" h="161" pX="0.5" pY="0.5" oX="19" oY="10" oW="242" oH="202"/>
+    <sprite n="JL_left_foot" x="1" y="615" w="67" h="66" pX="0.5" pY="0.5" oX="1" oY="2" oW="68" oH="72" r="y"/>
+    <sprite n="JL_left_foot_epic" x="431" y="1" w="78" h="103" pX="0.5" pY="0.5" oX="0" oY="0" oW="104" oH="78" r="y"/>
+    <sprite n="JL_left_lowerarm" x="189" y="633" w="102" h="93" pX="0.5" pY="0.5" oX="1" oY="0" oW="104" oH="96"/>
+    <sprite n="JL_left_lowerleg" x="190" y="559" w="118" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="72" oH="132" r="y"/>
+    <sprite n="JL_left_lowerleg_epic" x="1" y="353" w="138" h="122" pX="0.5" pY="0.5" oX="0" oY="0" oW="144" oH="128"/>
+    <sprite n="JL_lowerarm" x="400" y="616" w="107" h="64" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="64"/>
+    <sprite n="JL_mask" x="415" y="182" w="96" h="143" pX="0.5" pY="0.5" oX="17" oY="3" oW="126" oH="156"/>
+    <sprite n="JL_pupil_Epic" x="197" y="269" w="20" h="16" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="JL_right_foot" x="319" y="635" w="76" h="64" pX="0.5" pY="0.5" oX="0" oY="2" oW="76" oH="68"/>
+    <sprite n="JL_right_foot_Epic" x="397" y="682" w="92" h="72" pX="0.5" pY="0.5" oX="0" oY="0" oW="92" oH="74"/>
+    <sprite n="JL_right_lowerarm" x="415" y="327" w="94" h="104" pX="0.5" pY="0.5" oX="0" oY="1" oW="104" oH="96" r="y"/>
+    <sprite n="JL_right_lowerleg" x="404" y="546" w="107" h="68" pX="0.5" pY="0.5" oX="0" oY="0" oW="68" oH="124" r="y"/>
+    <sprite n="JL_right_lowerleg_Epic" x="404" y="433" w="107" h="111" pX="0.5" pY="0.5" oX="0" oY="2" oW="112" oH="118" r="y"/>
+    <sprite n="JL_shadow" x="141" y="418" w="51" h="125" pX="0.5" pY="0.5" oX="1" oY="1" oW="128" oH="52" r="y"/>
+    <sprite n="JL_shaker_handle" x="70" y="615" w="63" h="30" pX="0.5" pY="0.5" oX="22" oY="117" oW="72" oH="180" r="y"/>
+    <sprite n="JL_shaker_handle_Epic" x="293" y="701" w="76" h="31" pX="0.5" pY="0.5" oX="20" oY="168" oW="72" oH="246" r="y"/>
+    <sprite n="JL_shaker_head" x="194" y="486" w="126" h="71" pX="0.5" pY="0.5" oX="0" oY="1" oW="72" oH="180" r="y"/>
+    <sprite n="JL_shaker_head_Epic" x="194" y="426" w="129" h="58" pX="0.5" pY="0.5" oX="9" oY="41" oW="72" oH="246" r="y"/>
+    <sprite n="JL_sparkle" x="197" y="225" w="22" h="20" pX="0.5" pY="0.5" oX="1" oY="0" oW="24" oH="24" r="y"/>
+    <sprite n="JL_sparkle_Epic" x="197" y="247" w="22" h="20" pX="0.5" pY="0.5" oX="1" oY="0" oW="24" oH="24" r="y"/>
+    <sprite n="JL_Teeth_L" x="367" y="411" w="35" h="50" pX="0.5" pY="0.5" oX="1" oY="1" oW="38" oH="52"/>
+    <sprite n="JL_Teeth_mid" x="293" y="633" w="24" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="JL_Teeth_R" x="139" y="545" w="49" h="30" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="50" r="y"/>
+    <sprite n="JL_upperarm" x="367" y="326" w="46" h="83" pX="0.5" pY="0.5" oX="1" oY="1" oW="84" oH="48" r="y"/>
+    <sprite n="JL_upperleg" x="139" y="577" w="48" h="112" pX="0.5" pY="0.5"/>
+</TextureAtlas>

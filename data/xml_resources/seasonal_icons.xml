@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:dd93269f333dc4b8d590b60feba9472d:df269bca1dcd25509ce3da03bd0e0720:32b1981a26aed6874aa9ebf79d5301f9$ -->
+<!-- $TexturePacker:SmartUpdate:72a6b7f46432aa67d68aa479d9b2b570:c6a15a02b188a8da1d4a0905c6eafcd5:2b5a8654ab794128671ef5315bc3a454$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,10 +20,11 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/menu/seasonal_icons.png" width="256" height="512">
+    <sprite n="s07" x="2" y="276" w="94" h="83" pX="0.5" pY="0.5" oX="24" oY="18" oW="130" oH="130" r="y"/>
+    <sprite n="s04" x="100" y="203" w="96" h="79" pX="0.5" pY="0.5" oX="29" oY="21" oW="130" oH="130" r="y"/>
     <sprite n="s01" x="103" y="106" w="97" h="95" pX="0.5" pY="0.5" oX="17" oY="20" oW="130" oH="130"/>
-	<sprite n="s02" x="2" y="2" w="108" h="85" pX="0.5" pY="0.5" oX="23" oY="14" oW="130" oH="130" r="y"/>
-	<sprite n="s03" x="2" y="187" w="96" h="87" pX="0.5" pY="0.5" oX="17" oY="30" oW="130" oH="130"/>
-	<sprite n="s04" x="100" y="203" w="96" h="79" pX="0.5" pY="0.5" oX="29" oY="21" oW="130" oH="130" r="y"/>
     <sprite n="s05" x="2" y="89" w="99" h="96" pX="0.5" pY="0.5" oX="18" oY="20" oW="130" oH="130" r="y"/>
     <sprite n="s06" x="112" y="2" w="103" h="102" pX="0.5" pY="0.5" oX="13" oY="18" oW="130" oH="130"/>
+    <sprite n="s03" x="2" y="187" w="96" h="87" pX="0.5" pY="0.5" oX="17" oY="30" oW="130" oH="130"/>
+    <sprite n="s02" x="2" y="2" w="108" h="85" pX="0.5" pY="0.5" oX="23" oY="14" oW="130" oH="130" r="y"/>
 </TextureAtlas>

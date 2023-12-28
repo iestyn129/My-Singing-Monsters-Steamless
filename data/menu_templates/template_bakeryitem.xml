@@ -142,7 +142,7 @@
 		end
 	</event>
 	
-	<element name="Functions" params="element">
+	<element name="Functions">
 		<event name="greyout" params="element">
 			element:parent()["Price"]["Text"]:setColor(0.5, 0.5, 0.5)
 			element:parent()["CoinIcon"]["Sprite"]:setColor(0.5, 0.5, 0.5)

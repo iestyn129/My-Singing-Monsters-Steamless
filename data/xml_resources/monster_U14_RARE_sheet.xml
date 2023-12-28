@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ba2d1eaa797188de16e74cbac41bd9f9:6edaabdbb1d95949ea93b133afee721e:d0375389054f4238e1e516e9fe8f2d10$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U14_RARE_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="Back_Rare.png" x="573" y="315" w="112" h="154" pX="0.5" pY="0.5"/>
+    <sprite n="Glow_1.png" x="1" y="319" w="289" h="316" pX="0.5" pY="0.5" oX="11" oY="0" oW="306" oH="316"/>
+    <sprite n="Glow_2.png" x="1" y="1" w="306" h="316" pX="0.5" pY="0.5"/>
+    <sprite n="Head_rare.png" x="381" y="1" w="214" h="224" pX="0.5" pY="0.5" oX="3" oY="6" oW="219" oH="230"/>
+    <sprite n="Head_rare_OL.png" x="818" y="1" w="125" h="113" pX="0.5" pY="0.5" oX="78" oY="84" oW="219" oH="230"/>
+    <sprite n="Left Cymbal.png" x="533" y="806" w="59" h="162" pX="0.5" pY="0.5" oX="15" oY="12" oW="84" oH="186"/>
+    <sprite n="Left Eye Arm_rare.png" x="468" y="806" w="63" h="165" pX="0.5" pY="0.5" oX="2" oY="6" oW="68" oH="173"/>
+    <sprite n="Left Eye Base.png" x="687" y="143" w="95" h="35" pX="0.5" pY="0.5" oX="11" oY="1" oW="54" oH="104" r="y"/>
+    <sprite n="Left Eye Shine.png" x="687" y="30" w="28" h="18" pX="0.5" pY="0.5" oX="21" oY="28" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyeball.png" x="862" y="423" w="58" h="44" pX="0.5" pY="0.5" oX="12" oY="19" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelash.png" x="700" y="630" w="78" h="148" pX="0.5" pY="0.5" oX="10" oY="0" oW="103" oH="148"/>
+    <sprite n="Left Eyelid 1.png" x="788" y="556" w="52" h="78" pX="0.5" pY="0.5" oX="14" oY="11" oW="72" oH="100"/>
+    <sprite n="Left Eyelid 2.png" x="923" y="408" w="78" h="55" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 3.png" x="945" y="100" w="78" h="56" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid 4.png" x="664" y="234" w="56" h="78" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="100"/>
+    <sprite n="Left Eyelid 5.png" x="942" y="234" w="78" h="56" pX="0.5" pY="0.5" oX="12" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Left Eyelid Base.png" x="718" y="341" w="60" h="43" pX="0.5" pY="0.5" oX="18" oY="20" oW="72" oH="100" r="y"/>
+    <sprite n="Left FTip 1.png" x="818" y="473" w="42" h="35" pX="0.5" pY="0.5" oX="7" oY="26" oW="52" oH="68" r="y"/>
+    <sprite n="Left FTip 2.png" x="781" y="474" w="35" h="69" pX="0.5" pY="0.5" oX="4" oY="9" oW="46" oH="84"/>
+    <sprite n="Left FTip 3.png" x="707" y="917" w="51" h="21" pX="0.5" pY="0.5" oX="31" oY="13" oW="60" oH="64" r="y"/>
+    <sprite n="Left Finger 1.png" x="687" y="403" w="27" h="40" pX="0.5" pY="0.5" oX="19" oY="9" oW="52" oH="68"/>
+    <sprite n="Left Finger 2.png" x="687" y="314" w="29" h="41" pX="0.5" pY="0.5" oX="10" oY="7" oW="46" oH="84"/>
+    <sprite n="Left Finger 3.png" x="784" y="77" w="32" h="47" pX="0.5" pY="0.5" oX="5" oY="1" oW="60" oH="64" r="y"/>
+    <sprite n="Left Hand.png" x="637" y="158" w="48" h="40" pX="0.5" pY="0.5" oX="6" oY="5" oW="60" oH="52"/>
+    <sprite n="Left Lower Arm_rare.png" x="494" y="227" w="93" h="86" pX="0.5" pY="0.5" oX="3" oY="7" oW="89" oH="100" r="y"/>
+    <sprite n="Left Pupil.png" x="628" y="942" w="32" h="25" pX="0.5" pY="0.5" oX="15" oY="31" oW="72" oH="100" r="y"/>
+    <sprite n="Left Upper Arm.png" x="309" y="229" w="45" h="87" pX="0.5" pY="0.5" oX="6" oY="7" oW="100" oH="58" r="y"/>
+    <sprite n="Mouth 1.png" x="722" y="217" w="94" h="122" pX="0.5" pY="0.5" oX="21" oY="15" oW="158" oH="118" r="y"/>
+    <sprite n="Mouth 2.png" x="689" y="942" w="127" h="79" pX="0.5" pY="0.5" oX="15" oY="15" oW="158" oH="118"/>
+    <sprite n="Mouth 3.png" x="707" y="780" w="75" h="135" pX="0.5" pY="0.5" oX="13" oY="14" oW="158" oH="118" r="y"/>
+    <sprite n="Mouth 4.png" x="410" y="974" w="138" h="49" pX="0.5" pY="0.5" oX="11" oY="12" oW="158" oH="118"/>
+    <sprite n="Mouth 5.png" x="550" y="970" w="137" h="53" pX="0.5" pY="0.5" oX="13" oY="10" oW="158" oH="118"/>
+    <sprite n="REG_Back.png" x="594" y="789" w="111" h="151" pX="0.5" pY="0.5" oX="1" oY="2" oW="112" oH="154"/>
+    <sprite n="REG_Body.png" x="292" y="319" w="221" h="229" pX="0.5" pY="0.5" oX="9" oY="5" oW="240" oH="240"/>
+    <sprite n="REG_Eye.png" x="410" y="636" w="145" h="168" pX="0.5" pY="0.5" oX="7" oY="6" oW="160" oH="180"/>
+    <sprite n="REG_Hand_L.png" x="945" y="1" w="78" h="97" pX="0.5" pY="0.5" oX="1" oY="1" oW="100" oH="80" r="y"/>
+    <sprite n="REG_Hand_R.png" x="818" y="116" w="123" h="77" pX="0.5" pY="0.5" oX="0" oY="1" oW="124" oH="80"/>
+    <sprite n="REG_Left Eye Arm.png" x="364" y="881" w="44" h="140" pX="0.5" pY="0.5" oX="9" oY="11" oW="64" oH="160"/>
+    <sprite n="REG_Left Eye Base.png" x="780" y="341" w="35" h="95" pX="0.5" pY="0.5" oX="11" oY="1" oW="54" oH="104"/>
+    <sprite n="REG_Left Lower Arm.png" x="460" y="550" w="71" h="84" pX="0.5" pY="0.5" oX="5" oY="7" oW="80" oH="96"/>
+    <sprite n="REG_Left Upper Arm.png" x="356" y="229" w="45" h="87" pX="0.5" pY="0.5" oX="7" oY="7" oW="100" oH="58" r="y"/>
+    <sprite n="REG_Right Eye Arm.png" x="557" y="633" w="41" h="154" pX="0.5" pY="0.5" oX="12" oY="3" oW="64" oH="166"/>
+    <sprite n="REG_Right Eye Base.png" x="717" y="180" w="98" h="35" pX="0.5" pY="0.5" oX="10" oY="6" oW="60" oH="112" r="y"/>
+    <sprite n="REG_Right Lower Arm.png" x="687" y="77" w="95" h="64" pX="0.5" pY="0.5" oX="7" oY="6" oW="110" oH="78"/>
+    <sprite n="REG_Right Upper Arm.png" x="589" y="227" w="73" h="80" pX="0.5" pY="0.5" oX="5" oY="5" oW="86" oH="92"/>
+    <sprite n="REG_Shell Back.png" x="602" y="549" w="126" h="79" pX="0.5" pY="0.5" oX="8" oY="8" oW="96" oH="144" r="y"/>
+    <sprite n="REG_Shell.png" x="1" y="893" w="172" h="129" pX="0.5" pY="0.5" oX="7" oY="9" oW="144" oH="186" r="y"/>
+    <sprite n="REG_Tail Tip.png" x="779" y="438" w="34" h="34" pX="0.5" pY="0.5" oX="51" oY="9" oW="98" oH="90"/>
+    <sprite n="REG_Tail.png" x="515" y="476" w="68" h="71" pX="0.5" pY="0.5" oX="7" oY="15" oW="98" oH="90" r="y"/>
+    <sprite n="Right Cymbal.png" x="410" y="806" w="56" h="166" pX="0.5" pY="0.5" oX="10" oY="11" oW="78" oH="188"/>
+    <sprite n="Right Eye Arm.png" x="515" y="315" w="56" h="159" pX="0.5" pY="0.5" oX="7" oY="1" oW="69" oH="164"/>
+    <sprite n="Right Eye Base.png" x="717" y="1" w="99" h="36" pX="0.5" pY="0.5" oX="9" oY="5" oW="60" oH="112" r="y"/>
+    <sprite n="Right Eye Shine.png" x="664" y="200" w="18" h="27" pX="0.5" pY="0.5" oX="36" oY="30" oW="72" oH="100"/>
+    <sprite n="Right Eyeball.png" x="862" y="376" w="59" h="45" pX="0.5" pY="0.5" oX="15" oY="18" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelash.png" x="600" y="633" w="98" h="148" pX="0.5" pY="0.5" oX="2" oY="0" oW="103" oH="148"/>
+    <sprite n="Right Eyelid 1.png" x="920" y="521" w="78" h="52" pX="0.5" pY="0.5" oX="9" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 2.png" x="922" y="465" w="78" h="54" pX="0.5" pY="0.5" oX="8" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 3.png" x="942" y="292" w="78" h="56" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid 4.png" x="730" y="547" w="56" h="78" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100"/>
+    <sprite n="Right Eyelid 5.png" x="935" y="350" w="78" h="56" pX="0.5" pY="0.5" oX="7" oY="11" oW="72" oH="100" r="y"/>
+    <sprite n="Right Eyelid Base.png" x="717" y="386" w="60" h="43" pX="0.5" pY="0.5" oX="13" oY="20" oW="72" oH="100" r="y"/>
+    <sprite n="Right FTip 1.png" x="664" y="1" w="51" h="27" pX="0.5" pY="0.5" oX="11" oY="6" oW="72" oH="70" r="y"/>
+    <sprite n="Right FTip 2.png" x="760" y="917" w="50" h="20" pX="0.5" pY="0.5" oX="10" oY="22" oW="56" oH="72" r="y"/>
+    <sprite n="Right FTip 3.png" x="784" y="126" w="32" h="44" pX="0.5" pY="0.5" oX="7" oY="21" oW="46" oH="66"/>
+    <sprite n="Right Finger 1.png" x="687" y="180" w="27" h="49" pX="0.5" pY="0.5" oX="16" oY="5" oW="72" oH="70" r="y"/>
+    <sprite n="Right Finger 2.png" x="730" y="431" w="47" h="41" pX="0.5" pY="0.5" oX="9" oY="0" oW="56" oH="72"/>
+    <sprite n="Right Finger 3.png" x="687" y="357" w="27" h="44" pX="0.5" pY="0.5" oX="6" oY="1" oW="46" oH="66"/>
+    <sprite n="Right Hand.png" x="597" y="158" w="38" h="66" pX="0.5" pY="0.5" oX="8" oY="7" oW="86" oH="52" r="y"/>
+    <sprite n="Right Lower Arm_rare.png" x="818" y="300" w="115" h="74" pX="0.5" pY="0.5" oX="0" oY="0" oW="116" oH="74"/>
+    <sprite n="Right Pupil.png" x="594" y="942" w="32" h="26" pX="0.5" pY="0.5" oX="31" oY="31" oW="72" oH="100" r="y"/>
+    <sprite n="Right Upper Arm.png" x="943" y="158" w="79" h="74" pX="0.5" pY="0.5" oX="4" oY="5" oW="86" oH="92" r="y"/>
+    <sprite n="Right-Eye-Base.png" x="717" y="39" w="99" h="36" pX="0.5" pY="0.5" oX="9" oY="5" oW="60" oH="112" r="y"/>
+    <sprite n="Shell Back_rare.png" x="175" y="893" w="187" h="128" pX="0.5" pY="0.5" oX="6" oY="38" oW="221" oH="254" r="y"/>
+    <sprite n="Shell_rare.png" x="216" y="637" w="192" h="242" pX="0.5" pY="0.5" oX="26" oY="6" oW="221" oH="254"/>
+    <sprite n="Tail Tip_Rare.png" x="818" y="510" w="40" h="44" pX="0.5" pY="0.5" oX="1" oY="1" oW="45" oH="41" r="y"/>
+    <sprite n="Tail.png" x="533" y="549" w="67" h="82" pX="0.5" pY="0.5" oX="0" oY="3" oW="69" oH="88"/>
+    <sprite n="Tail2.png" x="817" y="408" w="43" h="63" pX="0.5" pY="0.5" oX="0" oY="1" oW="45" oH="64"/>
+    <sprite n="Torso.png" x="1" y="637" w="213" h="254" pX="0.5" pY="0.5" oX="10" oY="11" oW="275" oH="226" r="y"/>
+    <sprite n="Torso_OL.png" x="862" y="469" w="56" h="103" pX="0.5" pY="0.5" oX="180" oY="86" oW="275" oH="226"/>
+    <sprite n="beam.png" x="309" y="1" w="70" h="226" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228"/>
+    <sprite n="eye fur.png" x="818" y="195" w="122" h="103" pX="0.5" pY="0.5"/>
+    <sprite n="glow_spot.png" x="403" y="227" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+    <sprite n="mdle Eyeball.png" x="717" y="474" w="62" h="71" pX="0.5" pY="0.5" oX="7" oY="9" oW="86" oH="80" r="y"/>
+    <sprite n="mdle Eyelid 1.png" x="597" y="1" w="65" h="77" pX="0.5" pY="0.5" oX="2" oY="8" oW="86" oH="80" r="y"/>
+    <sprite n="mdle Eyelid 2.png" x="585" y="471" w="64" h="76" pX="0.5" pY="0.5" oX="3" oY="8" oW="86" oH="80" r="y"/>
+    <sprite n="mdle Eyelid 3.png" x="651" y="471" w="64" h="76" pX="0.5" pY="0.5" oX="3" oY="8" oW="86" oH="80" r="y"/>
+    <sprite n="mdle Eyelid 4.png" x="597" y="80" w="64" h="76" pX="0.5" pY="0.5" oX="3" oY="8" oW="86" oH="80" r="y"/>
+    <sprite n="shadow50percent.png" x="292" y="550" w="166" h="84" pX="0.5" pY="0.5" oX="15" oY="6" oW="197" oH="90"/>
+</TextureAtlas>

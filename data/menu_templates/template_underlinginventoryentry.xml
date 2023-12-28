@@ -333,7 +333,7 @@
 		</event>
 	</touchComponent>
 	
-	<element name="upArrow" params="element">
+	<element name="upArrow">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
 		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
 		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
@@ -347,7 +347,7 @@
 		</spriteComponent>
 		
 	</element>
-	<element name="downArrow" params="element">
+	<element name="downArrow">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
 		<position relativeTo="CharacterImage" vAnchor="TOP" hAnchor="HCENTER" />
 		<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="15*game.menuScaleX()" yOffset="0" priorityOffset="-1" />

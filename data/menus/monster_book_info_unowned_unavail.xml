@@ -156,8 +156,12 @@
 					component("text"):SetString("AMBER_MISSING_MONSTER_DESC")
 				elseif(game.isCelestialIsland(game.getBookOfMonstersIslandType())) then
 					component("text"):SetString("CELESTIAL_OUT_OF_SEASON")
-				else
+				elseif(game.canBeBred(monsterId)) then
+					--could possibly be bred when it becomes available
 					component("text"):SetString("MISSING_MONSTER_DESC")
+				else
+					--can never be bred, even when it becomes available
+					component("text"):SetString("FIREEXP_MISSING_MONSTER_DESC")
 				end
 				component("layer"):SetString("FrontPopUps")
 			</event>
@@ -219,9 +223,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.80)
+				component("rotation"):SetFloat(-2.55)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>
@@ -231,9 +235,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.55)
+				component("rotation"):SetFloat(-2.35)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>

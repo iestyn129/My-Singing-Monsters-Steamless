@@ -227,7 +227,7 @@
 					element["RewardsText"]("text"):SetString("BATTLE_CAMPAIGN_REWARDS")
 				end
 
-				include("RewardListUI").Populate(element, reward)
+				include("BattleRewardListHelper").Populate(element, reward)
 			]]>
 		</event>
 

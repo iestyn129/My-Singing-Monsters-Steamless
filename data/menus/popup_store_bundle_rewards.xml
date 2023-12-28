@@ -1,0 +1,138 @@
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<script src="scripts/StoreBundleRewardsPopupUI.lua"/>
+
+	<element name="Rewards">
+
+		<size w="lua_sys.screenWidth()" h="lua_sys.screenHeight() - lua_sys.deviceMarginY() * 2"/>
+		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+
+		<template type="template_fade" name="Fade">
+			<templateVar name="$layer" equals="Tutorial" />
+			<templateVar name="$priority" equals="1000" />
+			<templateVar name="$touchPriority" equals="-980" /> <!-- relative to priority -->
+			<templateVar name="$maxAlpha" equals="0.75" />
+			<templateVar name="$autoShow" equals="0"/>
+			<touchComponent name="Touch"/>
+		</template>
+
+		<element name="RewardsBG">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+			<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="20" />
+			<spriteComponent name="Sprite"/>
+			<spriteComponent name="Pattern">
+				<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
+			</spriteComponent>
+
+			<element name="RewardsTopBar">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+				<position relativeTo="PARENT" vAnchor="TOP" hAnchor="LEFT" />
+				<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<spriteComponent name="Sprite">
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+							local height = 4 * game.hudScale()
+							component:setScale(Vector2(lua_sys.screenWidth()*0.25, height*0.25))
+							component:setColor(1.0, 1.0, 1.0)
+							component("alpha"):SetFloat(1)
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</spriteComponent>
+			</element>
+
+			<element name="RewardsBottomBar">
+				<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+				<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="LEFT" />
+				<orientation vAnchor="BOTTOM" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-2" />
+				<spriteComponent name="Sprite">						
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("spriteName"):SetString("__BUILTIN__WHITE_TEXTURE")
+							local height = 4 * game.hudScale()
+							component:setScale(Vector2(lua_sys.screenWidth()*0.25, height*0.25))
+							component:setColor(1.0, 1.0, 1.0)
+							component("alpha"):SetFloat(1)
+							component("layer"):SetString("Tutorial")
+						]]>
+					</event>
+				</spriteComponent>
+			</element>
+
+			<element name="ClaimInfo">
+				<size dependentOnElement="element:name()" dependentOnComponent="Text"/>
+				<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+				<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-2" />
+				<textComponent name="Text">
+					
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("multiline"):SetInt(0)
+							component("font"):Set(game.getTextFont())
+							component:setColor(0.54, 0.67, 0.9)
+							component("size"):SetFloat(0.45*game.hudScale())
+							component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+							component("text"):SetString("BUNDLE_CLAIM_POPUP_DESC")
+							component("autoScale"):SetInt(1)
+							component("layer"):SetString("Tutorial")
+							--component("alpha"):SetFloat(1.0)
+							component:setShader(include("ShaderShinyFont1"))
+						]]>
+					</event>
+				</textComponent>
+			</element>
+
+			<element name="ContinueLabel">
+				<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+				<position relativeTo="ClaimInfo" vAnchor="BOTTOM" hAnchor="HCENTER" />
+				<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+				<textComponent name="Text">
+					<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+					<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5" yOffset="0" priorityOffset="-1" />
+					<event name="onInit" params="component, element">
+						<![CDATA[
+							component("font"):Set(game.getTextFont())
+							component("size"):SetFloat(0.3*game.hudScale())
+							component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+							component("layer"):SetString("Tutorial")
+							component("text"):SetString("TAP_TO_CONTINUE")
+						]]>
+					</event>
+				</textComponent>
+			</element>
+		
+		</element>
+
+		<template type="template_reward_list" name="Contents">
+			<size dependentOnElement="RewardsBG"/>
+			<position relativeTo="RewardsBG" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-16*game.menuScaleY()" priorityOffset="-2" />
+		</template>
+
+		<element name="Title">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="RewardsBG" vAnchor="TOP" hAnchor="HCENTER" />
+			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="0" />
+			<textComponent name="Text">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="5" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.6*game.hudScale())
+						component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("layer"):SetString("Tutorial")
+						component("text"):SetString("BUNDLE_CLAIM_POPUP_TITLE")
+					]]>
+				</event>
+			</textComponent>		
+		</element>
+
+
+	</element>
+
+</menu>

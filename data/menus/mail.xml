@@ -199,7 +199,7 @@
 			</event>
 		</textComponent>
 		<textComponent name="DotText">
-			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
 			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				component("multiline"):SetInt(1)

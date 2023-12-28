@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:52d0c5869160fc5cf11a8cb9c2b7338b:a21883973ff9e8754fcbb83c8a58654c:f15d243db8b2bb5df1f650c3caf9f5a9$ -->
+<!-- $TexturePacker:SmartUpdate:6919604ee0f96445e3c5b8b418517a02:3f7c87762f1b2385e81f3e2056a4cc96:f15d243db8b2bb5df1f650c3caf9f5a9$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,13 +20,6 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/menu/synth_menu_sheet.png" width="512" height="1024">
-    <sprite n="critter_portrait_square" x="379" y="783" w="97" h="95" pX="0.5" pY="0.5" oX="2" oY="2" oW="100" oH="100"/>
-    <sprite n="critter_portrait_square_g" x="133" y="863" w="97" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100" r="y"/>
-    <sprite n="critter_portrait_square_j" x="179" y="684" w="97" h="99" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100" r="y"/>
-    <sprite n="critter_portrait_square_k" x="278" y="684" w="99" h="97" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100"/>
-    <sprite n="critter_portrait_square_l" x="379" y="684" w="99" h="97" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100"/>
-    <sprite n="critter_portrait_square_m" x="278" y="783" w="99" h="97" pX="0.5" pY="0.5" oX="0" oY="0" oW="100" oH="100"/>
-    <sprite n="critter_portrait_square_plus" x="379" y="880" w="97" h="95" pX="0.5" pY="0.5" oX="2" oY="2" oW="100" oH="100"/>
     <sprite n="synth_danger" x="2" y="684" w="175" h="177" pX="0.5" pY="0.5" oX="1" oY="2" oW="180" oH="180" r="y"/>
     <sprite n="synth_gauge_arm" x="446" y="246" w="44" h="235" pX="0.5" pY="0.5" oX="3" oY="2" oW="50" oH="240"/>
     <sprite n="synth_gauge_face" x="2" y="2" w="486" h="242" pX="0.5" pY="0.5" oX="0" oY="4" oW="486" oH="246"/>

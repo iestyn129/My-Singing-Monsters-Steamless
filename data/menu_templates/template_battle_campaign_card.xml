@@ -228,7 +228,7 @@
 
 	<element name="RequirementsIcon">
 		<position relativeTo="RequirementsLabel" vAnchor="TOP" hAnchor="RIGHT" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="0" />
 		<spriteSheetComponent name="Sprite">
 			<event name="onInit" params="component, element">
 				<![CDATA[

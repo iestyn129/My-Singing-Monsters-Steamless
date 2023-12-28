@@ -61,6 +61,7 @@
 		</spriteSheetComponent>
 	</element>
 
+	<!-- On CurrencySales, this is the new amount of currency you get (at top of frame, below crossed OriginalCurrencyAmount) -->
 	<element name="SaleCurrencyAmount">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 		<position relativeTo="element:parent():parent()[&quot;CurrencyAmount&quot;]" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -91,7 +92,9 @@
 			</event>
 			<event name="onPostInit" params="component, element">
 				<![CDATA[
-					if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 or element:parent():parent()("IsPromoItem"):GetInt() == 1) then
+					if element:parent():parent()("TimedAvailabilityOn"):GetInt() == 1 
+						or element:parent():parent()("IsPromoItem"):GetInt() == 1
+					then
 						component("visible"):SetInt(0)
 					else
 						component("text"):SetString(game.commaizeNumber(element:parent()("SaleAmount"):GetInt()))
@@ -106,23 +109,12 @@
 			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
-				if(element:parent():parent()("TimedAvailabilityOn"):GetInt() == 0 or element:parent():parent()("IsPromoItem"):GetInt() == 0) then
+				if element:parent():parent()("TimedAvailabilityOn"):GetInt() == 0 
+					and element:parent():parent()("IsPromoItem"):GetInt() == 0 
+				then
 					local currencyType = element:parent()("CurrencyType"):GetString()
 
-					if(currencyType == game.StoreContext_TYPE_COINS) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-					elseif(currencyType == game.StoreContext_TYPE_ETH_CURRENCY) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_ETH_CURRENCY)
-					elseif(currencyType == game.StoreContext_TYPE_DIAMOND) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-					elseif(currencyType == game.StoreContext_TYPE_FOOD) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_FOOD)
-					elseif(currencyType == game.StoreContext_TYPE_KEYS) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_KEY)
-					elseif(currencyType == game.StoreContext_TYPE_MEDALS) then
-						component("spriteName"):SetString(game.StoreContext_SPRITE_MEDAL)
-					end
-
+					component("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyType))
 					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
 					component("visible"):SetInt(1)
 
@@ -156,6 +148,7 @@
 		</spriteSheetComponent>
 	</element>
 
+	<!-- at the very top, gets crossed out during a CurrencySale -->
 	<element name="OriginalCurrencyAmount">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 		<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
@@ -217,6 +210,7 @@
 		</ninesliceComponent>
 	</element>
 
+	<!-- new IAP amt, shown on red tag that's above crossed out original IAP amt (IAPCost) -->
 	<element name="SaleIAPAmount">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 		<position relativeTo="SaleTag" vAnchor="VCENTER" hAnchor="HCENTER" />

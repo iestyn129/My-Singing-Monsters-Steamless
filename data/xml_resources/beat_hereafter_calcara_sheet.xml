@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:690492a4b5cdd6d4672f6f406bb412ef:fb20b2b7b5bc4e11aeaf11a9eccef8f9:cd59619f253b36668fe6e148b4864d6f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/beat_hereafter_calcara_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="Body.png" x="1" y="1" w="267" h="186" pX="0.5" pY="0.5" oX="2" oY="3" oW="272" oH="192"/>
+    <sprite n="Earring.png" x="206" y="258" w="60" h="38" pX="0.5" pY="0.5" oX="1" oY="0" oW="40" oH="60" r="y"/>
+    <sprite n="Hair.png" x="270" y="169" w="210" h="117" pX="0.5" pY="0.5" oX="3" oY="3" oW="216" oH="124"/>
+    <sprite n="Head.png" x="268" y="288" w="188" h="170" pX="0.5" pY="0.5" oX="2" oY="1" oW="192" oH="172"/>
+    <sprite n="Mar_01.png" x="1" y="449" w="120" h="97" pX="0.5" pY="0.5" oX="2" oY="1" oW="124" oH="100"/>
+    <sprite n="Mar_02.png" x="1" y="346" w="149" h="101" pX="0.5" pY="0.5" oX="1" oY="1" oW="152" oH="104"/>
+    <sprite n="platform.png" x="270" y="1" w="211" h="166" pX="0.5" pY="0.5" oX="0" oY="1" oW="212" oH="168"/>
+    <sprite n="ribbon_01.png" x="152" y="346" w="105" h="75" pX="0.5" pY="0.5" oX="1" oY="2" oW="108" oH="80"/>
+    <sprite n="ribbon_02.png" x="357" y="460" w="86" h="77" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="80"/>
+    <sprite n="ribbon_03.png" x="152" y="423" w="103" h="82" pX="0.5" pY="0.5" oX="3" oY="2" oW="88" oH="108" r="y"/>
+    <sprite n="ribbon_04.png" x="257" y="460" w="98" h="65" pX="0.5" pY="0.5" oX="1" oY="3" oW="100" oH="72"/>
+    <sprite n="ribbon_05.png" x="216" y="527" w="78" h="67" pX="0.5" pY="0.5" oX="1" oY="2" oW="80" oH="72"/>
+    <sprite n="ribbon_06.png" x="123" y="507" w="91" h="80" pX="0.5" pY="0.5" oX="2" oY="2" oW="96" oH="84"/>
+    <sprite n="ribbon_07.png" x="1" y="548" w="87" h="73" pX="0.5" pY="0.5" oX="1" oY="2" oW="76" oH="92" r="y"/>
+    <sprite n="ribbon_08.png" x="206" y="189" w="62" h="67" pX="0.5" pY="0.5" oX="2" oY="3" oW="72" oH="68" r="y"/>
+    <sprite n="ribbon_09.png" x="90" y="589" w="75" h="72" pX="0.5" pY="0.5" oX="2" oY="0" oW="76" oH="76" r="y"/>
+    <sprite n="Skirt.png" x="1" y="189" w="203" h="155" pX="0.5" pY="0.5" oX="2" oY="4" oW="208" oH="164"/>
+</TextureAtlas>

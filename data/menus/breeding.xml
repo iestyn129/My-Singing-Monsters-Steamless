@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
 
-	<event name="onPostInit" params="element">
-		<![CDATA[
-		if(game.playerLevel() < game.torchUnlockLevel()) then
-			element["BottomTorchFrame"]["Sprite"]("visible"):SetInt(0)
-			element["TorchAnim"]["Sprite"]("visible"):SetInt(0)
-			element["TorchText"]["Text"]("visible"):SetInt(0)
-		end
-		element:DoStoredScript("setLeftListActive")
-		
-		if(game.showBreedingPromoDesc()) then
-			game.displayNotification(game.breedingPromoDescription())
-			game.setShowedBreedingPromoDesc()
-		end
-
-		]]>
-	</event>
 	<element name="FadedBG">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
@@ -52,7 +36,7 @@
 				component("includeBorder"):SetInt(1)
 				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
 				component("layer"):SetString("MidPopUps")
-				game.setClipping("Clipping", 0, (element:absY() + element:parent():GetElement("LeftTitleFrame"):absH())*lua_sys.deviceScaleY(), lua_sys.screenWidth()*lua_sys.deviceScaleX(), (element:absH()-60)*lua_sys.deviceScaleY())
+				game.setClipping("Clipping", 0, (element:absY() + element:parent():E("LeftTitleFrame"):absH())*lua_sys.deviceScaleY(), lua_sys.screenWidth()*lua_sys.deviceScaleX(), (element:absH()-60)*lua_sys.deviceScaleY())
 			</event>
 		</ninesliceComponent>
 		<touchComponent name="TouchLeftList">
@@ -60,7 +44,7 @@
 				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
 			<event name="onTouchUp" params="component, element">
-				element:parent():DoStoredScript("setLeftListActive")
+				element:parent():setLeftListActive()
 			</event>
 		</touchComponent>
 	</element>
@@ -87,7 +71,7 @@
 				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchUp" params="component, element">
-				element:parent():DoStoredScript("setLeftListActive")
+				element:parent():setLeftListActive()
 			</event>
 		</touchComponent>
 	</element>
@@ -131,18 +115,18 @@
 		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<swipeComponent name="Swiper">
 			<event name="onPostInit" params="component, element">
-				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:V("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
 				
 				if(game.tutorialActive()) then
-					component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
+					component:V("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
 				else
-					component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+					component:V("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
 				end
 				
-				component:GetVar("tSteps"):SetFloat(25.0)
+				component:V("tSteps"):SetFloat(25.0)
 				component:listenToTouches(element)
 				
-				local totalHeight = element("NumBreedable"):GetInt() * (element:parent():GetElement("leftBreedingEntry0"):absH() + 14)
+				local totalHeight = element.NumBreedable * (element:parent():E("leftBreedingEntry0"):absH() + 14)
 				
 				if(totalHeight &gt; element:absH()) then
 					component:setScrollSize(totalHeight - element:absH())
@@ -153,120 +137,40 @@
 				--call this because otherwise positions don't get updated properly until the onTicks
 				element:parent():setPositionBroadcast(true)
 
-				local topSprite = element:parent():GetElement("LeftTitleFrame");
+				local topSprite = element:parent():E("LeftTitleFrame")
 
-				element:parent():GetComponent("TouchBlockerTop"):setOrientation(lua_sys.MenuOrientation(0, -(topSprite:absY() + topSprite:absH() - 5), 6, lua_sys.LEFT, lua_sys.BOTTOM))
-				element:parent():GetComponent("TouchBlockerTop"):setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+				element:parent():C("TouchBlockerTop"):setOrientation(lua_sys.MenuOrientation(0, -(topSprite:absY() + topSprite:absH() - 5), 6, lua_sys.LEFT, lua_sys.BOTTOM))
+				element:parent():C("TouchBlockerTop"):setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
 				
 				
-				local botSprite = element:parent():GetElement("LeftMonsterBg");
+				local botSprite = element:parent():E("LeftMonsterBg")
 				
-				element:parent():GetComponent("TouchBlockerBot"):setOrientation(lua_sys.MenuOrientation(0, (botSprite:absY() + botSprite:absH() - 10), 6, lua_sys.LEFT, lua_sys.TOP))
-				element:parent():GetComponent("TouchBlockerBot"):setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
+				element:parent():C("TouchBlockerBot"):setOrientation(lua_sys.MenuOrientation(0, (botSprite:absY() + botSprite:absH() - 10), 6, lua_sys.LEFT, lua_sys.TOP))
+				element:parent():C("TouchBlockerBot"):setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.TOP)
 
 			</event>
 			<event name="onTick" params="component, element, dt">
-				local first = element:parent():GetElement("leftBreedingEntry0")
+				local first = element:parent():E("leftBreedingEntry0")
 				if(first) then
 					local offset = component:scrollOffset()
 					if(first:getOrientationPosition().y ~= offset) then
-						first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), offset))
+						first:setOrientationPosition(Vector2(first:V("xOffset"):GetInt(), offset))
 					end
 				end
 			</event>
 			<event name="enableScrolling" params="component, element">
-				component:GetVar("enableMouseScroll"):SetInt(1)
+				component:V("enableMouseScroll"):SetInt(1)
 			</event>
 			<event name="disableScrolling" params="component, element">
-				component:GetVar("enableMouseScroll"):SetInt(0)
+				component:V("enableMouseScroll"):SetInt(0)
 			</event>
 		</swipeComponent>
 		<touchComponent name="Touch">
 			<size dependentOnElement="LeftMonsterBg" dependentOnComponent="Sprite" />
 			<event name="onInit" params="component, element">
-				component("singleTouch"):SetInt(1)
+				component:V("singleTouch"):SetInt(1)
 			</event>
 		</touchComponent>
-		<event name="onInit" params="element">
-			element("SelectedEntry"):SetString("")
-			element("SelectedEntryID"):SetInt(0)
-			element("NewSelectedEntry"):SetString("")
-			element("NewSelectedEntryID"):SetInt(0)
-			
-			local monsterIds = game.breedingVector()
-			local numMonsters = monsterIds:size()-1
-			local previous = nil
-			local numBreedable = 0
-			
-			for i=0,numMonsters do
-				if include("BreedingRules").BreedableOnLeft(monsterIds[i]) then
-					local breedingEntry = menu:addTemplateElement("template_breedingentry", "leftBreedingEntry"..numBreedable, element)
-					
-					breedingEntry("List"):SetString("LeftMonsterList")
-					breedingEntry("MonsterID"):SetInt(monsterIds[i])
-					breedingEntry("EntryNum"):SetInt(numBreedable)
-					
-					if(previous == nil) then
-						breedingEntry:setParent(element)
-						breedingEntry:setOrientation(lua_sys.MenuOrientation(16,0,4, lua_sys.HCENTER, lua_sys.TOP))
-						breedingEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
-					else
-						breedingEntry:setParent(previous)
-						breedingEntry:setOrientation(lua_sys.MenuOrientation(0,14,0, lua_sys.HCENTER, lua_sys.TOP))
-						breedingEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
-					end
-					
-					previous = breedingEntry
-					numBreedable = numBreedable + 1
-					
-					breedingEntry:init()
-					breedingEntry:setPositionBroadcast(true)
-				end
-			end
-			
-			element("NumBreedable"):SetInt(numBreedable)
-		</event>
-		<event name="selectNewEntry" params="element">
-			local oldEntryName = element("SelectedEntry"):GetString()
-			local newEntryName = element("NewSelectedEntry"):GetString()
-			local numBreedable = element("NumBreedable"):GetInt() - 1
-			
-			if((oldEntryName ~= "") and (oldEntryName ~= newEntryName)) then
-				local oldEntry = element:parent():GetElement(oldEntryName)
-				oldEntry["bg"]["GreySprite"]("visible"):SetInt(1)
-				oldEntry["bg"]["YellowSprite"]("visible"):SetInt(0)
-				
-				for i=0,numBreedable do
-					local rightEntry = element:parent():GetElement("rightBreedingEntry"..i)
-					if(rightEntry ~= nil) then
-						if((game.monsterType(oldEntry("MonsterID"):GetInt()) == game.monsterType(rightEntry("MonsterID"):GetInt())) and (game.monsterLevel(rightEntry("MonsterID"):GetInt()) &gt; 3)) then
-							rightEntry:DoStoredScript("enableEntry")
-						end
-					end
-				end
-			end
-			
-			if(oldEntryName ~= newEntryName) then
-				local newEntry = element:parent():GetElement(newEntryName)
-				element("SelectedEntry"):SetString(newEntryName)
-				element("SelectedEntryID"):SetInt(newEntry("MonsterID"):GetInt())
-				
-				if(not game.isLegendaryShuggaIsland()) then					
-					for i=0,numBreedable do
-						local rightEntry = element:parent():GetElement("rightBreedingEntry"..i)
-						
-						if(rightEntry ~= nil) then
-							if(game.monsterType(newEntry("MonsterID"):GetInt()) == game.monsterType(rightEntry("MonsterID"):GetInt())) then
-								rightEntry:DoStoredScript("disableEntry")
-							end
-						end
-					end
-				end
-			end
-		</event>
-		<event name="entryTouched" params="element">
-			element:parent():DoStoredScript("setLeftListActive")
-		</event>
 	</element>
 	
 	<element name="RightMonsterBg">
@@ -293,7 +197,7 @@
 				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
 			<event name="onTouchUp" params="component, element">
-				element:parent():DoStoredScript("setRightListActive")
+				element:parent():setRightListActive()
 			</event>
 		</touchComponent>
 	</element>
@@ -320,7 +224,7 @@
 				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 			<event name="onTouchUp" params="component, element">
-				element:parent():DoStoredScript("setRightListActive")
+				element:parent():setRightListActive()
 			</event>
 		</touchComponent>
 	</element>
@@ -350,16 +254,16 @@
 		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<swipeComponent name="Swiper">
 			<event name="onPostInit" params="component, element">
-				component:GetVar("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
+				component:V("direction"):SetInt(lua_sys.MenuSwipeComponent_SwipeDirectionVertical)
 				if(game.tutorialActive()) then
-					component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
+					component:V("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeDisabled)
 				else
-					component:GetVar("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
+					component:V("mode"):SetInt(lua_sys.MenuSwipeComponent_SwipeModeFree)
 				end
-				component:GetVar("tSteps"):SetFloat(25.0)
+				component:V("tSteps"):SetFloat(25.0)
 				component:listenToTouches(element)
 				
-				local totalHeight = element("NumBreedable"):GetInt() * (element:parent():GetElement("rightBreedingEntry0"):absH() + 14)
+				local totalHeight = element.NumBreedable * (element:parent():E("rightBreedingEntry0"):absH() + 14)
 
 				if(totalHeight &gt; element:absH()) then
 					component:setScrollSize(totalHeight - element:absH())
@@ -368,108 +272,29 @@
 				end	
 			</event>
 			<event name="onTick" params="component, element, dt">
-				local first = element:parent():GetElement("rightBreedingEntry0")
+				local first = element:parent():E("rightBreedingEntry0")
 				
 				if first then
 					local offset = component:scrollOffset()
 					
 					if(first:getOrientationPosition().y ~= offset) then
-						first:setOrientationPosition(Vector2(first("xOffset"):GetInt(), offset))
+						first:setOrientationPosition(Vector2(first:V("xOffset"):GetInt(), offset))
 					end
 				end
 			</event>
 			<event name="enableScrolling" params="component, element">
-				component:GetVar("enableMouseScroll"):SetInt(1)
+				component:V("enableMouseScroll"):SetInt(1)
 			</event>
 			<event name="disableScrolling" params="component, element">
-				component:GetVar("enableMouseScroll"):SetInt(0)
+				component:V("enableMouseScroll"):SetInt(0)
 			</event>
 		</swipeComponent>
 		<touchComponent name="Touch">
 			<size dependentOnElement="RightMonsterBg" dependentOnComponent="Sprite" />
 			<event name="onInit" params="component, element">
-				component("singleTouch"):SetInt(1)
+				component:V("singleTouch"):SetInt(1)
 			</event>
 		</touchComponent>
-		<event name="onInit" params="element">
-			element("SelectedEntry"):SetString("")
-			element("SelectedEntryID"):SetInt(0)
-			element("NewSelectedEntry"):SetString("")
-			element("NewSelectedEntryID"):SetInt(0)
-			
-			local monsterIds = game.breedingVector()
-			local numMonsters = monsterIds:size() - 1
-			local previous = nil
-			local numBreedable = 0
-			
-			for i=0,numMonsters do
-				if include("BreedingRules").BreedableOnRight(monsterIds[i]) then
-					local breedingEntry = menu:addTemplateElement("template_breedingentry", "rightBreedingEntry"..numBreedable, element)
-					
-					breedingEntry("List"):SetString("RightMonsterList")
-					breedingEntry("MonsterID"):SetInt(monsterIds[i])
-					breedingEntry("EntryNum"):SetInt(numBreedable)
-					
-					if(previous == nil) then
-						breedingEntry:setParent(element)
-						breedingEntry:setOrientation(lua_sys.MenuOrientation(16,0,4, lua_sys.HCENTER, lua_sys.TOP))
-						breedingEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
-					else
-						breedingEntry:setParent(previous)
-						breedingEntry:setOrientation(lua_sys.MenuOrientation(0,14,0, lua_sys.HCENTER, lua_sys.TOP))
-						breedingEntry:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.BOTTOM)
-					end
-					
-					previous = breedingEntry
-					numBreedable = numBreedable + 1
-					
-					breedingEntry:init()
-					breedingEntry:setPositionBroadcast(true)
-				end
-			end
-			
-			element("NumBreedable"):SetInt(numBreedable)
-		</event>
-		<event name="selectNewEntry" params="element">
-			local oldEntryName = element("SelectedEntry"):GetString()
-			local newEntryName = element("NewSelectedEntry"):GetString()
-			local numBreedable = element("NumBreedable"):GetInt() - 1
-			
-			if((oldEntryName ~= "") and (oldEntryName ~= newEntryName)) then
-				local oldEntry = element:parent():GetElement(oldEntryName)
-				oldEntry["bg"]["GreySprite"]("visible"):SetInt(1)
-				oldEntry["bg"]["YellowSprite"]("visible"):SetInt(0)
-				
-				for i=0,numBreedable do
-					local leftEntry = element:parent():GetElement("leftBreedingEntry"..i)
-					if(leftEntry~=nil) then
-						if((game.monsterType(oldEntry("MonsterID"):GetInt()) == game.monsterType(leftEntry("MonsterID"):GetInt())) and (game.monsterLevel(leftEntry("MonsterID"):GetInt()) &gt; 3)) then
-							leftEntry:DoStoredScript("enableEntry")
-						end
-					end
-				end
-			end
-
-			if(oldEntryName ~= newEntryName) then
-				local newEntry = element:parent():GetElement(newEntryName)
-				element("SelectedEntry"):SetString(element("NewSelectedEntry"):GetString())
-				element("SelectedEntryID"):SetInt(newEntry("MonsterID"):GetInt())
-				
-				if(not game.isLegendaryShuggaIsland()) then
-					for i=0,numBreedable do
-						local leftEntry = element:parent():GetElement("leftBreedingEntry"..i)
-						if(leftEntry~=nil) then
-							if(game.monsterType(newEntry("MonsterID"):GetInt()) == game.monsterType(leftEntry("MonsterID"):GetInt())) then
-								leftEntry:DoStoredScript("disableEntry")
-							end
-						end
-					end
-				end
-			end
-		</event>
-		<event name="entryTouched" params="element">
-			element:parent():DoStoredScript("setRightListActive")
-		</event>
 	</element>
 	
 	<element name="BottomTorchFrame">
@@ -608,29 +433,5 @@
 		</spriteSheetComponent>
 	</element>
 	
-	<event name="breed" params="element">
-		local leftMonsterID = element["LeftMonsterList"]("SelectedEntryID"):GetInt()
-		local rightMonsterID = element["RightMonsterList"]("SelectedEntryID"):GetInt()
-		if((leftMonsterID ~= 0) and (rightMonsterID ~= 0)) then
-			game.breed(leftMonsterID, rightMonsterID)
-			game.popPopUp()
-			manager:setContext(manager:getDefaultContext())
-		else
-			game.displayNotification("BREED_ERROR_SELECT_TWO_MONSTERS")
-		end
-	</event>
-	
-	<event name="queuePop" params="element">
-		element:root():popPopUp()
-	</event>
-	
-	<event name="setLeftListActive" params="element">
-		element["LeftMonsterList"]["Swiper"]:DoStoredScript("enableScrolling")
-		element["RightMonsterList"]["Swiper"]:DoStoredScript("disableScrolling")
-	</event>
-	
-	<event name="setRightListActive" params="element">
-		element["RightMonsterList"]["Swiper"]:DoStoredScript("enableScrolling")
-		element["LeftMonsterList"]["Swiper"]:DoStoredScript("disableScrolling")
-	</event>
+	<script src="scripts/BreedingMenu.lua"/>
 </menu>

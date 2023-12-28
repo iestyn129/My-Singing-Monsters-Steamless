@@ -7,7 +7,7 @@
 			--let people see the popup notice telling them how to unlock it:
 			element:parent()["StarpowerButton"]["Touch"]("enabled"):SetInt(1)
 
-		elseif(game.isUnderlingIsland() or game.isCelestialIsland() or game.isAmberIsland() or game.isMythicalIsland() or game.isEtherealAtelierIsland()) then
+		elseif(game.isUnderlingIsland() or game.isCelestialIsland() or game.isAmberIsland() or game.isEtherealAtelierIsland()) then
 		
 			element["Functions"]:DoStoredScript("disableStarpowerButton");
 			--let people see the popup notice telling them how to unlock it:
@@ -575,8 +575,7 @@
 					not (game.isUnderlingIsland() or 
 					game.isComposerIsland() or
 					game.isCelestialIsland() or
-					game.isAmberIsland() or
-					game.isMythicalIsland() or
+					game.isAmberIsland() or					
 					game.isEtherealAtelierIsland() or
 					game.isBattleIsland())) then
 					
@@ -592,8 +591,7 @@
 				elseif(game.isUnderlingIsland() or 
 					game.isComposerIsland() or 
 					game.isCelestialIsland() or 
-					game.isAmberIsland() or 
-					game.isMythicalIsland() or
+					game.isAmberIsland() or 					
 					game.isEtherealAtelierIsland() or
 					game.isBattleIsland()) then
 					

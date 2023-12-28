@@ -69,6 +69,28 @@
 					height = item:absH()
 					
 				end
+			else
+				local monsterId = element("monsterId"):GetInt()
+				local seasonalSigil=game.seasonalSigil(monsterId)
+				if(seasonalSigil ~= "") then
+					local item = menu:addTemplateElement("template_gene", "entry0", element)
+					
+					item("SpriteName"):SetString(seasonalSigil)
+					item("SheetName"):SetString("xml_resources/hud02.xml")
+					item("Size"):SetFloat(size)
+					item("Layer"):SetString(layer)
+					
+					item:setOrientation(lua_sys.MenuOrientation(offsetX, offsetY, priority, lua_sys.LEFT, lua_sys.VCENTER))
+					item:setRelativeObjectAnchors(lua_sys.LEFT, lua_sys.VCENTER)
+					
+					item:init()
+					item:setPositionBroadcast(true)
+					item:postInit()
+					
+					offsetX = offsetX + item:absW()
+					
+					height = item:absH()
+				end
 			end
 			
 			element:setSize(Vector2(offsetX, height))

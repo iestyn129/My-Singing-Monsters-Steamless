@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:a3c771be543f2632d28995ddf8fa61de:7407aa4763fe8749654ba051715dd3ab:75ee983feddc8d41daa33abe41b4020f$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_JKL_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="arm__upper_aquatic" x="372" y="299" w="98" h="54" pX="0.5" pY="0.5" oX="1" oY="3" oW="100" oH="60"/>
+    <sprite n="arm_lower_aquatic" x="249" y="406" w="116" h="82" pX="0.5" pY="0.5" oX="4" oY="1" oW="124" oH="88"/>
+    <sprite n="arm_lower_furry" x="134" y="209" w="114" h="105" pX="0.5" pY="0.5" oX="5" oY="5" oW="130" oH="130"/>
+    <sprite n="arm_upper_furry" x="250" y="299" w="120" h="105" pX="0.5" pY="0.5" oX="8" oY="0" oW="136" oH="112"/>
+    <sprite n="body" x="2" y="2" w="246" h="205" pX="0.5" pY="0.5" oX="10" oY="3" oW="264" oH="220"/>
+    <sprite n="brow_left" x="472" y="182" w="38" h="30" pX="0.5" pY="0.5" oX="4" oY="3" oW="44" oH="44"/>
+    <sprite n="brow_middle" x="358" y="525" w="84" h="59" pX="0.5" pY="0.5" oX="3" oY="0" oW="88" oH="64"/>
+    <sprite n="brow_right" x="153" y="654" w="59" h="47" pX="0.5" pY="0.5" oX="3" oY="4" oW="64" oH="54"/>
+    <sprite n="eye_left" x="472" y="214" w="37" h="32" pX="0.5" pY="0.5" oX="4" oY="2" oW="36" oH="40" r="y"/>
+    <sprite n="eye_mid" x="2" y="603" w="84" h="84" pX="0.5" pY="0.5"/>
+    <sprite n="eye_mid_pupil_1" x="108" y="362" w="18" h="30" pX="0.5" pY="0.5" oX="28" oY="21" oW="84" oH="84"/>
+    <sprite n="eye_mid_pupil_2" x="108" y="394" w="17" h="28" pX="0.5" pY="0.5" oX="28" oY="23" oW="84" oH="84"/>
+    <sprite n="eye_mid_pupil_3" x="108" y="330" w="19" h="30" pX="0.5" pY="0.5" oX="28" oY="21" oW="84" oH="84"/>
+    <sprite n="eye_right" x="194" y="600" w="41" h="52" pX="0.5" pY="0.5" oX="4" oY="4" oW="50" oH="60"/>
+    <sprite n="eyelid_left_1" x="329" y="547" w="27" h="27" pX="0.5" pY="0.5" oX="9" oY="1" oW="36" oH="40"/>
+    <sprite n="eyelid_left_2" x="323" y="576" w="27" h="27" pX="0.5" pY="0.5" oX="9" oY="1" oW="36" oH="40"/>
+    <sprite n="eyelid_left_3" x="323" y="605" w="27" h="27" pX="0.5" pY="0.5" oX="9" oY="1" oW="36" oH="40"/>
+    <sprite n="eyelid_left_4" x="319" y="634" w="27" h="27" pX="0.5" pY="0.5" oX="9" oY="1" oW="36" oH="40"/>
+    <sprite n="eyelid_mid_1" x="444" y="535" w="65" h="80" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="84" r="y"/>
+    <sprite n="eyelid_mid_2" x="237" y="617" w="80" h="65" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="84"/>
+    <sprite n="eyelid_mid_3" x="434" y="617" w="65" h="80" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="84" r="y"/>
+    <sprite n="eyelid_mid_4" x="348" y="660" w="80" h="65" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="84"/>
+    <sprite n="eyelid_mid_5" x="430" y="699" w="80" h="65" pX="0.5" pY="0.5" oX="4" oY="8" oW="84" oH="84"/>
+    <sprite n="eyelid_right_1" x="472" y="307" w="36" h="39" pX="0.5" pY="0.5" oX="6" oY="5" oW="50" oH="60"/>
+    <sprite n="eyelid_right_2" x="472" y="348" w="36" h="39" pX="0.5" pY="0.5" oX="6" oY="5" oW="50" oH="60"/>
+    <sprite n="eyelid_right_3" x="472" y="389" w="36" h="39" pX="0.5" pY="0.5" oX="6" oY="5" oW="50" oH="60"/>
+    <sprite n="eyelid_right_4" x="472" y="430" w="36" h="39" pX="0.5" pY="0.5" oX="6" oY="5" oW="50" oH="60"/>
+    <sprite n="finger_aquatic_base" x="484" y="2" w="26" h="43" pX="0.5" pY="0.5" oX="8" oY="1" oW="40" oH="60"/>
+    <sprite n="finger_aquatic_mid" x="484" y="47" w="21" h="37" pX="0.5" pY="0.5" oX="10" oY="5" oW="40" oH="60"/>
+    <sprite n="finger_aquatic_tip" x="484" y="86" w="20" h="49" pX="0.5" pY="0.5" oX="10" oY="5" oW="40" oH="60"/>
+    <sprite n="finger_furry_1" x="209" y="544" w="28" h="54" pX="0.5" pY="0.5" oX="5" oY="6" oW="36" oH="66"/>
+    <sprite n="finger_furry_2" x="209" y="482" w="28" h="60" pX="0.5" pY="0.5" oX="4" oY="2" oW="36" oH="66"/>
+    <sprite n="finger_furry_3" x="329" y="490" w="27" h="55" pX="0.5" pY="0.5" oX="5" oY="5" oW="36" oH="66"/>
+    <sprite n="head" x="250" y="128" w="220" h="169" pX="0.5" pY="0.5" oX="0" oY="2" oW="224" oH="180"/>
+    <sprite n="leg_lower_aquatic" x="105" y="553" w="87" h="78" pX="0.5" pY="0.5" oX="1" oY="0" oW="80" oH="88" r="y"/>
+    <sprite n="leg_lower_furry" x="2" y="209" w="130" h="119" pX="0.5" pY="0.5" oX="15" oY="16" oW="148" oH="162" r="y"/>
+    <sprite n="leg_upper_aquatic" x="239" y="490" w="88" h="64" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="leg_upper_furry" x="134" y="316" w="113" h="99" pX="0.5" pY="0.5" oX="6" oY="10" oW="120" oH="110"/>
+    <sprite n="mouth_1" x="2" y="543" w="101" h="58" pX="0.5" pY="0.5" oX="6" oY="8" oW="112" oH="88"/>
+    <sprite n="mouth_2" x="127" y="417" w="102" h="63" pX="0.5" pY="0.5" oX="5" oY="6" oW="112" oH="88"/>
+    <sprite n="mouth_3" x="367" y="411" w="103" h="64" pX="0.5" pY="0.5" oX="6" oY="8" oW="112" oH="88"/>
+    <sprite n="mouth_4" x="2" y="407" w="104" h="71" pX="0.5" pY="0.5" oX="5" oY="5" oW="112" oH="88"/>
+    <sprite n="mouth_5" x="2" y="330" w="104" h="75" pX="0.5" pY="0.5" oX="5" oY="8" oW="112" oH="88"/>
+    <sprite n="mouth_6" x="106" y="482" w="101" h="69" pX="0.5" pY="0.5" oX="7" oY="4" oW="112" oH="88"/>
+    <sprite n="mouth_7" x="2" y="480" w="102" h="61" pX="0.5" pY="0.5" oX="6" oY="8" oW="112" oH="88"/>
+    <sprite n="muzzle" x="372" y="355" w="98" h="54" pX="0.5" pY="0.5" oX="10" oY="9" oW="124" oH="74"/>
+    <sprite n="pupil_small" x="231" y="417" w="16" h="14" pX="0.5" pY="0.5" oX="14" oY="20" oW="50" oH="60"/>
+    <sprite n="shadow" x="250" y="2" w="232" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="toe_aquatic_1" x="472" y="137" w="38" h="43" pX="0.5" pY="0.5" oX="4" oY="1" oW="44" oH="44"/>
+    <sprite n="toe_aquatic_2" x="472" y="471" w="33" h="33" pX="0.5" pY="0.5" oX="6" oY="7" oW="44" oH="44"/>
+    <sprite n="toe_aquatic_3" x="472" y="506" w="30" h="27" pX="0.5" pY="0.5" oX="9" oY="7" oW="44" oH="44" r="y"/>
+    <sprite n="toe_furry_1" x="88" y="682" w="57" h="50" pX="0.5" pY="0.5" oX="1" oY="2" oW="60" oH="54"/>
+    <sprite n="toe_furry_2" x="88" y="633" w="63" h="47" pX="0.5" pY="0.5" oX="0" oY="1" oW="48" oH="64" r="y"/>
+    <sprite n="toe_furry_3" x="472" y="248" w="36" h="57" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="60"/>
+    <sprite n="wire_1" x="367" y="477" w="103" h="46" pX="0.5" pY="0.5" oX="7" oY="2" oW="88" oH="110" r="y"/>
+    <sprite n="wire_2" x="352" y="586" w="80" h="72" pX="0.5" pY="0.5" oX="8" oY="26" oW="88" oH="110" r="y"/>
+    <sprite n="wire_3" x="239" y="556" w="82" h="59" pX="0.5" pY="0.5" oX="6" oY="48" oW="88" oH="110"/>
+</TextureAtlas>

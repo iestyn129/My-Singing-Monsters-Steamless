@@ -58,37 +58,25 @@
 		</spriteSheetComponent>
 	</element>
 
-	<element name="CritterBefore">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-		<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="LEFT" />
-		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
-		
-		<spriteSheetComponent name="Sprite">
-			<event name="onInit" params="component, element">
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
-				component("spriteName"):SetString("critter_portrait_square_g")
-				component("size"):SetFloat(0.5*game.hudScale())
-				component("visible"):SetInt(1)
-				component("layer"):SetString("MidFrontPopUps")
-			</event>
-		</spriteSheetComponent>
-	</element>
+	<template type="template_critter_synthesizing_entry" name="CritterBefore">
+	<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="LEFT" />
+	<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
+	<event name="onInit" params="element">
+		onInit(element)
+		element("Layer"):SetString("MidFrontPopUps")
+		element:disable()
+	</event>
+	</template>
 
-	<element name="Critter">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-		<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="RIGHT" />
-		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
-		
-		<spriteSheetComponent name="Sprite">
-			<event name="onInit" params="component, element">
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
-				component("spriteName"):SetString("critter_portrait_square_g")
-				component("size"):SetFloat(0.5*game.hudScale())
-				component("visible"):SetInt(1)
-				component("layer"):SetString("MidFrontPopUps")
-			</event>
-		</spriteSheetComponent>
-	</element>
+	<template type="template_critter_synthesizing_entry" name="Critter">
+	<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="RIGHT" />
+	<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
+	<event name="onInit" params="element">
+		onInit(element)
+		element("Layer"):SetString("MidFrontPopUps")
+		element:disable()
+	</event>
+	</template>
 	
 	<element name="Text">
 		<size dependentOnElement="element:name()" dependentOnComponent="Text" />
@@ -124,7 +112,7 @@
 				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
 			end
 
-			if(game.getAvailableSynthesizer()==0 or game.canSynthesize(3)==false)then
+			if(game.getAvailableSynthesizer()==0)then
 				element:setDisable()
 			end
 		</event>
@@ -158,7 +146,7 @@
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("button_breed")
+				component("spriteName"):SetString("button_synth")
 				component("sheetName"):SetString("xml_resources/context_buttons.xml")
 				component("layer"):SetString("MidFrontPopUps")
 				component("size"):SetFloat(0.5)

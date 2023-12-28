@@ -51,7 +51,7 @@
 
 	<textComponent name="ActionTypeName">
 		<size w="110*game.menuScaleX()" h="10*game.menuScaleY()"/>
-		<position relativeTo="element:name()" relativeToComponent="ActionName" vAnchor="BOTTOM" hAnchor="LEFT" />
+		<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="LEFT" />
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="32*game.menuScaleX()" yOffset="-9*game.menuScaleY()" priorityOffset="-1" />
 		<event name="onInit" params="component, element">
 			<![CDATA[

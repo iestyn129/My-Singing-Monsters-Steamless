@@ -377,7 +377,7 @@
 			</event>
 		</textComponent>
 		<spriteSheetComponent name="CoinSprite">
-			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
 			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)

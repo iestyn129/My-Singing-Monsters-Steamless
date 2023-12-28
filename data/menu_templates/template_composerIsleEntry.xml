@@ -4,12 +4,8 @@
 	<event name="onPostInit" params="element">
 		--if island isn't owned:
 		if(element("islandUid"):GetInt() == -1) then
-			local currency = game.islandCurrency(element:parent()("nextComposerIslandId"):GetInt())
-			if(currency == "DIAMONDS") then
-				element["CurrencyIcon"]["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-			else
-				element["CurrencyIcon"]["Sprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-			end
+			local currencyStr = game.islandCurrency(element:parent()("nextComposerIslandId"):GetInt())
+			element["CurrencyIcon"]["Sprite"]("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyStr))
 			element["CurrencyIcon"]["Sprite"]("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
 			element["CurrencyIcon"]["Sprite"]("visible"):SetInt(1)
 		else
@@ -71,12 +67,8 @@
 				if(element:parent()("islandUid"):GetInt() == -1) then
 					local baseCost = game.islandCost(element:parent():parent()("nextComposerIslandId"):GetInt())
 					component("text"):SetString(game.commaizeNumber(baseCost))
-					local currency = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt());
-					if(currency == "DIAMONDS") then
-						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
-					else
-						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
-					end
+					local currencyStr = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt())
+					game.StoreContext_setCurrencyTypeColour(currencyStr, component)
 					component("visible"):SetInt(1)
 					
 					if(baseCost ~= 0 and game.islandSale(element:parent():parent()("nextComposerIslandId"):GetInt())) then
@@ -126,12 +118,8 @@
 				local baseCost = game.islandCost(element:parent():parent()("nextComposerIslandId"):GetInt())
 				if(element:parent()("islandUid"):GetInt() == -1 and baseCost ~= 0 and game.islandSale(element:parent():parent()("nextComposerIslandId"):GetInt())) then
 					component("text"):SetString(game.commaizeNumber(game.islandSaleCost(element:parent():parent()("nextComposerIslandId"):GetInt())))
-					local currency = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt());
-					if(currency == "DIAMONDS") then
-						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_DIAMOND, component)
-					else
-						game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, component)
-					end
+					local currencyStr = game.islandCurrency(element:parent():parent()("nextComposerIslandId"):GetInt())
+					game.StoreContext_setCurrencyTypeColour(currencyStr, component)
 					component("visible"):SetInt(1)
 				else
 					component("visible"):SetInt(0)

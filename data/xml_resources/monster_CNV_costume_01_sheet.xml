@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:97c7baf43fdfcfffac79414261248837:877012e5d01fafd6938b6ed3236506ea:2dd2349f6dde48b0a4ac945d66d74367$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CNV_costume_01_sheet.png" width="512" height="512" hires="true">
+    <sprite n="CNV_body_ring" x="128" y="278" w="67" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_eye_rims" x="245" y="336" w="53" h="68" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_head" x="1" y="341" w="102" h="130" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_jaw" x="172" y="43" w="62" h="62" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_claw_01" x="253" y="31" w="43" h="24" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_claw_02" x="260" y="475" w="44" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_claw_03" x="306" y="475" w="41" h="30" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_finger_01" x="300" y="44" w="46" h="45" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_finger_02" x="1" y="473" w="62" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_left_finger_03" x="224" y="417" w="34" h="72" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_left_horn" x="1" y="189" w="125" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_01" x="260" y="406" w="48" h="67" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_02" x="177" y="341" w="66" h="74" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_neck_03" x="349" y="1" w="66" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_neck_04" x="128" y="189" w="82" h="87" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_neck_05" x="105" y="341" w="70" h="88" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_neck_06" x="197" y="278" w="54" h="56" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_claw_01" x="65" y="473" w="36" h="38" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_claw_02" x="253" y="1" w="44" h="28" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_claw_03" x="103" y="473" w="27" h="38" pX="0.5" pY="0.5" oX="0" oY="0" oW="39" oH="27" r="y"/>
+    <sprite n="CNV_right_finger_01" x="172" y="1" w="42" h="40" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_finger_02" x="105" y="431" w="25" h="31" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CNV_right_finger_03" x="310" y="1" w="37" h="41" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_horn" x="1" y="1" w="169" h="186" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_lowerarm" x="132" y="431" w="51" h="80" pX="0.5" pY="0.5"/>
+    <sprite n="CNV_right_upperarm" x="185" y="417" w="37" h="73" pX="0.5" pY="0.5"/>
+</TextureAtlas>

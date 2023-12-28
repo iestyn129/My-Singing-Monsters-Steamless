@@ -9,8 +9,8 @@
 			<![CDATA[
 				component("spriteName"):SetString("time_plus")
 				component("sheetName"):SetString("xml_resources/buttons01.xml")
-				component("size"):SetFloat(0.25*game.hudScale())
-				component("layer"):SetString("FrontPopUps")
+				component("size"):SetFloat(0.22*game.hudScale())
+				component("layer"):SetString(element("Layer"):GetString())
 			]]>
 		</event>
 	</spriteSheetComponent>

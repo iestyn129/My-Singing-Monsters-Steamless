@@ -45,7 +45,7 @@
 				component("spriteName"):SetString("$overlaySprite")
 				component("sheetName"):SetString("$overlaySpriteSheet")
 				component("size"):SetFloat($baseSpriteScale)
-				component("layer"):SetString("HUD")
+				component("layer"):SetString("$baseLayer")
 			</event>
 		</spriteSheetComponent>
 		<event name="select" params="element">
@@ -79,14 +79,7 @@
 			</event>
 			<event name="onTouchUp" params="component, element">
 				onTouchUp(component, element)
-				if(store:getFilter() == "$filterName") then
-					store:setFilter("")
-					element:DoStoredScript("deselect")
-				else
-					store:setFilter("$filterName")
-					element:parent():parent():DoStoredScript("deselectAllMonsters");
-					element:DoStoredScript("select")
-				end
+				element:parent():parent():onMonsterFilterSelected(element, "$filterName");
 			</event>
 
 			<event name="onTouchRelease" params="component, element">

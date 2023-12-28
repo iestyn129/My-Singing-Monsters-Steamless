@@ -1,7 +1,7 @@
 <template name="template_goalentry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
 	<script src="scripts/template_goalentry.lua"/>
 
-	<size w="0.88 * lua_sys.screenWidth() - 90 * game.menuScaleX()" h="72*game.menuScaleY()" />
+	<size w="1.739*60*(0.7188*lua_sys.screenHeight())" h="60*game.menuScaleY()" />
 
 	<spriteSheetComponent name="GoalIcon">
 		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />

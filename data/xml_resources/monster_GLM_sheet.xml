@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:eeef4c92de62c449bb9b537f4b359728:325eb76c3cb97748ca95b6c674ff4d10:ce3f96371f15e20646f8dc1c0d719375$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GLM_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="GLM_eye_pupil" x="317" y="769" w="10" h="17" pX="0.5" pY="0.5" oX="3" oY="1" oW="16" oH="20"/>
+    <sprite n="GLM_eyeball" x="426" y="344" w="35" h="35" pX="0.5" pY="0.5" oX="2" oY="2" oW="40" oH="40"/>
+    <sprite n="GLM_eyelid_01" x="342" y="344" w="38" h="38" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="44"/>
+    <sprite n="GLM_eyelid_02" x="384" y="344" w="38" h="38" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="44"/>
+    <sprite n="GLM_eyelid_03" x="296" y="556" w="38" h="38" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="44"/>
+    <sprite n="GLM_eyelid_04" x="338" y="556" w="38" h="38" pX="0.5" pY="0.5" oX="3" oY="3" oW="44" oH="44"/>
+    <sprite n="GLM_foot_left" x="197" y="344" w="48" h="60" pX="0.5" pY="0.5" oX="1" oY="2" oW="64" oH="52" r="y"/>
+    <sprite n="GLM_foot_right" x="144" y="344" w="49" h="60" pX="0.5" pY="0.5" oX="2" oY="3" oW="64" oH="56" r="y"/>
+    <sprite n="GLM_front_vial_backface" x="112" y="414" w="180" h="180" pX="0.5" pY="0.5" oX="8" oY="8" oW="196" oH="196"/>
+    <sprite n="GLM_front_vial_frontface" x="4" y="608" w="180" h="183" pX="0.5" pY="0.5" oX="8" oY="5" oW="196" oH="196"/>
+    <sprite n="GLM_goohead_01" x="831" y="262" w="97" h="87" pX="0.5" pY="0.5" oX="3" oY="2" oW="104" oH="92"/>
+    <sprite n="GLM_goohead_02" x="932" y="262" w="84" h="97" pX="0.5" pY="0.5" oX="3" oY="5" oW="104" oH="92" r="y"/>
+    <sprite n="GLM_goohead_03" x="926" y="363" w="82" h="97" pX="0.5" pY="0.5" oX="3" oY="7" oW="104" oH="92" r="y"/>
+    <sprite n="GLM_impactfx_01" x="249" y="386" w="34" h="16" pX="0.5" pY="0.5" oX="33" oY="4" oW="100" oH="50"/>
+    <sprite n="GLM_impactfx_02" x="188" y="769" w="53" h="22" pX="0.5" pY="0.5" oX="23" oY="4" oW="100" oH="50"/>
+    <sprite n="GLM_impactfx_03" x="622" y="552" w="70" h="29" pX="0.5" pY="0.5" oX="15" oY="6" oW="100" oH="50"/>
+    <sprite n="GLM_impactfx_04" x="545" y="344" w="78" h="30" pX="0.5" pY="0.5" oX="11" oY="11" oW="100" oH="50"/>
+    <sprite n="GLM_impactfx_05" x="627" y="343" w="82" h="29" pX="0.5" pY="0.5" oX="9" oY="16" oW="100" oH="50"/>
+    <sprite n="GLM_left_head_vial_backface" x="652" y="745" w="110" h="152" pX="0.5" pY="0.5" oX="3" oY="6" oW="116" oH="164"/>
+    <sprite n="GLM_left_head_vial_frontface" x="761" y="4" w="109" h="155" pX="0.5" pY="0.5" oX="4" oY="6" oW="116" oH="164"/>
+    <sprite n="GLM_liquid_blob_1" x="336" y="963" w="84" h="54" pX="0.5" pY="0.5" oX="34" oY="35" oW="120" oH="120" r="y"/>
+    <sprite n="GLM_liquid_blob_2" x="424" y="963" w="81" h="49" pX="0.5" pY="0.5" oX="36" oY="35" oW="120" oH="120" r="y"/>
+    <sprite n="GLM_liquid_full_frame00" x="447" y="174" w="111" h="166" pX="0.5" pY="0.5" oX="13" oY="68" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame01" x="319" y="598" w="118" h="166" pX="0.5" pY="0.5" oX="13" oY="61" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame02" x="310" y="4" w="124" h="166" pX="0.5" pY="0.5" oX="13" oY="55" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame03" x="438" y="4" w="124" h="166" pX="0.5" pY="0.5" oX="13" oY="55" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame04" x="419" y="386" w="116" h="166" pX="0.5" pY="0.5" oX="13" oY="63" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame05" x="426" y="768" w="110" h="166" pX="0.5" pY="0.5" oX="13" oY="69" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame06" x="539" y="382" w="105" h="166" pX="0.5" pY="0.5" oX="13" oY="74" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame07" x="540" y="767" w="108" h="166" pX="0.5" pY="0.5" oX="13" oY="71" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_full_frame08" x="441" y="597" w="110" h="166" pX="0.5" pY="0.5" oX="13" oY="69" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame00" x="926" y="464" w="81" h="155" pX="0.5" pY="0.5" oX="19" oY="98" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame01" x="874" y="4" w="90" h="155" pX="0.5" pY="0.5" oX="15" oY="89" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame02" x="840" y="163" w="155" h="95" pX="0.5" pY="0.5" oX="18" oY="84" oW="192" oH="192"/>
+    <sprite n="GLM_liquid_low_frame03" x="664" y="4" w="93" h="156" pX="0.5" pY="0.5" oX="21" oY="86" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame04" x="555" y="590" w="89" h="156" pX="0.5" pY="0.5" oX="22" oY="90" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame05" x="648" y="376" w="81" h="156" pX="0.5" pY="0.5" oX="21" oY="98" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame06" x="648" y="585" w="76" h="156" pX="0.5" pY="0.5" oX="19" oY="103" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame07" x="673" y="164" w="79" h="156" pX="0.5" pY="0.5" oX="16" oY="100" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_low_frame08" x="509" y="938" w="154" h="82" pX="0.5" pY="0.5" oX="15" oY="97" oW="192" oH="192"/>
+    <sprite n="GLM_liquid_splash_01" x="756" y="164" w="71" h="156" pX="0.5" pY="0.5" oX="20" oY="108" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_02" x="840" y="353" w="82" h="154" pX="0.5" pY="0.5" oX="20" oY="97" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_03" x="733" y="353" w="103" h="155" pX="0.5" pY="0.5" oX="21" oY="76" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_04" x="566" y="4" w="94" h="161" pX="0.5" pY="0.5" oX="18" oY="85" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_05" x="562" y="174" w="107" h="165" pX="0.5" pY="0.5" oX="14" oY="72" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_06" x="296" y="386" w="119" h="166" pX="0.5" pY="0.5" oX="13" oY="60" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_07" x="188" y="598" w="127" h="167" pX="0.5" pY="0.5" oX="12" oY="52" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_08" x="301" y="174" w="142" h="166" pX="0.5" pY="0.5" oX="13" oY="37" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_09" x="144" y="174" w="153" h="166" pX="0.5" pY="0.5" oX="13" oY="26" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_10" x="144" y="4" w="162" h="166" pX="0.5" pY="0.5" oX="13" oY="17" oW="192" oH="192" r="y"/>
+    <sprite n="GLM_liquid_splash_11" x="256" y="793" w="166" h="166" pX="0.5" pY="0.5" oX="13" oY="13" oW="192" oH="192"/>
+    <sprite n="GLM_lowerleg_back" x="4" y="968" w="104" h="50" pX="0.5" pY="0.5" oX="5" oY="7" oW="60" oH="120" r="y"/>
+    <sprite n="GLM_lowerleg_front" x="214" y="968" w="118" h="49" pX="0.5" pY="0.5" oX="4" oY="3" oW="56" oH="124" r="y"/>
+    <sprite n="GLM_middle_vial_backface" x="4" y="795" w="122" h="169" pX="0.5" pY="0.5" oX="5" oY="5" oW="132" oH="180"/>
+    <sprite n="GLM_middle_vial_frontface" x="130" y="795" w="122" h="169" pX="0.5" pY="0.5" oX="5" oY="5" oW="132" oH="180"/>
+    <sprite n="GLM_mouth_01" x="245" y="769" w="68" h="20" pX="0.5" pY="0.5" oX="5" oY="8" oW="80" oH="40"/>
+    <sprite n="GLM_mouth_02" x="713" y="324" w="73" h="25" pX="0.5" pY="0.5" oX="3" oY="6" oW="80" oH="40"/>
+    <sprite n="GLM_mouth_03" x="465" y="344" w="76" h="34" pX="0.5" pY="0.5" oX="2" oY="5" oW="80" oH="40"/>
+    <sprite n="GLM_mouth_04" x="380" y="556" w="79" h="37" pX="0.5" pY="0.5" oX="0" oY="3" oW="80" oH="40"/>
+    <sprite n="GLM_right_head_vial_backface" x="4" y="210" w="136" h="200" pX="0.5" pY="0.5" oX="8" oY="4" oW="152" oH="208"/>
+    <sprite n="GLM_right_head_vial_frontface" x="4" y="4" w="136" h="202" pX="0.5" pY="0.5" oX="8" oY="4" oW="152" oH="208"/>
+    <sprite n="GLM_shadow" x="4" y="414" w="104" h="190" pX="0.5" pY="0.5" oX="5" oY="8" oW="200" oH="120" r="y"/>
+    <sprite n="GLM_tail_vial_backface" x="793" y="512" w="121" h="96" pX="0.5" pY="0.5" oX="6" oY="3" oW="108" oH="128" r="y"/>
+    <sprite n="GLM_tail_vial_frontface" x="728" y="612" w="96" h="121" pX="0.5" pY="0.5" oX="6" oY="3" oW="108" oH="128"/>
+    <sprite n="GLM_toe_A" x="534" y="556" w="84" h="30" pX="0.5" pY="0.5" oX="2" oY="3" oW="88" oH="36"/>
+    <sprite n="GLM_toe_B" x="696" y="536" w="93" h="25" pX="0.5" pY="0.5" oX="1" oY="1" oW="96" oH="28"/>
+    <sprite n="GLM_toe_C" x="463" y="556" w="67" h="31" pX="0.5" pY="0.5" oX="2" oY="3" oW="72" oH="36"/>
+    <sprite n="GLM_upperleg_back" x="249" y="344" w="89" h="38" pX="0.5" pY="0.5" oX="4" oY="5" oW="48" oH="100" r="y"/>
+    <sprite n="GLM_upperleg_front" x="112" y="968" w="98" h="50" pX="0.5" pY="0.5" oX="2" oY="3" oW="56" oH="104" r="y"/>
+</TextureAtlas>

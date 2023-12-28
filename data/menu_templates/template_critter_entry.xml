@@ -1,13 +1,26 @@
 <template name="template_critter_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
 
-	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
 
-	<spriteSheetComponent name="Sprite">
+	<spriteSheetComponent name="Bg">
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<event name="onInit" params="component, element">
 			<![CDATA[
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
+				component("spriteName"):SetString("portrait_square")
+				component("size"):SetFloat(0.45*game.menuScaleX())
+				component("layer"):SetString(element("Layer"):GetString())
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
 				component("spriteName"):SetString("critter_portrait_square_g")
 				component("size"):SetFloat(0.45*game.menuScaleX())
 				component("layer"):SetString(element("Layer"):GetString())
@@ -24,14 +37,10 @@
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<event name="onInit" params="component, element">
 			<![CDATA[
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
-				component("spriteName"):SetString("critter_portrait_square_g")
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
+				component("spriteName"):SetString("portrait_square")
 				component("size"):SetFloat(0.48*game.menuScaleX())
 				component("layer"):SetString(element("Layer"):GetString())
-
-				if(element.gene ~= nil) then
-					component("spriteName"):SetString(game.critterSprite(element.gene))
-				end
 
 				local ShaderColorize = include("ShaderColorize")
 				ShaderColorize:getUniform("u_Factor"):setFloat(1.0)
@@ -45,7 +54,7 @@
 	<textComponent name="Text">
 		<size w="65*game.menuScaleX()" h="100" />
 		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleX()" priorityOffset="-2" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleX()" priorityOffset="-3" />
 		<event name="onInit" params="component, element">
 			component("multiline"):SetInt(0)
 			component("font"):Set(game.getTextFont())
@@ -59,7 +68,7 @@
 	</textComponent>
 
 	<touchComponent name="Touch">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<event name="onTouchUp" params="component, element">
@@ -87,6 +96,91 @@
 			]]>
 		</event>
 	</touchComponent>
+
+	<element name="UpArrow">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-3" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+				component("visible"):SetInt(0)
+				element.isDisabled = true
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(1, 1, 1)
+						game.modifyNumCritter(element:parent().gene, 1)
+					end
+				]]>
+			</event>
+			<event name="onTouchDown" params="component, element, x, y">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(0.5, 0.5, 0.5)
+					end
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(1, 1, 1)
+					end
+				]]>
+			</event>
+		</touchComponent>
+	</element>
+
+	<element name="DownArrow">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-3" />
+		<spriteComponent name="Sprite">
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("gfx/menu/button_small_play")
+				component("size"):SetFloat(0.5 * game.menuScaleX())
+				component("hFlip"):SetInt(1)
+				component("layer"):SetString(element:parent()("Layer"):GetString())
+				component("visible"):SetInt(0)
+				element.isDisabled = true
+			</event>
+		</spriteComponent>
+		<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(1, 1, 1)
+						game.modifyNumCritter(element:parent().gene, -1)
+					end
+				]]>
+			</event>
+			<event name="onTouchDown" params="component, element, x, y">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(0.5, 0.5, 0.5)
+					end
+				]]>
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				<![CDATA[
+					if( not element.isDisabled) then
+						element:C("Sprite"):setColor(1, 1, 1)
+					end
+				]]>
+			</event>
+		</touchComponent>
+	</element>
 
 	<script src="scripts/AttunerCritterEntry.lua" />
 

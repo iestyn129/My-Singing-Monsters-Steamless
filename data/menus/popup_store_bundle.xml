@@ -1,0 +1,338 @@
+<menu name="popup_store_bundle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="menu.xsd">
+	
+	<template type="template_fade" name="Fade">
+		<templateVar name="$layer" equals="Tutorial" />
+		<templateVar name="$priority" equals="11" />
+		<templateVar name="$touchPriority" equals="-6" />
+		<templateVar name="$maxAlpha" equals="0.75" />
+	</template>
+
+	<template type="template_panel_decorated" name="MainPanel">
+		<templateVar name="$layer" equals="Tutorial" />
+		<templateVar name="$endY" equals="-20*game.hudScale()" />
+		<size w="480*game.hudScale()" h="280*game.hudScale()" />
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0*game.hudScale()" yOffset="screenHeight() * 2.0" priorityOffset="10" />
+	</template>
+
+	<element name="TitleFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="MainPanel" vAnchor="TOP" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<ninesliceComponent name="Sprite">
+			<size w="260*game.hudScale()" h="40*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.3*(lua_sys.screenHeight()/320))
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("Tutorial")
+			</event>
+		</ninesliceComponent>
+	</element>
+
+	<element name="TitleText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+		<textComponent name="Text">
+			<size w="260*game.hudScale()" h="35" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTitleFont())
+					component:setColor(0.44, 0.98, 0.71)
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("Tutorial")
+
+					component("text"):SetString("BUY_BUNDLE")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<element name="DescriptionText">
+		<size dependentOnElement="TitleFrame"/>
+		<position relativeTo="TitleFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-8*game.hudScale()" priorityOffset="0" />
+		<textComponent name="Text">
+			<size w="380*game.hudScale()" h="100*game.hudScale()" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				<![CDATA[
+					component("multiline"):SetInt(0)
+					component("font"):Set(game.getTextFont())
+					component("size"):SetFloat(0.45*game.hudScale())
+					component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+					component("autoScale"):SetInt(1)
+					component("layer"):SetString("Tutorial")
+
+					component("text"):SetString("BUY_BUNDLE_DESCRIPTION")
+				]]>
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_reward_list" name="Contents">
+		<size w="(480-16)*game.hudScale()" h="200*game.hudScale()" />
+		<position relativeTo="MainPanel" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-48*game.hudScale()" priorityOffset="-1" />
+	</template>
+	
+	<element name="FooterFrame">
+		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<position relativeTo="DescriptionText" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="134*game.hudScale()" priorityOffset="-1" />
+		
+		<ninesliceComponent name="Sprite">
+			<size w="300*game.hudScale()" h="50*game.hudScale()" />
+			<event name="onInit" params="component, element">
+				component("topHeight"):SetFloat(40.0)
+				component("bottomHeight"):SetFloat(40.0)
+				component("leftWidth"):SetFloat(50.0)
+				component("rightWidth"):SetFloat(50.0)
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("includeBorder"):SetInt(1)
+				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+				component("layer"):SetString("Tutorial")
+			</event>
+		</ninesliceComponent>
+
+		<element name="TagSprite">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="-1*game.menuScaleY()" priorityOffset="-1" />
+			<spriteSheetComponent name="Sprite">
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
+				<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("spriteName"):SetString("sale_tag_updated_taller")
+					component("sheetName"):SetString("xml_resources/store_buttons01.xml")
+					component("size"):SetFloat(0.8*game.hudScale())
+					component("layer"):SetString("Tutorial")
+				</event>
+			</spriteSheetComponent>
+		</element>
+	
+		<element name="TagValue">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="TagSprite" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="-20*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<size w="160*game.hudScale()" h="35" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.4*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("Tutorial")
+
+						--test
+						component("text"):SetString("$0.99 USD")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+	
+		<element name="OldValue">
+			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="LEFT" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="8*game.hudScale()" yOffset="0" priorityOffset="-1" />
+			<textComponent name="Text">
+				<size w="160*game.hudScale()" h="35" />
+				<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("multiline"):SetInt(0)
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.4*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("alpha"):SetFloat(0.6)
+						component("autoScale"):SetInt(1)
+						component("layer"):SetString("Tutorial")
+
+						--test
+						component("text"):SetString("$100 USD")
+
+					]]>
+				</event>
+			</textComponent>
+		</element>
+	
+		<element name="RedStrip">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="OldValue" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="-1" />
+			<ninesliceComponent name="Sprite">
+				<size w="10" h="10" />
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(1.0)
+					component("bottomHeight"):SetFloat(1.0)
+					component("leftWidth"):SetFloat(1.0)
+					component("rightWidth"):SetFloat(1.0)
+					component("alpha"):SetFloat(0.6)
+					component("spriteName"):SetString("gfx/menu/redstrip")
+					component("layer"):SetString("Tutorial")
+					component:setSize(Vector2(element:parent():GetElement("OldValue"):absW() + (10*game.hudScale()), component:absH()))
+				</event>
+			</ninesliceComponent>
+		</element>
+	
+		<element name="PercentageLabel">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="-7*game.hudScale()" yOffset="0" priorityOffset="-2" />
+			<ninesliceComponent name="Sprite">
+				<size w="75*game.hudScale()" h="75*game.hudScale()" />
+				<event name="onInit" params="component, element">
+					component("includeBorder"):SetInt(1)
+					component("topHeight"):SetFloat(49.0)
+					component("bottomHeight"):SetFloat(49.0)
+					component("leftWidth"):SetFloat(49.0)
+					component("rightWidth"):SetFloat(49.0)
+					component("size"):SetFloat(0.75*game.hudScale())
+					component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
+					component("layer"):SetString("Tutorial")
+					component("visible"):SetInt(1)
+				</event>
+			</ninesliceComponent>
+			<textComponent name="Text">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("font"):Set(game.getTextFont())
+						component("size"):SetFloat(0.4*game.hudScale())
+						component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+						component("rotation"):SetFloat(0.15)
+						component("visible"):SetInt(1)
+						component("layer"):SetString("Tutorial")
+
+						--test
+						component("text"):SetString("99%\nOFF!")
+					]]>
+				</event>
+			</textComponent>
+		</element>
+
+	</element>
+
+	<element name="OfferTime">
+		<size w="320*game.hudScale()" h="26*game.hudScale()" />
+		<position relativeTo="FooterFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="8*game.hudScale()" priorityOffset="-2" />
+		<textComponent name="Text">			
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.4*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString(game.getLocalizedText("AVAILABLE_LIMITED_TIME"))
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</textComponent>
+	</element>
+
+	<template type="template_spritesheetbutton" name="BuyButton">
+		<templateVar name="$upSpriteName" equals="'button_continue_green'" />
+		<templateVar name="$sheetName" equals="'xml_resources/buttons01.xml'" />
+		<templateVar name="$spriteScale" equals="0.6*game.hudScale()" />
+		<templateVar name="$layer" equals="Tutorial" />
+		<position relativeTo="MainPanel" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="-6" />
+		<textComponent name="Label">
+			<size w="120*game.hudScale()" h="30*game.hudScale()"/>
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.3*game.hudScale())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("BUY_BUTTON")
+				component("autoScale"):SetInt(1)
+				component("layer"):SetString("Tutorial")
+			</event>
+		</textComponent>
+		<touchComponent name="Touch">
+			<event name="onTouchUp" params="component, element">
+				<![CDATA[
+					onTouchUp(component, element)
+					element:parent():purchaseItem()				
+				]]>
+			</event>
+		</touchComponent>
+	</template>
+
+	<template type="template_spritesheetbutton" name="CloseButton">
+		<templateVar name="$layer" equals="Tutorial" />
+		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
+
+		<position relativeTo="SAFE_AREA" vAnchor="BOTTOM" hAnchor="RIGHT" />
+		<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="10*game.hudScale()" yOffset="10*game.hudScale()" priorityOffset="4" />
+
+		<touchComponent name="Touch">
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				-- close
+				element:parent():Hide()
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_no")
+				component("sheetName"):SetString("xml_resources/context_buttons.xml")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("Tutorial")
+			</event>
+		</spriteSheetComponent>
+
+		<textComponent name="Text">
+			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-6*game.hudScale()" priorityOffset="-2" />
+			<event name="onInit" params="component, element">
+				component("multiline"):SetInt(0)
+				component("font"):Set(game.getTitleFont())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_HCENTER_ALIGNED)
+				component("text"):SetString("EXIT")
+				component("size"):SetFloat(0.2*game.hudScale())
+				component("layer"):SetString("Tutorial")
+			</event>
+		</textComponent>
+	</template>
+
+	<script src="scripts/StoreBundlePopupUI.lua" />
+
+</menu>
+	

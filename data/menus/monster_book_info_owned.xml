@@ -289,9 +289,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.80)
+				component("rotation"):SetFloat(-2.55)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>
@@ -301,9 +301,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.55)
+				component("rotation"):SetFloat(-2.35)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>
@@ -555,7 +555,7 @@
 		</event>
 	</element>
 	
-	<element name="CostumesList" params="element">
+	<element name="CostumesList">
 		<size w="225*game.menuScaleX()" h="104*game.menuScaleY()" />
 		<position relativeTo="InfoFrame" vAnchor="BOTTOM" hAnchor="HCENTER" />
 		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="20*game.menuScaleX()" priorityOffset="-1" />

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3772dce52c1ea14f622576e9178452ef:148f7b19d27bdf23b7005e24709ef83f:edbdb9b7a403ec2fc7a69fbd5ddccc5d$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/beat_hereafter_heartstrings_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="flower_01.png" x="330" y="256" w="41" h="40" pX="0.5" pY="0.5" oX="3" oY="4" oW="48" oH="48"/>
+    <sprite n="flower_02.png" x="1" y="256" w="277" h="153" pX="0.5" pY="0.5" oX="3" oY="3" oW="160" oH="284" r="y"/>
+    <sprite n="flower_03.png" x="1" y="411" w="277" h="153" pX="0.5" pY="0.5" oX="3" oY="3" oW="160" oH="284" r="y"/>
+    <sprite n="glow.png" x="280" y="359" w="176" h="174" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="glow_dot.png" x="280" y="256" w="48" h="48" pX="0.5" pY="0.5"/>
+    <sprite n="guitar.png" x="1" y="1" w="372" h="138" pX="0.5" pY="0.5" oX="5" oY="4" oW="148" oH="380" r="y"/>
+    <sprite n="guitar_stand.png" x="375" y="1" w="134" h="55" pX="0.5" pY="0.5" oX="3" oY="2" oW="140" oH="60"/>
+    <sprite n="papel_picado.png" x="1" y="141" w="355" h="113" pX="0.5" pY="0.5" oX="2" oY="5" oW="360" oH="124"/>
+    <sprite n="platform.png" x="375" y="58" w="132" h="299" pX="0.5" pY="0.5" oX="6" oY="10" oW="312" oH="152" r="y"/>
+</TextureAtlas>

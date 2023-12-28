@@ -158,7 +158,7 @@
 		<textComponent name="Cursor">
 			<size dependentOnElement="element:name()" dependentOnComponent="Text" />
 			<position relativeTo="element:name()" component="Text" vAnchor="VCENTER" hAnchor="RIGHT" />
-			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="2" yOffset="0" priorityOffset="0" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="-4" yOffset="0" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				component("font"):Set(game.getTextFont())
 				component("size"):SetFloat(0.3*game.hudScale())

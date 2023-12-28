@@ -24,7 +24,7 @@
 	</textComponent>
 	
 	<spriteComponent name="RedStrip">
-		<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="1*game.hudScale()" priorityOffset="-1" />
 		<event name="onInit" params="component, element">
 			component("spriteName"):SetString("gfx/menu/redstrip")
@@ -40,7 +40,7 @@
 	</spriteComponent>
 	
 	<textComponent name="SaleText">
-		<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="TOP" hAnchor="HCENTER" />
+		<position relativeTo="element:name()" vAnchor="TOP" hAnchor="HCENTER" />
 		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 		<event name="onInit" params="component, element">
 			component("font"):Set(game.getTitleFont())

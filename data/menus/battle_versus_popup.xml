@@ -92,7 +92,7 @@
 		</spriteSheetComponent>
 
 		<!-- header -->
-		<element name="Header" params="element">
+		<element name="Header">
 			<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
 			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
 			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-16*game.menuScaleY()" priorityOffset="0" />
@@ -428,7 +428,7 @@
 		</element>
 
 		<!-- header -->
-		<element name="Header" params="element">
+		<element name="Header">
 			<size dependentOnElement="element:name()" dependentOnComponent="Sprite"/>
 			<position relativeTo="PARENT" vAnchor="TOP" hAnchor="HCENTER" />
 			<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-16*game.menuScaleY()" priorityOffset="0" />

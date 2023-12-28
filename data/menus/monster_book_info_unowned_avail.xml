@@ -80,7 +80,12 @@
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="RIGHT" />
 			<orientation vAnchor="BOTTOM" hAnchor="RIGHT" xOffset="18*game.menuScaleX()" yOffset="5*game.menuScaleX()" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("button_buy_spore")
+				if game.getBookOfMonstersIslandType() == game.IslandTypes_ETHEREAL_WORKSHOP_ISLAND_ID then
+					component("spriteName"):SetString("button_synth")
+				else
+					component("spriteName"):SetString("button_buy_spore")
+				end
+
 				component("sheetName"):SetString("xml_resources/context_buttons.xml")
 				component("size"):SetFloat(0.5*game.menuScaleX())
 				component("layer"):SetString("FrontPopUps")
@@ -251,8 +256,11 @@
 					end
 					
 					element:parent()["InfoFrame"]:DoStoredScript("setPlaceOnly");
+				elseif game.getBookOfMonstersIslandType() == game.IslandTypes_ETHEREAL_WORKSHOP_ISLAND_ID then
+						component("text"):SetString("MYSTERY_MONSTER_WORKSHOP_DESC")
+						element:parent()["InfoFrame"]:DoStoredScript("setNonBreedable");
 				elseif (game.canBeBred(monsterId)) then
-				
+					--if the monster can be breed, make sure he's not only available in the star store (they can't be bred)
 					if(not game.monsterIsAvail(monsterId, false) and game.monsterIsAvail(monsterId, true)) then
 						component("text"):SetString("MYSTERY_MONSTER_NOBREED_DESC")
 						element:parent()["InfoFrame"]:DoStoredScript("setNonBreedable");
@@ -436,9 +444,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.80)
+				component("rotation"):SetFloat(-2.55)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>
@@ -448,9 +456,9 @@
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_flute")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("hFlip"):SetInt(1)
+				component("vFlip"):SetInt(1)
 				component("size"):SetFloat(0.4*game.menuScaleX())
-				component("rotation"):SetFloat(-2.55)
+				component("rotation"):SetFloat(-2.35)
 				component("layer"):SetString("FrontPopUps")
 			</event>
 		</spriteSheetComponent>

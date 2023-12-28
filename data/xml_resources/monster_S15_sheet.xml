@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:3965225dea02d3f032a17810f23822fb:e3fb73aa5db08d43896ec347d9953c3e:90dae1e0aa9880fec28916019b21a659$ -->
+<!-- $TexturePacker:SmartUpdate:dd2286cfcb7bf8a271616876fc011815:70dfdcffd63f691cae50273370db5567:90dae1e0aa9880fec28916019b21a659$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,60 +20,115 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/monsters/monster_S15_sheet.png" width="1024" height="1024" hires="true">
-    <sprite n="S15_hat_back" x="362" y="765" w="50" h="105" pX="0.5" pY="0.5" oX="3" oY="5" oW="112" oH="60" r="y"/>
-    <sprite n="S15_hat_front" x="4" y="478" w="149" h="179" pX="0.5" pY="0.5" oX="4" oY="11" oW="188" oH="172" r="y"/>
-    <sprite n="S15_head" x="4" y="4" w="243" h="266" pX="0.5" pY="0.5" oX="8" oY="7" oW="260" oH="280"/>
-    <sprite n="S15_left_eyelid_01" x="316" y="4" w="58" h="69" pX="0.5" pY="0.5" oX="7" oY="7" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_02" x="278" y="947" w="61" h="73" pX="0.5" pY="0.5" oX="4" oY="3" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_03" x="251" y="4" w="61" h="70" pX="0.5" pY="0.5" oX="4" oY="6" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_04" x="526" y="866" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_05" x="540" y="940" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_06" x="251" y="151" w="60" h="69" pX="0.5" pY="0.5" oX="5" oY="7" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_07" x="315" y="151" w="59" h="69" pX="0.5" pY="0.5" oX="6" oY="7" oW="68" oH="80"/>
-    <sprite n="S15_left_eyelid_08" x="251" y="78" w="61" h="69" pX="0.5" pY="0.5" oX="4" oY="7" oW="68" oH="80"/>
-    <sprite n="S15_left_foot" x="363" y="874" w="91" h="67" pX="0.5" pY="0.5" oX="4" oY="2" oW="100" oH="72"/>
-    <sprite n="S15_left_hand_hat_01" x="322" y="910" w="37" h="31" pX="0.5" pY="0.5" oX="31" oY="42" oW="92" oH="84"/>
-    <sprite n="S15_left_hand_hat_02" x="486" y="822" w="55" h="40" pX="0.5" pY="0.5" oX="17" oY="42" oW="92" oH="84"/>
-    <sprite n="S15_left_hand_hat_03" x="532" y="720" w="53" h="84" pX="0.5" pY="0.5" oX="0" oY="17" oW="92" oH="84" r="y"/>
-    <sprite n="S15_left_hand_hat_04" x="458" y="873" w="64" h="67" pX="0.5" pY="0.5" oX="24" oY="0" oW="92" oH="84"/>
-    <sprite n="S15_left_hand_hat_05" x="383" y="75" w="62" h="66" pX="0.5" pY="0.5" oX="27" oY="1" oW="92" oH="84"/>
-    <sprite n="S15_left_lower_arm" x="322" y="771" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
-    <sprite n="S15_left_lower_leg" x="108" y="441" w="85" h="31" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96" r="y"/>
-    <sprite n="S15_left_upper_arm" x="286" y="433" w="141" h="37" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44"/>
-    <sprite n="S15_left_upper_leg" x="369" y="474" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
-    <sprite n="S15_mouth_01" x="108" y="661" w="94" h="161" pX="0.5" pY="0.5" oX="12" oY="20" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_02" x="4" y="827" w="95" h="162" pX="0.5" pY="0.5" oX="12" oY="19" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_03" x="4" y="661" w="100" h="162" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_04" x="103" y="827" w="104" h="161" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_05" x="108" y="274" w="109" h="163" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_06" x="157" y="476" w="95" h="159" pX="0.5" pY="0.5" oX="13" oY="19" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_07" x="221" y="274" w="101" h="155" pX="0.5" pY="0.5" oX="13" oY="13" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_08" x="206" y="639" w="104" h="154" pX="0.5" pY="0.5" oX="13" oY="10" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_09" x="211" y="797" w="107" h="146" pX="0.5" pY="0.5" oX="17" oY="9" oW="184" oH="136" r="y"/>
-    <sprite n="S15_mouth_10" x="256" y="476" w="109" h="146" pX="0.5" pY="0.5" oX="17" oY="7" oW="184" oH="136" r="y"/>
-    <sprite n="S15_pupil" x="29" y="993" w="28" h="20" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="32" r="y"/>
-    <sprite n="S15_pupil_R" x="4" y="993" w="21" h="27" pX="0.5" pY="0.5" oX="2" oY="3" oW="24" oH="32"/>
-    <sprite n="S15_right_eyelid_01" x="378" y="148" w="61" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_02" x="343" y="945" w="63" h="75" pX="0.5" pY="0.5" oX="5" oY="2" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_03" x="211" y="947" w="63" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_04" x="410" y="945" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_05" x="475" y="944" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_06" x="378" y="4" w="62" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_07" x="326" y="224" w="62" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
-    <sprite n="S15_right_eyelid_08" x="316" y="77" w="63" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
-    <sprite n="S15_right_foot" x="472" y="724" w="56" h="94" pX="0.5" pY="0.5" oX="3" oY="4" oW="100" oH="64" r="y"/>
-    <sprite n="S15_right_hand_01" x="395" y="624" w="63" h="100" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="104"/>
-    <sprite n="S15_right_hand_02" x="462" y="623" w="44" h="97" pX="0.5" pY="0.5" oX="2" oY="7" oW="68" oH="104"/>
-    <sprite n="S15_right_hand_03" x="416" y="728" w="52" h="97" pX="0.5" pY="0.5" oX="13" oY="6" oW="68" oH="104"/>
-    <sprite n="S15_right_hand_04" x="510" y="623" w="64" h="93" pX="0.5" pY="0.5" oX="4" oY="10" oW="68" oH="104"/>
-    <sprite n="S15_right_hand_hat_01" x="369" y="579" w="63" h="41" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76" r="y"/>
-    <sprite n="S15_right_hand_hat_02" x="326" y="295" w="56" h="63" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76"/>
-    <sprite n="S15_right_hand_hat_03" x="444" y="4" w="63" h="65" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76" r="y"/>
-    <sprite n="S15_right_hand_hat_04" x="436" y="579" w="71" h="40" pX="0.5" pY="0.5" oX="6" oY="4" oW="76" oH="76" r="y"/>
-    <sprite n="S15_right_hand_hat_05" x="416" y="829" w="66" h="40" pX="0.5" pY="0.5" oX="6" oY="9" oW="76" oH="76" r="y"/>
-    <sprite n="S15_right_lower_arm" x="355" y="626" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
-    <sprite n="S15_right_lower_leg" x="197" y="441" w="85" h="31" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96" r="y"/>
-    <sprite n="S15_right_upper_arm" x="314" y="626" w="37" h="141" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44" r="y"/>
-    <sprite n="S15_right_upper_leg" x="408" y="474" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
-    <sprite n="S15_shadow" x="4" y="274" w="100" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="S15_hat_back" x="469" y="551" w="105" h="50" pX="0.5" pY="0.5" oX="3" oY="5" oW="112" oH="60"/>
+    <sprite n="S15_hat_back_RARE" x="586" y="153" w="227" h="71" pX="0.5" pY="0.5" oX="7" oY="5" oW="240" oH="80"/>
+    <sprite n="S15_hat_front" x="826" y="1" w="179" h="149" pX="0.5" pY="0.5" oX="4" oY="11" oW="188" oH="172"/>
+    <sprite n="S15_hat_front_RARE" x="586" y="1" w="238" h="150" pX="0.5" pY="0.5" oX="6" oY="9" oW="250" oH="170"/>
+    <sprite n="S15_head" x="318" y="1" w="266" h="243" pX="0.5" pY="0.5" oX="8" oY="7" oW="260" oH="280" r="y"/>
+    <sprite n="S15_head_RARE" x="1" y="1" w="315" h="260" pX="0.5" pY="0.5" oX="26" oY="20" oW="350" oH="300"/>
+    <sprite n="S15_left_eyelid_01" x="903" y="568" w="69" h="58" pX="0.5" pY="0.5" oX="7" oY="7" oW="68" oH="80" r="y"/>
+    <sprite n="S15_left_eyelid_01_RARE" x="903" y="628" w="69" h="58" pX="0.5" pY="0.5" oX="7" oY="7" oW="68" oH="80" r="y"/>
+    <sprite n="S15_left_eyelid_02" x="378" y="839" w="61" h="73" pX="0.5" pY="0.5" oX="4" oY="3" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_02_RARE" x="397" y="764" w="61" h="73" pX="0.5" pY="0.5" oX="4" oY="3" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_03" x="647" y="644" w="61" h="70" pX="0.5" pY="0.5" oX="4" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_03_RARE" x="570" y="905" w="61" h="70" pX="0.5" pY="0.5" oX="4" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_04" x="523" y="761" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_04_RARE" x="583" y="644" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_05" x="567" y="833" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_05_RARE" x="587" y="761" w="62" h="70" pX="0.5" pY="0.5" oX="3" oY="6" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_06" x="710" y="644" w="60" h="69" pX="0.5" pY="0.5" oX="5" oY="7" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_06_RARE" x="770" y="568" w="60" h="69" pX="0.5" pY="0.5" oX="5" oY="7" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_07" x="633" y="904" w="59" h="69" pX="0.5" pY="0.5" oX="6" oY="7" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_07_RARE" x="832" y="568" w="69" h="59" pX="0.5" pY="0.5" oX="6" oY="7" oW="68" oH="80" r="y"/>
+    <sprite n="S15_left_eyelid_08" x="631" y="833" w="61" h="69" pX="0.5" pY="0.5" oX="4" oY="7" oW="68" oH="80"/>
+    <sprite n="S15_left_eyelid_08_RARE" x="651" y="716" w="61" h="69" pX="0.5" pY="0.5" oX="4" oY="7" oW="68" oH="80"/>
+    <sprite n="S15_left_foot" x="309" y="866" w="67" h="91" pX="0.5" pY="0.5" oX="4" oY="2" oW="100" oH="72" r="y"/>
+    <sprite n="S15_left_foot_RARE" x="740" y="500" w="84" h="66" pX="0.5" pY="0.5" oX="11" oY="2" oW="100" oH="72"/>
+    <sprite n="S15_left_hand_hat_01" x="990" y="529" w="31" h="37" pX="0.5" pY="0.5" oX="31" oY="42" oW="92" oH="84" r="y"/>
+    <sprite n="S15_left_hand_hat_01_RARE" x="77" y="877" w="37" h="31" pX="0.5" pY="0.5" oX="31" oY="42" oW="92" oH="84"/>
+    <sprite n="S15_left_hand_hat_02" x="532" y="719" w="55" h="40" pX="0.5" pY="0.5" oX="17" oY="42" oW="92" oH="84"/>
+    <sprite n="S15_left_hand_hat_02_RARE" x="469" y="603" w="57" h="39" pX="0.5" pY="0.5" oX="15" oY="42" oW="92" oH="84"/>
+    <sprite n="S15_left_hand_hat_03" x="270" y="672" w="53" h="84" pX="0.5" pY="0.5" oX="0" oY="17" oW="92" oH="84" r="y"/>
+    <sprite n="S15_left_hand_hat_03_RARE" x="285" y="965" w="84" h="58" pX="0.5" pY="0.5" oX="0" oY="12" oW="92" oH="84"/>
+    <sprite n="S15_left_hand_hat_04" x="371" y="959" w="67" h="64" pX="0.5" pY="0.5" oX="24" oY="0" oW="92" oH="84" r="y"/>
+    <sprite n="S15_left_hand_hat_04_RARE" x="576" y="575" w="64" h="67" pX="0.5" pY="0.5" oX="24" oY="0" oW="92" oH="84"/>
+    <sprite n="S15_left_hand_hat_05" x="783" y="757" w="66" h="62" pX="0.5" pY="0.5" oX="27" oY="1" oW="92" oH="84" r="y"/>
+    <sprite n="S15_left_hand_hat_05_RARE" x="642" y="575" w="62" h="67" pX="0.5" pY="0.5" oX="27" oY="0" oW="92" oH="84"/>
+    <sprite n="S15_left_lower_arm" x="788" y="226" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
+    <sprite n="S15_left_lower_arm_RARE" x="788" y="363" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
+    <sprite n="S15_left_lower_leg" x="991" y="181" w="31" h="85" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96"/>
+    <sprite n="S15_left_lower_leg_RARE" x="991" y="268" w="31" h="85" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96"/>
+    <sprite n="S15_left_upper_arm" x="749" y="328" w="37" h="141" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44" r="y"/>
+    <sprite n="S15_left_upper_arm_RARE" x="162" y="594" w="141" h="37" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44"/>
+    <sprite n="S15_left_upper_leg" x="47" y="911" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
+    <sprite n="S15_left_upper_leg_RARE" x="77" y="774" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
+    <sprite n="S15_mouth_01" x="312" y="348" w="161" h="94" pX="0.5" pY="0.5" oX="12" oY="20" oW="184" oH="136"/>
+    <sprite n="S15_mouth_01_RARE" x="1" y="475" w="161" h="94" pX="0.5" pY="0.5" oX="12" oY="20" oW="184" oH="136"/>
+    <sprite n="S15_mouth_02" x="826" y="374" w="162" h="95" pX="0.5" pY="0.5" oX="12" oY="19" oW="184" oH="136"/>
+    <sprite n="S15_mouth_02_RARE" x="826" y="471" w="162" h="95" pX="0.5" pY="0.5" oX="12" oY="19" oW="184" oH="136"/>
+    <sprite n="S15_mouth_03" x="318" y="246" w="162" h="100" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_03_RARE" x="585" y="328" w="162" h="100" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_04" x="1" y="263" w="161" h="104" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_04_RARE" x="1" y="369" w="161" h="104" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_05" x="826" y="152" w="163" h="109" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_05_RARE" x="826" y="263" w="163" h="109" pX="0.5" pY="0.5" oX="12" oY="16" oW="184" oH="136"/>
+    <sprite n="S15_mouth_06" x="312" y="444" w="159" h="95" pX="0.5" pY="0.5" oX="13" oY="19" oW="184" oH="136"/>
+    <sprite n="S15_mouth_06_RARE" x="1" y="571" w="159" h="95" pX="0.5" pY="0.5" oX="13" oY="19" oW="184" oH="136"/>
+    <sprite n="S15_mouth_07" x="482" y="246" w="101" h="155" pX="0.5" pY="0.5" oX="13" oY="13" oW="184" oH="136" r="y"/>
+    <sprite n="S15_mouth_07_RARE" x="312" y="541" w="155" h="101" pX="0.5" pY="0.5" oX="13" oY="13" oW="184" oH="136"/>
+    <sprite n="S15_mouth_08" x="1" y="668" w="154" h="104" pX="0.5" pY="0.5" oX="13" oY="10" oW="184" oH="136"/>
+    <sprite n="S15_mouth_08_RARE" x="584" y="430" w="154" h="104" pX="0.5" pY="0.5" oX="13" oY="10" oW="184" oH="136"/>
+    <sprite n="S15_mouth_09" x="475" y="403" w="107" h="146" pX="0.5" pY="0.5" oX="17" oY="9" oW="184" oH="136" r="y"/>
+    <sprite n="S15_mouth_09_RARE" x="164" y="485" w="146" h="107" pX="0.5" pY="0.5" oX="17" oY="9" oW="184" oH="136"/>
+    <sprite n="S15_mouth_10" x="164" y="263" w="146" h="109" pX="0.5" pY="0.5" oX="17" oY="7" oW="184" oH="136"/>
+    <sprite n="S15_mouth_10_RARE" x="164" y="374" w="146" h="109" pX="0.5" pY="0.5" oX="17" oY="7" oW="184" oH="136"/>
+    <sprite n="S15_pupil" x="140" y="877" w="20" h="28" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="32"/>
+    <sprite n="S15_pupil_R" x="740" y="471" w="21" h="27" pX="0.5" pY="0.5" oX="2" oY="3" oW="24" oH="32"/>
+    <sprite n="S15_pupil_RARE" x="116" y="877" w="22" h="28" pX="0.5" pY="0.5" oX="1" oY="2" oW="24" oH="32"/>
+    <sprite n="S15_pupil_R_RARE" x="162" y="876" w="20" h="28" pX="0.5" pY="0.5" oX="2" oY="2" oW="24" oH="32"/>
+    <sprite n="S15_right_eyelid_01" x="714" y="715" w="67" h="61" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80" r="y"/>
+    <sprite n="S15_right_eyelid_01_RARE" x="899" y="752" w="67" h="61" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80" r="y"/>
+    <sprite n="S15_right_eyelid_02" x="325" y="644" w="63" h="75" pX="0.5" pY="0.5" oX="5" oY="2" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_02_RARE" x="390" y="644" w="63" h="75" pX="0.5" pY="0.5" oX="5" oY="2" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_03" x="332" y="764" w="63" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_03_RARE" x="455" y="644" w="63" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_04" x="520" y="644" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_04_RARE" x="441" y="839" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_05" x="460" y="761" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_05_RARE" x="504" y="836" w="61" h="73" pX="0.5" pY="0.5" oX="5" oY="4" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_06" x="706" y="575" w="62" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_06_RARE" x="832" y="629" w="67" h="62" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80" r="y"/>
+    <sprite n="S15_right_eyelid_07" x="901" y="688" w="67" h="62" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80" r="y"/>
+    <sprite n="S15_right_eyelid_07_RARE" x="830" y="693" w="67" h="62" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80" r="y"/>
+    <sprite n="S15_right_eyelid_08" x="440" y="956" w="63" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
+    <sprite n="S15_right_eyelid_08_RARE" x="505" y="956" w="63" h="67" pX="0.5" pY="0.5" oX="5" oY="10" oW="72" oH="80"/>
+    <sprite n="S15_right_foot" x="251" y="869" w="56" h="94" pX="0.5" pY="0.5" oX="3" oY="4" oW="100" oH="64" r="y"/>
+    <sprite n="S15_right_foot_RARE" x="216" y="771" w="48" h="96" pX="0.5" pY="0.5" oX="3" oY="4" oW="100" oH="64" r="y"/>
+    <sprite n="S15_right_hand_01" x="121" y="907" w="63" h="100" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_01_RARE" x="151" y="774" w="63" h="100" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_02" x="186" y="976" w="97" h="44" pX="0.5" pY="0.5" oX="2" oY="7" oW="68" oH="104" r="y"/>
+    <sprite n="S15_right_hand_02_RARE" x="1" y="911" w="44" h="103" pX="0.5" pY="0.5" oX="2" oY="1" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_03" x="216" y="672" w="52" h="97" pX="0.5" pY="0.5" oX="13" oY="6" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_03_RARE" x="157" y="672" w="57" h="100" pX="0.5" pY="0.5" oX="10" oY="3" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_04" x="266" y="771" w="64" h="93" pX="0.5" pY="0.5" oX="4" oY="10" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_04_RARE" x="186" y="876" w="63" h="98" pX="0.5" pY="0.5" oX="4" oY="5" oW="68" oH="104"/>
+    <sprite n="S15_right_hand_hat_01" x="394" y="721" w="63" h="41" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76" r="y"/>
+    <sprite n="S15_right_hand_hat_01_RARE" x="991" y="152" w="32" h="27" pX="0.5" pY="0.5" oX="15" oY="39" oW="76" oH="76"/>
+    <sprite n="S15_right_hand_hat_02" x="772" y="639" w="56" h="63" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76"/>
+    <sprite n="S15_right_hand_hat_02_RARE" x="781" y="821" w="64" h="63" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76"/>
+    <sprite n="S15_right_hand_hat_03" x="714" y="778" w="65" h="63" pX="0.5" pY="0.5" oX="6" oY="12" oW="76" oH="76"/>
+    <sprite n="S15_right_hand_hat_03_RARE" x="851" y="815" w="65" h="62" pX="0.5" pY="0.5" oX="6" oY="13" oW="76" oH="76"/>
+    <sprite n="S15_right_hand_hat_04" x="459" y="719" w="71" h="40" pX="0.5" pY="0.5" oX="6" oY="4" oW="76" oH="76" r="y"/>
+    <sprite n="S15_right_hand_hat_04_RARE" x="378" y="914" w="71" h="40" pX="0.5" pY="0.5" oX="6" oY="4" oW="76" oH="76" r="y"/>
+    <sprite n="S15_right_hand_hat_05" x="451" y="914" w="66" h="40" pX="0.5" pY="0.5" oX="6" oY="9" oW="76" oH="76" r="y"/>
+    <sprite n="S15_right_hand_hat_05_RARE" x="325" y="721" w="67" h="41" pX="0.5" pY="0.5" oX="5" oY="8" oW="76" oH="76" r="y"/>
+    <sprite n="S15_right_lower_arm" x="1" y="774" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
+    <sprite n="S15_right_lower_arm_RARE" x="39" y="774" w="36" h="135" pX="0.5" pY="0.5" oX="4" oY="4" oW="144" oH="44" r="y"/>
+    <sprite n="S15_right_lower_leg" x="991" y="355" w="31" h="85" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96"/>
+    <sprite n="S15_right_lower_leg_RARE" x="990" y="442" w="31" h="85" pX="0.5" pY="0.5" oX="2" oY="5" oW="36" oH="96"/>
+    <sprite n="S15_right_upper_arm" x="162" y="633" w="141" h="37" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44"/>
+    <sprite n="S15_right_upper_arm_RARE" x="584" y="536" w="141" h="37" pX="0.5" pY="0.5" oX="1" oY="3" oW="144" oH="44"/>
+    <sprite n="S15_right_upper_leg" x="114" y="774" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
+    <sprite n="S15_right_upper_leg_RARE" x="84" y="910" w="35" h="101" pX="0.5" pY="0.5" oX="2" oY="1" oW="40" oH="104"/>
+    <sprite n="S15_shadow" x="586" y="226" w="200" h="100" pX="0.5" pY="0.5"/>
 </TextureAtlas>

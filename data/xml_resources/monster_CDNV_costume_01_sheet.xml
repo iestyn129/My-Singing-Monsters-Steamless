@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:70cc23619a6765cfd59271a9ea1b28a5:0ad09a506cb3bbde2e70f17c2e874c56:5a58b128dc4bb013be9e3178b8fe2348$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/costumes/monster_CDNV_costume_01_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="CDNV_butterfly_body" x="436" y="423" w="68" h="64" pX="0.5" pY="0.5" oX="19" oY="-34.6"/>
+    <sprite n="CDNV_butterfly_wing_01" x="250" y="641" w="110" h="88" pX="0.5" pY="0.5" oX="4.8" oY="-40.8"/>
+    <sprite n="CDNV_butterfly_wing_02" x="408" y="740" w="88" h="110" pX="0.5" pY="0.5" oX="20.6" oY="-60.2"/>
+    <sprite n="CDNV_candles_flames" x="3" y="230" w="477" h="123" pX="0.5" pY="0.5" oX="2" oY="31"/>
+    <sprite n="CDNV_chime_01" x="425" y="491" w="52" h="41" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDNV_chime_02" x="364" y="641" w="40" h="98" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_chime_03" x="196" y="583" w="50" h="138" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_chime_04" x="436" y="357" w="71" h="62" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDNV_chime_string_Blue" x="497" y="3" w="5" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_chime_string_green" x="497" y="67" w="5" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_chime_string_pink" x="497" y="131" w="5" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_chime_string_purple" x="497" y="195" w="5" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_front_bones" x="271" y="447" w="150" h="64" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_front_candles" x="3" y="447" w="264" h="132" pX="0.5" pY="0.5" oX="85" oY="48"/>
+    <sprite n="CDNV_ground" x="3" y="3" w="490" h="223" pX="0.5" pY="0.5" oX="0" oY="0" oW="490" oH="230"/>
+    <sprite n="CDNV_ground_gladiola" x="3" y="357" w="429" h="86" pX="0.5" pY="0.5"/>
+    <sprite n="CDNV_Head_Flowers" x="3" y="583" w="189" h="108" pX="0.5" pY="0.5" oX="2" oY="-7"/>
+    <sprite n="CDNV_tail_04" x="415" y="536" w="90" h="200" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDNV_tail_05" x="271" y="515" w="140" h="122" pX="0.5" pY="0.5" r="y"/>
+</TextureAtlas>

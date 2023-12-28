@@ -1,0 +1,22 @@
+<template name="template_reward_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+
+	<!--
+	<defaultTemplateVar name="$something" equals="0" />
+	-->
+
+	<swipeComponent name="Swiper"/>
+
+	<touchComponent name="Touch">
+		<size dependentOnElement="element:name()" />
+		<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-5" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("singleTouch"):SetInt(1)
+			]]>
+		</event>
+	</touchComponent>
+
+	<script src="scripts/RewardListUI.lua" />
+
+</template>

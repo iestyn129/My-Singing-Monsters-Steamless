@@ -499,7 +499,7 @@
 			</event>
 		</textComponent>
 		<spriteSheetComponent name="CoinSprite">
-			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
 			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
@@ -533,16 +533,13 @@
 			elseif(game.islandCost(activeIsland) ~= 0 and not game.isIslandOwned(activeIsland)) then
 					element["CoinSprite"]("visible"):SetInt(1)
 					element["Text"]("text"):SetString(game.commaizeNumber(game.islandCost(activeIsland)))
-					if(game.islandCurrency(activeIsland) == "COINS") then
-						element["Text"]:setColor(1.0, 0.9, 0.09)
-						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-					else
-						element["Text"]:setColor(0.27, 0.86, 0.6)
-						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-						
-						element:parent()["SaleDetails"]["Text"]:setColor(0.27, 0.86, 0.6)
-						element:parent()["SaleDetails"]["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-					end
+					
+					local currencyStr = game.islandCurrency(activeIsland)
+					game.StoreContext_setCurrencyTypeColour(currencyStr, element:C("Text"))
+					element["CoinSprite"]("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyStr))
+
+					game.StoreContext_setCurrencyTypeColour(currencyStr, element:parent():E("SaleDetails"):C("Text"))
+					element:parent()["SaleDetails"]["CoinSprite"]("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyStr))
 			else
 				element["Text"]("text"):SetString(game.islandBeds(activeIsland))
 			end
@@ -567,7 +564,7 @@
 			</event>
 		</textComponent>
 		<spriteSheetComponent name="CoinSprite">
-			<position relativeTo="element:name()" relativeToComponent="Text" vAnchor="VCENTER" hAnchor="LEFT" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="LEFT" />
 			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
@@ -620,13 +617,9 @@
 					
 					element["Text"]("text"):SetString(game.commaizeNumber(game.islandSaleCost(activeIsland)))
 					
-					if(game.islandCurrency(activeIsland) == "COINS") then
-						element["Text"]:setColor(1.0, 0.9, 0.09)
-						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-					else
-						element["Text"]:setColor(0.27, 0.86, 0.6)
-						element["CoinSprite"]("spriteName"):SetString(game.StoreContext_SPRITE_DIAMOND)
-					end
+					local currencyStr = game.islandCurrency(activeIsland)
+					game.StoreContext_setCurrencyTypeColour(currencyStr, element:C("Text"))
+					element["CoinSprite"]("spriteName"):SetString(game.StoreContext_getSpriteFromCurrencyTypeStr(currencyStr))
 					
 					element["RedStrip"]:DoStoredScript("updateSize")
 				end

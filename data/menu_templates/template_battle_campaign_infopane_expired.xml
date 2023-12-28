@@ -154,7 +154,7 @@
 			<![CDATA[
 				local campaignId = game.getBattleClientData():getSelectedCampaignId()
 				local campaignData = game.getBattleCampaignData(campaignId)
-				include("RewardListUI").Populate(element, campaignData.reward)
+				include("BattleRewardListHelper").Populate(element, campaignData.reward)
 			]]>
 		</event>
 

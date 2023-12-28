@@ -116,7 +116,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('HATCH_NOTIFICATION') == false" />
 		<position relativeTo="BreedingCompleteBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("HATCH_NOTIFICATION")
@@ -140,7 +140,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('CASTLE_NOTIFICATION') == false" />
 		<position relativeTo="HatchingCompleteBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("CASTLE_NOTIFICATION")
@@ -164,7 +164,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('DAILY_LOGIN_NOTIFICATION') == false" />
 		<position relativeTo="CastleBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("DAILY_LOGIN_NOTIFICATION")
@@ -213,7 +213,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('MINES_NOTIFICATION') == false" />
 		<position relativeTo="BakingBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("MINES_NOTIFICATION")
@@ -237,7 +237,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('SCRATCH_NOTIFICATION') == false" />
 		<position relativeTo="MinesBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("SCRATCH_NOTIFICATION")
@@ -260,8 +260,8 @@
 		<templateVar name="$scale" equals="0.5*game.hudScale()" />
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.arePushNotificationsOff() == false" />
-		<position relativeTo="ScratchBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<position relativeTo="SynthesizerBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="onInit" params="element">
 			if(game.canTurnPushNotificationsOff() == true) then
 				element:DoStoredScript("hide")
@@ -291,7 +291,7 @@
 		<templateVar name="$layer" equals="'FrontPopUps'" />
 		<templateVar name="$check" equals="game.isLocalNotificationOff('BATTLE_TRAINING_NOTIFICATION') == false" />
 		<position relativeTo="DailyRewardBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.12 * lua_sys.screenHeight()" priorityOffset="0" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
 		<event name="touchUpCallback" params="element">
 			touchUpCallback(component, element)
 			game.toggleLocalNotification("BATTLE_TRAINING_NOTIFICATION")
@@ -301,6 +301,54 @@
 			else
 				element:DoStoredScript("turnOn")
 				game.logEvent("options_menu", "action", "battle_training_notification_on")
+			end
+		</event>
+	</template>
+
+		<template type="template_switch" name="AttunerBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_ATTUNER'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('ATTUNER_NOTIFICATION') == false" />
+		<position relativeTo="BattleTrainingBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("ATTUNER_NOTIFICATION")
+			if(game.isLocalNotificationOff("ATTUNER_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "attuner_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "attuner_notification_on")
+			end
+		</event>
+	</template>
+
+	<template type="template_switch" name="SynthesizerBox">
+		<templateVar name="$label" equals="'LOCAL_NOTIFICATION_SYNTHESIZER'"/>
+		<templateVar name="$textScale" equals="0.27" />
+		<templateVar name="$onSprite" equals="'menu_switch_on'" />
+		<templateVar name="$offSprite" equals="'menu_switch_off'" />
+		<templateVar name="$sheetName" equals="'xml_resources/menu_assets_01.xml'" />
+		<templateVar name="$scale" equals="0.5*game.hudScale()" />
+		<templateVar name="$layer" equals="'FrontPopUps'" />
+		<templateVar name="$check" equals="game.isLocalNotificationOff('SYNTHESIZER_NOTIFICATION') == false" />
+		<position relativeTo="ScratchBox" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0.105 * lua_sys.screenHeight()" priorityOffset="0" />
+		<event name="touchUpCallback" params="element">
+			touchUpCallback(component, element)
+			game.toggleLocalNotification("SYNTHESIZER_NOTIFICATION")
+			if(game.isLocalNotificationOff("SYNTHESIZER_NOTIFICATION")) then
+				element:DoStoredScript("turnOff")
+				game.logEvent("options_menu", "action", "synthesizer_notification_off")
+			else
+				element:DoStoredScript("turnOn")
+				game.logEvent("options_menu", "action", "synthesizer_notification_on")
 			end
 		</event>
 	</template>

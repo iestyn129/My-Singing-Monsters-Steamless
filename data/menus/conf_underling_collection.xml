@@ -93,6 +93,10 @@
 				element["CloseImage"]:setColor(1.0, 1.0, 1.0)
 			</event>
 		</touchComponent>
+		<event name="setInvis" params="element">
+			element:C("CloseImage"):V("visible"):SetInt(0)
+			element:C("Touch"):V("enabled"):SetInt(0)
+		</event>
 		<event name="onInit" params="element">
 			element("ButtonMapping"):SetInt(game.cancelButton())
 			element("buttonDown"):SetInt(0)
@@ -186,6 +190,11 @@
 		<templateVar name="$layer" equals="FrontPopUps" />
 		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="LEFT" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="60/game.hudScale()" yOffset="-10/game.hudScale()" priorityOffset="-1" />
+		<event name="setToCheckmark" params="element">
+			element:GetComponent("Text"):V("visible"):SetInt(0)
+			element:GetComponent("Overlay"):V("spriteName"):SetString("button_yes")
+			element:GetComponent("Overlay"):V("sheetName"):SetString("xml_resources/context_buttons.xml")
+		</event>
 		<textComponent name="Text">
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
 			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" />
@@ -251,6 +260,12 @@
 			game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_COINS, element:GetComponent("PriceText"))
 			element:GetComponent("Overlay")("spriteName"):SetString("relic")
 			element:GetComponent("Overlay")("sheetName"):SetString("xml_resources/hud01.xml")
+		</event>
+		<event name="setToX" params="element">
+			element:GetComponent("Text"):V("visible"):SetInt(0)
+			element:GetComponent("PriceText"):V("visible"):SetInt(0)
+			element:GetComponent("Overlay"):V("spriteName"):SetString("button_no")
+			element:GetComponent("Overlay"):V("sheetName"):SetString("xml_resources/context_buttons.xml")
 		</event>
 		<textComponent name="Text">
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />

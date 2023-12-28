@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:390d3413062d5be9e2714b60e7b291c6:51785b56f88dfbec0019bdac11908a28:f2dcd2977f9a401c65bcb222f99c7cbd$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_GJKL_sheet.png" width="1024" height="1024" hires="true">
+    <sprite n="ankle_L" x="911" y="968" w="60" h="43" pX="0.5" pY="0.5" oX="11" oY="0" oW="64" oH="64" r="y"/>
+    <sprite n="ankle_R" x="981" y="337" w="42" h="63" pX="0.5" pY="0.5" oX="9" oY="1" oW="64" oH="64"/>
+    <sprite n="apple_L" x="496" y="971" w="45" h="48" pX="0.5" pY="0.5" oX="7" oY="6" oW="60" oH="60"/>
+    <sprite n="apple_neck" x="932" y="818" w="52" h="52" pX="0.5" pY="0.5" oX="8" oY="6" oW="60" oH="60"/>
+    <sprite n="apple_R" x="299" y="969" w="47" h="53" pX="0.5" pY="0.5" oX="4" oY="7" oW="60" oH="60" r="y"/>
+    <sprite n="arm_lower_L_bottom" x="755" y="298" w="49" h="125" pX="0.5" pY="0.5" oX="27" oY="11" oW="180" oH="80" r="y"/>
+    <sprite n="arm_lower_L_top" x="751" y="425" w="55" h="115" pX="0.5" pY="0.5" oX="38" oY="16" oW="180" oH="80" r="y"/>
+    <sprite n="arm_lower_R_bottom" x="830" y="829" w="100" h="41" pX="0.5" pY="0.5" oX="37" oY="21" oW="180" oH="80"/>
+    <sprite n="arm_lower_R_top" x="557" y="705" w="62" h="113" pX="0.5" pY="0.5" oX="36" oY="9" oW="180" oH="80" r="y"/>
+    <sprite n="arm_upper_L_bottom" x="348" y="835" w="50" h="142" pX="0.5" pY="0.5" oX="19" oY="16" oW="180" oH="80" r="y"/>
+    <sprite n="arm_upper_L_top" x="359" y="626" w="56" h="156" pX="0.5" pY="0.5" oX="18" oY="16" oW="180" oH="80" r="y"/>
+    <sprite n="arm_upper_R_bottom" x="777" y="707" w="51" h="134" pX="0.5" pY="0.5" oX="20" oY="18" oW="180" oH="80" r="y"/>
+    <sprite n="arm_upper_R_top" x="129" y="854" w="57" h="165" pX="0.5" pY="0.5" oX="9" oY="12" oW="180" oH="80" r="y"/>
+    <sprite n="body" x="1" y="1" w="226" h="231" pX="0.5" pY="0.5" oX="15" oY="6" oW="260" oH="260"/>
+    <sprite n="body_mouth_01" x="229" y="178" w="211" h="91" pX="0.5" pY="0.5" oX="18" oY="112" oW="260" oH="260"/>
+    <sprite n="body_mouth_02" x="178" y="467" w="210" h="78" pX="0.5" pY="0.5" oX="19" oY="109" oW="260" oH="260"/>
+    <sprite n="body_mouth_03" x="188" y="370" w="213" h="95" pX="0.5" pY="0.5" oX="17" oY="100" oW="260" oH="260"/>
+    <sprite n="body_mouth_04" x="442" y="127" w="215" h="102" pX="0.5" pY="0.5" oX="16" oY="99" oW="260" oH="260"/>
+    <sprite n="body_mouth_05" x="676" y="1" w="217" h="111" pX="0.5" pY="0.5" oX="15" oY="93" oW="260" oH="260"/>
+    <sprite n="body_mouth_06" x="1" y="639" w="127" h="209" pX="0.5" pY="0.5" oX="19" oY="84" oW="260" oH="260" r="y"/>
+    <sprite n="body_mouth_07" x="229" y="1" w="211" h="175" pX="0.5" pY="0.5" oX="20" oY="75" oW="260" oH="260"/>
+    <sprite n="body_mouth_08" x="1" y="444" w="175" h="193" pX="0.5" pY="0.5" oX="23" oY="57" oW="260" oH="260" r="y"/>
+    <sprite n="body_mouth_09" x="1" y="234" w="185" h="208" pX="0.5" pY="0.5" oX="28" oY="44" oW="260" oH="260"/>
+    <sprite n="body_mouth_10" x="188" y="271" w="213" h="97" pX="0.5" pY="0.5" oX="19" oY="97" oW="260" oH="260"/>
+    <sprite n="body_mouth_11" x="178" y="547" w="208" h="77" pX="0.5" pY="0.5" oX="20" oY="109" oW="260" oH="260"/>
+    <sprite n="foot_L" x="249" y="626" w="108" h="146" pX="0.5" pY="0.5" oX="2" oY="8" oW="164" oH="124" r="y"/>
+    <sprite n="foot_R" x="523" y="287" w="107" h="140" pX="0.5" pY="0.5" oX="13" oY="7" oW="164" oH="124" r="y"/>
+    <sprite n="hair_head_L_bottom_1" x="692" y="836" w="81" h="40" pX="0.5" pY="0.5" oX="6" oY="7" oW="120" oH="160" r="y"/>
+    <sprite n="hair_head_L_bottom_2" x="881" y="689" w="41" h="138" pX="0.5" pY="0.5" oX="52" oY="10" oW="120" oH="160"/>
+    <sprite n="hair_head_L_bottom_3" x="417" y="705" w="138" h="80" pX="0.5" pY="0.5" oX="6" oY="9" oW="120" oH="160" r="y"/>
+    <sprite n="hair_head_L_bottom_4" x="543" y="996" w="80" h="26" pX="0.5" pY="0.5" oX="62" oY="18" oW="120" oH="160" r="y"/>
+    <sprite n="hair_head_L_bottom_5" x="924" y="784" w="70" h="32" pX="0.5" pY="0.5" oX="85" oY="14" oW="120" oH="160" r="y"/>
+    <sprite n="hair_head_L_top_1" x="973" y="648" w="38" h="134" pX="0.5" pY="0.5" oX="89" oY="2" oW="140" oH="160"/>
+    <sprite n="hair_head_L_top_2" x="563" y="541" w="138" h="43" pX="0.5" pY="0.5" oX="61" oY="14" oW="140" oH="160" r="y"/>
+    <sprite n="hair_head_L_top_3" x="895" y="65" w="127" h="51" pX="0.5" pY="0.5" oX="14" oY="14" oW="140" oH="160" r="y"/>
+    <sprite n="hair_head_R_lower_1" x="544" y="969" w="124" h="25" pX="0.5" pY="0.5" oX="10" oY="0" oW="110" oH="160" r="y"/>
+    <sprite n="hair_head_R_lower_2" x="557" y="879" w="136" h="28" pX="0.5" pY="0.5" oX="32" oY="15" oW="110" oH="160" r="y"/>
+    <sprite n="hair_head_R_lower_3" x="642" y="266" w="145" h="30" pX="0.5" pY="0.5" oX="70" oY="13" oW="110" oH="160" r="y"/>
+    <sprite n="hair_head_R_top_1" x="557" y="824" w="133" h="53" pX="0.5" pY="0.5" oX="7" oY="0" oW="140" oH="211" r="y"/>
+    <sprite n="hair_head_R_top_2" x="188" y="829" w="51" h="182" pX="0.5" pY="0.5" oX="17" oY="0" oW="140" oH="211"/>
+    <sprite n="hair_head_R_top_3" x="676" y="114" w="195" h="55" pX="0.5" pY="0.5" oX="69" oY="8" oW="140" oH="211" r="y"/>
+    <sprite n="hair_head_R_top_4" x="854" y="182" w="158" h="44" pX="0.5" pY="0.5" oX="87" oY="3" oW="140" oH="211" r="y"/>
+    <sprite n="hair_head_top_1" x="924" y="638" w="47" h="134" pX="0.5" pY="0.5" oX="27" oY="19" oW="200" oH="280"/>
+    <sprite n="hair_head_top_2" x="442" y="231" w="198" h="54" pX="0.5" pY="0.5" oX="21" oY="26" oW="200" oH="280" r="y"/>
+    <sprite n="hair_head_top_3" x="659" y="213" w="165" h="51" pX="0.5" pY="0.5" oX="27" oY="75" oW="200" oH="280" r="y"/>
+    <sprite n="hair_head_top_4" x="180" y="626" w="67" h="201" pX="0.5" pY="0.5" oX="7" oY="66" oW="200" oH="280"/>
+    <sprite n="hair_head_top_5" x="826" y="228" w="156" h="44" pX="0.5" pY="0.5" oX="83" oY="44" oW="200" oH="280" r="y"/>
+    <sprite n="hair_head_top_6" x="659" y="171" w="193" h="40" pX="0.5" pY="0.5" oX="113" oY="38" oW="200" oH="280" r="y"/>
+    <sprite n="hair_head_top_7" x="1" y="850" w="52" h="173" pX="0.5" pY="0.5" oX="140" oY="5" oW="200" oH="280"/>
+    <sprite n="hair_head_top_8" x="130" y="639" w="48" h="213" pX="0.5" pY="0.5" oX="126" oY="28" oW="200" oH="280"/>
+    <sprite n="hair_head_top_9" x="55" y="850" w="72" h="162" pX="0.5" pY="0.5" oX="77" oY="35" oW="200" oH="280"/>
+    <sprite n="hair_over" x="417" y="541" w="144" h="43" pX="0.5" pY="0.5" oX="9" oY="6" oW="60" oH="160" r="y"/>
+    <sprite n="head_L_lower" x="632" y="298" w="121" h="105" pX="0.5" pY="0.5" oX="19" oY="24" oW="160" oH="160"/>
+    <sprite n="head_L_upper" x="403" y="424" w="118" h="115" pX="0.5" pY="0.5" oX="23" oY="22" oW="160" oH="160"/>
+    <sprite n="head_R_lower" x="523" y="429" w="119" h="110" pX="0.5" pY="0.5" oX="28" oY="25" oW="160" oH="160"/>
+    <sprite n="head_R_upper" x="644" y="405" w="105" h="118" pX="0.5" pY="0.5" oX="24" oY="28" oW="160" oH="160"/>
+    <sprite n="head_top" x="241" y="835" w="105" h="132" pX="0.5" pY="0.5" oX="32" oY="21" oW="160" oH="160"/>
+    <sprite n="hip" x="709" y="605" w="68" h="100" pX="0.5" pY="0.5" oX="1" oY="15" oW="101" oH="100" r="y"/>
+    <sprite n="knee_L" x="241" y="969" w="56" h="54" pX="0.5" pY="0.5" oX="7" oY="5" oW="64" oH="64" r="y"/>
+    <sprite n="knee_R" x="775" y="843" w="53" h="51" pX="0.5" pY="0.5" oX="6" oY="7" oW="64" oH="64" r="y"/>
+    <sprite n="leg_lower_L" x="830" y="689" w="49" h="138" pX="0.5" pY="0.5" oX="9" oY="6" oW="160" oH="60" r="y"/>
+    <sprite n="leg_lower_R" x="359" y="787" w="133" h="46" pX="0.5" pY="0.5" oX="11" oY="7" oW="160" oH="60"/>
+    <sprite n="leg_upper_L" x="895" y="1" w="128" h="62" pX="0.5" pY="0.5" oX="21" oY="1" oW="150" oH="72"/>
+    <sprite n="leg_upper_R" x="873" y="118" w="143" h="62" pX="0.5" pY="0.5" oX="5" oY="5" oW="150" oH="72"/>
+    <sprite n="mouth_01" x="673" y="933" w="98" h="48" pX="0.5" pY="0.5" oX="26" oY="61" oW="160" oH="160"/>
+    <sprite n="mouth_01_BLUE" x="773" y="896" w="48" h="98" pX="0.5" pY="0.5" oX="26" oY="61" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_02" x="823" y="973" w="86" h="38" pX="0.5" pY="0.5" oX="29" oY="69" oW="160" oH="160"/>
+    <sprite n="mouth_02_BLUE" x="670" y="983" w="86" h="38" pX="0.5" pY="0.5" oX="29" oY="69" oW="160" oH="160"/>
+    <sprite n="mouth_03" x="484" y="886" w="58" h="83" pX="0.5" pY="0.5" oX="31" oY="55" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_03_BLUE" x="823" y="913" w="83" h="58" pX="0.5" pY="0.5" oX="31" oY="55" oW="160" oH="160"/>
+    <sprite n="mouth_04" x="695" y="878" w="72" h="53" pX="0.5" pY="0.5" oX="42" oY="50" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_04_BLUE" x="908" y="913" w="72" h="53" pX="0.5" pY="0.5" oX="42" oY="50" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_05" x="494" y="787" w="61" h="97" pX="0.5" pY="0.5" oX="40" oY="35" oW="160" oH="160"/>
+    <sprite n="mouth_05_BLUE" x="709" y="542" w="97" h="61" pX="0.5" pY="0.5" oX="40" oY="35" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_06" x="898" y="526" w="71" h="110" pX="0.5" pY="0.5" oX="38" oY="30" oW="160" oH="160"/>
+    <sprite n="mouth_06_BLUE" x="779" y="616" w="110" h="71" pX="0.5" pY="0.5" oX="38" oY="30" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_07" x="625" y="586" w="82" h="124" pX="0.5" pY="0.5" oX="34" oY="22" oW="160" oH="160"/>
+    <sprite n="mouth_07_BLUE" x="400" y="835" w="82" h="124" pX="0.5" pY="0.5" oX="34" oY="22" oW="160" oH="160"/>
+    <sprite n="mouth_08" x="621" y="712" w="94" h="110" pX="0.5" pY="0.5" oX="26" oY="31" oW="160" oH="160"/>
+    <sprite n="mouth_08_BLUE" x="806" y="274" w="94" h="110" pX="0.5" pY="0.5" oX="26" oY="31" oW="160" oH="160"/>
+    <sprite n="mouth_09" x="417" y="586" w="102" h="117" pX="0.5" pY="0.5" oX="25" oY="24" oW="160" oH="160"/>
+    <sprite n="mouth_09_BLUE" x="521" y="586" w="102" h="117" pX="0.5" pY="0.5" oX="25" oY="24" oW="160" oH="160"/>
+    <sprite n="mouth_10" x="808" y="386" w="88" h="113" pX="0.5" pY="0.5" oX="21" oY="42" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_10_BLUE" x="808" y="501" w="88" h="113" pX="0.5" pY="0.5" oX="21" oY="42" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_11" x="902" y="274" w="77" h="124" pX="0.5" pY="0.5" oX="18" oY="50" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_11_BLUE" x="898" y="400" w="77" h="124" pX="0.5" pY="0.5" oX="18" oY="50" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_12" x="717" y="707" w="58" h="127" pX="0.5" pY="0.5" oX="16" oY="57" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_12_BLUE" x="544" y="909" w="127" h="58" pX="0.5" pY="0.5" oX="16" oY="57" oW="160" oH="160"/>
+    <sprite n="mouth_13" x="977" y="402" w="46" h="121" pX="0.5" pY="0.5" oX="20" oY="63" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_13_BLUE" x="977" y="525" w="46" h="121" pX="0.5" pY="0.5" oX="20" oY="63" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_14" x="984" y="228" w="39" h="107" pX="0.5" pY="0.5" oX="22" oY="67" oW="160" oH="160" r="y"/>
+    <sprite n="mouth_14_BLUE" x="830" y="872" w="107" h="39" pX="0.5" pY="0.5" oX="22" oY="67" oW="160" oH="160"/>
+    <sprite n="neck_base" x="249" y="774" w="108" h="59" pX="0.5" pY="0.5" oX="37" oY="7" oW="180" oH="80"/>
+    <sprite n="neck_upper" x="400" y="971" w="94" h="52" pX="0.5" pY="0.5" oX="44" oY="11" oW="180" oH="80"/>
+    <sprite n="shadow" x="442" y="1" w="232" h="124" pX="0.5" pY="0.5"/>
+    <sprite n="shoulders" x="403" y="287" w="118" h="135" pX="0.5" pY="0.5" oX="13" oY="5" oW="140" oH="140"/>
+</TextureAtlas>

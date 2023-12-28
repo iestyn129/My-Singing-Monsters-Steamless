@@ -10,7 +10,7 @@
 			component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
 			component("text"):SetString("-"..game.commaizeNumber(element("cost"):GetInt()))
 			component("size"):SetFloat(0.3)
-			component:setColor(0.608, 0.302, 0.988)
+			game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_ETH_CURRENCY, component)
 			component("layer"):SetString("ContextBar")
 			component("autoScaleFactor"):SetFloat(0.01)
 			component("autoScale"):SetInt(1)

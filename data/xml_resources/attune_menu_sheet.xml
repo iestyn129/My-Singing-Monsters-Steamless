@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:92056f4efa09c0a7eab2b8169dbe623c:44e94b507fbb5fce799f706412c82ba5:3ae4321762c449701cc50941c28f6a97$ -->
+<!-- $TexturePacker:SmartUpdate:975a740a6399c831f81ade6d428626e1:f8d110468ac05471779a6d5b5581a08a:3ae4321762c449701cc50941c28f6a97$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -19,12 +19,19 @@ vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
 verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
-<TextureAtlas imagePath="gfx/menu/attune_menu_sheet.png" width="256" height="256">
-    <sprite n="attune_aura" x="2" y="2" w="133" h="129" pX="0.5" pY="0.5" oX="6" oY="0" oW="150" oH="138"/>
-    <sprite n="attune_dot_crystal" x="137" y="2" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
-    <sprite n="attune_dot_mech" x="189" y="2" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
-    <sprite n="attune_dot_normal" x="137" y="53" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
-    <sprite n="attune_dot_plasma" x="189" y="53" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
-    <sprite n="attune_dot_poison" x="137" y="104" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
-    <sprite n="attune_dot_shadow" x="189" y="104" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
+<TextureAtlas imagePath="gfx/menu/attune_menu_sheet.png" width="256" height="1024">
+    <sprite n="attune_arrow_01" x="236" y="29" w="16" h="24" pX="0.5" pY="0.5" oX="4" oY="2" oW="32" oH="20" r="y"/>
+    <sprite n="attune_arrow_02" x="236" y="2" w="16" h="25" pX="0.5" pY="0.5" oX="4" oY="2" oW="32" oH="20" r="y"/>
+    <sprite n="attune_aura" x="2" y="726" w="133" h="129" pX="0.5" pY="0.5" oX="6" oY="0" oW="150" oH="138"/>
+    <sprite n="attune_dot_normal" x="138" y="100" w="50" h="49" pX="0.5" pY="0.5" oX="1" oY="1" oW="52" oH="52" r="y"/>
+    <sprite n="attune_frame" x="2" y="100" w="134" h="624" pX="0.5" pY="0.5" oX="8" oY="9" oW="640" oH="152" r="y"/>
+    <sprite n="attune_island_shadow" x="2" y="2" w="232" h="96" pX="0.5" pY="0.5" oX="10" oY="11" oW="252" oH="120"/>
+    <sprite n="atunement_turbine_01" x="190" y="100" w="44" h="36" pX="0.5" pY="0.5" oX="9" oY="4" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_02" x="138" y="190" w="41" h="37" pX="0.5" pY="0.5" oX="6" oY="8" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_03" x="138" y="229" w="40" h="39" pX="0.5" pY="0.5" oX="5" oY="9" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_04" x="181" y="211" w="41" h="37" pX="0.5" pY="0.5" oX="4" oY="7" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_05" x="183" y="174" w="42" h="35" pX="0.5" pY="0.5" oX="6" oY="4" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_06" x="180" y="250" w="39" h="36" pX="0.5" pY="0.5" oX="7" oY="3" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_07" x="138" y="151" w="43" h="37" pX="0.5" pY="0.5" oX="9" oY="1" oW="50" oH="50" r="y"/>
+    <sprite n="atunement_turbine_08" x="190" y="138" w="44" h="34" pX="0.5" pY="0.5" oX="12" oY="2" oW="50" oH="50" r="y"/>
 </TextureAtlas>

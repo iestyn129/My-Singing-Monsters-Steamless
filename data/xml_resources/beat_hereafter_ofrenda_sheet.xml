@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:e0c385eb9b59c6ca7dd43b9d9cc9aeac:264daa5477ecc84f6f0477a37a49960d:9808fe1f5d7b56db546a565831f64e8a$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/beat_hereafter_ofrenda_sheet.png" width="512" height="512" hires="true">
+    <sprite n="candles_01.png" x="266" y="167" w="152" h="95" pX="0.5" pY="0.5" oX="2" oY="4" oW="100" oH="160" r="y"/>
+    <sprite n="candles_02.png" x="420" y="167" w="70" h="122" pX="0.5" pY="0.5" oX="1" oY="3" oW="72" oH="128"/>
+    <sprite n="eye.png" x="23" y="250" w="31" h="32" pX="0.5" pY="0.5" oX="4" oY="4" oW="40" oH="40" r="y"/>
+    <sprite n="flame.png" x="249" y="291" w="43" h="44" pX="0.5" pY="0.5" oX="0" oY="0" oW="44" oH="44"/>
+    <sprite n="glow.png" x="1" y="436" w="52" h="42" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="54" r="y"/>
+    <sprite n="left_brow.png" x="56" y="250" w="48" h="28" pX="0.5" pY="0.5" oX="2" oY="4" oW="52" oH="36"/>
+    <sprite n="mar_01.png" x="106" y="250" w="141" h="115" pX="0.5" pY="0.5" oX="3" oY="6" oW="148" oH="128"/>
+    <sprite n="mar_02.png" x="69" y="367" w="115" h="141" pX="0.5" pY="0.5" oX="8" oY="6" oW="132" oH="148"/>
+    <sprite n="platform.png" x="1" y="1" w="263" h="247" pX="0.5" pY="0.5" oX="6" oY="4" oW="276" oH="256"/>
+    <sprite n="right_brow.png" x="1" y="250" w="20" h="37" pX="0.5" pY="0.5" oX="3" oY="4" oW="44" oH="28" r="y"/>
+    <sprite n="skull_bottom.png" x="186" y="367" w="100" h="105" pX="0.5" pY="0.5" oX="3" oY="4" oW="112" oH="108" r="y"/>
+    <sprite n="skull_shadow.png" x="1" y="291" w="66" h="143" pX="0.5" pY="0.5" oX="4" oY="3" oW="152" oH="72" r="y"/>
+    <sprite n="skull_top.png" x="266" y="1" w="244" h="164" pX="0.5" pY="0.5" oX="4" oY="4" oW="172" oH="252" r="y"/>
+    <sprite n="toy.png" x="294" y="264" w="43" h="40" pX="0.5" pY="0.5" oX="2" oY="0" oW="44" oH="44" r="y"/>
+</TextureAtlas>

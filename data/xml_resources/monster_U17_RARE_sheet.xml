@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:30936664f8ec069f50ba1846e0e9ace6:3a4e3c77ced044da00ed79bd7010208d:c87755de2ca1daac6ab8b1b4d973d264$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_U17_RARE_sheet.png" width="1024" height="2048" hires="true">
+    <sprite n="U17_BonaHorn_Left" x="185" y="1322" w="101" h="72" pX="0.5" pY="0.5" oX="3" oY="6" oW="78" oH="113" r="y"/>
+    <sprite n="U17_BonaHorn_Right" x="445" y="1292" w="106" h="73" pX="0.5" pY="0.5" oX="3" oY="3" oW="78" oH="113" r="y"/>
+    <sprite n="U17_Torsofur_Back" x="445" y="1121" w="142" h="169" pX="0.5" pY="0.5" oX="2" oY="3" oW="174" oH="147" r="y"/>
+    <sprite n="U17_Torsofur_Left" x="444" y="1367" w="99" h="78" pX="0.5" pY="0.5" oX="4" oY="8" oW="108" oH="94"/>
+    <sprite n="U17_Torsofur_Right" x="227" y="1050" w="216" h="183" pX="0.5" pY="0.5" oX="2" oY="2" oW="187" oH="220" r="y"/>
+    <sprite n="U17_arm_left" x="614" y="1070" w="172" h="115" pX="0.5" pY="0.5" oX="0" oY="3" oW="134" oH="204" r="y"/>
+    <sprite n="U17_arm_right" x="1" y="1131" w="190" h="82" pX="0.5" pY="0.5" oX="44" oY="8" oW="152" oH="232" r="y"/>
+    <sprite n="U17_back_Fur" x="334" y="1391" w="96" h="89" pX="0.5" pY="0.5" oX="1" oY="3" oW="92" oH="101" r="y"/>
+    <sprite n="U17_belly_skull" x="1" y="1004" w="224" h="125" pX="0.5" pY="0.5" oX="8" oY="0" oW="242" oH="132"/>
+    <sprite n="U17_ear_left" x="871" y="1114" w="152" h="78" pX="0.5" pY="0.5" oX="0" oY="6" oW="82" oH="162" r="y"/>
+    <sprite n="U17_ear_right" x="589" y="1187" w="169" h="78" pX="0.5" pY="0.5" oX="2" oY="2" oW="82" oH="172" r="y"/>
+    <sprite n="U17_finger01_Rare" x="189" y="1215" w="36" h="82" pX="0.5" pY="0.5" oX="0" oY="0" oW="42" oH="82"/>
+    <sprite n="U17_finger02_rare" x="193" y="1131" w="24" h="70" pX="0.5" pY="0.5" oX="9" oY="7" oW="42" oH="82"/>
+    <sprite n="U17_foot_left" x="340" y="1235" w="103" h="73" pX="0.5" pY="0.5" oX="9" oY="9" oW="122" oH="100"/>
+    <sprite n="U17_foot_right_Rare" x="717" y="1299" w="122" h="90" pX="0.5" pY="0.5" oX="0" oY="3" oW="122" oH="120"/>
+    <sprite n="U17_glow_01" x="1" y="463" w="622" h="467" pX="0.5" pY="0.5" oX="8" oY="52" oW="480" oH="680" r="y"/>
+    <sprite n="U17_glow_02" x="1" y="1" w="672" h="460" pX="0.5" pY="0.5" oX="5" oY="4" oW="480" oH="680" r="y"/>
+    <sprite n="U17_jaw_Rare" x="883" y="653" w="119" h="233" pX="0.5" pY="0.5" oX="0" oY="7" oW="242" oH="132" r="y"/>
+    <sprite n="U17_jaw_horn_Rare" x="960" y="1421" w="58" h="51" pX="0.5" pY="0.5" oX="4" oY="6" oW="65" oH="60"/>
+    <sprite n="U17_reg_armL_comp" x="675" y="1" w="316" h="144" pX="0.5" pY="0.5" oX="33" oY="45" oW="200" oH="400" r="y"/>
+    <sprite n="U17_reg_armR_comp" x="625" y="516" w="377" h="135" pX="0.5" pY="0.5" oX="36" oY="11" oW="200" oH="400" r="y"/>
+    <sprite n="U17_reg_body_comp" x="625" y="653" w="256" h="249" pX="0.5" pY="0.5" oX="74" oY="70" oW="400" oH="400" r="y"/>
+    <sprite n="U17_reg_ear_left" x="873" y="1043" w="149" h="69" pX="0.5" pY="0.5" oX="6" oY="6" oW="82" oH="162" r="y"/>
+    <sprite n="U17_reg_ear_right" x="456" y="932" w="158" h="70" pX="0.5" pY="0.5" oX="5" oY="7" oW="82" oH="172" r="y"/>
+    <sprite n="U17_reg_head_comp" x="675" y="327" w="303" h="164" pX="0.5" pY="0.5"/>
+    <sprite n="U17_reg_jaw" x="229" y="932" w="225" h="116" pX="0.5" pY="0.5" oX="8" oY="8" oW="242" oH="132"/>
+    <sprite n="U17_reg_legL_comp" x="883" y="888" w="140" h="153" pX="0.5" pY="0.5" oX="28" oY="23" oW="200" oH="200"/>
+    <sprite n="U17_reg_legR_comp" x="871" y="1194" w="148" h="169" pX="0.5" pY="0.5" oX="28" oY="20" oW="200" oH="200"/>
+    <sprite n="U17_rib01" x="625" y="463" w="45" h="51" pX="0.5" pY="0.5" oX="8" oY="45" oW="82" oH="102"/>
+    <sprite n="U17_rib02" x="288" y="1388" w="44" h="51" pX="0.5" pY="0.5" oX="7" oY="45" oW="82" oH="102"/>
+    <sprite n="U17_rib03" x="980" y="422" w="42" h="49" pX="0.5" pY="0.5" oX="12" oY="44" oW="82" oH="102"/>
+    <sprite n="U17_rib04" x="788" y="1070" w="81" h="123" pX="0.5" pY="0.5" oX="6" oY="6" oW="136" oH="92" r="y"/>
+    <sprite n="U17_rib05" x="841" y="1365" w="117" h="78" pX="0.5" pY="0.5" oX="10" oY="7" oW="136" oH="92"/>
+    <sprite n="U17_rib06" x="340" y="1310" w="102" h="79" pX="0.5" pY="0.5" oX="17" oY="6" oW="136" oH="92"/>
+    <sprite n="U17_shadow" x="1" y="1215" w="186" h="72" pX="0.5" pY="0.5" oX="2" oY="4" oW="190" oH="80"/>
+    <sprite n="U17_shin_left" x="980" y="342" w="43" h="78" pX="0.5" pY="0.5" oX="28" oY="12" oW="102" oH="102"/>
+    <sprite n="U17_shin_right_Rare" x="760" y="1195" w="108" h="102" pX="0.5" pY="0.5" oX="4" oY="0" oW="112" oH="102"/>
+    <sprite n="U17_shoulder_left" x="456" y="1004" w="156" h="115" pX="0.5" pY="0.5" oX="4" oY="4" oW="124" oH="164" r="y"/>
+    <sprite n="U17_shoulder_right" x="1" y="1289" w="182" h="75" pX="0.5" pY="0.5" oX="38" oY="24" oW="132" oH="222" r="y"/>
+    <sprite n="U17_socket_skull" x="960" y="1365" w="61" h="54" pX="0.5" pY="0.5" oX="5" oY="9" oW="72" oH="72"/>
+    <sprite n="U17_spine" x="625" y="904" w="246" h="164" pX="0.5" pY="0.5" oX="2" oY="3" oW="250" oH="170"/>
+    <sprite n="U17_thigh_left" x="227" y="1235" w="111" h="85" pX="0.5" pY="0.5" oX="0" oY="1" oW="94" oH="116" r="y"/>
+    <sprite n="U17_thigh_right" x="589" y="1267" w="126" h="94" pX="0.5" pY="0.5" oX="6" oY="4" oW="100" oH="130" r="y"/>
+    <sprite n="U17_toe01" x="988" y="277" w="26" h="63" pX="0.5" pY="0.5" oX="4" oY="7" oW="72" oH="42" r="y"/>
+    <sprite n="U17_toe02" x="988" y="197" w="33" h="78" pX="0.5" pY="0.5" oX="5" oY="3" oW="92" oH="42" r="y"/>
+    <sprite n="U17_toe03" x="993" y="134" w="29" h="61" pX="0.5" pY="0.5" oX="6" oY="5" oW="72" oH="42" r="y"/>
+    <sprite n="U17_topskull_Rare" x="675" y="147" w="311" h="178" pX="0.5" pY="0.5" oX="5" oY="0" oW="316" oH="178"/>
+    <sprite n="U17_wee_belly" x="288" y="1322" w="49" h="64" pX="0.5" pY="0.5" oX="12" oY="9" oW="72" oH="82"/>
+    <sprite n="U17_wee_eyelids01_Rare" x="993" y="35" w="30" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="30" r="y"/>
+    <sprite n="U17_wee_eyelids02_Rare" x="993" y="68" w="30" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="30" r="y"/>
+    <sprite n="U17_wee_eyelids03_Rare" x="993" y="101" w="30" h="31" pX="0.5" pY="0.5" oX="0" oY="0" oW="32" oH="30" r="y"/>
+    <sprite n="U17_wee_eyelids04_Rare" x="993" y="1" w="30" h="32" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="U17_wee_foot" x="1004" y="515" w="18" h="40" pX="0.5" pY="0.5" oX="8" oY="8" oW="32" oH="52"/>
+    <sprite n="U17_wee_hand" x="672" y="493" w="62" h="21" pX="0.5" pY="0.5" oX="3" oY="8" oW="72" oH="32"/>
+    <sprite n="U17_wee_head" x="553" y="1363" w="101" h="69" pX="0.5" pY="0.5" oX="1" oY="19" oW="102" oH="102"/>
+    <sprite n="U17_wee_mouth01" x="1004" y="640" w="12" h="39" pX="0.5" pY="0.5" oX="9" oY="11" oW="62" oH="42" r="y"/>
+    <sprite n="U17_wee_mouth02" x="1004" y="557" w="16" h="40" pX="0.5" pY="0.5" oX="9" oY="11" oW="62" oH="42" r="y"/>
+    <sprite n="U17_wee_mouth03" x="980" y="490" w="40" h="23" pX="0.5" pY="0.5" oX="9" oY="10" oW="62" oH="42"/>
+    <sprite n="U17_wee_pupil" x="736" y="493" w="11" h="11" pX="0.5" pY="0.5" oX="5" oY="5" oW="22" oH="22"/>
+    <sprite n="U17_wee_shoulder" x="980" y="473" w="41" h="15" pX="0.5" pY="0.5" oX="9" oY="9" oW="62" oH="32"/>
+    <sprite n="U17_wee_thigh" x="1004" y="599" w="14" h="39" pX="0.5" pY="0.5" oX="10" oY="7" oW="32" oH="52"/>
+    <sprite n="beam" x="1" y="932" w="226" h="70" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="228" r="y"/>
+    <sprite n="glow_spot" x="1" y="1366" w="89" h="89" pX="0.5" pY="0.5" oX="5" oY="5" oW="100" oH="100"/>
+</TextureAtlas>

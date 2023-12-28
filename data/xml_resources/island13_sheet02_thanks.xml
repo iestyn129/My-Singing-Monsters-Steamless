@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:9c34b1ca1313871baf8046aa3ce66b71:66db57867c65f59ac88b919024d7b6b0:efe6fb92c5db320381840d61c0e8afeb$ -->
+<!-- $TexturePacker:SmartUpdate:ab6f705152adb582c331d58e6278837f:0a845f1d51a31ca4fdba902a6d01a73b:efe6fb92c5db320381840d61c0e8afeb$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,17 +20,26 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/island_overlay/island13_sheet02_thanks.png" width="2048" height="2048" hires="true">
-    <sprite n="CandleFence01" x="798" y="1592" w="570" h="347" pX="0.5" pY="0.5" oX="1" oY="0" oW="350" oH="570" r="y"/>
-    <sprite n="CandleFence03" x="2" y="1796" w="298" h="235" pX="0.5" pY="0.5" oX="2" oY="1" oW="240" oH="300" r="y"/>
-    <sprite n="candleglowlarge" x="1915" y="556" w="114" h="209" pX="0.5" pY="0.5" oX="9" oY="6" oW="224" oH="130" r="y"/>
-    <sprite n="CandlePlatform_M" x="2" y="900" w="460" h="894" pX="0.5" pY="0.5" oX="0" oY="0" oW="920" oH="460" r="y"/>
-    <sprite n="CloudBig" x="529" y="618" w="660" h="407" pX="0.5" pY="0.5" oX="15" oY="4" oW="680" oH="416"/>
-    <sprite n="CloudSmall" x="2" y="618" w="525" h="254" pX="0.5" pY="0.5" oX="5" oY="0" oW="536" oH="260"/>
+    <sprite n="CandleFence01" x="2" y="1693" w="570" h="347" pX="0.5" pY="0.5" oX="1" oY="0" oW="350" oH="570" r="y"/>
+    <sprite n="CandleFence03" x="1702" y="1237" w="235" h="298" pX="0.5" pY="0.5" oX="2" oY="1" oW="240" oH="300"/>
+    <sprite n="candleglowlarge" x="1896" y="244" w="114" h="209" pX="0.5" pY="0.5" oX="9" oY="6" oW="224" oH="130" r="y"/>
+    <sprite n="CandlePlatform_M" x="644" y="1579" w="894" h="460" pX="0.5" pY="0.5" oX="0" oY="0" oW="920" oH="460"/>
+    <sprite n="Cornucopia_01" x="1520" y="852" w="259" h="383" pX="0.5" pY="0.5" oX="2" oY="2" oW="264" oH="388"/>
+    <sprite n="Cornucopia_02" x="1540" y="1550" w="257" h="346" pX="0.5" pY="0.5" oX="5" oY="3" oW="356" oH="264" r="y"/>
+    <sprite n="Haystack_02" x="1338" y="1246" w="362" h="302" pX="0.5" pY="0.5" oX="3" oY="1" oW="368" oH="304"/>
+    <sprite n="L_Leaves_01" x="807" y="1329" w="529" h="202" pX="0.5" pY="0.5"/>
+    <sprite n="L_Leaves_02" x="1781" y="852" w="161" h="293" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="L_Leaves_03" x="644" y="1172" w="161" h="405" pX="0.5" pY="0.5"/>
+    <sprite n="L_Leaves_04" x="1799" y="1537" w="232" h="188" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Pie_cut" x="1896" y="570" w="113" h="94" pX="0.5" pY="0.5" oX="1" oY="3" oW="116" oH="100"/>
+    <sprite n="Pie_slice" x="1896" y="455" w="149" h="113" pX="0.5" pY="0.5" oX="3" oY="6" oW="156" oH="124"/>
     <sprite n="Plane" x="2" y="2" w="1200" h="614" pX="0.5" pY="0.5"/>
-    <sprite n="WaxEdgeL" x="464" y="1027" w="640" h="519" pX="0.5" pY="0.5" oX="0" oY="0" oW="520" oH="640" r="y"/>
-    <sprite n="WaxFarSide" x="1204" y="556" w="709" h="342" pX="0.5" pY="0.5" oX="0" oY="1" oW="344" oH="710" r="y"/>
-    <sprite n="WaxFrame" x="464" y="1592" w="332" h="392" pX="0.5" pY="0.5"/>
-    <sprite n="WaxMiddle" x="1191" y="900" w="848" h="690" pX="0.5" pY="0.5"/>
-    <sprite n="WaxPool" x="1915" y="767" w="104" h="90" pX="0.5" pY="0.5" r="y"/>
-    <sprite n="WaxSide" x="1204" y="2" w="838" h="552" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Pumpkin_02" x="1896" y="2" w="146" h="240" pX="0.5" pY="0.5" oX="4" oY="1" oW="248" oH="148" r="y"/>
+    <sprite n="Sunflower_02" x="1896" y="758" w="84" h="82" pX="0.5" pY="0.5" oX="2" oY="6" oW="88" oH="88"/>
+    <sprite n="WaxEdgeL" x="2" y="1172" w="640" h="519" pX="0.5" pY="0.5" oX="0" oY="0" oW="520" oH="640" r="y"/>
+    <sprite n="WaxFarSide" x="842" y="618" w="342" h="709" pX="0.5" pY="0.5" oX="0" oY="1" oW="344" oH="710"/>
+    <sprite n="WaxFrame" x="1186" y="852" w="332" h="392" pX="0.5" pY="0.5"/>
+    <sprite n="WaxMiddle" x="1204" y="2" w="690" h="848" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="WaxPool" x="1896" y="666" w="104" h="90" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="WaxSide" x="2" y="618" w="838" h="552" pX="0.5" pY="0.5" r="y"/>
 </TextureAtlas>

@@ -20,18 +20,18 @@
 	<element name="NameFrame">
 		<size w="120*game.hudScale()" h="32*game.hudScale()" />
 		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-12*game.hudScale()" priorityOffset="-1" />
+		<orientation vAnchor="BOTTOM" hAnchor="HCENTER" xOffset="0" yOffset="-8*game.hudScale()" priorityOffset="-1" />
 
 		<textComponent name="Text">
 			<size w="120*game.hudScale()" h="32*game.hudScale()" />
 			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
-			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-4*game.hudScale()" priorityOffset="-1" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 
 			<event name="onInit" params="component, element">
 				<![CDATA[
 					local parent = element:parent()
 					component("textPadding"):SetInt(3*game.hudScale())
-					component("size"):SetFloat(0.5*game.hudScale())
+					component("size"):SetFloat(0.4*game.hudScale())
 					component("autoScale"):SetInt(1)
 					component("autoScaleFactor"):SetFloat(0.01)
 					component("multiline"):SetInt(1)

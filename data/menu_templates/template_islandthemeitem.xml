@@ -15,62 +15,7 @@
 			
 			local i = element("ID"):GetInt()
 			element("currentAmount"):SetInt(0)
-			--element("currentAmount"):SetInt(store:currentAmount(i))
-			
-			-- figure out if this element is locked for some reason (eg. player is too low level)
-			--if((i >= (store:NumCategoryItems() - store:NumLockedItems())) or (store:canBuyAnotherRightNow(i) == false) or (maxAmount > 0 and store:currentAmount(i) >= maxAmount)) then
-				--element:DoStoredScript("setLocked")
-			--end
-			
-			--if((store:SaleAmount(i) ~= 0) and (element("Cost"):GetString() ~= "OWNED")) then
-				--local saleTag = nil
-				
-				--local category = store:Category()
-				--if(category ~= game.StoreCategories_TYPE_CURRENCY) then
-					--saleTag = menu:addTemplateElement("template_itemsaletag", "saleTag", element)
-					--saleTag:setOrientation(lua_sys.MenuOrientation(-4*game.menuScaleX(), 50*game.menuScaleX(), -2, lua_sys.HCENTER, lua_sys.TOP))
-					--saleTag("SaleCurrencyType"):SetString(store:PurchaseTypeOfSaleItem(i))
-				--else
-					--saleTag = menu:addTemplateElement("template_saletag", "saleTag", element)
-					--if(element("TimedAvailabilityOn"):GetInt() == 0) then
-						--saleTag:setOrientation(lua_sys.MenuOrientation(-4*game.menuScaleX(), 24*game.menuScaleX(), -3, lua_sys.HCENTER, lua_sys.TOP))
-					--else
-						--saleTag:setOrientation(lua_sys.MenuOrientation(-4*game.menuScaleX(), 48*game.menuScaleX(), -3, lua_sys.HCENTER, lua_sys.TOP))
-						--element["IAPCost"]["Text"]("visible"):SetInt(0)
-					--end
-				--end
-				
-				--saleTag:setParent(element)
-				--saleTag:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.TOP)
-				--saleTag("SaleDesc"):SetString(element("SaleDesc"):GetString())
-				--saleTag("SaleAmount"):SetInt(element("SaleAmount"):GetInt())
-				--saleTag("CurrencyType"):SetString(element("Type"):GetString())
-				--saleTag:init()
-				--saleTag:setPositionBroadcast(true)
-				
-				--if(store:Category() == game.StoreCategories_TYPE_MONSTER) then
-					--element["monsterCount"]("yOffset"):SetInt(60*game.menuScaleY())
-				--end
-				
-				--element:DoStoredScript("disableAllCosts")
-				
-				--if(element("TimedSaleOn"):GetInt() == 1) then
-					--if(element("TimedAvailabilityOn"):GetInt() == 1) then
-						--saleTag:DoStoredScript("SetPositionForTimedSaleLimitedAvailMonster")
-					--else
-						--saleTag:DoStoredScript("SetPositionForTimedSaleNormalMonster")
-					--end
-				--end
-			--end
-			
 			element("displayWhiteGreenTextAtBottom"):SetInt(0)
-		
-			--[[if(lua_sys.getSubPlatformName() ~= "amazon" and (store:Category() == game.StoreCategories_TYPE_ISLAND) and (store:getRemixByIndex(i) ~= "") and (store:canUnlockIslandByItemNum(i)) and (game.amazonStreamBox() ~= 1)) then
-				local remixButton = menu:addTemplateElement("template_remixbutton", "RemixButton", element)
-				remixButton:setParent(element)
-				remixButton:init()
-				remixButton:setPositionBroadcast(true)
-			end--]]			
 		]]>
 	</event>
 	

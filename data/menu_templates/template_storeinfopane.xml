@@ -531,14 +531,9 @@
 			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
-					if(store:Category() ~= game.StoreCategories_TYPE_ISLAND) then
-						component("spriteName"):SetString(game.islandCurrencySprite())
-						component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					else
-						--islands are purchased with coins, not ethereal
-						component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-						component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					end
+					--it doesn't matter what this is initialized to, it gets set properly later
+					component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
 					component("size"):SetFloat(0.5*game.menuScaleX())
 					component("visible"):SetInt(0)
 					component("layer"):SetString("HUD")
@@ -637,14 +632,9 @@
 			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-1" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
-					if(store:Category() ~= game.StoreCategories_TYPE_ISLAND) then
-						component("spriteName"):SetString(game.islandCurrencySprite())
-						component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					else
-						--islands are purchased with coins, not ethereal
-						component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
-						component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
-					end
+					--it doesn't matter what this is initialized to, it gets set properly later
+					component("spriteName"):SetString(game.StoreContext_SPRITE_COINS)
+					component("sheetName"):SetString(game.StoreContext_CURRENCY_SPRITESHEET)
 					component("size"):SetFloat(0.5*game.menuScaleX())
 					component("visible"):SetInt(0)
 					component("layer"):SetString("HUD")

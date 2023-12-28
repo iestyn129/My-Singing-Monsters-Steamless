@@ -165,6 +165,16 @@
 				component("layer"):SetString("MidPopUps")
 			</event>
 		</textComponent>
+		<touchComponent name="Touch">
+			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-10" />
+			<event name="onTouchDown" params="component, element">
+				<![CDATA[
+					game.displayNotification("TOOLTIP_EGG_WILDCARDS")
+				]]>
+			</event>
+		</touchComponent>
 	</element>
 	
 	<element name="EggList">

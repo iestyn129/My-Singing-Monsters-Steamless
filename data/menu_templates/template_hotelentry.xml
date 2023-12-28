@@ -87,7 +87,7 @@
 					component("animation"):SetString("Idle")
 					component("layer"):SetString("Clipping")
 					
-					if(game.isWubboxType(monsterId)) then
+					if(game.isWubboxType(monsterId) and game.isActiveBoxMonster(uniqueMonsterId)) then
 						component:setScale(Vector2(0.33*game.menuScaleX(),0.33*game.menuScaleX()))
 						element:setOrientationPosition(Vector2((component:size().x / 2.0)-(3*game.menuScaleX()), component:size().y / 2.0 + (70*game.menuScaleX())))
 					else						

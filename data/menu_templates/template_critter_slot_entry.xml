@@ -1,19 +1,48 @@
-<template name="template_critter_select_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
+<template name="template_critter_slot_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
 
-	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-	
-	<spriteSheetComponent name="Sprite">
+	<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
+
+	<spriteSheetComponent name="Bg">
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<event name="onInit" params="component, element">
 			<![CDATA[
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
+				component("spriteName"):SetString("portrait_square")
+				component("size"):SetFloat(0.5*game.hudScale())
+				component("layer"):SetString("MidPopUps")
+			]]>
+		</event>
+	</spriteSheetComponent>
+	
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
 				component("spriteName"):SetString("critter_portrait_square_plus")
 				component("size"):SetFloat(0.5*game.hudScale())
 				component("layer"):SetString("MidPopUps")
 			]]>
 		</event>
 	</spriteSheetComponent>
+
+	<textComponent name="Text">
+		<size w="65*game.menuScaleX()" h="100" />
+		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-5*game.menuScaleX()" priorityOffset="-3" />
+		<event name="onInit" params="component, element">
+			component("multiline"):SetInt(0)
+			component("font"):Set(game.getTextFont())
+			component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
+			component("size"):SetFloat(0.25*game.menuScaleX())
+			component("text"):SetString("")
+			component("autoScaleFactor"):SetFloat(0.01)
+			component("autoScale"):SetInt(1)
+			component("layer"):SetString("MidPopUps")
+		</event>
+	</textComponent>
 	
 	<touchComponent name="Touch">
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
@@ -21,20 +50,32 @@
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<event name="onTouchUp" params="component, element">
 			<![CDATA[
-				if(element("disabled"):GetInt() == 0) then
-					element:parent():parent():CritterSlotSelected(element)
+				if(element("touchDisabled"):GetInt() == 0) then
+					if(element("disabled"):GetInt() == 0) then
+						element:parent():parent():CritterSlotSelected(element)
+					end
+					element["Bg"]:setColor(1.0, 1.0, 1.0)
+					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element["Text"]:setColor(element.textR, element.textG,element.textB)
 				end
-				element["Sprite"]:setColor(1.0, 1.0, 1.0)
 			]]>
 		</event>
 		<event name="onTouchDown" params="component, element, x, y">
 			<![CDATA[
-				element["Sprite"]:setColor(0.5, 0.5, 0.5)
+				if(element("touchDisabled"):GetInt() == 0) then
+					element["Bg"]:setColor(0.5, 0.5, 0.5)
+					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element["Text"]:setColor(element.textR*0.5, element.textG*0.5, element.textB*0.5)
+				end
 			]]>
 		</event>
 		<event name="onTouchRelease" params="component, element">
 			<![CDATA[
+			if(element("touchDisabled"):GetInt() == 0) then
+				element["Bg"]:setColor(1.0, 1.0, 1.0)
 				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element["Text"]:setColor(element.textR, element.textG,element.textB)
+			end
 			]]>
 		</event>
 	</touchComponent>
@@ -42,16 +83,70 @@
 	<event name="onInit" params="element">
     <![CDATA[
 		element("disabled"):SetInt(0)
+		element("touchDisabled"):SetInt(0)
+		element.textR = 1.0
+		element.textG = 1.0
+		element.textB = 1.0
     ]]>
 	</event>
 
 	<event name="update" params="element">
     <![CDATA[
-		if(element.gene == "")then
-			element["Sprite"]("spriteName"):SetString(critter_portrait_square_plus)
+
+		element["Sprite"]("visible"):SetInt(1)
+
+		if(element.gene == "") then
+			if(element.disableSelection == true) then
+				element["Bg"]("spriteName"):SetString("critter_portrait_square_empty")
+				element["Sprite"]("visible"):SetInt(0)
+			else
+				element["Bg"]("spriteName"):SetString("portrait_square")
+				element["Sprite"]("spriteName"):SetString("critter_portrait_square_plus")
+			end
+			element["Text"]("text"):SetString("")
 		else
+
+			if(element.disableSelection == true) then
+				element["Bg"]("spriteName"):SetString("portrait_square_tinted")
+			else
+				element["Bg"]("spriteName"):SetString("portrait_square")
+			end
+
 			element["Sprite"]("spriteName"):SetString(game.critterSprite(element.gene))
+
+			if(element.num ~= nil and element.required ~= nil)then
+
+				if(element.num < element.required) then
+					element.textG = 0.0
+					element.textB = 0.0
+				else
+					element.textG = 1.0
+					element.textB = 1.0
+				end
+
+				element["Text"]:setColor(element.textR, element.textG,element.textB)
+
+				local text =  element.num .."/".. element.required
+
+				element["Text"]("text"):SetString(text)
+			end
 		end
+	]]>
+	</event>
+
+	<event name="disableSelection" params="element">
+    <![CDATA[
+		element.disableSelection = true
+		element("touchDisabled"):SetInt(1)
+		element:update()
+	]]>
+	</event>
+
+	<event name="enableSelection" params="element">
+    <![CDATA[
+		element.disableSelection = false
+		element("touchDisabled"):SetInt(0)
+		element:update()
 	]]>
 	</event>
 

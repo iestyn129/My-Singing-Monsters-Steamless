@@ -330,7 +330,7 @@
 				<![CDATA[
 					component("multiline"):SetInt(0)
 					component("font"):Set(game.getTextFont())
-					component:setColor(1.0, 0.67, 0.96)
+					game.StoreContext_setCurrencyTypeColour(game.StoreContext_TYPE_FOOD, component)
 					component("size"):SetFloat(0.3*game.hudScale())
 					component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
 					local promo = game.getFirstPromoWithType(game.PromotionType_ColdIslandComboPack)

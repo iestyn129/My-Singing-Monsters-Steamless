@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:aa66ae70ab9f756bd8727eb1f4467f0d:38fb878f2bfa1c82399c22c93eedaa67:6c91169e43ccc059f87fd942708c25ba$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_T05_adult_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="T05_adult_beard.png" x="479" y="573" w="27" h="43" pX="0.5" pY="0.5" oX="2" oY="2" oW="32" oH="48"/>
+    <sprite n="T05_adult_body.png" x="1" y="1" w="201" h="96" pX="0.5" pY="0.5" oX="2" oY="3" oW="100" oH="208" r="y"/>
+    <sprite n="T05_adult_chest.png" x="203" y="262" w="124" h="114" pX="0.5" pY="0.5" oX="4" oY="0" oW="132" oH="116"/>
+    <sprite n="T05_adult_eyebrow.png" x="482" y="519" w="28" h="52" pX="0.5" pY="0.5" oX="2" oY="2" oW="56" oH="32" r="y"/>
+    <sprite n="T05_adult_eyelid_01.png" x="280" y="437" w="45" h="37" pX="0.5" pY="0.5" oX="6" oY="1" oW="44" oH="48" r="y"/>
+    <sprite n="T05_adult_eyelid_02.png" x="326" y="506" w="43" h="37" pX="0.5" pY="0.5" oX="6" oY="3" oW="44" oH="48" r="y"/>
+    <sprite n="T05_adult_eyelid_03.png" x="280" y="476" w="44" h="42" pX="0.5" pY="0.5" oX="0" oY="4" oW="44" oH="48"/>
+    <sprite n="T05_adult_eyelid_04.png" x="378" y="501" w="44" h="42" pX="0.5" pY="0.5" oX="0" oY="4" oW="44" oH="48"/>
+    <sprite n="T05_adult_finger_01.png" x="130" y="290" w="67" h="22" pX="0.5" pY="0.5" oX="4" oY="3" oW="56" oH="72" r="y"/>
+    <sprite n="T05_adult_finger_02.png" x="334" y="206" w="68" h="24" pX="0.5" pY="0.5" oX="5" oY="2" oW="56" oH="72" r="y"/>
+    <sprite n="T05_adult_finger_03.png" x="329" y="394" w="65" h="31" pX="0.5" pY="0.5" oX="7" oY="5" oW="56" oH="72" r="y"/>
+    <sprite n="T05_adult_finger_04.png" x="274" y="520" w="42" h="39" pX="0.5" pY="0.5" oX="7" oY="31" oW="56" oH="72"/>
+    <sprite n="T05_adult_finger_05.png" x="329" y="349" w="65" h="43" pX="0.5" pY="0.5" oX="7" oY="5" oW="56" oH="72" r="y"/>
+    <sprite n="T05_adult_hair.png" x="204" y="1" w="199" h="163" pX="0.5" pY="0.5" oX="2" oY="2" oW="168" oH="204" r="y"/>
+    <sprite n="T05_adult_head.png" x="405" y="117" w="101" h="73" pX="0.5" pY="0.5" oX="1" oY="1" oW="76" oH="104" r="y"/>
+    <sprite n="T05_adult_left_foot.png" x="329" y="427" w="64" h="36" pX="0.5" pY="0.5" oX="2" oY="0" oW="68" oH="36"/>
+    <sprite n="T05_adult_left_hand.png" x="202" y="378" w="76" h="75" pX="0.5" pY="0.5" oX="2" oY="4" oW="80" oH="80" r="y"/>
+    <sprite n="T05_adult_left_horn.png" x="130" y="177" w="71" h="111" pX="0.5" pY="0.5" oX="2" oY="2" oW="76" oH="116"/>
+    <sprite n="T05_adult_left_lower_arm.png" x="332" y="232" w="70" h="115" pX="0.5" pY="0.5" oX="4" oY="3" oW="124" oH="76" r="y"/>
+    <sprite n="T05_adult_left_lower_leg.png" x="202" y="455" w="57" h="48" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="48"/>
+    <sprite n="T05_adult_left_shoulder_back.png" x="405" y="1" w="106" h="114" pX="0.5" pY="0.5" oX="3" oY="3" oW="112" oH="120"/>
+    <sprite n="T05_adult_left_shoulder_front.png" x="405" y="192" w="98" h="98" pX="0.5" pY="0.5" oX="3" oY="3" oW="104" oH="104"/>
+    <sprite n="T05_adult_left_upper_arm.png" x="204" y="166" w="128" h="48" pX="0.5" pY="0.5" oX="1" oY="1" oW="132" oH="52"/>
+    <sprite n="T05_adult_left_upper_leg.png" x="113" y="396" w="76" h="54" pX="0.5" pY="0.5" oX="3" oY="2" oW="60" oH="80" r="y"/>
+    <sprite n="T05_adult_mouth_01.png" x="378" y="480" w="11" h="18" pX="0.5" pY="0.5" oX="10" oY="14" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_02.png" x="178" y="452" w="22" h="17" pX="0.5" pY="0.5" oX="8" oY="10" oW="44" oH="32"/>
+    <sprite n="T05_adult_mouth_03.png" x="482" y="497" w="29" h="20" pX="0.5" pY="0.5" oX="5" oY="8" oW="44" oH="32"/>
+    <sprite n="T05_adult_mouth_04.png" x="424" y="501" w="23" h="37" pX="0.5" pY="0.5" oX="3" oY="6" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_05.png" x="486" y="370" w="25" h="39" pX="0.5" pY="0.5" oX="2" oY="5" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_06.png" x="246" y="505" w="26" h="34" pX="0.5" pY="0.5" oX="4" oY="3" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_07.png" x="486" y="411" w="25" h="26" pX="0.5" pY="0.5" oX="7" oY="4" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_08.png" x="424" y="540" w="20" h="19" pX="0.5" pY="0.5" oX="9" oY="9" oW="44" oH="32"/>
+    <sprite n="T05_adult_mouth_09.png" x="261" y="477" w="16" h="14" pX="0.5" pY="0.5" oX="11" oY="12" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_10.png" x="378" y="465" w="14" h="13" pX="0.5" pY="0.5" oX="11" oY="10" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_11.png" x="501" y="292" w="10" h="21" pX="0.5" pY="0.5" oX="9" oY="14" oW="44" oH="32" r="y"/>
+    <sprite n="T05_adult_mouth_12.png" x="486" y="439" w="25" h="11" pX="0.5" pY="0.5" oX="7" oY="13" oW="44" oH="32"/>
+    <sprite n="T05_adult_pupil.png" x="261" y="455" w="17" h="20" pX="0.5" pY="0.5" oX="1" oY="0" oW="20" oH="20"/>
+    <sprite n="T05_adult_right_foot.png" x="334" y="166" w="69" h="38" pX="0.5" pY="0.5" oX="1" oY="1" oW="72" oH="40"/>
+    <sprite n="T05_adult_right_hand.png" x="123" y="314" w="77" h="80" pX="0.5" pY="0.5" oX="0" oY="2" oW="80" oH="80" r="y"/>
+    <sprite n="T05_adult_right_horn.png" x="404" y="292" w="95" h="76" pX="0.5" pY="0.5" oX="2" oY="2" oW="80" oH="100" r="y"/>
+    <sprite n="T05_adult_right_lower_arm.png" x="1" y="294" w="120" h="80" pX="0.5" pY="0.5" oX="2" oY="0" oW="124" oH="80"/>
+    <sprite n="T05_adult_right_lower_leg.png" x="280" y="378" w="47" h="57" pX="0.5" pY="0.5" oX="1" oY="0" oW="60" oH="48" r="y"/>
+    <sprite n="T05_adult_right_shoulder_back.png" x="1" y="177" w="127" h="115" pX="0.5" pY="0.5" oX="0" oY="2" oW="116" oH="132" r="y"/>
+    <sprite n="T05_adult_right_shoulder_front.png" x="1" y="376" w="110" h="97" pX="0.5" pY="0.5" oX="3" oY="1" oW="104" oH="112" r="y"/>
+    <sprite n="T05_adult_right_upper_arm.png" x="203" y="216" w="127" h="44" pX="0.5" pY="0.5" oX="3" oY="4" oW="132" oH="52"/>
+    <sprite n="T05_adult_right_upper_leg.png" x="149" y="99" w="53" h="76" pX="0.5" pY="0.5" oX="3" oY="2" oW="60" oH="80"/>
+    <sprite n="T05_adult_shadow.png" x="1" y="99" w="146" h="76" pX="0.5" pY="0.5"/>
+    <sprite n="T05_adult_tail_01.png" x="396" y="370" w="88" h="84" pX="0.5" pY="0.5" oX="2" oY="2" oW="92" oH="88"/>
+    <sprite n="T05_adult_tail_02.png" x="113" y="452" w="63" h="39" pX="0.5" pY="0.5" oX="2" oY="2" oW="68" oH="44"/>
+    <sprite n="T05_adult_tail_03.png" x="201" y="505" w="43" h="36" pX="0.5" pY="0.5" oX="4" oY="2" oW="52" oH="40"/>
+    <sprite n="T05_adult_tail_04.png" x="395" y="456" w="54" h="43" pX="0.5" pY="0.5" oX="5" oY="2" oW="64" oH="48"/>
+    <sprite n="T05_adult_tail_05.png" x="327" y="465" w="49" h="39" pX="0.5" pY="0.5" oX="1" oY="2" oW="52" oH="44"/>
+    <sprite n="T05_adult_thumb_01.png" x="449" y="535" w="28" h="41" pX="0.5" pY="0.5" oX="0" oY="24" oW="44" oH="52" r="y"/>
+    <sprite n="T05_adult_thumb_02.png" x="486" y="452" w="23" h="43" pX="0.5" pY="0.5" oX="0" oY="24" oW="44" oH="52" r="y"/>
+    <sprite n="T05_adult_thumb_03.png" x="178" y="471" w="21" h="43" pX="0.5" pY="0.5" oX="0" oY="20" oW="44" oH="52" r="y"/>
+    <sprite n="T05_adult_thumb_04.png" x="451" y="456" w="33" h="38" pX="0.5" pY="0.5" oX="0" oY="7" oW="44" oH="52" r="y"/>
+    <sprite n="T05_adult_thumb_05.png" x="451" y="496" w="29" h="37" pX="0.5" pY="0.5" oX="0" oY="2" oW="44" oH="52"/>
+</TextureAtlas>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:099a8385550bc291ae8f8da6b451375b:0fba497a71965c10b74beed84f63b627:ab9a40fcbd804e2ddef1ff9c73e253b4$ -->
+<!-- $TexturePacker:SmartUpdate:032b350a8f90a6fcacd80fbbef4a358e:e1923830c5c9c0ecf1c5fad23ef096bf:ab9a40fcbd804e2ddef1ff9c73e253b4$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -20,11 +20,15 @@ verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
 triangles  => sprite triangulation, 3 vertex indices per triangle
 -->
 <TextureAtlas imagePath="gfx/menu/currency_sheet02.png" width="512" height="1024">
-    <sprite n="anniversary_deluxe" x="187" y="240" w="136" h="136" pX="0.5" pY="0.5"/>
-    <sprite n="anniversary_warmup" x="324" y="240" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="anniversary_deluxe" x="216" y="389" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="anniversary_warmup" x="353" y="389" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="bundle_cold_island_01" x="1" y="418" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="bundle_festival_of_yay_01" x="138" y="526" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="bundle_plant_island_01" x="1" y="555" w="136" h="136" pX="0.5" pY="0.5"/>
     <sprite n="keys_01" x="264" y="1" w="238" h="238" pX="0.5" pY="0.5" oX="9" oY="0" oW="248" oH="240"/>
     <sprite n="keys_05" x="1" y="1" w="262" h="230" pX="0.5" pY="0.5" oX="1" oY="1" oW="264" oH="234"/>
-    <sprite n="no_ads_01" x="1" y="232" w="148" h="148" pX="0.5" pY="0.5" oX="50" oY="46" oW="248" oH="240"/>
-    <sprite n="warm_up_01" x="150" y="377" w="136" h="136" pX="0.5" pY="0.5"/>
-    <sprite n="warm_up_star" x="150" y="232" w="36" h="35" pX="0.5" pY="0.5"/>
+    <sprite n="no_ads_01" x="253" y="240" w="148" h="148" pX="0.5" pY="0.5" oX="50" oY="46" oW="248" oH="240"/>
+    <sprite n="relic_reliquary" x="1" y="232" w="214" h="185" pX="0.5" pY="0.5" oX="17" oY="5" oW="247" oH="193"/>
+    <sprite n="warm_up_01" x="275" y="526" w="136" h="136" pX="0.5" pY="0.5"/>
+    <sprite n="warm_up_star" x="216" y="232" w="36" h="35" pX="0.5" pY="0.5"/>
 </TextureAtlas>

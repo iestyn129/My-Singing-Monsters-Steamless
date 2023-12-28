@@ -112,7 +112,7 @@
 			<event name="onInit" params="component, element">
 			<![CDATA[
 			
-				local xOffset = 50*game.hudScale();
+				local xOffset = 50*game.hudScale()
 			
 				component("animationName"):SetString("xml_bin/anim_crucible_themometer.bin")
 				component("animation"):SetString("thermometer_01")
@@ -172,7 +172,7 @@
 				onTouchUp(component, element)
 				element["Overlay"]:setColor(1.0, 1.0, 1.0)
 				element:parent()("transitionState"):SetInt(2)
-				element:parent()("choice"):SetString("true")
+				element:parent()("choice"):SetInt(1)
 			</event>
 			<event name="onTouchRelease" params="component, element">
 				onTouchRelease(component, element)
@@ -189,6 +189,58 @@
 				component("size"):SetFloat(0.5)
 			</event>
 		</spriteSheetComponent>
+		<event name="onTick" params="element, dt">
+			onTick(element, dt)
+			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
+				element["Overlay"]("size"):SetFloat(element["UpSprite"]("size"):GetFloat())
+			end
+		</event>
+	</template>
+	
+	<template type="template_spritesheetbutton" name="FlagsButton">
+		<hudScale scale="game.hudScale()" />
+		<templateVar name="$text" equals="" />
+		<templateVar name="$spriteScale" equals="0.5" />
+		<templateVar name="$layer" equals="FrontPopUps" />
+		<templateVar name="$buttonMapping" equals="game.confirmButton()" />
+		<position relativeTo="bg" vAnchor="BOTTOM" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10/game.hudScale()" priorityOffset="-1" />
+		<touchComponent name="Touch">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onTouchDown" params="component, element">
+				onTouchDown(component, element)
+				element["Overlay"]:setColor(0.5, 0.5, 0.5)
+			</event>
+			<event name="onTouchUp" params="component, element">
+				onTouchUp(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+				element:parent()("transitionState"):SetInt(2)
+				element:parent()("choice"):SetInt(2)
+			</event>
+			<event name="onTouchRelease" params="component, element">
+				onTouchRelease(component, element)
+				element["Overlay"]:setColor(1.0, 1.0, 1.0)
+			</event>
+		</touchComponent>
+		<spriteSheetComponent name="Overlay">
+			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
+			<event name="onInit" params="component, element">
+				component("spriteName"):SetString("button_flags")
+				component("sheetName"):SetString("xml_resources/hud03.xml")
+				component("layer"):SetString("FrontPopUps")
+				component("size"):SetFloat(0.5)
+			</event>
+		</spriteSheetComponent>
+		<function name="setVisible" params="element">
+			setVisible(element)
+			element["Overlay"]("visible"):SetInt(1)
+		</function>
+		<function name="setInvisible" params="element">
+			setInvisible(element)
+			element["Overlay"]("visible"):SetInt(0)
+		</function>
 		<event name="onTick" params="element, dt">
 			onTick(element, dt)
 			if(element["UpSprite"]("size"):GetFloat() ~= element["Overlay"]("size"):GetFloat()) then
@@ -216,7 +268,7 @@
 				onTouchUp(component, element)
 				element["Overlay"]:setColor(1.0, 1.0, 1.0)
 				element:parent()("transitionState"):SetInt(2)
-				element:parent()("choice"):SetString("false")
+				element:parent()("choice"):SetInt(3)
 			</event>
 			<event name="onTouchRelease" params="component, element">
 				onTouchRelease(component, element)
@@ -249,8 +301,17 @@
 	<event name="onInit" params="element">
 		element("transitionState"):SetInt(1)
 		element("transitionTime"):SetFloat(0.0)
-		element("choice"):SetString("none")
+		element("choice"):SetInt(0)
 		lua_sys.playSoundFx("audio/sfx/menu_slide.wav")
+		
+		local heatLevel = game.crucHeatLevel()
+		if(heatLevel ~= 2) then
+			element:E("FlagsButton"):setInvisible()
+		else
+			if(game.maxFlagsActive() == true) then
+				element:E("FlagsButton"):setInvisible()
+			end
+		end
 	</event>
 	
 
@@ -285,10 +346,13 @@
 							textID = ""
 						end
 						
-						if(element("choice"):GetString() == "true") then
+						if(element("choice"):GetInt() == 1) then
 							element:root():popPopUp()
 							game.submitConfirmation("COLLECT_CRUBIBLE_HEAT", true, textID)
-						else
+						elseif (element("choice"):GetInt() == 2) then
+							element:root():popPopUp()
+							game.submitConfirmation("BUY_CRUCIBLE_FLAGS", true, textID)
+						elseif (element("choice"):GetInt() == 3) then
 							element:root():popPopUp()
 							game.submitConfirmation("COLLECT_CRUBIBLE_HEAT", false, textID)
 						end

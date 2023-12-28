@@ -16,15 +16,7 @@
 				component("text"):SetString(0)
 			end
 
-			if(game.torchCurrency() == game.StoreContext_TYPE_DIAMOND) then
-				game.StoreContext_setDiamondTextColour(component)
-			else
-				if(game.isEtherealIsland()) then
-					game.StoreContext_setEtherealTextColour(component)
-				else
-					game.StoreContext_setCoinTextColour(component)
-				end
-			end
+			game.StoreContext_setCurrencyTypeColour(game.torchCurrency(), component)
 
 			component("layer"):SetString("ContextBar")
 

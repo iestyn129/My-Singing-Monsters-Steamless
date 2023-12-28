@@ -1388,11 +1388,12 @@
 		
 	</element>
 
+	<!-- yOffset is set in gotMsgUpdatePlayerLevelMask -->
 	<template type="template_spritesheetbutton" name="GoalsButton">
 		<templateVar name="$layer" equals="PopUps" />
 		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
 		<position relativeTo="SAFE_AREA" vAnchor="TOP" hAnchor="LEFT" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="40*game.hudScale()" yOffset="85*game.hudScale()" priorityOffset="25" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="40*game.hudScale()" yOffset="90*game.hudScale()" priorityOffset="25" />
 		<touchComponent name="Touch">
 			<event name="onTouchDown" params="component, element">
 				onTouchDown(component, element)
@@ -1507,14 +1508,14 @@
 			</event>
 		</textComponent>
 		<textComponent name="Label">
-			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<size w="64*game.hudScale()" />
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				component("multiline"):SetInt(0)
 				component("font"):Set(game.getTitleFont())
 				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
-				component("size"):SetFloat(0.2*game.hudScale())
+				component("size"):SetFloat(0.25*game.hudScale())
 				component("text"):SetString("MENU_GOALS")
 				component("autoScaleFactor"):SetFloat(0.01)
 				component("autoScale"):SetInt(1)
@@ -1541,9 +1542,6 @@
 		</aeComponent>
 		<event name="onInit" params="element">
 			onInit(element)
-			if(game.playerLevelTitle() == "") then
-				element("yOffset"):SetFloat(65*game.hudScale())
-			end
 			element("visibleOnIsland"):SetInt(1)
 			element:SetupGenericListener(game.engineReceiver(), "game::msg::MsgUpdatePlayerLevelMask", "gotMsgUpdatePlayerLevelMask")
 		</event>
@@ -1565,7 +1563,7 @@
 			if(game.playerLevelTitle() == "") then
 				element("yOffset"):SetFloat(65*game.hudScale())
 			else
-				element("yOffset"):SetFloat(85*game.hudScale())
+				element("yOffset"):SetFloat(94*game.hudScale())
 			end
 		</event>
 		<event name="gotMsgRefreshQuestBadge" params="element">
@@ -1691,7 +1689,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						<![CDATA[
 						component("multiline"):SetInt(0)
@@ -1899,7 +1897,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						component("multiline"):SetInt(0)
 						component("font"):Set(game.getTitleFont())
@@ -2013,7 +2011,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						component("multiline"):SetInt(0)
 						component("font"):Set(game.getTitleFont())
@@ -2129,7 +2127,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						component("multiline"):SetInt(0)
 						component("font"):Set(game.getTitleFont())
@@ -2245,7 +2243,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						component("multiline"):SetInt(0)
 						component("font"):Set(game.getTitleFont())
@@ -2314,7 +2312,7 @@
 				<textComponent name="Label">
 					<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
 					<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+					<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="-2*game.hudScale()" priorityOffset="0" />
 					<event name="onInit" params="component, element">
 						component("multiline"):SetInt(0)
 						component("font"):Set(game.getTitleFont())
@@ -2344,7 +2342,7 @@
 		<templateVar name="$layer" equals="PopUps" />
 		<templateVar name="$spriteScale" equals="0.5*game.hudScale()" />
 		<position relativeTo="GoalsButton" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="20*game.hudScale()" priorityOffset="25" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="16*game.hudScale()" priorityOffset="25" />
 
 		<spriteSheetComponent name="Arrow">
 			<position relativeTo="element:name()" vAnchor="VCENTER" hAnchor="RIGHT" />
@@ -2381,15 +2379,15 @@
 		</spriteSheetComponent>
 
 		<textComponent name="Label">
-			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<size w="60*game.hudScale()" />
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				<![CDATA[
 				component("multiline"):SetInt(0)
 				component("font"):Set(game.getTitleFont())
 				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
-				component("size"):SetFloat(0.2*game.hudScale())
+				component("size"):SetFloat(0.25*game.hudScale())
 				component("text"):SetString("CONTEXTBAR_ACTIVITY_LABEL")
 				component("autoScaleFactor"):SetFloat(0.01)
 				component("autoScale"):SetInt(1)
@@ -2526,14 +2524,14 @@
 			</event>
 		</touchComponent>
 		<textComponent name="Label">
-			<size dependentOnElement="element:name()" dependentOnComponent="UpSprite"/>
+			<size w="60*game.hudScale()" />
 			<position relativeTo="element:name()" vAnchor="BOTTOM" hAnchor="HCENTER" />
-			<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="2*game.hudScale()" priorityOffset="0" />
+			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0*game.hudScale()" priorityOffset="0" />
 			<event name="onInit" params="component, element">
 				component("multiline"):SetInt(0)
 				component("font"):Set(game.getTitleFont())
 				component("alignment"):SetInt(MenuTextComponent_TEXT_HCENTER_ALIGNED)
-				component("size"):SetFloat(0.2*game.hudScale())
+				component("size"):SetFloat(0.25*game.hudScale())
 				component("text"):SetString("MENU_RANK")
 				component("autoScaleFactor"):SetFloat(0.01)
 				component("autoScale"):SetInt(1)

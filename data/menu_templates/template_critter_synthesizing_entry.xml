@@ -1,15 +1,30 @@
 <template name="template_critter_synthesizing_entry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../menus/menu.xsd">
 
-	<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+	<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
 
-	<spriteSheetComponent name="Sprite">
+	<defaultTemplateVar name="$scale" equals="0.5" />
+
+	<spriteSheetComponent name="Bg">
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<event name="onInit" params="component, element">
 			<![CDATA[
-				component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
+				component("spriteName"):SetString("portrait_square")
+				component("size"):SetFloat($scale*game.hudScale())
+				component("layer"):SetString(element("Layer"):GetString())
+			]]>
+		</event>
+	</spriteSheetComponent>
+
+	<spriteSheetComponent name="Sprite">
+		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-2" />
+		<event name="onInit" params="component, element">
+			<![CDATA[
+				component("sheetName"):SetString("xml_resources/synth_meebs_sheet.xml")
 				component("spriteName"):SetString("critter_portrait_square_g")
-				component("size"):SetFloat(0.5*game.hudScale())
+				component("size"):SetFloat($scale*game.hudScale())
 				component("layer"):SetString(element("Layer"):GetString())
 
 				if(element.gene ~= nil) then
@@ -22,7 +37,7 @@
 	<textComponent name="Text">
 		<size w="65*game.menuScaleX()" h="100" />
 		<position relativeTo="PARENT" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.hudScale()" priorityOffset="-2" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-10*game.hudScale()" priorityOffset="-3" />
 		<event name="onInit" params="component, element">
 			component("multiline"):SetInt(0)
 			component("font"):Set(game.getTextFont())
@@ -37,7 +52,7 @@
 	</textComponent>
 
 	<touchComponent name="Touch">
-		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
+		<size dependentOnElement="element:name()" dependentOnComponent="Bg" />
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<event name="onTouchUp" params="component, element">
@@ -46,12 +61,14 @@
 					element:parent():parent():CritterSelected(element.gene)
 				end
 				element["Sprite"]:setColor(1.0, 1.0, 1.0)
+				element["Bg"]:setColor(1.0, 1.0, 1.0)
 			]]>
 		</event>
 		<event name="onTouchDown" params="component, element, x, y">
 			<![CDATA[
 				if(element("disabled"):GetInt() == 0) then
 					element["Sprite"]:setColor(0.5, 0.5, 0.5)
+					element["Bg"]:setColor(0.5, 0.5, 0.5)
 				end
 			]]>
 		</event>
@@ -59,6 +76,7 @@
 			<![CDATA[
 				if(element("disabled"):GetInt() == 0) then
 					element["Sprite"]:setColor(1.0, 1.0, 1.0)
+					element["Bg"]:setColor(1.0, 1.0, 1.0)
 				end
 			]]>
 		</event>
@@ -82,6 +100,7 @@
 
 	<event name="setInvisible" params="element">
     <![CDATA[
+		element["Bg"]("visible"):SetInt(0)
 		element["Sprite"]("visible"):SetInt(0)
 		element["Text"]("visible"):SetInt(0)
     ]]>
@@ -89,6 +108,7 @@
 
 	<event name="setVisible" params="element">
     <![CDATA[
+		element["Bg"]("visible"):SetInt(1)
 		element["Sprite"]("visible"):SetInt(1)
 
 		if(element("showNum"):GetInt() == 1) then

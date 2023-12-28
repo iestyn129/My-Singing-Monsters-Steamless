@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:0a5f00c7606e8025cc7ad95ec7352b16:b3a53f53057b37a7dac25563ee4fbe59:3d43f180ed4851dedb8810f1992b4b3f$ -->
+<!-- $TexturePacker:SmartUpdate:453fa636fd5736acb3c293b6fca04803:0dc37418ce5b6e84d90ffbaac7f064a8:3d43f180ed4851dedb8810f1992b4b3f$ -->
 <!--Format:
 n  => name of the sprite
 x  => sprite x pos in texture
@@ -33,30 +33,38 @@ triangles  => sprite triangulation, 3 vertex indices per triangle
     <sprite n="crown_gold_trophy.png" x="2" y="400" w="318" h="396" pX="0.5" pY="0.5"/>
     <sprite n="crown_shadow.png" x="2" y="1766" w="148" h="274" pX="0.5" pY="0.5" oX="0" oY="0" oW="275" oH="148" r="y"/>
     <sprite n="crown_silver_trophy.png" x="2" y="798" w="318" h="396" pX="0.5" pY="0.5"/>
-    <sprite n="Crystal_Trophy.png" x="1141" y="1604" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
+    <sprite n="Crystal_Trophy.png" x="1298" y="1150" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
     <sprite n="DE_Trophy.png" x="322" y="857" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
+    <sprite n="Dragonfly_Trophy.png" x="1141" y="1604" w="214" h="282" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Earth_Trophy.png" x="434" y="1427" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="EarthIsland_Trophy.png" x="434" y="1142" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Egg_trophy.png" x="754" y="2" w="166" h="259" pX="0.5" pY="0.5" oX="15" oY="28" oW="216" oH="287"/>
+    <sprite n="Ethereal_Trophy.png" x="1357" y="434" w="282" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
     <sprite n="Fish_Trophy.png" x="493" y="1712" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
+    <sprite n="Insect_Ethereal_Trophy.png" x="1186" y="650" w="214" h="282" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Insect_Trophy.png" x="538" y="2" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Keys_Trophy.png" x="538" y="287" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
+    <sprite n="Levitation_Trophy.png" x="1641" y="464" w="282" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
+    <sprite n="Logo_Ethereal_Trophy.png" x="1402" y="650" w="214" h="282" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Logo_Trophy.png" x="538" y="572" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Love_trophy.png" x="1780" y="2" w="259" h="175" pX="0.5" pY="0.5" oX="21" oY="28" oW="216" oH="287" r="y"/>
     <sprite n="Mammal_Trophy.png" x="538" y="857" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
-    <sprite n="Mech_Trophy.png" x="1357" y="434" w="281" h="214" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287" r="y"/>
+    <sprite n="Mech_Trophy.png" x="1582" y="1112" w="281" h="214" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287" r="y"/>
     <sprite n="Mountain_Trophy.png" x="650" y="1142" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Pipes_Trophy.png" x="650" y="1427" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Plant_Trophy.png" x="925" y="2" w="283" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
     <sprite n="PlantIsland_Trophy.png" x="709" y="1712" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
-    <sprite n="Plasma_Trophy.png" x="1186" y="650" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
-    <sprite n="Poison_Trophy.png" x="1640" y="464" w="281" h="214" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287" r="y"/>
+    <sprite n="Plasma_Trophy.png" x="1514" y="1328" w="281" h="214" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287" r="y"/>
+    <sprite n="Poison_Trophy.png" x="1797" y="1328" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
     <sprite n="Precussion_Trophy.png" x="1210" y="2" w="283" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
     <sprite n="QE_Trophy.png" x="1495" y="2" w="283" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
+    <sprite n="Quadruped_Trophy.png" x="1618" y="680" w="282" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
+    <sprite n="Reptile_Ethereal_Trophy.png" x="1618" y="896" w="282" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
     <sprite n="Reptile_Trophy.png" x="1780" y="179" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Rhythm_Trophy.png" x="754" y="464" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
+    <sprite n="Robot_Trophy.png" x="1298" y="934" w="282" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
     <sprite n="SE_Trophy.png" x="922" y="218" w="283" h="214" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287" r="y"/>
-    <sprite n="Shadow_Trophy.png" x="1402" y="650" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
+    <sprite n="Shadow_Trophy.png" x="1357" y="1611" w="214" h="281" pX="0.5" pY="0.5" oX="0" oY="5" oW="216" oH="287"/>
     <sprite n="Spooktacle_trophy.png" x="925" y="1889" w="267" h="153" pX="0.5" pY="0.5" oX="30" oY="20" oW="216" oH="287" r="y"/>
     <sprite n="Strings_Trophy.png" x="754" y="749" w="214" h="283" pX="0.5" pY="0.5" oX="0" oY="4" oW="216" oH="287"/>
     <sprite n="Summer_trophy.png" x="321" y="1766" w="170" h="268" pX="0.5" pY="0.5" oX="22" oY="19" oW="216" oH="287"/>

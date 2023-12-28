@@ -27,35 +27,35 @@
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-25" priorityOffset="7" />
 		<ninesliceComponent name="Sprite">
-			<size w="0.9*lua_sys.screenWidth()" h="0.7*lua_sys.screenHeight()" />
+			<size w="1.739*(0.7188*lua_sys.screenHeight())" h="0.7188*lua_sys.screenHeight()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(50.0)
 				component("bottomHeight"):SetFloat(50.0)
 				component("leftWidth"):SetFloat(50.0)
 				component("rightWidth"):SetFloat(50.0)
 				component("includeBorder"):SetInt(1)
-				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("size"):SetFloat(0.001563*lua_sys.screenHeight())
 				component("spriteName"):SetString("gfx/menu/Black9SFrame50")
 				component("layer"):SetString("MidPopUps")
 			</event>
 		</ninesliceComponent>
 		<spriteSheetComponent name="Flourish1">
 			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="LEFT" />
-			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7" yOffset="7" priorityOffset="-2" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="7*game.menuScaleX()" yOffset="7*game.menuScaleX()" priorityOffset="-2" />
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_swirl_01")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("size"):SetFloat(0.001563*lua_sys.screenHeight())
 				component("layer"):SetString("MidPopUps")
 			</event>
 		</spriteSheetComponent>
 		<spriteSheetComponent name="Flourish2">
 			<position relativeTo="element:name()" vAnchor="TOP" hAnchor="RIGHT" />
-			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7" yOffset="10" priorityOffset="-3" />
+			<orientation vAnchor="TOP" hAnchor="RIGHT" xOffset="7*game.menuScaleX()" yOffset="10*game.menuScaleX()" priorityOffset="-3" />
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("menu_swirl_02")
 				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("size"):SetFloat(0.001563*lua_sys.screenHeight())
 				component("rotation"):SetFloat(-0.5*math.pi)
 				component("layer"):SetString("ContextBar")
 			</event>
@@ -189,13 +189,13 @@
 		<position relativeTo="bg" vAnchor="TOP" hAnchor="LEFT" />
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-3" />
 		<ninesliceComponent name="Sprite">
-			<size w="175*game.hudScale()" h="50*game.hudScale()" />
+			<size w="0.5469*lua_sys.screenHeight()" h="0.1563*lua_sys.screenHeight()" />
 			<event name="onInit" params="component, element">
 				component("topHeight"):SetFloat(49.0)
 				component("bottomHeight"):SetFloat(49.0)
 				component("leftWidth"):SetFloat(50.0)
 				component("rightWidth"):SetFloat(50.0)
-				component("size"):SetFloat(0.5*game.hudScale())
+				component("size"):SetFloat(0.001563*lua_sys.screenHeight())
 				component("includeBorder"):SetInt(1)
 				component("spriteName"):SetString("gfx/menu/GreyTitleFrame")
 				component("layer"):SetString("MidPopUps")
@@ -208,7 +208,7 @@
 				component("spriteName"):SetString("bookend_monsters")
 				component("sheetName"):SetString("xml_resources/store_elements.xml")
 				component("hFlip"):SetInt(1)
-				component("size"):SetFloat(lua_sys.screenWidth()/1024.0)
+				component("size"):SetFloat(0.001563*lua_sys.screenHeight())
 				component("layer"):SetString("MidPopUps")
 			</event>
 		</spriteSheetComponent>
@@ -219,7 +219,7 @@
 
 			<event name="onInit" params="component, element">
 				component("font"):Set(game.getTitleFont())
-				component("size"):SetFloat(0.45*game.hudScale())
+				component("size"):SetFloat(0.9*(0.001563*lua_sys.screenHeight()))
 				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
 				component:setColor(1.0, 0.9, 0.09)
 				component("text"):SetString("MENU_GOALS")
@@ -231,11 +231,14 @@
 	<element name="TopFadeSprite">	
 		<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
 		<position relativeTo="bg" vAnchor="TOP" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="(50*game.hudScale())/2.0" priorityOffset="-5" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="(0.1563*lua_sys.screenHeight())/2.0" priorityOffset="-5" />
 		<spriteComponent name="Sprite">
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("gfx/fade_sprite")
-				component:setScale(Vector2(0.05*lua_sys.screenWidth(), 0.5*game.menuScaleY()))
+				local fadeSpriteWidth = 16
+				local bgWidth = 1.739*(0.7188*lua_sys.screenHeight())
+				local fadeSpriteScale = (bgWidth/(16+1))
+				component:setScale(Vector2(fadeSpriteScale, 0.5*game.menuScaleY()))
 				component("layer"):SetString("Clipping")
 			</event>
 		</spriteComponent>
@@ -248,7 +251,9 @@
 		<spriteComponent name="Sprite">
 			<event name="onInit" params="component, element">
 				component("spriteName"):SetString("gfx/fade_sprite")
-				component:setScale(Vector2(0.05*lua_sys.screenWidth(), 0.5*game.menuScaleY()))
+				local bgWidth = 1.739*(0.7188*lua_sys.screenHeight())
+				local fadeSpriteScale = (bgWidth/(16+1))
+				component:setScale(Vector2(fadeSpriteScale, 0.5*game.menuScaleY()))
 				component("vFlip"):SetInt(1)
 				component("layer"):SetString("Clipping")
 			</event>
@@ -259,7 +264,7 @@
 		<script src="scripts/GoalEntries.lua"/>
 
 		<position relativeTo="TopFadeSprite" vAnchor="BOTTOM" hAnchor="HCENTER" />
-		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="2" />
+		<orientation vAnchor="TOP" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="4" />
 		
 		<swipeComponent name="Swiper">
 			<script useName="true"/>

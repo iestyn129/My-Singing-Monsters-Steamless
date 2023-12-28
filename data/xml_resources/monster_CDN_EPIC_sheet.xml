@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:9fbce0cb2547e24fa138a8f5f1d81075:45a0d34a76b2d02690fe3278ea9e7587:268ce4d9a1e59100d7c0896dfca24719$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/monsters/monster_CDN_EPIC_sheet.png" width="512" height="1024" hires="true">
+    <sprite n="CDN_adult_body.png" x="211" y="222" w="177" h="139" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDN_adult_dangle_base.png" x="350" y="365" w="33" h="42" pX="0.5" pY="0.5" oX="8" oY="7" oW="50" oH="50"/>
+    <sprite n="CDN_adult_dangle_bulb_A.png" x="337" y="444" w="29" h="18" pX="0.5" pY="0.5" oX="2" oY="1" oW="20" oH="30" r="y"/>
+    <sprite n="CDN_adult_dangle_bulb_B.png" x="163" y="402" w="30" h="18" pX="0.5" pY="0.5" oX="0" oY="0" oW="20" oH="30" r="y"/>
+    <sprite n="CDN_adult_dangle_mid.png" x="481" y="665" w="25" h="57" pX="0.5" pY="0.5" oX="7" oY="6" oW="40" oH="70"/>
+    <sprite n="CDN_adult_fin_left.png" x="4" y="424" w="132" h="86" pX="0.5" pY="0.5" oX="7" oY="10" oW="100" oH="150" r="y"/>
+    <sprite n="CDN_adult_fin_right.png" x="392" y="265" w="114" h="153" pX="0.5" pY="0.5" oX="2" oY="6" oW="120" oH="160"/>
+    <sprite n="CDN_adult_head.png" x="384" y="422" w="124" h="95" pX="0.5" pY="0.5" oX="0" oY="28" oW="124" oH="123"/>
+    <sprite n="CDN_adult_left_eyelid_01.png" x="392" y="222" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="30"/>
+    <sprite n="CDN_adult_left_eyelid_02.png" x="175" y="224" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="30"/>
+    <sprite n="CDN_adult_left_eyelid_03.png" x="175" y="257" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="30"/>
+    <sprite n="CDN_adult_left_eyelid_04.png" x="350" y="411" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="0" oW="30" oH="30"/>
+    <sprite n="CDN_adult_left_foot_HEEL.png" x="179" y="686" w="74" h="52" pX="0.5" pY="0.5" oX="0" oY="22" oW="74" oH="74"/>
+    <sprite n="CDN_adult_left_hand_01.png" x="257" y="686" w="67" h="69" pX="0.5" pY="0.5" oX="12" oY="1" oW="88" oH="75"/>
+    <sprite n="CDN_adult_left_hand_02.png" x="4" y="702" w="78" h="70" pX="0.5" pY="0.5" oX="9" oY="1" oW="88" oH="75"/>
+    <sprite n="CDN_adult_left_hand_03.png" x="207" y="610" w="82" h="72" pX="0.5" pY="0.5" oX="5" oY="1" oW="88" oH="75"/>
+    <sprite n="CDN_adult_left_hand_04.png" x="4" y="562" w="86" h="71" pX="0.5" pY="0.5" oX="1" oY="1" oW="88" oH="75"/>
+    <sprite n="CDN_adult_left_hand_05.png" x="140" y="508" w="63" h="74" pX="0.5" pY="0.5" oX="13" oY="1" oW="88" oH="75" r="y"/>
+    <sprite n="CDN_adult_left_hand_06.png" x="140" y="424" w="64" h="80" pX="0.5" pY="0.5" oX="7" oY="1" oW="88" oH="75" r="y"/>
+    <sprite n="CDN_adult_left_lower_arm.png" x="384" y="602" w="118" h="59" pX="0.5" pY="0.5"/>
+    <sprite n="CDN_adult_left_lower_leg.png" x="126" y="586" w="77" h="59" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDN_adult_left_upper_arm.png" x="336" y="498" w="44" h="101" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDN_adult_left_upper_leg.png" x="329" y="603" w="45" h="88" pX="0.5" pY="0.5"/>
+    <sprite n="CDN_adult_mouth_01.png" x="4" y="287" w="158" h="56" pX="0.5" pY="0.5" oX="12" oY="6" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_02.png" x="4" y="224" w="167" h="59" pX="0.5" pY="0.5" oX="7" oY="4" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_03.png" x="4" y="347" w="155" h="73" pX="0.5" pY="0.5" oX="11" oY="5" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_04.png" x="384" y="521" w="118" h="77" pX="0.5" pY="0.5" oX="26" oY="9" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_05.png" x="432" y="97" w="76" h="82" pX="0.5" pY="0.5" oX="40" oY="11" oW="179" oH="91" r="y"/>
+    <sprite n="CDN_adult_mouth_06.png" x="4" y="776" w="72" h="60" pX="0.5" pY="0.5" oX="44" oY="14" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_07.png" x="166" y="290" w="38" h="108" pX="0.5" pY="0.5" oX="32" oY="21" oW="179" oH="91" r="y"/>
+    <sprite n="CDN_adult_mouth_08.png" x="208" y="365" w="138" h="62" pX="0.5" pY="0.5" oX="19" oY="6" oW="179" oH="91"/>
+    <sprite n="CDN_adult_mouth_09.png" x="208" y="478" w="124" h="66" pX="0.5" pY="0.5" oX="24" oY="11" oW="179" oH="91"/>
+    <sprite n="CDN_adult_neck_01.png" x="225" y="4" w="203" h="105" pX="0.5" pY="0.5" oX="3" oY="4" oW="112" oH="209" r="y"/>
+    <sprite n="CDN_adult_neck_02.png" x="225" y="113" w="203" h="105" pX="0.5" pY="0.5" oX="3" oY="4" oW="112" oH="209" r="y"/>
+    <sprite n="CDN_adult_neck_03.png" x="4" y="115" w="203" h="105" pX="0.5" pY="0.5" oX="3" oY="4" oW="112" oH="209" r="y"/>
+    <sprite n="CDN_adult_pupil.png" x="481" y="726" w="14" h="14" pX="0.5" pY="0.5"/>
+    <sprite n="CDN_adult_right_eyelid_01.png" x="337" y="466" w="28" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="29"/>
+    <sprite n="CDN_adult_right_eyelid_02.png" x="97" y="514" w="28" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="29"/>
+    <sprite n="CDN_adult_right_eyelid_03.png" x="97" y="546" w="28" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="29"/>
+    <sprite n="CDN_adult_right_eyelid_04.png" x="94" y="578" w="28" h="28" pX="0.5" pY="0.5" oX="0" oY="0" oW="29" oH="29"/>
+    <sprite n="CDN_adult_right_foot_HEEL.png" x="86" y="731" w="74" h="52" pX="0.5" pY="0.5" oX="0" oY="22" oW="74" oH="74"/>
+    <sprite n="CDN_adult_right_hand_01.png" x="378" y="665" w="99" h="69" pX="0.5" pY="0.5" oX="1" oY="15" oW="101" oH="86"/>
+    <sprite n="CDN_adult_right_hand_02.png" x="432" y="4" w="76" h="89" pX="0.5" pY="0.5" oX="1" oY="8" oW="101" oH="86" r="y"/>
+    <sprite n="CDN_adult_right_hand_03.png" x="94" y="649" w="81" h="78" pX="0.5" pY="0.5" oX="1" oY="6" oW="101" oH="86"/>
+    <sprite n="CDN_adult_right_hand_04.png" x="432" y="183" w="74" h="78" pX="0.5" pY="0.5" oX="1" oY="10" oW="101" oH="86" r="y"/>
+    <sprite n="CDN_adult_right_lower_arm.png" x="207" y="548" w="118" h="58" pX="0.5" pY="0.5"/>
+    <sprite n="CDN_adult_right_lower_leg.png" x="4" y="637" w="86" h="61" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDN_adult_right_upper_arm.png" x="208" y="431" w="125" h="43" pX="0.5" pY="0.5"/>
+    <sprite n="CDN_adult_right_upper_leg.png" x="4" y="514" w="89" h="44" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="CDN_adult_shadow.png" x="4" y="4" w="217" h="107" pX="0.5" pY="0.5" oX="2" oY="0" oW="219" oH="109"/>
+</TextureAtlas>

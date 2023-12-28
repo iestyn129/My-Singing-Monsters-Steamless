@@ -8,23 +8,23 @@
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<spriteSheetComponent name="GreySprite">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-			    component("spriteName"):SetString("selectable_bar_grey")
-			    component("sheetName"):SetString("xml_resources/breeding01.xml")
-			    component("size"):SetFloat(0.525*game.menuScaleX())
-			    component("layer"):SetString("Clipping")
-        ]]>
+			<![CDATA[
+				component("spriteName"):SetString("selectable_bar_grey")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			]]>
 			</event>
 		</spriteSheetComponent>
 		<spriteSheetComponent name="YellowSprite">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-			    component("spriteName"):SetString("selectable_bar_yellow")
-			    component("sheetName"):SetString("xml_resources/breeding01.xml")
-			    component("size"):SetFloat(0.525*game.menuScaleX())
-			    component("visible"):SetInt(0)
-			    component("layer"):SetString("Clipping")
-        ]]>
+			<![CDATA[
+				component("spriteName"):SetString("selectable_bar_yellow")
+				component("sheetName"):SetString("xml_resources/breeding01.xml")
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("visible"):SetInt(0)
+				component("layer"):SetString("Clipping")
+			]]>
 			</event>
 		</spriteSheetComponent>
 	</element>
@@ -35,11 +35,11 @@
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="-1" />
 		<spriteComponent name="Sprite">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-				  component("spriteName"):SetString("gfx/breeding/"..game.getPortraitName(element:parent()("MonsterID"):GetInt()))
-				  component("size"):SetFloat(0.525*game.menuScaleX())
-				  component("layer"):SetString("Clipping")
-        ]]>
+			<![CDATA[
+				component("spriteName"):SetString("gfx/breeding/"..game.getPortraitName(element:parent()("MonsterID"):GetInt()))
+				component("size"):SetFloat(0.525*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			]]>
 			</event>
 		</spriteComponent>
 	</element>
@@ -50,20 +50,20 @@
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3" yOffset="-8" priorityOffset="-1" />
 		<textComponent name="Text">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-				  local name = game.getMonsterName(element:parent()("MonsterID"):GetInt())
+			<![CDATA[
+				local name = game.getMonsterName(element:parent()("MonsterID"):GetInt())
 				
-				  if(string.len(name) > 9) then
-					  name = (string.sub(name, 0, 8).."...")
-				  end
+				if(string.len(name) > 9) then
+					name = (string.sub(name, 0, 8).."...")
+				end
 			
-				  component("font"):Set(game.getTextFont())
-				  component("size"):SetFloat(0.19*game.menuScaleX())
-				  component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
-				  component("noTranslate"):SetInt(1)
-				  component("text"):SetString(name)
-				  component("layer"):SetString("Clipping")
-        ]]>
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.19*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("noTranslate"):SetInt(1)
+				component("text"):SetString(name)
+				component("layer"):SetString("Clipping")
+			]]>
 			</event>
 		</textComponent>
 	</element>
@@ -74,14 +74,14 @@
 		<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="3*game.menuScaleX()" yOffset="8*game.menuScaleY()" priorityOffset="0" />
 		<textComponent name="Text">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-				  component("font"):Set(game.getTextFont())
-				  component("size"):SetFloat(0.18*game.menuScaleX())
-				  component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
-				  component("text"):SetString(game.monsterType(element:parent()("MonsterID"):GetInt()))
-				  component("layer"):SetString("Clipping")
-				  component:setColor(0.75, 0.75, 0.75)
-        ]]>
+			<![CDATA[
+				component("font"):Set(game.getTextFont())
+				component("size"):SetFloat(0.18*game.menuScaleX())
+				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
+				component("text"):SetString(game.monsterType(element:parent()("MonsterID"):GetInt()))
+				component("layer"):SetString("Clipping")
+				component:setColor(0.75, 0.75, 0.75)
+			]]>
 			</event>
 		</textComponent>
 	</element>
@@ -92,19 +92,19 @@
 		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0" yOffset="0" priorityOffset="0" />
 		<spriteSheetComponent name="Sprite">
 			<event name="onInit" params="component, element">
-        <![CDATA[
-				  local spriteString = "monster_level_numbers_"
-				  local level = game.monsterLevel(element:parent()("MonsterID"):GetInt())
+			<![CDATA[
+				local spriteString = "monster_level_numbers_"
+				local level = game.monsterLevel(element:parent()("MonsterID"):GetInt())
 				
-				  if(level < 10) then
-					  spriteString = (spriteString.."0")
-				  end
+				if(level < 10) then
+					spriteString = (spriteString.."0")
+				end
 				
-				  component("spriteName"):SetString(spriteString..level)
-				  component("sheetName"):SetString("xml_resources/level_numbers.xml")
-				  component("size"):SetFloat(0.5*game.menuScaleX())
-				  component("layer"):SetString("Clipping")
-        ]]>
+				component("spriteName"):SetString(spriteString..level)
+				component("sheetName"):SetString("xml_resources/level_numbers.xml")
+				component("size"):SetFloat(0.5*game.menuScaleX())
+				component("layer"):SetString("Clipping")
+			]]>
 			</event>
 		</spriteSheetComponent>
 	</element>
@@ -113,50 +113,49 @@
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
 		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 		<event name="onInit" params="component, element">
-			<![CDATA[
-				component("dragging"):SetInt(0)
-				component("touchStart"):SetInt(0)
-			]]>
+		<![CDATA[
+			component("dragging"):SetInt(0)
+			component("touchStart"):SetInt(0)
+		]]>
 		</event>
 		<event name="onTouchDrag" params="component, element, x, y">
-			<![CDATA[
-				component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
-				component("touchStart"):SetInt(y)
-				element:root():GetElement(element("List"):GetString()):DoStoredScript("entryTouched")
-			]]>
+		<![CDATA[
+			component("dragging"):SetInt(component("dragging"):GetInt() + math.abs(y - component("touchStart"):GetInt()))
+			component("touchStart"):SetInt(y)
+			element:root():GetElement(element("List"):GetString()):entryTouched()
+		]]>
 		</event>
 		<event name="onTouchDown" params="component, element, x, y">
-			<![CDATA[
-				component("touchStart"):SetInt(y)	
-			]]>
+		<![CDATA[
+			component("touchStart"):SetInt(y)	
+		]]>
 		</event>
 		<event name="onTouchUp" params="component, element">
-			<![CDATA[
-				if(element("touchDisabled"):GetInt() == 0) then
-					if(component("dragging"):GetInt() < 10) then
-						if(game.monsterLevel(element("MonsterID"):GetInt()) < 4) then
-							game.displayNotification("NOTIFICATION_MONSTER_UNDERLEVELED")
-						else
-							if(element("disabled"):GetInt() == 0) then
-								element["bg"]["GreySprite"]("visible"):SetInt(0)
-								element["bg"]["YellowSprite"]("visible"):SetInt(1)
-								element:root():GetElement(element("List"):GetString())("NewSelectedEntry"):SetString(element:name())
-								element:root():GetElement(element("List"):GetString())("NewSelectedEntryID"):SetString(element("MonsterID"):GetInt())
-								element:root():GetElement(element("List"):GetString()):DoStoredScript("selectNewEntry")
-							end
+		<![CDATA[
+			if(element("touchDisabled"):GetInt() == 0) then
+				if(component("dragging"):GetInt() < 10) then
+					if(game.monsterLevel(element("MonsterID"):GetInt()) < 4) then
+						game.displayNotification("NOTIFICATION_MONSTER_UNDERLEVELED")
+					else
+						if(element("disabled"):GetInt() == 0) then
+							element["bg"]["GreySprite"]("visible"):SetInt(0)
+							element["bg"]["YellowSprite"]("visible"):SetInt(1)
+							element:root():GetElement(element("List"):GetString()).NewSelectedEntry = element:name()
+							element:root():GetElement(element("List"):GetString()):selectNewEntry()
 						end
 					end
-					component("dragging"):SetInt(0)
-					component("touchStart"):SetInt(0)
-					element:root():GetElement(element("List"):GetString()):DoStoredScript("entryTouched")
 				end
-			]]>
+				component("dragging"):SetInt(0)
+				component("touchStart"):SetInt(0)
+				element:root():GetElement(element("List"):GetString()):entryTouched()
+			end
+		]]>
 		</event>
 		<event name="onPostInit" params="component, element">
-			<![CDATA[
-				component:setSize(Vector2(element:GetElement("bg"):absW()*1.25, element:GetElement("bg"):absH() * 1.5))
-				component("yOffset"):SetInt(element:GetElement("bg"):absH()*(-0.25))
-			]]>
+		<![CDATA[
+			component:setSize(Vector2(element:GetElement("bg"):absW()*1.25, element:GetElement("bg"):absH() * 1.5))
+			component("yOffset"):SetInt(element:GetElement("bg"):absH()*(-0.25))
+		]]>
 		</event>
 	</touchComponent>
 	
@@ -165,62 +164,62 @@
 		<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="RIGHT" />
 		<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="8*game.menuScaleX()" yOffset="0" priorityOffset="-1" />
 		<event name="onInit" params="element">
-			<![CDATA[
-				onInit(element)
-				element("Layer"):SetString("Clipping")
-				element("Size"):SetString(0.25*game.hudScale())
-			]]>
+		<![CDATA[
+			onInit(element)
+			element("Layer"):SetString("Clipping")
+			element("Size"):SetString(0.25*game.hudScale())
+		]]>
 		</event>
 	</template>
 	
 	<event name="onInit" params="element">
-    <![CDATA[
+	<![CDATA[
 		element("disabled"):SetInt(0)
 		element("touchDisabled"):SetInt(0)
-    ]]>
+	]]>
 	</event>
 	
 	<event name="onPostInit" params="element">
-    <![CDATA[
-		  local monsterId = element("MonsterID"):GetInt()
-		  local monsterType = game.monsterTypeId(monsterId)
-		  element["Genes"]("MonsterId"):SetInt(monsterType)
-		  element["Genes"]:DoStoredScript("populate")
-		  
-		  if(game.monsterLevel(monsterId) < 4) then
+	<![CDATA[
+		local monsterId = element("MonsterID"):GetInt()
+		local monsterType = game.monsterTypeId(monsterId)
+		element["Genes"]("MonsterId"):SetInt(monsterType)
+		element["Genes"]:DoStoredScript("populate")
+		
+		if(game.monsterLevel(monsterId) < 4) then
 			element:DoStoredScript("disableEntry")
-		  end
-    ]]>
+		end
+	]]>
 	</event>
 	
 	<event name="disableEntry" params="element">
-    <![CDATA[
-		  element["bg"]["YellowSprite"]("visible"):SetInt(0)
-		  element["bg"]["GreySprite"]("visible"):SetInt(1)
-		  element["bg"]["GreySprite"]:setColor(0.5, 0.5, 0.5)
-		  element["CharacterImage"]["Sprite"]:setColor(0.5, 0.5, 0.5)
-		  element["monsterName"]["Text"]:setColor(0.5, 0.5, 0.5)
-		  element["monsterType"]["Text"]:setColor(0.25, 0.25, 0.25)
-		  element["levelSprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
-		  element("disabled"):SetInt(1)
+	<![CDATA[
+		element["bg"]["YellowSprite"]("visible"):SetInt(0)
+		element["bg"]["GreySprite"]("visible"):SetInt(1)
+		element["bg"]["GreySprite"]:setColor(0.5, 0.5, 0.5)
+		element["CharacterImage"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element["monsterName"]["Text"]:setColor(0.5, 0.5, 0.5)
+		element["monsterType"]["Text"]:setColor(0.25, 0.25, 0.25)
+		element["levelSprite"]["Sprite"]:setColor(0.5, 0.5, 0.5)
+		element("disabled"):SetInt(1)
 		
-		  element["Genes"]:DoStoredScript("disable")
-    ]]>
+		element["Genes"]:DoStoredScript("disable")
+	]]>
 	</event>
 	
 	<event name="enableEntry" params="element">
-    <![CDATA[
-		  element["bg"]["YellowSprite"]("visible"):SetInt(0)
-		  element["bg"]["GreySprite"]("visible"):SetInt(1)
-		  element["bg"]["GreySprite"]:setColor(1.0, 1.0, 1.0)
-		  element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
-		  element["monsterName"]["Text"]:setColor(1.0, 1.0, 1.0)
-		  element["monsterType"]["Text"]:setColor(0.5, 0.5, 0.5)
-		  element["levelSprite"]["Sprite"]:setColor(1.0, 1.0, 1.0)		
-		  element("disabled"):SetInt(0)
+	<![CDATA[
+		element["bg"]["YellowSprite"]("visible"):SetInt(0)
+		element["bg"]["GreySprite"]("visible"):SetInt(1)
+		element["bg"]["GreySprite"]:setColor(1.0, 1.0, 1.0)
+		element["CharacterImage"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element["monsterName"]["Text"]:setColor(1.0, 1.0, 1.0)
+		element["monsterType"]["Text"]:setColor(0.5, 0.5, 0.5)
+		element["levelSprite"]["Sprite"]:setColor(1.0, 1.0, 1.0)
+		element("disabled"):SetInt(0)
 		
-		  element["Genes"]:DoStoredScript("enable")
-    ]]>
+		element["Genes"]:DoStoredScript("enable")
+	]]>
 	</event>
 	
 </template>

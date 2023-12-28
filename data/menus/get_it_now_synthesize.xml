@@ -86,6 +86,7 @@
 					plus:relativeTo(element)
 					plus:setRelativeObjectAnchors(lua_sys.HCENTER, lua_sys.VCENTER)
 					plus:setOrientation(lua_sys.MenuOrientation(0, offsetY, -1, lua_sys.LEFT, lua_sys.VCENTER))
+					plus:V("Layer"):SetString("FrontPopUps")
 					plus:init()
 					plus:setPositionBroadcast(true)
 					table.insert(entries, plus)

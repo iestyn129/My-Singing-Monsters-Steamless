@@ -109,7 +109,7 @@
 		</textComponent>
 	</element>
 	
-	<element name="Functions" params="element">
+	<element name="Functions">
 		<event name="hide" params="element">
 			element:parent()["bg"]["Sprite"]("visible"):SetInt(0)
 			element:parent()["primaryText"]["Text"]("visible"):SetInt(0)

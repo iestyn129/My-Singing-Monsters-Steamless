@@ -2,8 +2,8 @@
 
 	<template type="template_fade" name="Fade">
 		<templateVar name="$layer" equals="FrontPopUps" />
-		<templateVar name="$priority" equals="6" />
-		<templateVar name="$touchPriority" equals="-2" />
+		<templateVar name="$priority" equals="8" />
+		<templateVar name="$touchPriority" equals="-4" />
 		<templateVar name="$transitionDuration" equals="0.01" />
 	</template>
 
@@ -336,14 +336,14 @@
 	<element name="BGGradient">
 		<size w="screenWidth()" h="screenHeight()"/>
 		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="6" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="7" />
 		<spriteComponent name="Sprite"/>
 	</element>
 
 	<element name="BGPattern">
 		<size w="screenWidth()" h="screenHeight()"/>
 		<position relativeTo="SCREEN" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="5" />
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="6" />
 		<spriteComponent name="Sprite"/>
 	</element>
 	

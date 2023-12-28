@@ -80,18 +80,14 @@
 				component("size"):SetFloat(0.4*game.hudScale())
 				component("alignment"):SetInt(lua_sys.MenuTextComponent_TEXT_LEFT_ALIGNED)
 				
-				if(store:Category() ~= game.StoreCategories_TYPE_CURRENCY) and (store:Category() ~= game.StoreCategories_TYPE_ISLAND) then
-					if(game.isAmberIsland() and store:Category() == game.StoreCategories_TYPE_MONSTER) then
-						game.StoreContext_setRelicTextColour(component)
-					else
-						if game.isEtherealIsland() then
-							game.StoreContext_setEtherealTextColour(component)
-						else
-							game.StoreContext_setCoinTextColour(component)
-						end
-					end
+				if(game.isAmberIsland() and store:Category() == game.StoreCategories_TYPE_MONSTER) then
+					game.StoreContext_setRelicTextColour(component)
 				else
-					game.StoreContext_setCoinTextColour(component)
+					if game.isEtherealIsland() then
+						game.StoreContext_setEtherealTextColour(component)
+					else
+						game.StoreContext_setCoinTextColour(component)
+					end
 				end
 
 				component("text"):SetString(game.commaizeNumber(store:BuybackCost()))
@@ -113,12 +109,6 @@
 				component("layer"):SetString("HUD")
 			</event>
 		</spriteSheetComponent>
-		<event name="onInit" params="element">
-			if((store:Category() == game.StoreCategories_TYPE_CURRENCY) and (element:parent():name() ~= "coinsToEthCurrencyExchange")) then
-				element["Text"]("visible"):SetInt(0)
-				element["Sprite"]("visible"):SetInt(0)
-			end
-		</event>
 	</element>
 		
 	<element name="BuybackFrame">

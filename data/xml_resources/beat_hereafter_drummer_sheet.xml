@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:126a53c12faa2f4b725f76a3c43fab79:25af27c970a535d6ce5612d07da16877:fc9f622f00dcf814d8a52592174653fc$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/structures/beat_hereafter_drummer_sheet.png" width="512" height="512" hires="true">
+    <sprite n="Chest.png" x="389" y="185" w="108" h="104" pX="0.5" pY="0.5" oX="4" oY="6" oW="116" oH="116"/>
+    <sprite n="Hand.png" x="277" y="185" w="110" h="39" pX="0.5" pY="0.5" oX="0" oY="3" oW="40" oH="116" r="y"/>
+    <sprite n="Head.png" x="277" y="1" w="230" h="182" pX="0.5" pY="0.5" oX="3" oY="3" oW="236" oH="188"/>
+    <sprite n="Lower_arm.png" x="1" y="197" w="28" h="90" pX="0.5" pY="0.5" oX="3" oY="2" oW="96" oH="32" r="y"/>
+    <sprite n="Platform.png" x="1" y="1" w="274" h="194" pX="0.5" pY="0.5" oX="3" oY="3" oW="280" oH="200"/>
+    <sprite n="Upper_arm.png" x="1" y="291" w="28" h="102" pX="0.5" pY="0.5" oX="3" oY="2" oW="108" oH="32" r="y"/>
+</TextureAtlas>

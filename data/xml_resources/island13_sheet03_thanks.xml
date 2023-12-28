@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f78795c8bec1321db7f658d633e8307b:75fe23751dfa26f97668eaa1ba4680e7:6ca18435da9d07591e37835acdbc765b$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="gfx/island_overlay/island13_sheet03_thanks.png" width="1024" height="2048" hires="true">
+    <sprite n="Cornucopia_01" x="452" y="268" w="383" h="259" pX="0.5" pY="0.5" oX="2" oY="2" oW="264" oH="388" r="y"/>
+    <sprite n="gobbley_balloon" x="2" y="2" w="448" h="352" pX="0.5" pY="0.5" oX="3" oY="2" oW="456" oH="356"/>
+    <sprite n="Pie_stack" x="371" y="529" w="365" h="348" pX="0.5" pY="0.5" oX="4" oY="1" oW="356" oH="368" r="y"/>
+    <sprite n="Pumpkin_01" x="264" y="736" w="98" h="84" pX="0.5" pY="0.5" oX="3" oY="2" oW="104" oH="88"/>
+    <sprite n="Pumpkin_02" x="2" y="929" w="240" h="146" pX="0.5" pY="0.5" oX="4" oY="1" oW="248" oH="148"/>
+    <sprite n="Pumpkin_pie" x="738" y="660" w="274" h="204" pX="0.5" pY="0.5" oX="1" oY="2" oW="276" oH="208"/>
+    <sprite n="R_Leaves_01" x="883" y="2" w="134" h="387" pX="0.5" pY="0.5" oX="5" oY="0" oW="392" oH="134" r="y"/>
+    <sprite n="R_Leaves_02" x="738" y="866" w="273" h="256" pX="0.5" pY="0.5" oX="0" oY="0" oW="256" oH="275" r="y"/>
+    <sprite n="R_Leaves_03" x="2" y="736" w="260" h="191" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="Scarecrow_01" x="2" y="356" w="367" h="219" pX="0.5" pY="0.5" oX="15" oY="2" oW="240" oH="372" r="y"/>
+    <sprite n="Scarecrow_02" x="2" y="577" w="364" h="157" pX="0.5" pY="0.5" oX="3" oY="2" oW="164" oH="368" r="y"/>
+    <sprite n="Scarecrow_03" x="452" y="2" w="429" h="264" pX="0.5" pY="0.5" oX="2" oY="3" oW="268" oH="436" r="y"/>
+    <sprite n="Sunflower_01" x="837" y="391" w="165" h="156" pX="0.5" pY="0.5" oX="4" oY="1" oW="164" oH="168" r="y"/>
+    <sprite n="veggies01" x="371" y="405" w="49" h="83" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="veggies02" x="264" y="822" w="93" h="109" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="veggies03" x="738" y="529" w="94" h="129" pX="0.5" pY="0.5"/>
+    <sprite n="veggies04" x="371" y="356" w="59" h="47" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="veggies05" x="244" y="933" w="111" h="116" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="veggies06" x="359" y="879" w="152" h="131" pX="0.5" pY="0.5" oX="2" oY="1" oW="136" oH="156" r="y"/>
+    <sprite n="Wheat" x="834" y="549" w="127" h="109" pX="0.5" pY="0.5" oX="1" oY="3" oW="112" oH="132" r="y"/>
+</TextureAtlas>

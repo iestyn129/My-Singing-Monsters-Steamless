@@ -66,42 +66,61 @@
 	</element>
 
 	<element name="Parent">
-		<size dependentOnElement="Arrow" dependentOnComponent="Sprite" />
+		<size w="200*game.hudScale()" h="35*game.hudScale()" />
 		<position relativeTo="bg" vAnchor="VCENTER" hAnchor="HCENTER" />
-		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="-45*game.hudScale()" priorityOffset="-3" />
-		<element name="Arrow">
+		<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="10*game.hudScale()" yOffset="-45*game.hudScale()" priorityOffset="-3" />
+
+		<element name="AttuneAnimation">
 			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-			<position relativeTo="element:parent()" vAnchor="VCENTER" hAnchor="HCENTER" />
-			<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
-			<spriteSheetComponent name="Sprite">
-			<event name="onInit" params="component, element">
-				component("spriteName"):SetString("blue_arrow")
-				component("sheetName"):SetString("xml_resources/hud01.xml")
-				component("size"):SetFloat(0.6*game.hudScale())
-				component("layer"):SetString("FrontPopUps")
-			</event>
-			</spriteSheetComponent>
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="-3" />
+			<aeComponent name="Sprite">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
+				<event name="onInit" params="component, element">
+					<![CDATA[
+						component("animationName"):SetString("xml_bin/attune_normal_anim.bin")
+						component("animation"):SetString("normal_dots_intro")
+						component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
+						component("layer"):SetString("FrontPopUps")
+					]]>
+				</event>
+			</aeComponent>
 		</element>
 
-		<element name="Critter">
+		<element name="AttuneAnimationBottom">
 			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-			<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="LEFT" />
-			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="0*game.hudScale()" yOffset="0" priorityOffset="1" />
-			<spriteSheetComponent name="Sprite">
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="TOP" hAnchor="LEFT" xOffset="0" yOffset="0" priorityOffset="1" />
+			<aeComponent name="Sprite">
+				<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+				<orientation vAnchor="VCENTER" hAnchor="HCENTER" xOffset="0" yOffset="0" priorityOffset="0" />
 				<event name="onInit" params="component, element">
-					component("sheetName"):SetString("xml_resources/synth_menu_sheet.xml")
-					component("spriteName"):SetString("critter_portrait_square_g")
-					component("size"):SetFloat(0.6*game.hudScale())
-					component("visible"):SetInt(1)
-					component("layer"):SetString("FrontPopUps")
+					<![CDATA[
+						component("animationName"):SetString("xml_bin/attune_normal_anim.bin")
+						component("animation"):SetString("normal_mist_intro")
+						component:setScale(Vector2(0.5*game.menuScaleX(), 0.5*game.menuScaleX()))
+						component("layer"):SetString("FrontPopUps")
+					]]>
 				</event>
-			</spriteSheetComponent>
+			</aeComponent>
 		</element>
-		
+
+		<template type="template_critter_synthesizing_entry" name="Critter">
+		<templateVar name="$scale" equals="0.6" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="35*game.hudScale()" yOffset="0" priorityOffset="0" />
+			<event name="onInit" params="element">
+				onInit(element)
+				element("Layer"):SetString("FrontPopUps")
+				element:disable()
+			</event>
+		</template>
+
 		<element name="Island">
 			<size dependentOnElement="element:name()" dependentOnComponent="Sprite" />
-			<position relativeTo="Arrow" vAnchor="VCENTER" hAnchor="RIGHT" />
-			<orientation vAnchor="VCENTER" hAnchor="LEFT" xOffset="0*game.hudScale()" yOffset="0" priorityOffset="2" />
+			<position relativeTo="PARENT" vAnchor="VCENTER" hAnchor="HCENTER" />
+			<orientation vAnchor="VCENTER" hAnchor="RIGHT" xOffset="30*game.hudScale()" yOffset="0" priorityOffset="0" />
 			<spriteSheetComponent name="Sprite">
 				<event name="onInit" params="component, element">
 					local sheet = game.islandIconSheetForId(101);
@@ -109,7 +128,7 @@
 
 					component("spriteName"):SetString(sprite)		
 					component("sheetName"):SetString("xml_resources/"..sheet)
-					component("size"):SetFloat(0.3*game.hudScale())
+					component("size"):SetFloat(0.28*game.hudScale())
 					component("visible"):SetInt(1)
 					component("layer"):SetString("FrontPopUps")
 				</event>
@@ -121,7 +140,7 @@
 					<![CDATA[
 						component("spriteName"):SetString(game.geneFilename("G"))
 						component("sheetName"):SetString("xml_resources/hud02.xml")
-						component("size"):SetFloat(0.3*game.hudScale())
+						component("size"):SetFloat(0.28*game.hudScale())
 						component("layer"):SetString("FrontPopUps")
 					]]>
 				</event>
